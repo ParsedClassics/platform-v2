@@ -546,7 +546,7 @@ const ParsedClassicsSelectedLine = {
     if (wordEl.length > 1 && Number.isInteger(wordPositionFromUrl)) {
       wordEl = $(wordEl[wordPositionFromUrl]);
     }
-    wordEl.addClass(ParsedClassicsAppVars.selectedWordClass)
+    wordEl.first().addClass(ParsedClassicsAppVars.selectedWordClass);
   },
 
 };
