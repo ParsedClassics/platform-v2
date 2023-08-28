@@ -1071,7 +1071,7 @@ const ParsedClassicsLayout = {
             paneData[3] = tabIdsArr.length - 2
             // in case the last tab in the tabbar was the only tab in the tabbar, prevent the index to be "-1"
             if (paneData[3] < 0) {
-              paneData[3] = 0;
+              paneData[3] = null;
             }
           }
           else {
