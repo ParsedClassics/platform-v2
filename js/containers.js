@@ -330,19 +330,24 @@ const ParsedClassicsContentContainers = {
   },
 
   scrollToLineResourceLoaded: function(container, lineIndicatorFromUrl, activeTabId) {
+    console.log('scrollToLineResourceLoaded');
     // get pane id
     const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
     // close alert dialogue that may be open
     ParsedClassicsAlertDialogue.closeDialogueWithoutClick(paneId);
     // close confirm dialogue that may be open ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
+    // get id of container to be scrolled 
+    const containerId = container.attr('id');
     // get line to be scrolled
     const lineToScroll = container.find(`.line-number[data-line-number="${lineIndicatorFromUrl}"]`);
     // find if ther is only one el in DOM
     const renderedLength = lineToScroll.length;
+    // find if line to be scrolled is already in viewport, i.e. is already seen
+    const inViewportLength = lineToScroll.isInViewport({tolerance: 0, viewport: `#${containerId}`}).length;
+    console.log('inViewportLength', inViewportLength);
     // line to be scrolled is in DOM - let's scroll it into view
-    if (renderedLength === 1) {
+    if (renderedLength === 1 && inViewportLength === 0) {
       container.scrollTo(lineToScroll, ParsedClassicsAppVars.animationSpeed);
     }
     else if (renderedLength === 0) {
