@@ -27,17 +27,17 @@ const ParsedClassicsContentContainers = {
     // generate collectionShortname|resourceShortname pair
     const collResPairUrl = collectionShortname && resourceShortname ? `${collectionShortname}|${resourceShortname}` : collectionShortname;
     // get collectionShortname|resourceShortname pair saved as container's attr
-    const collResPairDom = tabContentContainer.attr('data-coll-res-shortname-pair') ?? '';
+    const collResPairDom = tabContentContainer.attr(ParsedClassicsAppVars.collResPairAttr) ?? '';
 
     // get line indicator from url
     const lineIndicatorUrl = ParsedClassicsLayout.getLineIndicatorFromUrl(collectionShortname);
     // get line indicator saved as dom attr
-    const lineIndicatorDom = tabContentContainer.attr('data-line-indicator') ?? '';
+    const lineIndicatorDom = tabContentContainer.attr(ParsedClassicsAppVars.lineNumberAttr) ?? '';
 
     // get lemma from URL
     const wordUrl = ParsedClassicsLayout.getWordFromUrl(collectionShortname);
     // get lemma from DOM
-    const wordDom = tabContentContainer.attr('data-word') ?? '';
+    const wordDom = tabContentContainer.attr(ParsedClassicsAppVars.lemmaAttr) ?? '';
 
     // get lexicon info and lexicon entry info info from URL 
     const {lexicon: lexiconUrl, lexiconEntry: lexiconEntryUrl} = ParsedClassicsLayout.getLexiconAndEntryFromUrl(collectionShortname);
@@ -62,23 +62,23 @@ const ParsedClassicsContentContainers = {
     const resourceData = resourceDataOfCollection && resourceShortname ? resourceDataOfCollection[resourceShortname].data : '';
 
     // save collectionShortname|resourceShortname pair as DOM attr
-    tabContentContainer.attr('data-coll-res-shortname-pair', collResPairUrl);
+    tabContentContainer.attr(ParsedClassicsAppVars.collResPairAttr, collResPairUrl);
     // save line indicator as DOM attr
-    tabContentContainer.attr('data-line-indicator', lineIndicatorUrl);
+    tabContentContainer.attr(ParsedClassicsAppVars.lineNumberAttr, lineIndicatorUrl);
     // save lemma as DOM attr
-    tabContentContainer.attr('data-word', wordUrl);
+    tabContentContainer.attr(ParsedClassicsAppVars.lemmaAttr, wordUrl);
     // save lexicon shortname())s as DOM attr
     tabContentContainer.attr(ParsedClassicsAppVars.lexiconAttr, lexiconUrl);
     // save lexicon entry(ies) positions(s) as DOM attr
     tabContentContainer.attr(ParsedClassicsAppVars.lexiconEntryAttr, lexiconEntryUrl);
     // save resource type as DOM attr in order to apply styles relevant to that resource type
-    tabContentContainer.attr('data-resource-type', resourceType);
+    tabContentContainer.attr(ParsedClassicsAppVars.resourceTypeAttr, resourceType);
 
     // Case I. there is no resource shortname, so we need to display list of resources contained in collection
 
     if (!resourceShortname  &&  collResPairUrl !== collResPairDom) {
       // save resource type as DOM attr in order to apply styles relevant to that resource type
-      tabContentContainer.attr('data-resource-type', 'resources_list');
+      tabContentContainer.attr(ParsedClassicsAppVars.resourceTypeAttr, 'resources_list');
       const resourcesListHtml = ParsedClassicsContentContainers.createAvailableResourcesListHtml(collectionDef, resourceDefsAll);
       tabContentContainer.find(`.${ParsedClassicsAppVars.tabContentInnerClass}`).html(resourcesListHtml);
       return;
@@ -267,7 +267,7 @@ const ParsedClassicsContentContainers = {
   
   createParsedTextResourceHtml: function(parsedTextContainerTopPart, collectionDef, resourceDef, resourceData) {
     const html = `
-      <div class="line-number pc-padding-top-8" data-line-number="title"></div>
+      <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
       <h1>${collectionDef['author_orig']}</h1>
       <h1>${collectionDef['collections_page_title_orig']}</h1>
       <span class="text-from">Text based on: ${resourceDef['library_app_panel_text_from']}</span>
@@ -303,7 +303,7 @@ const ParsedClassicsContentContainers = {
     ParsedClassicsContentContainers.scrollFuncIntervals[activeTabId] = setInterval(function(){
       if(count < maxCount){
         // get line to be scrolled
-        const lineToScroll = container.find(`.line-number[data-line-number="${lineIndicatorFromUrl}"]`);
+        const lineToScroll = container.find(`.${ParsedClassicsAppVars.lineNumberClass}[${ParsedClassicsAppVars.lineNumberAttr}="${lineIndicatorFromUrl}"]`);
         // find if line to be scrolled is already in DOM
         const renderedLength = lineToScroll.length;
         // find if line to be scrolled is already in viewport, i.e. is already seen
@@ -330,7 +330,6 @@ const ParsedClassicsContentContainers = {
   },
 
   scrollToLineResourceLoaded: function(container, lineIndicatorFromUrl, activeTabId) {
-    console.log('scrollToLineResourceLoaded');
     // get pane id
     const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
     // close alert dialogue that may be open
@@ -340,12 +339,11 @@ const ParsedClassicsContentContainers = {
     // get id of container to be scrolled 
     const containerId = container.attr('id');
     // get line to be scrolled
-    const lineToScroll = container.find(`.line-number[data-line-number="${lineIndicatorFromUrl}"]`);
+    const lineToScroll = container.find(`.${ParsedClassicsAppVars.lineNumberClass}[${ParsedClassicsAppVars.lineNumberAttr}="${lineIndicatorFromUrl}"]`);
     // find if ther is only one el in DOM
     const renderedLength = lineToScroll.length;
     // find if line to be scrolled is already in viewport, i.e. is already seen
     const inViewportLength = lineToScroll.isInViewport({tolerance: 0, viewport: `#${containerId}`}).length;
-    console.log('inViewportLength', inViewportLength);
     // line to be scrolled is in DOM - let's scroll it into view
     if (renderedLength === 1 && inViewportLength === 0) {
       container.scrollTo(lineToScroll, ParsedClassicsAppVars.animationSpeed);
