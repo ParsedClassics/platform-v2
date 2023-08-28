@@ -280,6 +280,10 @@ const ParsedClassicsNavSelects = {
     delete collectionPointers[ParsedClassicsAppVars.wordMember];
     // delete key "wordpos" from pointers obj
     delete collectionPointers[ParsedClassicsAppVars.wordPositionMember];
+    // delete key "lexicon" from pointers obj
+    delete collectionPointers[ParsedClassicsAppVars.lexiconMember];
+    // delete key "lexpos" from pointers obj
+    delete collectionPointers[ParsedClassicsAppVars.lexiconEntryMember];
 
     // stringify hash json
     const hashJsonString = JSON.stringify(hashJson);
