@@ -276,6 +276,10 @@ const ParsedClassicsNavSelects = {
     const collectionPointers = pointersObj[collectionShortname];
     // change value of the key "line" with the line indicator which was selected
     collectionPointers[ParsedClassicsAppVars.lineMember] = lineIndicator;
+    // delete key "word" from pointers obj
+    delete collectionPointers[ParsedClassicsAppVars.wordMember];
+    // delete key "wordpos" from pointers obj
+    delete collectionPointers[ParsedClassicsAppVars.wordPositionMember];
 
     // stringify hash json
     const hashJsonString = JSON.stringify(hashJson);
@@ -494,7 +498,7 @@ const ParsedClassicsSelectedLine = {
         delete collectionPointers[ParsedClassicsAppVars.lexiconEntryMember];
       }
 
-      // put new word position into pinters obj
+      // put new word position into pointers obj
       if (Number.isInteger(wordPositionFromDom) && wordPositionFromDom >= 0) {
         collectionPointers[ParsedClassicsAppVars.wordPositionMember] = wordPositionFromDom;
       }
