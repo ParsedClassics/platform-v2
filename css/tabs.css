@@ -1,0 +1,116 @@
+html {
+  scroll-behavior: smooth;
+}
+div.scrollmenu {
+  background-color: var(--grey100);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-color: var(--grey500) var(--grey100); /* Foreground, Background */
+  scrollbar-width: thin;
+  display: flex;
+  flex: 1;
+}
+div.scrollmenu::-webkit-scrollbar {
+  height: 6px; /* Mostly for horizontal scrollbars */
+}
+div.scrollmenu::-webkit-scrollbar-thumb {
+  /* Foreground */
+  background: var(--grey500);
+}
+div.scrollmenu::-webkit-scrollbar-track {
+  /* Background */
+  background: var(--grey100);
+}
+.tab {
+  display: flex;
+  box-sizing: border-box;
+  color: var(--black);
+  padding: 8px 0 8px 0;
+  text-decoration: none;
+  cursor: pointer;
+  max-width: 150px;
+  cursor: default;
+}
+.tab:hover {
+  background-color: var(--grey700);
+  color: var(--white);
+}
+.tab--active {
+  background-color: var(--grey400);
+}
+.tab--active:hover {
+  background-color: var(--grey400);
+  color: var(--black);
+}
+.scrollmenu--drag .tab:hover {
+  background: var(--grey100);
+  color: var(--black);
+}
+.scrollmenu--drag .tab--active:hover {
+  background-color: var(--grey400);
+  color: var(--black);
+}
+.tab__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 8px 0 8px;
+  vertical-align: bottom;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tab__text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+}
+.tab__close {
+  display: none;
+}
+.tab--active > .tab__inner {
+  width: calc(100% - 30px);
+  padding-right: 0;
+}
+.tab--active > .tab__close {
+  display: flex;
+  width: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tab__close_btn {
+  display: flex;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  padding: 4px;
+  border-radius: 3px;
+  transition: opacity 0s;
+}
+.tab__close_btn:active {
+  opacity: 0.5;
+}
+.tab__close_btn:hover {
+  background-color: var(--grey700);
+}
+.tab__close_img {
+  width: 8px;
+  height: 8px;
+}
+.tab__close_btn:hover .tab__close_img {
+  filter: brightness(0) invert(1);
+}
+.ghost {
+  background: var(--pale-tourquoise);
+}
+
+.tab__content {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}

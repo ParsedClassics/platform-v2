@@ -1,0 +1,185 @@
+.tab__content {
+  position: relative;
+}
+
+.tab__content-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.tab__content h1 {
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: normal;
+  margin: 0.5em 0;
+}
+
+.tab__content h2 {
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: normal;
+  margin: 0.4em 0;
+}
+
+div[data-resource-type="resources_list"] > .tab__content-inner {
+  overflow-y: auto;
+  padding: 8px;
+  max-width: var(--text-max-width);
+}
+
+div[data-resource-type="resources_list"] .pc-resource-list-heading {
+  font-weight: 500;
+}
+
+div[data-resource-type="info_text"] > .tab__content-inner {
+  overflow-y: auto;
+  padding: 8px;
+  max-width: var(--text-max-width);
+}
+
+div[data-resource-type="info_text"] .button-example-wrap {
+  display: inline-block;
+}
+
+div[data-resource-type="info_text"] .button-example {
+  width: 18px; 
+  height: 26px; 
+  background: var(--grey200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px !important;
+  border-radius: 3px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  max-width: 24px;
+  max-height: 30px;
+}
+
+div[data-resource-type="parsed_text"] > .tab__content-inner > .parsed-text-split-top {
+  overflow-y: auto;
+  padding: 0 8px 8px 8px;
+  max-width: var(--text-max-width);
+}
+
+div[data-resource-type="parsed_text"] .pc-padding-bottom-16:not(:last-child) {
+  padding-bottom: 16px;
+}
+
+div[data-resource-type="parsed_text"] .pc-padding-top-8 {
+  padding-top: 8px;
+}
+div[data-resource-type="parsed_text"] .line-number.pc-padding-top-8:hover {
+  background: transparent;
+}
+
+div[data-resource-type="parsed_text"] .text-from {
+  display: block;
+  padding-bottom: 16px;
+}
+
+div[data-resource-type="parsed_text"] .line {
+  display: block;
+}
+
+div[data-resource-type="parsed_text"] .line-number:hover {
+  background-color: var(--grey700);
+  color: var(--white);
+  cursor: default;
+}
+
+div[data-resource-type="parsed_text"] .selected-line {
+  background-color: var(--grey300);
+}
+
+div[data-resource-type="parsed_text"] .line:not(:last-child) {
+  padding-bottom: 16px;
+}
+
+div[data-resource-type="parsed_text"] .word:not(.selected-word):hover {
+  background-color: var(--grey700);
+  color: var(--white);
+  cursor: default;
+}
+
+div[data-resource-type="parsed_text"] .selected-word,
+div[data-resource-type="parsed_text"] .selected-word:hover {
+  color: red;
+  cursor: default;
+}
+
+
+div[data-resource-type="parsed_text"] .parsed-text-split-bottom {
+  padding: 8px;
+  overflow-y: hidden;
+}
+
+div[data-resource-type="lexicon"] > .tab__content-inner {
+  overflow-y: auto;
+  padding: 8px;
+  max-width: var(--text-max-width);
+}
+
+div[data-resource-type="lexicon"] .text-from {
+  display: block;
+  padding-bottom: 16px;
+}
+
+div[data-resource-type="lexicon"] .pc-margin-top {
+  margin-top: 16px;
+}
+
+div[data-resource-type="lexicon"] .pc-margin-bottom {
+  margin-bottom: 16px;
+}
+
+div[data-resource-type="lexicon"] .pc-padding-right-16 {
+  padding-right: 16px;
+}
+
+div[data-resource-type="lexicon"] .pc-padding-left-16 {
+  padding-left: 16px;
+}
+
+div[data-resource-type="lexicon"] .pc-text-center {
+  text-align: center;
+}
+
+div[data-resource-type="lexicon"] h1 {
+  margin-top: 0;
+  padding-top: 16px;
+}
+
+div[data-resource-type="lexicon"] h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+div[data-resource-type="lexicon"] h4 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+div[data-resource-type="lexicon"] a {
+  color: #3176c4;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+div[data-resource-type="lexicon"] .pc-anchor, div[data-resource-type="lexicon"] .pc-anchor:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: text;
+}
+
+div[data-resource-type="lexicon"] .pc-indent {
+    text-indent: 1.5em;
+}
