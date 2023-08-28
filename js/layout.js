@@ -847,7 +847,6 @@ const ParsedClassicsLayout = {
     const dimensionsObj = hashJson[ParsedClassicsAppVars.dimensionsMember];
     const layoutObj = hashJson[ParsedClassicsAppVars.layoutMember];
     const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
-    console.log('pointersObj', pointersObj);
 
     // get section code of the pane which should be removed
     let sectionCode, sectionDimentions, sectionLayout, sectionWidthPc;
@@ -860,8 +859,6 @@ const ParsedClassicsLayout = {
         break;
       }
     }
-
-    console.log('sectionLayout', sectionLayout);
 
     if (sectionCode) {
       // get index of the pane which should be removed
@@ -921,13 +918,12 @@ const ParsedClassicsLayout = {
           newLayoutObj[sectionCode] = sectionData;
         });
 
-        // remove from pointers object collections which were removed by closing pane ++++++++++++++++++++++++++=
+        // remove from pointers object collections which were removed by closing pane 
         const collsToBeRemovedFromPointersObj = ParsedClassicsLayout.findCollsToBeRemovedFromPointersObj(collResShortnamePairs, collResPairsRemoved);
-        console.log('collsToBeRemovedFromPointersObj', collsToBeRemovedFromPointersObj);
         // deep copy of section pointers data
         const newPointersObj = JSON.parse(JSON.stringify(pointersObj));
+        // remove unneeded collections from pointers obj
         collsToBeRemovedFromPointersObj.forEach(collectionShortname => delete newPointersObj[collectionShortname]);
-        console.log('newPointersObj', newPointersObj);
 
         // update hash json
         hashJson[ParsedClassicsAppVars.dimensionsMember] = newDimensionsObj;
@@ -1044,11 +1040,13 @@ const ParsedClassicsLayout = {
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const dimensionsObj = hashJson[ParsedClassicsAppVars.dimensionsMember];
     const layoutObj = hashJson[ParsedClassicsAppVars.layoutMember];
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
 
     // loop through dimensions obj and get pane data of needed pane
     let paneDataFound = false;
     let sectionDataNew, 
       sectionLayoutDataNew;
+    let collResPairsRemoved = [];
     for (var sectionCode in dimensionsObj) {
       const sectionData = dimensionsObj[sectionCode];
       const sectionLayoutData = layoutObj[sectionCode];
@@ -1081,7 +1079,9 @@ const ParsedClassicsLayout = {
           // remove tabId
           tabIdsArr.splice(tabIdIndex, 1);
           // remove resource id 
-          resourceIdsArr.splice(tabIdIndex, 1);
+          collResPairsRemoved = resourceIdsArr.splice(tabIdIndex, 1);
+          // get arr of collectionShortname|resourceShortname pairs which were removed
+          collResPairsRemoved = collResPairsRemoved.flat();
           paneDataFound = true;
           break;
         }
@@ -1090,6 +1090,18 @@ const ParsedClassicsLayout = {
         break;
       }
     }
+
+    // get array of collection|resource shortname pairs from URL
+    let collResShortnamePairs = Object.values(layoutObj);
+    // flatten array of collection|resource shortname pairs
+    collResShortnamePairs = collResShortnamePairs.flat(2);
+    // remove from pointers object collections which were removed by closing pane 
+    const collsToBeRemovedFromPointersObj = ParsedClassicsLayout.findCollsToBeRemovedFromPointersObj(collResShortnamePairs, collResPairsRemoved);
+    // deep copy of section pointers data
+    const newPointersObj = JSON.parse(JSON.stringify(pointersObj));
+    // remove unneeded collections from pointers obj
+    collsToBeRemovedFromPointersObj.forEach(collectionShortname => delete newPointersObj[collectionShortname]);
+
     // update dimensions obj
     dimensionsObj[sectionCode] = sectionDataNew;
     // update layout obj 
@@ -1097,6 +1109,7 @@ const ParsedClassicsLayout = {
     // update hash json
     hashJson[ParsedClassicsAppVars.dimensionsMember] = dimensionsObj;
     hashJson[ParsedClassicsAppVars.layoutMember] = layoutObj;
+    hashJson[ParsedClassicsAppVars.pointersMember] = newPointersObj
     // stringify hash json
     const hashJsonString = JSON.stringify(hashJson);
     // push state
@@ -1633,15 +1646,10 @@ const ParsedClassicsLayout = {
   },
 
   findCollsToBeRemovedFromPointersObj: function(collResPairs, collResPairsRemoved) {
-    console.log('findCollsToBeRemovedFromPointersObj');
-    console.log('collResPairs', collResPairs);
-    console.log('collResPairsRemoved', collResPairsRemoved);
-
     // get array of collectionShortnames whose resources were removed 
     let collsWhoseResourcesRemoved = collResPairsRemoved.map(collResPair => collResPair.split('|')[0]);
     // remove duplicate values
     collsWhoseResourcesRemoved = [...new Set(collsWhoseResourcesRemoved)];
-    console.log('collsWhoseResourcesRemoved', collsWhoseResourcesRemoved);
 
     // get arr of collectionShortname|resourceShortname pairs which are left when some resources were removed
     const collResPairsLeft = [...collResPairs];
@@ -1651,14 +1659,12 @@ const ParsedClassicsLayout = {
         collResPairsLeft.splice(index, 1);
       }
     });
-    console.log('collResPairsLeft', collResPairsLeft);
 
     // get arr of collection shortnames which are left when some resources were removed
     let collsLeft = [...collResPairsLeft];
     collsLeft = collsLeft.map(collResPair => collResPair.split('|')[0]);
     // remove duplicate values
     collsLeft = [...new Set(collsLeft)];
-    console.log('collsLeft', collsLeft);
 
     // get arr of collections to be removed from pointers obj
     const collsToBeRemovedFromPointersObj = [];
