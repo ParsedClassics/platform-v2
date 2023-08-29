@@ -565,11 +565,17 @@ const ParsedClassicsLayout = {
         const tabIdToCreate = tabIdsFromURL_NotInDom[i];
         const {collectionShortname, resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabIdToCreate);
         // get title of the resource to be used in the tab
-        const resourceDef = ParsedClassicsData.getResourceDef(collectionShortname, resourceShortname);
-        const resourceTitle = resourceDef['library_app_selectbox_title'];
+        let tabTitle;
         const collectionDef = ParsedClassicsCollDefs[collectionShortname];
         const collectionTitle = collectionDef['collection_selectboxname'];
-        const tabTitle = resourceTitle + (collectionTitle ?  ' | ' + collectionTitle : '');
+        if (resourceShortname) {
+          const resourceDef = ParsedClassicsData.getResourceDef(collectionShortname, resourceShortname);
+          const resourceTitle = resourceDef['library_app_selectbox_title'];
+          tabTitle = resourceTitle + (collectionTitle ?  ' | ' + collectionTitle : '');
+        }
+        else {
+          tabTitle = collectionTitle;
+        }
         // get index of the tab to be created
         const tabIndexToCreate = ParsedClassicsLayout.getTabIndexFromUrl(tabIdToCreate);
         ParsedClassicsTabs.addTab(paneTo, tabIdToCreate, tabTitle, tabIndexToCreate);
@@ -1122,11 +1128,11 @@ const ParsedClassicsLayout = {
     // define vars
     let sectionData, sectionLayoutData, sectionDataFound, paneData, tabIdsArr, resourceIdsArr;
 
-    // get hash json, dimensions obj and layout obj
+    // get hash json, dimensions obj and layout obj and pointers obj
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const dimensionsObj = hashJson[ParsedClassicsAppVars.dimensionsMember];
     const layoutObj = hashJson[ParsedClassicsAppVars.layoutMember];
-
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
 
     // loop through dimensions obj and get section data of needed section
     for (var sectionCode in dimensionsObj) {
@@ -1137,6 +1143,9 @@ const ParsedClassicsLayout = {
         break;
       }
     }
+
+    // get arr of collection shortnames of loaded collections
+    const loadedCollections = Object.keys(pointersObj);
 
     if (sectionDataFound) {
       // deep copy of section data
@@ -1159,7 +1168,13 @@ const ParsedClassicsLayout = {
           // change activated tab's index
           paneData[3] = tabIdsArr.length - 1;
           // update pane layout data
-          resourceIdsArr.push(`${ParsedClassicsAppVars.newTabCollectionShortname}|${ParsedClassicsAppVars.newTabResourceShortname}`);
+          if (loadedCollections.length === 0 || loadedCollections.length > 1) {
+            resourceIdsArr.push(`${ParsedClassicsAppVars.newTabCollectionShortname}|${ParsedClassicsAppVars.newTabResourceShortname}`);
+          }
+          if (loadedCollections.length === 1) {
+            resourceIdsArr.push(loadedCollections[0]);
+          }
+          
           break;
         }
       }
