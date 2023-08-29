@@ -61,22 +61,11 @@ const ParsedClassicsContentContainers = {
     // get resouce data
     const resourceData = resourceDataOfCollection && resourceShortname ? resourceDataOfCollection[resourceShortname].data : '';
 
-    // save collectionShortname|resourceShortname pair as DOM attr
-    tabContentContainer.attr(ParsedClassicsAppVars.collResPairAttr, collResPairUrl);
-    // save line indicator as DOM attr
-    tabContentContainer.attr(ParsedClassicsAppVars.lineNumberAttr, lineIndicatorUrl);
-    // save lemma as DOM attr
-    tabContentContainer.attr(ParsedClassicsAppVars.lemmaAttr, wordUrl);
-    // save lexicon shortname())s as DOM attr
-    tabContentContainer.attr(ParsedClassicsAppVars.lexiconAttr, lexiconUrl);
-    // save lexicon entry(ies) positions(s) as DOM attr
-    tabContentContainer.attr(ParsedClassicsAppVars.lexiconEntryAttr, lexiconEntryUrl);
-    // save resource type as DOM attr in order to apply styles relevant to that resource type
-    tabContentContainer.attr(ParsedClassicsAppVars.resourceTypeAttr, resourceType);
-
     // Case I. there is no resource shortname, so we need to display list of resources contained in collection
 
     if (!resourceShortname  &&  collResPairUrl !== collResPairDom) {
+      // update container's attrs
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType);
       // save resource type as DOM attr in order to apply styles relevant to that resource type
       tabContentContainer.attr(ParsedClassicsAppVars.resourceTypeAttr, 'resources_list');
       const resourcesListHtml = ParsedClassicsContentContainers.createAvailableResourcesListHtml(collectionDef, resourceDefsAll);
@@ -88,7 +77,9 @@ const ParsedClassicsContentContainers = {
     // so we need to scroll to selected line or word
 
     else if (scannedOrTyped === 'typed' &&  collResPairUrl === collResPairDom) {
-      
+      // update container's attrs
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType);
+
       switch(resourceType) {
         
         case 'parsed_text':
@@ -117,6 +108,8 @@ const ParsedClassicsContentContainers = {
     // so we need to scroll to selected line which is in certain SCANNED PAGE if line indicator from URL and that from DOM are different +++++++++++++++++++++++++++++++++++
 
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl === collResPairDom) {
+      // update container's attrs ++++++++++++++++++++++++++++++ may be not needed
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType);
       // ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -137,7 +130,8 @@ const ParsedClassicsContentContainers = {
     // Case IV. resource is "typed", but collectionShortname|resourceShortname pair from URL and that from DOM are different
 
     else if (scannedOrTyped === 'typed' &&  collResPairUrl !== collResPairDom) {
-      
+      // update container's attrs
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType);
       
       switch(resourceType) {
 
@@ -180,12 +174,28 @@ const ParsedClassicsContentContainers = {
     // Case V. resource is "scanned" , but collectionShortname|resourceShortname pair from URL and that from DOM are different ++++++++++++++++++++++++
     
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl !== collResPairDom) {
-
+      // update container's attrs ++++++++++++++++++++++++++++++ may be not needed
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType);
 
 
       return;
     }
     
+  },
+
+  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType) {
+    // save collectionShortname|resourceShortname pair as DOM attr
+    container.attr(ParsedClassicsAppVars.collResPairAttr, collResPair);
+    // save line indicator as DOM attr
+    container.attr(ParsedClassicsAppVars.lineNumberAttr, lineIndicator);
+    // save lemma as DOM attr
+    container.attr(ParsedClassicsAppVars.lemmaAttr, lemma);
+    // save lexicon shortname())s as DOM attr
+    container.attr(ParsedClassicsAppVars.lexiconAttr, lexicon);
+    // save lexicon entry(ies) positions(s) as DOM attr
+    container.attr(ParsedClassicsAppVars.lexiconEntryAttr, lexiconEntry);
+    // save resource type as DOM attr in order to apply styles relevant to that resource type
+    container.attr(ParsedClassicsAppVars.resourceTypeAttr, resourceType);
   },
 
   createAvailableResourcesListHtml: function(collectionDef, resourceDefs) { 
