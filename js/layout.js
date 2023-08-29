@@ -1142,7 +1142,7 @@ const ParsedClassicsLayout = {
       // deep copy of section data
       const sectionDataNew = JSON.parse(JSON.stringify(sectionData));
       // deep copy of section layout data
-      sectionLayoutDataNew = JSON.parse(JSON.stringify(sectionLayoutData));
+      const sectionLayoutDataNew = JSON.parse(JSON.stringify(sectionLayoutData));
       // find needed pane
       for (let i = 1; i < sectionDataNew.length; i++) {
         // get pane data
