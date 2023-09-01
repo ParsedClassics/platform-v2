@@ -615,7 +615,7 @@ const ParsedClassicsAlertDialogue = {
   createDialogueHtml: function(paneId) {
     // create alert dialogue html
     const alertDialogueHtml = `
-      <div id="alert-dialogue-${paneId}" class="pc-alert-dialogue">
+      <div id="alert-dialogue-${paneId}" class="pc-dialogue">
         <div class="pc-modal-content">
           <div class="header"><div class="header-inner"><div class="header-text">Heading</div></div><div class="dialogue-close"><div class="${ParsedClassicsAppVars.dialogueCloseBtnClass}" title="Close dialogue"><img class="dialogue-close-img" src="img/close.svg" /></div></div></div>
           <div class="message-text pc-container pc-padding-16">
@@ -654,3 +654,76 @@ const ParsedClassicsAlertDialogue = {
 
 };
 
+const ParsedClassicsConfirmDialogue = {
+
+  createConfirmDialogue: function(paneId) {
+    // create confirm dialogue html
+    const confirmDialogueHtml = ParsedClassicsConfirmDialogue.createConfirmDialogueHtml(paneId);
+    // create confirm dialogue 
+    const confirmDialogue = $(confirmDialogueHtml);
+    // get close btn
+    const closeButton = confirmDialogue.find(`.${ParsedClassicsAppVars.dialogueCloseBtnClass}`);
+    // bind func to close button
+    closeButton.bind('click', () => {
+      ParsedClassicsConfirmDialogue.closeConfirmDialogueWithClick(confirmDialogue);
+    });
+    // get cancel button
+    const cancelButton = confirmDialogue.find(`.${ParsedClassicsAppVars.dialogueCancelBtnClass}`);
+    // bind func to cancel button
+    cancelButton.bind('click', () => {
+      ParsedClassicsConfirmDialogue.closeConfirmDialogueWithClick(confirmDialogue);
+    });
+
+    return confirmDialogue;
+  },
+  
+  createConfirmDialogueHtml: function(paneId) {
+    // create alert dialogue html
+    const confirmDialogueHtml = `
+      <div id="confirm-dialogue-${paneId}" class="pc-dialogue" style="displayx: block;">
+        <div class="pc-modal-content">
+          <div class="header"><div class="header-inner"><div class="header-text">Confirm</div></div><div class="dialogue-close"><div class="${ParsedClassicsAppVars.dialogueCloseBtnClass}" title="Close dialogue"><img class="dialogue-close-img" src="img/close.svg" /></div></div></div>
+          <div class="message-text pc-container pc-padding-16">
+            Confirm
+          </div>
+          <div class="pc-container pc-padding-bottom-16">
+            <button class="dialogue-confirm-btn pc-action-button w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">
+              OK
+            </button>
+            <button class="dialogue-cancel-btn pc-action-button w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    return confirmDialogueHtml;
+  },
+
+  openConfirmDialogue: function(paneId, argObj, callback) {
+    const heading = argObj.heading;
+    const message = argObj.message;
+
+    // get confirm dialogue
+    const confirmDialogue = $(`#confirm-dialogue-${paneId}`);
+    // insert heading
+    confirmDialogue.find(`.header-text`).text(heading);
+    // insert message
+    confirmDialogue.find(`.message-text`).text(message);
+    // get confirm button
+    const confirmButton = confirmDialogue.find(`.${ParsedClassicsAppVars.dialogueConfirmBtnClass}`);
+    // unbind click event
+    confirmButton.unbind("click");
+    // bind callback to confirm button
+    confirmButton.bind('click', callback);
+
+    // display dialogue
+    confirmDialogue.show();
+  },
+
+  closeConfirmDialogueWithClick: function(confirmDialogue) {
+    confirmDialogue.hide();
+  },
+
+};

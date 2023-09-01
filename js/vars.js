@@ -20,6 +20,8 @@ const ParsedClassicsAppVars = {
   paneTopPartClass: "pane__top-part",
   paneBottomPartClass: "pane__bottom-part",
   dialogueCloseBtnClass: "dialogue-close-btn",
+  dialogueConfirmBtnClass: "dialogue-confirm-btn",
+  dialogueCancelBtnClass: "dialogue-cancel-btn",
   // tabbar and tab
   tabbarClass: "scrollmenu", 
   tabbarDragClass: "scrollmenu--drag",
