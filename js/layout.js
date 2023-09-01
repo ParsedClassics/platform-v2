@@ -1365,6 +1365,8 @@ const ParsedClassicsLayout = {
     
     // create alert dialogue el
     const alertDialogue = ParsedClassicsAlertDialogue.createDialogue(paneId);
+    // create confirm dialogue
+    const confirmDialogue = ParsedClassicsConfirmDialogue.createConfirmDialogue(paneId);
     // create pane top part
     const paneTopPartHtml = `<div class="${ParsedClassicsAppVars.paneTopPartClass}"></div>`;
     // create pane bottom part
@@ -1374,7 +1376,7 @@ const ParsedClassicsLayout = {
     // create pane bottom part
     const paneBottomPart = $(paneBottomPartHtml);
     // create pane el
-    const paneEl = $(paneHtml).prepend(paneTopPart).append(paneBottomPart).append(alertDialogue);
+    const paneEl = $(paneHtml).prepend(paneTopPart).append(paneBottomPart).append(alertDialogue).append(confirmDialogue);
     //add menu to pane top part
     ParsedClassicsNavigation.createNav(paneTopPart, paneId);
     // add layout buttons to menu
@@ -1439,9 +1441,15 @@ const ParsedClassicsLayout = {
     menuEl
       .find(`.${ParsedClassicsAppVars.closePaneBtnClass}`)
       .bind("click", function () {
-        // remove navigation menu
-        $(`#main-menu-${paneId}`).smartmenus("destroy");
-        ParsedClassicsLayout.hashRemovePane(sectionId, paneId);
+        ParsedClassicsConfirmDialogue.openConfirmDialogue(
+          paneId,
+          {heading: 'Confirm', message: 'Do you really want to close this pane?'},
+          () => {
+            // remove navigation menu
+            $(`#main-menu-${paneId}`).smartmenus("destroy");
+            ParsedClassicsLayout.hashRemovePane(sectionId, paneId);
+          }
+        );
       });
     // attach to button the function which will maximize the pane
     menuEl
