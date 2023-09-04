@@ -303,8 +303,8 @@ const ParsedClassicsContentContainers = {
     const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
     // close alert dialogue that may be open
     ParsedClassicsAlertDialogue.closeDialogueWithoutClick(paneId);
-    // close confirm dialogue that may be open ++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+    // close confirm dialogue that may be open 
+    ParsedClassicsConfirmDialogue.closeConfirmDialogueWithoutClick(paneId);
     // get id of container to be scrolled 
     const containerId = container.attr('id');
     // initiate interval counter
@@ -344,8 +344,8 @@ const ParsedClassicsContentContainers = {
     const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
     // close alert dialogue that may be open
     ParsedClassicsAlertDialogue.closeDialogueWithoutClick(paneId);
-    // close confirm dialogue that may be open ++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+    // close confirm dialogue that may be open 
+    ParsedClassicsConfirmDialogue.closeConfirmDialogueWithoutClick(paneId);
     // get id of container to be scrolled 
     const containerId = container.attr('id');
     // get line to be scrolled
@@ -375,8 +375,8 @@ const ParsedClassicsContentContainers = {
     const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
     // close alert dialogue that may be open
     ParsedClassicsAlertDialogue.closeDialogueWithoutClick(paneId);
-    // close confirm dialogue that may be open ++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+    // close confirm dialogue that may be open 
+    ParsedClassicsConfirmDialogue.closeConfirmDialogueWithoutClick(paneId);
     // escape braces in lemma
     let lemmaEscaped = lemma.replace("(", "\\(");
     lemmaEscaped = lemmaEscaped.replace(")", "\\)");
@@ -449,8 +449,8 @@ const ParsedClassicsContentContainers = {
     const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
     // close alert dialogue that may be open
     ParsedClassicsAlertDialogue.closeDialogueWithoutClick(paneId);
-    // close confirm dialogue that may be open ++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+    // close confirm dialogue that may be open 
+    ParsedClassicsConfirmDialogue.closeConfirmDialogueWithoutClick(paneId);
     // escape braces in lemma
     let lemmaEscaped = lemma.replace("(", "\\(");
     lemmaEscaped = lemmaEscaped.replace(")", "\\)");

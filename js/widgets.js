@@ -726,4 +726,10 @@ const ParsedClassicsConfirmDialogue = {
     confirmDialogue.hide();
   },
 
+  closeConfirmDialogueWithoutClick: function(paneId) {
+    // get confirm dialogue
+    const confirmDialogue = $(`#confirm-dialogue-${paneId}`);
+    confirmDialogue.hide();
+  }
+
 };
