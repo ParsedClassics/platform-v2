@@ -94,7 +94,7 @@ const ParsedClassicsContentContainers = {
 
         case 'lexicon':
           // scroll to selected word 
-          if (wordUrl !== wordDom) {
+          if (wordUrl && wordUrl !== wordDom) {
             ParsedClassicsContentContainers.scrollToWordResourceLoaded(tabContentContainerInner, wordUrl, 'lexicon-heading', activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
           }
           break;
