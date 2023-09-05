@@ -91,6 +91,7 @@ div.scrollmenu::-webkit-scrollbar-track {
   padding: 4px;
   border-radius: 3px;
   transition: opacity 0s;
+  user-select: none;
 }
 .tab__close_btn:active {
   opacity: 0.5;

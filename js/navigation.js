@@ -21,11 +21,11 @@ const ParsedClassicsNavigation = {
                 </li>
                 <li class="sm__pane-selects-container" id="pane-selects-container-${paneId}">
                 </li>
-                <li>
+                <!--<li>
                   <a class="sm__layout-link sm__layout-link--cursor-default"> 
                   Options
                   </a>
-                </li>
+                </li>-->
                 <li>
                   <a class="sm__layout-link" href="index.html" target="_blank"> 
                   PARSED<span class="sm-interverb-symbol">⋮</span>CLASSICS
