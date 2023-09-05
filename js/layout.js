@@ -736,10 +736,11 @@ const ParsedClassicsLayout = {
     // alias for func to generate unique ids
     const id = ParsedClassicsLayout.generateUID;
 
-    // get hash json, dimensions obj and layout obj
+    // get hash json, dimensions obj and layout obj and pointers obj
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const dimensionsObj = hashJson[ParsedClassicsAppVars.dimensionsMember];
     const layoutObj = hashJson[ParsedClassicsAppVars.layoutMember];
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
 
     // loop through dimentions obj and get section data of needed section
     for (var sectionCode in dimensionsObj) {
@@ -748,6 +749,9 @@ const ParsedClassicsLayout = {
         break;
       }
     }
+
+    // get arr of collection shortnames of loaded collections
+    const loadedCollections = Object.keys(pointersObj);
 
     // get values of dimensions obj and values of layout obj
     const dimensionsObjVals = Object.values(dimensionsObj);
@@ -773,7 +777,13 @@ const ParsedClassicsLayout = {
       [id(), newSectionPcWidth],
       [id(), 100, [id()], 0],
     ]);
-    layoutObjVals.splice(insertIndex, 0, [[`${ParsedClassicsAppVars.newTabCollectionShortname}|${ParsedClassicsAppVars.newTabResourceShortname}`]]);
+    if (loadedCollections.length === 0 || loadedCollections.length > 1) {
+      layoutObjVals.splice(insertIndex, 0, [[`${ParsedClassicsAppVars.newTabCollectionShortname}|${ParsedClassicsAppVars.newTabResourceShortname}`]]);
+    }
+    if (loadedCollections.length === 1) {
+      layoutObjVals.splice(insertIndex, 0, [[loadedCollections[0]]]);
+    }
+    
     // put updated info about sections into new dimensions obj
     dimensionsObjVals.forEach((sectionData, i) => {
       const sectionCode = sectionCodesArr[i];
@@ -803,10 +813,11 @@ const ParsedClassicsLayout = {
     // alias for func to generate unique ids
     const id = ParsedClassicsLayout.generateUID;
 
-    // get hash json, dimensions obj and layout obj
+    // get hash json, dimensions obj and layout obj and pointers obj
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const dimensionsObj = hashJson[ParsedClassicsAppVars.dimensionsMember];
     const layoutObj = hashJson[ParsedClassicsAppVars.layoutMember];
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
 
     // loop through dimensions obj and get section data and layout data of needed section
     for (var sectionCode in dimensionsObj) {
@@ -816,6 +827,10 @@ const ParsedClassicsLayout = {
         break;
       }
     }
+
+    // get arr of collection shortnames of loaded collections
+    const loadedCollections = Object.keys(pointersObj);
+
     // is only one pane in section?
     if (sectionData.length === 2) {
       // generare new id
@@ -829,7 +844,13 @@ const ParsedClassicsLayout = {
       // update section data
       sectionData.splice(index, 0, [newPaneId, 50, [id()], 0]);
       // update layout data
-      layoutData.splice(index2, 0, [`${ParsedClassicsAppVars.newTabCollectionShortname}|${ParsedClassicsAppVars.newTabResourceShortname}`]);
+      if (loadedCollections.length === 0 || loadedCollections.length > 1) {
+        layoutData.splice(index2, 0, [`${ParsedClassicsAppVars.newTabCollectionShortname}|${ParsedClassicsAppVars.newTabResourceShortname}`]);
+      }
+      if (loadedCollections.length === 1) {
+        layoutData.splice(index2, 0, [loadedCollections[0]]);
+      }
+      
       // update dimensions obj
       dimensionsObj[sectionCode] = sectionData;
       // update layout obj
