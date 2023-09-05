@@ -216,7 +216,24 @@ const ParsedClassicsNavSelects = {
     // get pane layout (array of collectionShortname|resourceShortname pairs)
     const paneLayout = sectionLayout[paneIndex];
     // change relevant collectionShortname|resourceShortname pair with collection shortname which was selected
-    paneLayout.splice(tabIndex, 1, collectionShortname);
+    const collResPairRemoved = paneLayout.splice(tabIndex, 1, collectionShortname);
+    // get collection shortname of collectionShortname|resourceShortname pair removed from layout obj
+    const collRemoved = collResPairRemoved[0].split('|')[0];
+    // get array of collection|resource shortname pairs from URL
+    let collResShortnamePairs = Object.values(layoutObj);
+    // flatten array of collection|resource shortname pairs
+    collResShortnamePairs = collResShortnamePairs.flat(2);
+    // get arr of loaded collections
+    let collectionsLoaded = [];
+    collResShortnamePairs.forEach(collResPair => {
+      collectionsLoaded.push(collResPair.split('|')[0]);
+    });
+
+    // is collection shortname of collectionShortname|resourceShortname pair removed from layout obj among collections which remain loaded?
+    if (!collectionsLoaded.includes(collRemoved)) {
+      // remove collection from pointers obj
+      delete pointersObj[collRemoved];
+    }
 
     // exists data about collection in pointers object?
     if (typeof pointersObj[collectionShortname] === 'undefined') {
@@ -227,6 +244,8 @@ const ParsedClassicsNavSelects = {
       // selected line of just selected collection is "title"
       collectionPointers[ParsedClassicsAppVars.lineMember] = 'title';
     }
+
+    
 
     // stringify hash json
     const hashJsonString = JSON.stringify(hashJson);
