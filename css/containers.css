@@ -60,6 +60,7 @@ div[data-resource-type="info_text"] .button-example {
   margin-bottom: 2px;
   max-width: 24px;
   max-height: 30px;
+  user-select: none;
 }
 
 div[data-resource-type="parsed_text"] > .tab__content-inner > .parsed-text-split-top {
