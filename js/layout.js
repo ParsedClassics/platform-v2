@@ -394,6 +394,7 @@ const ParsedClassicsLayout = {
     // create splitter option object
     const optionsObj = {
       sizes: paneWidthsPc,
+      minSize: ParsedClassicsAppVars.sectionSplitMinSizes,
       direction: "vertical",
       gutterSize: ParsedClassicsAppVars.splitterSize,
       cursor: ParsedClassicsAppVars.verticalSplitterCursor,
