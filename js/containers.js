@@ -56,6 +56,7 @@ const ParsedClassicsContentContainers = {
     const scannedOrTyped = resourceDef ? resourceDef['scanned_or_typed'] : '';
     // get type of the resource
     const resourceType = resourceDef ? resourceDef['resource_type'] : '';
+    console.log('resourceType', resourceType);
     // get all resources data of collection
     const resourceDataOfCollection = APP.loadedResourcesData[collectionShortname] ?? '';
     // get resouce data
@@ -65,7 +66,7 @@ const ParsedClassicsContentContainers = {
 
     if (!resourceShortname  &&  collResPairUrl !== collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
       // save resource type as DOM attr in order to apply styles relevant to that resource type
       tabContentContainer.attr(ParsedClassicsAppVars.resourceTypeAttr, 'resources_list');
       const resourcesListHtml = ParsedClassicsContentContainers.createAvailableResourcesListHtml(collectionDef, resourceDefsAll);
@@ -78,7 +79,7 @@ const ParsedClassicsContentContainers = {
 
     else if (scannedOrTyped === 'typed' &&  collResPairUrl === collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
 
       switch(resourceType) {
         
@@ -109,7 +110,7 @@ const ParsedClassicsContentContainers = {
 
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl === collResPairDom) {
       // update container's attrs ++++++++++++++++++++++++++++++ may be not needed
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
       // ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -131,7 +132,7 @@ const ParsedClassicsContentContainers = {
 
     else if (scannedOrTyped === 'typed' &&  collResPairUrl !== collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
       
       switch(resourceType) {
 
@@ -165,6 +166,15 @@ const ParsedClassicsContentContainers = {
             ParsedClassicsContentContainers.scrollToWordResourceLoading(tabContentContainerInner, wordUrl, 'lexicon-heading', activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
           }
           break;
+
+        case 'concordance':
+          // split container into left part for concordance and right part for parsed text
+          const {concordanceContainerLeftPart, concordanceContainerRightPart} = ParsedClassicsContentContainers.splitConcordanceContainer(activeTabId, tabContentContainerInner);
+          // generate html of parsed text resource and put it into top part of splitted container
+          ParsedClassicsContentContainers.createConcordanceResourceHtml(concordanceContainerLeftPart, collectionDef, resourceDef, resourceData);
+        
+        
+          break;
       
 
       }
@@ -175,7 +185,7 @@ const ParsedClassicsContentContainers = {
     
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl !== collResPairDom) {
       // update container's attrs ++++++++++++++++++++++++++++++ may be not needed
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
 
 
       return;
@@ -183,7 +193,7 @@ const ParsedClassicsContentContainers = {
     
   },
 
-  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType) {
+  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType, scannedOrTyped) {
     // save collectionShortname|resourceShortname pair as DOM attr
     container.attr(ParsedClassicsAppVars.collResPairAttr, collResPair);
     // save line indicator as DOM attr
@@ -196,6 +206,8 @@ const ParsedClassicsContentContainers = {
     container.attr(ParsedClassicsAppVars.lexiconEntryAttr, lexiconEntry);
     // save resource type as DOM attr in order to apply styles relevant to that resource type
     container.attr(ParsedClassicsAppVars.resourceTypeAttr, resourceType);
+    // save scanned or typed value as DOM attr in order to apply relevant styles 
+    container.attr(ParsedClassicsAppVars.scannedOrTypedAttr, scannedOrTyped);
   },
 
   createAvailableResourcesListHtml: function(collectionDef, resourceDefs) { 
@@ -268,7 +280,7 @@ const ParsedClassicsContentContainers = {
       sizes: [95, 5],
       direction: 'vertical',
       gutterSize: 4,
-      minSize: [200, 70],
+      minSize: ParsedClassicsAppVars.parsedTextSplitMinSizes,
       snapOffset: ParsedClassicsAppVars.splitterSnapOffset,
       cursor: ParsedClassicsAppVars.verticalSplitterCursor,
     });
@@ -291,6 +303,37 @@ const ParsedClassicsContentContainers = {
       <span class="text-from">${resourceDef['library_app_panel_note']}</span>
     `;
     tabContentContainerInner.html(html + resourceData);
+  },
+
+  createConcordanceResourceHtml: function(concordanceContainerLeftPart, collectionDef, resourceDef, resourceData) {
+    console.log('resourceDef', resourceDef);
+    const html = `
+      <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
+      <h1>${resourceDef['library_app_panel_title']}</h1>
+      <span class="text-from">${resourceDef['library_app_panel_note']}</span>
+    `;
+    concordanceContainerLeftPart.html(html + resourceData);
+  },
+
+  splitConcordanceContainer: function(activeTabId, tabContentContainerInner) {
+    const splitHtml = `
+      <div style="display: flex; flex-direction: row; position: relative; top: 0; left: 0; width: 100%; height: 100%;">
+      <div class="concordance-split-left" id="concordance-split-left-${activeTabId}" style="border: solid 1px red;"></div>
+      <div class="concordance-split-right" id="concordance-split-right-${activeTabId}" style="border: solid 1px red;">B B B</div>
+      </div>
+    `;
+    tabContentContainerInner.html(splitHtml);
+    const concordanceContainerLeftPart = tabContentContainerInner.find(`#concordance-split-left-${activeTabId}`);
+    const concordanceContainerRightPart = tabContentContainerInner.find(`#concordance-split-right-${activeTabId}`);
+    Split([concordanceContainerLeftPart[0], concordanceContainerRightPart[0]], {
+      sizes: [50, 50],
+      direction: 'horizontal',
+      gutterSize: 4,
+      minSize: [70, 70],
+      snapOffset: ParsedClassicsAppVars.splitterSnapOffset,
+      cursor: ParsedClassicsAppVars.horizontalSplitterCursor,
+    });
+    return {concordanceContainerLeftPart, concordanceContainerRightPart};
   },
 
   scrollToLineResourceLoading: function(container, lineIndicatorFromUrl, activeTabId) {

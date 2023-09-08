@@ -338,7 +338,7 @@ const Split = (idsOption, options = {}) => {
             offset = this.size - (b.maxSize + this[bGutterSize])
         }
         
-        a.x = a.element.getBoundingClientRect()['x'];                                // by ParsedClassics
+        a.x = parent.id && parent.id === ParsedClassicsAppVars.containerId ? a.element.getBoundingClientRect()['x'] : 0;  // by ParsedClassics                            
         if (dimension === 'width') {                                                 // by ParsedClassics
           this.gutter_clone.style['left'] = a.x + offset - this[aGutterSize] + 'px'; // by ParsedClassics
         }                                                                            // by ParsedClassics

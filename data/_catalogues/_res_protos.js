@@ -139,13 +139,13 @@ const ParsedClassicsResProtos = {
   nt_conc_by_parsedclassics: {
     collections_page_resource_desc: "compiled by ParsedClassics (2018)", 
     library_app_selectbox_title: "Concordance compiled by ParsedClassics (2018)",
-    library_app_panel_title: "New Testament concordance compiled by ParsedClassics (2018)",
+    library_app_panel_title: "New Testament concordance",
     library_app_panel_text_from: "",
-    library_app_panel_note: "Based on J. K. Tauber's parsing.",
+    library_app_panel_note: "Based on J. K. Tauber's parsing.<br>Compiled by ParsedClassics (2018)",
     scanned_or_typed: "typed",
     resource_type: "concordance",
     scanned_source_shortname: "",
-    contents_shortname: "lines_nt_conc_by_parsedclassics_contents",
+    contents_shortname: "nt_conc_by_parsedclassics_contents",
   },
 
   // Lexicons

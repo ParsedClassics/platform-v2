@@ -60,12 +60,19 @@ body {
 /* Split.js */
 
 .container .gutter {
-  cursor: ew-resize;
-  height: 100%;
   background: var(--grey700);
 }
+
 .section .gutter {
+  background: var(--grey700);
+}
+
+.gutter-horizontal {
+  cursor: ew-resize;
+  height: 100%;
+}
+
+.gutter-vertical {
   cursor: ns-resize;
   width: 100%;
-  background: var(--grey700);
 }

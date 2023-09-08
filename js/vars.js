@@ -49,6 +49,7 @@ const ParsedClassicsAppVars = {
   parsingAttr: "data-parsing",
   resourceTypeAttr: "data-resource-type",
   collResPairAttr: "data-coll-res-shortname-pair",
+  scannedOrTypedAttr: "data-scanned-or-typed",
   // menu
   layoutBtnsContainer: "sm__layout-buttons",
   addRightSectionBtnClass: "create-right-section",
@@ -69,6 +70,8 @@ const ParsedClassicsAppVars = {
   verticalSplitterCursor: "ns-resize",
   splitterSize: 7,
   splitterSnapOffset: 0,
+  sectionSplitMinSizes: [190, 190], // IMPORTANT! each number should be a little bit more than twice bigger than min number for parsed text split in order to avoid situation when section splitter and parsed text splitter obstruct each other
+  parsedTextSplitMinSizes: [80, 80], // IMPORTANT! each number should so big, that at least 2 lines should be seen, so that all morphological info be available
   // local storage
   urlHashStorageName: "ParsedClassicsApp__urlHash",
   // url
