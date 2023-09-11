@@ -50,6 +50,11 @@ const ParsedClassicsAppVars = {
   resourceTypeAttr: "data-resource-type",
   collResPairAttr: "data-coll-res-shortname-pair",
   scannedOrTypedAttr: "data-scanned-or-typed",
+  // concordance container
+  concordanceLinesBtnClass: "concordance-lines-button",
+  concordanceLinesBtnCollapsedClass: "collapsed",
+  concordanceLinesBtnExpandedClass: "expanded",
+  concordanceLinesListClass: "concordance-lines-list",
   // menu
   layoutBtnsContainer: "sm__layout-buttons",
   addRightSectionBtnClass: "create-right-section",

@@ -189,9 +189,76 @@ div[data-resource-type="lexicon"][data-scanned-or-typed="typed"] .pc-indent {
 div[data-resource-type="concordance"][data-scanned-or-typed="typed"] > .tab__content-inner {
   display: flex; 
   flex-direction: row; 
-  position: relative; 
+  position: absolute; 
   top: 0; 
   left: 0; 
   width: 100%; 
   height: 100%;
+  border: solid 1px green;
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .concordance-split-left {
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 8px 8px 8px;
+  max-width: var(--text-max-width);
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .pc-padding-top-8 {
+  padding-top: 8px;
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .concordance-entry h2 {
+  text-align: left;
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .concordance-lines-button {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 6px;
+  transition: opacity 0s;
+  border-radius: 3px;
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .concordance-lines-button.collapsed {
+  background-image: url(../img/chevron-down.svg);
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .concordance-lines-button.collapsed:hover {
+  background-image: url(../img/chevron-down2.svg);
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .concordance-lines-button.expanded {
+  background-image: url(../img/chevron-up.svg);
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .concordance-lines-button.expanded:hover{
+  background-image: url(../img/chevron-up2.svg);
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .concordance-lines-button:active {
+  opacity: 0.5;
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .concordance-line {
+  display: block;
+  margin-top: 1rem;
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .concordance-lines-list {
+  display: none;
+  padding-left: 22px;
+  margin-top: 1rem;
+}
+
+.concordance-line-number {
+  cursor: default;
+}
+
+.concordance-line-number:hover {
+  color: var(--white);
+  background-color: var(--grey700);
 }

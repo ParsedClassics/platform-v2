@@ -54,9 +54,9 @@ const ParsedClassicsContentContainers = {
     const resourceDef = resourceShortname ? resourceDefsAll[resourceShortname] : '';
     // is resource scanned or typed?
     const scannedOrTyped = resourceDef ? resourceDef['scanned_or_typed'] : '';
+    
     // get type of the resource
     const resourceType = resourceDef ? resourceDef['resource_type'] : '';
-    console.log('resourceType', resourceType);
     // get all resources data of collection
     const resourceDataOfCollection = APP.loadedResourcesData[collectionShortname] ?? '';
     // get resouce data
@@ -66,9 +66,7 @@ const ParsedClassicsContentContainers = {
 
     if (!resourceShortname  &&  collResPairUrl !== collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
-      // save resource type as DOM attr in order to apply styles relevant to that resource type
-      tabContentContainer.attr(ParsedClassicsAppVars.resourceTypeAttr, 'resources_list');
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed');
       const resourcesListHtml = ParsedClassicsContentContainers.createAvailableResourcesListHtml(collectionDef, resourceDefsAll);
       tabContentContainer.find(`.${ParsedClassicsAppVars.tabContentInnerClass}`).html(resourcesListHtml);
       return;
@@ -172,7 +170,7 @@ const ParsedClassicsContentContainers = {
           const {concordanceContainerLeftPart, concordanceContainerRightPart} = ParsedClassicsContentContainers.splitConcordanceContainer(activeTabId, tabContentContainerInner);
           // generate html of parsed text resource and put it into top part of splitted container
           ParsedClassicsContentContainers.createConcordanceResourceHtml(concordanceContainerLeftPart, collectionDef, resourceDef, resourceData);
-        
+          concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLinesBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLinesButton.btnClicked(event));
         
           break;
       
@@ -306,7 +304,6 @@ const ParsedClassicsContentContainers = {
   },
 
   createConcordanceResourceHtml: function(concordanceContainerLeftPart, collectionDef, resourceDef, resourceData) {
-    console.log('resourceDef', resourceDef);
     const html = `
       <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
       <h1>${resourceDef['library_app_panel_title']}</h1>
