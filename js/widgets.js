@@ -752,3 +752,24 @@ const ParsedClassicsConfirmDialogue = {
   }
 
 };
+
+ParsedClassicsConcordanceLinesButton = {
+
+  btnClicked: function(event) {
+    const button = $(event.target);
+    const concordanceLine = button.parent();
+    const linesList = concordanceLine.find(`.${ParsedClassicsAppVars.concordanceLinesListClass}`);
+    if (button.hasClass(ParsedClassicsAppVars.concordanceLinesBtnCollapsedClass)) {
+      button.removeClass(ParsedClassicsAppVars.concordanceLinesBtnCollapsedClass);
+      button.addClass(ParsedClassicsAppVars.concordanceLinesBtnExpandedClass);
+      linesList.show(ParsedClassicsAppVars.animationSpeed);
+      linesList.css('display', 'block');
+    }
+    else if (button.hasClass(ParsedClassicsAppVars.concordanceLinesBtnExpandedClass)) {
+      button.removeClass(ParsedClassicsAppVars.concordanceLinesBtnExpandedClass);
+      button.addClass(ParsedClassicsAppVars.concordanceLinesBtnCollapsedClass);
+      linesList.hide(ParsedClassicsAppVars.animationSpeed);
+    }
+  },
+
+};
