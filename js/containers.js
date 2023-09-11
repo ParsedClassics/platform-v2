@@ -317,10 +317,8 @@ const ParsedClassicsContentContainers = {
 
   splitConcordanceContainer: function(activeTabId, tabContentContainerInner) {
     const splitHtml = `
-      <div style="display: flex; flex-direction: row; position: relative; top: 0; left: 0; width: 100%; height: 100%;">
       <div class="concordance-split-left" id="concordance-split-left-${activeTabId}" style="border: solid 1px red;"></div>
       <div class="concordance-split-right" id="concordance-split-right-${activeTabId}" style="border: solid 1px red;">B B B</div>
-      </div>
     `;
     tabContentContainerInner.html(splitHtml);
     const concordanceContainerLeftPart = tabContentContainerInner.find(`#concordance-split-left-${activeTabId}`);
