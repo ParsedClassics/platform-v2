@@ -185,3 +185,13 @@ div[data-resource-type="lexicon"][data-scanned-or-typed="typed"] .pc-anchor:hove
 div[data-resource-type="lexicon"][data-scanned-or-typed="typed"] .pc-indent {
     text-indent: 1.5em;
 }
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] > .tab__content-inner {
+  display: flex; 
+  flex-direction: row; 
+  position: relative; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+}
