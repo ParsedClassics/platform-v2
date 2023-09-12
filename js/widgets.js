@@ -773,3 +773,67 @@ ParsedClassicsConcordanceLinesButton = {
   },
 
 };
+
+ParsedClassicsConcordanceLineRefButton = {
+
+  btnClicked: function(event, dependencyContainerTopPart, resourceShortname, resourceContents) {
+    // get text contained in button
+    const button = $(event.target);
+    const buttonText = button.text();
+    // get abbreviated title of the book 
+    const bookAbbr = buttonText.substring(0, buttonText.indexOf('\xa0'));
+    // get shortname of the selected parsed text resource
+    const resourceShortnameSelected = resourceContents[bookAbbr];
+    // get shortname of the parsed text resource already loaded in container's right part
+    const resourceShortnameLoaded = dependencyContainerTopPart.attr(ParsedClassicsAppVars.dependentResourceAttr);
+    // get titles obj
+    const titlesObj = resourceContents['titles'];
+    // get all info about dependent resource
+    const dependentResource = titlesObj[resourceShortnameSelected];
+    // get data of dependent resource if available
+    const dependentResourceData = typeof dependentResource['data'] !== 'undefined' ? dependentResource['data'] : null;
+    // should selected dependent resource be loaded into container's right part and its data NOT available?
+    if (resourceShortnameSelected !== resourceShortnameLoaded && !dependentResourceData) {
+      // get url of the parsed text resource's data file
+      const baseUrl = window.location.href.split("index.html")[0];
+      const dependentResourceUrl = baseUrl + ParsedClassicsAppVars.concordanceDir + resourceShortname + '/' + resourceShortnameSelected + '.js';
+      const promises = [];
+      promises.push(ParsedClassicsData.loadJs(dependentResourceUrl));
+      Promise.allSettled(promises)
+        .then((values) => {
+          dependentResource['data'] = window[resourceShortnameSelected];
+          delete window[resourceShortnameSelected];
+          ParsedClassicsConcordanceLineRefButton.createDependentResourceHtml(dependencyContainerTopPart, dependentResource);
+        })
+        .catch((error) => {
+          // This catch block will not be executed
+          console.error(error);
+        });
+      return;
+    }
+    // should selected dependent resource be loaded into container's right part and its data IS available? +++++++++++++++++++++++
+    else if (resourceShortnameSelected !== resourceShortnameLoaded && dependentResourceData) {
+
+
+
+      return;
+    }
+    // selected dependent resource IS ALREADY loaded into container's right part, so we just need to scroll to relevant line ++++++++++++++
+    else if (resourceShortnameSelected === resourceShortnameLoaded) {
+
+
+      return;
+    }
+  },
+
+  createDependentResourceHtml: function(dependencyContainerTopPart, dependentResource) {
+    const html = `
+      <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
+      <h1>${dependentResource['author_orig']}</h1>
+      <h1>${dependentResource['library_app_panel_title']}</h1>
+      <span class="text-from">Text based on: ${dependentResource['library_app_panel_text_from']}</span>
+    `;
+    dependencyContainerTopPart.html(html + dependentResource['data']);
+  },
+
+};
