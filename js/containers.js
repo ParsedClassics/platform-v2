@@ -82,7 +82,7 @@ const ParsedClassicsContentContainers = {
       switch(resourceType) {
         
         case 'parsed_text':
-        const parsedTextContainerTopPart = tabContentContainerInner.find('.parsed-text-split-top');
+        const parsedTextContainerTopPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.parsedTextContainerTopPartClass}`);
         // treat selected line and word
         ParsedClassicsSelectedLine.treatSelectedLineAndWord(parsedTextContainerTopPart, collectionShortname);
         // scroll to the selected line
@@ -94,7 +94,15 @@ const ParsedClassicsContentContainers = {
         case 'lexicon':
           // scroll to selected word 
           if (wordUrl && wordUrl !== wordDom) {
-            ParsedClassicsContentContainers.scrollToWordResourceLoaded(tabContentContainerInner, wordUrl, 'lexicon-heading', activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
+            ParsedClassicsContentContainers.scrollToWordResourceLoaded(tabContentContainerInner, wordUrl, ParsedClassicsAppVars.lexiconWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
+          }
+          break;
+
+        case 'concordance':
+          const concordanceContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.concordanceContainerLeftPartClass}`);
+          // scroll to selected word
+          if (wordUrl && wordUrl !== wordDom) {
+            ParsedClassicsContentContainers.scrollToWordResourceLoaded(concordanceContainerLeftPart, wordUrl, ParsedClassicsAppVars.concordanceWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
           }
           break;
 
@@ -161,17 +169,21 @@ const ParsedClassicsContentContainers = {
           tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.innerLinkClass}`, "click", (event) => ParsedClassicsInnerLink.innerLinkClick(event, tabContentContainerInner, activeTabId));
           // scroll to selected word 
           if (wordUrl) {
-            ParsedClassicsContentContainers.scrollToWordResourceLoading(tabContentContainerInner, wordUrl, 'lexicon-heading', activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
+            ParsedClassicsContentContainers.scrollToWordResourceLoading(tabContentContainerInner, wordUrl, ParsedClassicsAppVars.lexiconWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
           }
           break;
 
         case 'concordance':
           // split container into left part for concordance and right part for parsed text
           const {concordanceContainerLeftPart, concordanceContainerRightPart} = ParsedClassicsContentContainers.splitConcordanceContainer(activeTabId, tabContentContainerInner);
-          // generate html of parsed text resource and put it into top part of splitted container
+          // generate html of parsed text resource and put it into left part of splitted container
           ParsedClassicsContentContainers.createConcordanceResourceHtml(concordanceContainerLeftPart, collectionDef, resourceDef, resourceData);
+          // delegate "click" event from els having class "concordance-lines-button" to left part of splitted container
           concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLinesBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLinesButton.btnClicked(event));
-        
+          // scroll to selected word
+          if (wordUrl) {
+            ParsedClassicsContentContainers.scrollToWordResourceLoading(concordanceContainerLeftPart, wordUrl, ParsedClassicsAppVars.concordanceWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
+          }
           break;
       
 
@@ -268,12 +280,12 @@ const ParsedClassicsContentContainers = {
 
   splitParsedTextContainer: function(activeTabId, tabContentContainerInner) {
     const splitHtml = `
-      <div class="parsed-text-split-top" id="parsed-text-split-top-${activeTabId}"></div>
-      <div class="parsed-text-split-bottom" id="parsed-text-split-bottom-${activeTabId}"></div>
+      <div class="${ParsedClassicsAppVars.parsedTextContainerTopPartClass}" id="parsed-text-split-top-${activeTabId}"></div>
+      <div class="${ParsedClassicsAppVars.parsedTextContainerBottomPartClass}" id="parsed-text-split-bottom-${activeTabId}"></div>
     `;
     tabContentContainerInner.html(splitHtml);
-    const parsedTextContainerTopPart = tabContentContainerInner.find(`#parsed-text-split-top-${activeTabId}`);
-    const parsedTextContainerBottomPart = tabContentContainerInner.find(`#parsed-text-split-bottom-${activeTabId}`);
+    const parsedTextContainerTopPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.parsedTextContainerTopPartClass}`);
+    const parsedTextContainerBottomPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.parsedTextContainerBottomPartClass}`);
     Split([parsedTextContainerTopPart[0], parsedTextContainerBottomPart[0]], {
       sizes: [95, 5],
       direction: 'vertical',
@@ -314,12 +326,12 @@ const ParsedClassicsContentContainers = {
 
   splitConcordanceContainer: function(activeTabId, tabContentContainerInner) {
     const splitHtml = `
-      <div class="concordance-split-left" id="concordance-split-left-${activeTabId}" style="border: solid 1px red;"></div>
-      <div class="concordance-split-right" id="concordance-split-right-${activeTabId}" style="border: solid 1px red;">B B B</div>
+      <div class="${ParsedClassicsAppVars.concordanceContainerLeftPartClass}" id="concordance-split-left-${activeTabId}" style="border: solid 1px red;"></div>
+      <div class="${ParsedClassicsAppVars.concordanceContainerRightPartClass}" id="concordance-split-right-${activeTabId}" style="border: solid 1px red;">B B B</div>
     `;
     tabContentContainerInner.html(splitHtml);
-    const concordanceContainerLeftPart = tabContentContainerInner.find(`#concordance-split-left-${activeTabId}`);
-    const concordanceContainerRightPart = tabContentContainerInner.find(`#concordance-split-right-${activeTabId}`);
+    const concordanceContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.concordanceContainerLeftPartClass}`);
+    const concordanceContainerRightPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.concordanceContainerRightPartClass}`);
     Split([concordanceContainerLeftPart[0], concordanceContainerRightPart[0]], {
       sizes: [50, 50],
       direction: 'horizontal',
