@@ -61,6 +61,8 @@ const ParsedClassicsContentContainers = {
     const resourceDataOfCollection = APP.loadedResourcesData[collectionShortname] ?? '';
     // get resouce data
     const resourceData = resourceDataOfCollection && resourceShortname ? resourceDataOfCollection[resourceShortname].data : '';
+    // get resource contents
+    const resourceContents = resourceDataOfCollection && resourceShortname ? resourceDataOfCollection[resourceShortname].contents : '';
 
     // Case I. there is no resource shortname, so we need to display list of resources contained in collection
 
@@ -175,11 +177,13 @@ const ParsedClassicsContentContainers = {
 
         case 'concordance':
           // split container into left part for concordance and right part for parsed text
-          const {concordanceContainerLeftPart, concordanceContainerRightPart} = ParsedClassicsContentContainers.splitConcordanceContainer(activeTabId, tabContentContainerInner);
+          const {concordanceContainerLeftPart, concordanceContainerRightPart, dependencyContainerTopPart, dependencyContainerBottomPart} = ParsedClassicsContentContainers.splitConcordanceContainer(activeTabId, tabContentContainerInner);
           // generate html of parsed text resource and put it into left part of splitted container
           ParsedClassicsContentContainers.createConcordanceResourceHtml(concordanceContainerLeftPart, collectionDef, resourceDef, resourceData);
           // delegate "click" event from els having class "concordance-lines-button" to left part of splitted container
           concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLinesBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLinesButton.btnClicked(event));
+          // delegate "click" event from els having class "concordance-line-number" to right part of splitted container
+          concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLineRefBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLineRefButton.btnClicked(event, dependencyContainerTopPart, resourceShortname, resourceContents));
           // scroll to selected word
           if (wordUrl) {
             ParsedClassicsContentContainers.scrollToWordResourceLoading(concordanceContainerLeftPart, wordUrl, ParsedClassicsAppVars.concordanceWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
@@ -301,7 +305,7 @@ const ParsedClassicsContentContainers = {
     const html = `
       <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
       <h1>${collectionDef['author_orig']}</h1>
-      <h1>${collectionDef['collections_page_title_orig']}</h1>
+      <h1>${resourceDef['library_app_panel_title']}</h1>
       <span class="text-from">Text based on: ${resourceDef['library_app_panel_text_from']}</span>
     `;
     parsedTextContainerTopPart.html(html + resourceData);
@@ -327,11 +331,16 @@ const ParsedClassicsContentContainers = {
   splitConcordanceContainer: function(activeTabId, tabContentContainerInner) {
     const splitHtml = `
       <div class="${ParsedClassicsAppVars.concordanceContainerLeftPartClass}" id="concordance-split-left-${activeTabId}" style="border: solid 1px red;"></div>
-      <div class="${ParsedClassicsAppVars.concordanceContainerRightPartClass}" id="concordance-split-right-${activeTabId}" style="border: solid 1px red;">B B B</div>
+      <div class="${ParsedClassicsAppVars.concordanceContainerRightPartClass}" id="concordance-split-right-${activeTabId}" style="border: solid 1px red;">
+        <div class="${ParsedClassicsAppVars.concordanceDependencyTopPartClass}" id="concordance-dependency-split-top-${activeTabId}"></div>
+        <div class="${ParsedClassicsAppVars.concordanceDependencyBottomPartClass}" id="concordance-dependency-split-bottom-${activeTabId}"></div>
+      </div>
     `;
     tabContentContainerInner.html(splitHtml);
     const concordanceContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.concordanceContainerLeftPartClass}`);
     const concordanceContainerRightPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.concordanceContainerRightPartClass}`);
+    const dependencyContainerTopPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.concordanceDependencyTopPartClass}`);
+    const dependencyContainerBottomPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.concordanceDependencyBottomPartClass}`);
     Split([concordanceContainerLeftPart[0], concordanceContainerRightPart[0]], {
       sizes: [50, 50],
       direction: 'horizontal',
@@ -340,7 +349,15 @@ const ParsedClassicsContentContainers = {
       snapOffset: ParsedClassicsAppVars.splitterSnapOffset,
       cursor: ParsedClassicsAppVars.horizontalSplitterCursor,
     });
-    return {concordanceContainerLeftPart, concordanceContainerRightPart};
+    Split([dependencyContainerTopPart[0], dependencyContainerBottomPart[0]], {
+      sizes: [95, 5],
+      direction: 'vertical',
+      gutterSize: 4,
+      minSize: ParsedClassicsAppVars.parsedTextSplitMinSizes,
+      snapOffset: ParsedClassicsAppVars.splitterSnapOffset,
+      cursor: ParsedClassicsAppVars.verticalSplitterCursor,
+    });
+    return {concordanceContainerLeftPart, concordanceContainerRightPart, dependencyContainerTopPart, dependencyContainerBottomPart};
   },
 
   scrollToLineResourceLoading: function(container, lineIndicatorFromUrl, activeTabId) {
