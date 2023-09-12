@@ -50,11 +50,19 @@ const ParsedClassicsAppVars = {
   resourceTypeAttr: "data-resource-type",
   collResPairAttr: "data-coll-res-shortname-pair",
   scannedOrTypedAttr: "data-scanned-or-typed",
+  // parsed text container
+  parsedTextContainerTopPartClass: "parsed-text-split-top",
+  parsedTextContainerBottomPartClass: "parsed-text-split-bottom",
+  // lexicon container
+  lexiconWordHeadingClass: "lexicon-heading",
   // concordance container
   concordanceLinesBtnClass: "concordance-lines-button",
   concordanceLinesBtnCollapsedClass: "collapsed",
   concordanceLinesBtnExpandedClass: "expanded",
   concordanceLinesListClass: "concordance-lines-list",
+  concordanceContainerLeftPartClass: "concordance-split-left",
+  concordanceContainerRightPartClass: "concordance-split-right",
+  concordanceWordHeadingClass: "concordance-heading",
   // menu
   layoutBtnsContainer: "sm__layout-buttons",
   addRightSectionBtnClass: "create-right-section",
