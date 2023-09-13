@@ -141,7 +141,7 @@ const ParsedClassicsResProtos = {
     library_app_selectbox_title: "Concordance compiled by ParsedClassics (2018)",
     library_app_panel_title: "New Testament concordance",
     library_app_panel_text_from: "",
-    library_app_panel_note: "Based on J. K. Tauber's parsing.<br>Compiled by ParsedClassics (2018)",
+    library_app_panel_note: "Compiled by ParsedClassics (2018)",
     scanned_or_typed: "typed",
     resource_type: "concordance",
     scanned_source_shortname: "",
