@@ -776,10 +776,27 @@ ParsedClassicsConcordanceLinesButton = {
 
 ParsedClassicsConcordanceLineRefButton = {
 
-  btnClicked: function(event, dependencyContainerTopPart, resourceShortname, resourceContents) {
+  btnClicked: function(event, concordanceContainerLeftPart, dependencyContainerTopPart, resourceShortname, resourceContents, activeTabId) {
+    // get previously selected button el
+    const buttonPrev = concordanceContainerLeftPart.find(`.${ParsedClassicsAppVars.concordanceLineRefBtnClass}.${ParsedClassicsAppVars.concordanceLineRefBtnSelectedClass}`);
+    // get text of previously selected button el
+    const buttonPrevText = buttonPrev.text();
     // get text contained in button
     const button = $(event.target);
+    // get line number
+    const lineIndicator = button.attr(ParsedClassicsAppVars.concordanceLineRefAttr);
+    // get button text
     const buttonText = button.text();
+    // new button clicked?
+    if (buttonPrevText === buttonText) {
+      return;
+    }
+    else {
+      // remove selected class from previous button
+      buttonPrev.removeClass(ParsedClassicsAppVars.concordanceLineRefBtnSelectedClass);
+      // add selected class to currently clicked button
+      button.addClass(ParsedClassicsAppVars.concordanceLineRefBtnSelectedClass);
+    }
     // get abbreviated title of the book 
     const bookAbbr = buttonText.substring(0, buttonText.indexOf('\xa0'));
     // get shortname of the selected parsed text resource
@@ -803,7 +820,9 @@ ParsedClassicsConcordanceLineRefButton = {
         .then((values) => {
           dependentResource['data'] = window[resourceShortnameSelected];
           delete window[resourceShortnameSelected];
-          ParsedClassicsConcordanceLineRefButton.createDependentResourceHtml(dependencyContainerTopPart, dependentResource);
+          const dependentResourceHtml = ParsedClassicsConcordanceLineRefButton.createDependentResourceHtml(dependencyContainerTopPart, dependentResource);
+          dependencyContainerTopPart.html(dependentResourceHtml);
+          ParsedClassicsContentContainers.scrollToLineResourceLoading(dependencyContainerTopPart, lineIndicator, `${resourceShortnameSelected}-${activeTabId}`);
         })
         .catch((error) => {
           // This catch block will not be executed
@@ -813,15 +832,14 @@ ParsedClassicsConcordanceLineRefButton = {
     }
     // should selected dependent resource be loaded into container's right part and its data IS available? +++++++++++++++++++++++
     else if (resourceShortnameSelected !== resourceShortnameLoaded && dependentResourceData) {
-
-
-
+      const dependentResourceHtml = ParsedClassicsConcordanceLineRefButton.createDependentResourceHtml(dependencyContainerTopPart, dependentResource);
+      dependencyContainerTopPart.html(dependentResourceHtml);
+      ParsedClassicsContentContainers.scrollToLineResourceLoaded(dependencyContainerTopPart, lineIndicator, activeTabId);
       return;
     }
     // selected dependent resource IS ALREADY loaded into container's right part, so we just need to scroll to relevant line ++++++++++++++
     else if (resourceShortnameSelected === resourceShortnameLoaded) {
-
-
+      ParsedClassicsContentContainers.scrollToLineResourceLoaded(dependencyContainerTopPart, lineIndicator, activeTabId);
       return;
     }
   },
@@ -833,7 +851,7 @@ ParsedClassicsConcordanceLineRefButton = {
       <h1>${dependentResource['library_app_panel_title']}</h1>
       <span class="text-from">Text based on: ${dependentResource['library_app_panel_text_from']}</span>
     `;
-    dependencyContainerTopPart.html(html + dependentResource['data']);
+    return html + dependentResource['data'];
   },
 
 };
