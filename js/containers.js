@@ -192,6 +192,15 @@ const ParsedClassicsContentContainers = {
             ParsedClassicsContentContainers.scrollToWordResourceLoading(concordanceContainerLeftPart, wordUrl, ParsedClassicsAppVars.concordanceWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
           }
           break;
+
+        case 'diagram_set':
+          ParsedClassicsContentContainers.createDiagramResourceHtml(tabContentContainerInner, collectionDef, resourceDef, resourceData);
+
+
+
+          
+
+          break;
       
 
       }
@@ -315,20 +324,40 @@ const ParsedClassicsContentContainers = {
   },
 
   createLexiconResourceHtml: function(tabContentContainerInner, resourceDef, resourceData) {
-    const html = `
+    let html = `
       <span class="text-from title">Source: ${resourceDef['library_app_panel_text_from']}</span>
-      <span class="text-from">${resourceDef['library_app_panel_note']}</span>
     `;
+    if (resourceDef['library_app_panel_note']) {
+      html += `
+        <span class="text-from">${resourceDef['library_app_panel_note']}</span>
+      `;
+    }
     tabContentContainerInner.html(html + resourceData);
   },
 
   createConcordanceResourceHtml: function(concordanceContainerLeftPart, collectionDef, resourceDef, resourceData) {
-    const html = `
+    let html = `
       <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
       <h1>${resourceDef['library_app_panel_title']}</h1>
-      <span class="text-from">${resourceDef['library_app_panel_note']}</span>
+      
     `;
+    if (resourceDef['library_app_panel_note']) {
+      html += `
+        <span class="text-from">${resourceDef['library_app_panel_note']}</span>
+      `;
+    }
     concordanceContainerLeftPart.html(html + resourceData);
+  },
+
+  createDiagramResourceHtml: function(tabContentContainerInner, collectionDef, resourceDef, resourceData) {
+    const html = `
+      <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
+      <h1>${collectionDef['author_orig']}</h1>
+      <h1>${collectionDef['collections_page_title_orig']}<h1>
+      <h1>${resourceDef['library_app_panel_title']}</h1>
+      <span class="text-from">Text based on: ${resourceDef['library_app_panel_text_from']}</span>
+    `;
+    tabContentContainerInner.html(html + resourceData);
   },
 
   splitConcordanceContainer: function(activeTabId, tabContentContainerInner) {
