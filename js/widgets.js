@@ -423,7 +423,7 @@ const ParsedClassicsMorphology = {
     const partOfSpeech = wordEl.attr(ParsedClassicsAppVars.partOfSpeechAttr);
     const parsing = wordEl.attr(ParsedClassicsAppVars.parsingAttr);
     const lemma = wordEl.attr(ParsedClassicsAppVars.lemmaAttr);
-    const parsingHtml = `<strong>${form}</strong> ${lemma}<br> ${partOfSpeech} ${parsing}`;
+    const parsingHtml = form || lemma || partOfSpeech || parsing ? `<strong>${form}</strong> ${lemma}<br> ${partOfSpeech} ${parsing}`: 'Morphological parsing not available';
     parsedTextContainerBottomPart.html(parsingHtml);
   },
 

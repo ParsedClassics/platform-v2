@@ -154,7 +154,7 @@ const ParsedClassicsContentContainers = {
           const {parsedTextContainerTopPart, parsedTextContainerBottomPart} = ParsedClassicsContentContainers.splitParsedTextContainer(activeTabId, tabContentContainerInner);
           // generate html of parsed text resource and put it into top part of splitted container
           ParsedClassicsContentContainers.createParsedTextResourceHtml(parsedTextContainerTopPart, collectionDef, resourceDef, resourceData);
-          // delegate "hover" and "click" events from els having class "word" to tab's inner content container
+          // delegate "mouseenter" and "mouseleave" events from els having class "word" to tab's inner content container
           tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseenter", (event) => ParsedClassicsMorphology.selectedWordMouseEnter(event, parsedTextContainerBottomPart));
           tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseleave", () => ParsedClassicsMorphology.selectedWordMouseLeave(parsedTextContainerBottomPart));
           // delegate "click" event from els having class "line" to tab's inner content container
@@ -184,6 +184,9 @@ const ParsedClassicsContentContainers = {
           concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLinesBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLinesButton.btnClicked(event));
           // delegate "click" event from els having class "concordance-line-number" to right part of splitted container
           concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLineRefBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLineRefButton.btnClicked(event, concordanceContainerLeftPart, dependencyContainerTopPart, resourceShortname, resourceContents, activeTabId));
+          // delegate "mouseenter" and "mouseleave" events from els having class "word" to concodance container's right part
+          concordanceContainerRightPart.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseenter", (event) => ParsedClassicsMorphology.selectedWordMouseEnter(event, dependencyContainerBottomPart));
+          concordanceContainerRightPart.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseleave", () => ParsedClassicsMorphology.selectedWordMouseLeave(dependencyContainerBottomPart));
           // scroll to selected word
           if (wordUrl) {
             ParsedClassicsContentContainers.scrollToWordResourceLoading(concordanceContainerLeftPart, wordUrl, ParsedClassicsAppVars.concordanceWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
@@ -330,8 +333,8 @@ const ParsedClassicsContentContainers = {
 
   splitConcordanceContainer: function(activeTabId, tabContentContainerInner) {
     const splitHtml = `
-      <div class="${ParsedClassicsAppVars.concordanceContainerLeftPartClass}" id="concordance-split-left-${activeTabId}" style="border: solid 1px red;"></div>
-      <div class="${ParsedClassicsAppVars.concordanceContainerRightPartClass}" id="concordance-split-right-${activeTabId}" style="border: solid 1px red;">
+      <div class="${ParsedClassicsAppVars.concordanceContainerLeftPartClass}" id="concordance-split-left-${activeTabId}"></div>
+      <div class="${ParsedClassicsAppVars.concordanceContainerRightPartClass}" id="concordance-split-right-${activeTabId}">
         <div class="${ParsedClassicsAppVars.concordanceDependencyTopPartClass}" id="concordance-dependency-split-top-${activeTabId}"></div>
         <div class="${ParsedClassicsAppVars.concordanceDependencyBottomPartClass}" id="concordance-dependency-split-bottom-${activeTabId}"></div>
       </div>
