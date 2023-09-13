@@ -286,3 +286,12 @@ div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .parsed-tex
   padding: 8px;
   overflow-y: hidden;
 }
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .selected-concordance-line-number {
+  background-color: var(--grey300);
+}
+
+div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .selected-concordance-line-number:hover {
+  background-color: var(--grey300);
+  color: var(--black);
+}

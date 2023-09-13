@@ -66,6 +66,8 @@ const ParsedClassicsAppVars = {
   concordanceDependencyBottomPartClass: "concordance-dependency-split-bottom",
   concordanceWordHeadingClass: "concordance-heading",
   concordanceLineRefBtnClass: "concordance-line-number",
+  concordanceLineRefBtnSelectedClass: "selected-concordance-line-number",
+  concordanceLineRefAttr: "data-concordance-line-number",
   dependentResourceAttr: "data-dependent-res-shortname",
   // menu
   layoutBtnsContainer: "sm__layout-buttons",

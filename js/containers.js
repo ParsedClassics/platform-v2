@@ -183,7 +183,7 @@ const ParsedClassicsContentContainers = {
           // delegate "click" event from els having class "concordance-lines-button" to left part of splitted container
           concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLinesBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLinesButton.btnClicked(event));
           // delegate "click" event from els having class "concordance-line-number" to right part of splitted container
-          concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLineRefBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLineRefButton.btnClicked(event, dependencyContainerTopPart, resourceShortname, resourceContents));
+          concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLineRefBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLineRefButton.btnClicked(event, concordanceContainerLeftPart, dependencyContainerTopPart, resourceShortname, resourceContents, activeTabId));
           // scroll to selected word
           if (wordUrl) {
             ParsedClassicsContentContainers.scrollToWordResourceLoading(concordanceContainerLeftPart, wordUrl, ParsedClassicsAppVars.concordanceWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
