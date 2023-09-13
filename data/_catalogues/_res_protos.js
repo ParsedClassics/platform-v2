@@ -191,7 +191,7 @@ const ParsedClassicsResProtos = {
     library_app_selectbox_title: "Greek-English lexicon of the NT by Th. S. Green (1896)",
     library_app_panel_title: "A Greek-English lexicon to the New Testament by Th. S. Green (1896)",
     library_app_panel_text_from: "A Greek-English lexicon to the New Testament. Revised and enlarged by Thomas Sheldon Green. 1896. Boston: H. L. Hastings.",
-    library_app_panel_note: "Transcribed by S. A. Bridgeford.",
+    library_app_panel_note: "",
     scanned_or_typed: "typed",
     resource_type: "lexicon",
     scanned_source_shortname: "greek_english_lexicon_to_nt_by_green", 
@@ -929,7 +929,7 @@ const ParsedClassicsResProtos = {
   nt_diagrams_by_parsedclassics: {
     collections_page_resource_desc: "by ParsedClassics (2018)", 
     library_app_selectbox_title: "Diagrams by ParsedClassics (2018)",
-    library_app_panel_title: "Modernized Reed-Kellogg syntax diagrams by ParsedClassics (2018)",
+    library_app_panel_title: "Modernized Reed-Kellogg syntax diagrams by ParsedClassics",
     library_app_panel_subtitle: "",
     library_app_panel_text_from: "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing.",
     library_app_panel_note: "",

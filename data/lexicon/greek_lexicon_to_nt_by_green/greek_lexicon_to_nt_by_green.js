@@ -2,6 +2,7 @@
 =====================================================
  Text based on: ebook at 
  http://www.gutenberg.org/files/40935/40935-h/40935-h.htm
+ Transcribed by S. A. Bridgeford
 =====================================================
  Copyright: public domain
 =====================================================
@@ -9,7 +10,7 @@
 
 greek_lexicon_to_nt_by_green =
 
-'<hr class="pc-margin-top pc-margin-bottom" />' +
+'<hr class="pc-margin-bottom" style="margin-top: 0;"/>' +
 																																	
 '<div class="pc-text-center">' +
 '<h1 style="text-transform: uppercase;">A<br />Greek&ndash;English Lexicon</h1>' +
