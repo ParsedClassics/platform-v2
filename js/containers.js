@@ -108,6 +108,13 @@ const ParsedClassicsContentContainers = {
           }
           break;
 
+        case 'diagram_set':
+          // scroll to the selected line
+          if (lineIndicatorUrl !== lineIndicatorDom) {
+            ParsedClassicsContentContainers.scrollToLineResourceLoaded(tabContentContainerInner, lineIndicatorUrl, activeTabId);
+          }
+          break;
+
       }
 
       return;
@@ -194,12 +201,10 @@ const ParsedClassicsContentContainers = {
           break;
 
         case 'diagram_set':
+          // generate html of parsed diagram resource and put it into tab container inner
           ParsedClassicsContentContainers.createDiagramResourceHtml(tabContentContainerInner, collectionDef, resourceDef, resourceData);
-
-
-
-          
-
+          // scroll to the selected line
+          ParsedClassicsContentContainers.scrollToLineResourceLoading(tabContentContainerInner, lineIndicatorUrl, activeTabId);
           break;
       
 
