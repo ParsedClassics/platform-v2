@@ -27,7 +27,7 @@ const ParsedClassicsNavigation = {
                   </a>
                 </li>-->
                 <li>
-                  <a class="sm__layout-link" href="index.html" target="_blank"> 
+                  <a class="sm__layout-link" href="site/index.html" target="_blank"> 
                   PARSED<span class="sm-interverb-symbol">⋮</span>CLASSICS
                   </a>
                 </li>

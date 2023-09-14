@@ -812,7 +812,7 @@ ParsedClassicsConcordanceLineRefButton = {
     // should selected dependent resource be loaded into container's right part and its data NOT available?
     if (resourceShortnameSelected !== resourceShortnameLoaded && !dependentResourceData) {
       // get url of the parsed text resource's data file
-      const baseUrl = window.location.href.split("index.html")[0];
+      const baseUrl = window.location.href.split(ParsedClassicsAppVars.rootFileName)[0];
       const dependentResourceUrl = baseUrl + ParsedClassicsAppVars.concordanceDir + resourceShortname + '/' + resourceShortnameSelected + '.js';
       const promises = [];
       promises.push(ParsedClassicsData.loadJs(dependentResourceUrl));

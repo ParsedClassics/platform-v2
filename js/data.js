@@ -91,7 +91,7 @@ ParsedClassicsData = {
 
   loadCollectionsDefs: function(collectionsToLoad) {
     // load definitions of resouces included in collection if not yet loaded
-    const baseUrl = window.location.href.split("index.html")[0];
+    const baseUrl = window.location.href.split(ParsedClassicsAppVars.rootFileName)[0];
     const promises = collectionsToLoad.map((shortname) => {
       // create definitions of resouces file's url
       const url = baseUrl + ParsedClassicsAppVars.cataloguesDir + shortname + '.js';
@@ -108,7 +108,7 @@ ParsedClassicsData = {
 
   loadResourcesData: function(resourcesToLoad, collectionsToLoad) {
     // base directory depends on type of the resource
-    const baseUrl = window.location.href.split("index.html")[0];
+    const baseUrl = window.location.href.split(ParsedClassicsAppVars.rootFileName)[0];
     const resTypeDir = {
       parsed_text: ParsedClassicsAppVars.parsedTextDir,
       original_text: ParsedClassicsAppVars.originalTextDir,
