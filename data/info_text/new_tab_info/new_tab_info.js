@@ -8,5 +8,5 @@
 
 new_tab_info = `
 <h1>New tab</h1>
-<p>To access contents and tools click this <span class="button-example-wrap"><span class="button-example"><img class="sm-menu-button-img" src="img/interverb.svg"></span></span> button.</p>
+<p style="text-align: center;">To access contents and tools click this <span class="button-example-wrap"><span class="button-example"><img class="sm-menu-button-img" src="img/interverb.svg"></span></span> button.</p>
 `;
