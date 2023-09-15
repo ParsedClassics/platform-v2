@@ -206,7 +206,13 @@ const ParsedClassicsContentContainers = {
           // scroll to the selected line
           ParsedClassicsContentContainers.scrollToLineResourceLoading(tabContentContainerInner, lineIndicatorUrl, activeTabId);
           break;
-      
+          
+        case 'audio_recording':
+          ParsedClassicsContentContainers.createAudioResourceHtml(tabContentContainerInner, resourceDef, resourceData);
+
+
+
+          break;
 
       }
       return;
@@ -363,6 +369,20 @@ const ParsedClassicsContentContainers = {
       <span class="text-from">Text based on: ${resourceDef['library_app_panel_text_from']}</span>
     `;
     tabContentContainerInner.html(html + resourceData);
+  },
+
+  createAudioResourceHtml: function(tabContentContainerInner, resourceDef, resourceData) {
+    const html = `
+      <div class="w3-light-grey w3-border-bottom" style="border: solid 1px green">
+        <audio id="audioplayer-nt_ephesians_audio_by_karvounakis" class="w3-show pc-width-100" preload="auto" controls="" controlslist="nodownload">
+          <source src="./_audio/nt_ephesians_audio_by_karvounakis/nt_ephesians_audio_by_karvounakis.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div style="border: solid 1px red;">
+        ${resourceData}
+      </div>
+    `;
+    tabContentContainerInner.html(html);
   },
 
   splitConcordanceContainer: function(activeTabId, tabContentContainerInner) {
