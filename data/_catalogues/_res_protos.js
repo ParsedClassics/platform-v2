@@ -945,7 +945,7 @@ const ParsedClassicsResProtos = {
 	nt_audio_by_karvounakis: {
 		collections_page_resource_desc: "by Th. Karvounakis (2012)", 
 		library_app_selectbox_title: "Audio recording by Th. Karvounakis (2012)",
-		library_app_panel_title: "Audio recording by Th. Karvounakis (2012)",
+		library_app_panel_title: "Audio recording by Th. Karvounakis",
     library_app_panel_subtitle: "",
 		library_app_panel_text_from: "Novum Testamentum. Textus Stephanici A.D. 1550, cum variis lectionibus editionum Bezae, Elzeviri, Lachmanni, Tischendorfii, Tregellesii, Westcott-Hortii, versionis anglicanae emendatorum, curante F. H. A. Scrivener. 1887. Cantabrigiae: Deighton, Bell et soc.; Londini: Whittaker et soc.; G. Bell et filii.",
 		library_app_panel_note: "Pronunciation: modern.",
@@ -957,7 +957,7 @@ const ParsedClassicsResProtos = {
 	nt_audio_by_vavylis: {
 		collections_page_resource_desc: "by fr. Raphael (A. Vavylis) (2011)", 
     library_app_selectbox_title: "Audio recording by fr. Raphael (A. Vavylis) (2011)",
-		library_app_panel_title: "Audio recording by fr. Raphael (A. Vavylis) (2011)",
+		library_app_panel_title: "Audio recording by fr. Raphael (A. Vavylis)",
     library_app_panel_subtitle: "",
 		library_app_panel_text_from: "Ἡ Καινὴ Διαθήκη ἐγκρίσει τῆς Μεγάλης τοῦ Χριστοῦ Ἐκκλησίας. 1912. Ἐν Κωνσταντινουπόλει. Ἐκ τοῦ Πατριαχικοῦ Τυπογραφείου.",
 		library_app_panel_note: "Pronunciation: modern.",
