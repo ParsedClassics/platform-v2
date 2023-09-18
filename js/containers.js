@@ -208,7 +208,7 @@ const ParsedClassicsContentContainers = {
           break;
           
         case 'audio_recording':
-          ParsedClassicsContentContainers.createAudioResourceHtml(tabContentContainerInner, resourceDef, resourceData);
+          ParsedClassicsContentContainers.createAudioResourceHtml(tabContentContainerInner, collectionDef, resourceDef, resourceData);
 
 
 
@@ -371,14 +371,19 @@ const ParsedClassicsContentContainers = {
     tabContentContainerInner.html(html + resourceData);
   },
 
-  createAudioResourceHtml: function(tabContentContainerInner, resourceDef, resourceData) {
+  createAudioResourceHtml: function(tabContentContainerInner, collectionDef, resourceDef, resourceData) {
     const html = `
-      <div class="w3-light-grey w3-border-bottom" style="border: solid 1px green">
+      <div class="audio-container-top">
         <audio id="audioplayer-nt_ephesians_audio_by_karvounakis" class="w3-show pc-width-100" preload="auto" controls="" controlslist="nodownload">
           <source src="./_audio/nt_ephesians_audio_by_karvounakis/nt_ephesians_audio_by_karvounakis.mp3" type="audio/mpeg">
         </audio>
       </div>
-      <div style="border: solid 1px red;">
+      <div class="audio-container-bottom">
+        <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
+        <h1>${collectionDef['author_orig']}</h1>
+        <h1>${collectionDef['collections_page_title_orig']}<h1>
+        <h1>${resourceDef['library_app_panel_title']}</h1>
+        <span class="text-from">Text based on: ${resourceDef['library_app_panel_text_from']}</span>
         ${resourceData}
       </div>
     `;
