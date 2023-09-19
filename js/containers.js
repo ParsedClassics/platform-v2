@@ -208,9 +208,17 @@ const ParsedClassicsContentContainers = {
           break;
           
         case 'audio_recording':
-          ParsedClassicsContentContainers.createAudioResourceHtml(tabContentContainerInner, collectionDef, resourceDef, resourceData);
-
-
+          // generate html of audio resource
+          const {audioEl, headerEl, audioContainerBottomEl} = ParsedClassicsContentContainers.createAudioResourceHtml(tabContentContainerInner, collectionDef, resourceShortname, resourceDef, resourceData);
+          // detach resource header in order not to be reshaped by audio-text sync script
+          $(headerEl).detach();
+          // reshape html of audio resource by audio-text sync script
+          new RabbitLyrics({
+            element: audioContainerBottomEl,
+            mediaElement: audioEl,
+          });
+          // reattach resource header
+          audioContainerBottomEl.prepend(headerEl);
 
           break;
 
@@ -371,23 +379,30 @@ const ParsedClassicsContentContainers = {
     tabContentContainerInner.html(html + resourceData);
   },
 
-  createAudioResourceHtml: function(tabContentContainerInner, collectionDef, resourceDef, resourceData) {
+  createAudioResourceHtml: function(tabContentContainerInner, collectionDef, resourceShortname, resourceDef, resourceData) {
     const html = `
       <div class="audio-container-top">
-        <audio id="audioplayer-nt_ephesians_audio_by_karvounakis" class="w3-show pc-width-100" preload="auto" controls="" controlslist="nodownload">
-          <source src="./_audio/nt_ephesians_audio_by_karvounakis/nt_ephesians_audio_by_karvounakis.mp3" type="audio/mpeg">
+        <audio preload="auto" controls="" controlslist="nodownload">
+          <source src="./_audio/${resourceShortname}/${resourceShortname}.mp3" type="audio/mpeg">
         </audio>
       </div>
-      <div class="audio-container-bottom">
-        <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
-        <h1>${collectionDef['author_orig']}</h1>
-        <h1>${collectionDef['collections_page_title_orig']}<h1>
-        <h1>${resourceDef['library_app_panel_title']}</h1>
-        <span class="text-from">Text based on: ${resourceDef['library_app_panel_text_from']}</span>
+      <div class="audio-container-bottom rabbit-lyrics">
+        <div class="audio-resource-header">
+          <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
+          <h1>${collectionDef['author_orig']}</h1>
+          <h1>${collectionDef['collections_page_title_orig']}<h1>
+          <h1>${resourceDef['library_app_panel_title']}</h1>
+          <span class="text-from">Text based on: ${resourceDef['library_app_panel_text_from']}</span>
+          <span class="text-from">${resourceDef['library_app_panel_note']}</span>
+        </div>
         ${resourceData}
       </div>
     `;
     tabContentContainerInner.html(html);
+    const audioEl = tabContentContainerInner.find('audio')[0];
+    const headerEl = tabContentContainerInner.find('.audio-resource-header')[0];
+    const audioContainerBottomEl = tabContentContainerInner.find('.audio-container-bottom')[0];
+    return {audioEl, headerEl, audioContainerBottomEl};
   },
 
   splitConcordanceContainer: function(activeTabId, tabContentContainerInner) {
