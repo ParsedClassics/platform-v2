@@ -115,6 +115,13 @@ const ParsedClassicsContentContainers = {
           }
           break;
 
+        case 'audio_recording':
+        // jump to audio time of selected line  
+        if (lineIndicatorUrl !== lineIndicatorDom) {
+          const audioEl = tabContentContainerInner.find('audio').first()[0];
+          ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl);
+          }
+          break;
       }
 
       return;
@@ -219,7 +226,8 @@ const ParsedClassicsContentContainers = {
           });
           // reattach resource header
           audioContainerBottomEl.prepend(headerEl);
-
+          // jump to audio time of selected line
+          ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl);
           break;
 
       }
@@ -642,5 +650,48 @@ const ParsedClassicsContentContainers = {
       });
     }
   },
+
+  jumpToAudioTime: function(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl) {
+    const collectionResourcesData = APP.loadedResourcesData[collectionShortname];
+    const resourceData = collectionResourcesData[resourceShortname];
+    const resourceContents = resourceData['contents'];
+
+    if (resourceContents && typeof resourceContents[lineIndicatorUrl] !== "undefined") {
+      // set audio el to needed time point (we need to add a little time in order audio-text synchronized didplay one line instead of two)
+      // exclude the case when lineIndicatorUrl === "title"
+      let timePoint;
+      if (lineIndicatorUrl === 'title') {
+        timePoint = resourceContents[lineIndicatorUrl];
+      }
+      else {
+        timePoint = resourceContents[lineIndicatorUrl] + 0.01;
+      }
+
+      // are metadata loaded?
+      if (audioEl.readyState > 0) {
+        audioEl.currentTime = timePoint; 
+      }
+      // no metadata? - then set timeout
+      else {
+        const interval = 500;
+        ParsedClassicsContentContainers.setTimeAfterMetadataLoads(audioEl, timePoint, interval);
+      }
+    }
+    // line was not found, what to do then?
+    else {
+            
+    }
+  },
+
+  setTimeAfterMetadataLoads: function(audioEl, timePoint, interval) {
+    // has metadata loaded?
+    if (audioEl.readyState > 0) {
+      // then set current time
+      audioEl.currentTime = timePoint;
+    }
+    else {
+      setTimeout(function() {ParsedClassicsContentContainers.setTimeAfterMetadataLoads(audioEl, timePoint, interval)}, interval);
+    }
+  }
 
 };
