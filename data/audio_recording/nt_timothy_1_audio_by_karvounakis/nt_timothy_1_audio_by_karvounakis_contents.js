@@ -10,7 +10,7 @@ nt_timothy_1_audio_by_karvounakis_contents = {
 
 "title": 0
 
-, "1:1": 0
+, "1:1": 0.01
 
 , "1:2": 9.96
 

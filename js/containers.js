@@ -224,8 +224,12 @@ const ParsedClassicsContentContainers = {
             element: audioContainerBottomEl,
             mediaElement: audioEl,
           });
-          // reattach resource header
+          // reattach resource header 
           audioContainerBottomEl.prepend(headerEl);
+          // detach first line and put in in container's top in order to be able to scroll to the title
+          const firstLine = $(audioContainerBottomEl).find('.line[data-start="0"]').first();
+          firstLine.detach();
+          audioContainerBottomEl.prepend(firstLine[0]);
           // jump to audio time of selected line
           ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl);
           break;
