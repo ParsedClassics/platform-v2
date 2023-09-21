@@ -360,7 +360,7 @@ div[data-resource-type="audio_recording"][data-scanned-or-typed="typed"] .text-f
 
 /*Audio-text synchronizer*/
 
-div[data-resource-type="audio_recording"][data-scanned-or-typed="typed"] .rabbit-lyrics .line:not(:last-child) {
+div[data-resource-type="audio_recording"][data-scanned-or-typed="typed"] .rabbit-lyrics .line:not(:last-child):not(:first-child) {
   margin-bottom: 16px;
 }
 

@@ -10,7 +10,7 @@ nt_romans_audio_by_karvounakis_contents = {
 
 "title": 0
 
-, "1:1": 0
+, "1:1": 0.01
 
 , "1:2": 6.74
 
