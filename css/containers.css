@@ -355,13 +355,13 @@ div[data-resource-type="audio_recording"][data-scanned-or-typed="typed"] .pc-pad
 
 div[data-resource-type="audio_recording"][data-scanned-or-typed="typed"] .text-from {
   display: block;
-  padding-bottom: 16px;
+  margin-top: 16px;
 }
 
 /*Audio-text synchronizer*/
 
 div[data-resource-type="audio_recording"][data-scanned-or-typed="typed"] .rabbit-lyrics .line:not(:last-child):not(:first-child) {
-  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 div[data-resource-type="audio_recording"][data-scanned-or-typed="typed"] .rabbit-lyrics .line.active {
