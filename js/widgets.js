@@ -441,17 +441,18 @@ const ParsedClassicsSelectedLine = {
     // get pointers obj
     const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
     // get pointers of current collection
-    const collectionPointers = pointersObj[collectionShortname];
+    const collectionPointers = pointersObj[collectionShortname] ?? {};
+    console.log('collectionPointers', collectionPointers);
     // get line indicator from URL
-    const lineIndicatorFromUrl = collectionPointers[ParsedClassicsAppVars.lineMember] ?? null;
+    const lineIndicatorFromUrl = typeof collectionPointers[ParsedClassicsAppVars.lineMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.lineMember] : null;
     // get lemma from URL
-    const lemmaFromUrl = collectionPointers[ParsedClassicsAppVars.wordMember] ?? null;
+    const lemmaFromUrl = typeof collectionPointers[ParsedClassicsAppVars.wordMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.wordMember] : null;
     // get lexicon resource shortname from URL
-    const lexiconInfoFromUrl = collectionPointers[ParsedClassicsAppVars.lexiconMember] ?? null;
+    const lexiconInfoFromUrl = typeof collectionPointers[ParsedClassicsAppVars.lexiconMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.lexiconMember] : null;
     // get lexicon entru number from URL
-    const lexiconEntryInfoFromUrl = collectionPointers[ParsedClassicsAppVars.lexiconEntryMember] ?? null;
+    const lexiconEntryInfoFromUrl = typeof collectionPointers[ParsedClassicsAppVars.lexiconEntryMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.lexiconEntryMember] : null;
     // get word position from URL
-    const wordPositionFromUrl = collectionPointers[ParsedClassicsAppVars.wordPositionMember] ?? null;
+    const wordPositionFromUrl = typeof collectionPointers[ParsedClassicsAppVars.wordPositionMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.wordPositionMember] : null;
 
     // get clicked el
     const clickedEl = $(event.target);

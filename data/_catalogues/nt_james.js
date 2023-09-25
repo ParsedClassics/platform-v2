@@ -245,7 +245,7 @@ ParsedClassicsCollDefs.nt_james["resource_defs"] = {
 
   nt_james_audio_by_vavylis: {
     ...ParsedClassicsResProtos.nt_audio_by_vavylis,
-    contents_shortname: "sounds_nt_james_audio_by_vavylis_contents",
+    contents_shortname: "nt_james_audio_by_vavylis_contents",
   },
 
 };
