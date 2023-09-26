@@ -119,7 +119,7 @@ const ParsedClassicsContentContainers = {
         // jump to audio time of selected line  
         if (lineIndicatorUrl !== lineIndicatorDom) {
           const audioEl = tabContentContainerInner.find('audio').first()[0];
-          ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl);
+          ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl, activeTabId);
           }
           break;
       }
@@ -231,7 +231,7 @@ const ParsedClassicsContentContainers = {
           firstLine.detach();
           audioContainerBottomEl.prepend(firstLine[0]);
           // jump to audio time of selected line
-          ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl);
+          ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl, activeTabId);
           break;
 
       }
@@ -655,7 +655,10 @@ const ParsedClassicsContentContainers = {
     }
   },
 
-  jumpToAudioTime: function(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl) {
+  jumpToAudioTime: function(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl, activeTabId) {
+    // get pane id
+    const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
+    // get resource contents
     const collectionResourcesData = APP.loadedResourcesData[collectionShortname];
     const resourceData = collectionResourcesData[resourceShortname];
     const resourceContents = resourceData['contents'];
@@ -683,7 +686,10 @@ const ParsedClassicsContentContainers = {
     }
     // line was not found, what to do then?
     else {
-            
+      ParsedClassicsAlertDialogue.openDialogue(paneId, {
+        heading: 'Not found',
+        message: `The line ${lineIndicatorUrl} was not found.`,
+      });   
     }
   },
 
