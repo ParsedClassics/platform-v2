@@ -442,7 +442,6 @@ const ParsedClassicsSelectedLine = {
     const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
     // get pointers of current collection
     const collectionPointers = pointersObj[collectionShortname] ?? {};
-    console.log('collectionPointers', collectionPointers);
     // get line indicator from URL
     const lineIndicatorFromUrl = typeof collectionPointers[ParsedClassicsAppVars.lineMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.lineMember] : null;
     // get lemma from URL
