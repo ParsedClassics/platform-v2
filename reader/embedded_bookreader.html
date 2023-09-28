@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>BookReader | ParsedClassics</title>
+
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- JS dependencies -->
+<script src="BookReader/jquery-1.10.1.js"></script>
+<script src="BookReader/jquery-ui-1.12.0.min.js"></script>
+<script src="BookReader/jquery.browser.min.js"></script>
+<script src="BookReader/dragscrollable-br.js"></script>
+<script src="BookReader/jquery.colorbox-min.js"></script>
+<script src="BookReader/jquery.bt.min.js"></script>
+
+<!-- BookReader and plugins -->
+<link rel="stylesheet" href="BookReader/BookReader.css"/>
+<script src="BookReader/BookReader.js"></script>
+<script type="text/javascript" src="BookReader/plugins/plugin.url.js"></script>
+
+<!-- Custom CSS overrides -->
+<link rel="stylesheet" href="style_overrides_for_embedded.css"/>
+
+<!-- BookReader settings for ParsedClassics -->
+<script type="text/javascript" src="settings_overrides_for_embedded.js"/></script>
+
+<!-- Catalogue of scanned books -->
+<script type="text/javascript" src="../data/_catalogues/_scanned_books.js"/></script>
+
+</head>
+
+<body>
+
+<div id="BookReader">
+ParsedClassics BookReader<br/>
+<noscript>
+<p>
+The BookReader requires JavaScript to be enabled. Please check that your browser supports JavaScript and that it is enabled in the browser settings.</a>.
+</p>
+</noscript>
+</div>
+
+<!-- BookReader start -->
+<script>
+BookReaderOptions.setScannedBookParams();
+var br = new BookReader(BookReaderOptions);
+// Let's go!
+br.init();
+</script>
+  
+</body>
+
+</html>

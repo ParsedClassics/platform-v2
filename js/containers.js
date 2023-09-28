@@ -243,6 +243,7 @@ const ParsedClassicsContentContainers = {
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl !== collResPairDom) {
       // update container's attrs ++++++++++++++++++++++++++++++ may be not needed
       ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
+      ParsedClassicsContentContainers.createScannedResourceHtml(tabContentContainerInner, resourceDef);
 
 
       return;
@@ -447,6 +448,13 @@ const ParsedClassicsContentContainers = {
       cursor: ParsedClassicsAppVars.verticalSplitterCursor,
     });
     return {concordanceContainerLeftPart, concordanceContainerRightPart, dependencyContainerTopPart, dependencyContainerBottomPart};
+  },
+
+  createScannedResourceHtml: function(tabContentContainerInner, resourceDef) {
+    const html = `
+      <iframe class="pc-bookreader" src="./reader/embedded_bookreader.html?${resourceDef['scanned_source_shortname']}"></iframe>
+    `;
+    tabContentContainerInner.html(html);
   },
 
   scrollToLineResourceLoading: function(container, lineIndicatorFromUrl, activeTabId) {

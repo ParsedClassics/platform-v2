@@ -385,3 +385,15 @@ div[data-resource-type="audio_recording"][data-scanned-or-typed="typed"] .rabbit
   height: auto;
   overflow-y: initial;
 }
+
+/* Scanned resources*/
+
+div[data-scanned-or-typed="scanned"] iframe.pc-bookreader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  border: 0;
+}
