@@ -74,7 +74,7 @@ ParsedClassicsCollDefs.nt_timothy_1["resource_defs"] = {
 		contents_shortname: "nt_timothy_1_ed_scrivener_contents",
 	},
 
-  nt_nt_timothy_1_text_ed_westcott_hort: {
+  nt_timothy_1_text_ed_westcott_hort: {
 		...ParsedClassicsResProtos.nt_text_ed_westcott_hort,
 		contents_shortname: "nt_timothy_1_ed_westcott_hort_contents",
 	},
