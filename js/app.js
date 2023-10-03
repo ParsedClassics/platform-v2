@@ -50,6 +50,8 @@ const APP = {
     window.addEventListener('popstate', APP.checkState);
     // add listener for unload
     window.addEventListener('beforeunload', ParsedClassicsLayout.layoutJsonSaveInStorage);
+    // add listener for message from iframe event (IMPORTANT! window.addEventListener("message", ParsedClassicsScannedBookMode.updateMode) does not work here )
+    $(window).on('message', ParsedClassicsScannedBookMode.updateMode);
     //check the state
     APP.checkState(); 
   },

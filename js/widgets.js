@@ -855,3 +855,44 @@ ParsedClassicsConcordanceLineRefButton = {
   },
 
 };
+
+ParsedClassicsScannedBookMode = {
+
+  params: {},
+
+  restoreFromStorage: function(bookShortname) {
+    // get scanned book mode from storage
+    const bookMode = localStorage.getItem(bookShortname);
+    if (bookMode) {
+        // put scanned book shortname and book mode into params object
+        ParsedClassicsScannedBookMode.params[bookShortname] = bookMode;
+    }
+  },
+
+  updateMode: function(event) {
+    // get mesage sent from iframe containing scanned book
+    const msg = event.originalEvent.data;
+
+    // is it really message from iframe containing scanned book?
+    if (typeof msg === "string" && msg.indexOf("|") !== -1) {
+
+      // split message into parts
+      const msgArr = msg.split("|");
+          
+      // is it really message from iframe containing scanned book?
+      if (msgArr.length === 2) {
+      // get scanned book shortname and book mode
+              bookShortname = msgArr[0];
+              bookMode = msgArr[1];
+      }
+          
+      // put scanned book shortname and book mode into params object
+      ParsedClassicsScannedBookMode.params[bookShortname] = bookMode;
+
+      // save book shortname and book mode in cookie
+      localStorage.setItem(bookShortname, bookMode);
+    }
+    
+  }
+
+};

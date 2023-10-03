@@ -253,7 +253,8 @@ const ParsedClassicsContentContainers = {
       ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
       // generate html of resource
       const iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(tabContentContainerInner, resourceDef);
-
+      // restore scanned book mode from storage
+      ParsedClassicsScannedBookMode.restoreFromStorage(resourceDef['scanned_source_shortname']);
       if (resourceType === 'original_text') {
         // browse scanned resource in the iframe to selected line
         ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
@@ -744,6 +745,9 @@ const ParsedClassicsContentContainers = {
   
     // display two or one page of scanned book?
     let pageDisplayMode = "/mode/2up";
+    if (typeof ParsedClassicsScannedBookMode.params[scannedSourceShortname] != "undefined" && ParsedClassicsScannedBookMode.params[scannedSourceShortname]) {
+      pageDisplayMode = ParsedClassicsScannedBookMode.params[scannedSourceShortname];
+    }
 
     // is page in contents JSON?
     if (typeof resourceContents[lineIndicatorUrl] != "undefined" && resourceContents[lineIndicatorUrl] != "") {
