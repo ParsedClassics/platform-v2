@@ -131,9 +131,17 @@ const ParsedClassicsContentContainers = {
     // so we need to scroll to selected line which is in certain SCANNED PAGE if line indicator from URL and that from DOM are different +++++++++++++++++++++++++++++++++++
 
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl === collResPairDom) {
-      // update container's attrs ++++++++++++++++++++++++++++++ may be not needed
+      // update container's attrs 
       ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
-      // ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      // selected line was changed?
+      if (lineIndicatorUrl !== lineIndicatorDom) { // ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        const iframeEl = tabContentContainerInner.find('.pc-bookreader');
+        if (resourceType === 'original_text') {
+          // browse scanned resource in the iframe to selected line
+          ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
+        }
+      }
+      
 
 
 
@@ -241,9 +249,16 @@ const ParsedClassicsContentContainers = {
     // Case V. resource is "scanned" , but collectionShortname|resourceShortname pair from URL and that from DOM are different ++++++++++++++++++++++++
     
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl !== collResPairDom) {
-      // update container's attrs ++++++++++++++++++++++++++++++ may be not needed
+      // update container's attrs 
       ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
-      ParsedClassicsContentContainers.createScannedResourceHtml(tabContentContainerInner, resourceDef);
+      // generate html of resource
+      const iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(tabContentContainerInner, resourceDef);
+
+      if (resourceType === 'original_text') {
+        // browse scanned resource in the iframe to selected line
+        ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
+      }
+      
 
 
       return;
@@ -455,6 +470,8 @@ const ParsedClassicsContentContainers = {
       <iframe class="pc-bookreader" src="./reader/embedded_bookreader.html?${resourceDef['scanned_source_shortname']}"></iframe>
     `;
     tabContentContainerInner.html(html);
+    const iframeEl = tabContentContainerInner.find('.pc-bookreader');
+    return iframeEl;
   },
 
   scrollToLineResourceLoading: function(container, lineIndicatorFromUrl, activeTabId) {
@@ -692,7 +709,7 @@ const ParsedClassicsContentContainers = {
         ParsedClassicsContentContainers.setTimeAfterMetadataLoads(audioEl, timePoint, interval);
       }
     }
-    // line was not found, what to do then?
+    // line was not found
     else {
       ParsedClassicsAlertDialogue.openDialogue(paneId, {
         heading: 'Not found',
@@ -710,6 +727,40 @@ const ParsedClassicsContentContainers = {
     else {
       setTimeout(function() {ParsedClassicsContentContainers.setTimeAfterMetadataLoads(audioEl, timePoint, interval)}, interval);
     }
-  }
+  },
+
+  browseToSelectedLine: function(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl) {
+    // get pane id
+    const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
+    // get resource contents
+    const collectionResourcesData = APP.loadedResourcesData[collectionShortname];
+    const resourceData = collectionResourcesData[resourceShortname];
+    const resourceContents = resourceData['contents'];
+    const scannedSourceShortname = resourceDef['scanned_source_shortname'];
+    
+
+    // form main part of iframe src
+    let iframeSrcNew = "./reader/embedded_bookreader.html?" + scannedSourceShortname;
+  
+    // display two or one page of scanned book?
+    let pageDisplayMode = "/mode/2up";
+
+    // is page in contents JSON?
+    if (typeof resourceContents[lineIndicatorUrl] != "undefined" && resourceContents[lineIndicatorUrl] != "") {
+      // get page number of scanned book
+      const scannedPageNum = resourceContents[lineIndicatorUrl];
+      // form new "src" attr of the iframe
+      iframeSrcNew += "#page/" + scannedPageNum + pageDisplayMode;
+      // set new "src" attr of the iframe (IMPORTANT! this cannot be done by iframeEl.attr("src", iframeSrcNew) because it would add new entry in browser's history)
+      iframeEl[0].contentWindow.location.replace(iframeSrcNew);
+    }
+    // page with selected line not found
+    else {
+      ParsedClassicsAlertDialogue.openDialogue(paneId, {
+        heading: 'Not found',
+        message: `The line ${lineIndicatorUrl} was not found.`,
+      }); 
+    }
+  },
 
 };
