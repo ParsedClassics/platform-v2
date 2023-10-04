@@ -3359,7 +3359,7 @@ BookReader.prototype.initToolbar = function(mode, ui) {
     if (filename == "index") { // by ParsedClassics: Bookreader is external, i.e. not in <iframe/> element
       $('#BRreturn a')
         .addClass('BRTitleLink')
-        .attr({'href': 'javascript:void(0);', 'style': 'color: #3a3b3b; cursor: default; text-decoration: none;'}) // (1)".." added by ParsedClassics in order for the link to work correctly on localhost; (2) .replace("embedded_bookreader", "index") in order to open book outside <iframe/> in external reader; (3) added target="_blank"
+        .attr({'href': 'javascript:void(0);', 'style': 'color: #3a3b3b; cursor: text; text-decoration: none;'}) // (1)".." added by ParsedClassics in order for the link to work correctly on localhost; (2) .replace("embedded_bookreader", "index") in order to open book outside <iframe/> in external reader; (3) added target="_blank"
         .html('<span class="BRreturnTitle">' + this.bookTitle + '</span>');
     }
     else { // by ParsedClassics: Bookreader is internal, i.e. inside <iframe/> element
