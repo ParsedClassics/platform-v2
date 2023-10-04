@@ -740,6 +740,8 @@ const ParsedClassicsContentContainers = {
   browseToSelectedLine: function(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl) {
     // get pane id
     const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
+    // close alert dialogue if such exists
+    ParsedClassicsAlertDialogue.closeDialogueWithoutClick(paneId);
     // get resource contents
     const collectionResourcesData = APP.loadedResourcesData[collectionShortname];
     const resourceData = collectionResourcesData[resourceShortname];
