@@ -373,14 +373,14 @@ const ParsedClassicsContentContainers = {
       <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
       <h1>${collectionDef['author_orig']}</h1>
       <h1>${resourceDef['library_app_panel_title']}</h1>
-      <span class="text-from">Text based on: ${resourceDef['library_app_panel_text_from']}</span>
+      <span class="text-from">Text based on: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></span>
     `;
     parsedTextContainerTopPart.html(html + resourceData);
   },
 
   createLexiconResourceHtml: function(tabContentContainerInner, resourceDef, resourceData) {
     let html = `
-      <span class="text-from title">Source: ${resourceDef['library_app_panel_text_from']}</span>
+      <span class="text-from title">Source: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></span>
     `;
     if (resourceDef['library_app_panel_note']) {
       html += `
@@ -410,7 +410,7 @@ const ParsedClassicsContentContainers = {
       <h1>${collectionDef['author_orig']}</h1>
       <h1>${collectionDef['collections_page_title_orig']}<h1>
       <h1>${resourceDef['library_app_panel_title']}</h1>
-      <span class="text-from">Text based on: ${resourceDef['library_app_panel_text_from']}</span>
+      <span class="text-from">Text based on: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></span>
     `;
     tabContentContainerInner.html(html + resourceData);
   },
@@ -428,7 +428,7 @@ const ParsedClassicsContentContainers = {
           <h1>${collectionDef['author_orig']}</h1>
           <h1>${collectionDef['collections_page_title_orig']}<h1>
           <h1>${resourceDef['library_app_panel_title']}</h1>
-          <span class="text-from">Text based on: ${resourceDef['library_app_panel_text_from']}</span>
+          <span class="text-from">Text based on: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></span>
           <span class="text-from">${resourceDef['library_app_panel_note']}</span>
         </div>
         ${resourceData}
