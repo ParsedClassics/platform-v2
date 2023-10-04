@@ -177,9 +177,12 @@ const ParsedClassicsContentContainers = {
           // generate html of parsed text resource and put it into top part of splitted container
           ParsedClassicsContentContainers.createParsedTextResourceHtml(parsedTextContainerTopPart, collectionDef, resourceDef, resourceData);
           // delegate "mouseenter" and "mouseleave" events from els having class "word" to tab's inner content container
+          tabContentContainerInner.undelegate("mouseenter");
           tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseenter", (event) => ParsedClassicsMorphology.selectedWordMouseEnter(event, parsedTextContainerBottomPart));
+          tabContentContainerInner.undelegate("mouseleave");
           tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseleave", () => ParsedClassicsMorphology.selectedWordMouseLeave(parsedTextContainerBottomPart));
           // delegate "click" event from els having class "line" to tab's inner content container
+          tabContentContainerInner.undelegate("click");
           tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.lineClass}`, "click", (event) => ParsedClassicsSelectedLine.hashSelectLineAndWord(event, collectionShortname, parsedTextContainerTopPart));
           // treat selected line and word
           ParsedClassicsSelectedLine.treatSelectedLineAndWord(parsedTextContainerTopPart, collectionShortname);
@@ -190,6 +193,7 @@ const ParsedClassicsContentContainers = {
         case 'lexicon':
           ParsedClassicsContentContainers.createLexiconResourceHtml(tabContentContainerInner, resourceDef, resourceData);
           // delegate "click" event from els having class "inner-link" to tab's inner content container
+          tabContentContainerInner.undelegate("click");
           tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.innerLinkClass}`, "click", (event) => ParsedClassicsInnerLink.innerLinkClick(event, tabContentContainerInner, activeTabId));
           // scroll to selected word 
           if (wordUrl) {
@@ -203,11 +207,14 @@ const ParsedClassicsContentContainers = {
           // generate html of parsed text resource and put it into left part of splitted container
           ParsedClassicsContentContainers.createConcordanceResourceHtml(concordanceContainerLeftPart, collectionDef, resourceDef, resourceData);
           // delegate "click" event from els having class "concordance-lines-button" to left part of splitted container
+          concordanceContainerLeftPart.undelegate('click');
           concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLinesBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLinesButton.btnClicked(event));
           // delegate "click" event from els having class "concordance-line-number" to right part of splitted container
           concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLineRefBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLineRefButton.btnClicked(event, concordanceContainerLeftPart, dependencyContainerTopPart, resourceShortname, resourceContents, activeTabId));
           // delegate "mouseenter" and "mouseleave" events from els having class "word" to concodance container's right part
+          concordanceContainerLeftPart.undelegate("mouseenter");
           concordanceContainerRightPart.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseenter", (event) => ParsedClassicsMorphology.selectedWordMouseEnter(event, dependencyContainerBottomPart));
+          concordanceContainerLeftPart.undelegate("mouseleave");
           concordanceContainerRightPart.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseleave", () => ParsedClassicsMorphology.selectedWordMouseLeave(dependencyContainerBottomPart));
           // scroll to selected word
           if (wordUrl) {

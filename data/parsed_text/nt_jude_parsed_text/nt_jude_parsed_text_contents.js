@@ -6,7 +6,7 @@
 =====================================================
 */
 
-nt_jude_contents = {
+nt_jude_parsed_text_contents = {
 
 "title": "Τίτλος"
 
