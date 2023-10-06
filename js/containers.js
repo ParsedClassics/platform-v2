@@ -136,7 +136,7 @@ const ParsedClassicsContentContainers = {
       // selected line was changed?
       if (lineIndicatorUrl !== lineIndicatorDom) { // ++++++++++++++++++++++++++++++++++++++++++++++++++++++
         const iframeEl = tabContentContainerInner.find('.pc-bookreader');
-        if (resourceType === 'original_text') {
+        if (resourceType === 'original_text' || resourceType === 'translation') {
           // browse scanned resource in the iframe to selected line
           ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
         }
@@ -262,7 +262,7 @@ const ParsedClassicsContentContainers = {
       const iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(tabContentContainerInner, resourceDef);
       // restore scanned book mode from storage
       ParsedClassicsScannedBookMode.restoreFromStorage(resourceDef['scanned_source_shortname']);
-      if (resourceType === 'original_text') {
+      if (resourceType === 'original_text' || resourceType === 'translation') {
         // browse scanned resource in the iframe to selected line
         ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
       }
