@@ -128,7 +128,7 @@ ParsedClassicsCollDefs.nt_matthew["resource_defs"] = {
   
   nt_matthew_tr_EL_vamvas: {
     ...ParsedClassicsResProtos.nt_tr_EL_vamvas,
-    contents_shortname: "nt_matthew_tr_EL_vamvas_contents.js",
+    contents_shortname: "nt_matthew_tr_EL_vamvas_contents",
   },
 
   nt_matthew_tr_LA_s_hieronymus: {
