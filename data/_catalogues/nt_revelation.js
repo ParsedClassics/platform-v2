@@ -209,11 +209,6 @@ ParsedClassicsCollDefs.nt_revelation["resource_defs"] = {
     contents_shortname: "nt_revelation_commentary_by_arethas_of_caesarea_contents",
   },
 
-  nt_revelation_commentary_by_theophylactus: {
-    ...ParsedClassicsResProtos.nt_commentary_by_theophylactus,
-    contents_shortname: "nt_revelation_commentary_by_theophylactus_contents",
-  },
-
   nt_revelation_commentary_by_bengel: {
     ...ParsedClassicsResProtos.nt_commentary_by_bengel,
     contents_shortname: "nt_revelation_commentary_by_bengel_contents",
