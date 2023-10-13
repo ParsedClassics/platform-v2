@@ -104,6 +104,11 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .line-numbe
   cursor: default;
 }
 
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .selected-line .line-number:hover {
+  background-color: var(--grey300);
+  color: var(--black);
+}
+
 div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .selected-line {
   background-color: var(--grey300);
 }
