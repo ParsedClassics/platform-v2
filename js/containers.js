@@ -766,6 +766,8 @@ const ParsedClassicsContentContainers = {
       iframeSrcNew += "#page/" + scannedPageNum + pageDisplayMode;
       // set new "src" attr of the iframe (IMPORTANT! this cannot be done by iframeEl.attr("src", iframeSrcNew) because it would add new entry in browser's history)
       iframeEl[0].contentWindow.location.replace(iframeSrcNew);
+      // save iframeSrcNew as value of attribute
+      iframeEl.attr("data-src", iframeSrcNew);
     }
     // page with selected line not found
     else {
