@@ -88,6 +88,14 @@ const ParsedClassicsTabs = {
     // move tab content to new pane
     paneBottomPartTo.find(`.${ParsedClassicsAppVars.tabContentClass}`).hide();
     paneBottomPartTo.append(tabContent).show();
+    // restore src of the iframe in tab content of the moved pane (for some reason after moving tab the iframe in it shows the first page of scanned book)
+    const iframeEl = tabContent.find('iframe');
+    if (iframeEl.length === 1) {
+      const iframeSrc = iframeEl.attr('data-src');
+      if (iframeSrc) {
+        iframeEl[0].contentWindow.location.replace(iframeSrc);
+      }
+    }
     // move tab's selectboxes container to new pane's selectboxes container
     paneSelectsSontainerTo.find(`.${ParsedClassicsAppVars.tabSelectsContainerClass}`).hide();
     paneSelectsSontainerTo.append(tabSlelectboxesContainer).show();
