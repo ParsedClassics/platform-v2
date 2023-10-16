@@ -220,7 +220,7 @@ ParsedClassicsCollDefs.nt_corinthians_1["resource_defs"] = {
 
   nt_corinthians_1_commentary_by_vincent: {
     ...ParsedClassicsResProtos.nt_commentary_by_vincent_vol_3,
-    contents_shortname: "lines_nt_corinthians_1_commentary_by_vincent_contents",
+    contents_shortname: "nt_corinthians_1_commentary_by_vincent_contents",
   },
 
   nt_corinthians_1_commentary_by_meyer: {
