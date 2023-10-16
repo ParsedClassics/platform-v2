@@ -210,7 +210,7 @@ ParsedClassicsCollDefs.nt_hebrews["resource_defs"] = {
 
   nt_hebrews_commentary_by_drach: {
     ...ParsedClassicsResProtos.nt_commentary_by_fillion_crellier_drach_vol_6,
-    contents_shortname: "lines_nt_hebrews_commentary_by_drach_contents",
+    contents_shortname: "nt_hebrews_commentary_by_drach_contents",
   },
 
   nt_hebrews_commentary_by_nicoll: {
