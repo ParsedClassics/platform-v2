@@ -225,7 +225,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
   nt_titus_commentary_by_meyer: {
     ...ParsedClassicsResProtos.nt_commentary_by_meyer_vol_11, 
-    contents_shortname: "lines_nt_titus_commentary_by_meyer_contents",
+    contents_shortname: "nt_titus_commentary_by_meyer_contents",
   },
 
   // Grammar references
