@@ -35,7 +35,7 @@ const ParsedClassicsContentContainers = {
     const lineIndicatorDom = tabContentContainer.attr(ParsedClassicsAppVars.lineNumberAttr) ?? '';
 
     // get lemma from URL
-    const wordUrl = ParsedClassicsLayout.getWordFromUrl(collectionShortname);
+    const wordUrl = ParsedClassicsLayout.getWordFromUrl(collectionShortname) ?? '';
     // get lemma from DOM
     const wordDom = tabContentContainer.attr(ParsedClassicsAppVars.lemmaAttr) ?? '';
 
@@ -128,20 +128,28 @@ const ParsedClassicsContentContainers = {
     }
 
     // Case III. resource is "scanned" and collectionShortname|resourceShortname pair from URL and that from DOM are identical
-    // so we need to scroll to selected line which is in certain SCANNED PAGE if line indicator from URL and that from DOM are different +++++++++++++++++++++++++++++++++++
+    // so we need to scroll to selected line which is in certain SCANNED PAGE if line indicator from URL and that from DOM are different 
+    // or o scroll to selected word which is in certain SCANNED PAGE if word from URL and that from DOM are different
 
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl === collResPairDom) {
       // update container's attrs 
       ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
       // selected line was changed?
-      if (lineIndicatorUrl !== lineIndicatorDom) { // ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      if (lineIndicatorUrl !== lineIndicatorDom) { 
         const iframeEl = tabContentContainerInner.find('.pc-bookreader');
         if (resourceType === 'original_text' || resourceType === 'translation' || resourceType === 'commentary') {
           // browse scanned resource in the iframe to selected line
           ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
         }
       }
-      
+      // selected word was changed?
+      if (wordUrl !== wordDom) {
+        const iframeEl = tabContentContainerInner.find('.pc-bookreader');
+        if (resourceType === 'concordance') {
+          // browse scanned resource in the iframe to selected word
+          ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
+        }
+      }
 
 
 
@@ -266,7 +274,10 @@ const ParsedClassicsContentContainers = {
         // browse scanned resource in the iframe to selected line
         ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
       }
-      
+      if (resourceType === 'concordance') {
+        // browse scanned resource in the iframe to selected word
+        ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
+      }
 
 
       return;
@@ -746,6 +757,7 @@ const ParsedClassicsContentContainers = {
     const collectionResourcesData = APP.loadedResourcesData[collectionShortname];
     const resourceData = collectionResourcesData[resourceShortname];
     const resourceContents = resourceData['contents'];
+    // get scanned source shortname
     const scannedSourceShortname = resourceDef['scanned_source_shortname'];
     
 
@@ -775,6 +787,56 @@ const ParsedClassicsContentContainers = {
         heading: 'Not found',
         message: `The line ${lineIndicatorUrl} was not found.`,
       }); 
+    }
+  },
+
+  browseToSelectedWord: function(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl) {
+    // get pane id
+    const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
+    // close alert dialogue if such exists
+    ParsedClassicsAlertDialogue.closeDialogueWithoutClick(paneId);
+    // get resource contents
+    const collectionResourcesData = APP.loadedResourcesData[collectionShortname];
+    const resourceData = collectionResourcesData[resourceShortname];
+    const resourceContents = resourceData['contents'];
+    // get scanned source shortname
+    const scannedSourceShortname = resourceDef['scanned_source_shortname'];
+    
+
+    // form main part of iframe src
+    let iframeSrcNew = "./reader/embedded_bookreader.html?" + scannedSourceShortname;
+  
+    // display two or one page of scanned book?
+    let pageDisplayMode = "/mode/2up";
+    if (typeof ParsedClassicsScannedBookMode.params[scannedSourceShortname] != "undefined" && ParsedClassicsScannedBookMode.params[scannedSourceShortname]) {
+      pageDisplayMode = ParsedClassicsScannedBookMode.params[scannedSourceShortname];
+    }
+
+    // is lemma in url?
+    if (wordUrl) {
+      // get JSON key
+      let contentsKey = "w";
+      for (let i = 0; i < wordUrl.length; i++) {
+          contentsKey += "-" + wordUrl.codePointAt(i);	
+      }
+      // is lemma in contents JSON?
+      if (typeof resourceContents[contentsKey] != "undefined" && resourceContents[contentsKey] != "") {
+        // get page number of scanned book
+        const scannedPageNum = resourceContents[contentsKey];
+        // form new "src" attr of the iframe
+        iframeSrcNew += "#page/" + scannedPageNum + pageDisplayMode;
+        // set new "src" attr of the iframe (IMPORTANT! this cannot be done by iframeEl.attr("src", iframeSrcNew) because it would add new entry in browser's history)
+        iframeEl[0].contentWindow.location.replace(iframeSrcNew);
+        // save iframeSrcNew as value of attribute
+        iframeEl.attr("data-src", iframeSrcNew);
+      }
+      // page with selected line not found
+      else {
+        ParsedClassicsAlertDialogue.openDialogue(paneId, {
+          heading: 'Not found',
+          message: `The word ${wordUrl} was not found.`,
+        }); 
+      }
     }
   },
 
