@@ -6,7 +6,7 @@
 =====================================================
 */
 
-var words_lexicon_graecum_novi_testamenti_zorell_contents = {
+lexicon_graecum_novi_testamenti_zorell_contents = {
 
 /*Title page*/	"w-title": "3"
 

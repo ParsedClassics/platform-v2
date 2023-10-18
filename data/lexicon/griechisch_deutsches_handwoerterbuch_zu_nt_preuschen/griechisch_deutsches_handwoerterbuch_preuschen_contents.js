@@ -14,7 +14,7 @@
 
 
 
-var words_griechisch_deutsches_handwoerterbuch_preuschen_contents = {
+griechisch_deutsches_handwoerterbuch_preuschen_contents = {
 
 
 

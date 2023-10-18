@@ -145,7 +145,7 @@ const ParsedClassicsContentContainers = {
       // selected word was changed?
       if (wordUrl !== wordDom) {
         const iframeEl = tabContentContainerInner.find('.pc-bookreader');
-        if (resourceType === 'concordance') {
+        if (resourceType === 'concordance' || resourceType === 'lexicon') {
           // browse scanned resource in the iframe to selected word
           ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
         }
@@ -274,7 +274,7 @@ const ParsedClassicsContentContainers = {
         // browse scanned resource in the iframe to selected line
         ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
       }
-      if (resourceType === 'concordance') {
+      if (resourceType === 'concordance' || resourceType === 'lexicon') {
         // browse scanned resource in the iframe to selected word
         ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
       }
