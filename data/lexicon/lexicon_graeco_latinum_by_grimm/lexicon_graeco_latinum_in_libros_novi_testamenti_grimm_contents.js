@@ -6,7 +6,7 @@
 =====================================================
 */
 
-var words_lexicon_graeco_latinum_in_libros_novi_testamenti_grimm_contents = {
+lexicon_graeco_latinum_in_libros_novi_testamenti_grimm_contents = {
 
 /*Title page*/	"w-title": "1"
 

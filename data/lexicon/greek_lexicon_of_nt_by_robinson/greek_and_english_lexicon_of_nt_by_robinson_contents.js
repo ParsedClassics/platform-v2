@@ -6,7 +6,7 @@
 =====================================================
 */
 
-var words_greek_and_english_lexicon_of_nt_by_robinson_contents = {
+greek_and_english_lexicon_of_nt_by_robinson_contents = {
 
 /*Title page*/	"w-title": "1"
 
