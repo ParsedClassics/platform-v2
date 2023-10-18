@@ -266,10 +266,10 @@ const ParsedClassicsContentContainers = {
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl !== collResPairDom) {
       // update container's attrs 
       ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
-      // generate html of resource
-      const iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(tabContentContainerInner, resourceDef);
       // restore scanned book mode from storage
       ParsedClassicsScannedBookMode.restoreFromStorage(resourceDef['scanned_source_shortname']);
+      // generate html of resource
+      const iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(tabContentContainerInner, resourceDef);
       if (resourceType === 'original_text' || resourceType === 'translation' || resourceType === 'commentary') {
         // browse scanned resource in the iframe to selected line
         ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
@@ -485,8 +485,17 @@ const ParsedClassicsContentContainers = {
   },
 
   createScannedResourceHtml: function(tabContentContainerInner, resourceDef) {
+    // get scanned source shortname
+    const scannedSourceShortname = resourceDef['scanned_source_shortname'];
+    // page number of scanned book
+    const scannedPageNum = "#page/1";
+    // display two or one page of scanned book?
+    let pageDisplayMode = "/mode/2up";
+    if (typeof ParsedClassicsScannedBookMode.params[scannedSourceShortname] != "undefined" && ParsedClassicsScannedBookMode.params[scannedSourceShortname]) {
+      pageDisplayMode = ParsedClassicsScannedBookMode.params[scannedSourceShortname];
+    }
     const html = `
-      <iframe class="pc-bookreader" src="./reader/embedded_bookreader.html?${resourceDef['scanned_source_shortname']}"></iframe>
+      <iframe class="pc-bookreader" src="./reader/embedded_bookreader.html?${scannedSourceShortname}${scannedPageNum}${pageDisplayMode}"></iframe>
     `;
     tabContentContainerInner.html(html);
     const iframeEl = tabContentContainerInner.find('.pc-bookreader');
