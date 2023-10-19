@@ -69,8 +69,14 @@ const ParsedClassicsContentContainers = {
     if (!resourceShortname  &&  collResPairUrl !== collResPairDom) {
       // update container's attrs
       ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed');
+      // create html of available resources
       const resourcesListHtml = ParsedClassicsContentContainers.createAvailableResourcesListHtml(collectionDef, resourceDefsAll);
-      tabContentContainer.find(`.${ParsedClassicsAppVars.tabContentInnerClass}`).html(resourcesListHtml);
+      // update container's html
+      const tabContentInnerEl = tabContentContainer.find(`.${ParsedClassicsAppVars.tabContentInnerClass}`);
+      tabContentInnerEl.html(resourcesListHtml);
+      // make sure scroll position is not retained from content loaded earlier
+      tabContentInnerEl[0].scrollTop = 0;
+
       return;
     }
 
