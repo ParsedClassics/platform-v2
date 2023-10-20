@@ -223,7 +223,7 @@ const ParsedClassicsContentContainers = {
           // delegate "click" event from els having class "concordance-lines-button" to left part of splitted container
           concordanceContainerLeftPart.undelegate('click');
           concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLinesBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLinesButton.btnClicked(event));
-          // delegate "click" event from els having class "concordance-line-number" to right part of splitted container
+          // delegate "click" event from els having class "concordance-line-number" to left part of splitted container
           concordanceContainerLeftPart.delegate(`.${ParsedClassicsAppVars.concordanceLineRefBtnClass}`, 'click', (event) => ParsedClassicsConcordanceLineRefButton.btnClicked(event, concordanceContainerLeftPart, dependencyContainerTopPart, resourceShortname, resourceContents, activeTabId));
           // delegate "mouseenter" and "mouseleave" events from els having class "word" to concodance container's right part
           concordanceContainerLeftPart.undelegate("mouseenter");
@@ -234,6 +234,13 @@ const ParsedClassicsContentContainers = {
           if (wordUrl) {
             ParsedClassicsContentContainers.scrollToWordResourceLoading(concordanceContainerLeftPart, wordUrl, ParsedClassicsAppVars.concordanceWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
           }
+          break;
+
+        case 'grammar_refs':
+          // split container into left part for grammar references and right part for displaying scanned book
+          const {grammarRefsContainerLeftPart, grammarRefsContainerRightPart} = ParsedClassicsContentContainers.splitGrammarRefsContainer(activeTabId, tabContentContainerInner);
+          // generate html of grammar refs text resource and put it into left part of splitted container
+          ParsedClassicsContentContainers.createGrammarRefsResourceHtml(grammarRefsContainerLeftPart, collectionDef, resourceDef, resourceData);
           break;
 
         case 'diagram_set':
@@ -421,6 +428,20 @@ const ParsedClassicsContentContainers = {
     concordanceContainerLeftPart.html(html + resourceData);
   },
 
+  createGrammarRefsResourceHtml: function(grammarRefsContainerLeftPart, collectionDef, resourceDef, resourceData) {
+    let html = `
+      <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
+      <h1>${resourceDef['library_app_panel_title']}</h1>
+      
+    `;
+    if (resourceDef['library_app_panel_note']) {
+      html += `
+        <span class="text-from">${resourceDef['library_app_panel_note']}</span>
+      `;
+    }
+    grammarRefsContainerLeftPart.html(html + resourceData);
+  },
+
   createDiagramResourceHtml: function(tabContentContainerInner, collectionDef, resourceDef, resourceData) {
     const html = `
       <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
@@ -488,6 +509,25 @@ const ParsedClassicsContentContainers = {
       cursor: ParsedClassicsAppVars.verticalSplitterCursor,
     });
     return {concordanceContainerLeftPart, concordanceContainerRightPart, dependencyContainerTopPart, dependencyContainerBottomPart};
+  },
+
+  splitGrammarRefsContainer: function(activeTabId, tabContentContainerInner) {
+    const splitHtml = `
+      <div class="${ParsedClassicsAppVars.grammarRefsContainerLeftPartClass}" id="grammar-refs-split-left-${activeTabId}"></div>
+      <div class="${ParsedClassicsAppVars.grammarRefsContainerRightPartClass}" id="grammar-refs-split-right-${activeTabId}"></div>
+    `;
+    tabContentContainerInner.html(splitHtml);
+    const grammarRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.grammarRefsContainerLeftPartClass}`);
+    const grammarRefsContainerRightPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.grammarRefsContainerRightPartClass}`);
+    Split([grammarRefsContainerLeftPart[0], grammarRefsContainerRightPart[0]], {
+      sizes: [50, 50],
+      direction: 'horizontal',
+      gutterSize: 4,
+      minSize: [70, 70],
+      snapOffset: ParsedClassicsAppVars.splitterSnapOffset,
+      cursor: ParsedClassicsAppVars.horizontalSplitterCursor,
+    });
+    return {grammarRefsContainerLeftPart, grammarRefsContainerRightPart};
   },
 
   createScannedResourceHtml: function(tabContentContainerInner, resourceDef) {
