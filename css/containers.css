@@ -320,6 +320,46 @@ div[data-resource-type="concordance"][data-scanned-or-typed="typed"] .word:hover
   cursor: default;
 }
 
+div[data-resource-type="grammar_refs"][data-scanned-or-typed="typed"] > .tab__content-inner {
+  display: flex; 
+  flex-direction: row; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+}
+
+div[data-resource-type="grammar_refs"][data-scanned-or-typed="typed"] .grammar-refs-split-left {
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 8px 8px 8px;
+  max-width: var(--text-max-width);
+}
+
+div[data-resource-type="grammar_refs"][data-scanned-or-typed="typed"] .pc-padding-top-8 {
+  padding-top: 8px;
+}
+
+div[data-resource-type="grammar_refs"][data-scanned-or-typed="typed"] .text-from {
+  display: block;
+  padding-bottom: 16px;
+}
+
+div[data-resource-type="grammar_refs"][data-scanned-or-typed="typed"] .line {
+  display: block;
+}
+
+div[data-resource-type="grammar_refs"][data-scanned-or-typed="typed"] .line:not(:last-child) {
+  padding-bottom: 16px;
+}
+
+div[data-resource-type="grammar_refs"][data-scanned-or-typed="typed"] a[data-grammar] {
+  color: #3176c4;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 div[data-resource-type="diagram_set"][data-scanned-or-typed="typed"] .tab__content-inner {
   overflow-y: auto;
   padding: 0 8px 8px 8px;

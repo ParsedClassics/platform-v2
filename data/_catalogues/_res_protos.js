@@ -914,10 +914,10 @@ const ParsedClassicsResProtos = {
 	nt_grammar_refs_by_parsedclassics: {
 		collections_page_resource_desc: "compiled by ParsedClassics (2022)",
     library_app_selectbox_title: "Grammar references by ParsedClassics (2022)",
-    library_app_panel_title: "Grammar references by ParsedClassics (2022)",
+    library_app_panel_title: "Grammar references",
     library_app_panel_subtitle: "",
     library_app_panel_text_from: "",
-    library_app_panel_note: "",
+    library_app_panel_note: "Compiled by ParsedClassics (2022)",
     scanned_or_typed: "typed",
     resource_type: "grammar_refs",
     scanned_source_shortname: "",
