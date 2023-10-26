@@ -114,6 +114,14 @@ const ParsedClassicsContentContainers = {
           }
           break;
 
+        case 'grammar_refs':
+          const grammarRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.grammarRefsContainerLeftPartClass}`);
+          // scroll to the selected line
+          if (lineIndicatorUrl !== lineIndicatorDom) {
+            ParsedClassicsContentContainers.scrollToLineResourceLoaded(grammarRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
+          }
+          break;
+
         case 'diagram_set':
           // scroll to the selected line
           if (lineIndicatorUrl !== lineIndicatorDom) {
@@ -241,6 +249,8 @@ const ParsedClassicsContentContainers = {
           const {grammarRefsContainerLeftPart, grammarRefsContainerRightPart} = ParsedClassicsContentContainers.splitGrammarRefsContainer(activeTabId, tabContentContainerInner);
           // generate html of grammar refs text resource and put it into left part of splitted container
           ParsedClassicsContentContainers.createGrammarRefsResourceHtml(grammarRefsContainerLeftPart, collectionDef, resourceDef, resourceData);
+          // scroll to the selected line
+          ParsedClassicsContentContainers.scrollToLineResourceLoading(grammarRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
           break;
 
         case 'diagram_set':
@@ -568,7 +578,7 @@ const ParsedClassicsContentContainers = {
     ParsedClassicsContentContainers.scrollFuncIntervals[activeTabId] = setInterval(function(){
       if(count < maxCount){
         // get line to be scrolled
-        const lineToScroll = container.find(`.${ParsedClassicsAppVars.lineNumberClass}[${ParsedClassicsAppVars.lineNumberAttr}="${lineIndicatorFromUrl}"]`);
+        const lineToScroll = container.find(`.${ParsedClassicsAppVars.lineNumberClass}[${ParsedClassicsAppVars.lineNumberAttr}="${lineIndicatorFromUrl}"]`).first();
         // find if line to be scrolled is already in DOM
         const renderedLength = lineToScroll.length;
         // find if line to be scrolled is already in viewport, i.e. is already seen
@@ -604,7 +614,7 @@ const ParsedClassicsContentContainers = {
     // get id of container to be scrolled 
     const containerId = container.attr('id');
     // get line to be scrolled
-    const lineToScroll = container.find(`.${ParsedClassicsAppVars.lineNumberClass}[${ParsedClassicsAppVars.lineNumberAttr}="${lineIndicatorFromUrl}"]`);
+    const lineToScroll = container.find(`.${ParsedClassicsAppVars.lineNumberClass}[${ParsedClassicsAppVars.lineNumberAttr}="${lineIndicatorFromUrl}"]`).first();
     // find if ther is only one el in DOM
     const renderedLength = lineToScroll.length;
     // find if line to be scrolled is already in viewport, i.e. is already seen
