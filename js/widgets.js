@@ -907,11 +907,9 @@ ParsedClassicsGrammarRefLink = {
     
     // find grammar book's resource shortname
     const scannedBook = clickedLink.attr(ParsedClassicsAppVars.grammarBookAttr);
-    console.log('scannedBook', scannedBook);
     
     // find grammar book's page
     const bookPage = clickedLink.attr(ParsedClassicsAppVars.grammarPageAttr);
-    console.log('bookPage', bookPage);
 
     if (scannedBook && bookPage) {
       // restore scanned book mode from storage
@@ -926,11 +924,11 @@ ParsedClassicsGrammarRefLink = {
         pageDisplayMode = ParsedClassicsScannedBookMode.params[scannedBook];
       }
 
+      // form new scr for iframe
       const src = `./reader/embedded_bookreader.html?${scannedBook}${scannedPageNum}${pageDisplayMode}`;
-      console.log('src', src);
 
+      // get iframe
       const iframeEl = grammarRefsContainerRightPart.find('iframe');
-      console.log('iframeEl.length', iframeEl.length);
 
       // set new "src" attr of the iframe (IMPORTANT! this cannot be done by iframeEl.attr("src", src) because it would add new entry in browser's history)
       iframeEl[0].contentWindow.location.replace(src);
