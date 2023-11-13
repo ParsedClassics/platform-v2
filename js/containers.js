@@ -249,6 +249,8 @@ const ParsedClassicsContentContainers = {
           const {grammarRefsContainerLeftPart, grammarRefsContainerRightPart} = ParsedClassicsContentContainers.splitGrammarRefsContainer(activeTabId, tabContentContainerInner);
           // generate html of grammar refs text resource and put it into left part of splitted container
           ParsedClassicsContentContainers.createGrammarRefsResourceHtml(grammarRefsContainerLeftPart, collectionDef, resourceDef, resourceData);
+          // delegate "click" event from <a> els to left part of splitted container
+          grammarRefsContainerLeftPart.delegate('a', 'click', (event) => ParsedClassicsGrammarRefLink.grammarRefLinkClick(event, grammarRefsContainerRightPart));
           // scroll to the selected line
           ParsedClassicsContentContainers.scrollToLineResourceLoading(grammarRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
           break;
@@ -301,8 +303,6 @@ const ParsedClassicsContentContainers = {
         // browse scanned resource in the iframe to selected word
         ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
       }
-
-
       return;
     }
     
@@ -524,7 +524,7 @@ const ParsedClassicsContentContainers = {
   splitGrammarRefsContainer: function(activeTabId, tabContentContainerInner) {
     const splitHtml = `
       <div class="${ParsedClassicsAppVars.grammarRefsContainerLeftPartClass}" id="grammar-refs-split-left-${activeTabId}"></div>
-      <div class="${ParsedClassicsAppVars.grammarRefsContainerRightPartClass}" id="grammar-refs-split-right-${activeTabId}"></div>
+      <div class="${ParsedClassicsAppVars.grammarRefsContainerRightPartClass}" id="grammar-refs-split-right-${activeTabId}"><iframe></iframe></div>
     `;
     tabContentContainerInner.html(splitHtml);
     const grammarRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.grammarRefsContainerLeftPartClass}`);

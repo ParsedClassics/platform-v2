@@ -896,3 +896,43 @@ ParsedClassicsScannedBookMode = {
   }
 
 };
+
+ParsedClassicsGrammarRefLink = {
+
+  grammarRefLinkClick: function(event, grammarRefsContainerRightPart) {
+    console.log('grammarRefLinkClick');
+
+    // find clicked link
+    const clickedLink = $(event.target);
+    
+    // find grammar book's resource shortname
+    const scannedBook = clickedLink.attr(ParsedClassicsAppVars.grammarBookAttr);
+    
+    // find grammar book's page
+    const bookPage = clickedLink.attr(ParsedClassicsAppVars.grammarPageAttr);
+
+    if (scannedBook && bookPage) {
+      // restore scanned book mode from storage
+      ParsedClassicsScannedBookMode.restoreFromStorage(scannedBook);
+
+      // page number of scanned book
+      const scannedPageNum = `#page/${bookPage}`;
+
+      // display two or one page of scanned book?
+      let pageDisplayMode = "/mode/2up";
+      if (typeof ParsedClassicsScannedBookMode.params[scannedBook] != "undefined" && ParsedClassicsScannedBookMode.params[scannedBook]) {
+        pageDisplayMode = ParsedClassicsScannedBookMode.params[scannedBook];
+      }
+
+      // form new scr for iframe
+      const src = `./reader/embedded_bookreader.html?${scannedBook}${scannedPageNum}${pageDisplayMode}`;
+
+      // get iframe
+      const iframeEl = grammarRefsContainerRightPart.find('iframe');
+
+      // set new "src" attr of the iframe (IMPORTANT! this cannot be done by iframeEl.attr("src", src) because it would add new entry in browser's history)
+      iframeEl[0].contentWindow.location.replace(src);
+    }
+  },
+
+}
