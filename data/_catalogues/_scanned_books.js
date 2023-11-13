@@ -2128,4 +2128,28 @@ ParsedClassicsScannedBooks = {
   
   }
 
+	, staab_pauluskommentare_aus_griechishen_kirche: {
+ 
+		bookTitle: "Pauluskommentare aus der griechishen Kirche."
+	 
+				 , bookUrlText: "Aus Katenenhandschriften gesammelt und herausgegeben. Von Dr. Karl Staab. 1933. Münster i. W.: Verlag der Aschendorfschen Verlagsbuchhandlung."
+	 
+				 , numLeafs: "726"
+	 
+				 , thumbnail: "page0005.jpg"
+	 
+				 , metadata: [
+	 
+							 {
+	 
+								label: 'Title'
+	 
+								 , value: "Pauluskommentare aus der griechishen Kirche. Aus Katenenhandschriften gesammelt und herausgegeben. Von Dr. Karl Staab. 1933. Münster i. W.: Verlag der Aschendorfschen Verlagsbuchhandlung."
+	 
+							 }
+	 
+				 ] 
+		
+		}
+
 };
