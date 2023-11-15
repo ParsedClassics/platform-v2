@@ -228,6 +228,12 @@ ParsedClassicsCollDefs.nt_luke["resource_defs"] = {
     contents_shortname: "nt_luke_commentary_by_meyer_contents",
   },
 
+  // Commentary references
+
+  /*nt_luke_commentary_refs_by_parsedclassics: {
+    ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
+  },*/
+
   // Grammar references
 
   nt_luke_grammar_refs_by_parsedclassics: {

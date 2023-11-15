@@ -924,6 +924,21 @@ const ParsedClassicsResProtos = {
     contents_shortname: "",
 	},
 
+  // Commentary refs
+
+  nt_commentary_refs_by_parsedclassics: {
+		collections_page_resource_desc: "compiled by ParsedClassics (2023)",
+    library_app_selectbox_title: "Commentary references by ParsedClassics (2023)",
+    library_app_panel_title: "Commentary references",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "",
+    library_app_panel_note: "Compiled by ParsedClassics (2023)",
+    scanned_or_typed: "typed",
+    resource_type: "commentary_refs",
+    scanned_source_shortname: "",
+    contents_shortname: "",
+	},
+
 	// Diagrams
 
   nt_diagrams_by_parsedclassics: {

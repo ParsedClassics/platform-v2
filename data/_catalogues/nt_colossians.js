@@ -228,6 +228,12 @@ ParsedClassicsCollDefs.nt_colossians["resource_defs"] = {
     contents_shortname: "nt_colossians_commentary_by_meyer_contents",
   },
 
+  // Commentary references
+
+  nt_colossians_commentary_refs_by_parsedclassics: {
+    ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
+  },
+
   // Grammar references
 
   nt_colossians_grammar_refs_by_parsedclassics: {

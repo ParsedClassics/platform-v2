@@ -244,6 +244,12 @@ ParsedClassicsCollDefs.nt_revelation["resource_defs"] = {
     contents_shortname: "nt_revelation_commentary_by_meyer_contents",
   },
 
+  // Commentary references
+
+  /*nt_revelation_commentary_refs_by_parsedclassics: {
+    ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
+  },*/
+
   // Grammar references
 
   nt_revelation_grammar_refs_by_parsedclassics: {

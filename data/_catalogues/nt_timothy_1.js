@@ -228,6 +228,12 @@ ParsedClassicsCollDefs.nt_timothy_1["resource_defs"] = {
     contents_shortname: "nt_timothy_1_commentary_by_meyer_contents",
   },
 
+  // Commentary references
+
+  nt_timothy_1_commentary_refs_by_parsedclassics: {
+    ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
+  },
+
   // Grammar references
 
   nt_timothy_1_grammar_refs_by_parsedclassics: {
