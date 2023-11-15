@@ -900,7 +900,6 @@ ParsedClassicsScannedBookMode = {
 ParsedClassicsGrammarRefLink = {
 
   grammarRefLinkClick: function(event, grammarRefsContainerRightPart) {
-    console.log('grammarRefLinkClick');
 
     // find clicked link
     const clickedLink = $(event.target);

@@ -228,6 +228,12 @@ ParsedClassicsCollDefs.nt_mark["resource_defs"] = {
     contents_shortname: "nt_mark_commentary_by_meyer_contents",
   },
 
+  // Commentary references
+
+  /*nt_mark_commentary_refs_by_parsedclassics: {
+    ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
+  },*/
+
   // Grammar references
 
   nt_mark_grammar_refs_by_parsedclassics: {

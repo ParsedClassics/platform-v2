@@ -116,6 +116,7 @@ ParsedClassicsData = {
       lexicon: ParsedClassicsAppVars.lexiconDir,
       translation: ParsedClassicsAppVars.translationDir,
       commentary: ParsedClassicsAppVars.commentaryDir,
+      commentary_refs: ParsedClassicsAppVars.commentaryRefsDir,
       grammar_refs: ParsedClassicsAppVars.grammarRefsDir,
       diagram_set: ParsedClassicsAppVars.diagramSetDir,
       audio_recording: ParsedClassicsAppVars.audioRecordingDir,

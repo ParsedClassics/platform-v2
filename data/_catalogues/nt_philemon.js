@@ -228,6 +228,12 @@ ParsedClassicsCollDefs.nt_philemon["resource_defs"] = {
     contents_shortname: "nt_philemon_commentary_by_meyer_contents",
   },
 
+  // Commentary references
+
+  nt_philemon_commentary_refs_by_parsedclassics: {
+    ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
+  },
+
   // Grammar references
 
   nt_philemon_grammar_refs_by_parsedclassics: {

@@ -228,6 +228,12 @@ ParsedClassicsCollDefs.nt_peter_2["resource_defs"] = {
     contents_shortname: "nt_peter_2_commentary_by_meyer_contents",
   },
 
+  // Commentary references
+
+  /*nt_peter_2_commentary_refs_by_parsedclassics: {
+    ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
+  },*/
+
   // Grammar references
 
   nt_peter_2_grammar_refs_by_parsedclassics: {
