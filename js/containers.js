@@ -114,6 +114,14 @@ const ParsedClassicsContentContainers = {
           }
           break;
 
+        case 'commentary_refs':
+          const commentaryRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.commentaryRefsContainerLeftPartClass}`);
+          // scroll to the selected line
+          if (lineIndicatorUrl !== lineIndicatorDom) {
+            ParsedClassicsContentContainers.scrollToLineResourceLoaded(commentaryRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
+          }
+          break;
+
         case 'grammar_refs':
           const grammarRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.grammarRefsContainerLeftPartClass}`);
           // scroll to the selected line
@@ -244,13 +252,24 @@ const ParsedClassicsContentContainers = {
           }
           break;
 
+        case 'commentary_refs':
+          // split container into left part for commentary references and right part for displaying scanned book
+          const {commentaryRefsContainerLeftPart, commentaryRefsContainerRightPart} = ParsedClassicsContentContainers.splitCommentaryRefsContainer(activeTabId, tabContentContainerInner);
+          // generate html of grammar refs text resource and put it into left part of splitted container
+          ParsedClassicsContentContainers.createCommentaryRefsResourceHtml(commentaryRefsContainerLeftPart, collectionDef, resourceDef, resourceData);
+          // delegate "click" event from <a> els to left part of splitted container
+          commentaryRefsContainerLeftPart.delegate('a', 'click', (event) => ParsedClassicsRefLink.refLinkClick(event, commentaryRefsContainerRightPart));
+          // scroll to the selected line
+          ParsedClassicsContentContainers.scrollToLineResourceLoading(commentaryRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
+          break;
+
         case 'grammar_refs':
           // split container into left part for grammar references and right part for displaying scanned book
           const {grammarRefsContainerLeftPart, grammarRefsContainerRightPart} = ParsedClassicsContentContainers.splitGrammarRefsContainer(activeTabId, tabContentContainerInner);
           // generate html of grammar refs text resource and put it into left part of splitted container
           ParsedClassicsContentContainers.createGrammarRefsResourceHtml(grammarRefsContainerLeftPart, collectionDef, resourceDef, resourceData);
           // delegate "click" event from <a> els to left part of splitted container
-          grammarRefsContainerLeftPart.delegate('a', 'click', (event) => ParsedClassicsGrammarRefLink.grammarRefLinkClick(event, grammarRefsContainerRightPart));
+          grammarRefsContainerLeftPart.delegate('a', 'click', (event) => ParsedClassicsRefLink.refLinkClick(event, grammarRefsContainerRightPart));
           // scroll to the selected line
           ParsedClassicsContentContainers.scrollToLineResourceLoading(grammarRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
           break;
@@ -438,6 +457,20 @@ const ParsedClassicsContentContainers = {
     concordanceContainerLeftPart.html(html + resourceData);
   },
 
+  createCommentaryRefsResourceHtml: function(commentaryRefsContainerLeftPart, collectionDef, resourceDef, resourceData) {
+    let html = `
+      <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
+      <h1>${resourceDef['library_app_panel_title']}</h1>
+      
+    `;
+    if (resourceDef['library_app_panel_note']) {
+      html += `
+        <span class="text-from">${resourceDef['library_app_panel_note']}</span>
+      `;
+    }
+    commentaryRefsContainerLeftPart.html(html + resourceData);
+  },
+
   createGrammarRefsResourceHtml: function(grammarRefsContainerLeftPart, collectionDef, resourceDef, resourceData) {
     let html = `
       <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
@@ -519,6 +552,25 @@ const ParsedClassicsContentContainers = {
       cursor: ParsedClassicsAppVars.verticalSplitterCursor,
     });
     return {concordanceContainerLeftPart, concordanceContainerRightPart, dependencyContainerTopPart, dependencyContainerBottomPart};
+  },
+
+  splitCommentaryRefsContainer: function(activeTabId, tabContentContainerInner) {
+    const splitHtml = `
+      <div class="${ParsedClassicsAppVars.commentaryRefsContainerLeftPartClass}" id="commentary-refs-split-left-${activeTabId}"></div>
+      <div class="${ParsedClassicsAppVars.commentaryRefsContainerRightPartClass}" id="commentary-refs-split-right-${activeTabId}"><iframe></iframe></div>
+    `;
+    tabContentContainerInner.html(splitHtml);
+    const commentaryRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.commentaryRefsContainerLeftPartClass}`);
+    const commentaryRefsContainerRightPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.commentaryRefsContainerRightPartClass}`);
+    Split([commentaryRefsContainerLeftPart[0], commentaryRefsContainerRightPart[0]], {
+      sizes: [50, 50],
+      direction: 'horizontal',
+      gutterSize: 4,
+      minSize: [70, 70],
+      snapOffset: ParsedClassicsAppVars.splitterSnapOffset,
+      cursor: ParsedClassicsAppVars.horizontalSplitterCursor,
+    });
+    return {commentaryRefsContainerLeftPart, commentaryRefsContainerRightPart};
   },
 
   splitGrammarRefsContainer: function(activeTabId, tabContentContainerInner) {

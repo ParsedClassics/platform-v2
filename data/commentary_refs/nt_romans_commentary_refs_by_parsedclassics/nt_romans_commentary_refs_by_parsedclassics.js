@@ -34,6 +34,14 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="98">Eusebius von Emesa (Staab 46)</a>
 </span>
 
+<span class="line"><span data-line-number="5:14" class="line-number">5:14</span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="105">Akazius von Caesarea (Staab 53)</a>
+</span>
+
+<span class="line"><span data-line-number="5:18" class="line-number">5:18</span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="105">Akazius von Caesarea (Staab 53)</a>
+</span>
+
 <span class="line"><span data-line-number="7:1" class="line-number">7:1-25</span>
 <span data-line-number="7:2" class="line-number"></span>
 <span data-line-number="7:3" class="line-number"></span>
@@ -60,13 +68,5 @@ nt_romans_commentary_refs_by_parsedclassics =
 <span data-line-number="7:24" class="line-number"></span>
 <span data-line-number="7:25" class="line-number"></span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="53">Didymus von Alexandria (Staab 1)</a>
-</span>
-
-<span class="line"><span data-line-number="5:14" class="line-number">5:14</span>
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="105">Akazius von Caesarea (Staab 53)</a>
-</span>
-
-<span class="line"><span data-line-number="5:18" class="line-number">5:18</span>
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="105">Akazius von Caesarea (Staab 53)</a>
 </span>
 `;
