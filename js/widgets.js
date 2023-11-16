@@ -897,9 +897,9 @@ ParsedClassicsScannedBookMode = {
 
 };
 
-ParsedClassicsGrammarRefLink = {
+ParsedClassicsRefLink = {
 
-  grammarRefLinkClick: function(event, grammarRefsContainerRightPart) {
+  refLinkClick: function(event, refsContainerRightPart) {
 
     // find clicked link
     const clickedLink = $(event.target);
@@ -927,7 +927,7 @@ ParsedClassicsGrammarRefLink = {
       const src = `./reader/embedded_bookreader.html?${scannedBook}${scannedPageNum}${pageDisplayMode}`;
 
       // get iframe
-      const iframeEl = grammarRefsContainerRightPart.find('iframe');
+      const iframeEl = refsContainerRightPart.find('iframe');
 
       // set new "src" attr of the iframe (IMPORTANT! this cannot be done by iframeEl.attr("src", src) because it would add new entry in browser's history)
       iframeEl[0].contentWindow.location.replace(src);
