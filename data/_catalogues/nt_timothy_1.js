@@ -230,9 +230,9 @@ ParsedClassicsCollDefs.nt_timothy_1["resource_defs"] = {
 
   // Commentary references
 
-  nt_timothy_1_commentary_refs_by_parsedclassics: {
+  /*nt_timothy_1_commentary_refs_by_parsedclassics: {
     ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
-  },
+  },*/
 
   // Grammar references
 
