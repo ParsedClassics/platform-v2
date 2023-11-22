@@ -230,9 +230,9 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
   // Commentary references
 
-  nt_titus_commentary_refs_by_parsedclassics: {
+  /*nt_titus_commentary_refs_by_parsedclassics: {
     ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
-  },
+  },*/
 
   // Grammar references
 

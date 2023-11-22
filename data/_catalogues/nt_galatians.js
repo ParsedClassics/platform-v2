@@ -230,9 +230,9 @@ ParsedClassicsCollDefs.nt_galatians["resource_defs"] = {
 
   // Commentary references
 
-  nt_galatians_commentary_refs_by_parsedclassics: {
+  /*nt_galatians_commentary_refs_by_parsedclassics: {
     ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
-  },
+  },*/
 
   // Grammar references
 

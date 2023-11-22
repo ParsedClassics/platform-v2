@@ -230,9 +230,9 @@ ParsedClassicsCollDefs.nt_thessalonians_1["resource_defs"] = {
 
   // Commentary references
 
-  nt_thessalonians_1_commentary_refs_by_parsedclassics: {
+  /*nt_thessalonians_1_commentary_refs_by_parsedclassics: {
     ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
-  },
+  },*/
 
   // Grammar references
 

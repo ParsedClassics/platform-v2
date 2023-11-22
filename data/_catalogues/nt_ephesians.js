@@ -230,9 +230,9 @@ ParsedClassicsCollDefs.nt_ephesians["resource_defs"] = {
 
   // Commentary references
 
-  nt_ephesians_commentary_refs_by_parsedclassics: {
+  /*nt_ephesians_commentary_refs_by_parsedclassics: {
     ...ParsedClassicsResProtos.nt_commentary_refs_by_parsedclassics,
-  },
+  },*/
 
   // Grammar references
 
