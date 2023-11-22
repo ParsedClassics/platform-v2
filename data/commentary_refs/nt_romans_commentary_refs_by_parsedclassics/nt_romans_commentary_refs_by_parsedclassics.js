@@ -42,14 +42,22 @@ nt_romans_commentary_refs_by_parsedclassics =
 <span data-line-number="1:6" class="line-number"></span>
 <span data-line-number="1:7" class="line-number"></span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="109">Apollinaris von Laodicea (Staab 57)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="404">Gennadius von Konstantinopel (Staab 352)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="523">Photius von Konstantinopel (Staab 471)</a>
+</span>
+
+<span class="line"><span data-line-number="1:5" class="line-number">1:5-7a</span>
+<span data-line-number="1:6" class="line-number"></span>
+<span data-line-number="1:7" class="line-number"></span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="404">Gennadius von Konstantinopel (Staab 352)</a>
 </span>
 
 <span class="line"><span data-line-number="1:7" class="line-number">1:7</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="165">Theodor von Mopsuestia (Staab 113)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="265">Severian von Gabala (Staab 213)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="266">Severian von Gabala (Staab 214)</a>,
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="266">Severian von Gabala (Staab 214)</a>
+</span>
+
+<span class="line"><span data-line-number="1:7" class="line-number">1:7b</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="404">Gennadius von Konstantinopel (Staab 352)</a>
 </span>
 
@@ -123,7 +131,7 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="105">Akazius von Caesarea (Staab 53)</a>
 </span>
 
-<span class="line"><span data-line-number="1:18" class="line-number">1:18-19</span>
+<span class="line"><span data-line-number="1:18" class="line-number">1:18b-19</span>
 <span data-line-number="1:19" class="line-number"></span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="408">Gennadius von Konstantinopel (Staab 356)</a>
 </span>
@@ -131,8 +139,11 @@ nt_romans_commentary_refs_by_parsedclassics =
 <span class="line"><span data-line-number="1:18" class="line-number">1:18</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="111">Apollinaris von Laodicea (Staab 59)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="167">Theodor von Mopsuestia (Staab 115)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="408">Gennadius von Konstantinopel (Staab 356)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="705">Arethas von Cäsarea (Staab 653)</a>
+</span>
+
+<span class="line"><span data-line-number="1:18" class="line-number">1:18a</span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="408">Gennadius von Konstantinopel (Staab 356)</a>
 </span>
 
 <span class="line"><span data-line-number="1:19" class="line-number">1:19-26</span>
@@ -535,13 +546,16 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="547">Photius von Konstantinopel (Staab 495)</a>
 </span>
 
+<span class="line"><span data-line-number="5:13" class="line-number">5:13-14a</span>
+<span data-line-number="5:14" class="line-number"></span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="476">Ökumenius von Trikka (Staab 424)</a>,
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="548">Photius von Konstantinopel (Staab 496)</a>
+</span>
 
 <span class="line"><span data-line-number="5:13" class="line-number">5:13-14</span>
 <span data-line-number="5:14" class="line-number"></span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="135">Diodor von Tarsus (Staab 83)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="170">Theodor von Mopsuestia (Staab 118)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="476">Ökumenius von Trikka (Staab 424)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="548">Photius von Konstantinopel (Staab 496)</a>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="170">Theodor von Mopsuestia (Staab 118)</a>
 </span>
 
 <span class="line"><span data-line-number="5:14" class="line-number">5:14b-19</span>
@@ -564,7 +578,10 @@ nt_romans_commentary_refs_by_parsedclassics =
 
 <span class="line"><span data-line-number="5:15" class="line-number">5:15</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="135">Diodor von Tarsus (Staab 83)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="171">Theodor von Mopsuestia (Staab 119)</a>,
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="171">Theodor von Mopsuestia (Staab 119)</a>
+</span>
+
+<span class="line"><span data-line-number="5:15" class="line-number">5:15a</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="477">Ökumenius von Trikka (Staab 425)</a>
 </span>
 
@@ -847,19 +864,28 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="555">Photius von Konstantinopel (Staab 503)</a>
 </span>
 
+<span class="line"><span data-line-number="7:8" class="line-number">7:8b-11</span>
+<span data-line-number="7:9" class="line-number"></span>
+<span data-line-number="7:10" class="line-number"></span>
+<span data-line-number="7:11" class="line-number"></span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="422">Gennadius von Konstantinopel (Staab 370)</a>
+</span>
+
 <span class="line"><span data-line-number="7:8" class="line-number">7:8-11</span>
 <span data-line-number="7:9" class="line-number"></span>
 <span data-line-number="7:10" class="line-number"></span>
 <span data-line-number="7:11" class="line-number"></span>
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="422">Gennadius von Konstantinopel (Staab 370)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="556">Photius von Konstantinopel (Staab 504)</a>
+</span>
+
+<span class="line"><span data-line-number="7:8" class="line-number">7:8a</span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="422">Gennadius von Konstantinopel (Staab 370)</a>
 </span>
 
 <span class="line"><span data-line-number="7:8" class="line-number">7:8</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="117">Apollinaris von Laodicea (Staab 65)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="139">Diodor von Tarsus (Staab 87)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="180">Theodor von Mopsuestia (Staab 126)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="422">Gennadius von Konstantinopel (Staab 370)</a>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="180">Theodor von Mopsuestia (Staab 126)</a>
 </span>
 
 <span class="line"><span data-line-number="7:9" class="line-number">7:9-11</span>
@@ -962,17 +988,21 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="479">Ökumenius von Trikka (Staab 427)</a>
 </span>
 
+<span class="line"><span data-line-number="7:24" class="line-number">7:24-25a</span>
+<span data-line-number="7:25" class="line-number"></span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="426">Gennadius von Konstantinopel (Staab 374)</a>
+</span>
+
 <span class="line"><span data-line-number="7:24" class="line-number">7:24-25</span>
 <span data-line-number="7:25" class="line-number"></span>
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="272">Severian von Gabala (Staab 220)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="426">Gennadius von Konstantinopel (Staab 374)</a>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="272">Severian von Gabala (Staab 220)</a>
 </span>
 
 <span class="line"><span data-line-number="7:24" class="line-number">7:24</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="142">Diodor von Tarsus (Staab 90)</a>
 </span>
 
-<span class="line"><span data-line-number="7:25" class="line-number">7:25-8:2</span>
+<span class="line"><span data-line-number="7:25" class="line-number">7:25b-8:2</span>
 <span data-line-number="8:1" class="line-number"></span>
 <span data-line-number="8:2" class="line-number"></span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="427">Gennadius von Konstantinopel (Staab 375)</a>
@@ -1019,17 +1049,24 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="561">Photius von Konstantinopel (Staab 509)</a>
 </span>
 
+<span class="line"><span data-line-number="8:9" class="line-number">8:9b-10</span>
+<span data-line-number="8:10" class="line-number"></span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="428">Gennadius von Konstantinopel (Staab 376)</a>
+</span>
+
 <span class="line"><span data-line-number="8:9" class="line-number">8:9-10</span>
 <span data-line-number="8:10" class="line-number"></span>
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="428">Gennadius von Konstantinopel (Staab 376)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="561">Photius von Konstantinopel (Staab 509)</a>
+</span>
+
+<span class="line"><span data-line-number="8:9" class="line-number">8:9a</span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="428">Gennadius von Konstantinopel (Staab 376)</a>
 </span>
 
 <span class="line"><span data-line-number="8:9" class="line-number">8:9</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="143">Diodor von Tarsus (Staab 91)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="187">Theodor von Mopsuestia (Staab 135)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="272">Severian von Gabala (Staab 220)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="428">Gennadius von Konstantinopel (Staab 376)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="479">Ökumenius von Trikka (Staab 427)</a>
 </span>
 
@@ -1062,20 +1099,28 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="479">Ökumenius von Trikka (Staab 427)</a>
 </span>
 
+<span class="line"><span data-line-number="8:16" class="line-number">8:16-17a</span>
+<span data-line-number="8:17" class="line-number"></span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="430">Gennadius von Konstantinopel (Staab 378)</a>
+</span>
+
 <span class="line"><span data-line-number="8:16" class="line-number">8:16-17</span>
 <span data-line-number="8:17" class="line-number"></span>
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="188">Theodor von Mopsuestia (Staab 136)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="430">Gennadius von Konstantinopel (Staab 378)</a>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="188">Theodor von Mopsuestia (Staab 136)</a>
 </span>
 
 <span class="line"><span data-line-number="8:16" class="line-number">8:16</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="144">Diodor von Tarsus (Staab 92)</a>
 </span>
 
+<span class="line"><span data-line-number="8:17" class="line-number">8:17b-18</span>
+<span data-line-number="8:18" class="line-number"></span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="431">Gennadius von Konstantinopel (Staab 379)</a>
+</span>
+
 <span class="line"><span data-line-number="8:17" class="line-number">8:17-18</span>
 <span data-line-number="8:18" class="line-number"></span>
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="145">Diodor von Tarsus (Staab 93)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="431">Gennadius von Konstantinopel (Staab 379)</a>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="145">Diodor von Tarsus (Staab 93)</a>
 </span>
 
 <span class="line"><span data-line-number="8:18" class="line-number">8:18</span>
@@ -1176,15 +1221,22 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="435">Gennadius von Konstantinopel (Staab 383)</a>
 </span>
 
+<span class="line"><span data-line-number="8:33" class="line-number">8:33-34a</span>
+<span data-line-number="8:34" class="line-number"></span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="436">Gennadius von Konstantinopel (Staab 384)</a>
+</span>
+
 <span class="line"><span data-line-number="8:33" class="line-number">8:33-34</span>
 <span data-line-number="8:34" class="line-number"></span>
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="118">Apollinaris von Laodicea (Staab 66)</a>,
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="118">Apollinaris von Laodicea (Staab 66)</a>
+</span>
+
+<span class="line"><span data-line-number="8:34" class="line-number">8:34b</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="436">Gennadius von Konstantinopel (Staab 384)</a>
 </span>
 
 <span class="line"><span data-line-number="8:34" class="line-number">8:34</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="273">Severian von Gabala (Staab 221)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="436">Gennadius von Konstantinopel (Staab 384)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="480">Ökumenius von Trikka (Staab 428)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="565">Photius von Konstantinopel (Staab 513)</a>
 </span>
@@ -1490,10 +1542,14 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="154">Diodor von Tarsus (Staab 102)</a>
 </span>
 
+<span class="line"><span data-line-number="11:1" class="line-number">11:1-2a</span>
+<span data-line-number="11:2" class="line-number"></span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="450">Gennadius von Konstantinopel (Staab 398)</a>
+</span>
+
 <span class="line"><span data-line-number="11:1" class="line-number">11:1-2</span>
 <span data-line-number="11:2" class="line-number"></span>
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="154">Diodor von Tarsus (Staab 102)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="450">Gennadius von Konstantinopel (Staab 398)</a>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="154">Diodor von Tarsus (Staab 102)</a>
 </span>
 
 <span class="line"><span data-line-number="11:1" class="line-number">11:1</span>
@@ -1507,7 +1563,7 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="206">Theodor von Mopsuestia (Staab 154)</a>
 </span>
 
-<span class="line"><span data-line-number="11:2" class="line-number">11:2-3</span>
+<span class="line"><span data-line-number="11:2" class="line-number">11:2b-3</span>
 <span data-line-number="11:3" class="line-number"></span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="450">Gennadius von Konstantinopel (Staab 398)</a>
 </span>
@@ -1697,7 +1753,7 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="582">Photius von Konstantinopel (Staab 530)</a>
 </span>
 
-<span class="line"><span data-line-number="12:4" class="line-number">12:4-9</span>
+<span class="line"><span data-line-number="12:4" class="line-number">12:4-9a</span>
 <span data-line-number="12:5" class="line-number"></span>
 <span data-line-number="12:6" class="line-number"></span>
 <span data-line-number="12:7" class="line-number"></span>
@@ -1706,13 +1762,20 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="456">Gennadius von Konstantinopel (Staab 404)</a>
 </span>
 
+<span class="line"><span data-line-number="12:4" class="line-number">12:4-8a</span>
+<span data-line-number="12:5" class="line-number"></span>
+<span data-line-number="12:6" class="line-number"></span>
+<span data-line-number="12:7" class="line-number"></span>
+<span data-line-number="12:8" class="line-number"></span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="582">Photius von Konstantinopel (Staab 530)</a>
+</span>
+
 <span class="line"><span data-line-number="12:4" class="line-number">12:4-8</span>
 <span data-line-number="12:5" class="line-number"></span>
 <span data-line-number="12:6" class="line-number"></span>
 <span data-line-number="12:7" class="line-number"></span>
 <span data-line-number="12:8" class="line-number"></span>
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="275">Severian von Gabala (Staab 223)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="582">Photius von Konstantinopel (Staab 530)</a>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="275">Severian von Gabala (Staab 223)</a>
 </span>
 
 <span class="line"><span data-line-number="12:6" class="line-number">12:6-8</span>
@@ -1732,7 +1795,10 @@ nt_romans_commentary_refs_by_parsedclassics =
 </span>
 
 <span class="line"><span data-line-number="12:8" class="line-number">12:8</span>
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="213">Theodor von Mopsuestia (Staab 161)</a>,
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="213">Theodor von Mopsuestia (Staab 161)</a>
+</span>
+
+<span class="line"><span data-line-number="12:8" class="line-number">12:8b</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="583">Photius von Konstantinopel (Staab 531)</a>
 </span>
 
@@ -1813,12 +1879,15 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="585">Photius von Konstantinopel (Staab 533)</a>
 </span>
 
+<span class="line"><span data-line-number="13:1" class="line-number">13:1a</span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="459">Gennadius von Konstantinopel (Staab 407)</a>
+</span>
+
 <span class="line"><span data-line-number="13:1" class="line-number">13:1</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="108">Akazius von Caesarea (Staab 56)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="130">Apollinaris von Laodicea (Staab 78)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="159">Diodor von Tarsus (Staab 107)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="276">Severian von Gabala (Staab 224)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="459">Gennadius von Konstantinopel (Staab 407)</a>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="276">Severian von Gabala (Staab 224)</a>
 </span>
 
 <span class="line"><span data-line-number="13:1" class="line-number">13:1b</span>
@@ -2046,11 +2115,15 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="162">Diodor von Tarsus (Staab 110)</a>
 </span>
 
+<span class="line"><span data-line-number="14:22" class="line-number">14:22b-23</span>
+<span data-line-number="14:23" class="line-number"></span>
+<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="465">Gennadius von Konstantinopel (Staab 413)</a>
+</span>
+
 <span class="line"><span data-line-number="14:22" class="line-number">14:22-23</span>
 <span data-line-number="14:23" class="line-number"></span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="162">Diodor von Tarsus (Staab 110)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="219">Theodor von Mopsuestia (Staab 167)</a>,
-<a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="465">Gennadius von Konstantinopel (Staab 413)</a>,
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="591">Photius von Konstantinopel (Staab 539)</a>
 </span>
 
