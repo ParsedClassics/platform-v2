@@ -329,6 +329,8 @@ BookReader.prototype.initUIStrings = function() {
 
                    '.zoom_out': 'Zoom out',
 
+                   '.rotate': 'Rotate page',
+
                    '.onepg': 'One-page view',
 
                    '.twopg': 'Two-page view',

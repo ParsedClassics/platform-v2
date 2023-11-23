@@ -3332,6 +3332,7 @@ BookReader.prototype.buildToolbarElement = function() {
     +       "<span class='BRtoolbarSection BRtoolbarSectionZoom tc ph10'>"
     +         "<button class='BRicon zoom_out js-tooltip'></button>"
     +         "<button class='BRicon zoom_in js-tooltip'></button>"
+    +         "<button class='BRicon rotate enabled js-tooltip'></button>" // by ParsedClassics
     +       "</span>"
 
     +     "</span>" // end BRtoolbarRight
@@ -4341,6 +4342,7 @@ BookReader.prototype.initUIStrings = function() {
     var titles = { '.logo': 'Go to Archive.org', // $$$ update after getting OL record
                    '.zoom_in': 'Zoom in',
                    '.zoom_out': 'Zoom out',
+                   '.rotate': 'Rotate page', // added by ParsedClassics
                    '.onepg': 'One-page view',
                    '.twopg': 'Two-page view',
                    '.thumb': 'Thumbnail view',
