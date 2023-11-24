@@ -677,6 +677,10 @@ BookReader.prototype.setupTooltips = function() {
 BookReader.prototype.drawLeafs = function() {
     if (this.constMode1up == this.mode) {
         this.drawLeafsOnePage();
+        // Enable rotate button                         // by ParsedClassics
+        jIcons = $('.BRicon');                          // by ParsedClassics
+        jIcons.filter('.rotate').addClass('enabled');   // by ParsedClassics
+        jIcons.filter('.rotate').removeClass('disabled');// by ParsedClassics
     } else if (this.constModeThumb == this.mode) {
         this.drawLeafsThumbnail();
     } else {
@@ -1687,6 +1691,16 @@ BookReader.prototype.switchMode = function(mode) {
         this.prepareTwoPageView();
         this.twoPageCenterView(0.5, 0.5); // $$$ TODO preserve center
     }
+
+    // Disable the rotate button unless mode is constMode1up. // by ParsedClassics
+    jIcons = $('.BRicon');                                     // by ParsedClassics
+    if (mode == this.constMode1up) {                           // by ParsedClassics
+        jIcons.filter('.rotate').addClass('enabled');          // by ParsedClassics
+        jIcons.filter('.rotate').removeClass('disabled');       // by ParsedClassics
+    } else {                                                    // by ParsedClassics
+        jIcons.filter('.rotate').removeClass('enabled');        // by ParsedClassics
+        jIcons.filter('.rotate').addClass('disabled');          // by ParsedClassics
+    }                                                           // by ParsedClassics
 
 };
 
@@ -3332,7 +3346,7 @@ BookReader.prototype.buildToolbarElement = function() {
     +       "<span class='BRtoolbarSection BRtoolbarSectionZoom tc ph10'>"
     +         "<button class='BRicon zoom_out js-tooltip'></button>"
     +         "<button class='BRicon zoom_in js-tooltip'></button>"
-    +         "<button class='BRicon rotate enabled js-tooltip'></button>" // by ParsedClassics
+    +         "<button class='BRicon rotate disabled js-tooltip'></button>" // by ParsedClassics
     +       "</span>"
 
     +     "</span>" // end BRtoolbarRight
@@ -3508,7 +3522,7 @@ BookReader.prototype.bindNavigationHandlers = function() {
        var cookiedate = new Date(); // added by ParsedClassics
        cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
        //document.cookie = search_str + "=" + "/mode/1up" + "; expires="+cookiedate.toGMTString() + "; samesite=lax; path=/"; // added and removed by ParsedClassics
-       localStorage.setItem(search_str, "/mode/1up");
+       localStorage.setItem(search_str, "/mode/1up"); // added by ParsedClassics
 							self.switchMode(self.constMode1up);
     });
 
@@ -3521,7 +3535,7 @@ BookReader.prototype.bindNavigationHandlers = function() {
        var cookiedate = new Date(); // added by ParsedClassics
        cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
        //document.cookie = search_str + "=" + "/mode/2up" + "; expires="+cookiedate.toGMTString() + "; samesite=lax; path=/"; // added and removed by ParsedClassics
-       localStorage.setItem(search_str, "/mode/2up");
+       localStorage.setItem(search_str, "/mode/2up"); // added by ParsedClassics
 							self.switchMode(self.constMode2up);
     });
 
@@ -3534,7 +3548,7 @@ BookReader.prototype.bindNavigationHandlers = function() {
        var cookiedate = new Date(); // added by ParsedClassics
        cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
        //document.cookie = search_str + "=" + "/mode/thumb" + "; expires="+cookiedate.toGMTString() + "; samesite=lax; path=/"; // added and removed by ParsedClassics
-       localStorage.setItem(search_str, "/mode/thumb");
+       localStorage.setItem(search_str, "/mode/thumb"); // added by ParsedClassics
 							self.switchMode(self.constModeThumb);
     });
 

@@ -231,6 +231,7 @@
     background-color: transparent;
     background-image: url(images/BRicons.png);
     background-repeat: no-repeat;
+    cursor: default;
 }
 i.BRicon { display: inline-block; }
 .BRicon.logo {background-position:0 0;}
