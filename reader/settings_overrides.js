@@ -34,7 +34,11 @@ var BookReaderOptions = {
 
   getPageWidth: function(index) {
 
-      return 800;
+    var pageWidth = BookReaderOptions.getBookParam("leafWidth")
+    if (pageWidth) {
+        return pageWidth;
+    }
+    return 800;
 
   },
 
@@ -43,8 +47,12 @@ var BookReaderOptions = {
   // Return the height of a given page.  Here we assume all images are 1200 pixels high
 
   getPageHeight: function(index) {
-
-      return 1200;
+    
+    var pageHeight = BookReaderOptions.getBookParam("leafHeight")
+    if (pageHeight) {
+        return pageHeight;
+    }
+    return 1200;
 
   },
 

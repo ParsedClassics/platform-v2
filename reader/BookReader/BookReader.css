@@ -78,6 +78,9 @@
     -webkit-box-shadow: 1px 1px 2px #333;
     -moz-box-shadow: 1px 1px 2px #333;
     box-shadow: 1px 1px 2px #333;
+    display: flex;                /* by ParsedClassics */
+    justify-content: center;      /* by ParsedClassics */
+    align-items: center;          /* by ParsedClassics */
 }
 .high-contrast .BRpagediv1up {
   background-color: white;
