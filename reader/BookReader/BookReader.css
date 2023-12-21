@@ -78,6 +78,9 @@
     -webkit-box-shadow: 1px 1px 2px #333;
     -moz-box-shadow: 1px 1px 2px #333;
     box-shadow: 1px 1px 2px #333;
+    display: flex;                /* by ParsedClassics */
+    justify-content: center;      /* by ParsedClassics */
+    align-items: center;          /* by ParsedClassics */
 }
 .high-contrast .BRpagediv1up {
   background-color: white;
@@ -231,6 +234,7 @@
     background-color: transparent;
     background-image: url(images/BRicons.png);
     background-repeat: no-repeat;
+    cursor: default;
 }
 i.BRicon { display: inline-block; }
 .BRicon.logo {background-position:0 0;}
@@ -265,6 +269,9 @@ i.BRicon { display: inline-block; }
 .no-touch .BRicon.book_right:hover {background-position:-560px 0;}
 .no-touch .BRicon.zoom_out:hover {background-position:-640px 0;}
 .no-touch .BRicon.zoom_in:hover {background-position:-720px 0;}
+.no-touch .BRicon.rotate.enabled {background-image: url(images/rotate_enabled.png); background-position: center center;} /* Added by ParsedClassics */
+.no-touch .BRicon.rotate.enabled:hover {background-color: #3390e1; background-image: url(images/rotate_enabled_hover.png); background-position: center center;} /* Added by ParsedClassics */
+.no-touch .BRicon.rotate.disabled {background-image: url(images/rotate_enabled.png); background-position: center center; opacity: 0.4;} /* Added by ParsedClassics */
 .no-touch .BRicon.play:hover {background-position:-800px 0;}
 .no-touch .BRicon.pause:hover {background-position:-880px 0;}
 .no-touch .BRicon.twopg:hover {background-position:-960px 0;}
@@ -1273,7 +1280,7 @@ html.mm-background .BookReader {
 /* Mobile Only */
 @media (max-width: 800px) {
   div#BRnavpos { margin-right: 90px; }
-  .BRtoolbar { height: 40px; }
+  /*.BRtoolbar { height: 40px; }*/ /*Commented out by ParsedClassics*/
   .BRtoolbar.responsive .BRtoolbarbuttons { display: none; }
   .BRtoolbar.responsive .BRmobileHamburgerWrapper { display: block; }
   .BRtoolbar .BRmobileHamburgerWrapper { padding: 0 30px 0 50px; display: block; }

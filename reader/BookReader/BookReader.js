@@ -192,6 +192,8 @@ BookReader.prototype.setup = function(options) {
     this.constMode2up = BookReader.constMode2up;
     this.constModeThumb = BookReader.constModeThumb;
 
+    this.rotations = []; // added by ParsedClassics
+
     // Private properties below. Configuration should be done with options.
     this.reduce = 4;
     this.padding = options.padding;
@@ -677,6 +679,10 @@ BookReader.prototype.setupTooltips = function() {
 BookReader.prototype.drawLeafs = function() {
     if (this.constMode1up == this.mode) {
         this.drawLeafsOnePage();
+        // Enable rotate button                         // by ParsedClassics
+        jIcons = $('.BRicon');                          // by ParsedClassics
+        jIcons.filter('.rotate').addClass('enabled');   // by ParsedClassics
+        jIcons.filter('.rotate').removeClass('disabled');// by ParsedClassics
     } else if (this.constModeThumb == this.mode) {
         this.drawLeafsThumbnail();
     } else {
@@ -735,7 +741,8 @@ BookReader.prototype.drawLeafsOnePage = function() {
     var leafTop = 0;
     var leafBottom = 0;
     for (i=0; i<this.getNumLeafs(); i++) {
-        var height  = parseInt(this._getPageHeight(i)/this.reduce);
+        //var height  = parseInt(this._getPageHeight(i)/this.reduce);               // commented out by ParsedClassics
+        var {height} = BookReader.prototype._getRotatedHeight(i, this, viewWidth);  // added by ParsedClassics
 
         leafBottom += height;
         var topInView    = (leafTop >= scrollTop) && (leafTop <= scrollBottom);
@@ -774,15 +781,19 @@ BookReader.prototype.drawLeafsOnePage = function() {
     leafTop = 0;
     var i;
     for (i=0; i<firstIndexToDraw; i++) {
-        leafTop += parseInt(this._getPageHeight(i)/this.reduce) +10;
+        //leafTop += parseInt(this._getPageHeight(i)/this.reduce) +10;              // commented out by ParsedClassics
+        var {height} = BookReader.prototype._getRotatedHeight(i, this, viewWidth);  // added by ParsedClassics
+        leafTop += height + 10;                                                     // added by ParsedClassics
     }
 
     for (i=0; i<indicesToDisplay.length; i++) {
         var index = indicesToDisplay[i];
-        var height  = parseInt(this._getPageHeight(index)/this.reduce);
+        //var height  = parseInt(this._getPageHeight(index)/this.reduce);                           // commented out by ParsedClassics
+        var {height, heightOld} = BookReader.prototype._getRotatedHeight(index, this, viewWidth);   // added by ParsedClassics
 
         if (BookReader.util.notInArray(indicesToDisplay[i], this.displayedIndices)) {
-            var width   = parseInt(this._getPageWidth(index)/this.reduce);
+            // var width   = parseInt(this._getPageWidth(index)/this.reduce);                       // commented out by ParsedClassics
+            var {width, widthOld}  = BookReader.prototype._getRotatedwidth(index, this, viewWidth); // added by ParsedClassics
             var div = document.createElement('div');
             div.className = 'BRpagediv1up';
             div.id = 'pagediv'+index;
@@ -799,9 +810,26 @@ BookReader.prototype.drawLeafsOnePage = function() {
             var img = document.createElement('img');
             img.src = this._getPageURI(index, this.reduce, 0);
             img.className = 'BRnoselect BRonePageImage';
-            img.style.width = width + 'px';
-            img.style.height = height + 'px';
+            // img.style.width = width + 'px';      // commented out by ParsedClassics
+            // img.style.height = height + 'px';    // commented out by ParsedClassics
+            img.style.width = widthOld + 'px';      // added by ParsedClassics
+            img.style.height = heightOld + 'px';    // added by ParsedClassics
             div.appendChild(img);
+            
+            if (typeof this.rotations[index] !== 'undefined' && (this.rotations[index][0] === 90 || this.rotations[index][0] === 270)) { // added by ParsedClassics start
+                if (this.rotations[index][0] === 90) {
+                    img.style.transform = "rotate(90deg)";
+                }
+                else if (this.rotations[index][0] === 270) {
+                    img.style.transform = "rotate(270deg)";
+                }
+                img.style.width = height+ 'px';
+                img.style.height = width + 'px';
+            }   
+            else if (typeof this.rotations[index] !== 'undefined' && this.rotations[index][0] === 180) {
+                img.style.transform = "rotate(180deg)";
+            } // added by ParsedClassics end
+            
         }
 
         leafTop += height +10;
@@ -829,6 +857,52 @@ BookReader.prototype.drawLeafsOnePage = function() {
     // Update the slider
     this.updateNavIndexThrottled();
 };
+
+BookReader.prototype._getRotatedHeight = function(index, This, viewWidth) { // added by ParsedClassics start
+    var height;
+    var heightOld;
+    var width;
+    var ratioWidthHeight;
+    heightOld  = parseInt(This._getPageHeight(index)/This.reduce);
+    if (typeof This.rotations[index] !== 'undefined' && (This.rotations[index][0] === 90 || This.rotations[index][0] === 270)) {
+        height = heightOld;
+        if (height <= viewWidth - 40) {
+            width = parseInt(This._getPageWidth(index)/This.reduce);
+            height = width;
+        }
+        else {
+            height = viewWidth - 40;
+            width = height;
+            ratioWidthHeight = This.rotations[index][1];
+            height = width * ratioWidthHeight;
+        }
+    }
+    else {
+        height  = heightOld;
+    }
+    return {height, heightOld};
+};  // added by ParsedClassics end
+
+BookReader.prototype._getRotatedwidth = function(index, This, viewWidth) {  // added by ParsedClassics start
+    var height;
+    var width;
+    var widthOld;
+    var ratioWidthHeight;
+    widthOld = parseInt(This._getPageWidth(index)/This.reduce);
+    if (typeof This.rotations[index] !== 'undefined' && (This.rotations[index][0] === 90 || This.rotations[index][0] === 270)) {
+        height  = parseInt(This._getPageHeight(index)/This.reduce);
+        if (height <= viewWidth - 40) {
+            width = height;
+        }
+        else {
+            width = viewWidth - 40;
+        }
+    }
+    else {
+        width = widthOld
+    }
+    return {width, widthOld};
+}   // added by ParsedClassics end
 
 // drawLeafsThumbnail()
 //______________________________________________________________________________
@@ -1342,8 +1416,11 @@ BookReader.prototype.resizePageView1up = function() {
 BookReader.prototype.onePageCalculateViewDimensions = function(reduce, padding) {
     var viewWidth = 0;
     var viewHeight = 0;
+    var viewWidthContainer = this.refs.$brContainer.prop('scrollWidth'); // added by ParsedClassics
     for (i=0; i<this.getNumLeafs(); i++) {
-        viewHeight += parseInt(this._getPageHeight(i)/reduce) + padding;
+        //viewHeight += parseInt(this._getPageHeight(i)/reduce) + padding;                  // commented out by ParsedClassics
+        var {height} = BookReader.prototype._getRotatedHeight(i, this, viewWidthContainer); // added by ParsedClassics
+        viewHeight += height + padding;                                                     // added by ParsedClassics
         var width = parseInt(this._getPageWidth(i)/reduce);
         if (width>viewWidth) viewWidth=width;
     }
@@ -1687,6 +1764,16 @@ BookReader.prototype.switchMode = function(mode) {
         this.prepareTwoPageView();
         this.twoPageCenterView(0.5, 0.5); // $$$ TODO preserve center
     }
+
+    // Disable the rotate button unless mode is constMode1up. // by ParsedClassics
+    jIcons = $('.BRicon');                                     // by ParsedClassics
+    if (mode == this.constMode1up) {                           // by ParsedClassics
+        jIcons.filter('.rotate').addClass('enabled');          // by ParsedClassics
+        jIcons.filter('.rotate').removeClass('disabled');       // by ParsedClassics
+    } else {                                                    // by ParsedClassics
+        jIcons.filter('.rotate').removeClass('enabled');        // by ParsedClassics
+        jIcons.filter('.rotate').addClass('disabled');          // by ParsedClassics
+    }                                                           // by ParsedClassics
 
 };
 
@@ -2107,9 +2194,11 @@ BookReader.prototype.onePageGetPageTop = function(index)
     var i;
     var leafTop = 0;
     var leafLeft = 0;
-    var h;
+    //var h;                                                                        // commented out by ParsedClassics
+    var viewWidth = this.refs.$brContainer.prop('scrollWidth');                     // added by ParsedClassics
     for (i=0; i<index; i++) {
-        h = parseInt(this._getPageHeight(i)/this.reduce);
+        //h = parseInt(this._getPageHeight(i)/this.reduce);                         // commented out by ParsedClassics
+        var {height:h} = BookReader.prototype._getRotatedHeight(i, this, viewWidth); // added by ParsedClassics
         leafTop += h + this.padding;
     }
     return leafTop;
@@ -3332,6 +3421,7 @@ BookReader.prototype.buildToolbarElement = function() {
     +       "<span class='BRtoolbarSection BRtoolbarSectionZoom tc ph10'>"
     +         "<button class='BRicon zoom_out js-tooltip'></button>"
     +         "<button class='BRicon zoom_in js-tooltip'></button>"
+    +         "<button class='BRicon rotate disabled js-tooltip'></button>" // by ParsedClassics
     +       "</span>"
 
     +     "</span>" // end BRtoolbarRight
@@ -3507,7 +3597,7 @@ BookReader.prototype.bindNavigationHandlers = function() {
        var cookiedate = new Date(); // added by ParsedClassics
        cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
        //document.cookie = search_str + "=" + "/mode/1up" + "; expires="+cookiedate.toGMTString() + "; samesite=lax; path=/"; // added and removed by ParsedClassics
-       localStorage.setItem(search_str, "/mode/1up");
+       localStorage.setItem(search_str, "/mode/1up"); // added by ParsedClassics
 							self.switchMode(self.constMode1up);
     });
 
@@ -3520,7 +3610,7 @@ BookReader.prototype.bindNavigationHandlers = function() {
        var cookiedate = new Date(); // added by ParsedClassics
        cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
        //document.cookie = search_str + "=" + "/mode/2up" + "; expires="+cookiedate.toGMTString() + "; samesite=lax; path=/"; // added and removed by ParsedClassics
-       localStorage.setItem(search_str, "/mode/2up");
+       localStorage.setItem(search_str, "/mode/2up"); // added by ParsedClassics
 							self.switchMode(self.constMode2up);
     });
 
@@ -3533,13 +3623,18 @@ BookReader.prototype.bindNavigationHandlers = function() {
        var cookiedate = new Date(); // added by ParsedClassics
        cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
        //document.cookie = search_str + "=" + "/mode/thumb" + "; expires="+cookiedate.toGMTString() + "; samesite=lax; path=/"; // added and removed by ParsedClassics
-       localStorage.setItem(search_str, "/mode/thumb");
+       localStorage.setItem(search_str, "/mode/thumb"); // added by ParsedClassics
 							self.switchMode(self.constModeThumb);
     });
 
     jIcons.filter('.fit').bind('fit', function(e) {
         // XXXmang implement autofit zoom
     });
+
+    jIcons.filter('.rotate').click(function(e) {    // added by ParsedClassics start
+        self.pRotate();                             
+        return false;                               
+    });                                             // added by ParsedClassics end
 
     jIcons.filter('.book_left').click(function(e) {
         self.trigger('stop');
@@ -4115,6 +4210,157 @@ BookReader.prototype._getPageURI = function(index, reduce, rotate) {
 };
 
 
+// pRotate()                                                                        // by ParsedClassics start
+//______________________________________________________________________________    
+BookReader.prototype.pRotate = function () {                                         
+    
+    if (this.mode !== this.constMode1up) { return; }  
+                                  
+    var currIndex = this.currentIndex();                                            
+
+    var viewWidth = this.refs.$brContainer.prop('scrollWidth'); 
+
+    var width  = parseInt(this._getPageWidth(currIndex)/this.reduce); 
+
+    var height   = parseInt(this._getPageHeight(currIndex)/this.reduce); 
+
+    var widthHeightRatio = width / height;
+
+    var div = $("#" + 'pagediv' + currIndex);
+    var img = div.find('img');
+
+    var numLeafs = this.getNumLeafs()
+
+    var lastDisplayedIndex = this.displayedIndices[this.displayedIndices.length - 1];
+
+    if (typeof this.rotations[currIndex] === 'undefined') {
+        this.rotations[currIndex] = [];
+        this.rotations[currIndex][0] = 90;
+        this.rotations[currIndex][1] = widthHeightRatio;
+    }
+    else if (this.rotations[currIndex][0] < 270) {
+        this.rotations[currIndex][0] += 90;
+        this.rotations[currIndex][1] = widthHeightRatio;
+    }
+    else if (this.rotations[currIndex][0] === 270) {
+        this.rotations[currIndex][0] = 0; 
+        this.rotations[currIndex][1] = widthHeightRatio;
+    }
+
+    var leafTop = 0;
+    for (var j = 0; j < currIndex; j++) {
+        var {height: pageheight} = BookReader.prototype._getRotatedHeight(j, this, viewWidth);
+        leafTop += pageheight + 10;
+    }  
+         
+    var top = leafTop;
+
+    var newWidth = null;
+    var newHeight = null;
+    var newLeft = null;
+    var oldHeight = null;
+    var topCorrectionDownwards = 0;
+    if (this.rotations[currIndex] && (this.rotations[currIndex][0] === 90 || this.rotations[currIndex][0] === 270)) {
+        if (height <= viewWidth - 40) {
+            newWidth = height;
+            newHeight = width;
+            newLeft = (viewWidth - newWidth) / 2;
+            div.css('width', newWidth + 'px');
+            div.css('height', newHeight + 'px');
+            div.css('left', newLeft + 'px');
+        }
+        else if (height > viewWidth - 40) {
+            newWidth = viewWidth - 40;
+            newHeight = newWidth * widthHeightRatio;
+            newLeft = (viewWidth - newWidth) / 2;
+            div.css('height', newHeight + 'px');
+            div.css('width', newWidth + 'px');
+            div.css('left', newLeft + 'px');
+            img.css('height', newWidth + 'px'); 
+            img.css('width', newHeight + 'px');
+        }
+        if (this.rotations[currIndex][0] === 90) {
+            img.css('transform', 'rotate(90deg)');
+        }
+        else if (this.rotations[currIndex][0] === 270) {
+            img.css('transform', 'rotate(270deg)');
+        }
+        topCorrectionDownwards = height - newHeight;
+        BookReader.prototype._correctTopPosDownwards(currIndex, lastDisplayedIndex, topCorrectionDownwards); 
+    }
+    else if (this.rotations[currIndex] && (this.rotations[currIndex][0] === 180 || this.rotations[currIndex][0] === 0)) {
+        if (width <= viewWidth - 40) {
+            console.log('aaa');
+            newWidth = width;
+            newHeight = height;
+            oldHeight = BookReader.prototype._findOldHeightRotating180deg(width, height, viewWidth, widthHeightRatio);
+            newLeft = (viewWidth - newWidth) / 2;
+            div.css('width', newWidth + 'px');
+            div.css('height', newHeight + 'px');
+            div.css('left', newLeft + 'px');
+            img.css('height', newHeight + 'px'); 
+            img.css('width', newWidth + 'px');
+        }
+        else if (width > viewWidth - 40) {
+            console.log('bbb');
+            newWidth = viewWidth - 40;
+            newHeight = newWidth / widthHeightRatio;
+            oldHeight = (viewWidth - 40) * widthHeightRatio;
+            newLeft = (viewWidth - newWidth) / 2;
+            div.css('height', newHeight + 'px');
+            div.css('width', newWidth + 'px');
+            div.css('left', newLeft + 'px');
+            img.css('height', newHeight + 'px'); 
+            img.css('width', newWidth + 'px');
+        }
+        if (this.rotations[currIndex][0] === 180) {
+            img.css('transform', 'rotate(180deg)');
+        }
+        else if (this.rotations[currIndex][0] === 0) {
+            img.css('transform', 'rotate(0deg)');
+            delete this.rotations[currIndex];
+        }
+        topCorrectionDownwards = oldHeight - newHeight;
+        BookReader.prototype._correctTopPosDownwards(currIndex, lastDisplayedIndex, topCorrectionDownwards); 
+    }
+
+    BookReader.prototype._correctBrPageViewHeight(this, viewWidth);
+
+} // by ParsedClassics end
+
+BookReader.prototype._correctTopPosDownwards = function(currIndex, lastDisplayedIndex, topPosCorrection) { // by ParsedClassics start
+    var belowDiv = null;
+    var belowTopPos = null;
+    for (var j = currIndex + 1; j <= lastDisplayedIndex; j++) {
+        belowDiv = $("#" + 'pagediv' + j);
+        if (belowDiv.length === 1) {
+            belowTopPos = parseInt(belowDiv.css('top'));
+            belowDiv.css('top', belowTopPos - topPosCorrection + 'px');
+        }
+    }
+} // by ParsedClassics end
+
+BookReader.prototype._correctBrPageViewHeight = function(This, viewWidth) { // by ParsedClassics start
+    var numLeafs = This.getNumLeafs(); 
+    var brPageViewHeight = 0;
+    for (var i=0; i<numLeafs; i++) {
+        var {height: pageHeight} = BookReader.prototype._getRotatedHeight(i, This, viewWidth);
+        brPageViewHeight += pageHeight + 10;
+    }
+    $('#BRpageview').css('height', brPageViewHeight + 'px');
+} // by ParsedClassics end
+
+BookReader.prototype._findOldHeightRotating180deg = function(widthUnrotated, heightUnrotated, viewWidth, widthHeightRatio) { // by ParsedClassics start
+    var oldHeight;
+    if (heightUnrotated < viewWidth - 40) {
+        oldHeight = widthUnrotated;
+    }
+    else if (heightUnrotated > viewWidth - 40) {
+        oldHeight = (viewWidth - 40) * widthHeightRatio;
+    }
+    return oldHeight;
+} // by ParsedClassics end
+
 // showProgressPopup
 //______________________________________________________________________________
 BookReader.prototype.showProgressPopup = function(msg) {
@@ -4341,6 +4587,7 @@ BookReader.prototype.initUIStrings = function() {
     var titles = { '.logo': 'Go to Archive.org', // $$$ update after getting OL record
                    '.zoom_in': 'Zoom in',
                    '.zoom_out': 'Zoom out',
+                   '.rotate': 'Rotate page', // added by ParsedClassics
                    '.onepg': 'One-page view',
                    '.twopg': 'Two-page view',
                    '.thumb': 'Thumbnail view',

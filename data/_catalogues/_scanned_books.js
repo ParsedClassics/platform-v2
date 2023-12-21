@@ -107,14 +107,72 @@ ParsedClassicsScannedBooks = {
     ]
   
   }
-  
-  , new_testament_in_original_greek_ed_robinson_pierpont: {
+
+	, new_testament_in_original_greek_ed_robinson_pierpont: {
   
     bookTitle: 'The New Testament in the original Greek. Byzantine textform.'
 
     , bookUrlText: 'Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, Mass.: Chilton Book Publishing.'
 
     , numLeafs: "619"
+
+    , thumbnail: "page0003.jpg"
+
+    , metadata: [
+
+       {
+
+         label: 'Title'
+
+        , value: 'The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, Mass.: Chilton Book Publishing.'
+
+       }
+
+    ]
+  
+  
+  }
+  
+  , new_testament_in_original_greek_ed_robinson_pierpont2: { // added to test rotating of square pages
+  
+    bookTitle: 'The New Testament in the original Greek. Byzantine textform.'
+
+    , bookUrlText: 'Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, Mass.: Chilton Book Publishing.'
+
+    , numLeafs: "619"
+
+		, leafWidth: 1100
+
+		, leafHeight: 1100
+
+    , thumbnail: "page0003.jpg"
+
+    , metadata: [
+
+       {
+
+         label: 'Title'
+
+        , value: 'The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, Mass.: Chilton Book Publishing.'
+
+       }
+
+    ]
+  
+  
+  }
+
+	, new_testament_in_original_greek_ed_robinson_pierpont3: { // added to test rotating of landscape pages
+  
+    bookTitle: 'The New Testament in the original Greek. Byzantine textform.'
+
+    , bookUrlText: 'Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, Mass.: Chilton Book Publishing.'
+
+    , numLeafs: "619"
+
+		, leafWidth: 1200
+
+		, leafHeight: 800
 
     , thumbnail: "page0003.jpg"
 
