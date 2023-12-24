@@ -1107,7 +1107,7 @@ nav { font-family: Arial, Helvetica, Verdana; }
 .larger { font-size: 1.2em; }
 .loader { background: url(images/loading.gif) no-repeat 50%; height: 16px; min-width: 16px;}
 
-@media (max-width: 800px) {
+@media (max-width: 800.99px) { /* .99 added by ParsedClassics */
   .smaller-sm { font-size: .8em; }
   .ph10-sm { padding-left: 10px; padding-right: 10px; }
   .ph20-sm { padding-left: 20px; padding-right: 20px; }
@@ -1272,13 +1272,13 @@ html.mm-background .BookReader {
   .hide-desktop { display: none; }
 }
 /* Mobile */
-@media (max-width: 800px) {
+@media (max-width: 800.99px) { /* .99 added by ParsedClassics */
   .desktop-only { display: none; }
   .hide-mobile { display: none; }
 }
 
 /* Mobile Only */
-@media (max-width: 800px) {
+@media (max-width: 800.99px) { /* .99 added by ParsedClassics */
   div#BRnavpos { margin-right: 90px; }
   /*.BRtoolbar { height: 40px; }*/ /*Commented out by ParsedClassics*/
   .BRtoolbar.responsive .BRtoolbarbuttons { display: none; }
@@ -1523,11 +1523,11 @@ html.mm-background .BookReader {
 
 
 /* Mobile Only (with some responsiveness) */
-@media (max-width: 800px) {
-  .BRfloatBody, { padding: 10px 10px; }
+@media (max-width: 800.99px) { /* .99 added by ParsedClassics */
+  .BRfloatBody { padding: 10px 10px; }
   .BRfloat .message,
   .BRfloatBody,
-  .BRfloatHead, {
+  .BRfloatHead {
     box-sizing: border-box;
     line-height: normal;
     border-bottom:1px solid rgb(216,216,216);
@@ -1537,7 +1537,7 @@ html.mm-background .BookReader {
     font-weight: 700;
     text-align: center;
   }
-  .BRfloatFoot, { padding: 10px 10px 0 10px; }
+  .BRfloatFoot { padding: 10px 10px 0 10px; }
   .BRfloatFoot .action { margin-bottom: 10px; }
   .BRfloatFoot { border-top: 1px solid #ccc; }
   #BRnavline .chapter { display: none; } /* hide chapters in mobile */
@@ -1548,7 +1548,7 @@ html.mm-background .BookReader {
   .BRfloat { max-width: initial; width:455px; }
   .BRfloat.wide { max-width: initial; width:555px; }
 }
-@media (max-width: 800px) and (min-width: 341px) {
+@media (max-width: 800.99px) and (min-width: 341px) { /* .99 added by ParsedClassics */
   .BRfloat { max-width: initial; width:340px; }
 }
 @media (max-width: 340px) {
@@ -1558,7 +1558,7 @@ html.mm-background .BookReader {
 /* --------------------- END BRFloat ---------------------------------------- */
 
 /* IA Info dialog */
-.BRinfoValueW { margin-bottom: 10px; }
+.BRinfoValueW { margin-bottom: 10px; padding: 0 10px 0 10px } /* padding added by ParsedClassics */
 .BRinfoValue { font-size: 16px; }
 .BRinfoLabel { font-size: 12px; color: #999; }
 .BRinfoMoreInfoW { background-color: rgb(74,144,226); border-radius: 2px; padding:8px; text-align:center;}
@@ -1567,7 +1567,7 @@ html.mm-background .BookReader {
 .BRinfoRightCol > div { margin-bottom: 15px; }
 
 /* Mobile Only */
-@media (max-width: 800px) {
+@media (max-width: 800.99px) { /* .99 added by ParsedClassics */
   #mobileInfo { font-size: 14px; line-height: 20px; }
   .BRinfoLeftCol { font-size: 14px; }
   .BRimageW {text-align: center; margin-bottom: 10px;}
