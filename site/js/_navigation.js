@@ -12,7 +12,7 @@ $(document).ready(function(){
 
     '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="../site/index.html"><span>PARSED<span class="pc-interverb-symbol">&#8942;</span>CLASSICS</span></a>' +
 
-    '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="../library/index.html">Library app</a>' +
+    '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="../app.html">Library app</a>' +
 
     '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="../site/catalogue.html">Catalogue</a>' + 
 
