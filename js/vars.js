@@ -106,6 +106,7 @@ const ParsedClassicsAppVars = {
   layoutMember: "L",
   dimensionsMember: "D",
   pointersMember: "P",
+  collectionSetMember: "edition",
   collectionMember: "coll",
   wordMember: "word",
   lineMember: "line",
