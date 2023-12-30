@@ -45,6 +45,10 @@ div[data-resource-type="resources_list"][data-scanned-or-typed="typed"] .pc-reso
   font-weight: 500;
 }
 
+div[data-resource-type="resources_list"][data-scanned-or-typed="typed"] .pc-padding-bottom-16:not(:last-child) {
+  padding-bottom: 16px;
+}
+
 div[data-resource-type="info_text"][data-scanned-or-typed="typed"] > .tab__content-inner {
   overflow-y: auto;
   padding: 8px;
