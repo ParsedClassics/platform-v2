@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+ This file is part of ParsedClassics app
+=====================================================
+ Copyright (c) Eleutherius Joannides
+=====================================================
+-->
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+
+<title>Concordance generator | ParsedClassics</title>
+	
+<link type="text/css" rel="stylesheet" href="./css/w3.css" />
+
+<link type="text/css" rel="stylesheet" href="./css/pc.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
+	
+<script type="text/javascript" src="./js/parsedclassics.vars.js"></script>
+	
+<script type="text/javascript" src="./js/parsedclassics.data.js"></script>
+	
+<script type="text/javascript" src="./js/parsedclassics.widgets.js"></script>
+	
+<script type="text/javascript" src="./js/parsedclassics.tools.js"></script>
+	
+<script>
+$(document).ready(function(){
+
+		ParsedClassicsConcordance.init();
+
+});
+	
+$(document).ready(function(){
+
+		ParsedClassicsModalDialogues.initAllCloseDialogueButtons();
+
+});
+</script>
+	
+</head>	
+	
+<body id="tools_page">
+	
+<script type="text/javascript" src="./js/_navigation.js"></script>	
+	
+<div id="pc-site-content" class="pc-center-pane-maxwidth w3-border-right w3-padding pc-padding-top-0">
+	
+<h1>Concordance generator</h1>
+
+<h2>Language input:</h2>
+
+<form name="pc-original-text-language">
+
+<input type="radio" name="original-text-language" value="greek" checked> Greek&nbsp; <input type="radio" name="original-text-language" value="latin"> Latin
+    
+</form>
+
+<h2>Book abbreviation input:</h2>
+
+<input id="pc-textarea-input3" type="text" class="pc-width-100">
+	
+<h2>Parsed text code input:</h2>
+	
+<textarea id="pc-textarea-input" class="pc-width-100"></textarea>
+	
+<div class="pc-padding-8"><button id="pc-load-button" class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Load text</button></div>
+	
+<h2>Word list input:</h2>
+	
+<textarea id="pc-textarea-input2" class="pc-width-100"></textarea>
+	
+<div class="pc-padding-8"><button id="pc-generate-button" class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Generate concordance</button></div>
+	
+<h2>Concordance code output:</h2>
+	
+<textarea id="pc-textarea-output" class="pc-width-100"></textarea>
+	
+<div class="pc-padding-8"><button id="pc-check-button" class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Check for completeness</button></div>
+	
+<h2>Concordance:</h2>
+	
+<div id="pc-append-code-container2" class="pc-hide pc-show-verses"></div>
+	
+<h2>Parsed text:</h2>
+
+<div id="pc-append-code-container" class="pc-hide pc-show-verses"></div>
+
+
+	
+	<!-- Modal dialogue code shoud be below all content -->
+<div id="pc-tools-error-dialogue" class="w3-modal">
+ <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+  <header class="w3-container w3-dark-grey"> 
+   <span class="pc-close-dialogue_button w3-button w3-dark-grey w3-xlarge w3-hover-white w3-display-topright">&times;</span>
+   <h2>Error</h2>
+  </header>
+  
+  <div id="error-msg-text-el" class="pc-modal-content-inner w3-container w3-padding-16">
+  </div> <!-- End of div element containing message -->
+
+ </div>  <!-- End of .w3-modal-content -->
+</div> <!-- End of #pc-tools-dialogue -->
+
+	
+	
+</div>
+	
+</body>
+</html>
