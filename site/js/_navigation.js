@@ -24,7 +24,7 @@ $(document).ready(function(){
     
     '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="../site/about.html">About</a>' + 
     // IMPORTANT! Editor's tools page must be inside /site/ directory!
-    '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding pc-small pc-position-absolute pc-bottom-0" href="../site/tools.html">Editor\'s area</a>' +
+    '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding pc-small pc-position-absolute pc-bottom-0" href="../tools/index.html">Editor\'s area</a>' +
 
     '</div>');
 

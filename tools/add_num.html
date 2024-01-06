@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title></title>
+
+
+  
+  </head>
+  <body>
+  
+  <input id="first_num" type="number" /><br><br>
+  <input id="second_num" type="text" />
+  
+  <script>
+
+first_input = document.getElementById("first_num");
+second_input = document.getElementById("second_num");
+
+function add_num() {
+first_num = first_input.value;
+second_num = parseInt(first_num) + 86;
+second_input.value = second_num;
+}
+
+first_input.addEventListener("change", add_num);
+
+</script>
+
+  </body>
+</html>
