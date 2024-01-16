@@ -3902,7 +3902,7 @@ nt_conc_by_parsedclassics_peter_1_parsed_text =
 
 ' <span class="word" data-form="ζητῶν" data-part-of-speech="verb" data-parsing="present active participle nominative singular masculine" data-lemma="ζητέω">ζητῶν</span>' +
 
-' <span class="word" data-form="τίνα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τίνα</span>' +
+' <span class="word" data-form="τίνα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τίς">τίνα</span>' +
 
 ' <span class="word" data-form="καταπίῃ" data-part-of-speech="verb" data-parsing="aorist active subjunctive 3rd person singular" data-lemma="καταπίνω">καταπίῃ</span>·' +
 

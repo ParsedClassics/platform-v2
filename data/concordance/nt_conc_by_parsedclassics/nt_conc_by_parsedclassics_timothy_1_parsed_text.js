@@ -232,7 +232,7 @@ nt_conc_by_parsedclassics_timothy_1_parsed_text =
 
 
 
-' <span class="word" data-form="τισί(ν)" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="dative plural masculine" data-lemma="τις">τισὶν</span>' +
+' <span class="word" data-form="τισι(ν)" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="dative plural masculine" data-lemma="τις">τισὶν</span>' +
 
 
 
@@ -828,7 +828,7 @@ nt_conc_by_parsedclassics_timothy_1_parsed_text =
 
 
 
-' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular masculine" data-lemma="ὁ">τὸν</span>' +
+' <span class="word" data-form="τόν" data-part-of-speech="article" data-parsing="accusative singular masculine" data-lemma="ὁ">τὸν</span>' +
 
 
 
@@ -5800,7 +5800,7 @@ nt_conc_by_parsedclassics_timothy_1_parsed_text =
 
 
 
-' <span class="word" data-form="τινῶν" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive plural masculine" data-lemma="τις">Τινῶν</span>' +
+' <span class="word" data-form="τινων" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive plural masculine" data-lemma="τις">Τινῶν</span>' +
 
 
 
@@ -5836,7 +5836,7 @@ nt_conc_by_parsedclassics_timothy_1_parsed_text =
 
 
 
-' <span class="word" data-form="τισί(ν)" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="dative plural masculine" data-lemma="τις">τισὶν</span>' +
+' <span class="word" data-form="τισι(ν)" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="dative plural masculine" data-lemma="τις">τισὶν</span>' +
 
 
 

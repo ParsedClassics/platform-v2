@@ -53,10 +53,24 @@ var ParsedClassicsWordList = {
 	}
 	
 	, generateWordList: function() {
-			var parsed_text_container, words_all, words_list_unordered, single_word, output_textarea, words_list_array, words_list_ordered, language_form_el, language_radio_el, parsed_text_lang, msg_el;
+			var parsed_text_container, words_all, words_list_unordered, single_word, word_chars, chars_with_grave_accent, contains_grave_accent, output_textarea, words_list_array, words_list_ordered, language_form_el, language_radio_el, parsed_text_lang, msg_el;
 		
 			// find parsed text element
 			parsed_text_container = $("#" + ParsedClassicsVars.appendCodeContainerId);
+
+			// find language form and radio els
+			language_form_el = document.forms[ParsedClassicsVars.languageFormName];
+			language_radio_el = language_form_el[ParsedClassicsVars.languageRadioName];
+		
+			// find language of parsed text
+			parsed_text_lang = language_radio_el.value;
+		
+			if (parsed_text_lang == ParsedClassicsVars.languageGreek) {
+				ParsedClassicsVars.locale = "el";
+			}
+			else if (parsed_text_lang == ParsedClassicsVars.languageLatin) {
+				ParsedClassicsVars.locale = "la";
+			}
 		
 			// find all word els
 			words_all = parsed_text_container.find("." + ParsedClassicsVars.wordClass);
@@ -75,10 +89,32 @@ var ParsedClassicsWordList = {
 		
 			// define list string
 			words_list_unordered = "|" + words_all.first().attr(ParsedClassicsVars.lemmaAttr) + "|";
+
+			// define array consisting of symbols of greek vowels having grave accent
+			chars_with_grave_accent = ['ὰ', 'ὲ', 'ὴ', 'ὶ', 'ὸ', 'ὺ', 'ὼ'];
 			
 			// put all words into pipe delimited string
 			for (var i = 1; i < words_all.length; i++) {
 				single_word = $(words_all[i]).attr(ParsedClassicsVars.lemmaAttr);
+				// check if there are in the Greek word a vowel with grave accent (there should be no grave accents in lemma)
+				if (ParsedClassicsVars.locale == "el") {
+					// get array of chars from lemma
+					word_chars = single_word.split('');
+					// find if lemma contains grave accent
+					contains_grave_accent = chars_with_grave_accent.some(char => {
+						return word_chars.includes(char);
+					});
+					// display error msg in case there is grave accent in lemma
+					if (contains_grave_accent) {
+						// find message el
+						msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+						// put message text inside message el
+						msg_el.html("Grave accent found in lemma " + single_word + " !");
+						// display modal dialogue
+						ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");	
+						return;
+					}
+				}
 				// is word already in string?
 				if (words_list_unordered.indexOf("|" + single_word + "|") == -1) {
 						// if it is not, append it to string
@@ -92,19 +128,7 @@ var ParsedClassicsWordList = {
 			// split words string into words array
 			words_list_array = words_list_unordered.split("|");
 		
-			// find language form and radio els
-			language_form_el = document.forms[ParsedClassicsVars.languageFormName];
-			language_radio_el = language_form_el[ParsedClassicsVars.languageRadioName];
-		
-			// find language of parsed text
-			parsed_text_lang = language_radio_el.value;
-		
-			if (parsed_text_lang == ParsedClassicsVars.languageGreek) {
-				ParsedClassicsVars.locale = "el";
-			}
-			else if (parsed_text_lang == ParsedClassicsVars.languageLatin) {
-				ParsedClassicsVars.locale = "la";
-			}
+			
 
 			// sort words aphabetically
 			words_list_array.sort(function(a, b) {return a.localeCompare(b, ParsedClassicsVars.locale, {sensitivity: 'base'}) });
@@ -237,7 +261,10 @@ var ParsedClassicsConcordance = {
 				, first_item_in_list
 				, language_form_el
 				, language_radio_el
-				, parsed_text_lang;
+				, parsed_text_lang
+				, chars_with_grave_accent
+				, word_chars
+				, contains_grave_accent;
 
 				// find parsed text element
 				parsed_text_container = $("#" + ParsedClassicsVars.appendCodeContainerId);
@@ -322,6 +349,9 @@ var ParsedClassicsConcordance = {
 				
 				// split words string into words array
 				words_list_array = words_list_string.split("|");
+
+				// define array consisting of symbols of greek vowels having grave accent
+				chars_with_grave_accent = ['ὰ', 'ὲ', 'ὴ', 'ὶ', 'ὸ', 'ὺ', 'ὼ'];
 				
 				// generate concordance html code
 				for (var i = 0; i < words_list_array.length; i++) {
@@ -353,6 +383,25 @@ var ParsedClassicsConcordance = {
 						word_el = $(words_by_lemma[j]);
 						// find word form, part of spreech, parsing of current word
 						word_form = word_el.attr(ParsedClassicsVars.formAttr).trim();
+						if (ParsedClassicsVars.locale == "el") {
+							// get array of chars from lemma
+							word_chars = word_form.split('');
+							// find if lemma contains grave accent
+							contains_grave_accent = chars_with_grave_accent.some(char => {
+								return word_chars.includes(char);
+							});
+							// display error msg in case there is grave accent in lemma
+							if (contains_grave_accent) {
+								// find message el
+								msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+								// put message text inside message el
+								msg_el.html("Grave accent found in word form " + word_form + " !");
+								// display modal dialogue
+								ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");	
+								return;
+							}
+						}
+
 						part_of_speech = word_el.attr(ParsedClassicsVars.partOfSpeechAttr).trim().replace(/\s+/g, ' ');
 						parsing = word_el.attr(ParsedClassicsVars.parsingAttr).trim().replace(/\s+/g, ' ');
 						// find word form, part of spreech, parsing of next word 

@@ -1688,7 +1688,7 @@ nt_conc_by_parsedclassics_james_parsed_text =
 
 ' <span class="word" data-form="ἔχεις" data-part-of-speech="verb" data-parsing="present active indicative 2nd person singular" data-lemma="ἔχω">ἔχεις</span>,' +
 
-' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">κ</span><span class="word" data-form="ἐγώ" data-part-of-speech="personal pronoun" data-parsing="dative plural" data-lemma="ἐγώ">ἀγὼ</span>' +
+' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">κ</span><span class="word" data-form="ἐγώ" data-part-of-speech="personal pronoun" data-parsing="nominative singular" data-lemma="ἐγώ">ἀγὼ</span>' +
 
 ' <span class="word" data-form="ἔργα" data-part-of-speech="noun" data-parsing="accusative plural neuter" data-lemma="ἔργον">ἔργα</span>' +
 
@@ -1712,7 +1712,7 @@ nt_conc_by_parsedclassics_james_parsed_text =
 
 ' <span class="word" data-form="σου" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="σύ">σου</span>,' +
 
-' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">κ</span><span class="word" data-form="ἐγώ" data-part-of-speech="personal pronoun" data-parsing="dative plural" data-lemma="ἐγώ">ἀγώ</span>' +
+' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">κ</span><span class="word" data-form="ἐγώ" data-part-of-speech="personal pronoun" data-parsing="nominative singular" data-lemma="ἐγώ">ἀγώ</span>' +
 
 ' <span class="word" data-form="δείξω" data-part-of-speech="verb" data-parsing="future active indicative 1st person singular" data-lemma="δείκνυμι">δείξω</span>' +
 
@@ -3902,7 +3902,7 @@ nt_conc_by_parsedclassics_james_parsed_text =
 
 ' <span class="word" data-form="ἄλλον" data-part-of-speech="adjective" data-parsing="accusative singular masculine" data-lemma="ἄλλος">ἄλλον</span>' +
 
-' <span class="word" data-form="τινά" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
+' <span class="word" data-form="τινα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
 
 ' <span class="word" data-form="ὅρκον" data-part-of-speech="noun" data-parsing="accusative singular masculine" data-lemma="ὅρκος">ὅρκον</span>·' +
 

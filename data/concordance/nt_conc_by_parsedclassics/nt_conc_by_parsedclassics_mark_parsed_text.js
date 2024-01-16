@@ -9602,7 +9602,7 @@ nt_conc_by_parsedclassics_mark_parsed_text =
 
 ' <span class="word" data-form="ἰδόντες" data-part-of-speech="verb" data-parsing="aorist active participle nominative plural masculine" data-lemma="ὁράω">ἰδόντες</span>' +
 
-' <span class="word" data-form="τινάς" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural masculine" data-lemma="τις">τινὰς</span>' +
+' <span class="word" data-form="τινας" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural masculine" data-lemma="τις">τινὰς</span>' +
 
 ' <span class="word" data-form="τῶν" data-part-of-speech="article" data-parsing="genitive plural masculine" data-lemma="ὁ">τῶν</span>' +
 
@@ -11874,7 +11874,7 @@ nt_conc_by_parsedclassics_mark_parsed_text =
 
 ' <span class="word" data-form="εἴπῃς" data-part-of-speech="verb" data-parsing="aorist active subjunctive 2nd person singular" data-lemma="λέγω">εἴπῃς</span>' +
 
-' <span class="word" data-form="τινί" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="dative singular masculine" data-lemma="τις">τινὶ</span>' +
+' <span class="word" data-form="τινι" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="dative singular masculine" data-lemma="τις">τινὶ</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 

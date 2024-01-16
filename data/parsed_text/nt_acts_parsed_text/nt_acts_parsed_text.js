@@ -4474,7 +4474,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="μού" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="ἐγώ">μου</span>' +
+' <span class="word" data-form="μου" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="ἐγώ">μου</span>' +
 
 
 
@@ -13250,7 +13250,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινί" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="dative singular masculine" data-lemma="τις">τινὶ</span>' +
+' <span class="word" data-form="τινι" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="dative singular masculine" data-lemma="τις">τινὶ</span>' +
 
 
 
@@ -25074,7 +25074,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινός" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive singular masculine" data-lemma="τις">τινός</span>;' +
+' <span class="word" data-form="τινος" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive singular masculine" data-lemma="τις">τινός</span>;' +
 
 
 
@@ -27146,7 +27146,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινάς" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural feminine" data-lemma="τις">τινάς</span>.' +
+' <span class="word" data-form="τινας" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural feminine" data-lemma="τις">τινάς</span>.' +
 
 
 
@@ -33314,7 +33314,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινάς" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural feminine" data-lemma="τις">τινάς</span>.' +
+' <span class="word" data-form="τινας" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural feminine" data-lemma="τις">τινάς</span>.' +
 
 
 
@@ -34110,7 +34110,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="ἤμην" data-part-of-speech="verb" data-parsing="imperfect active indicative 1st person singular" data-lemma="εἰμί">ἤμην</span>,' +
+' <span class="word" data-form="ἤμην" data-part-of-speech="verb" data-parsing="imperfect middle indicative 1st person singular" data-lemma="εἰμί">ἤμην</span>,' +
 
 
 
@@ -38688,7 +38688,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινά" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινα</span>' +
+' <span class="word" data-form="τινα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινα</span>' +
 
 
 
@@ -43412,7 +43412,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="οἵ" data-part-of-speech="article" data-parsing="nominative plural masculine" data-lemma="ὁ">Οἱ</span>' +
+' <span class="word" data-form="οἱ" data-part-of-speech="article" data-parsing="nominative plural masculine" data-lemma="ὁ">Οἱ</span>' +
 
 
 
@@ -47064,7 +47064,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
 
 
 
@@ -49292,7 +49292,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινάς" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural feminine" data-lemma="τις">τινάς</span>.' +
+' <span class="word" data-form="τινας" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural feminine" data-lemma="τις">τινάς</span>.' +
 
 
 
@@ -49660,7 +49660,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινά" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular feminine" data-lemma="τις">τινὰ</span>' +
+' <span class="word" data-form="τινα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular feminine" data-lemma="τις">τινὰ</span>' +
 
 
 
@@ -52120,7 +52120,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινάς" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural masculine" data-lemma="τις">τινὰς</span>' +
+' <span class="word" data-form="τινας" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural masculine" data-lemma="τις">τινὰς</span>' +
 
 
 
@@ -53314,7 +53314,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
 
 
 
@@ -54782,7 +54782,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
 
 
 
@@ -55130,7 +55130,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τὴν" data-part-of-speech="article" data-parsing="accusative singular feminine" data-lemma="ὁ">τὴν</span>' +
+' <span class="word" data-form="τήν" data-part-of-speech="article" data-parsing="accusative singular feminine" data-lemma="ὁ">τὴν</span>' +
 
 
 
@@ -55470,7 +55470,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινός" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive singular masculine" data-lemma="τις">τινὸς</span>' +
+' <span class="word" data-form="τινος" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive singular masculine" data-lemma="τις">τινὸς</span>' +
 
 
 
@@ -56818,7 +56818,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινά" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
+' <span class="word" data-form="τινα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
 
 
 
@@ -58106,7 +58106,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινός" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive singular masculine" data-lemma="τις">τινός</span>.' +
+' <span class="word" data-form="τινος" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive singular masculine" data-lemma="τις">τινός</span>.' +
 
 
 
@@ -60084,7 +60084,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
 
 
 
@@ -73972,7 +73972,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινός" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive singular masculine" data-lemma="τις">τινός</span>,' +
+' <span class="word" data-form="τινος" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive singular masculine" data-lemma="τις">τινός</span>,' +
 
 
 
@@ -75274,7 +75274,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
 
 
 
@@ -75746,7 +75746,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινάς" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural feminine" data-lemma="τις">τινάς</span>,' +
+' <span class="word" data-form="τινας" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural feminine" data-lemma="τις">τινάς</span>,' +
 
 
 
@@ -77218,7 +77218,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινῶν" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive plural feminine" data-lemma="τις">τινῶν</span>,' +
+' <span class="word" data-form="τινων" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="genitive plural feminine" data-lemma="τις">τινῶν</span>,' +
 
 
 
@@ -81274,7 +81274,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="ἥ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">ἥ</span>' +
+' <span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">ἥ</span>' +
 
 
 
@@ -82062,7 +82062,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινά" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
+' <span class="word" data-form="τινα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
 
 
 
@@ -83606,7 +83606,7 @@ nt_acts_parsed_text =
 
 
 
-' <span class="word" data-form="τινά" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular feminine" data-lemma="τις">τινὰ</span>' +
+' <span class="word" data-form="τινα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular feminine" data-lemma="τις">τινὰ</span>' +
 
 
 

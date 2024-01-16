@@ -6578,7 +6578,7 @@ nt_corinthians_2_parsed_text =
 
 ' <span class="word" data-form="περισσόν" data-part-of-speech="adjective" data-parsing="nominative singular neuter" data-lemma="περισσός">περισσόν</span>' +
 
-' <span class="word" data-form="μοί" data-part-of-speech="personal pronoun" data-parsing="dative singular" data-lemma="ἐγώ">μοί</span>' +
+' <span class="word" data-form="μοι" data-part-of-speech="personal pronoun" data-parsing="dative singular" data-lemma="ἐγώ">μοί</span>' +
 
 ' <span class="word" data-form="ἐστί(ν)" data-part-of-speech="verb" data-parsing="present active indicative 3rd person singular" data-lemma="εἰμί">ἐστιν</span>' +
 

@@ -9970,7 +9970,7 @@ nt_matthew_parsed_text =
 
 ' <span class="word" data-form="ἰσχύειν" data-part-of-speech="verb" data-parsing="present active infinitive" data-lemma="ἰσχύω">ἰσχύειν</span>' +
 
-' <span class="word" data-form="τινά" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
+' <span class="word" data-form="τινα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
 
 ' <span class="word" data-form="παρελθεῖν" data-part-of-speech="verb" data-parsing="aorist active infinitive" data-lemma="παρέρχομαι">παρελθεῖν</span>' +
 
@@ -10340,7 +10340,7 @@ nt_matthew_parsed_text =
 
 ' <span class="word" data-form="ἰδού" data-part-of-speech="interjection" data-parsing="" data-lemma="ἰδού">ἰδού</span>,' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
 
 ' <span class="word" data-form="τῶν" data-part-of-speech="article" data-parsing="genitive plural masculine" data-lemma="ὁ">τῶν</span>' +
 
@@ -42976,7 +42976,7 @@ nt_matthew_parsed_text =
 
 ' <span class="line"><span data-line-number="27:47" class="line-number">27:47</span>' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -44196,7 +44196,7 @@ nt_matthew_parsed_text =
 
 ' <span class="word" data-form="ἰδού" data-part-of-speech="interjection" data-parsing="" data-lemma="ἰδού">ἰδού</span>,' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
 
 ' <span class="word" data-form="τῆς" data-part-of-speech="article" data-parsing="genitive singular feminine" data-lemma="ὁ">τῆς</span>' +
 
