@@ -1202,7 +1202,7 @@ nt_titus_parsed_text =
 
 ' <span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατὰ</span>' +
 
-' <span class="word" data-form="τὸν" data-part-of-speech="article" data-parsing="accusative singular masculine" data-lemma="ὁ">τὸν</span>' +
+' <span class="word" data-form="τόν" data-part-of-speech="article" data-parsing="accusative singular masculine" data-lemma="ὁ">τὸν</span>' +
 
 ' <span class="word" data-form="αὐτοῦ" data-part-of-speech="personal pronoun" data-parsing="genitive singular masculine" data-lemma="αὐτός">αὐτοῦ</span>' +
 

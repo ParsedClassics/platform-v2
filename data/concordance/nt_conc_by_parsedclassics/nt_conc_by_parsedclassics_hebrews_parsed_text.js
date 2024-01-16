@@ -454,7 +454,7 @@ nt_conc_by_parsedclassics_hebrews_parsed_text =
 
 ' <span class="word" data-form="χειρῶν" data-part-of-speech="noun" data-parsing="genitive plural feminine" data-lemma="χείρ">χειρῶν</span>' +
 
-' <span class="word" data-form="σού" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="σύ">σού</span>' +
+' <span class="word" data-form="σου" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="σύ">σού</span>' +
 
 ' <span class="word" data-form="εἰσί(ν)" data-part-of-speech="verb" data-parsing="present active indicative 3rd person plural" data-lemma="εἰμί">εἰσιν</span>' +
 
@@ -2284,7 +2284,7 @@ nt_conc_by_parsedclassics_hebrews_parsed_text =
 
 ' <span class="word" data-form="ἀπολείπεται" data-part-of-speech="verb" data-parsing="present passive indicative 3rd person singular" data-lemma="ἀπολείπω">ἀπολείπεται</span>' +
 
-' <span class="word" data-form="τινάς" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural masculine" data-lemma="τις">τινὰς</span>' +
+' <span class="word" data-form="τινας" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural masculine" data-lemma="τις">τινὰς</span>' +
 
 ' <span class="word" data-form="εἰσελθεῖν" data-part-of-speech="verb" data-parsing="aorist active infinitive" data-lemma="εἰσέρχομαι">εἰσελθεῖν</span>' +
 
@@ -2316,7 +2316,7 @@ nt_conc_by_parsedclassics_hebrews_parsed_text =
 
 ' <span class="word" data-form="πάλιν" data-part-of-speech="adverb" data-parsing="" data-lemma="πάλιν">πάλιν</span>' +
 
-' <span class="word" data-form="τινά" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular feminine" data-lemma="τις">τινὰ</span>' +
+' <span class="word" data-form="τινα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular feminine" data-lemma="τις">τινὰ</span>' +
 
 ' <span class="word" data-form="ὁρίζει" data-part-of-speech="verb" data-parsing="present active indicative 3rd person singular" data-lemma="ὁρίζω">ὁρίζει</span>' +
 
@@ -3184,7 +3184,7 @@ nt_conc_by_parsedclassics_hebrews_parsed_text =
 
 ' <span class="word" data-form="ὑμᾶς" data-part-of-speech="personal pronoun" data-parsing="accusative plural" data-lemma="σύ">ὑμᾶς</span>,' +
 
-' <span class="word" data-form="τίνα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τίνα</span>' +
+' <span class="word" data-form="τίνα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural neuter" data-lemma="τίς">τίνα</span>' +
 
 ' <span class="word" data-form="τά" data-part-of-speech="article" data-parsing="accusative plural neuter" data-lemma="ὁ">τὰ</span>' +
 
@@ -5838,7 +5838,7 @@ nt_conc_by_parsedclassics_hebrews_parsed_text =
 
 ' <span class="word" data-form="ᾗ" data-part-of-speech="relative pronoun" data-parsing="dative singular feminine" data-lemma="ὅς">ᾗ</span>' +
 
-' <span class="word" data-form="ἥ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">ἥ</span>' +
+' <span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">ἥ</span>' +
 
 ' <span class="word" data-form="τέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="τέ">τε</span>' +
 
@@ -7832,7 +7832,7 @@ nt_conc_by_parsedclassics_hebrews_parsed_text =
 
 ' <span class="word" data-form="ἔθος" data-part-of-speech="noun" data-parsing="nominative singular neuter" data-lemma="ἔθος">ἔθος</span>' +
 
-' <span class="word" data-form="τισί(ν)" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="dative plural masculine" data-lemma="τις">τισίν</span>,' +
+' <span class="word" data-form="τισι(ν)" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="dative plural masculine" data-lemma="τις">τισίν</span>,' +
 
 ' <span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">ἀλλὰ</span>' +
 
@@ -8428,7 +8428,7 @@ nt_conc_by_parsedclassics_hebrews_parsed_text =
 
 ' <span class="word" data-form="φαινομένων" data-part-of-speech="verb" data-parsing="present middle participle genitive plural neuter" data-lemma="φαίνω">φαινομένων</span>' +
 
-' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative plural neuter" data-lemma="ὁ">τὰ</span>' +
+' <span class="word" data-form="τά" data-part-of-speech="article" data-parsing="accusative plural neuter" data-lemma="ὁ">τὰ</span>' +
 
 ' <span class="word" data-form="βλεπόμενον" data-part-of-speech="verb" data-parsing="present passive participle accusative plural neuter" data-lemma="βλέπω">βλεπόμενα</span>' +
 

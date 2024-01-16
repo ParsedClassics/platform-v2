@@ -9010,7 +9010,7 @@ nt_john_parsed_text =
 
 ' <span class="line"><span data-line-number="6:18" class="line-number">6:18</span>' +
 
-' <span class="word" data-form="ἥ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">Ἥ</span>' +
+' <span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">Ἥ</span>' +
 
 ' <span class="word" data-form="τέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="τέ">τε</span>' +
 
@@ -12914,7 +12914,7 @@ nt_john_parsed_text =
 
 ' <span class="line"><span data-line-number="7:44" class="line-number">7:44</span>' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -16236,7 +16236,7 @@ nt_john_parsed_text =
 
 ' <span class="word" data-form="Φαρισαίων" data-part-of-speech="noun" data-parsing="genitive plural masculine" data-lemma="Φαρισαῖος">Φαρισαίων</span>' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινές</span>,' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινές</span>,' +
 
 ' <span class="word" data-form="οὗτος" data-part-of-speech="demonstrative pronoun" data-parsing="nominative singular masculine" data-lemma="οὗτος">Οὗτος</span>' +
 
@@ -20126,7 +20126,7 @@ nt_john_parsed_text =
 
 ' <span class="line"><span data-line-number="11:37" class="line-number">11:37</span>' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -20508,7 +20508,7 @@ nt_john_parsed_text =
 
 ' <span class="line"><span data-line-number="11:46" class="line-number">11:46</span>' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -24108,7 +24108,7 @@ nt_john_parsed_text =
 
 ' <span class="line"><span data-line-number="13:29" class="line-number">13:29</span>' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γὰρ</span>' +
 
@@ -25726,7 +25726,7 @@ nt_john_parsed_text =
 
 ' <span class="word" data-form="μείζων" data-part-of-speech="adjective" data-parsing="nominative singular masculine comparative" data-lemma="μέγας">μείζων</span>' +
 
-' <span class="word" data-form="μού" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="ἐγώ">μού</span>' +
+' <span class="word" data-form="μου" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="ἐγώ">μού</span>' +
 
 ' <span class="word" data-form="ἐστί(ν)" data-part-of-speech="verb" data-parsing="present active indicative 3rd person singular" data-lemma="εἰμί">ἐστιν</span>.' +
 
@@ -28580,7 +28580,7 @@ nt_john_parsed_text =
 
 ' <span class="word" data-form="σοῦ" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="σύ">σοῦ</span>' +
 
-' <span class="word" data-form="ἐστι(ν)" data-part-of-speech="verb" data-parsing="present active indicative 3rd person singular" data-lemma="εἰμί">ἐστιν</span>·' +
+' <span class="word" data-form="ἐστί(ν)" data-part-of-speech="verb" data-parsing="present active indicative 3rd person singular" data-lemma="εἰμί">ἐστιν</span>·' +
 
 ' </span>' +
 
@@ -31638,7 +31638,7 @@ nt_john_parsed_text =
 
 ' <span class="word" data-form="παραδιδούς" data-part-of-speech="verb" data-parsing="present active participle nominative singular masculine" data-lemma="παραδίδωμι">παραδιδούς</span>' +
 
-' <span class="word" data-form="μέ" data-part-of-speech="personal pronoun" data-parsing="accusative singular" data-lemma="ἐγώ">μέ</span>' +
+' <span class="word" data-form="με" data-part-of-speech="personal pronoun" data-parsing="accusative singular" data-lemma="ἐγώ">μέ</span>' +
 
 ' <span class="word" data-form="σοι" data-part-of-speech="personal pronoun" data-parsing="dative singular" data-lemma="σύ">σοι</span>' +
 

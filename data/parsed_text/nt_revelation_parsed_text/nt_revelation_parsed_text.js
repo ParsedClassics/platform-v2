@@ -16068,7 +16068,7 @@ nt_revelation_parsed_text =
 
 ' <span class="word" data-form="γέγραπται" data-part-of-speech="verb" data-parsing="perfect passive indicative 3rd person singular" data-lemma="γράφω">γέγραπται</span>' +
 
-' <span class="word" data-form="τὰ" data-part-of-speech="article" data-parsing="nominative plural neuter" data-lemma="ὁ">τὰ</span>' +
+' <span class="word" data-form="τά" data-part-of-speech="article" data-parsing="nominative plural neuter" data-lemma="ὁ">τὰ</span>' +
 
 ' <span class="word" data-form="ὀνόματα" data-part-of-speech="noun" data-parsing="nominative plural neuter" data-lemma="ὄνομα">ὀνόματα</span>' +
 
@@ -18498,7 +18498,7 @@ nt_revelation_parsed_text =
 
 ' <span class="word" data-form="σύνδουλος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="σύνδουλος">σύνδουλός</span>' +
 
-' <span class="word" data-form="σού" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="σύ">σου</span>' +
+' <span class="word" data-form="σου" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="σύ">σου</span>' +
 
 ' <span class="word" data-form="εἰμί" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="εἰμί">εἰμὶ</span>' +
 
@@ -21912,7 +21912,7 @@ nt_revelation_parsed_text =
 
 ' <span class="line"><span data-line-number="22:8" class="line-number">22:8</span>' +
 
-' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Κ</span><span class="word" data-form="ἐγώ" data-part-of-speech="personal pronoun" data-parsing="dative plural" data-lemma="ἐγώ">ἀγὼ</span>' +
+' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Κ</span><span class="word" data-form="ἐγώ" data-part-of-speech="personal pronoun" data-parsing="nominative singular" data-lemma="ἐγώ">ἀγὼ</span>' +
 
 ' <span class="word" data-form="Ἰωάννης" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Ἰωάννης">Ἰωάννης</span>' +
 
@@ -21976,7 +21976,7 @@ nt_revelation_parsed_text =
 
 ' <span class="word" data-form="σύνδουλος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="σύνδουλος">σύνδουλός</span>' +
 
-' <span class="word" data-form="σού" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="σύ">σού</span>' +
+' <span class="word" data-form="σου" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="σύ">σού</span>' +
 
 ' <span class="word" data-form="εἰμί" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="εἰμί">εἰμι</span>,' +
 

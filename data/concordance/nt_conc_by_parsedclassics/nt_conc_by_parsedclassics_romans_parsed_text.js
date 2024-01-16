@@ -306,7 +306,7 @@ nt_conc_by_parsedclassics_romans_parsed_text =
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γάρ</span>' +
 
-' <span class="word" data-form="μού" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="ἐγώ">μού</span>' +
+' <span class="word" data-form="μου" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="ἐγώ">μού</span>' +
 
 ' <span class="word" data-form="ἐστί(ν)" data-part-of-speech="verb" data-parsing="present active indicative 3rd person singular" data-lemma="εἰμί">ἐστιν</span>' +
 
@@ -504,7 +504,7 @@ nt_conc_by_parsedclassics_romans_parsed_text =
 
 ' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
-' <span class="word" data-form="τινά" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
+' <span class="word" data-form="τινα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
 
 ' <span class="word" data-form="καρπόν" data-part-of-speech="noun" data-parsing="accusative singular masculine" data-lemma="καρπός">καρπὸν</span>' +
 
@@ -780,7 +780,7 @@ nt_conc_by_parsedclassics_romans_parsed_text =
 
 ' <span class="word" data-form="καθορᾶται" data-part-of-speech="verb" data-parsing="present passive indicative 3rd person singular" data-lemma="καθοράω">καθορᾶται</span>,' +
 
-' <span class="word" data-form="ἥ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">ἥ</span>' +
+' <span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">ἥ</span>' +
 
 ' <span class="word" data-form="τέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="τέ">τε</span>' +
 
@@ -1046,7 +1046,7 @@ nt_conc_by_parsedclassics_romans_parsed_text =
 
 ' <span class="word" data-form="ἀτιμίας" data-part-of-speech="noun" data-parsing="genitive singular feminine" data-lemma="ἀτιμία">ἀτιμίας</span>·' +
 
-' <span class="word" data-form="αἵ" data-part-of-speech="article" data-parsing="nominative plural feminine" data-lemma="ὁ">αἵ</span>' +
+' <span class="word" data-form="αἱ" data-part-of-speech="article" data-parsing="nominative plural feminine" data-lemma="ὁ">αἵ</span>' +
 
 ' <span class="word" data-form="τέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="τέ">τε</span>' +
 
@@ -9058,7 +9058,7 @@ nt_conc_by_parsedclassics_romans_parsed_text =
 
 ' <span class="word" data-form="λύπη" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="λύπη">λύπη</span>' +
 
-' <span class="word" data-form="μοί" data-part-of-speech="personal pronoun" data-parsing="dative singular" data-lemma="ἐγώ">μοι</span>' +
+' <span class="word" data-form="μοι" data-part-of-speech="personal pronoun" data-parsing="dative singular" data-lemma="ἐγώ">μοι</span>' +
 
 ' <span class="word" data-form="ἐστί(ν)" data-part-of-speech="verb" data-parsing="present active indicative 3rd person singular" data-lemma="εἰμί">ἐστὶν</span>' +
 
@@ -11706,7 +11706,7 @@ nt_conc_by_parsedclassics_romans_parsed_text =
 
 ' <span class="word" data-form="σώσω" data-part-of-speech="verb" data-parsing="future active indicative 1st person singular" data-lemma="σώζω">σώσω</span>' +
 
-' <span class="word" data-form="τινάς" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural masculine" data-lemma="τις">τινὰς</span>' +
+' <span class="word" data-form="τινας" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural masculine" data-lemma="τις">τινὰς</span>' +
 
 ' <span class="word" data-form="ἐκ" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐκ">ἐξ</span>' +
 
@@ -16004,7 +16004,7 @@ nt_conc_by_parsedclassics_romans_parsed_text =
 
 ' <span class="word" data-form="κοινωνίαν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="κοινωνία">κοινωνίαν</span>' +
 
-' <span class="word" data-form="τινά" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular feminine" data-lemma="τις">τινὰ</span>' +
+' <span class="word" data-form="τινα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular feminine" data-lemma="τις">τινὰ</span>' +
 
 ' <span class="word" data-form="ποιήσασθαι" data-part-of-speech="verb" data-parsing="aorist middle infinitive" data-lemma="ποιέω">ποιήσασθαι</span>' +
 

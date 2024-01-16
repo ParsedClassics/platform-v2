@@ -6854,7 +6854,7 @@ nt_corinthians_1_parsed_text =
 
 ' <span class="word" data-form="γνῶσις" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="γνῶσις">γνῶσις</span>·' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -7774,7 +7774,7 @@ nt_corinthians_1_parsed_text =
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δέ</span>' +
 
-' <span class="word" data-form="μοί" data-part-of-speech="personal pronoun" data-parsing="dative singular" data-lemma="ἐγώ">μοι</span>' +
+' <span class="word" data-form="μοι" data-part-of-speech="personal pronoun" data-parsing="dative singular" data-lemma="ἐγώ">μοι</span>' +
 
 ' <span class="word" data-form="ἐστί(ν)" data-part-of-speech="verb" data-parsing="present active indicative 3rd person singular" data-lemma="εἰμί">ἐστίν</span>,' +
 
@@ -8016,7 +8016,7 @@ nt_corinthians_1_parsed_text =
 
 ' <span class="word" data-form="πάντως" data-part-of-speech="adverb" data-parsing="" data-lemma="πάντως">πάντως</span>' +
 
-' <span class="word" data-form="τινάς" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural masculine" data-lemma="τις">τινὰς</span>' +
+' <span class="word" data-form="τινας" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative plural masculine" data-lemma="τις">τινὰς</span>' +
 
 ' <span class="word" data-form="σώσω" data-part-of-speech="verb" data-parsing="aorist active subjunctive 1st person singular" data-lemma="σώζω">σώσω</span>.' +
 
@@ -8532,7 +8532,7 @@ nt_corinthians_1_parsed_text =
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καί</span>' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινες</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινες</span>' +
 
 ' <span class="word" data-form="αὐτῶν" data-part-of-speech="personal pronoun" data-parsing="genitive plural masculine" data-lemma="αὐτός">αὐτῶν</span>' +
 
@@ -10248,7 +10248,7 @@ nt_corinthians_1_parsed_text =
 
 ' <span class="word" data-form="τοῦτο" data-part-of-speech="demonstrative pronoun" data-parsing="nominative singular neuter" data-lemma="οὗτος">Τοῦτό</span>' +
 
-' <span class="word" data-form="μού" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="ἐγώ">μού</span>' +
+' <span class="word" data-form="μου" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="ἐγώ">μού</span>' +
 
 ' <span class="word" data-form="ἐστί(ν)" data-part-of-speech="verb" data-parsing="present active indicative 3rd person singular" data-lemma="εἰμί">ἐστιν</span>' +
 
@@ -13988,7 +13988,7 @@ nt_corinthians_1_parsed_text =
 
 ' <span class="word" data-form="ἄρτι" data-part-of-speech="adverb" data-parsing="" data-lemma="ἄρτι">ἄρτι</span>,' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -16112,7 +16112,7 @@ nt_corinthians_1_parsed_text =
 
 ' <span class="word" data-form="χρόνον" data-part-of-speech="noun" data-parsing="accusative singular masculine" data-lemma="χρόνος">χρόνον</span>' +
 
-' <span class="word" data-form="τινά" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
+' <span class="word" data-form="τινα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular masculine" data-lemma="τις">τινὰ</span>' +
 
 ' <span class="word" data-form="ἐπιμεῖναι" data-part-of-speech="verb" data-parsing="aorist active infinitive" data-lemma="ἐπιμένω">ἐπιμεῖναι</span>' +
 

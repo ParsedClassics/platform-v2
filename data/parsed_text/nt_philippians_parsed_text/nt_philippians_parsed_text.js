@@ -576,7 +576,7 @@ nt_philippians_parsed_text =
 
 ' <span class="word" data-form="ἔριν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="ἔρις">ἔριν</span>,' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
+' <span class="word" data-form="τινες" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">τινὲς</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
