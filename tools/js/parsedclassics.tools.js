@@ -91,15 +91,17 @@ var ParsedClassicsWordList = {
 			words_list_unordered = "|" + words_all.first().attr(ParsedClassicsVars.lemmaAttr) + "|";
 
 			// define array consisting of symbols of greek vowels having grave accent
-			chars_with_grave_accent = ['ὰ', 'ὲ', 'ὴ', 'ὶ', 'ὸ', 'ὺ', 'ὼ'];
+			chars_with_grave_accent = ['ὰ', 'ἂ', 'ἃ', 'ὲ', 'ἒ', 'ἓ', 'ὴ', 'ἢ', 'ἣ', 'ὶ', 'ἲ', 'ἳ', 'ὸ', 'ὂ', 'ὃ', 'ὺ', 'ὒ', 'ὓ', 'ὼ', 'ὢ', 'ὣ'];
 			
 			// put all words into pipe delimited string
 			for (var i = 1; i < words_all.length; i++) {
 				single_word = $(words_all[i]).attr(ParsedClassicsVars.lemmaAttr);
-				// check if there are in the Greek word a vowel with grave accent (there should be no grave accents in lemma)
+				
 				if (ParsedClassicsVars.locale == "el") {
+					// Check 1: check if there are in the Greek word a vowel with grave accent (there should be no grave accents in lemma)
 					// get array of chars from lemma
 					word_chars = single_word.split('');
+					word_chars[0].toLowerCase();
 					// find if lemma contains grave accent
 					contains_grave_accent = chars_with_grave_accent.some(char => {
 						return word_chars.includes(char);
@@ -110,6 +112,28 @@ var ParsedClassicsWordList = {
 						msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
 						// put message text inside message el
 						msg_el.html("Grave accent found in lemma " + single_word + " !");
+						// display modal dialogue
+						ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");	
+						return;
+					}
+					// Check 2: check if lemma of the article has double diacritic
+					if (single_word == 'ὅ') {
+						// display error msg
+						// find message el
+						msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+						// put message text inside message el
+						msg_el.html("Double diacritic in article's lemma " + single_word + " !");
+						// display modal dialogue
+						ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");	
+						return;
+					}
+					// Check 3: check if lemma of enclitic has accent
+					if (single_word == 'τέ') {
+						// display error msg
+						// find message el
+						msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+						// put message text inside message el
+						msg_el.html("Accent in enclitic's lemma " + single_word + " !");
 						// display modal dialogue
 						ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");	
 						return;
@@ -264,7 +288,8 @@ var ParsedClassicsConcordance = {
 				, parsed_text_lang
 				, chars_with_grave_accent
 				, word_chars
-				, contains_grave_accent;
+				, contains_grave_accent
+				, contains_double_diacritic;
 
 				// find parsed text element
 				parsed_text_container = $("#" + ParsedClassicsVars.appendCodeContainerId);
@@ -351,7 +376,7 @@ var ParsedClassicsConcordance = {
 				words_list_array = words_list_string.split("|");
 
 				// define array consisting of symbols of greek vowels having grave accent
-				chars_with_grave_accent = ['ὰ', 'ὲ', 'ὴ', 'ὶ', 'ὸ', 'ὺ', 'ὼ'];
+				chars_with_grave_accent = ['ὰ', 'ἂ', 'ἃ', 'ὲ', 'ἒ', 'ἓ', 'ὴ', 'ἢ', 'ἣ', 'ὶ', 'ἲ', 'ἳ', 'ὸ', 'ὂ', 'ὃ', 'ὺ', 'ὒ', 'ὓ', 'ὼ', 'ὢ', 'ὣ'];
 				
 				// generate concordance html code
 				for (var i = 0; i < words_list_array.length; i++) {
@@ -381,11 +406,13 @@ var ParsedClassicsConcordance = {
 					parsing_next = '';
 					for (var j = 0; j < words_by_lemma.length; j++) {
 						word_el = $(words_by_lemma[j]);
-						// find word form, part of spreech, parsing of current word
+						// find word form, lemma 
 						word_form = word_el.attr(ParsedClassicsVars.formAttr).trim();
 						if (ParsedClassicsVars.locale == "el") {
+							// Check 1: check if there are in the Greek word a vowel with grave accent (there should be no grave accents in word form)
 							// get array of chars from lemma
 							word_chars = word_form.split('');
+							word_chars[0].toLowerCase();
 							// find if lemma contains grave accent
 							contains_grave_accent = chars_with_grave_accent.some(char => {
 								return word_chars.includes(char);
@@ -400,8 +427,24 @@ var ParsedClassicsConcordance = {
 								ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");	
 								return;
 							}
+							// Check 2: check if article word form has double diacritic
+							if (lemma == 'ὁ') {
+								contains_double_diacritic = ['ὅ', 'ἥ', 'οἵ', 'αἵ'].includes(word_form);
+							}
+							// Check 3: check if word form of enclitic has accent
+							if (word_form == 'τέ') {
+								// display error msg
+								// find message el
+								msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+								// put message text inside message el
+								msg_el.html("Accent in enclitic's word form " + single_word + " !");
+								// display modal dialogue
+								ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");	
+								return;
+							}
 						}
 
+						// find part of spreech, parsing of current word
 						part_of_speech = word_el.attr(ParsedClassicsVars.partOfSpeechAttr).trim().replace(/\s+/g, ' ');
 						parsing = word_el.attr(ParsedClassicsVars.parsingAttr).trim().replace(/\s+/g, ' ');
 						// find word form, part of spreech, parsing of next word 
