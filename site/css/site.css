@@ -44,6 +44,10 @@ Styles for ParsedClassics library application and website
   margin-top: 8px;
 }
 
+.pc-margin-bottom-8 {
+  margin-bottom: 8px;
+}
+
 /* padding */
 
 .pc-padding-0 {
@@ -100,7 +104,6 @@ Styles for ParsedClassics library application and website
 
 .pc-padding-8 {
   padding-top: 8px;
-
   padding-bottom: 8px;
 }
 
@@ -201,6 +204,10 @@ table.pc-valign-top td {
 
 .pc-hide {
   display: none;
+}
+
+.pc-inline-block {
+  display: inline-block;
 }
 
 /* tables */
@@ -326,6 +333,48 @@ a:hover {
 
 #pc-site-content .pc-padding-bottom-16:not(:last-child) {
   padding-bottom: 16px;
+}
+
+/* Drills styles */
+
+#drills .pc-center-pane-maxwidth {
+  max-width: 60rem;
+}
+
+.correct {
+	background-color: #C1FF04;
+}
+
+.incorrect {
+	background-color: #FF6405;
+}
+
+.hint, .status {
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+.status {
+	color: #999;
+}
+
+.correct, .incorrect {
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+}
+
+div#text {
+  border: solid 1px rgb(118, 118, 118);
+}
+
+pre#marking {
+  font-family: "Eczar";
+  background-color: white;
+}
+
+div#marking-wrapper {
+border: solid 1px rgb(118, 118, 118);
+min-width: 100%;
 }
 
 /* DOCS styles */
