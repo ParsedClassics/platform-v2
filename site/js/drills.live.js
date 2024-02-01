@@ -35,12 +35,15 @@ dw.table['new'] = (function() {
         var result = _.validateProper(inputLines, answerLines);
         if (result.correct && result.complete && nonEmptyInputLines.length > 0) { // "nonEmptyInputLines.length > 0" added  by ParsedClassics to prevent green highlighting when textarea is empty
             $("button.drills-try-again-btn").show(); // added by ParsedClassics
+            $('#text').addClass('drill-success'); // added by ParsedClassics
             $('#text').css('background-color', '#C1FF04');
         } else if (result.correct && !result.complete) {
             $("button.drills-try-again-btn").hide(); // added by ParsedClassics
+            $('#text').removeClass('drill-success'); // added by ParsedClassics
             $('#text').css('background-color', '#FFF');
         } else if (!result.correct) {
             $("button.drills-try-again-btn").hide(); // added by ParsedClassics
+            $('#text').removeClass('drill-success'); // added by ParsedClassics
             $('#text').css('background-color', '#FFF4F2');
         }
     };

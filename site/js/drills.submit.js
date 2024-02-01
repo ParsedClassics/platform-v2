@@ -21,13 +21,17 @@ const ParsedClassicsMorphDrillsSubmit = {
     const actualText = textEl.val().trim();
     const expectedText = $("#answers").val().trim();
     const html = ParsedClassicsMorphDrillsSubmit.diff(expectedText, actualText);
-    console.log("html", html);
     $("#marking").html(html);
     $("#marking-wrapper").css("display", "inline-block");
     $("p.after-submit-text").show();
     $("p.before-submit-text").hide();
     $("button.drills-check-btn").hide();
-    $("button.drills-go-on-btn").show();
+    if (!textEl.hasClass("drill-success")) {
+      $("button.drills-go-on-btn").show();
+    }
+    else {
+      textEl.removeClass("drill-success");
+    }
     $("button.drills-try-again-btn").show();
     textEl.hide();
   },
@@ -60,11 +64,9 @@ const ParsedClassicsMorphDrillsSubmit = {
   diff: function(expectedText, actualText) {
     const regex = /\r\n|\n\r|\n|\r/g;
     const expectedLines = ParsedClassicsMorphDrillsSubmit.linesWithLabels(expectedText.replace(regex, "\n").split("\n"));
-    console.log("expectedLines", expectedLines);
     let i = 0;
     let lineProcessed = "";
     const actualLines = actualText.replace(regex, "\n").split("\n")
-    console.log("actualLines", actualLines);
 
     diff = [];
     actualLines.forEach(actualLine => {
@@ -75,13 +77,11 @@ const ParsedClassicsMorphDrillsSubmit = {
       }
       else {
         lineProcessed = ParsedClassicsMorphDrillsSubmit.diffLines(expectedLines[i] ?? '', actualLine);
-        console.log("lineProcessed", lineProcessed);
         diff.push(lineProcessed);
         i++;
       }
       
     });
-    //console.log('diff', diff);
     return diff.join("\n");
   },
 
@@ -96,11 +96,7 @@ const ParsedClassicsMorphDrillsSubmit = {
 
   diffLines: function(expectedLine, actualLine) {
     const [expectedLabel, expectedWords] = expectedLine ? expectedLine.split(':').splice(0, 2) : ['', ''];
-    console.log("expectedLabel", expectedLabel);
-    console.log("expectedWords", expectedWords);
     const [actualLabel, actualWords] = actualLine.split(':').splice(0, 2);
-    console.log("actualLabel", actualLabel);
-    console.log("actualWords", actualWords);
     const regex = /[\s,]*([^\s,]+)/g;
     const actualMatchesRaw = [...actualWords.matchAll(regex)];
     const expectedMatchesRaw = [...expectedWords.matchAll(regex)];
@@ -109,8 +105,6 @@ const ParsedClassicsMorphDrillsSubmit = {
     const expectedMatches = [];
     actualMatchesRaw.forEach(item => actualMatches.push(item[1]));
     expectedMatchesRaw.forEach(item => expectedMatches.push(item[1]));
-    console.log("actualMatches", actualMatches);
-    console.log("expectedMatches", expectedMatches);
 
     let diff = actualLabel + ':';
 
