@@ -7,13 +7,16 @@ const ParsedClassicsMorphDrillsSubmit = {
 
   init: function() {
     const template = $("#template").val();
-    $("#text").val(template);
+    const textEl = $("#text");
+    textEl.val(template);
     const checkBtn = $("button.drills-check-btn");
     checkBtn.on("click", ParsedClassicsMorphDrillsSubmit.check);
     const goOnBtn = $("button.drills-go-on-btn");
     goOnBtn.on("click", ParsedClassicsMorphDrillsSubmit.goOn);
     const tryAgainBtn = $("button.drills-try-again-btn");
     tryAgainBtn.on("click", ParsedClassicsMorphDrillsSubmit.tryAgain);
+    const rowsNum = textEl.val().match(/\r|\r\n|\n/g).length + 1;
+    textEl.attr("rows", rowsNum);
   },
 
   check: function() {
