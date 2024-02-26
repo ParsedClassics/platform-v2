@@ -76,8 +76,10 @@ dw.table['new'] = (function() {
         if (answerLine.indexOf(':') === -1) {
             return { correct: true, complete: true };
         }
-        var normalizedInputLine = inputLine.replace(/[^a-z]/ig, '');
-        var normalizedAnswerLine = answerLine.replace(/[^a-z]/ig, '');
+        //var normalizedInputLine = inputLine.replace(/[^a-z]/ig, ''); // commented out by ParsedClassics
+        var normalizedInputLine = inputLine.replace(/[^\p{Letter}]/igu, ''); // added by ParsedClassics
+        //var normalizedAnswerLine = answerLine.replace(/[^a-z]/ig, ''); // commented out by ParsedClassics
+        var normalizedAnswerLine = answerLine.replace(/[^\p{Letter}]/igu, ''); // added by ParsedClassics
         return {
             correct: normalizedAnswerLine.indexOf(normalizedInputLine) === 0,
             complete: normalizedAnswerLine === normalizedInputLine
