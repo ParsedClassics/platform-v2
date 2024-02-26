@@ -15,7 +15,7 @@ const ParsedClassicsMorphDrillsSubmit = {
     goOnBtn.on("click", ParsedClassicsMorphDrillsSubmit.goOn);
     const tryAgainBtn = $("button.drills-try-again-btn");
     tryAgainBtn.on("click", ParsedClassicsMorphDrillsSubmit.tryAgain);
-    const rowsNum = textEl.val().match(/\r|\r\n|\n/g).length + 1;
+    const rowsNum = textEl.val().match(/\r|\r\n|\n/g) ? textEl.val().match(/\r|\r\n|\n/g).length + 1 : 10;
     textEl.attr("rows", rowsNum);
   },
 
