@@ -152,6 +152,48 @@ Which? (pl. neuter): quae quorum quibus quae quibus
 
 
 
+
+=== Verb sum ===
+
+--- Present Indicative ---
+Be: sum es est sumus estis sunt
+
+--- Imperfect Indicative ---
+Be: eram eras erat eramus eratis erant
+
+--- Future Indicative ---
+Be: ero eris erit erimus eritis erunt
+
+--- Perfect Indicative ---
+Be: fui fuisti fuit fuimus fuistis fuerunt 
+
+--- Pluperfect Indicative ---
+Be: fueram fueras fuerat fueramus fueratis fuerant
+
+--- Future Perfect Indicative ---
+Be: fuero fueris fuerit fuerimus fueritis fuerint
+
+--- Present Subjunctive ---
+Be: sim sis sit simus sitis sint
+
+--- Imperfect Subjunctive ---
+Be: essem esses esset essemus essetis essent
+
+--- Perfect Subjunctive ---
+Be: fuerim fueris fuerit fuerimus fueritis fuerint
+
+--- Pluperfect Subjunctive ---
+Be: fuissem fuisses fuisset fuissemus fuissetis fuissent
+
+--- Present Imperative ---
+Be: es este
+
+--- Future Imperative ---
+Be: esto esto estote sunto
+
+
+
+
 === Verbs, Indicative Active ===
 
 --- Present ---

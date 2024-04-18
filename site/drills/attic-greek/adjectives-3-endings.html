@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+ Licence MIT
+=====================================================
+-->
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon" />
+
+<title>Adjectives, 3 endings | Attic Greek | ParsedClassics</title>
+
+<link type="text/css" rel="stylesheet" href="../../css/w3.css" />
+
+<link type="text/css" rel="stylesheet" href="../../css/site.css" />
+
+<link type="text/css" rel="stylesheet" href="../../keyboard/osk/kmwosk.css">
+
+<link type="text/css" rel="stylesheet" href="../../keyboard/osk/keys.css">
+
+<script type="text/javascript" src="../../js/jquery-2.1.1.js"></script>
+
+<script type="text/javascript" src="../../js/parsedclassics.vars.js"></script>
+
+<script type="text/javascript" src="../../js/parsedclassics.widgets.js"></script>
+
+<script type="text/javascript" src="../../js/parsedclassics.tools.js"></script>
+
+<script type="text/javascript">
+
+  var KWControl = null;
+
+  function SetupDocument() {
+      kmw.init();
+      KWControl = document.getElementById('KWControl');
+      kmw.setActiveKeyboard('greekclassical');
+      kmw.osk.hide();
+    }
+
+  function KWControlClick() {
+      var KWControl = $('.KWControl');
+
+
+
+
+
+
+
+        if(kmw.osk.isEnabled()) {
+
+
+
+            kmw.osk.hide();
+
+             //KeyboardSize();
+
+            $(KWControl).css("background", "url('../../keyboard/osk/keyboard-grey.png') center center no-repeat"); 
+
+
+
+        } else {
+
+            KeyboardSize();
+
+            kmw.osk.show(true); //  Specifies that the OSK should display whenever a valid control has focus, re-enabling the default behavior.
+
+            $(KWControl).css("background", "url('../../keyboard/osk/keyboard-maroon.png') center center no-repeat");
+
+
+
+        }
+
+
+
+    }
+
+
+
+    function KeyboardSize() {
+
+      var panel_with, keyboard_frame, keyboard_frame_width;
+
+      
+
+      panel_with = $('#pc-site-content').width();
+
+      keyboard_frame = $('.kmw-osk-inner-frame');
+
+      keyboard_frame_width =  panel_with + 'px';
+
+      keyboard_frame.css('max-width', keyboard_frame_width);
+
+      keyboard_frame.css('min-width', keyboard_frame_width);
+
+    }
+
+
+
+
+
+
+
+</script>
+
+
+
+<script src="../../keyboard/keymanweb.js"></script>
+
+
+
+<script type="text/javascript">var kmw = keyman;</script>
+
+
+
+<script type="text/javascript">
+
+KeymanWeb.KRS(new Stub_Keyboard_laokeys()); function Stub_Keyboard_laokeys() {this.KF="../../keyboard/greekclassical-1.1.js";this.KI="Keyboard_greekclassical";this.KN="Greek (Polytonic)";}
+
+</script>
+
+
+
+<script>
+
+
+
+window.addEventListener('load', SetupDocument);
+
+
+
+window.addEventListener('resize', KeyboardSize);
+
+
+
+
+
+</script>
+
+</head>
+
+<body id="drills">
+
+<script type="text/javascript" src="../../js/_navigation_drills.js"></script>
+
+<div id="pc-site-content" class="pc-center-pane-maxwidth w3-border-right w3-padding pc-padding-top-0 pc-overflow-visible">
+
+<div class="pc-overflow-auto"> <!-- needed in order to avoid h1 element's margin pushing its parent element down -->
+</div>
+
+<h1>Drills</h1>
+<h2>Attic Greek</h2>
+<h2>Adjectives, 3 endings</h2>
+
+<p class="before-submit-text">Fill in the table as best you can, then press Check button. We’ll show you which values are right and which are wrong. If needed, <a target="_blank" href="answers.pdf">look at the answers</a>.</p>
+<p class="after-submit-text pc-hide">We have finished marking your submission. Words in green are correct; words in red are incorrect (with the correct word shown in parentheses).</p>
+<p class="pc-margin-bottom-8">
+<button class="drills-check-btn w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Check</button>
+<button class="drills-go-on-btn pc-hide w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Go on</button>
+<button class="drills-try-again-btn pc-hide w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Try again</button>
+<button onclick="KWControlClick()" class="KWControl w3-button w3-border w3-hover-white w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey pc-float-right" style="margin-top: 12px;"></button>
+</p>
+
+
+<textarea id="text" class="pc-width-100 pc-padding-8 pc-padding-left-8 pc-padding-right-8 pc-resize-both keymanweb-font"></textarea>
+
+<textarea id="template" class="pc-hide">=== Adjectives (3 endings) ===
+
+--- stem in -ο ἀγαθός ἀγαθή ἀγαθόν ---
+--- contracted with stem in -ο χρυσοῦς χρυσή χρυσοῦν ---
+--- stem in -ν μέλας μέλαινα μέλαν ---
+--- stem in -ντ λυθείς λυθείσα λυθέν ---
+--- stem in -υ ἡδύς ἡδεῖα ἡδύ ---
+
+Good (m. sg.): 
+Good (m. pl.): 
+Good (f. sg.): 
+Good (f. pl.): 
+Good (n. sg.): 
+Good (n. pl.): 
+
+Golden (m. sg.): 
+Golden (m. pl.): 
+Golden (f. sg.): 
+Golden (f. pl.): 
+Golden (n. sg.): 
+Golden (n. pl.): 
+
+Black (m. sg.): 
+Black (m. pl.): 
+Black (f. sg.): 
+Black (f. pl.): 
+Black (n. sg.): 
+Black (n. pl.): 
+
+Loosed (m. sg.): 
+Loosed (m. pl.): 
+Loosed (f. sg.): 
+Loosed (f. pl.): 
+Loosed (n. sg.): 
+Loosed (n. pl.): 
+
+Sweet (m. sg.): 
+Sweet (m. pl.): 
+Sweet (f. sg.): 
+Sweet (f. pl.): 
+Sweet (n. sg.): 
+Sweet (n. pl.): </textarea>
+
+<div id="marking-wrapper" class="pc-padding-left-8 pc-padding-right-8 pc-padding-8 pc-hide w3-white"><pre id="marking" class="pc-inline-block"></pre></div>
+
+<p class="pc-margin-top-8 pc-margin-bottom-8">
+<button class="drills-check-btn w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Check</button>
+<button class="drills-go-on-btn pc-hide w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Go on</button>
+<button class="drills-try-again-btn pc-hide w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Try again</button>
+<button onclick="KWControlClick()" class="KWControl w3-button w3-border w3-hover-white w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey pc-float-right"></button>
+</p>
+
+<textarea id="answers" class="pc-hide">=== Adjectives (3 endings) ===
+
+--- stem in -ο ἀγαθός ἀγαθή ἀγαθόν ---
+--- contracted with stem in -ο χρυσοῦς χρυσή χρυσοῦν ---
+--- stem in -ν μέλας μέλαινα μέλαν ---
+--- stem in -ντ λυθείς λυθείσα λυθέν ---
+--- stem in -υ ἡδύς ἡδεῖα ἡδύ ---
+
+Good (m. sg.): ἀγαθός ἀγαθοῦ ἀγαθῷ ἀγαθόν ἀγαθέ
+Good (m. pl.): ἀγαθοί ἀγαθῶν ἀγαθοῖς ἀγαθούς ἀγαθοί
+Good (f. sg.): ἀγαθή ἀγαθῆς ἀγαθῇ ἀγαθήν ἀγαθή
+Good (f. pl.): ἀγαθαί ἀγαθῶν ἀγαθαῖς ἀγαθάς ἀγαθαί
+Good (n. sg.): ἀγαθόν ἀγαθοῦ ἀγαθῷ ἀγαθόν ἀγαθόν
+Good (n. pl.): ἀγαθά ἀγαθῶν ἀγαθοῖς ἀγαθά ἀγαθά
+
+Golden (m. sg.): χρυσοῦς χρυσοῦ χρυσῷ χρυσοῦν χρυσοῦς
+Golden (m. pl.): χρυσοῖ χρυσῶν χρυσοῖς χρυσοῦς χρυσοῖ
+Golden (f. sg.): χρυσῆ χρυσῆς χρυσῇ χρυσῆν χρυσῆ
+Golden (f. pl.): χρυσαῖ χρυσῶν χρυσαῖς χρυσᾶς χρυσαῖ
+Golden (n. sg.): χρυσοῦν χρυσοῦ χρυσῷ χρυσοῦν χρυσοῦν
+Golden (n. pl.): χρυσᾶ χρυσῶν χρυσοῖς χρυσᾶ χρυσᾶ
+
+Black (m. sg.): μέλας μέλανος μέλανι μέλανα μέλαν
+Black (m. pl.): μέλανες μελάνων μέλασι μέλανας μέλανες
+Black (f. sg.): μέλαινα μελαίνης μελαίνῃ μέλαιναν μέλαινα
+Black (f. pl.): μέλαιναι μελαινῶν μελαίναις μελαίνας μέλαιναι
+Black (n. sg.): μέλαν  μέλανος μέλανι μέλαν μέλαν
+Black (n. pl.): μέλανα μελάνων μέλασι μέλανα μέλανα
+
+Loosed (m. sg.): λυθείς λυθέντος λυθέντι λυθέντα λυθείς
+Loosed (m. pl.): λυθέντες λυθέντων λυθεῖσι λυθέντας λυθέντες
+Loosed (f. sg.): λυθεῖσα λυθείσης λυθείσῃ λυθεῖσαν λυθεῖσα
+Loosed (f. pl.): λυθεῖσαι λυθεισῶν λυθείσαις λυθείσας λυθεῖσαι
+Loosed (n. sg.): λυθέν λυθέντος λυθέντι λυθέν λυθέν
+Loosed (n. pl.): λυθέντα λυθέντων λυθεῖσι λυθέντα λυθέντα
+
+Sweet (m. sg.): ἡδύς ἡδέος ἡδεῖ ἡδύν ἡδύ
+Sweet (m. pl.): ἡδεῖς ἡδέων ἡδέσι ἡδεῖς ἡδεῖς
+Sweet (f. sg.): ἡδεῖα ἡδείας ἡδείᾳ ἡδεῖαν ἡδεῖα
+Sweet (f. pl.): ἡδεῖαι ἡδειῶν ἡδείαις ἡδείας ἡδεῖαι
+Sweet (n. sg.): ἡδύ ἡδέος ἡδεῖ ἡδύ ἡδύ
+Sweet (n. pl.): ἡδέα ἡδέων ἡδέσι ἡδέα ἡδέα</textarea>
+
+</div>
+
+<script src="../../js/drills.util.js"></script>
+<script src="../../js/drills.live.js"></script>
+<script src="../../js/drills.submit.js"></script>
+<script>
+$(document).ready(ParsedClassicsMorphDrillsSubmit.init);
+</script>
+
+<script charset="UTF-8" type="text/javascript" src="../../keyboard/greekclassical-1.1.js"></script>
+
+</body>
+
+</html>
