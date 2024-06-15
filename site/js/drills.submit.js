@@ -29,6 +29,7 @@ const ParsedClassicsMorphDrillsSubmit = {
     $("p.after-submit-text").show();
     $("p.before-submit-text").hide();
     $("button.drills-check-btn").hide();
+    $("button.KWControl").hide();
     if (!textEl.hasClass("drill-success")) {
       $("button.drills-go-on-btn").show();
     }
@@ -47,12 +48,19 @@ const ParsedClassicsMorphDrillsSubmit = {
     $("button.drills-check-btn").show();
     $("button.drills-go-on-btn").hide();
     $("button.drills-try-again-btn").hide();
+    $("button.KWControl").show();
   },
 
   tryAgain: function() {
-    const template = $("#template").val();
-    $("#text").val(template).css("background-color", "white");
-    ParsedClassicsMorphDrillsSubmit.goOn();
+    ParsedClassicsConfirmDialogue.openConfirmDialogue(
+      'try-again-dialogue',
+      {heading: 'Confirm', message: 'Do you really want to to do the drill again? The anwers you entered will be deleted.'},
+      () => {
+        const template = $("#template").val();
+        $("#text").val(template).css("background-color", "white");
+        ParsedClassicsMorphDrillsSubmit.goOn();
+      }
+    );
   },
 
   /** 
