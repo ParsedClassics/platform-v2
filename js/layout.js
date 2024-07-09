@@ -1726,49 +1726,62 @@ const ParsedClassicsLayout = {
     const id = ParsedClassicsLayout.generateUID;
     const tabIdsArr = [id(), id(), id(), id(), id(), id(), id(), id()];
     return {
-      L: { 
-        a: [["nt_matthew|nt_matthew_parsed_text", "nt_matthew|nt_matthew_text_ed_robinson_pierpont", "nt_matthew|concordance_by_moulton_geden"]], 
-        b: [["nt_mark|nt_mark_parsed_text"], ["nt_mark|nt_mark_text_ed_robinson_pierpont"]], 
-        c: [["nt_luke|nt_luke_parsed_text"]], 
-        d: [["nt_john|nt_john_parsed_text"], ["nt_acts|nt_acts_parsed_text"]] 
-      },
-      P: {
-        nt_matthew: {
-          line: "2:1",
+      // L: { 
+      //   a: [["nt_matthew|nt_matthew_parsed_text", "nt_matthew|nt_matthew_text_ed_robinson_pierpont", "nt_matthew|concordance_by_moulton_geden"]], 
+      //   b: [["nt_mark|nt_mark_parsed_text"], ["nt_mark|nt_mark_text_ed_robinson_pierpont"]], 
+      //   c: [["nt_luke|nt_luke_parsed_text"]], 
+      //   d: [["nt_john|nt_john_parsed_text"], ["nt_acts|nt_acts_parsed_text"]] 
+      // },
+      // P: {
+      //   nt_matthew: {
+      //     line: "2:1",
+      //   },
+      //   nt_mark: {
+      //     line: "3:5",
+      //   },
+      //   nt_luke: {
+      //     line: "4:7",
+      //   },
+      //   nt_john: {
+      //     line: "5:11",
+      //   },
+      //   nt_acts: {
+      //     line: "11:15",
+      //   },
+      // },
+      // D: {
+      //   a: [
+      //     [id(), 25],
+      //     [id(), 100, [tabIdsArr[0], tabIdsArr[1], tabIdsArr[7]], 1],
+      //   ],
+      //   b: [
+      //     [id(), 25],
+      //     [id(), 50, [tabIdsArr[2]], 0],
+      //     [id(), 50, [tabIdsArr[3]], 0],
+      //   ],
+      //   c: [
+      //     [id(), 25],
+      //     [id(), 100, [tabIdsArr[4]], 0],
+      //   ],
+      //   d: [
+      //     [id(), 25],
+      //     [id(), 50, [tabIdsArr[5]], 0],
+      //     [id(), 50, [tabIdsArr[6]], 0],
+      //   ],
+      // },
+
+      "L": {
+        "a":[["new_tab|new_tab_info"]]
+
         },
-        nt_mark: {
-          line: "3:5",
-        },
-        nt_luke: {
-          line: "4:7",
-        },
-        nt_john: {
-          line: "5:11",
-        },
-        nt_acts: {
-          line: "11:15",
-        },
-      },
-      D: {
-        a: [
-          [id(), 25],
-          [id(), 100, [tabIdsArr[0], tabIdsArr[1], tabIdsArr[7]], 1],
-        ],
-        b: [
-          [id(), 25],
-          [id(), 50, [tabIdsArr[2]], 0],
-          [id(), 50, [tabIdsArr[3]], 0],
-        ],
-        c: [
-          [id(), 25],
-          [id(), 100, [tabIdsArr[4]], 0],
-        ],
-        d: [
-          [id(), 25],
-          [id(), 50, [tabIdsArr[5]], 0],
-          [id(), 50, [tabIdsArr[6]], 0],
-        ],
-      },
+      "P": {},
+      "D":{
+        "a":[
+          [tabIdsArr[0],100],
+          ["kke9uh",100,[tabIdsArr[1]],0]
+        ]
+      }
+
     };
   },
 

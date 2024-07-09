@@ -8,7 +8,7 @@
 
 const ParsedClassicsAppVars = {
   // Dev mode
-  DEV_MODE: true,
+  DEV_MODE: false,
   // container
   containerClass: "container",
   containerId: "container",
