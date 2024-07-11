@@ -54,7 +54,7 @@ const ParsedClassicsMorphDrillsSubmit = {
   tryAgain: function() {
     ParsedClassicsConfirmDialogue.openConfirmDialogue(
       'try-again-dialogue',
-      {heading: 'Confirm', message: 'Do you really want to to do the drill again? The anwers you entered will be deleted.'},
+      {heading: 'Confirm', message: 'Do you really want to do the drill again? The anwers you entered will be deleted.'},
       () => {
         const template = $("#template").val();
         $("#text").val(template).css("background-color", "white");
