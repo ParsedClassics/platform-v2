@@ -94,56 +94,56 @@ const ParsedClassicsContentContainers = {
         // treat selected line and word
         ParsedClassicsSelectedLine.treatSelectedLineAndWord(parsedTextContainerTopPart, collectionShortname);
         // scroll to the selected line
-        if (lineIndicatorUrl !== lineIndicatorDom) {
+        //if (lineIndicatorUrl !== lineIndicatorDom) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
           ParsedClassicsContentContainers.scrollToLineResourceLoaded(parsedTextContainerTopPart, lineIndicatorUrl, activeTabId);
-        }
+        //}
         break;
 
         case 'lexicon':
           // scroll to selected word 
-          if (wordUrl && wordUrl !== wordDom) {
+          //if (wordUrl && wordUrl !== wordDom) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
             ParsedClassicsContentContainers.scrollToWordResourceLoaded(tabContentContainerInner, wordUrl, ParsedClassicsAppVars.lexiconWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
-          }
+          //}
           break;
 
         case 'concordance':
           const concordanceContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.concordanceContainerLeftPartClass}`);
           // scroll to selected word
-          if (wordUrl && wordUrl !== wordDom) {
+          //if (wordUrl && wordUrl !== wordDom) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
             ParsedClassicsContentContainers.scrollToWordResourceLoaded(concordanceContainerLeftPart, wordUrl, ParsedClassicsAppVars.concordanceWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
-          }
+          //}
           break;
 
         case 'commentary_refs':
           const commentaryRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.commentaryRefsContainerLeftPartClass}`);
           // scroll to the selected line
-          if (lineIndicatorUrl !== lineIndicatorDom) {
+          //if (lineIndicatorUrl !== lineIndicatorDom) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
             ParsedClassicsContentContainers.scrollToLineResourceLoaded(commentaryRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
-          }
+          //}
           break;
 
         case 'grammar_refs':
           const grammarRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.grammarRefsContainerLeftPartClass}`);
           // scroll to the selected line
-          if (lineIndicatorUrl !== lineIndicatorDom) {
+          //if (lineIndicatorUrl !== lineIndicatorDom) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
             ParsedClassicsContentContainers.scrollToLineResourceLoaded(grammarRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
-          }
+          //}
           break;
 
         case 'diagram_set':
           // scroll to the selected line
-          if (lineIndicatorUrl !== lineIndicatorDom) {
+          //if (lineIndicatorUrl !== lineIndicatorDom) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
             ParsedClassicsContentContainers.scrollToLineResourceLoaded(tabContentContainerInner, lineIndicatorUrl, activeTabId);
-          }
+          //}
           break;
 
         case 'audio_recording':
         // jump to audio time of selected line  
-        if (lineIndicatorUrl !== lineIndicatorDom) {
+        //if (lineIndicatorUrl !== lineIndicatorDom) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
           const audioEl = tabContentContainerInner.find('audio').first()[0];
           ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl, activeTabId);
-          }
-          break;
+        //}
+        break;
       }
 
       return;
