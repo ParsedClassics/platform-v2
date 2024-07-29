@@ -141,6 +141,9 @@ const ParsedClassicsContentContainers = {
         // jump to audio time of selected line  
         //if (lineIndicatorUrl !== lineIndicatorDom) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
           const audioEl = tabContentContainerInner.find('audio').first()[0];
+          const activeAudioLine = tabContentContainerInner.find('div.active');
+          // we need to remove class 'active' from audio text in order to scroll this line to the view, because after moving tab to other pane, audio ta's content is being scrolled to the top
+          activeAudioLine.removeClass('active');
           ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl, activeTabId);
         //}
         break;
@@ -834,10 +837,10 @@ const ParsedClassicsContentContainers = {
       else {
         timePoint = resourceContents[lineIndicatorUrl] + 0.01;
       }
-
+      
       // are metadata loaded?
       if (audioEl.readyState > 0) {
-        audioEl.currentTime = timePoint; 
+        audioEl.currentTime = timePoint;
       }
       // no metadata? - then set timeout
       else {
