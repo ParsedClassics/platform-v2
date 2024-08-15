@@ -16,27 +16,85 @@ const ParsedClassicsLayout = {
 
   //default first load
   firstLoad: function () {
+    // get hash json from local storage
     const storageJson = ParsedClassicsLayout.getHashJson("localStorage");
-    const storageJsonValidation =
-      ParsedClassicsLayout.layoutJsonValidate(storageJson);
-    const hashJson = storageJsonValidation
-      ? storageJson
-      : ParsedClassicsLayout.getDefaultHashJson();
-    const hashJsonStr = JSON.stringify(hashJson);
-    history.replaceState(null, "", `#${hashJsonStr}`);
-    ParsedClassicsLayout.update(hashJson);
+    let hashJson;
+    if (!storageJson) {
+      hashJson = ParsedClassicsLayout.getDefaultHashJson();
+      const hashJsonStr = JSON.stringify(hashJson);
+      history.replaceState(null, "", `#${hashJsonStr}`);
+      ParsedClassicsLayout.update(hashJson);
+    }
+    else {
+      const storageJsonValidation = ParsedClassicsLayout.layoutJsonValidate(storageJson);
+      console.log('storageJsonValidation', storageJsonValidation);
+      if (storageJsonValidation) {
+        hashJson = storageJson;
+        ParsedClassicsConfirmDialogue.openConfirmDialogue('container', {heading: 'Confirm', message: 'To open last saved layout click OK, otherwise default layout will be opened.'},
+          () => {
+            history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
+            ParsedClassicsLayout.update(hashJson);
+            ParsedClassicsConfirmDialogue.closeConfirmDialogueWithoutClick('container');
+          }, 
+          () => {
+            hashJson = ParsedClassicsLayout.getDefaultHashJson();
+            history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
+            ParsedClassicsLayout.update(hashJson);
+          } 
+        );
+      }
+      else {
+        hashJson = ParsedClassicsLayout.getDefaultHashJson();
+        ParsedClassicsAlertDialogue.openDialogue('container', {heading: 'Error!', message: 'Invalid hash string in local storage.\nSince no valid saved layout was faund, default layout will be opened.'},
+          () => {
+            hashJson = ParsedClassicsLayout.getDefaultHashJson();
+            history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
+            ParsedClassicsLayout.update(hashJson);
+          } 
+        );
+      }
+    }
   },
 
   // page load after popstate event
   popStateLoad: function () {
     const urlJson = ParsedClassicsLayout.getHashJson("url");
     const urlJsonValidation = ParsedClassicsLayout.layoutJsonValidate(urlJson);
-    const hashJson = urlJsonValidation
-      ? urlJson
-      : ParsedClassicsLayout.getDefaultHashJson();
-    urlJsonValidation
-      ? ParsedClassicsLayout.update(hashJson)
-      : alert("Invalid hash string!");
+    // hash string in URL is valid
+    if (urlJsonValidation) {
+      ParsedClassicsLayout.update(urlJson);
+    } 
+    // hash string in URL is invalid
+    else {
+      const storageJson = ParsedClassicsLayout.getHashJson("localStorage");
+      let hashJson;
+      // hash json found in storage
+      if (storageJson && Object.keys(storageJson).length) {
+        ParsedClassicsConfirmDialogue.openConfirmDialogue('container', {heading: 'Confirm', message: 'Invalid hash string in URL!\nTo open last saved layout click OK, otherwise default layout will be opened.'},
+          () => {
+            hashJson = ParsedClassicsLayout.getHashJson("localStorage");
+            history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
+            ParsedClassicsLayout.update(hashJson);
+            ParsedClassicsConfirmDialogue.closeConfirmDialogueWithoutClick('container');
+          }, 
+          () => {
+            hashJson = ParsedClassicsLayout.getDefaultHashJson();
+            history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
+            ParsedClassicsLayout.update(hashJson);
+          } 
+        );
+      }
+      // hash json not found in storage
+      else {
+        ParsedClassicsAlertDialogue.openDialogue('container', {heading: 'Error!', message: 'Invalid hash string in URL.\nSince no valid saved layout was faund, default layout will be opened.'},
+          () => {
+            hashJson = ParsedClassicsLayout.getDefaultHashJson();
+            history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
+            ParsedClassicsLayout.update(hashJson);
+          } 
+        );
+      }
+    }
   },
 
   /*
@@ -44,6 +102,8 @@ const ParsedClassicsLayout = {
   */
 
   update: function (hashJson) {
+    // save urlJson in localStorage
+    ParsedClassicsLayout.layoutJsonSaveInStorage();
     // get layout obj
     const layoutObj = hashJson[ParsedClassicsAppVars.layoutMember];
 
@@ -1912,7 +1972,10 @@ const ParsedClassicsLayout = {
   },
 
   layoutJsonSaveInStorage: function() {
-    if (!ParsedClassicsAppVars.DEV_MODE) {
+    const urlJson = ParsedClassicsLayout.getHashJson("url");
+    const urlJsonValidation = ParsedClassicsLayout.layoutJsonValidate(urlJson);
+    if (urlJsonValidation) {
+      const hashJsonStr = JSON.stringify(urlJson);
       localStorage.setItem(ParsedClassicsAppVars.urlHashStorageName, window.location.hash.replace("#", ""));
     }
   }

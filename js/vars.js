@@ -7,8 +7,6 @@
 */
 
 const ParsedClassicsAppVars = {
-  // Dev mode
-  DEV_MODE: false,
   // container
   containerClass: "container",
   containerId: "container",
@@ -20,8 +18,10 @@ const ParsedClassicsAppVars = {
   paneTopPartClass: "pane__top-part",
   paneBottomPartClass: "pane__bottom-part",
   dialogueCloseBtnClass: "dialogue-close-btn",
+  dialogueCloseBtnOuterClass: "dialogue-close-outer-btn",
   dialogueConfirmBtnClass: "dialogue-confirm-btn",
   dialogueCancelBtnClass: "dialogue-cancel-btn",
+  dialogueCancelBtnOuterClass: "dialogue-cancel-outer-btn",
   // tabbar and tab
   tabbarClass: "scrollmenu", 
   tabbarDragClass: "scrollmenu--drag",

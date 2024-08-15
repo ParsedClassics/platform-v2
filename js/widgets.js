@@ -636,7 +636,7 @@ const ParsedClassicsAlertDialogue = {
     const alertDialogueHtml = `
       <div id="alert-dialogue-${paneId}" class="pc-dialogue">
         <div class="pc-modal-content">
-          <div class="header"><div class="header-inner"><div class="header-text">Heading</div></div><div class="dialogue-close"><div class="${ParsedClassicsAppVars.dialogueCloseBtnClass}" title="Close dialogue"><img class="dialogue-close-img" src="img/close.svg" /></div></div></div>
+          <div class="header"><div class="header-inner"><div class="header-text">Heading</div></div><div class="dialogue-close"><div class="${ParsedClassicsAppVars.dialogueCloseBtnOuterClass}"><div class="${ParsedClassicsAppVars.dialogueCloseBtnClass}" title="Close dialogue"><img class="dialogue-close-img" src="img/close.svg" /></div></div></div></div>
           <div class="message-text pc-container pc-padding-16">
             Item not found
           </div>
@@ -647,7 +647,7 @@ const ParsedClassicsAlertDialogue = {
     return alertDialogueHtml;
   },
 
-  openDialogue: function(paneId, argObj) {
+  openDialogue: function(paneId, argObj, callback) {
     const heading = argObj.heading;
     const message = argObj.message;
 
@@ -657,6 +657,13 @@ const ParsedClassicsAlertDialogue = {
     alertDialogue.find(`.header-text`).text(heading);
     // insert message
     alertDialogue.find(`.message-text`).text(message);
+    // get outer close button
+    const closeButtonOuter = alertDialogue.find(`.${ParsedClassicsAppVars.dialogueCloseBtnOuterClass}`);
+    // unbind click event
+    closeButtonOuter.unbind("click");
+    if (callback) {
+      closeButtonOuter.bind('click', callback);
+    }
     // display dialogue
     alertDialogue.show();
   },
@@ -699,9 +706,9 @@ const ParsedClassicsConfirmDialogue = {
   createConfirmDialogueHtml: function(paneId) {
     // create alert dialogue html
     const confirmDialogueHtml = `
-      <div id="confirm-dialogue-${paneId}" class="pc-dialogue" style="displayx: block;">
+      <div id="confirm-dialogue-${paneId}" class="pc-dialogue">
         <div class="pc-modal-content">
-          <div class="header"><div class="header-inner"><div class="header-text">Confirm</div></div><div class="dialogue-close"><div class="${ParsedClassicsAppVars.dialogueCloseBtnClass}" title="Close dialogue"><img class="dialogue-close-img" src="img/close.svg" /></div></div></div>
+          <div class="header"><div class="header-inner"><div class="header-text">Confirm</div></div><div class="dialogue-close"><div class="${ParsedClassicsAppVars.dialogueCloseBtnOuterClass}"><div class="${ParsedClassicsAppVars.dialogueCloseBtnClass}" title="Close dialogue"><img class="dialogue-close-img" src="img/close.svg" /></div></div></div></div>
           <div class="message-text pc-container pc-padding-16">
             Confirm
           </div>
@@ -709,9 +716,11 @@ const ParsedClassicsConfirmDialogue = {
             <button class="dialogue-confirm-btn pc-action-button w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">
               OK
             </button>
+            <div class="${ParsedClassicsAppVars.dialogueCancelBtnOuterClass}">
             <button class="dialogue-cancel-btn pc-action-button w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">
               Cancel
             </button>
+            </div>
           </div>
         </div>
       </div>
@@ -720,7 +729,7 @@ const ParsedClassicsConfirmDialogue = {
     return confirmDialogueHtml;
   },
 
-  openConfirmDialogue: function(paneId, argObj, callback) {
+  openConfirmDialogue: function(paneId, argObj, callback, callback2) {
     const heading = argObj.heading;
     const message = argObj.message;
 
@@ -736,7 +745,20 @@ const ParsedClassicsConfirmDialogue = {
     confirmButton.unbind("click");
     // bind callback to confirm button
     confirmButton.bind('click', callback);
-
+    // get outer close button
+    const closeButtonOuter = confirmDialogue.find(`.${ParsedClassicsAppVars.dialogueCloseBtnOuterClass}`);
+    // unbind click event
+    closeButtonOuter.unbind("click");
+    if (callback2) {
+      closeButtonOuter.bind('click', callback2);
+    }
+    // get outer cancel button
+    const cancelButtonOuter = confirmDialogue.find(`.${ParsedClassicsAppVars.dialogueCancelBtnOuterClass}`);
+    // unbind click event
+    cancelButtonOuter.unbind("click");
+    if (callback2) {
+      cancelButtonOuter.bind('click', callback2);
+    }
     // display dialogue
     confirmDialogue.show();
   },
