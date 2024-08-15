@@ -48,10 +48,14 @@ const APP = {
   init: function() {
     //add listener for popstate
     window.addEventListener('popstate', APP.checkState);
-    // add listener for unload
-    window.addEventListener('beforeunload', ParsedClassicsLayout.layoutJsonSaveInStorage);
     // add listener for message from iframe event (IMPORTANT! window.addEventListener("message", ParsedClassicsScannedBookMode.updateMode) does not work here )
     $(window).on('message', ParsedClassicsScannedBookMode.updateMode);
+    // create alert dialogue el
+    alertDialogue = ParsedClassicsAlertDialogue.createDialogue('container');
+    $('body').append(alertDialogue);
+    // create confirm dialogue
+    confirmDialogue = ParsedClassicsConfirmDialogue.createConfirmDialogue('container');
+    $('body').append(confirmDialogue);
     //check the state
     APP.checkState(); 
   },
@@ -59,12 +63,13 @@ const APP = {
   //called when page loads AND after a popstate event
   checkState: function() {
     //default first load
+    let hashJsonStr;
     if (!location.hash) { 
-      ParsedClassicsLayout.firstLoad();
+      ParsedClassicsLayout.firstLoad(); 
     }
     // page load after popstate event 
     else {
-      ParsedClassicsLayout.popStateLoad();
+      ParsedClassicsLayout.popStateLoad(); 
     }
   },
   

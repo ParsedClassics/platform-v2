@@ -68,6 +68,10 @@
   justify-content: center;
 }
 
+.pc-dialogue .dialogue-close-outer-btn, .pc-dialogue .dialogue-cancel-outer-btn {
+  display: inline-block;
+}
+
 .pc-dialogue .dialogue-close-btn {
   display: flex;
   box-sizing: border-box;
