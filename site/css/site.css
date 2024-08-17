@@ -242,9 +242,10 @@ body {
 }
 
 .pc-interverb-symbol {
-  font-family: "Cambria", "Apple Symbols", "Arial Unicode MS";
-  font-weight: bold;
-  colorx: silver;
+  display: inline-block; 
+  padding-left: 2px; 
+  padding-right: 2px;
+  font-size: 30px;
 }
 
 #pc-site-content {
