@@ -27,7 +27,6 @@ const ParsedClassicsLayout = {
     }
     else {
       const storageJsonValidation = ParsedClassicsLayout.layoutJsonValidate(storageJson);
-      console.log('storageJsonValidation', storageJsonValidation);
       if (storageJsonValidation) {
         hashJson = storageJson;
         ParsedClassicsConfirmDialogue.openConfirmDialogue('container', {heading: 'Confirm', message: 'To open last saved layout click OK, otherwise default layout will be opened.'},

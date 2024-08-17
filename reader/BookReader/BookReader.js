@@ -4290,7 +4290,6 @@ BookReader.prototype.pRotate = function () {
     }
     else if (this.rotations[currIndex] && (this.rotations[currIndex][0] === 180 || this.rotations[currIndex][0] === 0)) {
         if (width <= viewWidth - 40) {
-            console.log('aaa');
             newWidth = width;
             newHeight = height;
             oldHeight = BookReader.prototype._findOldHeightRotating180deg(width, height, viewWidth, widthHeightRatio);
@@ -4302,7 +4301,6 @@ BookReader.prototype.pRotate = function () {
             img.css('width', newWidth + 'px');
         }
         else if (width > viewWidth - 40) {
-            console.log('bbb');
             newWidth = viewWidth - 40;
             newHeight = newWidth / widthHeightRatio;
             oldHeight = (viewWidth - 40) * widthHeightRatio;
