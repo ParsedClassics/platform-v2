@@ -1,0 +1,252 @@
+h3.section_title {
+padding: 0; 
+color: #e92a0b!important; 
+text-transform: uppercase; 
+font-size: 24px; 
+line-height: 30px;
+font-family: Helvetica, Arial, sans-serif;
+margin-bottom: 20px !important;
+margin-left: 8px;
+}
+
+#main {
+    font-size: .75em;
+    position: relative;
+    /*background: #e8e8e8;*/
+    /*padding: 10px;
+    padding-left: 20px;*/
+    height: 620px; 
+}
+
+h2, h3, h4, h5, h6, var {
+    margin: 0;
+}
+
+#main h2 {
+    /*font-family: "Times New Roman", Times, serif;*/
+    font-family: sans-serif;
+    color: #141414;
+    font-size: 26px;
+    line-height: 1.1em;
+    margin-bottom: 0.1em!important;
+    font-weight: normal;
+    /*font-weight: normal;*/
+}
+
+h2 a {
+    text-decoration: none;
+    color: #000;
+}
+
+h2 a:hover {
+    text-decoration: underline;
+}
+
+h2.alt {
+    letter-spacing: -1px;
+}
+
+/* Slider */
+#slider {
+    position: relative;
+    /*width: 470px;*/
+    height: 470px;
+    top: 105px;
+    background-position:center!important;
+    background-repeat: no-repeat;
+    width: 100%;
+    border: 1px solid silver;
+}
+
+#slider img {
+    position: absolute;
+    /*top: 0px;
+    left: 0px;*/
+    display: none;
+    width: 567px;
+    height: 315px;
+}
+
+#slider a {
+    border: 0;
+    display: block;
+}
+
+.nivo-controlNav {
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    z-index: 999;
+}
+
+.nivo-controlNav a {
+    display: block;
+    width: 17px;
+    height: 17px;
+    background: #808080;
+    text-indent: -9999px;
+    border: 0;
+    margin-left: 5px;
+    float: left;
+}
+
+.nivo-directionNav a {
+    display: none;
+    width: 40px;
+    height: 50px;
+    text-indent: -9999px;
+    border: 0;
+    top: 0;
+}
+
+a.nivo-nextNav {
+    right: 0px;
+    /*background-color: #141414;*/
+    background: #C11B17 url(../img/sprite00.png) no-repeat -67px -32px;
+}
+
+a.nivo-prevNav {
+    left: 0px;
+    /*background-color: #141414;*/
+    background: #C11B17 url(../img/sprite00.png) no-repeat -3px -32px;
+}
+
+.nivo-caption {
+    text-shadow: none;
+    font-family: Helvetica, Arial, sans-serif;
+    display: table;
+}
+
+.nivo-caption p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nivo-caption a {
+    color: #efe9d1;
+    text-decoration: underline;
+}
+
+/* Nivo slider */
+
+.nivoSlider {
+    position: relative
+}
+
+.nivoSlider img {
+    position: absolute;
+    /*top: 0;
+    left: 0;
+    border: 1px solid #E92A0B*/
+}
+
+.nivoSlider a.nivo-imageLink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    /*border: 0;*/    
+    z-index: 6;
+    display: none;
+    /*border: solid 1px silver!important;*/
+}
+
+.nivo-slice {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    height: 100%
+}
+
+.nivo-box {
+    display: block;
+    position: absolute;
+    z-index: 5
+}
+
+.nivo-caption {
+    position: absolute;
+    left: 0;
+    top: -115px;
+    background: 0;
+    color: #fff;
+    opacity: .8;
+    /*width: 470px;*/
+    width: 100%;
+    height: 100px;
+    z-index: 8
+}
+
+.nivo-caption h2 {
+    font-size: 2.4em;
+    line-height: 1.1em;
+    font-weight: bold;
+    margin-bottom: 0
+}
+
+.nivo-caption h2 a {
+    color: #141414;
+    text-decoration: none
+}
+
+.nivo-caption h2 a:hover {
+    /*color: #E92A0B*/
+    text-decoration: underline;
+}
+
+.nivo-caption .more-link {
+    position: absolute;
+    right: 0;
+    top: 90px;
+    font-size: 12px;
+    color: #E92A0B;
+    text-transform: none;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold
+}
+
+.nivo-caption .more-link:hover {
+    text-decoration: none
+}
+
+.nivo-caption p {
+    padding: 5px;
+    margin: 0
+}
+
+.nivo-caption a {
+    display: inline !important
+}
+
+.nivo-html-caption {
+    display: none
+}
+
+.nivo-directionNav a {
+    position: absolute;
+    top: 75%;
+    z-index: 9;
+    cursor: pointer
+}
+
+.nivo-prevNav {
+    left: 0
+}
+
+.nivo-nextNav {
+    right: 0
+}
+
+.nivo-controlNav a {
+    position: relative;
+    z-index: 9;
+    cursor: pointer
+}
+
+.nivo-controlNav a.active {
+    font-weight: bold;
+    background: #C11B17;
+}

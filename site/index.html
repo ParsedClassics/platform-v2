@@ -20,8 +20,10 @@
 
 <link type="text/css" rel="stylesheet" href="./css/w3.css" />
 <link type="text/css" rel="stylesheet" href="./css/site.css" />
+<link type="text/css" rel="stylesheet" href="./css/nivoslider.css" />
 
-<script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="./js/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="./js/jquery.nivoslider-2.6.js"></script>
 
 </head>
 
@@ -29,10 +31,74 @@
 
   <script type="text/javascript" src="./js/_navigation.js"></script>
 
-  <div id="pc-site-content" class="pc-center-pane-maxwidth w3-border-right w3-padding pc-padding-top-0" style="padding-right: 5rem!important;">
-  <h1 class="pc-padding-left-8">Latest about project</h1>
-  <a class="twitter-timeline" href="https://twitter.com/ParsedClassics?ref_src=twsrc%5Etfw">Tweets by ParsedClassics</a> 
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <div id="pc-site-content" class="pc-center-pane-maxwidth w3-border-right w3-padding pc-padding-top-0 pc-padding-bottom-0">
+  <h1>Electronic editions of Greek and Latin classics</h1>
+
+  <div id="main" class="wrapper">
+    <div id="slider">
+      <img src="./img/slider_img01.png" title="#htmlcaption1"/>							
+      <img src="./img/slider_img02.png" title="#htmlcaption2"/>							
+      <img src="./img/slider_img03.png" title="#htmlcaption3"/>							
+      <img src="./img/slider_img04.png" title="#htmlcaption4"/>							
+      <img src="./img/slider_img05.png" title="#htmlcaption5"/>							
+      <img src="./img/slider_img06.png" title="#htmlcaption6"/>							
+      <img src="./img/slider_img07.png" title="#htmlcaption7"/>														
+    </div>
+     
+    <div id="htmlcaption1" class="nivo-html-caption">
+    <h2>Check morphological parsing by mouseover on any word</h2>
+    </div>
+    
+    <div id="htmlcaption2" class="nivo-html-caption">
+    <h2>Examine lexicons by clicking any word</h2>
+    </div>
+    
+    <div id="htmlcaption3" class="nivo-html-caption">
+    <h2>Explore concordances by clicking any word</h2>
+    </div>
+    
+    <div id="htmlcaption4" class="nivo-html-caption">
+    <h2>Inquire translations by clicking any line</h2>
+    </div>
+    
+    <div id="htmlcaption5" class="nivo-html-caption">
+    <h2>Look into commentaries by by clicking any line</h2>
+    </div>
+    
+    <div id="htmlcaption6" class="nivo-html-caption">
+    <h2>Inspect grammars by clicking any line</h2>
+    </div>
+    
+    <div id="htmlcaption7" class="nivo-html-caption">
+    <h2>Listen to audio recordings by clicking any line</h2>
+    </div>
+    
+    <div class="nivo-directionNav"><a class="nivo-prevNav">Prev</a><a class="nivo-nextNav">Next</a></div>
+  </div>
+
+  <p>ParsedClassics project aims at creating integrated set of functionality allowing for reading classics with ease and pleasure:</p>
+    <ul>
+      <li>best scholarship from public domain sources available at few mouse clicks;</li>
+      <li>morphological parsing, multiple lexicons, concordances, translations, commentaries, grammars, audio recordings;</li>
+      <li>scholarly aides in Greek, Latin, Italian, French, English and German;</li>
+      <li>possiblility of reading Greek texts using aides in Latin and vice versa;</li>
+      <li>possibility of reading classical texts using scholarly aides in descendant languages: in modern Greek for ancient Greek texts and in Italian and French for Latin texts;</li>
+      <li>most flexible interface allowing to arrange texts and scholarly aides according to personal preferences.</li>
+    </ul>
+
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $('#slider').nivoSlider({
+            effect: 'fade',
+            captionOpacity: 1,
+            pauseTime: 5555,
+            controlNav: true,
+            animSpeed: 150
+        });
+    });
+  </script>
+
+  </div>
 
 </body>
 
