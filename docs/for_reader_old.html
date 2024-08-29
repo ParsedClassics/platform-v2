@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+ This file is part of ParsedClassics app
+=====================================================
+ Copyright (c) Eleutherius Joannides
+=====================================================
+-->
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<link rel="shortcut icon" href="../site/img/favicon.ico" type="image/x-icon" />
+
+<title>Reader's documentation | ParsedClassics</title>
+
+<link type="text/css" rel="stylesheet" href="../css/w3.css" />
+
+<link type="text/css" rel="stylesheet" href="../css/jquery.layout-1.4.4.css" />
+
+<link type="text/css" rel="stylesheet" href="../css/jquery.connav.css" />
+
+<link type="text/css" rel="stylesheet" href="../css/pc.css" />
+
+<script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+
+<script type="text/javascript" src="../js/jquery-ui-1.9.2.js"></script>
+
+<script type="text/javascript" src="../js/jquery.layout-1.4.4.js"></script>
+
+<script type="text/javascript" src="../js/jquery.scrollTo-2.1.2.js"></script>
+
+<script type="text/javascript" src="../js/parsedclassics.vars.js"></script>
+
+<script type="text/javascript" src="../js/parsedclassics.helpers.js"></script>
+
+<script type="text/javascript" src="../js/jquery.connav.js"></script>
+
+<script type="text/javascript" src="../js/parsedclassics.widgets.js"></script>
+
+<script type="text/javascript">
+    
+/*
+Initialization of Layout panes
+*/ 
+
+
+var ParsedClassicsLayout;
+
+$(document).ready( function() {
+
+		ParsedClassicsLayout = $("body").layout({
+			 initClosed:					false
+  		,	west__size:					'25%'
+    ,	west__minSize:				300
+    , west__closable:  true
+    ,	west__togglerLength_open:		48	 
+  		,	west__fxSpeed:				400
+    , west__slidable: false
+    ,	center__minWidth:			300
+  		,	livePaneResizing:			false
+  		,	animatePaneSizing:			true // changes in pane-sizes when resetting state will be animated
+  		,	stateManagement__enabled:	true // enable stateManagement - automatic cookie load & save enabled by default
+
+
+		});
+  
+});
+
+
+/*
+Initialization of Navigation generator
+*/ 
+
+
+
+            $(document).ready(function(){
+                $('#docs_contents').contentNavigator({
+                    wrapper : '#docs_text',
+                    collapsable : true,
+                    autocollapse : false,
+                    updateURL : false,
+                    indexOnContent : true
+                });
+                
+
+            })
+            
+
+/*
+Initialization of Selected contents item
+*/
+
+$(document).ready(function(){
+
+  ParsedClassicsSelectedContentsItem.init(); 
+   
+});
+
+/*
+Initialization of inner links
+*/
+
+$(document).ready(function(){
+
+  var contentPanelInner;
+  contentPanelInner = $("." + ParsedClassicsVars.contentPanelInnerClass);
+
+  contentPanelInner.delegate("." + ParsedClassicsVars.innerLinkClass, "click", ParsedClassicsInnerLink.innerLinkClick);
+
+});
+
+/*
+Closing of Loading... dialogue
+*/	
+
+$(document).ready(function() {
+
+setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.onloadDialogueTimeOut);
+
+});
+            
+</script>
+
+</head>
+
+<body id="docs">
+
+<!-- Loading... dialogue code  -->
+<div id="pc-loading-dialogue" class="w3-modal pc-onload-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+  
+   <header class="w3-container w3-dark-grey"> 
+    <h2>Loading&nbsp;documentation</h2>
+   </header>
+   
+   <div class="w3-padding-16 pc-text-center">
+   <!--<img src="../reader/BookReader/images/progressbar.gif">-->
+   <div class="loader8"></div>
+   </div>
+  
+  </div>  <!-- End of .w3-modal-content -->
+</div> <!-- End of #pc-loading-dialogue -->
+    
+<div class="ui-layout-west">
+    
+<div id="pc-west-pane-content" class="ui-layout-content pc-overflow-x-hidden pc-float-right pc-height-100 pc-width-100 pc-west-pane-maxwidth pc-show-verses">
+    
+<div class="w3-bar-block"><a id="logo" class="w3-hover-dark-grey w3-bar-item w3-padding w3-buttonx" href="../site/index.html">PARSED<span class="pc-interverb-symbol">⋮</span>CLASSICS</a></div>
+
+<div class="w3-bar-block connav-table-item-text" id="docs_heading_link"><span class='w3-bar-item w3-padding'>Reader's documentation</span></div>
+    
+<div id="docs_contents" class="nav"></div>
+
+</div> <!-- End of id="pc-west-pane-content" -->
+
+</div><!-- End of .ui-layout-west -->
+  
+ 
+<div class="ui-layout-center"><!-- center pane --> 
+    
+    
+<div id="pc-center-pane-content" class="pc-content-panel-inner ui-layout-content pc-height-100">
+
+<div id="pc-center-pane-content-inner" class="pc-center-pane-maxwidth  w3-border-right w3-padding pc-padding-top-0">
+<span class="pc-color-white">.</span><!-- hack needed to prevent marins of <h1> and <p> els to go beyond borders of <div> tag-->
+    
+
+<div id="docs_text">
+<div class="connav-auto-block container">
+    
+<h1 id="docs_heading">Reader's documentation</h1>
+
+<p>The aim of ParsedClassics project – enabling reading classics with ease and pleasure – is being accomplished though <a href="../library/index.html" target="_blank">Library app</a>, which provides access both to classics texts and various tools (parsing, lexicon, translation etc.) for reading them. The interface of Library app is essentially self-explanatory: the reader can understand main principles of using it after playing several minutes. Nevertheless, there is a need to provide certain deeper explanations of Library app‘s <em>architecture</em>, <em>usage</em> and <em>settings</em> for those, who (a) would like to use Library app to its utmost power, (b) would like to join discussions in Parsed Classics forum, (c) would like to join Parsed Classics project as editor.  </p>
+
+<h2 id="h-architecture">Architecture</h2>
+
+<p>Library app is based on carefully thought out architecture. The concepts behind Library app architecture are of 3 types: <em>data concepts</em>, <em>view concepts</em> and <em>control concepts</em>. Data concepts define how the data is being structured; view concepts define how the data is being displayed; control concepts define how the reader interacts with structured data to display it according his needs.</p>
+
+<h3 id="h-data-concepts">Data concepts</h3>
+
+<p>Most important data concepts are these: <em>edition</em>, <em>collection</em>, <em>resource</em>, <em>resource type</em> and <em>text type</em>. To understand these concepts it is best to look at <a href='../site/collections.html#catalogue/{"edition":"nt_gospels"}'>a page in Catalogue</a> displaying what is contained in some edition. The picture below displays the fragment of such Catalogue page. Edition is underlied yellow, collections are underlined red, resources are underlined green, the types of resources are underlined blue and the types of the text are underlined brown:</p>
+
+<p><img src="img/collections_page.png" class="w3-border w3-border-dark-gray"></p>
+
+<h4 id="h-data-concepts-edition">Edition</h4>
+
+<p>Edition is a set of collections. Essentially edition is the highest level entry in the catalogue. In the picture above we see one edition named "Ἡ Καινὴ Διαθήκη. Τὰ Εὐαγγέλια / The New Testament. The Gospels".</p>
+
+<h4 id="h-data-concepts-collection">Collection</h4>
+
+<p>A collection is a bunch of resources adapted to function in sync with each other and providing some information useful for reading and interpreting certain classic book. By the word "book" here is meant book in original sense, according to which Plato's <em>Republic</em> consists in 10 books and the New Testament consists in 27 books.</p> 
+  
+<p>In the picture above we see 3 collections: collection "Τὸ κατὰ Ματθαῖον εὐαγγέλιον / The gospel according to Matthew", collection "Τὸ κατὰ Μάρκον εὐαγγέλιον / The gospel according to Mark" and collection "Τὸ κατὰ Λουκᾶν εὐαγγέλιον / The gospel according to Luke". Collection consists of several different resources (parsed text, lexicons, translations, commentaries etc.). 
+</p>
+
+<h4 id="h-data-concepts-resource">Resource</h4>
+
+<p>A resource is certain text, which functions as part of collection. In picture above we see that parts of the "Τὸ κατὰ Ματθαῖον εὐαγγέλιον / The gospel according to Matthew"  collection are parsed tex based on tagging by J. K. Tauber, critical edition by M. A. Robinson and W. G. Pierpont, critical edition by V. Antoniadis, critical edition by B. F. Westcott and F. J. A. Hort, concordance compiled by W. F. Moulton and A. S. Geden, lexicon by E. Robinson, lexicon by Th. S. Green etc. In all this collection at the time of making picture includes 16 resources.</p>
+
+<h4 id="h-data-concepts-resource-type">Resource type</h4>
+
+<p>Each resource belongs to one and only one resource type. Library app supports following resource types: <em>parsed text</em>, <em>critical edition</em>, <em>concordance</em>, <em>lexicon</em>, <em>translation</em>, <em>commentary</em>, <em>grammatical references</em>, <em>diagram set</em> and <em>audio recording</em>.  The names of resource types are self-explanatory.</p>
+
+<h4 id="h-data-concepts-text-type">Text type</h4>
+
+<p>Each resource belongs to one and only one text type. There are two text types: <em>scanned</em> and <em>transcribed</em>. Scanned resources are sets of photographs of the pages of physical books; transcribed resources are text files, containing sentences, transcribed from the pages of physical books.  The resources of the type parsed text and audio recording are always transcribed; the resources of the other types may be scanned or transcribed.  In extensive collections most resources will be scanned because it is difficult and very often essentially impossible to adequately reproduce richly formatted scholarly text using formatting options available in HTML.</p>
+
+<h3 id="h-view-concepts">View concepts</h3>
+
+<p>Most important view concepts are these: <em>pane</em>, <em>subpane</em>, <em>content panel</em> and <em>panel type</em>.
+</p>
+
+<h4 id="h-view-concepts-pane">Pane</h4>
+
+<p>A pane is a division of Library app window.  Library app window is divided into two panes: <em>parsed text pane</em> on the left from vertical splitter and <em>resources pane</em> on the right from it: </p>
+
+<p><img src="img/panes.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<h4 id="h-view-concepts-subpane">Subpane</h4>
+
+<p>Subpanes are a panes inside another pane. In Library app only parsed text pane has subpanes: it is devided by horizontal splitter into <em>text subpane</em> on the top and <em>parsing subpane</em> on the bottom; text subpane displays classical text in original language and parsing pane displays parsing of its words:</p>
+
+<p><img src="img/subpanes.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<h4 id="h-view-concepts-content-panel">Content panel</h4>
+
+<p>The panes contain content panels. Each content panel display single resource. Parsed text pane can contain only single content panel, which displays resource of parsed text type; resources pane can contain many content panels, which display resources of different types. Look at two pictures above. One of them shows that in resources pane there is content panel displaying resource of the audio recording type; the second shows that in resources pane there is content panel displaying resource of the lexicon type.</p>
+
+<p>Each content panel (except that in parsed text pane) is divided into <em>heading area</em> and <em>content area</em>:</p>
+
+<p><img src="img/heading_and_content_areas.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<h4 id="h-view-concepts-content-panel-type">Content panel type</h4>
+
+<p>Each content panel according its type is either <em>book reader</em> panel or <em>ebook reader</em> panel. Book reader panels display resources of the scanned type; ebook reader panels display resources of the transcribed type. All pictures above show content panels belonging to ebook reader type. Below you see picture showing resource pane containing book reader content panel:</p>
+
+<p><img src="img/book_reader_content_panel.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<h3 id="h-control-concepts">Control concepts</h3>
+
+<p>Most important control concepts are these:  <em>global access widget</em>, <em>local access widget</em>  and <em>type of global access</em>.</p>
+
+<h4 id="h-control-concepts-global-and-local-access">Global and local access widgets</h4>
+
+<p>Global access widget control pulling out data from all resources of certain kind. Local access widget control pulling out data from certain single resource. Regarding access to data, parsed text pane and resources pane are not equal: all global access widgets are located inside parsed text pane; inside resources pane there are only local access widgets.</p>
+
+<p>Global access widgets are:<br>
+(a) collections selectbox<br>
+(b) resources selectbox<br>
+(c) key bindings<br>
+(d) lines selectbox<br>
+(e) selected line widget<br>
+(f) selected word widget<br>
+Global access widgets are discussed in more details in section on types of global access.</p>
+
+<p>Local access widgets are:<br>
+(a) hovered word widget<br>
+(b) content panel scrollbar<br>
+(c) internal link<br>
+(d) bookreader forward/back buttons<br>
+(e) bookreader progressbar<br>
+(f) audio controls<br> 
+Local access widgets are discussed in more details in sections devoted to the usage of resources.</p>
+
+<p>The picture below shows global and local access widgets. In the red bordered rectangle on top we see three global widgets: collections selectbox (top left), resources selectbox (bottom), and lines selectbox (top right). In the other red bordered rectangle we see two global access widgets: the words on grey background is selected line widget and red colored word is selected word widget. Local widgets are displayed in green rectangle and are pointed to by green arrows. These are content panel scrollbars, book reader‘s progressbar, book reader‘s page back and page forward buttons.</p>
+
+<p><img src="img/global_and local_widgets.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<h4 id="h-control-concepts-types-of-global-access">Types of global access</h4>
+
+<p>There are four ways how global widgets can access data: <em>by collection</em>, <em>by resource</em>, <em>by line</em> and <em>by word</em>.</p>
+
+<p>Global access to data by collection is achieved by changing value in collections selectbox. Changing the value in collections selectbox reloads the Library app.</p>
+
+<p>Global access to data by resource is achieved by changing value in resources selectbox. Changing the value in resources selectbox loads selected resource into resources pane.</p>
+
+<p>Also global access to data by resource is achieved by using key bindings. Entering the symbol "[" through keyboard loads the previous resource as resources are listed in the selectbox. Entering the symbol "]" through keyboard loads the next resource as resources are listed in the selectbox. Entering the symbol "<" through keyboard loads the first resource in the previous group of resources, e.g. in case current resource is certain translation and the previous group of resources are resources of the type "Lexicon", then the first of lexicons will be loaded. Entering the symbol ">" through keyboard loads the first resource in the next group of resources, e.g. in case current resource is certain translation and the next group of resources are resources of the type "Commentary", then the first of commentaries will be loaded.</p>
+
+<p>Global access to data by line is achieved by changing value in lines selectbox or by clicking on line inside text subpane. The result of changing value in lines selectbox is twofold. First, selected line is being highlighted and  scrolled to top inside text subpane. Second, inside resources pane each relevant content panel is being scrolled (ebookreader panel) or browsed (bookreader panel) to selected line; that is, all available critical editions, translations, commentaries, diagram sets, audio recordings will display selected line. Clicking on line inside text subpane has the same effect on content panels inside resources pane, but does not scroll selected line to the top inside text subpane.</p>
+
+<p>Global access to data by word word is achieved by clicking on the relevant word inside text subpane. The click on the word will result into relevant content panels inside resources pane being scrolled/browsed to the articles on selected word; that is, all available lexicons and concordances will display articles on selected word.</p>
+
+<h2 id="h-usage-of-resources">Usage of resources</h2>
+
+<h3 id="h-usage-of-resources-parsed-text">Content type parsed text</h3>
+
+<p>Parsed text need not necessarily be the most important source from which the reader studies classical work. As the main source the reader might prefer certain critical edition. But even in such case parsed text remains important because important controls are based on parsed text. As already been said above, clicking on the line of parsed text will result into that line being displayed in each relevant content panel inside resources pane and  clicking on word will result into article on that word being displayed in each relevant content panel inside resources pane. Clicking on word automatically selects the line clicked word belongs to.</p>
+
+<p>Hovering on word will result into parsing of that word being displayed inside parsing subpane:</p>
+
+<p><img src="img/word_hover.png" class="w3-border w3-border-dark-gray"></p>
+
+<p>Parsing subpane can be opened and closed by clicking button on the middle of horizontal splitter:</p>
+
+<p><img src="img/close_parsing_subpane.png" class="w3-border w3-border-dark-gray"></p>
+
+<h3 id="h-usage-of-resources-other-content-types">Other content types </h3>
+
+<p>The usage of resources belonging to content types critical edition, concordance, lexicon, translation, commentary, diagram set and audio recording is very similar. After selecting line or word in parsed text pane as described above each resource will be scrolled/browsed to selected line or word. </p>
+
+<p>If the resource is scanned it may be advisable to select one-page mode in order to find needed line or word more easily:</p>
+
+<p><img src="img/one_page_mode.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<p>Independently from selected line and word the information inside resource pane’s content panels can be retrieved using such local access widgets as scrollbars, page back and page forward buttons, progressbars and inner links. Content panels of the type audio recording have as local access widgets the usual audio controls. The highlighted line inside content panel containing audio recording is not local access widget; highlighted line just displays which line is being recited.</p>
+
+<p>Inside bookreader content panels the first page of the book can be displayed by clicking the link in the content panel’s heading. If there is a need to display bookreader on separate tab, right-click the link in the content panel’s heading.</p>
+
+<p><img src="img/link_in_panels_heading.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<h2 id="h-settings">Settings</h2>
+
+<p>Library app‘s settings dialogue is accessible by clicking settings button in top left part of the window:</p>
+
+<p><img src="img/settings_button.png" class="w3-border w3-border-dark-gray"></p>
+
+<h3 id="h-settings-content">Content settings</h3>
+
+<p>Settings dialogue’s Content tab allows to choose how parsed text and transcribed translations should be displayed: as separate lines (default) or as paragraphs.</p>
+
+<p>Text displayed in separate lines:</p>
+
+<p><img src="img/text_as_lines.png" class="w3-border w3-border-dark-gray"></p>
+
+<p>Text displayed in paragraphs:</p>
+
+<p><img src="img/text_as_paragraphs.png" class="w3-border w3-border-dark-gray"></p>
+
+<h3 id="h-settings-interface">Interface settings</h3>
+
+<p>Settings dialogue’s Interface tab  allows to choose how resources should be displayed. There are three options: “single“ (default), “all of certain type“, “all”. The option “single” means that inside resources pane only one resource will be loaded at the time and there will not be scrollbar available to scroll other resources into view. The option “all of certain type“ means that inside resources pane all resources of certain resource type will be loaded (say, all critical editions or all lexicons) and there will be scrollbar available to scroll any of these resources into view. The option “all” means that inside resources pane all existing resources will be loaded and there will be scrollbar available to scroll any of these resources into view.</p>
+
+<h3 id="h-settings-collection">Collection settings</h3>
+
+<p>Settings dialogue’s Collection tab  allows to choose which resources of the current collection are enabled. Just select from the list the resources you need to be enabled and close the dialogue. Library app will reload and you will see updated list of enabled and disabled resources in the Resources pane.</p>
+  
+<p>At least one resource should be selected in Collection tab. If you deselect all resources in Collection tab, the result will be restoration of the default list of enabled resources.</p>
+
+<h3 id="h-settings-extra_windows">Extra windows settings</h3>
+
+<p>Settings dialogue’s Extra windows tab allows to to open resources in their own popup windows. Resources opened in extra windows will work in sync with parsed text resource. </p>
+
+<p>Resource of the type parsed text cannot be opened in extra windows. Resources of the type grammatical references and simple concordances are not recommended to be opened in extra windows, because these resources open there own popup windows.</p>
+
+<h4 id="h-settings-resources_to_open_in_extra_windows">Selecting resources to open in extra windows</h4>
+
+<p>Extra windows tab displays the list of all available resources. Under the name of each resource there are two checkboxes. If you would like to open certain resource in extra window and have it open untill you close it or close the Library app, then check the checkbox "For this session". If you would like also to have the resource opened in extra window when  the Library app starts, then check also the checkbox "When app starts". The picture below displays Extra windows tab of the Settings dialogue in which the resources critical edition by V. Antoniadis and critical edition by F. H. A. Scrivener have been selected to be opened in extra windows. The critical edition by F. H. A. Scrivener is also selected to be opened in extra window when Library app starts.</p>
+
+<p><img src="img/options_extra_windows.png" class="w3-border w3-border-dark-gray"></p>
+
+<h4 id="h-settings-enabling_popups">Enabling popup windows in major browsers</h4>
+
+<p>Popup windows are blocked by default in most browsers. So, to use extra windows feature we at first need to unblock popup windows. In Google Chrome browser go to Settings, click on the left the link Privacy and security and then click Site Settings:</p>
+
+<p><img src="img/enable_popups_chrome.png" class="w3-border w3-border-dark-gray"></p>
+
+<p>In the next screen find and click the link Popups and redirects:</p>
+
+<p><img src="img/enable_popups_chrome2.png" class="w3-border w3-border-dark-gray"></p>
+
+<p>In the third screen make popups allowed by pushing the switch to the position Allowed and add the URL parsedclasscics.com to the Allow list:</p>
+
+<p><img src="img/enable_popups_chrome3.png" class="w3-border w3-border-dark-gray"></p>
+
+<p>In Firefox go to Options and click the link Privacy & Security:</p>
+
+<p><img src="img/enable_popups_firefox.png" class="w3-border w3-border-dark-gray"></p>
+
+<p>In the next screen find the option Block pop-up windows and uncheck its checkbox:</p>
+
+<p><img src="img/enable_popups_firefox2.png" class="w3-border w3-border-dark-gray"></p>
+
+<p>Alternatively, you can click the button Exceptions and to add URL parsedclassics.com to allowed websites list:</p>
+
+<p><img src="img/enable_popups_firefox3.png" class="w3-border w3-border-dark-gray"></p>
+
+<p>In Safari browser at first go to parsedclassics.com then open Preferences, click the button Websites, find parsedclassics.com in the list of opened websites and select the option Allow by clicking the button on the right:</p>
+
+<p><img src="img/enable_popups_safari.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<h4 id="h-settings-managing-opened-windows">Managing opened windows</h4>
+
+<p>If you have several opened extra windows, some of them will be covered by others. So, we need some method to bring needed extra window in view. There are several ways to achieve this.</p>
+
+<p>On Windows you can hover the mousepointer over the taskbar icon of the browser in which you opened the Library app and then select the needed window:</p>
+
+<p><img src="img/manage_popups_win.png" class="w3-border w3-border-dark-gray"></p>
+
+<p>Alternatively on Windows you can press the keys Alt+Tab to display all opened windows. Having all opened  windows displayed by Alt+Tab you can loop forwards through them by holding Alt key and pressing Tab key, and you can loop backwards by holding Alt and Shift keys and pressing Tab key:</p>
+
+<p><img src="img/manage_popups_win2.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<p>The third way on Windows to easily access the needed window and to bring it to the fore is pressing Windows key and Tab key. This will result into all opened windows being displayed and you will be able to select needed window using the mouse:</p>
+
+<p><img src="img/manage_popups_win3.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<p>On Mac you can use Mission Control view which can be lauched by special <img src="img/mac-keyboard-mission-control-icon.png" width="50"> key:</p>
+
+<p><img src="img/manage_popups_mac.png" class="w3-border w3-border-dark-gray"></p>
+
+<p>Mission Control feature should be used with correct settings. Go to Mac's System Preferences and click Mission Control icon:</p>
+
+<p><img src="img/manage_popups_mac2.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<p>Then deselect the checkbox Group windows by application:</p>
+
+<p><img src="img/manage_popups_mac3.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<p>Also there exists several free and commercial applications which aim on enhancing window management on Mac. Among them worthy of our attention is commercial application contexts.co. It allows to loop though all opened windows in Windows manner by holding Alt key and pressing Tab key (forwards) and by holding Alt and Shift keys and pressing Tab key (backwards):</p>
+
+<p><img src="img/manage_popups_mac4.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<p>Especially great feature of contexts.co application is tabs for opened windows. You see these tabs on the right of the Mac desktop:</p>
+
+<p><img src="img/manage_popups_mac5.jpg" class="w3-border w3-border-dark-gray"></p>
+
+<p>On mouseover the tabs expand and allow to easily select the needed window:</p>
+
+<p><img src="img/manage_popups_mac6.png" class="w3-border w3-border-dark-gray"></p>
+
+</div><!-- End of .connav-auto-block  -->
+</div><!-- End of #docs_text  -->
+
+       
+</div> <!-- End of div id="pc-center-pane-content-inner" element which is below top widgets bar -->
+
+</div><!-- End of .ui-layout-content --> 
+ 
+ </div><!-- End of .ui-layout-center -->   
+
+ 
+
+</body>
+</html>
