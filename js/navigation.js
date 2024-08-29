@@ -13,7 +13,7 @@ const ParsedClassicsNavigation = {
       <nav>
         <div>
           <ul id="main-menu-${paneId}" class="sm sm-simple">
-            <li ><a class="sm-menu-button" title="Menu"><img class="sm-menu-button-img" src="img/interverb.svg" /></a>
+            <li ><a class="sm-menu-button" title="Toolbar and Menus"><img class="sm-menu-button-img" src="img/interverb.svg" /></a>
               <ul class="sm-menu-content" >
                 <li>
                   <div class="sm__layout-buttons"> 
