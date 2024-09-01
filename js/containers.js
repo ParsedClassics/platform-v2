@@ -765,6 +765,9 @@ const ParsedClassicsContentContainers = {
   },
 
   scrollToWordResourceLoaded: function(container, lemma, headingClass, activeTabId, resourceShortname, lexicon, lexiconEntry) {
+    if (!lemma) {
+      return;
+    }
     // get pane id
     const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
     // close alert dialogue that may be open
