@@ -709,7 +709,7 @@ greek_lexicon_to_nt_by_green =
 	'<dd>f. ήσω, </dd>' +
 	'<dd>to have a flux of blood, Mat. 9.20.</dd>' +
 '<dt><span class="lexicon-heading" data-lemma="αἴνεσις">Αἴνεσις</span>, εως, ἡ, </dt>' +
-	'<dd>praise, He. 13.15:  (S&gt;) <i>from</i></dd>' +
+	'<dd>praise, He. 13.15:  (S.) <i>from</i></dd>' +
 '<dt><a class="pc-anchor" id="green-nt-lex-αινεω"><span class="lexicon-heading" data-lemma="αἰνέω">Αἰνέω</span></a>, ῶ, (αἷνος)</dt>' +
 	'<dd>f. έσω, </dd>' +
 	'<dd>to praise, celebrate.</dd>' +

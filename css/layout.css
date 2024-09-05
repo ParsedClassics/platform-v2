@@ -39,7 +39,7 @@ body {
   height: 100vh !important;
   width: 100vw;
   z-index: 10001;
-  border: 2px solid var(--pale-tourquoise);
+  border: 3px solid var(--cyan);
 }
 
 .pane__top-part {

@@ -108,6 +108,10 @@ background-color: #616161;
 
 }
 
+.connav-table-item-text.selected-verse:hover {
+  color: #000;
+}
+
 
 
 .connav-table-item-title {
