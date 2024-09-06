@@ -78,14 +78,15 @@ a.logo {
 background: transparent;
 width: 40px;
 height: 38px;
-color: #245e83;
+color: #3a3b3b; /* #245e83 */
 line-height: 43px;
 text-align: center;
 }
 
 a.logo::before {
-content: "⋮"; /* Insert interverb symbol */
-font-size: 34px;   
+content: "P·C"; /* "⋮" Insert interverb symbol */
+font-size: 24px;  /* 34px */ 
+letter-spacing: 1.5px;
 }
 
 a.logo:hover {
