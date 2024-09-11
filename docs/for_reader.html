@@ -177,15 +177,50 @@
 
 <p>The aim of ParsedClassics project – enabling reading classics with ease and pleasure – is being accomplished though <a href="../app.html" target="_blank">Library app</a>, which provides access both to classics texts and various tools (parsing, lexicon, translation etc.) for reading them. The interface of Library app is essentially self-explanatory: the reader can understand main principles of using it after playing several minutes. Nevertheless, there is a need to provide certain deeper explanations for those, who (a) would like to use Library app to its utmost power, (b) would like to join discussions in ParsedClassics forums, (c) would like to join ParsedClassics project as editor.</p>
 
-<p>To explain how Library app works the following should be described:</p>
+<p>To explain how Library app works the following should be discussed:</p>
 
-<p>(1) Layout toolbar;<br>
-(2) Tabbar;<br>
-(3) Contents menus;<br>
-(4) Contents concepts;<br>
-(5) Enbedded Bookreader;<br>
-(4) Types of resources;<br>
-(5) URLs.</p>
+<p>
+(1) Basic concepts;<br>
+(2) Layout toolbar;<br>
+(3) Tabbar;<br>
+(4) Content menus;<br>
+(5) Embedded Bookreader;<br>
+(6) Types of resources;<br>
+(7) URLs.
+</p>
+
+<h2 id="h-basic-concepts">Basic concepts</h2>
+
+<p>Most important concepts are these: <em>edition</em>, <em>collection</em>, <em>resource</em>, <em>resource type</em>, <em>index type</em> and <em>text type</em>. To understand these concepts it is best to look at <a href='../site/collections.html#{"edition":"nt_gospels"}'>a page in Catalogue</a> displaying what is contained in some edition. The picture below displays the fragment of such Catalogue page. Edition is underlied yellow, collections are underlined red, resources are underlined green, the types of resources are underlined blue and the types of the text are underlined brown:</p>
+
+<p><img src="img/catalogue_editions.png" style="height: auto; max-width: 100%" class="w3-border w3-border-dark-gray"></p>
+
+<h3 id="h-data-concepts-edition">Edition</h3>
+
+<p>Edition is a set of collections. Essentially edition is the highest level entry in the catalogue. In the picture above we see one edition named "Ἡ Καινὴ Διαθήκη. Τὰ Εὐαγγέλια / The New Testament. The Gospels".</p>
+
+<h3 id="h-data-concepts-collection">Collection</h3>
+
+<p>A collection is a bunch of resources adapted to function in sync with each other and providing some information useful for reading and interpreting certain classic book. By the word "book" here is meant book in original sense, according to which Plato's <em>Republic</em> consists in 10 books and the New Testament consists in 27 books.</p> 
+  
+<p>In the picture above we see 3 collections: collection "Τὸ κατὰ Ματθαῖον εὐαγγέλιον / The gospel according to Matthew", collection "Τὸ κατὰ Μάρκον εὐαγγέλιον / The gospel according to Mark" and collection "Τὸ κατὰ Λουκᾶν εὐαγγέλιον / The gospel according to Luke". Collection consists of several different resources (parsed text, lexicons, translations, commentaries etc.). 
+</p>
+
+<h3 id="h-data-concepts-resource">Resource</h3>
+
+<p>A resource is certain text, which functions as part of collection. In picture above we see that parts of the "Τὸ κατὰ Ματθαῖον εὐαγγέλιον / The gospel according to Matthew"  collection are parsed text, original text edited by M. A. Robinson and W. G. Pierpont, original text edited by V. Antoniadis, original text edited by B. F. Westcott and F. J. A. Hort, concordance compiled by W. F. Moulton and A. S. Geden, lexicon by E. Robinson, lexicon by Th. S. Green etc. In all this collection at the time of making picture includes 16 resources.</p>
+
+<h3 id="h-data-concepts-resource-type">Resource type</h3>
+
+<p>Each resource belongs to certain resource type. Library app supports following resource types: <em>parsed text</em>, <em>original text</em>, <em>concordance</em>, <em>lexicon</em>, <em>translation</em>, <em>commentary</em>, <em>grammatical references</em>, <em>diagram set</em> and <em>audio recording</em>.  The names of resource types are essentially self-explanatory.</p>
+
+<h3 id="h-data-concepts-index-type">Index type</h3>
+
+<p>Each resource in order to function as part of collection is indexed. There are two typex of indexes: <em>lines index</em> and <em>words index</em>. Lines index relates the lines of classics text with certain places of the text in the resource. Words index relates words of classics text with certain places of the text in the resource. Resources of the type Lexicon and resources of the type Concordance have words index. Resources of all other types have lines index. The index of Parsed text resource functions as the table of contents of the entire collection.</p>
+
+<h3 id="h-data-concepts-text-type">Text type</h3>
+
+<p>Each resource belongs to one of the two text types: <em>scanned</em> or <em>transcribed</em>. Scanned resources are sets of photographs of the pages of physical books; transcribed resources are text files, containing sentences, transcribed from the pages of physical books.  The resources of the type parsed text and audio recording are always transcribed; the resources of the other types may be scanned or transcribed.  In extensive collections most resources will be scanned because it is time-consuming, complicated and very often essentially impossible to adequately reproduce richly formatted scholarly text using formatting options available in HTML.</p>
 
 <h2 id="h-layout-toolbar">Layout toolbar</h2>
 
@@ -314,6 +349,105 @@
 <p><img src="img/tabbar_02.png" style="height: auto; max-width: 100%" class="w3-border w3-border-dark-gray"></p>
 
 <h2 id="h-contents-menus">Contents menus</h2>
+
+<p>To see Contents menus, click the button "Toolbar and Menus":</p>
+
+<p><img src="img/toolbar_01.png" style="height: auto; max-width: 100%" class="w3-border w3-border-dark-gray"></p>
+
+<p>The dropdown will be displayed, central part of which are Contents menus (marked by red rectangle), consisting (top to bottom) of Collections selectbox, Resources selectbox and Lines selectbox:</p>
+
+<p><img src="img/contents_menus_01.png" style="height: auto; max-width: 100%" class="w3-border w3-border-dark-gray"></p>
+
+<h3 id="h-collections-selectbox">Collections selectbox</h3>
+
+<p>Collections selectbox allows to chose among available collections. By choosing collection you essentially choose which book to read, e.g. in order to read Acts of Apostles let's choose Acts of Apostles collection:</p>
+
+<p><img src="img/contents_menus_02.png" style="height: auto; max-width: 100%" class="w3-border w3-border-dark-gray"></p>
+
+<p>Choosing certain collection results into loading of relevant values into Resources selectbox and Lines selectbox, so allowing you to choose resources to be loaded and lines to be displayed.</p>
+
+<h3 id="h-resources-selectbox">Resources selectbox</h3>
+
+<p>Click Resources selectbox and choose among resources available as parts of that collection. Let's choose parsed text called Byzantyne textform:</p>
+
+<p><img src="img/contents_menus_03.png" style="height: auto; max-width: 100%" class="w3-border w3-border-dark-gray"></p>
+
+<p>The chosen resource will be immediately loaded.</p>
+
+<h3 id="h-lines-selectbox">Lines selectbox</h3>
+
+<p>Click Lines selectbox and choose certain line:</p>
+
+<p><img src="img/contents_menus_04.png" style="height: auto; max-width: 100%" class="w3-border w3-border-dark-gray"></p>
+
+<p>The chosen line will be displayed in all loaded resources which are lines-indexed and belong to the same collection.</p>
+
+<h2 id="h-embedded-bookreader">Embedded Bookreader</h2>
+
+<p>Very probably most resources in a collection will be scanned. Let's choose Acts of Apostles collection and Edition by Scrivener resource in that collection:</p>
+
+<p><img src="img/embedded_bookreader_01.png" style="height: auto; max-width: 100%" class="w3-border w3-border-dark-gray"></p>
+
+<p>The chosen resource will be loaded inside embedded Bookreader app:</p>
+
+<p><img src="img/embedded_bookreader_02.png" style="height: auto; max-width: 100%" class="w3-border w3-border-dark-gray"></p>
+
+<p>The interface of the Bookreader app consists of the Top toolbar and Bottom toolbar.</p>
+
+<p>Top toolbar contains:</p>
+
+<p>
+(1) External link;<br>
+(2) About this book button;<br>
+(3) Zoom out button;<br>
+(4) Zoon in button;<br>
+(5) Rotate this page button.
+</p>
+
+<p>Bottom toolbar contains:</p>
+
+<p>
+(1) Page slider;<br>
+(2) Flip left button;<br>
+(3) Flip right button;<br>
+(4) One page view button;<br>
+(5) Two page view button;<br>
+(6) Thumbnail view button;<br>
+(7) Show/hide navbar button.
+</p>
+
+<h3 id="h-external-link">External link</h3>
+
+<p>Click on external link:</p>
+
+<p><img src="img/embedded_bookreader_03.png" style="height: auto; max-width: 100%" class="w3-border w3-border-dark-gray"></p>
+
+<p>The result will be opening of the first page of the scanned book in browser's new tab outside of Library app's layout, i.e. opening of the scanned book in standalone Bookreader app:</p>
+
+<p><img src="img/embedded_bookreader_04.png" style="height: auto; max-width: 100%" class="w3-border w3-border-dark-gray"></p>
+
+<p>Such detaching of scanned book from Library app might be useful when you need just to refer to scanned book or certain place inside it without considering anything related to ParsedClassics Project.</p>
+
+<h3 id="h-about-book-button">About this book button</h3>
+
+<p>Click "Aobout this book" button:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="h-edited_until_here"><span style="color: red;">Edited until here</span></h2>
 
