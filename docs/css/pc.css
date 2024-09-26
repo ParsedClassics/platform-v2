@@ -38,6 +38,18 @@ Styles for ParsedClassics library application and website
   width: 25%;
 }
 
+.pc-height-auto {
+  height: auto;
+}
+
+.max-width-100 {
+  max-width: 100%;
+}
+
+.max-width-120 {
+  max-width: 120%;
+}
+
 /* margins */
 
 .pc-margin-top-8 {
