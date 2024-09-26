@@ -124,7 +124,7 @@ Those (masculine): illi illorum illis illos illis
 That (feminine): illa illius illi illam illa
 Those (feminine): illae illarum illis illas illis
 That (neuter): illud illius illi illud illo
-Those (neuter): illa illorumillis illa illis
+Those (neuter): illa illorum illis illa illis
 
 --- Intensive ---
 Self (masculine): ipse ipsius ipsi ipsum ipso
