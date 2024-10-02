@@ -4329,10 +4329,13 @@ BookReader.prototype.pRotate = function () {
 BookReader.prototype._correctTopPosDownwards = function(currIndex, lastDisplayedIndex, topPosCorrection) { // by ParsedClassics start
     var belowDiv = null;
     var belowTopPos = null;
+    var topVal = null;
     for (var j = currIndex + 1; j <= lastDisplayedIndex; j++) {
         belowDiv = $("#" + 'pagediv' + j);
         if (belowDiv.length === 1) {
-            belowTopPos = parseInt(belowDiv.css('top'));
+            topVal = belowDiv.css('top');
+            topVal = topVal.replace('px', '');
+            belowTopPos = topVal;
             belowDiv.css('top', belowTopPos - topPosCorrection + 'px');
         }
     }
