@@ -476,9 +476,25 @@
 
 <p><img src="img/embedded_bookreader_12.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
 
-<p>Keep in mind that the button "Rotate page" will work only in one-page mode. In two-page mode and in thumbnail mode "Rotate page" button will be disabled:</p>
+<p>About rotating page functionality three things should be noted.</p>
+
+<p>First, the button "Rotate page" will work only in one-page mode. In two-page mode and in thumbnail mode "Rotate page" button will be disabled:</p>
 
 <p><img src="img/embedded_bookreader_13.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
+
+<p>Second, if in one page mode two or more pages are displayed and you click "Rotate page" button</p>
+
+<p><img src="img/embedded_bookreader_25.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
+
+<p>the topmost page will be rotated and may be displayed partially or entirely hidden from sight:</p>
+
+<p><img src="img/embedded_bookreader_26.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
+
+<p>In order to have the page displayed correcly after rotation it is recommended before clicking "Rotate page" button to align the page to the top using "Flip left" or "Flip right" buttons:</p>
+
+<p><img src="img/embedded_bookreader_27.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
+
+<p>Third, the last page of the scanned book will not rotate. This will not constitute any problem, because edition's editor will take care that the last page of the book will be of the kind that has no need of rotation.</p>
 
 <h3 id="h-page-slider">Page slider</h3>
 
@@ -550,7 +566,88 @@
 
 <h2 id="h-types-of-resources">Types of resources</h2>
 
+<p>Click "Toolbar and menus" button, then click Resources selectbox. Notice that resources are listed by type: Parsed tex, Original text, Concordance, Lexicon, Translation, Commentary, Grammar references, Commentary references, Diagram set, Audio recording:</p>
+
+<p><img src="img/resource_types_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
+
+<p>Now select in Resources selectbox resource of the type "Parsed text".</p>
+
 <h3 id="h-parsed-text">Parsed text</h3>
+
+<p>Resources of the type "Parsed text" contains classic text in original language together with morphological parsing.</p>
+
+<p>Resources of the type "Parsed text" are line-indexed. They are always transcribed.</p> 
+
+<p>When you open resource of this type, the pane is being split automatically into top subpane (marked by top red rectangle) and bottom subpane (marked by bottom red rectangle):</p>
+
+<p><img src="img/resource_parsed_text_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
+
+<p>Resource of the type "Parsed text" is central resource of the collection, because of its three widgets:<br>
+(1) hovered word widget;<br>
+(2) selected word widget;<br>
+(3) selected line widget.</p>
+
+<h4 id="h-hovered-word-widget">Hovered word widget</h4>
+
+<p>Hover over any word in parsed text resource, the word will be highlighted and you will see the word, its lemma and full morphological parsing in bottom subpane:</p>
+
+<p><img src="img/resource_parsed_text_02.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
+
+<h4 id="h-selected-word-widget">Selected word widget</h4>
+
+<p>Now click on any word. The word's font color will change into red &ndash; indication thet the word is selected.</p>
+
+<p>The result of the word's being selected is that all word-indexed resources (resources of the types "Lexicon" and ""Concordance") which are part of the same collection will scroll and display articles on selected word:</p>
+
+<p><img src="img/resource_parsed_text_03.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<h4 id="h-selected-line-widget">Selected line widget</h4>
+
+<p>Now click on any line number. The background of entire line will become grey &ndash; indication that the line is selected. Notice that after clicking on the word the background of the line also becomes grey. It means that clicking on the word you activate two widgets - selected word widget and selected line widget.</p>
+
+<p>The result of the line's being selected is that all line-indexed resources (resources of the types "Original text", "Translation", "Commentary", "Grammar references", "Commentary references", "Disagram set", "Audio recording") which are part of the same collection will scroll and display content related to selected line:</p>
+
+<p><img src="img/resource_parsed_text_04.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<h3 id="h-original-text">Original text</h3>
+
+<p>Resources of the type "Original text" contains scholarly editions of classics texts.</p>
+
+<p>`Resources of the type "Original text" are line-indexed.</p> 
+
+<p>It is possible to create transcribed resources of this type, but in reality all original text resources will be scanned.</p>
+
+<p>To navigate original text resoure you can click the button "Toolbar and menus" and then select needed line in Lines selectbox.</p>
+
+<p>But more convenient way to navigate original text resource is clicking needed line in parsed text resource thus making the line selected. It will result into scrolling original text resource and displaying that line:</p>
+
+<p><img src="img/resource_original_text_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<h3 id="h-concordance">Concordance</h3>
+
+<p>Resource of the type "Concordance" contains index of the words of classics text  with a reference to the passages in which each occurs.</p>
+
+<p>`Resources of the type "Concordance" are word-indexed.</p>
+
+<p>Most resources of this type are scanned, but also certain concordance resources can be created that are transcribed.</p>
+
+<p>To navigate concordance resource that is scanned, click inside parsed text resource on the word you are interested in, and concordance resource will display the page with article on that word:</p>
+
+<p><img src="img/resource_concordance_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>Now let's discuss usage of concordance resource which is transcribed.</p>
+
+<p>The page of such resource is automatically split into left subpane, right top subpane and right bottom subpane. Of these only left subpane displays initially certain content:</p>
+
+<p><img src="img/resource_concordance_02.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
+
+<p>The navigation inside concordance resource which is transcribed is done in two steps.</p>
+
+<p>First step is clicking inside parsed text resource on the word you are interrested in. This will result into displaying the index compiled about that word inside left subpane of concordance resource:</p>
+
+<p><img src="img/resource_concordance_03.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>Second step is ........................</p>
 
 
 
