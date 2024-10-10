@@ -389,7 +389,7 @@ nt_romans_commentary_refs_by_parsedclassics =
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="414">Gennadius von Konstantinopel (Staab 362)</a>
 </span>
 
-<span class="line"><span data-line-number="3:23" class="line-number">3:23/span>
+<span class="line"><span data-line-number="3:23" class="line-number">3:23</span>
 <a data-grammar="staab_pauluskommentare_aus_griechishen_kirche" data-page="268">Severian von Gabala (Staab 216)</a>
 </span>
 
