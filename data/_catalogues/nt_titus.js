@@ -38,6 +38,8 @@ Order of resources by resource type
 
   // Commentaries
 
+  // Commentary references
+
   // Grammar references
 
   // Diagram sets

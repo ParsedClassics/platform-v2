@@ -164,7 +164,7 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
     
 <div id="pc-west-pane-content" class="ui-layout-content pc-overflow-x-hidden pc-float-right pc-height-100 pc-width-100 pc-west-pane-maxwidth pc-show-verses">
     
-<div class="w3-bar-block"><a id="logo" class="w3-hover-dark-grey w3-bar-item w3-padding w3-buttonx" href="../site/index.html">PARSED<span class="pc-interverb-symbol">⋮</span>CLASSICS</a></div>
+<div class="w3-bar-block"><a id="logo" class="w3-hover-dark-grey w3-bar-item w3-padding w3-buttonx" href="../site/index.html">PARSED<span class="pc-interverb-symbol">·</span>CLASSICS</a></div>
 
 <div class="w3-bar-block connav-table-item-text" id="docs_heading_link"><span class='w3-bar-item w3-padding'>Editor‘s documentation</span></div>
     
@@ -361,6 +361,293 @@ const ParsedClassicsCollDefs = {
 </pre>
 
 <p>The order of collection shortnames is important, because list of collections will be displayed in that order.</p>
+
+<h3 class="pc-anchor" id="h-crating-empty-coll-catalogue">Creating empty collection catalogue</h3>
+
+<p>Collection catalogue is a file inside /data/_catalogues directory. Collection catalogue‘s filename should be the same as the collection's shortname used for registering collection as part of edition. In the example above we registered collection using string "nt_titus". That means the name of the file of the collection catalogue should be "nt_titus.js".</p>
+
+<p>The encoding of the collection catalogue file must be UTF-8 (no BOM).</p>
+
+<p>Let‘s as example to create catalogue for <em>Epistle to Titus</em> collection.</p>
+
+<p>To create empty catalogue for this collection we need to add to the object ParsedClassicsCollDefs the key "nt_titus" and to the object "nt_titus" the object "resource_defs"; let's also indicate the order of resource types:</p>
+
+<pre id="creating_empty_coll_catalogue" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // Parsed text
+  // IMPORTANT!
+  // The contents of the first resource of the type "Parsed text" serves as contents of the whole collection
+  
+  // Original texts
+
+  // Concordances
+
+  // Lexicons
+
+  // Translations
+
+  // Commentaries
+
+  // Commentary references
+
+  // Grammar references
+
+  // Diagram sets
+
+  // Audio
+}
+</pre>
+
+<h3 class="pc-anchor" id="h-listing-collection-resources">Listing collection resources</h3>
+
+<p>The catalogue just created is empty because no resource is listed in it. Library app supports following types of resources: Parsed text, Critical edition, Concordance, Lexicon, Translation, Commentary, Commentary references, Grammar references, Diagram set, Audio recording.</p>
+
+<h4 class="pc-anchor" id="h-parsed-text">Parsed text</h4>
+
+<p>As an example let‘s list parsed text resource for Epistle to Titus collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_parsed_text" (contains inside collection shortname and resource type):</p>
+
+<pre id="listing_parsed_text_res" class="prettyprint code_showarea">
+  ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+    // Parsed text
+    // IMPORTANT!
+    // The contents of the first resource of the type "Parsed text" serves as contents of the whole collection
+
+    nt_titus_parsed_text: {
+      collections_page_resource_desc: "ed. by ParsedClassics (2018)",
+      library_app_selectbox_title: "Byzantine textform", 
+      library_app_panel_subtitle: "",
+      library_app_panel_text_from: "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing.",
+      library_app_panel_note: "",
+      scanned_or_typed: "typed",
+      resource_type: "parsed_text",
+      scanned_source_shortname: "new_testament_in_original_greek_ed_robinson_pierpont",
+      library_app_panel_title: "Παύλου τοῦ ἀποστόλου ἡ πρὸς Τίτον ἐπιστολή",
+      contents_shortname: "nt_titus_parsed_text_contents",
+    },
+    
+    // some lines have been omitted
+  }
+</pre>
+
+<p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
+
+<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s surname and the year in brackets.</p>
+
+<p>The key "library_app_panel_title" should have as its value the title of the resource in original language. It will be used inside the pane in which resource will be displayed.</p>
+
+<p>The key "library_app_panel_subtitle" should have as its value the subtitle of the resource in original language. Here this key has empty string value because resource has no subtitle. It will be used inside the pane in which resource will be displayed.</p>
+
+<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book from which the text for parsing was taken. It will be used inside the pane in which resource will be displayed.</p>
+
+<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments. It will be used inside the pane in which resource will be displayed.</p>
+
+<p>The key "scanned_or_typed" should have as its value the string "typed" (it means "transcribed").</p>
+
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book from which the text for parsing was taken. Directory name includes title of the book, string "_ed_" and surnames of the authors.</p>
+
+<p>The key "library_app_selectbox_title" should have as its value short English title of the resource. It will be displayed inside Resources selectbox.</p>
+
+<p>The key "resource_type" should have the value "parsed_text".</p>
+
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "parsed_text" at the end of collection name and next adding the string "_contents" or the string indicating resource and the string "_contents". So, if the collection shortname was "nt_titus", the the name of parsed text resource contents file will be "nt_titus_parsed_text_contents" or "nt_titus_parsed_text_byzantine_contents". About creating contents file and placing it in directory will be explaided below.</p>
+
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own parsed text resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys  will be repeated for all resources of the type "Parsed text" based on Byzantyne textform, let's name the key "nt_parsed_text_byzantine":</p>
+
+<pre id="parsed_text_proto" class="prettyprint code_showarea">
+const ParsedClassicsResProtos = {
+  // Parsed texts
+
+  nt_parsed_text_byzantine: {
+    collections_page_resource_desc: "ed. by ParsedClassics (2018)",
+    library_app_selectbox_title: "Byzantine textform", 
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing.",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "parsed_text",
+    scanned_source_shortname: "new_testament_in_original_greek_ed_robinson_pierpont", 
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<p>Now we can destructure the object ParsedClassicsCollProtos.nt_book anywhere we need the same values of its keys:</p>
+
+<pre id="listing_parsed_text_res2" class="prettyprint code_showarea">
+  ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+    // Parsed text
+    // IMPORTANT!
+    // The contents of the first resource of the type "Parsed text" serves as contents of the whole collection
+
+    nt_titus_parsed_text: {
+      ...ParsedClassicsResProtos.nt_parsed_text_byzantine,
+      library_app_panel_title: "Παύλου τοῦ ἀποστόλου ἡ πρὸς Τίτον ἐπιστολή",
+      contents_shortname: "nt_titus_parsed_text_contents",
+    },
+    
+    // some lines have been omitted
+  }
+</pre>
+
+<h4 class="pc-anchor" id="h-original-text">Original text</h4>
+
+<p>There can be several original text resources inside collection. In principle, resources belonging to type "Original text" can be either scanned or transcribed, but they surely will be all scanned because it is very difficult to reproduce complex formatting of the scholarly editions using very limitted means available in HTML.</p>
+
+<p>As an example let‘s list original text resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_text_ed_antoniadis" (contains inside collection shortname and editor's surname'):</p>
+
+<pre id="listing_original_text_res" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  // Original texts
+
+  nt_titus_text_ed_antoniadis: {
+    collections_page_resource_desc: "ed. by V. Antoniadis (1904)", 
+    library_app_selectbox_title: "Edition by V. Antoniadis (1904)",
+    library_app_panel_title: "Text ed. by V. Antoniadis (1904)",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "Ἡ Καινὴ Διαθήκη ἐγκρίσει τῆς Μεγάλης τοῦ Χριστοῦ Ἐκκλησίας. 1912. Ἐν Κωνσταντινουπόλει. Ἐκ τοῦ Πατριαχικοῦ Τυπογραφείου.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "original_text",
+    scanned_source_shortname: "kaine_diatheke_ed_antoniadis",
+    contents_shortname: "nt_titus_ed_antoniadis_contents",
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
+
+<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s surname and the year in brackets.</p>
+
+<p>The key "library_app_panel_title" should have as its value short title of the resource in English.</p>
+
+<p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resource has no subtitle.</p>
+
+<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book.</p>
+
+<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments.</p>
+
+<p>The key "scanned_or_typed" should have as its value the string "typed" (it means "transcribed").</p>
+
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "_ed_" and surnames of the authors.</p>
+
+<p>The key "library_app_selectbox_title" should have as its value short English title of the resource.</p>
+
+<p>The key "resource_type" should have the value "original_text".</p>
+
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "_ed" at the end of collection name, then adding name of editor and next adding the string "_contents". So, if the collection shortname was "nt_titus", and the editor was Antoniadis, then the name of original text resource contents file will be "nt_titus_ed_antoniadis_contents". About creating contents file and placing it in directory will be explaided below.</p>
+
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own original text resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys  will be repeated for all resources of the type "Original text" based on edition by Antoniadis, let's name the key "nt_text_ed_antoniadis":</p>
+
+<pre id="original_text_proto" class="prettyprint code_showarea">
+const ParsedClassicsResProtos = {
+  // Original texts
+
+  nt_text_ed_antoniadis: {
+    collections_page_resource_desc: "ed. by V. Antoniadis (1904)", 
+    library_app_selectbox_title: "Edition by V. Antoniadis (1904)",
+    library_app_panel_title: "Text ed. by V. Antoniadis (1904)",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "Ἡ Καινὴ Διαθήκη ἐγκρίσει τῆς Μεγάλης τοῦ Χριστοῦ Ἐκκλησίας. 1912. Ἐν Κωνσταντινουπόλει. Ἐκ τοῦ Πατριαχικοῦ Τυπογραφείου.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "original_text",
+    scanned_source_shortname: "kaine_diatheke_ed_antoniadis",
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<p>Now we can destructure the object ParsedClassicsCollProtos.nt_text_ed_antoniadis anywhere we need the same values of its keys:</p>
+
+<pre id="listing_original_text_res2" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  // Original texts
+
+  nt_titus_text_ed_antoniadis: {
+    ...ParsedClassicsResProtos.nt_text_ed_antoniadis,
+    contents_shortname: "nt_titus_ed_antoniadis_contents",
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<h4 class="pc-anchor" id="h-concordance">Concordance</h4>
+
+<p>There can be many concordances inside a collection. Resource belonging to the type "Concordance" can be either scanned or transcribed.</p>
+
+<p>As examples let‘s list scanned and transcribed concordance resources for <em>Epistle to Titus</em></Epistle> collection. To do it we need to add JSON objects as the values of certain keys of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the keys are "concordance_by_moulton_geden" and "nt_conc_by_parsedclassics" (contains inside resource type and editor's surname'):</p>
+
+<pre id="listing_concordance_res" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  concordance_by_moulton_geden: {
+    collections_page_resource_desc: "ed. by W. F. Moulton and A. S. Geden (1899)", 
+    library_app_selectbox_title: "Concordance ed. by W. F. Moulton and A. S. Geden (1899)",
+    library_app_panel_title: "A concordance to the Greek Testament ed. by W. F. Moulton and A. S. Geden (1899)",
+    library_app_panel_text_from: "A concordance to the Greek Testament according to the texts of Westcott and Hort, Tischendorf and the English Revisers. Edited by W. F. Moulton and A. S. Geden. 2-nd ed. 1899. Edinburgh: T. & T. Clark.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "concordance",
+    scanned_source_shortname: "concordance_to_greek_testament_by_moulton_geden",
+    contents_shortname: "concordance_to_greek_testament_by_moulton_geden_contents",
+  },
+
+  nt_conc_by_parsedclassics: {
+    collections_page_resource_desc: "compiled by ParsedClassics (2018)", 
+    library_app_selectbox_title: "Concordance compiled by ParsedClassics (2018)",
+    library_app_panel_title: "New Testament concordance",
+    library_app_panel_text_from: "",
+    library_app_panel_note: "Compiled by ParsedClassics (2018)",
+    scanned_or_typed: "typed",
+    resource_type: "concordance",
+    scanned_source_shortname: "",
+    contents_shortname: "nt_conc_by_parsedclassics_contents",
+  },
+
+  // some lines have been omitted
+
+}
+</pre>
+
+<p>After you add these lines, you should see these resources listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
+
+<p>For scanned concordance resource the key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s surname and the year in brackets. Tor transcribed concordance resource the key "collections_page_resource_desc" should have as its value a string "compiled by" plus compilator‘s surname and the year in brackets.</p>
+
+<p>The key "library_app_panel_title" should have as its value short title of the resource in English.</p>
+
+<p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resources has no subtitle.</p>
+
+<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book.</p>
+
+<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments. For transcribed concordance resource the value should be a string "Compiled by" plus compilator‘s surname and the year in brackets.</p>
+
+<p>The key "scanned_or_typed" should have as its value the string "scanned" for scanned resource and "typed" for transcribed resource.</p>
+
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "_by_" and surnames of the authors. For transcribed concordance resource the value of this key should be an empty string.</p>
+
+<p>The key "library_app_selectbox_title" should have as its value short English title of the resource.</p>
+
+<p>The key "resource_type" should have the value "concordance".</p>
+
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "_by" at the end of short title, then adding name of author or compiler and next adding the string "_contents". About creating contents file and placing it in directory will be explained below.</p>
+
+<p>Classics text usually consists of several books and each book usually will have its own collection. If we have certain concordance resource, it will be listed in all of these collections. That means there is no need to use ParsedClassicsResProtos object in listing concordance resources.</p>
+
+
+
+
+
+
 
 
 
