@@ -1,5 +1,19 @@
 === Nouns ===
 
+--- 1-st decl. porta ---
+--- 2-nd decl. amicus ---
+--- 2-nd decl. puer ---
+--- 2-nd decl. ager ---
+--- 2-nd decl. donum ---
+--- 3-rd decl. rex ---
+--- 3-rd decl. corpus ---
+--- 3-rd decl. i-stem civis ---
+--- 3-rd decl. i-stem urbs ---
+--- 3-rd decl. i-stem mare ---
+--- 4-th decl. fructus ---
+--- 4-th decl. cornu ---
+--- 5-th decl. dies ---
+
 --- First Declension ---
 Gate (feminine): porta portae portae portam porta
 Gates (feminine): portae portarum portis portas portis
@@ -42,6 +56,14 @@ Days (masculine): dies dierum diebus dies diebus
 
 
 === Adjectives ===
+
+--- 1-st and 2-nd decl. magnus ---
+--- 1-st and 2-nd decl. liber ---
+--- 1-st and 2-nd decl. pulcher ---
+--- 3-rd decl. two endings fortis ---
+--- 3-rd decl. three endings acer ---
+--- 3-rd decl. one ending potens ---
+--- 3-rd decl. comparative fortior ---
 
 --- First and Second Declensions ---
 Large (masculine, singular): magnus magni magno magnum magno
@@ -96,6 +118,20 @@ Braver (neuter, plural): fortiora fortiorum fortioribus fortiora fortioribus
 
 
 === Pronouns ===
+
+--- Personal ego ---
+--- Personal tu ---
+--- Personal is, ea, id ---
+--- Personal nos ---
+--- Personal vos ---
+--- Personal ei, eae, ea ---
+--- Reflexive sui ---
+--- Demonstrative hic, haec, hoc ---
+--- Demonstrative ille, illa, illud ---
+--- Demonstrative iste, ista, istud ---
+--- Intensive ipse, ipsa, ipsum ---
+--- Relative qui, quae, quod ---
+--- Interrogative quis, quid ---
 
 --- Personal ---
 I: ego mei mihi me me
@@ -161,6 +197,8 @@ Which? (pl. neuter): quae quorum quibus quae quibus
 
 === Verb sum ===
 
+--- sum, esse, fui ---
+
 --- Present Indicative ---
 Be: sum es est sumus estis sunt
 
@@ -201,6 +239,12 @@ Be: esto esto estote sunto
 
 
 === Verbs, Indicative Active ===
+
+--- 1-st conj. laudo, are, avi, atum ---
+--- 2-nd conj.  moneo, ere, ui, itum ---
+--- 3-rd conj. duco, ere, duxi, ductum ---
+--- 4-th conj. audio, ire, ivi, itum ---
+--- 3-rd conj. with stem in -i capio, ere, cepi, captum ---
 
 --- Present ---
 Praise: laudo laudas laudat laudamus laudatis laudant
@@ -249,6 +293,12 @@ Take: cepero ceperis ceperit ceperimus ceperitis ceperint
 
 === Verbs, Indicative Passive ===
 
+--- 1-st conj. laudo, are, avi, atum ---
+--- 2-nd conj.  moneo, ere, ui, itum ---
+--- 3-rd conj. duco, ere, duxi, ductum ---
+--- 4-th conj. audio, ire, ivi, itum ---
+--- 3-rd conj. with stem in -i capio, ere, cepi, captum ---
+
 --- Present ---
 Praise: laudor laudaris laudatur laudamur laudamini laudantur
 Remind: moneor moneris monetur monemur monemini monentur
@@ -296,6 +346,12 @@ Take: captus ero captus eris captus erit capti erimus capti eritis capti erunt
 
 === Verbs, Subjunctive Active ===
 
+--- 1-st conj. laudo, are, avi, atum ---
+--- 2-nd conj.  moneo, ere, ui, itum ---
+--- 3-rd conj. duco, ere, duxi, ductum ---
+--- 4-th conj. audio, ire, ivi, itum ---
+--- 3-rd conj. with stem in -i capio, ere, cepi, captum ---
+
 --- Present ---
 Praise: laudem laudes laudet laudemus laudetis laudent
 Remind: moneam moneas moneat moneamus moneatis moneant
@@ -328,6 +384,12 @@ Take: cepissem cepisses cepisset cepissemus cepissetis cepissent
 
 
 === Verbs, Subjunctive Passive ===
+
+--- 1-st conj. laudo, are, avi, atum ---
+--- 2-nd conj.  moneo, ere, ui, itum ---
+--- 3-rd conj. duco, ere, duxi, ductum ---
+--- 4-th conj. audio, ire, ivi, itum ---
+--- 3-rd conj. with stem in -i capio, ere, cepi, captum ---
 
 --- Present ---
 Praise: lauder lauderis laudetur laudemur laudemini laudentur
@@ -362,6 +424,12 @@ Take: captus essem captus esses captus esset capti essemus capti essetis capti e
 
 === Verbs, Imperative ===
 
+--- 1-st conj. laudo, are, avi, atum ---
+--- 2-nd conj. moneo, ere, ui, itum ---
+--- 3-rd conj. duco, ere, duxi, ductum ---
+--- 4-th conj. audio, ire, ivi, itum ---
+--- 3-rd conj. with stem in -i capio, ere, cepi, captum ---
+
 --- Present Active ---
 Praise: lauda laudate
 Remind: mone monete
@@ -394,6 +462,12 @@ Take: capitor capiuntor
 
 
 === Verbs, nonfinite ===
+
+--- 1-st conj. laudo, are, avi, atum ---
+--- 2-nd conj.  moneo, ere, ui, itum ---
+--- 3-rd conj. duco, ere, duxi, ductum ---
+--- 4-th conj. audio, ire, ivi, itum ---
+--- 3-rd conj. with stem in -i capio, ere, cepi, captum ---
 
 --- INFINITIVE ---
 
