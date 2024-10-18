@@ -125,6 +125,12 @@ That (feminine): illa illius illi illam illa
 Those (feminine): illae illarum illis illas illis
 That (neuter): illud illius illi illud illo
 Those (neuter): illa illorum illis illa illis
+That of yours (masc.): iste istius isti istum isto
+Those of yours (masc.): isti istorum istis istos istis
+That of yours (fem.): ista istius isti istam ista
+Those of yours (fem.): istae istarum istis istas istis
+That of yours (neut.): istud istius isti istud isto
+Those of yours (neut.): ista istorum istis ista istis
 
 --- Intensive ---
 Self (masculine): ipse ipsius ipsi ipsum ipso
