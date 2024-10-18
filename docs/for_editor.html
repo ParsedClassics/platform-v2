@@ -207,7 +207,9 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
 - sends the files to work with to resource editors;<br>
 - explains tools to be used and formatting to resource editors;<br>
 - checks formatting of the files created by resource editors;<br>
-- uploads created files to the server.
+- uploads image files to the server;<br>
+- maintains Git repository;<br>
+- deploys code to the server;
 </p>
 
 <h3 class="pc-anchor" id="h-resource-editor">Resource editor</h3>
@@ -235,6 +237,14 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
 <p>Any major modern webbrowser – Chrome, Firefox, Opera, Safari – is suitable for previewing ParsedClassics projects on localhost. Among them Firefox has certain advantage: it preserves form values while reloading the page. But in Firefox default security settings may prevent the webfonts to be rendered in localhost environment. To see correct font in Firefox in localhost environment go to about:config and change the value of security.fileuri.strict_origin_policy to "false":</p>
 
 <p><img class="w3-border w3-border-dark-gray" src="img2/firefox_about_config.jpg" /></p>
+
+<h3 class="pc-anchor" id="h-git-client">Git client and code deployment tool</h3>
+
+<p>For maintaining and deploying the code senior will need Git client and deployment tool.</p>
+
+<p>As simple and convenient Git client can be recommended Github desktop app (Win/Mac, free).</p>
+
+<p>As simple and convenient code deployment tool the online service launchdeck.io can be recommended.</p>
 
 <h2 class="pc-anchor" id="h-defining-edition">Defining edition</h2>
 
@@ -531,7 +541,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments.</p>
 
-<p>The key "scanned_or_typed" should have as its value the string "typed" (it means "transcribed").</p>
+<p>The key "scanned_or_typed" should have as its value the string "scanned".</p>
 
 <p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "_ed_" and surnames of the authors.</p>
 
@@ -590,6 +600,8 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
   // some lines have been omitted
 
+  // Concordances
+
   concordance_by_moulton_geden: {
     collections_page_resource_desc: "ed. by W. F. Moulton and A. S. Geden (1899)", 
     library_app_selectbox_title: "Concordance ed. by W. F. Moulton and A. S. Geden (1899)",
@@ -642,6 +654,167 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 <p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "_by" at the end of short title, then adding name of author or compiler and next adding the string "_contents". About creating contents file and placing it in directory will be explained below.</p>
 
 <p>Classics text usually consists of several books and each book usually will have its own collection. If we have certain concordance resource, it will be listed in all of these collections. That means there is no need to use ParsedClassicsResProtos object in listing concordance resources.</p>
+
+<h4 class="pc-anchor" id="h-lexicon">Lexicon</h4>
+
+<p>There can be many lexicons inside a collection. Resource belonging to the type "Lexicon" can be either scanned or transcribed.</p>
+
+<p>As examples let‘s list scanned and transcribed lexicon resources for <em>Epistle to Titus</em> collection. To do it we need to add JSON objects as the values of certain keys of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the keys are "greek_lexicon_of_nt_by_robinson" and "greek_lexicon_to_nt_by_green" (contains inside short title and author's surname'):</p>
+
+<pre id="listing_lexicon_res" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  // Lexicons
+
+  greek_lexicon_of_nt_by_robinson: {
+    collections_page_resource_desc: "Greek-English lexicon of the NT by E. Robinson (1850)", 
+    library_app_selectbox_title: "Greek-English lexicon of the NT by E. Robinson (1850)",
+    library_app_panel_title: "A Greek and English lexicon of the New Testament by E. Robinson (1850)",
+    library_app_panel_text_from: "A Greek and English lexicon of the New Testament. By Edward Robinson. Second edition. 1850. New York: Harper and Brothers.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "lexicon",
+    scanned_source_shortname: "greek_and_english_lexicon_of_nt_by_robinson", 
+    contents_shortname: "greek_and_english_lexicon_of_nt_by_robinson_contents",
+  },
+
+  greek_lexicon_to_nt_by_green: {
+    collections_page_resource_desc: "Greek-English lexicon of the NT by Th. S. Green (1896)", 
+    library_app_selectbox_title: "Greek-English lexicon of the NT by Th. S. Green (1896)",
+    library_app_panel_title: "A Greek-English lexicon to the New Testament by Th. S. Green (1896)",
+    library_app_panel_text_from: "A Greek-English lexicon to the New Testament. Revised and enlarged by Thomas Sheldon Green. 1896. Boston: H. L. Hastings.",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "lexicon",
+    scanned_source_shortname: "greek_english_lexicon_to_nt_by_green", 
+    contents_shortname: "",
+  },
+
+  // some lines have been omitted
+
+}
+</pre>
+
+<p>After you add these lines, you should see these resources listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
+
+<p>The key "collections_page_resource_desc" should have as its value short title plus the string "by" plus author‘s surname and the year in brackets.</p>
+
+<p>The key "library_app_panel_title" should have as its value short title plus the string "by" plus author‘s surname and the year in brackets.</p>
+
+<p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resources has no subtitle.</p>
+
+<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book.</p>
+
+<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments.</p>
+
+<p>The key "scanned_or_typed" should have as its value the string "scanned" for scanned resource and "typed" for transcribed resource.</p>
+
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "_by_" and surname of the author.</p>
+
+<p>The key "library_app_selectbox_title" should have as its value short English title of the resource plus the string "by" plus author‘s surname and the year in brackets.</p>
+
+<p>The key "resource_type" should have the value "lexicon".</p>
+
+<p>The key "contents_shortname" for scanned lexicon resource should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "_by" at the end of short title, then adding name of author and next adding the string "_contents". About creating contents file and placing it in directory will be explained below. The key "contents_shortname" for transcriobed lexicon resource should have as its value an empty string.</p>
+
+<p>Classics text usually consists of several books and each book usually will have its own collection. If we have certain lexicon resource, it will be listed in all of these collections. That means there is no need to use ParsedClassicsResProtos object in listing lexicon resources.</p>
+
+<h4 class="pc-anchor" id="h-translation">Translation</h4>
+
+<p>There can be several translation resources inside collection. In principle, resources belonging to type "Translation" can be either scanned or transcribed, but they most surely will be all scanned because there is little sense in transcribing translation of classics text.</p>
+
+<p>As an example let‘s list translation resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_tr_EN_young" (contains inside collection shortname, string "tr", code of the language and and translator's surname'):</p>
+
+<pre id="listing_translation_res" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  // Translations
+
+  nt_titus_tr_EN_young: {
+    collections_page_resource_desc: "to English by R. Young (1898)", 
+    library_app_selectbox_title: "Translation to English by  R. Young (1898)",
+    library_app_panel_title: "English translation by R. Young (1898)",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "The Holy Bible, consisting of the Old and New Covenants, translated according to the letter and idiom of the original languages by Robert Young. Revised edition. 1898. Edinburgh: G. A. Young and Co.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "translation",
+    scanned_source_shortname: "holy_bible_tr_young",
+    contents_shortname: "nt_titus_tr_EN_young_contents",
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
+
+<p>The key "collections_page_resource_desc" should have as its value a string "to" plus Languane plus "by" plus translator‘s surname and the year in brackets.</p>
+
+<p>The key "library_app_panel_title" should have as its value the language plus "translation by" plus translator‘s surname and the year in brackets.</p>
+
+<p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resource has no subtitle.</p>
+
+<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book.</p>
+
+<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments.</p>
+
+<p>The key "scanned_or_typed" should have as its value the string "scanned".</p>
+
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes short title of the book, string "_tr_" and surname of the translator.</p>
+
+<p>The key "library_app_selectbox_title" should have as its value string "Translation to" then language then "by" then translator's surname and year in brackets.</p>
+
+<p>The key "resource_type" should have the value "translation".</p>
+
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "_tr" at the end of collection name, then adding lamguage, surname of editor and last adding the string "_contents". So, if the collection shortname was "nt_titus", and the editor was Young who translated to English, then the name of translation resource contents file will be "nnt_titus_tr_EN_young_contents". Creating contents file and placing it in directory will be explaided below.</p>
+
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own translation resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those translation resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Translation" based on translation by Young, let's name the key "nt_tr_EN_young":</p>
+
+<pre id="translation_proto" class="prettyprint code_showarea">
+const ParsedClassicsResProtos = {
+  // Translation
+
+  // some lines have been omitted
+
+  nt_tr_EN_young: {
+    collections_page_resource_desc: "to English by R. Young (1898)", 
+    library_app_selectbox_title: "Translation to English by  R. Young (1898)",
+    library_app_panel_title: "English translation by R. Young (1898)",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "The Holy Bible, consisting of the Old and New Covenants, translated according to the letter and idiom of the original languages by Robert Young. Revised edition. 1898. Edinburgh: G. A. Young and Co.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "translation",
+    scanned_source_shortname: "holy_bible_tr_young",
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<p>Now we can destructure the object ParsedClassicsCollProtos.nt_tr_EN_young anywhere we need the same values of its keys:</p>
+
+<pre id="listing_translation_res2" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  // Translations
+
+  nt_titus_tr_EN_young: {
+    ...ParsedClassicsResProtos.nt_tr_EN_young,
+    contents_shortname: "nt_titus_tr_EN_young_contents",
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<h4 class="pc-anchor" id="h-commentary">Commentary</h4>
+
+<p>There can be several commentary resources inside collection. In principle, resources belonging to type "Commentary" can be either scanned or transcribed, but they most surely will be all scanned because there is little sense in transcribing comentary of classics text.</p>
 
 
 
