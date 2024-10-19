@@ -1,101 +1,161 @@
-=== Nouns ===
+=== Nouns, Masculine ===
 
---- 1-st Group Masculine -ας, -ες ---
+--- Noun Masculine in -ας, -ες πίνακας ---
+--- Noun Masculine in -ης, -ες μαθητής ---
+--- Noun Masculine in -ος, -οι φίλος ---
+--- Noun Masculine in -άς, -άδες ψαράς ---
+--- Noun Masculine in -ης, -ήδες βαρκάρης ---
+--- Noun Masculine in -ές, -έδες καφές ---
+--- Noun Masculine in -ούς, -ούδες παππούς ---
+--- Noun Masculine in -έας, -είς ιερέας ---
+
+--- Noun Masculine -ας, -ες ---
 Picture: πίνακας πίνακα πίνακα πίνακα
 Pictures: πίνακες πινάκων πίνακες πίνακες
 
---- 1-st Group Masculine -ης, -ες ---
+--- Noun Masculine -ης, -ες ---
 Pupil: μαθητής μαθητή μαθητή μαθητή
 Pupils: μαθητές μαθητών μαθητές μαθητές
 
---- 2-nd Group Masculine -ος, -οι ---
+--- Noun Masculine -ος, -οι ---
 Friend: φίλος φίλου φίλο φίλε
 Friends: φίλοι φίλων φίλους φίλοι
 
---- 3-rd Group Masculine -άς, -άδες ---
+--- Noun Masculine -άς, -άδες ---
 Fisherman: ψαράς ψαρά ψαρά ψαρά
 Fishermen: ψαράδες ψαράδων ψαράδες ψαράδες
 
---- 3-rd Group Masculine -ής, -ήδες ---
+--- Noun Masculine -ης, -ηδες ---
 Boatman: βαρκάρης βαρκάρη βαρκάρη βαρκάρη
 Boatmen: βαρκάρηδες βαρκάρηδων βαρκάρηδες βαρκάρηδες
 
---- 3-rd Group Masculine -ές, -έδες ---
+--- Noun Masculine -ές, -έδες ---
 Coffee: καφές καφέ καφέ καφέ
 Coffees: καφέδες καφέδων καφέδες καφέδες
 
---- 3-rd Group Masculine -ούς, -ούδες ---
+--- Noun Masculine -ούς, -ούδες ---
 Grandad: παππούς παππού παππού παππού
 Grandads: παππούδες παππούδων	παππούδες παππούδες
 
---- 3-rd Group Masculine -έας, -είς ---
+--- Noun Group Masculine -έας, -είς ---
 Priest: ιερέας ιερέα ιερέα ιερέα
 Priests: ιερείς ιερέων ιερείς ιερείς
 
---- 1-st Group Feminine -ά, -ές ---
+
+
+
+=== Nouns, Feminine ===
+
+--- Noun Feminine in -ά, -ές χαρά ---
+--- Noun Feminine in -ή, -ές φωνή ---
+--- Noun Feminine in -ος, -οι οδός ---
+--- Noun Feminine in -ά, -άδες μαμά ---
+--- Noun Feminine in -ού, -ούδες αλεπού ---
+--- Noun Feminine in -η, -εις πόλη ---
+--- Noun Feminine in -ώ (singular only) πειθώ ---
+--- Noun Feminine in -ω (singular only) Μάρω ---
+
+--- Noun Feminine -ά, -ές ---
 Joy: χαρά χαράς χαρά χαρά
 Joys: χαρές χαρών χαρές χαρές
 
---- 1-st Group Feminine -ή, -ές ---
+--- Noun Feminine -ή, -ές ---
 Voice: φωνή φωνής φωνή φωνή
 Voices: φωνές φωνών φωνές φωνές
 
---- 2-nd Group Feminine -ος, -οι ---
+--- Noun Feminine -ός, -οί ---
 Road: οδός οδού οδό οδέ
 Roads: οδοί οδών οδούς οδοί
 
---- 3-rd Group Feminine -ά, -άδες ---
+--- Noun Feminine -ά, -άδες ---
 Mummy: μαμά μαμάς μαμά μαμά
 Mummies: μαμάδες μαμάδων μαμάδες μαμάδες
 
---- 3-rd Group Feminine -ού, -ούδες ---
+--- Noun Feminine -ού, -ούδες ---
 Fox: αλεπού αλεπούς αλεπού αλεπού
 Foxen: αλεπούδες αλεπούδων αλεπούδες αλεπούδες
 
---- 3-rd Group Feminine -η, -εις ---
+--- Noun Feminine -η, -εις ---
 City: πόλη πόλης πόλη πόλη
 Cities: πόλεις πόλεων πόλεις πόλεις
 
---- 3-rd Group Feminine -ω (singular only) ---
+--- Noun Feminine -ώ (singular only) ---
 Conviction: πειθώ πειθούς πειθώ πειθώ
+
+--- Noun Feminine in -ω (singular only) ---
 Maro: Μάρω Μάρως Μάρω Μάρω
 
---- 2-nd Group Neuter -ο, -ι ---
+
+
+
+=== Nouns, Neuter ===
+
+--- Noun Neuter in -ο, -α βιβλίο ---
+--- Noun Neuter in -ι, -α σπίτι ---
+--- Noun Neuter in -ος, -η έθνος ---
+--- Noun Neuter in -μα, -ματα γράμμα ---
+--- Noun Neuter in -ιμο, -ίματα γράψιμο ---
+--- Noun Neuter in -ας, -ατα κρέας ---
+--- Noun Neuter in -ός, -ότα γεγονός ---
+--- Noun Neuter in -ώς, -ώτα φως ---
+--- Noun Neuter in -αν, -αντα σύμπαν  ---
+--- Noun Neuter in -ον, -οντα συμφέρον ---
+--- Noun Neuter in -εν, -εντα φωνήεν ---
+
+--- Noun Neuter -ο, -ι ---
 Book: βιβλίο βιβλίου βιβλίο βιβλίο
 Books: βιβλία βιβλίων βιβλία βιβλία
 
---- 2-nd Group Neuter -ι, -α ---
+--- Noun Neuter -ι, -α ---
 Home: σπίτι σπιτιού σπίτι σπίτι
 Homes: σπίτια σπιτιών σπίτια σπίτια
 
---- 3-rd Group Neuter -ος, -η ---
+--- Noun Neuter -ος, -η ---
 Nation: έθνος έθνους έθνος έθνος
 Nations: έθνη εθνών έθνη έθνη
 
---- 3-rd Group Neuter -μα, -ματα ---
+--- Noun Neuter -μα, -ματα ---
 Letter: γράμμα γράμματος γράμμα γράμμα
 Letters: γράμματα γραμμάτων γράμματα γράμματα
 
---- 3-rd Group Neuter -ιμο, -ίματα ---
+--- Noun Neuter -ιμο, -ίματα ---
 Writing: γράψιμο γραψίματος γράψιμο γράψιμο
 Writings: γραψίματα γραψιμάτων γραψίματα γραψίματα
 
---- 3-rd Group Neuter -ας, -ατα ---
+--- Noun Neuter -ας, -ατα ---
 Meat: κρέας κρέατος κρέας κρέας
 Meats: κρέατα κρεάτων κρέατα κρέατα
 
---- 3-rd Group Neuter -ός, -ότα ---
+--- Noun Neuter -ός, -ότα ---
 Event: γεγονός γεγονότος γεγονός γεγονός
 Events: γεγονότα γεγονότων γεγονότα γεγονότα
 
---- 3-rd Group Neuter -ώς, -ώτα ---
+--- Noun Neuter -ώς, -ώτα ---
 Light: φως φωτός φως φως
 Lights: φώτα φώτων φώτα φώτα
 
+--- Noun Neuter in -αν, -αντα ---
+Universe: σύμπαν σύμπαντος σύμπαν σύμπαν
+Universes: σύμπαντα συμπάντων σύμπαντα σύμπαντα
+
+--- Noun Neuter in -ον, -οντα ---
+Interest: συμφέρον συμφέροντος συμφέρον συμφέρον
+Interests: συμφέροντα συμφερόντων συμφέροντα συμφέροντα
+
+--- Noun Neuter in -εν, -εντα ---
+Vowel: φωνήεν φωνήεντος φωνήεν φωνήεν
+Vowels: φωνήεντα φωνηέντων φωνήεντα φωνήεντα
 
 
 
-=== Adjectives ===
+
+=== Adjectives, First Part ===
+
+--- Adj. in -ός, -η, -ο καλός ---
+--- Adj. in -ος, -α, -ο νέος ---
+--- Adj. in -ός, -ιά, -ό κακός ---
+--- Adj. in -ύς, -ιά, -ύ πλατύς ---
+--- Adj. in -ύς, -εία, -ύ ταχύς ---
 
 --- -ός, -η, -ο ---
 Good (m. sg.): καλός καλού καλό καλέ
@@ -137,8 +197,20 @@ Fast (f. pl.): ταχείες ταχειών ταχείες ταχείες
 Fast (n. sg.): ταχύ ταχέος ταχύ ταχύ
 Fast (n. pl.): ταχέα ταχέων ταχέα ταχέα
 
+
+
+
+=== Adjectives, Second Part ===
+
+--- Adj. in -ής, -ιά, -ί καφετής ---
+--- Adj. in -ης, -α, -ικο ζηλιάρης ---
+--- Adj. in -ων, -ουσα, -ον ενδιαφέρων ---
+--- Adj. in -ης, -ης, -ες διεθνής ---
+--- Adj. in -ύς, -ή, -ύ πολύς ---
+--- Adj. in -άς, -ού, -ικο φαγάς ---
+
 --- -ής, -ιά, -ί ---
-Brownish (m. sg.): καφετής αφετή αφετή αφετή
+Brownish (m. sg.): καφετής καφετή καφετή καφετή
 Brownish (m. pl.): καφετιοί καφετιών καφετιούς καφετιοί
 Brownish (f. sg.): καφετιά καφετιάς καφετιά καφετιά
 Brownish (f. pl.): καφετιές καφετιών καφετιές καφετιές
