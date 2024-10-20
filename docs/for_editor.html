@@ -724,7 +724,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>There can be several translation resources inside collection. In principle, resources belonging to type "Translation" can be either scanned or transcribed, but they most surely will be all scanned because there is little sense in transcribing translation of classics text.</p>
 
-<p>As an example let‘s list translation resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_tr_EN_young" (contains inside collection shortname, string "tr", code of the language and and translator's surname'):</p>
+<p>As an example let‘s list translation resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_tr_EN_young" (contains inside collection shortname, string "tr", code of the language and and translator's surname):</p>
 
 <pre id="listing_translation_res" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -751,7 +751,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
 
-<p>The key "collections_page_resource_desc" should have as its value a string "to" plus Languane plus "by" plus translator‘s surname and the year in brackets.</p>
+<p>The key "collections_page_resource_desc" should have as its value a string "to" plus language plus "by" plus translator‘s surname and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value the language plus "translation by" plus translator‘s surname and the year in brackets.</p>
 
@@ -815,6 +815,91 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 <h4 class="pc-anchor" id="h-commentary">Commentary</h4>
 
 <p>There can be several commentary resources inside collection. In principle, resources belonging to type "Commentary" can be either scanned or transcribed, but they most surely will be all scanned because there is little sense in transcribing comentary of classics text.</p>
+
+<p>As an example let‘s list commentary resource for Epistle to Titus collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_commentary_by_nicoll" (contains inside collection shortname, type of resource, string "by" and and author's surname):</p>
+
+<pre id="listing_commentary_res" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  nt_titus_commentary_by_nicoll: {
+    collections_page_resource_desc: "ed. by W. R. Nicoll (1897)", 
+    library_app_selectbox_title: "Commentary ed. by W. R. Nicoll (1897)",
+    library_app_panel_title: "Commentary ed. by W. R. Nicoll (1897)",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "The Expositor's Greek Testament. Volume 4. Edited by W. R. Nicoll. 1897. London etc.: Hodder and Stoughton.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "commentary",
+    scanned_source_shortname: "expositors_greek_testament_ed_nicoll_vol_4", 
+    contents_shortname: "nt_titus_commentary_by_nicoll_contents"
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
+
+<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus author‘s surname and the year in brackets.</p>
+
+<p>The key "library_app_panel_title" should have as its value the language plus "Commentary ed. by" or "Commentary by" plus author‘s surname and the year in brackets.</p>
+
+<p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resource has no subtitle.</p>
+
+<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book.</p>
+
+<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments.</p>
+
+<p>The key "scanned_or_typed" should have as its value the string "scanned".</p>
+
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes short title of the book, string "ed" or "by" and surname of the author.</p>
+
+<p>The key "library_app_selectbox_title" should have as its value string "Commentary ed. by" or "Commentary by" then author's surname and year in brackets.</p>
+
+<p>The key "resource_type" should have the value "commentary".</p>
+
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by collection shortname plus resource type plus "by" plus author's name plus string "contents". Creating contents file and placing it in directory will be explaided below.</p>
+
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own commentary resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those translation resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Commentary" based on volume 4 of the commentary by Nicoll, let's name the key "nt_commentary_by_nicoll_vol_4":</p>
+
+<pre id="commentary_proto" class="prettyprint code_showarea">
+const ParsedClassicsResProtos = {
+  // Commentary
+
+  // some lines have been omitted
+
+  nt_commentary_by_nicoll_vol_4: {
+    collections_page_resource_desc: "ed. by W. R. Nicoll (1897)", 
+    library_app_selectbox_title: "Commentary ed. by W. R. Nicoll (1897)",
+    library_app_panel_title: "Commentary ed. by W. R. Nicoll (1897)",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "The Expositor's Greek Testament. Volume 4. Edited by W. R. Nicoll. 1897. London etc.: Hodder and Stoughton.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "commentary",
+    scanned_source_shortname: "expositors_greek_testament_ed_nicoll_vol_4",
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<p>Now we can destructure the object ParsedClassicsCollProtos.nt_tr_EN_young anywhere we need the same values of its keys:</p>
+
+<pre id="listing_commentary_res2" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  nt_titus_commentary_by_nicoll: {
+    ...ParsedClassicsResProtos.nt_commentary_by_nicoll_vol_4, 
+    contents_shortname: "nt_titus_commentary_by_nicoll_contents"
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
 
 
 
