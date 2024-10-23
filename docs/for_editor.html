@@ -1090,6 +1090,99 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <h4 class="pc-anchor" id="h-diagram-set">Diagram set</h4>
 
+<p>There can be one diagram set resource in collection.</p>
+
+<p>Resources of the type "Diagram set" are transcribed.</p>
+
+<p>As an example let‘s list diagram set resource for <em>Epistle to Ephesians</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_ephesians["resource_defs"] object. In this case the key is "nt_ephesians_diagrams_by_parsedclassics" (contains inside collection shortname, type of resource, string "by" and and author's surname):</p>
+
+<pre id="listing_diagram_set_res" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  // Diagram sets
+
+  nt_ephesians_diagrams_by_parsedclassics: {
+    collections_page_resource_desc: "by ParsedClassics (2018)", 
+    library_app_selectbox_title: "Diagrams by ParsedClassics (2018)",
+    library_app_panel_title: "Modernized Reed-Kellogg syntax diagrams by ParsedClassics",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing.",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "diagram_set",
+    scanned_source_shortname: "new_testament_in_original_greek_ed_robinson_pierpont", 
+    contents_shortname: "",
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
+
+<p>The key "collections_page_resource_desc" should have as its value a string "by" plus author‘s surname and the year in brackets.</p>
+
+<p>The key "library_app_panel_title" should have as its value the language plus "Modernized Reed-Kellogg syntax diagrams by" plus author‘s name and the year in brackets.</p>
+
+<p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resource has no subtitle.</p>
+
+<p>The key "library_app_panel_text_from" should have as its value empty string.</p>
+
+<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments.</p>
+
+<p>The key "scanned_or_typed" should have as its value the string "typed".</p>
+
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes short title of the book, string "ed" or "by" and surname of the author.</p>
+
+<p>The key "library_app_selectbox_title" should have as its value string "Diagrams by", author's surname and year in brackets.</p>
+
+<p>The key "resource_type" should have the value "diagram_set".</p>
+
+<p>The key "contents_shortname" should have as its value empty string.</p>
+
+<p>Since classics text usually consists of several books and each book usually will have its own collection which may have its own diagram set resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those diagram set resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Diagram set", let's name the key "nt_diagrams_by_parsedclassics":</p>
+
+<pre id="diagram_set_proto" class="prettyprint code_showarea">
+const ParsedClassicsResProtos = {
+  // some lines have been omitted  
+
+  // Diagram set
+
+  nt_diagrams_by_parsedclassics: {
+    collections_page_resource_desc: "by ParsedClassics (2018)", 
+    library_app_selectbox_title: "Diagrams by ParsedClassics (2018)",
+    library_app_panel_title: "Modernized Reed-Kellogg syntax diagrams by ParsedClassics",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing.",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "diagram_set",
+    scanned_source_shortname: "new_testament_in_original_greek_ed_robinson_pierpont", 
+    contents_shortname: "",
+  }, 
+
+  // some lines have been omitted
+}
+</pre>
+
+<p>Now we can destructure the object ParsedClassicsCollProtos.nt_diagrams_by_parsedclassics anywhere we need the same values of its keys:</p>
+
+<pre id="listing_commentary_res2" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  // Diagram set
+
+  nt_ephesians_diagrams_by_parsedclassics: {
+    ...ParsedClassicsResProtos.nt_diagrams_by_parsedclassics,
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<h4 class="pc-anchor" id="h-audio-recording">Audio recording</h4>
 
 
 
