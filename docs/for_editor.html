@@ -816,7 +816,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>There can be several commentary resources inside collection. In principle, resources belonging to type "Commentary" can be either scanned or transcribed, but they most surely will be all scanned because there is little sense in transcribing comentary of classics text.</p>
 
-<p>As an example let‘s list commentary resource for Epistle to Titus collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_commentary_by_nicoll" (contains inside collection shortname, type of resource, string "by" and and author's surname):</p>
+<p>As an example let‘s list commentary resource for Epistle to Titus collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_commentary_by_nicoll" (contains inside collection shortname, type of resource, string "by" and author's surname):</p>
 
 <pre id="listing_commentary_res" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -1168,7 +1168,7 @@ const ParsedClassicsResProtos = {
 
 <p>Now we can destructure the object ParsedClassicsCollProtos.nt_diagrams_by_parsedclassics anywhere we need the same values of its keys:</p>
 
-<pre id="listing_commentary_res2" class="prettyprint code_showarea">
+<pre id="listing_diagram_set_res2" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
   // some lines have been omitted
 
@@ -1184,7 +1184,175 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <h4 class="pc-anchor" id="h-audio-recording">Audio recording</h4>
 
+<p>There can be several audio recording resources in collection.</p>
 
+<p>Resources of the type "Audio recording" are transcribed.</p>
+
+<p>As an example let‘s list commentary resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_audio_by_karvounakis" (contains inside collection shortname, type of resource, string "by" and author's surname):</p>
+
+<pre id="listing_audio_recording_res" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  // Audio recording
+
+  nt_titus_audio_by_karvounakis: {
+    collections_page_resource_desc: "by Th. Karvounakis (2012)", 
+    library_app_selectbox_title: "Audio recording by Th. Karvounakis (2012)",
+    library_app_panel_title: "Audio recording by Th. Karvounakis",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "Novum Testamentum. Textus Stephanici A.D. 1550, cum variis lectionibus editionum Bezae, Elzeviri, Lachmanni, Tischendorfii, Tregellesii, Westcott-Hortii, versionis anglicanae emendatorum, curante F. H. A. Scrivener. 1887. Cantabrigiae: Deighton, Bell et soc.; Londini: Whittaker et soc.; G. Bell et filii.",
+    library_app_panel_note: "Pronunciation: modern.",
+    scanned_or_typed: "typed",
+    resource_type: "audio_recording",
+    scanned_source_shortname: "novum_testamentum_textus_stephanici_ed_scrivener",
+    contents_shortname: "nt_titus_audio_by_karvounakis_contents",
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
+
+<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus author‘s name and the year in brackets.</p>
+
+<p>The key "library_app_panel_title" should have as its value the language plus "Audio recording by" plus author‘s name and the year in brackets.</p>
+
+<p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resource has no subtitle.</p>
+
+<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book.</p>
+
+<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments.</p>
+
+<p>The key "scanned_or_typed" should have as its value the string "typed".</p>
+
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which have been uploaded the images of the pages of the book. Directory name includes short title of the book, string "ed" or "by" and name of the author.</p>
+
+<p>The key "library_app_selectbox_title" should have as its value string "Audio recording by" then author's name and year in brackets.</p>
+
+<p>The key "resource_type" should have the value "audio_recording".</p>
+
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by collection shortname plus resource type plus "by" plus author's name plus string "contents". Creating contents file and placing it in directory will be explaided below.</p>
+
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own audio recording resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those audio recording resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Audio recording", let's name the key "nt_audio_by_karvounakis":</p>
+
+<pre id="_proto" class="prettyprint code_showarea">
+const ParsedClassicsResProtos = {
+  // some lines have been omitted  
+
+  // Audio recording
+
+  nt_audio_by_karvounakis: {
+    collections_page_resource_desc: "by Th. Karvounakis (2012)", 
+    library_app_selectbox_title: "Audio recording by Th. Karvounakis (2012)",
+    library_app_panel_title: "Audio recording by Th. Karvounakis",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "Novum Testamentum. Textus Stephanici A.D. 1550, cum variis lectionibus editionum Bezae, Elzeviri, Lachmanni, Tischendorfii, Tregellesii, Westcott-Hortii, versionis anglicanae emendatorum, curante F. H. A. Scrivener. 1887. Cantabrigiae: Deighton, Bell et soc.; Londini: Whittaker et soc.; G. Bell et filii.",
+    library_app_panel_note: "Pronunciation: modern.",
+    scanned_or_typed: "typed",
+    resource_type: "audio_recording",
+    scanned_source_shortname: "novum_testamentum_textus_stephanici_ed_scrivener",
+  }, 
+
+  // some lines have been omitted
+}
+</pre>
+
+<p>Now we can destructure the object ParsedClassicsCollProtos.nt_audio_by_karvounakis anywhere we need the same values of its keys:</p>
+
+<pre id="listing_audio_recording_res2" class="prettyprint code_showarea">
+ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
+  // some lines have been omitted
+
+  // Audio recording
+
+  nt_titus_audio_by_karvounakis: {
+    ...ParsedClassicsResProtos.nt_audio_by_karvounakis,
+    contents_shortname: "nt_titus_audio_by_karvounakis_contents",
+  },
+
+  // some lines have been omitted
+}
+</pre>
+
+<h3 class="pc-anchor" id="h-listing-scanned-books">Listing scanned books</h3>
+
+<p>All scanned resources and most transcribed resources have non empty value for the key "scanned_source_shortname" when are listed as part of some collection. The value of this key is a name of the directory (without path) in which have been uploaded the images of the pages of the book.</p>
+
+<p>The book should also be listed.  The senior editor should add a key to object ParsedClassicsScannedBooks in the file /data/_catalogues/_scanned_books.js and a JSON object as the value of that key. The key to object ParsedClassicsScannedBooks should be no other than the value of "scanned_source_shortname" we entered while listing resource.</p>
+
+<p>Also there could be a need to list books which are referred to in resources of the type "Commentary references" or "Grammar references" (directories of the pages of such books are not entered as values of the key "scanned_source_shortname"). Listing of the book is done the same way.</p>
+
+<p>For example, to list E. Robinson‘s book <em>Greek and English lexicon of the New Testament</em> the key "greek_and_english_lexicon_of_nt_by_robinson" and JSON object as its value has been added to ParsedClassicsScannedBooks object:</p>
+
+<pre id="listing_scanned_books" class="prettyprint code_showarea">
+ParsedClassicsScannedBooks = {
+
+  // some lines have been omitted
+
+  greek_and_english_lexicon_of_nt_by_robinson: {
+
+    bookTitle: "A Greek and English lexicon of the New Testament."
+
+    , bookUrlText: 'By Edward Robinson. Second edition. 1850. New York: Harper and Brothers.'
+
+    , numLeafs: "816"
+
+    , leafWidth: 1105
+
+    , leafHeight: 1813
+
+    , thumbnail: "page0001.jpg"
+
+    , metadata: [
+
+      {
+
+      label: 'Title'
+
+      , value: "A Greek and English lexicon of the New Testament. By Edward Robinson. Second edition. 1850. New York: Harper and Brothers."
+
+      }
+
+    ]
+
+  }
+
+  // some lines have been omitted
+
+}
+</pre>
+
+<p>As you see the key "greek_and_english_lexicon_of_nt_by_robinson" includes at the beginning lowercase book title whose words are separated by underscores, the string "_by_", and lowercase author name at the end.</p>
+
+<p>This key is used as directory name: /_scans/greek_and_english_lexicon_of_nt_by_robinson . This directory contains images of the pages of the scanned book.</p>
+
+<p>The JSON object‘s key "bookTitle" should have as its value scanned book title in book's language.</p>
+
+<p>The key "bookUrlText" should have as its value all remaining bibliographic data of the book (author, edition, year, place, publishing house).</p>
+
+<p>The key "numLeafs" should have as its value number of files in the directory containing images of the pages.</p>
+
+<p>The key "leafWidth" should have as its value number of pixels of the width of scanned pages. This key is optional, but to add it is highly recommended because otherwise scanned pages might look slightly distorted.</p>
+
+<p>The key "leafHeight" should have as its value number of pixels of the height of scanned pages. This key is optional, but to add it is highly recommended because otherwise scanned pages might look slightly distorted.</p>
+
+<p>The key "thumbnail" should have as its value the filename of the image displaying the title page of the scanned book.</p>
+
+<p>The key "label" should always have as its value the word "Title".</p>
+
+<p>The key "value" should have as its value the string containing all relevant bibliographic data of the scanned book. Usually you will get it by combining values of the keys "bookTitle" and "bookUrlText".</p>
+
+<h2 class="pc-anchor" id="h-creating-resources">Creating resources</h2>
+
+<p>Library app supports following types of resources: Parsed text, Original text, Concordance, Lexicon, Translation, Commentary, Commentary references, Grammar references, Diagram set, Audio recording. Parsed text, Commentary references, Grammar references, Diagram set, Audio recording resources can only be transcribed; Critical edition, Concordance, Lexicon, Translation, Commentary resources can be transcribed or scanned. Creating transcribed and scanned resources will be described separately because the process is very different.</p>
+
+<h3 class="pc-anchor" id="h-parsed-text-transcribed">Parsed text (transcribed)</h3>
+
+<p>Creating Parsed text resource involves creating two files: contents file and data file. The content file of the first listed Parsed text resource also serves as the content file for the whole collection.</p>
+
+<h4 class="pc-anchor" id="h-parsed-text-transcribed-creating-content file">Creating contents file</h4>
 
 
 
@@ -1201,828 +1369,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
 
-<h3 class="pc-anchor" id="h-listing-collection2">Listing collection</h3>
 
-<p>To list a new collection senior editor should add JSON object into the file /data/catalogues/_collections.js . The order of JSON objects in this file is important because collections selectbox displays the list of collections in the same order.</p>
-
-<p>For example, to register <em>Epistle to Titus collection</em> such JSON object has been added:</p>
-
-<pre id="listing_collection" class="prettyprint code_showarea">
-, {
-  
-    "collection_shortname": "nt_titus"
-
-	, "collection_selectboxname": "Κ.Δ. Πρὸς Τίτον"
-	
-	, "collection_set": "nt_apostolics"
-  
- }
-</pre>
-
-<p>The value of the key "collection_shortname" should be a string containing only lowercase latin letters, numbers and underscores (no spaces!). It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value.</p>
-
-
-<p>The value  of the key "collection_selectboxname" should be a string in original language. It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value.</p>
-
-<p>The value  of the key "collection_set" should be a key from JSON object in the file /data/catalogues/_sets.js, which contains definitions of the editions. By entering the key "nt_apostolics" as the value of the key "collection_set" we are making <em>Epistle to Titus collection</em> a part of the edition "Ἡ Καινὴ Διαθήκη. Πράξεις, Ἐπιστολαί, Ἀποκάλυψις / The New Testament. Acts, Epistles, Revelation", whose shortname is "nt_apostolics".</p>
-
-<p>After editing /data/catalogues/collections.js file refresh <a href="../library/index.html">Library app</a>. After that a new value should apper in collections selectbox. If you select this new value, both Parsed text pane and Resources pane should be empty.</p>
-
-<h3 class="pc-anchor" id="h-listing-scanned-books">Listing scanned books</h3>
-
-<p>To list a new scanned book senior editor should add a key and a JSON object as its value into the file /data/catalogues/_scanned_books.js . The order of JSON objects in this file is not important.</p>
-
-<p>For example, to list E. Robinson‘s book <em>Greek and English lexicon of the New Testament</em> the key "greek_and_english_lexicon_of_nt_by_robinson" and JSON object as its value has been added:</p>
-
-<pre id="registering_scanned_resource" class="prettyprint code_showarea">
-, "greek_and_english_lexicon_of_nt_by_robinson": {
-		
-"bookTitle": "A Greek and English lexicon of the New Testament."
-
-, "bookUrlText": 'By Edward Robinson. Second edition. 1850. New York: Harper and Brothers.'
-
-, "numLeafs": "816"
-
-, "thumbnail": "page0001.jpg"
-
-, "metadata": [
-
-{
-
-"label": "Title"
-
-, "value": "A Greek and English lexicon of the New Testament. By Edward Robinson. Second edition. 1850. New York: Harper and Brothers."
-
-}
-
-]
-		
-}
-</pre>
-
-<p>As you see the key "greek_and_english_lexicon_of_nt_by_robinson" includes at the beginning lowercase book title whose words are separated by underscores, the string "_by_", and lowercase author surname at the end. </p>
-
-<p>This key is also used as directory name: 
-/_scans/ greek_and_english_lexicon_of_nt_by_robinson . This directory contains images of the pages of the scanned book.
-</p>
-
-<p>The JSON object‘s key "bookTitle" should have as its value scanned book title in original language.</p>
-
-<p>The key "bookUrlText" should have as its value all remaining bibliographic data of the book (author, edition, year, place, publishing house).</p>
-
-<p>The key "numLeafs" should have as its value number of files in the directory containing images of the pages.</p>
-
-<p>The key "thumbnail" should have as its value the filename of the image displaying the title page of the scanned book.</p> 
-
-<p>The key "label" should always have as its value the word "Title".</p>
-
-<p>The key "value" should have as its value the string containing all relevant bibliographic data of the scanned book. Usually you will get it by combining values of the keys "bookTitle" and "bookUrlText".</p>
-
-
-<h3 class="pc-anchor" id="h-creating-empty-collection-catalogue">Creating empty collection catalogue</h3>
-
-<p>Collection catalogue is a file inside /data/catalogues directory. Collection catalogue‘s filename should be the same as the value of the key "collection_shortname" using which collection has been registered. In the <a class="inner-link" data-anchor="h-listing-collection">example above</a> we registered collection using string "nt_titus" as the value of such key. That means the name of the file of the collection catalogue should be "nt_titus.js".</p> 
-
-<p>The encoding of the collection catalogue file must be UTF-8 (no BOM).</p>
-
-<p>Let‘s as example to create catalogue for <em>Epistle to Titus</em> collection:</p>
-
-<pre id="creating_collection_catalogue" class="prettyprint code_showarea">
-ParsedClassicsData.loadCollectionData({
-
-  "collection_shortname": "nt_titus"
-
-  , "author_eng": "The New Testament"
-
-  , "author_orig": "Ἡ Καινὴ Διαθήκη"
-  
-  , "collections_page_title_eng": "Epistle to Titus" 
-  
-  , "collections_page_title_orig": "Ἡ πρὸς Τίτον ἐπιστολή" 
-  
-  , "contents_shortname": "coll_nt_titus_contents"
-
-  , "enabled_resources": []
-  
-  , "parsed_text": ""
-
-  , "original_texts": []
-	
-  , "concordance": []
-  	
-  , "lexicons": []
-  
-  , "translations": []
-  	
-  , "commentaries": []
-  
-  , "grammar_refs": []
-  	
-  , "diagrams": []
-    
-  , "audio": []
-
-});
-</pre>
-
-<p>JSON object‘s key "collection_shortname" should have as its value the same string which was used for listing collection.</p> 
-
-<p>The key "author_eng" should have as its value English name of the author or English name of the scripture.</p>
-
-<p>The key "author_orig" should have as its value the name of the author or the name of the scripture in original language, i. e. in Greek or Latin.</p> 
-
-<p>The key "collections_page_title_eng" should have as its value the title of the collection in English.</p>
-
-<p>The key "collections_page_title_orig" should have as its value the title of the collection in original language. Both English and original title will be displayed in <a href="../site/collections.html" target="_blank">Collections page</a>.</p>
-
-<p>The key "contents_shortname" should have as its value the name of the file containing collections contents. The name of this file is usually formed by adding the string "coll_" at the beginning and the string "_contents" at the end of the collection shortname. So, if the collection shortname was "nt_titus", the the name of collection contents file will be "coll_nt_titus_contents". Collection contents files are placed in /data/contents directory.</p>
-
-<p>The key "enabled_resources" should have as its value array of the shortnames of the resources. Resources whose shortnames are included in this array will be enabled by default. In case this array is left emply, all resources will be enabled by default.</p>
-
-<p>After creating catalogue file and placing it in /data/catalogues directory we will see no change in Library app. But if we visit <a href="../site/collections.html" target="_blank">Collections page</a>, the name of the new collection will be visible in the table.</p>
-
-<h3 class="pc-anchor" id="h-listing-collection-resources">Listing collection resources</h3>
-
-<p>The catalogue just created is empty because no resource is listed in it. Library app supports following types of resources: Parsed text, Critical edition, Concordance, Lexicon, Translation, Commentary, Grammar references, Diagram set, Audio recording. In the catalogue code above you see names of the resource types as keys of JSON object.</p>
-
-<h4 class="pc-anchor" id="h-parsed-text">Parsed text</h4>
-
-<p>There can be only one parsed text inside collection and parsed text resource is always transcribed, never scanned.</p>
-
-<p>As an example let‘s list parsed text resource for Epistle to Titus collection:</p>
-
-<pre id="listing_parsed_text" class="prettyprint code_showarea">
-, "parsed_text": {
-  
-"resource_shortname": "nt_titus_parsed_text" 
-      
-, "collections_page_resource_desc": "compiled by J. K. Tauber (2016)" 
-      
-, "library_app_panel_title": "Ἡ πρὸς Τίτον ἐπιστολή"
-      
-, "library_app_panel_unit_num": ""
-      
-, "library_app_panel_text_from": "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing."
-      
-, "library_app_panel_note": "Parsing by J. K. Tauber (2016)."
-      
-, "scanned_or_typed": "typed"
-      
-, "scanned_source_shortname": "new_testament_in_original_greek_ed_robinson_pierpont" // if not empty, must be different from resource_shortname
-      
- , "contents_shortname": ""
-  
-}
-</pre>
-
-<p>After you add these lines into collection catalogue‘s file, you should see parsed text title in Parsed text pane and info about parsed text in the table in <a href="../site/collections.html" target="_blank">Collections page</a>.</p>
-
-<p>JSON object‘s key "resource_shortname" should have as its value a string which has at the beginning collection shortname and the string "_parsed_text" at the end.</p> 
-
-<p>The key "collections_page_resource_desc" should have as its value a string "compiled by" plus compilator‘s surname and the year in brackets.</p> 
-
-<p>The key "library_app_panel_title" should have as its value the title of the collection in original language.</p>
-
-<p>The key "library_app_panel_unit_num" should have as its value name and number in original language of the part of the book. In the example this key has as its value empty string because the text comprises whole text of the <em>Epistle to Titus</em>. But other collection may inlude only part of the text of some classical work, usualy a single book. So, for example there is collection <em>Xenophon. Anabasis. Book 1</em>, which includes only one book. The value of the key  "library_app_panel_unit_num" is in this case the string "Βιβλίον Αʹ".</p>
-
-<p>The key "library_app_panel_text_from" should have as its value bibliographich description of the book from which the text for parsing was taken.</p>
-
-<p>The key "library_app_panel_note" should have as its value the string "Parsing by" plus the surname plus the year in brackets.</p>
-
-<p>The key "scanned_or_typed" should have as its value the string "typed" (it means "transcribed").</p>
-
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book from which the text for parsing was taken. Directory name includes title of the book, string "_ed_" and surnames of the authors. The value for this key must be different from the value for the key "resource_shortname".</p>
-
-<p>The key "contents_shortname" should have as its value empty string because parsed text does not have its own content table; it uses collection‘s content table. Collection content‘s shortname was defined when empty catalogue was created.</p>
-
-<h4 class="pc-anchor" id="h-critical-edition">Critical edition</h4>
-
-<p>There can be many critical editions inside collection. In principle, resources belonging to type "Critical edition" can be either scanned or transcribed, but they surely will be all scanned because it is very difficult to reproduce complex formatting of the scholarly editions using very limitted means available in HTML.</p>
-
-<p>As an example let‘s list critical edition resource for <em>Epistle to Titus</em> collection:</p>
-
-<pre id="listing_critical_edition" class="prettyprint code_showarea">
-, "original_texts": [
-  
-{
-							
-"resource_shortname": "nt_titus_text_ed_holmes" 
-        
- , "collections_page_resource_desc": "ed. by M. W. Holmes (2010)" 
-        
- , "library_app_selectbox_title": "Edition by M. W. Holmes (2010)"
-        
- , "library_app_panel_title": "Text ed. M. W. Holmes (2010)"
-        
- , "library_app_panel_text_from": "The Greek New Testament. SBL edition. Edited by M. W. Holmes. 2010. Atlanta, Ga.: Society of Biblical Literature; Bellingham, Wash.: Logos Bible Software."
-
- , "library_app_panel_note": ""
-        
- , "scanned_or_typed": "scanned"
-        
-  , "scanned_source_shortname": "greek_new_testament_sbl_edition_ed_holmes" // if not empty, must be different from resource_shortname
-        
-  , "contents_shortname": "lines_nt_titus_ed_holmes_contents"
-							
-}
-  
-]
-</pre>
-
-<p>After you add these lines into collection catalogue‘s file, you should see critical edition‘s title in Resources selectbox and in Resources pane and info about critical edition should be displayed in the table in <a href="../site/collections.html" target="_blank">Collections page</a>.</p>
-
-<p>JSON object‘s key "resource_shortname" should have as its value collection shortname at the beginning, then  the string "_text_ed_" and editor’s surname.</p> 
-
-<p>The key "collections_page_resource_desc" should have as its value the string "ed. by" plus editor‘s surname and the year in brackets.</p> 
-
-<p>The key "library_app_selectbox_title" should have as its value the string "Edition by" plus editor‘s surname and the year in brackets.</p>
-
-<p>The key "library_app_panel_title" should have as its value the string "Text ed." plus editor‘s surname and the year in brackets.<p>
-
-<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book.</p>
-
-<p>The key "library_app_panel_note" should have as its value empty string.</p>
-
-<p>The key "scanned_or_typed" should have as its value the string "scanned".</p>
-
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which have been uploaded the images of the pages of the book. Directory name includes title of the book, string "_ed_" and surname of the editor. The value for this key must be different from the value for the key "resource_shortname".</p>
-
-<p>The key "contents_shortname" should have as its value the string "lines_" at the beginning, then the value of the key "resource_shortname" and the string "_contents" at the end.</p>
-
-<p>In case we want this resource to be enabled by default, its shortname should be added to "enabled_resources" array:</p>
-
-<pre id="critical_edition_enabled" class="prettyprint code_showarea">
-, "enabled_resources": [
-
-  "nt_titus_text_ed_holmes"	
-
-]
-</pre>
-
-<h4 class="pc-anchor" id="h-concordance">Concordance</h4>
-
-<p>There can be many concordances inside a collection. Resource belonging to the type "Concordance" can be either scanned or transcribed.</p>
-
-<p>As examples let‘s list scanned and transcribed concordance resources <em>for Epistle to Titus</em> collection:</p>
-
-<pre id="listing_concordance" class="prettyprint code_showarea">
-, "concordance": [
-  
-{
-						
-"resource_shortname": "concordance_by_moulton_geden" 
-        
-, "collections_page_resource_desc": "ed. by W. F. Moulton and A. S. Geden (1899)" 
-        
-, "library_app_selectbox_title": "Concordance ed. by W. F. Moulton and A. S. Geden (1899)"
-						
-, "library_app_panel_title": "A concordance to the Greek Testament ed. by W. F. Moulton and A. S. Geden (1899)"
-        
-, "library_app_panel_text_from": "A concordance to the Greek Testament according to the texts of Westcott and Hort, Tischendorf and the English Revisers. Edited by W. F. Moulton and A. S. Geden. 2-nd ed. 1899. Edinburgh: T. & T. Clark."
-
-, "library_app_panel_note": ""
-        
-, "scanned_or_typed": "scanned"
-        
-, "scanned_source_shortname": "concordance_to_greek_testament_by_moulton_geden" // if not empty, must be different from resource_shortname
-        
-, "contents_shortname": "words_concordance_to_greek_testament_by_moulton_geden_contents"
-						
-}
-     
-
-
-, {
-						
-"resource_shortname": "nt_titus_conc_by_parsedclassics" 
-        
-, "collections_page_resource_desc": "compiled by ParsedClassics (2018)" 
-        
-, "library_app_selectbox_title": "Concordance compiled by ParsedClassics (2018)"
-						
-, "library_app_panel_title": "Epistle to Colossians concordance compiled by ParsedClassics (2018)"
-        
-, "library_app_panel_text_from": ""
-
-, "library_app_panel_note": "Based on J. K. Tauber's parsing."
-        
-, "scanned_or_typed": "typed"
-        
-, "scanned_source_shortname": "" // if not empty, must be different from resource_shortname
-        
-, "contents_shortname": ""
-
-}
-						
-]
-</pre>
-
-<p>After you add these lines into collection catalogue‘s file, you should see concordances‘ titles in Resources selectbox and in Resources pane and info about concordances should be displayed in the table in <a href="../site/collections.html" target="_blank">Collections page</a>.</p>
-
-<p>JSON object‘s key "resource_shortname" should have as its value collection shortname at the beginning, then  the string "_conc_by_" and author’s surname.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value the string "ed. by" or "compiled by" plus author‘s surname and the year in brackets.</p> 
-
-<p>The key "library_app_selectbox_title" should have as its value the string "Concordance ed. by" or "Concordance compiled by"  plus author‘s surname and the year in brackets.</p>
-
-<p>The key "library_app_panel_title" should have as its value the string which contains short title, author‘s surname and the year in brackets.</p>
-
-<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book.</p>
-
-<p>The key "library_app_panel_note" can have as its value some string containing additional information about resource or empty string.</p>
-
-<p>The key "scanned_or_typed" should have as its value the string "scanned" if the resource is scanned or the value "typed" if the resource is transcribed.</p>
-
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "_by_" and surname of the editor. The value for this key must be different from the value for the key "resource_shortname".</p>
-
-<p>The key "contents_shortname" should have as its value the string "words_" at the beginning, then the value of the key "scanned_source_shortname" and the string "_contents" at the end in the case the resource is scanned. In the case the resource is transcribed, the key "contents_shortname" should have as its value empty string.</p>
-
-<p>In case we want certain concordance resource to be enabled by default, its shortname should be added to "enabled_resources" array:</p>
-
-<pre id="cconcordance_enabled" class="prettyprint code_showarea">
-, "enabled_resources": [
-
-  "nt_titus_text_ed_holmes"
-  , "concordance_by_moulton_geden"	
-
-]
-</pre>
-
-<h4 class="pc-anchor" id="h-lexicon">Lexicon</h4>
-
-<p>There can be many lexicons inside collection. Resource belonging to type "Lexicon" can be either scanned or transcribed.</p>
-
-<p>As examples let‘s list scanned and transcribed lexicon resources for <em>Epistle to Titus</em> collection:</p>
-
-<pre id="listing_lexicon" class="prettyprint code_showarea">
-, "lexicons": [
-  
-{
-						
-"resource_shortname": "greek_lexicon_of_nt_by_robinson" 
-        
-, "collections_page_resource_desc": "Greek-English lexicon of the NT by E. Robinson (1850)" 
-        
-, "library_app_selectbox_title": "Greek-English lexicon of the NT by E. Robinson (1850)"
-						
-, "library_app_panel_title": "A Greek and English lexicon of the New Testament by E. Robinson (1850)"
-        
-, "library_app_panel_text_from": "A Greek and English lexicon of the New Testament. By Edward Robinson. Second edition. 1850. New York: Harper and Brothers."
-
-, "library_app_panel_note": ""
-        
-, "scanned_or_typed": "scanned"
-        
-, "scanned_source_shortname": "greek_and_english_lexicon_of_nt_by_robinson" // if not empty, must be different from resource_shortname
-        
-, "contents_shortname": "words_greek_and_english_lexicon_of_nt_by_robinson_contents"
-						
-}
-			
-
-
-
-, {
-						
-"resource_shortname": "greek_lexicon_to_nt_by_green" 
-        
-, "collections_page_resource_desc": "Greek-English lexicon of the NT by Th. S. Green (1896)" 
-        
-, "library_app_selectbox_title": "Greek-English lexicon of the NT by Th. S. Green (1896)"
-						
-, "library_app_panel_title": "A Greek-English lexicon to the New Testament by Th. S. Green (1896)"
-        
-, "library_app_panel_text_from": "A Greek-English lexicon to the New Testament. Revised and enlarged by Thomas Sheldon Green. 1896. Boston: H. L. Hastings."
-
-, "library_app_panel_note": "Transcribed by S. A. Bridgeford."
-        
-, "scanned_or_typed": "typed"
-        
-, "scanned_source_shortname": "greek_english_lexicon_to_nt_by_green" // if not empty, must be different from resource_shortname
-        
-, "contents_shortname": ""
-						
-}
-   
-]
-</pre>
-
-<p>After you add these lines into collection catalogue‘s file, you should see lexicons‘ titles in Resources selectbox and in Resources pane and info about lexicons should be displayed in the table in <a href="../site/collections.html" target="_blank">Collections page</a>.</p> 
-
-<p>JSON object‘s key "resource_shortname" should have as its value short title of the lexicon followed by string "_by_" and author’s surname. Only lowercase Latin letters, numbers and underscores are allowed.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value short title of the lexicon followed by author’s surname and the year in brackets.</p>
-
-<p>The key "library_app_selectbox_title" should have as its value short title of the lexicon followed by author’s surname and the year in brackets.</p>
-
-<p>The key "library_app_panel_title" should have as its value short title of the lexicon followed by author’s surname and the year in brackets.</p>
-
-<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book.</p>
-
-<p>The key "library_app_panel_note" can have as its value some string containing additional information about resource or empty string.</p>
-
-<p>The key "scanned_or_typed" should have as its value the string "scanned" if the resource is scanned or the value "typed" if the resource is transcribed.</p>
-
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "_by_" and surname of the editor. The value for this key must be different from the value for the key "resource_shortname".</p>
-
-<p>The key "contents_shortname" should have as its value the string "words_" at the beginning, then the value of the key "scanned_source_shortname" and the string "_contents" at the end in the case the resource is scanned. In the case the resource is transcribed, the key "contents_shortname" should have as its value empty string.</p>
-
-<p>In case we want certain lexicon resource to be enabled by default, its shortname should be added to "enabled_resources" array:</p>
-
-<pre id="lexicon_enabled" class="prettyprint code_showarea">
-, "enabled_resources": [
-
-  "nt_titus_text_ed_holmes"
-  , "concordance_by_moulton_geden"
-  , "greek_lexicon_of_nt_by_robinson"	
-
-]
-</pre>
-
-<h4 class="pc-anchor" id="h-translation">Translation</h4>
-
-<p>There can be many translations inside collection. Resource belonging to type "Translation" can be either scanned or transcribed.</p>
-
-<p>As examples let‘s list scanned and transcribed translation resources for <em>Epistle to Titus</em> collection:</p>
-
-<pre id="listing_translation" class="prettyprint code_showarea">
-, "translations": [
-
-{
-
-"resource_shortname": "nt_titus_tr_LA_hieronymus" 
-      
-, "collections_page_resource_desc": "to Latin by Saint Jerome (382-405)" 
-      
-, "library_app_selectbox_title": "Translation to Latin by Saint Jerome (382-405)"
-				
-, "library_app_panel_title": "Latin translation by Saint Jerome (382-405)"
-      
-, "library_app_panel_text_from": "Novum Testamentum Latine. Vulgatae versione Clementinae textui breves capitulorum inscriptiones et locos parallelos uberiores addidit Fridericus Brandscheid. Editio altera. 1901. Friburgi Brisgoviae: Typis Herderianis."
-
-, "library_app_panel_note": ""
-      
-, "scanned_or_typed": "scanned"
-      
-, "scanned_source_shortname": "novum_testamentum_latine_ed_brandscheid" // if not empty, must be different from resource_shortname
-      
-, "contents_shortname": "lines_nt_titus_tr_LA_ hieronymus _contents"
-
-}
-    
-, {
-
-"resource_shortname": "nt_titus_tr_EN_young" 
-      
-, "collections_page_resource_desc": "to English by R. Young (1898)" 
-      
-, "library_app_selectbox_title": "Translation to English by  R. Young (1898)"
-				
-, "library_app_panel_title": "English translation by R. Young (1898)"
-      
-, "library_app_panel_text_from": "The Holy Bible, consisting of the Old and New Covenants, translated according to the letter and idiom of the original languages by Robert Young. Revised edition. 1898. Edinburgh: G. A. Young and Co."
-
-, "library_app_panel_note": ""
-      
-, "scanned_or_typed": "typed"
-      
-, "scanned_source_shortname": "holy_bible_tr_young" // if not empty, must be different from resource_shortname
-      
-, "contents_shortname": ""
-
-} 
-
-]
-</pre>
-
-<p>After you add these lines into collection catalogue‘s file, you should see translations‘ titles in Resources selectbox and in Resources pane and info about translations should be displayed in the table in <a href="../site/collections.html" target="_blank">Collections page</a>.</p>
-
-<p>JSON object‘s key "resource_shortname" should have as its value collection shortname at the beginning, then  the string "_tr_" followed by translation‘s language code in uppercase and author’s surname.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value the string "to" followed by language name, translator‘s surname and year in brackets.</p>
-
-<p>The key "library_app_selectbox_title" should have as its value the string "Translation to" followed by language name, translator‘s surname and year in brackets.</p>
-
-<p>The key "library_app_panel_title" should have as its value language name followed by string  "translation by", author’s surname and the year in brackets.</p>
-
-<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book.</p>
-
-<p>The key "library_app_panel_note" can have as its value some string containing additional information about resource or empty string.</p>
-
-<p>The key "scanned_or_typed" should have as its value the string "scanned" if the resource is scanned or the value "typed" if the resource is transcribed.</p>
-
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "_ed_" or "_tr_" and surname of the editor. The value for this key must be different from the value for the key "resource_shortname".</p>
-
-<p>The key "contents_shortname" should have as its value the string "lines_" at the beginning, then the value of the key "resource_shortname" and the string "_contents" at the end in the case the resource is scanned. In the case the resource is transcribed, the key "contents_shortname" should have as its value empty string.</p>
-
-<p>In case we want certain translation resource to be enabled by default, its shortname should be added to "enabled_resources" array:</p>
-
-<pre id="translation_enabled" class="prettyprint code_showarea">
-, "enabled_resources": [
-
-  "nt_titus_text_ed_holmes"
-  , "concordance_by_moulton_geden"
-  , "greek_lexicon_of_nt_by_robinson"
-  , "nt_titus_tr_EN_young"	
-
-]
-</pre>
-
-<h4 class="pc-anchor" id="h-commentary">Commentary</h4>
-
-<p>There can be many commentaries inside collection. Resource belonging to type "Commentary" can be either scanned or transcribed.</p>
-
-<p>As examples let‘s list scanned and transcribed commentary resources for <em>Epistle to Titus</em> collection:</p>
-
-<pre id="listing_commentary" class="prettyprint code_showarea">
-, "commentaries": [
-
-{
-
-"resource_shortname": "nt_titus_commentary_by_nicoll" 
-      
-, "collections_page_resource_desc": "ed. by W. R. Nicoll (1897)" 
-
-, "library_app_selectbox_title": "Commentary ed. by W. R. Nicoll (1897)"
-
-, "library_app_panel_title": "Commentary ed. by W. R. Nicoll (1897)"
-
-, "library_app_panel_text_from": "The Expositor's Greek Testament. Volume 4. Edited by W. R. Nicoll. 1897. New York: George H. Doran Company."
-
-, "library_app_panel_note": ""
-
-, "scanned_or_typed": "scanned"
-
-, "scanned_source_shortname": "expositors_greek_testament_ed_nicoll_vol_4" // if not empty, must be different from resource_shortname
-
-, "contents_shortname": "lines_nt_titus_commentary_by_nicoll_contents"
-
-}
-  
-
-, {
-
-"resource_shortname": "nt_titus_commentary_by_bengel" 
-      
-, "collections_page_resource_desc": "ed. by J. A. Bengel (1877)" 
-
-, "library_app_selectbox_title": "Commentary ed. by J. A. Bengel (1877)"
-
-, "library_app_panel_title": "Commentary ed. by J. A. Bengel (1877)"
-
-, "library_app_panel_text_from": "Gnomon of the New Testament. By J. A. Bengel. Volume 4. 1877. Edinburgh: T. & A. Clark."
-
-, "library_app_panel_note": ""
-
-, "scanned_or_typed": "typed"
-
-, "scanned_source_shortname": "gnomon_of_new_testament_ed_bengel_vol_4" // if not empty, must be different from resource_shortname
-
-, "contents_shortname": ""
-
-}
-
-]
-</pre>
-
-<p>After you add these lines into collection catalogue‘s file, you should see commentaries‘ titles in Resources selectbox and in Resources pane and info about commentaries should be displayed in the table in <a href="../site/collections.html" target="_blank">Collections page</a>.</p>
-
-<p>JSON object‘s key "resource_shortname" should have as its value collection shortname at the beginning, then  the string "_commentary_by_" followed by editor’s surname.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value the string "ed. by" followed by editor‘s surname and year in brackets.</p>
-
-<p>The key "library_app_selectbox_title" should have as its value the string "Commentary ed. by" followed by editor‘s surname and year in brackets.</p>
-
-<p>The key "library_app_panel_title" should have as its value string  "Commentary ed. by" followed by editor’s surname and the year in brackets.</p>
-
-<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book. The key "library_app_panel_note" can have as its value some string containing additional information about resource or empty string.</p>
-
-<p>The key "scanned_or_typed" should have as its value the string "scanned" if the resource is scanned or the value "typed" if the resource is transcribed.</p>
-
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "_ed_" and surname of the editor. The value for this key must be different from the value for the key "resource_shortname".</p>
-
-<p>The key "contents_shortname" should have as its value the string "lines_" at the beginning, then the value of the key "resource_shortname" and the string "_contents" at the end in the case the resource is scanned. In the case the resource is transcribed, the key "contents_shortname" should have as its value empty string.</p>
-
-<p>In case we want certain commentary resource to be enabled by default, its shortname should be added to "enabled_resources" array:</p>
-
-<pre id="commentary_enabled" class="prettyprint code_showarea">
-, "enabled_resources": [
-
-  "nt_titus_text_ed_holmes"
-  , "concordance_by_moulton_geden"
-  , "greek_lexicon_of_nt_by_robinson"
-  , "nt_titus_tr_EN_young"
-  , "nt_titus_commentary_by_nicoll"	
-
-]
-</pre>
-
-<h4 class="pc-anchor" id="h-grammar-references">Grammar references</h4>
-
-<p>There can be many resources of the type "grammar references" inside collection. Resource belonging to type "Grammar references" can only be transcribed.</p>
-
-<p>As example let‘s list grammar references resource for <em>Epistle to Titus</em> collection:</p>
-
-<pre id="listing_grammar_references" class="prettyprint code_showarea">
-, "grammar_refs": [
-
-{
-			"resource_shortname": "nt_titus_grammar_refs_by_parsedclassics" 
-
-			, "collections_page_resource_desc": "compiled by ParsedClassics (2019)" 
-
-			, "library_app_selectbox_title": "Grammar references by ParsedClassics (2019)"
-
-			, "library_app_panel_title": "Grammar references by ParsedClassics (2019)"
-
-			, "library_app_panel_text_from": ""
-
-			, "library_app_panel_note": ""
-
-			, "scanned_or_typed": "typed"
-
-			, "scanned_source_shortname": "" // if not empty, must be different from resource_shortname
-
-			, "contents_shortname": ""
-		}
-
-]
-</pre>
-
-<p>After you add these lines into collection catalogue‘s file, you should see grammar references' title in Resources selectbox and in Resources pane and info about grammar references resource should be displayed in the table in <a href="../site/collections.html" target="_blank">Collections page</a>.</p>
-
-<p>JSON object‘s key "resource_shortname" should have as its value collection shortname at the beginning, then  the string "_grammar_refs_by_" followed by author’s surname.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value the string "by" followed by author‘s surname and year in brackets.</p>
-
-<p>The key "library_app_selectbox_title" should have as its value the string "Grammar references by" followed by author‘s surname and year in brackets.</p>
-
-<p>The key "library_app_panel_title" should have as its value the string "Grammar references by" followed by author’s surname and the year in brackets.</p>
-
-<p>The key "library_app_panel_text_from" should  have as its value empty string.</p>
-
-<p>The key "library_app_panel_note" can have as its value some string containing additional information about resource or empty string.</p>
-
-<p>The key "scanned_or_typed" should have as its value the string "typed".</p>
-
-<p>The key "scanned_source_shortname" should have as its value empty string.</p>
-
-<p>The key "contents_shortname" should have as its value empty string.</p>
-
-<p>In case we want certain grammar reference resource to be enabled by default, its shortname should be added to "enabled_resources" array:</p>
-
-<pre id="grammar_refs_enabled" class="prettyprint code_showarea">
-, "enabled_resources": [
-
-  "nt_titus_text_ed_holmes"
-  , "concordance_by_moulton_geden"
-  , "greek_lexicon_of_nt_by_robinson"
-  , "nt_titus_tr_EN_young"
-  , "nt_titus_commentary_by_nicoll"
-  , "nt_titus_grammar_refs_by_parsedclassics"	
-
-]
-</pre>
-
-<h4 class="pc-anchor" id="h-diagram-set">Diagram set</h4>
-
-<p>There can be many diagram sets inside collection. Resource belonging to type "Diagram set" can only be transcribed.</p>
-
-<p>As example let‘s list diagram set resource for <em>Epistle to Titus</em> collection:</p>
-
-<pre id="listing_diagram_set" class="prettyprint code_showarea">
-, "diagrams": [
-
-{
-  		 
-"resource_shortname": "nt_titus_diagrams_by_parsedclassics" 
-    
-, "collections_page_resource_desc": "by ParsedClassics (2018)" 
-    
-, "library_app_selectbox_title": "Diagrams by ParsedClassics (2018)"
-    
-, "library_app_panel_title": "Modernized Reed-Kellogg syntax diagrams by ParsedClassics (2018)"
-    
-, "library_app_panel_text_from": "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing."
-    
-, "library_app_panel_note": ""
-    
-, "scanned_or_typed": "typed"
-    
-, "scanned_source_shortname": "new_testament_in_original_greek_ed_robinson_pierpont" // if not empty, must be different from resource_shortname
-    
-, "contents_shortname": ""
-} 
-
-]
-</pre>
-
-<p>After you add these lines into collection catalogue‘s file, you should see diagram set‘s title in Resources selectbox and in Resources pane and info about diagram set should be displayed in the table in <a href="../site/collections.html" target="_blank">Collections page</a>.</p>
-
-<p>JSON object‘s key "resource_shortname" should have as its value collection shortname at the beginning, then  the string "_diagrams_by_" followed by author’s surname.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value the string "by" followed by author‘s surname and year in brackets.</p>
-
-<p>The key "library_app_selectbox_title" should have as its value the string "Diagrams by" followed by author‘s surname and year in brackets.</p>
-
-<p>The key "library_app_panel_title" should have as its value diagrams‘ name followed by author’s surname and the year in brackets.</p>
-
-<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book from which the diagrammed text was taken.</p>
-
-<p>The key "library_app_panel_note" can have as its value some string containing additional information about resource or empty string.</p>
-
-<p>The key "scanned_or_typed" should have as its value the string "typed".</p>
-
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which have been uploaded the images of the pages of the book. Directory name includes title of the book, string "_ed_" and surname of the editor. The value for this key must be different from the value for the key "resource_shortname".</p>
-
-<p>The key "contents_shortname" should have as its value empty string.</p>
-
-<p>In case we want certain diagram set resource to be enabled by default, its shortname should be added to "enabled_resources" array:</p>
-
-<pre id="diagram_set_enabled" class="prettyprint code_showarea">
-, "enabled_resources": [
-
-  "nt_titus_text_ed_holmes"
-  , "concordance_by_moulton_geden"
-  , "greek_lexicon_of_nt_by_robinson"
-  , "nt_titus_tr_EN_young"
-  , "nt_titus_commentary_by_nicoll"
-  , "nt_titus_grammar_refs_by_parsedclassics"
-  , "nt_titus_diagrams_by_parsedclassics"	
-
-]
-</pre>
-
-<h4 class="pc-anchor" id="h-audio-recording">Audio recording</h4>
-
-<p>There can be many audio recordings inside collection. Resource belonging to type "Audio recording" can only be transcribed.</p>
-
-<p>As example let‘s list audio recording resource for <em>Epistle to Titus</em> collection:</p>
-
-<pre id="listing_audio_recording" class="prettyprint code_showarea">
-, "audio": [
-
-{
-      
-"resource_shortname": "nt_titus_audio_by_robinson" 
-      
-, "collections_page_resource_desc": "by M. Robinson (2016)" 
-      
-, "library_app_selectbox_title": "Audio recording by M. Robinson (2016)"
-      
-, "library_app_panel_title": "Audio recording by M. Robinson (2016)"
-      
-, "library_app_panel_text_from": "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing."
-      
-, "library_app_panel_note": ""
-      
-, "scanned_or_typed": "typed"
-      
-, "scanned_source_shortname": "new_testament_in_original_greek_ed_robinson_pierpont" // if not empty, must be different from resource_shortname
-      
-, "contents_shortname": "sounds_nt_titus_audio_by_robinson_contents"
-      
-}  
-
-]
-</pre>
-
-<p>After you add these lines into collection catalogue‘s file, you should see audio recording‘s title in Resources selectbox and in Resources pane and info about audio recording should be displayed in the table in <a href="../site/collections.html" target="_blank">Collections page</a>.</p>
-
-<p>JSON object‘s key "resource_shortname" should have as its value collection shortname at the beginning, then  the string "_audio_by_" followed by author’s surname.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value the string "by" followed by author‘s surname and year in brackets.</p>
-
-<p>The key "library_app_selectbox_title" should have as its value the string "Audio recording by" followed by author‘s surname and year in brackets.</p>
-
-<p>The key "library_app_panel_title" should have as its value the string "Audio recording by" followed by author‘s surname and year in brackets.</p>
-
-<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book from which the text read in audio recording was taken.</p>
-
-<p>The key "library_app_panel_note" can have as its value some string containing additional information about resource or empty string.</p>
-
-<p>The key "scanned_or_typed" should have as its value the string "typed".</p>
-
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which have been uploaded the images of the pages of the book. Directory name includes title of the book, string "_ed_" and surname of the editor. The value for this key must be different from the value for the key "resource_shortname".</p>
-
-<p>The key "contents_shortname" should have as its value the string "sounds_" at the beginning, then the value of the key "resource_shortname" and the string "_contents" at the end.</p>
-
-<p>In case we want certain audio recording resource to be enabled by default, its shortname should be added to "enabled_resources" array:</p>
-
-<pre id="audio_rec_enabled" class="prettyprint code_showarea">
-, "enabled_resources": [
-
-  "nt_titus_text_ed_holmes"
-  , "concordance_by_moulton_geden"
-  , "greek_lexicon_of_nt_by_robinson"
-  , "nt_titus_tr_EN_young"
-  , "nt_titus_commentary_by_nicoll"
-  , "nt_titus_grammar_refs_by_parsedclassics"
-  , "nt_titus_diagrams_by_parsedclassics"
-  , "nt_titus_audio_by_robinson" 	
-
-]
-</pre>
 
 <h2 class="pc-anchor" id="h-creating-resources">Creating resources</h2>
 
