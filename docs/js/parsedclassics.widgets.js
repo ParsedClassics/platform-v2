@@ -805,7 +805,13 @@ var ParsedClassicsInnerLink = {
 				, parent
 				, content_panel_inner
 				, modal_dialogue
-				, msg_el;
+				, msg_el
+        , connav_container
+        , connav_block_index
+        , connav_table_item_index
+        , connav_table_item_text
+        , west_pane_content_el
+        , hash_string;
 			
 				// get clicked inner link el
 				inner_link_el = $(event.target);
@@ -826,11 +832,26 @@ var ParsedClassicsInnerLink = {
 				}
 				content_panel_inner = parent;
 
+        // get west pane content container and connav container which contains numbered headings
+        west_pane_content_el = $('#pc-west-pane-content');
+        connav_container = west_pane_content_el.find('div.connav-table-content');
+
 				// get "data-anchor" attr, which contains "id" of the anchor el
 				anchor_attr = inner_link_el.attr(ParsedClassicsVars.anchorAttr);
 			
-				// get anchor el, meke sure it's unique
+				// get anchor el, make sure it's unique
 				anchor_el = $("#" + anchor_attr).first();
+
+        // find connav block index, connav table index item, connav table text item
+        if (connav_container.length === 1 && anchor_el.length === 1) {
+          connav_block_index = anchor_el.find('span.connav-block-index').text();
+          if (connav_block_index) {
+            connav_table_item_index = connav_container.find('span.connav-table-item-index:contains("' + connav_block_index + '")');
+            if (connav_table_item_index.length === 1) {
+              connav_table_item_text = connav_table_item_index.parent().find('span.connav-table-item-text');
+            }
+          }
+        }
 			
 				// anchor el not found? then nothing to do except to display error message
 				if (anchor_el.length != 1) {
@@ -846,8 +867,16 @@ var ParsedClassicsInnerLink = {
 				}
 
 				// scroll to top anchor el
-    content_panel_inner.scrollTo(anchor_el, ParsedClassicsVars.animationSpeed);	
-
+      content_panel_inner.scrollTo(anchor_el, ParsedClassicsVars.animationSpeed);	
+      // scroll west pane
+      if (west_pane_content_el.length === 1 && connav_table_item_text.length === 1) {
+        connav_container.find('span.' + ParsedClassicsVars.selectedLineClass).removeClass(ParsedClassicsVars.selectedLineClass);
+        connav_table_item_text.addClass(ParsedClassicsVars.selectedLineClass);
+        hash_string = '#/{"section":"' + anchor_attr + '"}';
+        window.location.href = hash_string;
+        west_pane_content_el.scrollTo(connav_table_item_text, ParsedClassicsVars.animationSpeed);
+      }
+ 
 		}
 	
 };
