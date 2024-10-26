@@ -2880,7 +2880,7 @@ var ParsedClassicsCollContentsGenerator = {
     }
     
     // add title page
-				coll_contents = '"v-title": ""\n\n' + coll_contents;
+				coll_contents = '"title": ""\n\n' + coll_contents;
     
     // add braces
 				coll_contents = "{\n\n" + coll_contents + "};"
