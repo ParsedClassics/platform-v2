@@ -230,7 +230,7 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
 
 <h3 class="pc-anchor" id="h-polytonic_keyboard">Greek polytonic keyboard</h3>
 
-<p>To type Greek characters Greek polytonic keyboard software should be used. It is recommended to use virtual <a href="../tools/keyboard_greek_polytonic.html">Greek polytonic keyboard</a>, because it implements encoding conventions required for resources of ParsedClassics collections.</p>
+<p>To type Greek characters Greek polytonic keyboard software should be used. It is recommended to use virtual <a href="../tools/keyboard_greek_polytonic.html" target="_blank">Greek polytonic keyboard</a>, because it implements encoding conventions required for resources of ParsedClassics collections.</p>
 
 <h3 class="pc-anchor" id="h-web-browser">Web browser</h3>
 
@@ -248,7 +248,7 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
 
 <h2 class="pc-anchor" id="h-defining-edition">Defining edition</h2>
 
-<p>To define a new edition senior editor should add JSON object into the file /data/_catalogues/_sets.js . The order of JSON objects in this file is important because <a href="../site/catalogue.html">Catalogue</a> page displays the list of editions in the same order.</p>
+<p>To define a new edition senior editor should add JSON object into the file /data/_catalogues/_sets.js . The order of JSON objects in this file is important because <a href="../site/catalogue.html" target="_blank">Catalogue</a> page displays the list of editions in the same order.</p>
 
 <p>For example, to define the edition "Ἡ Καινὴ Διαθήκη. Πράξεις, Ἐπιστολαί, Ἀποκάλυψις / The New Testament. Acts, Epistles, Revelation" such JSON object has been added:</p>
 
@@ -261,15 +261,15 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
   },
 </pre>
 
-<p>The value  of the key "title_orig" should be a string in original language. It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used in <a href="../site/catalogue.html">Catalogue</a> page.</p>
+<p>The value  of the key "title_orig" should be a string in original language. It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used in <a href="../site/catalogue.html" target="_blank">Catalogue</a> page.</p>
 
 <p>The value  of the key "title_orig_short" should be a string in original language. This value usually is shorter than the value of the key "title_orig". Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used inside Collections selectbox at <a href="../app.html">Library app</a> page.</p>
 
-<p>The value  of the key "title_eng" should be a string in English. It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used in <a href="../site/catalogue.html">Catalogue</a> page.</p>
+<p>The value  of the key "title_eng" should be a string in English. It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used in <a href="../site/catalogue.html" target="_blank">Catalogue</a> page.</p>
 
 <p>The value of the key "collections" should be array of strings which are shortnames of collections. For now let's leave this array empty; we will add member to this array after defining certain collection.</p>
 
-<p>After editing /data/_catalogues/_sets.js file refresh <a href="../site/catalogue.html">Catalogue</a> page. A new value should appear in editions list.</p>
+<p>After editing /data/_catalogues/_sets.js file refresh <a href="../site/catalogue.html" target="_blank">Catalogue</a> page. A new value should appear in editions list.</p>
 
 <h2 class="pc-anchor" id="h-defining-collection-and-its-resources">Defining collection and its resources</h2>
 
@@ -313,7 +313,7 @@ const ParsedClassicsCollDefs = {
 
 <p>The key "collections_page_title_orig" should have as its value the title of the collection in original language.</p>
 
-<p>Both English and original title will be displayed in <a href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>. Original title will also be displayed as title of parsed text resource.</p>
+<p>Both English and original title will be displayed in <a href='../site/collections.html#{"edition":"nt_apostolics"}' target="_blank">Collections page</a>. Original title will also be displayed as title of parsed text resource.</p>
 
 <p>The key "author_orig" should have as its value the name of the author or the name of the scripture in original language, i. e. in Greek or Latin. It will be displayed as author name of parsed text resource.</p>
 
@@ -439,7 +439,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
   }
 </pre>
 
-<p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
+<p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}' target="_blank">Collections page</a>.</p>
 
 <p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s surname and the year in brackets.</p>
 
@@ -529,7 +529,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 }
 </pre>
 
-<p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
+<p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}' target="_blank">Collections page</a>.</p>
 
 <p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s surname and the year in brackets.</p>
 
@@ -1368,7 +1368,7 @@ ParsedClassicsScannedBooks = {
 
 <p>After filling the fields the form should have the following look:</p>
 
-<p><img src="img2/parsed_text_typed_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
+<p><img src="img2/parsed_text_typed_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
 <p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
 
@@ -1482,9 +1482,94 @@ var nt_titus_parsed_text_contents = {
 
 <h4 class="pc-anchor" id="h-parsed-text-typed-creating-data-file2">Creating data file</h4>
 
+<p>Data file‘s name should be the same as the key using which parsed text resource was listed as part of collection. The key is "nt_titus_parsed_text", so data file‘s name should be "nt_titus_parsed_text.js". Data file should be placed in directory having the same name: /data/parsed_text/nt_titus_parsed_text/ .</p>
 
+<h5 class="pc-anchor" id="h-parsed-text-typed-tags-and-required-attributes">Tags and required attributes</h5>
 
+<p>Data file uses certain formatting conventions.</p>
 
+<p>HTML "span" tag having class attribute "line" should wrap each line of the text.</p>
+
+<p>"span" tag having class attribute "line-number" should wrap verse number in each line. The same "span" element should also have attribute "data-line-number" whose value should be line number.</p>
+
+<p>"span" tag having class attribute "word" should wrap each word. The same "span" element should also have the attributes "data-form", "data-part-of-speech", "data-parsing", "data-lemma". These four attributes contain morphological data of the word.</p>
+
+<p>"span" tag having class attribute "para" should mark start of each new paragraph.</p>
+
+<p>HTML code formatted using these "span" tags should be converted to string and made the value of javascript global variable whose name is the same as the key using which parsed text resource was listed as part of collection.</p>
+
+<p>This way we get such data file:</p>
+
+<pre id="parsed_text_data_file" class="prettyprint code_showarea">
+nt_titus_parsed_text =
+
+`&lt;span class="line">&lt;span data-line-number="1:1" class="line-number">1:1&lt;/span>
+&lt;span class="word" data-form="Παῦλος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Παῦλος">Παῦλος&lt;/span>,
+&lt;span class="word" data-form="δοῦλος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="δοῦλος">δοῦλος&lt;/span>
+&lt;span class="word" data-form="θεοῦ" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="θεός">θεοῦ&lt;/span>,
+&lt;span class="word" data-form="ἀπόστολος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="ἀπόστολος">ἀπόστολος&lt;/span>
+&lt;span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ&lt;/span>
+&lt;span class="word" data-form="Ἰησοῦ" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="Ἰησοῦς">Ἰησοῦ&lt;/span>
+&lt;span class="word" data-form="χριστοῦ" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="χριστός">χριστοῦ&lt;/span>,
+&lt;span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατὰ&lt;/span>
+&lt;span class="word" data-form="πίστιν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="πίστις">πίστιν&lt;/span>
+&lt;span class="word" data-form="ἐκλεκτῶν" data-part-of-speech="adjective" data-parsing="genitive plural masculine" data-lemma="ἐκλεκτός">ἐκλεκτῶν&lt;/span>
+&lt;span class="word" data-form="θεοῦ" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="θεός">θεοῦ&lt;/span>
+&lt;span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ&lt;/span>
+&lt;span class="word" data-form="ἐπίγνωσιν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="ἐπίγνωσις">ἐπίγνωσιν&lt;/span>
+&lt;span class="word" data-form="ἀληθείας" data-part-of-speech="noun" data-parsing="genitive singular feminine" data-lemma="ἀλήθεια">ἀληθείας&lt;/span>
+&lt;span class="word" data-form="τῆς" data-part-of-speech="article" data-parsing="genitive singular feminine" data-lemma="ὁ">τῆς&lt;/span>
+&lt;span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατ’&lt;/span>
+&lt;span class="word" data-form="εὐσέβειαν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="εὐσέβεια">εὐσέβειαν&lt;/span>, &lt;/span>
+
+&lt;span class="line">&lt;span data-line-number="1:2" class="line-number">1:2&lt;/span>
+&lt;span class="word" data-form="ἐπί" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐπί">ἐπ’&lt;/span>
+&lt;span class="word" data-form="ἐλπίδι" data-part-of-speech="noun" data-parsing="dative singular feminine" data-lemma="ἐλπίς">ἐλπίδι&lt;/span>
+&lt;span class="word" data-form="ζωῆς" data-part-of-speech="noun" data-parsing="genitive singular feminine" data-lemma="ζωή">ζωῆς&lt;/span>
+&lt;span class="word" data-form="αἰωνίου" data-part-of-speech="adjective" data-parsing="genitive singular feminine" data-lemma="αἰώνιος">αἰωνίου&lt;/span>,
+&lt;span class="word" data-form="ἥν" data-part-of-speech="relative pronoun" data-parsing="accusative singular feminine" data-lemma="ὅς">ἣν&lt;/span>
+&lt;span class="word" data-form="ἐπηγγείλατο" data-part-of-speech="verb" data-parsing="aorist middle indicative 3rd person singular" data-lemma="ἐπαγγέλλομαι">ἐπηγγείλατο&lt;/span>
+&lt;span class="word" data-form="ὁ" data-part-of-speech="article" data-parsing="nominative singular masculine" data-lemma="ὁ">ὁ&lt;/span>
+&lt;span class="word" data-form="ἀψευδής" data-part-of-speech="adjective" data-parsing="nominative singular masculine" data-lemma="ἀψευδής">ἀψευδὴς&lt;/span>
+&lt;span class="word" data-form="θεός" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="θεός">θεὸς&lt;/span>
+&lt;span class="word" data-form="πρό" data-part-of-speech="preposition" data-parsing="" data-lemma="πρό">πρὸ&lt;/span>
+&lt;span class="word" data-form="χρόνων" data-part-of-speech="noun" data-parsing="genitive plural masculine" data-lemma="χρόνος">χρόνων&lt;/span>
+&lt;span class="word" data-form="αἰωνίων" data-part-of-speech="adjective" data-parsing="genitive plural masculine" data-lemma="αἰώνιος">αἰωνίων&lt;/span>, &lt;/span>
+
+&lt;span class="line">&lt;span data-line-number="1:3" class="line-number">1:3&lt;/span>
+&lt;span class="word" data-form="ἐφανέρωσε(ν)" data-part-of-speech="verb" data-parsing="aorist active indicative 3rd person singular" data-lemma="φανερόω">ἐφανέρωσεν&lt;/span>
+&lt;span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ&lt;/span>
+&lt;span class="word" data-form="καιροῖς" data-part-of-speech="noun" data-parsing="dative plural masculine" data-lemma="καιρός">καιροῖς&lt;/span>
+&lt;span class="word" data-form="ἰδίοις" data-part-of-speech="adjective" data-parsing="dative plural masculine" data-lemma="ἴδιος">ἰδίοις&lt;/span>
+&lt;span class="word" data-form="τόν" data-part-of-speech="article" data-parsing="accusative singular masculine" data-lemma="ὁ">τὸν&lt;/span>
+&lt;span class="word" data-form="λόγον" data-part-of-speech="noun" data-parsing="accusative singular masculine" data-lemma="λόγος">λόγον&lt;/span>
+&lt;span class="word" data-form="αὐτοῦ" data-part-of-speech="personal pronoun" data-parsing="genitive singular masculine" data-lemma="αὐτός">αὐτοῦ&lt;/span>
+&lt;span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν&lt;/span>
+&lt;span class="word" data-form="κηρύγματι" data-part-of-speech="noun" data-parsing="dative singular neuter" data-lemma="κήρυγμα">κηρύγματι&lt;/span>
+&lt;span class="word" data-form="ὅ" data-part-of-speech="relative pronoun" data-parsing="accusative singular neuter" data-lemma="ὅς">ὃ&lt;/span>
+&lt;span class="word" data-form="ἐπιστεύθην" data-part-of-speech="verb" data-parsing="aorist passive indicative 1st person singular" data-lemma="πιστεύω">ἐπιστεύθην&lt;/span>
+&lt;span class="word" data-form="ἐγώ" data-part-of-speech="personal pronoun" data-parsing="nominative singular" data-lemma="ἐγώ">ἐγὼ&lt;/span>
+&lt;span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατ’&lt;/span>
+&lt;span class="word" data-form="ἐπιταγήν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="ἐπιταγή">ἐπιταγὴν&lt;/span>
+&lt;span class="word" data-form="τοῦ" data-part-of-speech="article" data-parsing="genitive singular masculine" data-lemma="ὁ">τοῦ&lt;/span>
+&lt;span class="word" data-form="σωτῆρος" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="σωτήρ">σωτῆρος&lt;/span>
+&lt;span class="word" data-form="ἡμῶν" data-part-of-speech="personal pronoun" data-parsing="genitive plural" data-lemma="ἐγώ">ἡμῶν&lt;/span>
+&lt;span class="word" data-form="θεοῦ" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="θεός">θεοῦ&lt;/span>, &lt;/span>`;
+
+// part of code has been cut out
+</pre>
+
+<h5 class="pc-anchor" id="h-parsed-text-transcribed-optional-attributes">Optional attributes</h5>
+
+<p>It happens, that more than one word has the same lemma. E.g. in Greek-English lexicon to the New Testament by Th. S. Green two words have the lemma δέω, two words have the lemma μήν, and two words have the lemma ὅτι. If one clicks in parsed text pane on the word whose lemma has more than one article in the dictionary, then by default the first article will be crolled into view.</p>
+
+<p>In cases second, third etc. lexicon article should be loaded we need to use two additional attributes for the tag "span" having class "word". These are attributes "data-lexicon" and "data-lexicon-entry". The value of the attribute "data-lexicon" should be resource shortname of the relevant lexicon; the value of the attribute "data-lexicon-entry" should be order number of the entry which should be scrolled into view. E.g. the verse Matthew 9:38 contains the word δεήθητε, whose lemma is δέω. The needed article in Green's lexicon is second article for the lemma δέω. To load second article the code for the word δεήθητε in parsed text resource should be as this:</p>
+
+<pre id="adding_parsedtext_optional_attributes" class="prettyprint code_showarea">
+` &lt;span class=&quot;word&quot; data-form=&quot;&delta;&epsilon;ή&theta;&eta;&tau;&epsilon;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist passive imperative 2nd person plural&quot; data-lemma=&quot;&delta;έ&omega;&quot; data-lexicon=&quot;greek_lexicon_to_nt_by_green&quot; data-lexicon-entry=&quot;2&quot;&gt;&delta;&epsilon;ή&theta;&eta;&tau;&epsilon;&lt;/span&gt;`
+</pre>
+
+<h4 class="pc-anchor" id="h-parsed-text-transcribed-parsing-scheme">Parsing scheme</h4>
 
 
 
@@ -1765,17 +1850,17 @@ ParsedClassicsData._loadResource(&quot;nt_titus_parsed_text&quot;,
 );
 </pre>
 
-<h5 class="pc-anchor" id="h-parsed-text-transcribed-optional-attributes">Optional attributes</h5>
+<h5 class="pc-anchor" id="h-parsed-text-transcribed-optional-attributes2">Optional attributes</h5>
 
 <p>It happens, that more than one word has the same lemma. E.g. in Greek-English lexicon to the New Testament by Th. S. Green two words have the lemma δέω, two words have the lemma μήν, and two words have the lemma ὅτι. If one clicks in parsed text pane on the word whose lemma has more than one article in the dictionary, then by default the first article will be crolled into view.</p>
 
 <p>In cases second, third etc. lexicon article should be loaded we need to use two additional attributes for the tag "span" having class "word". These are attributes "data-lexicon" and "data-lexicon-entry". The value of the attribute "data-lexicon" should be resource shortname of the relevant lexicon; the value of the attribute "data-lexicon-entry" should be order number of the entry which should be scrolled into view. E.g. the verse Matthew 9:38 contains the word δεήθητε, whose lemma is δέω. The needed article in Green's lexicon is second article for the lemma δέω. To load second article the code for the word δεήθητε in parsed text resource should be as this:</p>
 
-<pre id="adding_parsedtext_optional_attributes" class="prettyprint code_showarea">
+<pre id="adding_parsedtext_optional_attributes2" class="prettyprint code_showarea">
 ' &lt;span class=&quot;word&quot; data-form=&quot;&delta;&epsilon;ή&theta;&eta;&tau;&epsilon;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist passive imperative 2nd person plural&quot; data-lemma=&quot;&delta;έ&omega;&quot; data-lexicon=&quot;greek_lexicon_to_nt_by_green&quot; data-lexicon-entry=&quot;2&quot;&gt;&delta;&epsilon;ή&theta;&eta;&tau;&epsilon;&lt;/span&gt;' +
 </pre>
 
-<h4 class="pc-anchor" id="h-parsed-text-transcribed-parsing-scheme">Parsing scheme</h4>
+<h4 class="pc-anchor" id="h-parsed-text-transcribed-parsing-scheme2">Parsing scheme</h4>
 
 <p>"span" tag having class attribute "word" should wrap each word in the data file. This "span" tag also has the attributes "data-form", "data-part-of-speech", "data-parsing", "data-lemma which contain morphological data of the word.</p>
 
