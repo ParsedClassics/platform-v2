@@ -1346,13 +1346,143 @@ ParsedClassicsScannedBooks = {
 
 <h2 class="pc-anchor" id="h-creating-resources">Creating resources</h2>
 
-<p>Library app supports following types of resources: Parsed text, Original text, Concordance, Lexicon, Translation, Commentary, Commentary references, Grammar references, Diagram set, Audio recording. Parsed text, Commentary references, Grammar references, Diagram set, Audio recording resources can only be transcribed; Critical edition, Concordance, Lexicon, Translation, Commentary resources can be transcribed or scanned. Creating transcribed and scanned resources will be described separately because the process is very different.</p>
+<p>Library app supports following types of resources: Parsed text, Original text, Concordance, Lexicon, Translation, Commentary, Commentary references, Grammar references, Diagram set, Audio recording. Parsed text, Commentary references, Grammar references, Diagram set, Audio recording resources can only be transcribed; Original text, Concordance, Lexicon, Translation, Commentary resources can be transcribed or scanned. Creating transcribed and scanned resources will be described separately because the process is very different.</p>
 
 <h3 class="pc-anchor" id="h-parsed-text-transcribed">Parsed text (transcribed)</h3>
 
 <p>Creating Parsed text resource involves creating two files: contents file and data file. The content file of the first listed Parsed text resource also serves as the content file for the whole collection.</p>
 
-<h4 class="pc-anchor" id="h-parsed-text-transcribed-creating-content file">Creating contents file</h4>
+<h4 class="pc-anchor" id="h-parsed-text-typed-creating-content_file">Creating contents file</h4>
+
+<p>The contents file is being created by filling <a href="../tools/parsed_text_contents_generator.html" target="_blank">Parsed text contents generator</a> form.</p>
+
+<p>Let‘s create contents file for parsed text resource <a class="inner-link" data-anchor="h-parsed-text">we listed</a> as part of <em>Epistle to Titus</em> collection.</p>
+
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we listed resource. We entered for this key the value "nt_titus_parsed_text_contents", so we now should enter it as the value of the field.</p>
+
+<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In Epistle to Titus there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15 .</p>
+
+<p>The value of the form‘s field "Line number prefix" should be pipe delimited line prefixes, one for each chapter. Line number prefix usually indicates the number of the chapter. The chapters of the New Testament are usually indicated by the number; colon usually used to separate chapter number from verse number. So, the value of this field should be 1:|2:|3: .</p>
+
+<p>The value of the form‘s field "Line index prefix" should be be pipe delimited line index prefixes, one for each chapter. Line index prefixes usually are the same line number prefixes. SSo, the value of this field eill be 1:|2:|3: .</p>
+
+<p>After filling the fields the form should have the following look:</p>
+
+<p><img src="img2/parsed_text_typed_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
+
+<p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
+
+<p>The code will be as this:</p>
+
+<pre id="generated_parsed_text_contents" class="prettyprint code_showarea">
+var nt_titus_parsed_text_contents = {
+
+  "title": ""
+
+  , "levelstart-1": ""
+
+  , "1:1": "1:1"
+
+  , "1:2": "1:2"
+
+  // part of code has been cut out
+
+  , "1:15": "1:15"
+
+  , "1:16": "1:16"
+
+  , "levelend-1": ""
+
+  , "levelstart-2": ""
+
+  , "2:1": "2:1"
+
+  , "2:2": "2:2"
+
+  // part of code has been cut out
+
+  , "2:14": "2:14"
+
+  , "2:15": "2:15"
+
+  , "levelend-2": ""
+
+  , "levelstart-3": ""
+
+  , "3:1": "3:1"
+
+  , "3:2": "3:2"
+
+  // part of code has been cut out
+
+  , "3:14": "3:14"
+
+  , "3:15": "3:15"
+
+  , "levelend-3": ""
+
+};
+</pre>
+
+<p>Now let‘s copy this code to code editor and let‘s enter values for the keys "title" , "levelstart-1" , "levelstart-2", "levelstart-3". All these values should be in original language, in this case Greek. Since the key "title" is the index of the title, let‘s enter "Τίτλος" as the value of this key. Since the keys "levelstart-1" , "levelstart-2", "levelstart-3" are the indexes of the chapters, let‘s enter "Κεφάλαιον A'", "Κεφάλαιον Β'", "Κεφάλαιον Γ'" as the values of these keys.</p>
+
+<p>After this the code will be as this:</p>
+
+<pre id="edited_parsed_text_contents" class="prettyprint code_showarea">
+var nt_titus_parsed_text_contents = {
+
+  "title": "Τίτλος"
+
+  , "levelstart-1": "Κεφάλαιον A'"
+
+  , "1:1": "1:1"
+
+  , "1:2": "1:2"
+
+  // part of code has been cut out
+
+  , "1:15": "1:15"
+
+  , "1:16": "1:16"
+
+  , "levelend-1": ""
+
+  , "levelstart-2": "Κεφάλαιον Β'"
+
+  , "2:1": "2:1"
+
+  , "2:2": "2:2"
+
+  // part of code has been cut out
+
+  , "2:14": "2:14"
+
+  , "2:15": "2:15"
+
+  , "levelend-2": ""
+
+  , "levelstart-3": "Κεφάλαιον Γ'"
+
+  , "3:1": "3:1"
+
+  , "3:2": "3:2"
+
+  // part of code has been cut out
+
+  , "3:14": "3:14"
+
+  , "3:15": "3:15"
+
+  , "levelend-3": ""
+
+};
+</pre>
+
+<p>This code should be saved in the file having the same name as the value of the key "contents_shortname" which was entered when we listed resource as part of collection. The value of the key "contents_shortname" is "nt_titus_parsed_text_contents", so the hilename should be "nt_titus_parsed_text_contents.js". The file should be placed in directory which has the same name as key used to list parsed text resource as part of collection. The key used to list parsed text resource as part of collection was "nt_titus_parsed_text", so the direcrory to place contents file should be /data/parsed_text/nt_titus_parsed_text/ .</p>
+
+<h4 class="pc-anchor" id="h-parsed-text-typed-creating-data-file2">Creating data file</h4>
+
+
 
 
 
@@ -1507,7 +1637,7 @@ var coll_nt_titus_contents = {
 
 <p>This code should be saved in the file having the same name as the value in "Contents shortname" field. The file should be placed in "contents" directory: /data/contents/coll_nt_titus_contents.js</p>
 
-<h4 class="pc-anchor" id="h-parsed-text-transcribed-creating-data-file">Creating data file</h4>
+<h4 class="pc-anchor" id="h-parsed-text-transcribed-creating-data-file2">Creating data file</h4>
 
 <p>Data file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. Parsed text <a class="inner-link" data-anchor="h-parsed-text">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "nt_titus_parsed_text", so this should be data file‘s name. Data file should be placed in "parsed_text" directory: /data/resources/parsed_texts/nt_titus_parsed_text.js</p>
 
