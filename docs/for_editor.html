@@ -285,7 +285,7 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
 
 <p>To list a new collection senior editor should add JSON object into the file /data/_catalogues/_collections.js as the value of certain key of ParsedClassicsCollDefs object.</p>
 
-<p>For example, to list the collection <em>Epistle to Titus</em> such JSON object has been added:</p>
+<p>For example, to list the collection <em>Epistle to Titus</em> such JSON object has been added as the value of the key "nt_titus":</p>
 
 <pre id="listing_collection" class="prettyprint code_showarea">
 const ParsedClassicsCollDefs = {
@@ -305,7 +305,9 @@ const ParsedClassicsCollDefs = {
 }
 </pre>
 
-<p>The key "nt_titus" is collection's shortname of the collection being added. Collection's shortname should be a string containing only lowercase latin letters, numbers and underscores (no spaces!). It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value.</p>
+<p>The key used to list collection let's call "collection shortname". This is important term and will be used often in this documentation.</p>
+
+<p>Collection shortname should be a string containing only lowercase latin letters, numbers and underscores (no spaces!). It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value.</p>
 
 <p>The value  of the key "collection_selectboxname" should be a string in original language. It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value. It will be displayed in Collections selectbox.</p>
 
@@ -357,7 +359,7 @@ const ParsedClassicsCollDefs = {
 
 <h3 class="pc-anchor" id="h-registering-collection">Registering collection</h3>
 
-<p>The collection we just listed among other collections should be registered as a part of edition. This should be done by entering collection's shortname as member of array which is value of the key "collections" in edition's definition:</p>
+<p>The collection we just listed among other collections should be registered as a part of edition. This should be done by entering collection shortname as member of array which is value of the key "collections" in edition's definition:</p>
 
 <pre id="registering_collection" class="prettyprint code_showarea">
   nt_apostolics: {
@@ -374,7 +376,7 @@ const ParsedClassicsCollDefs = {
 
 <h3 class="pc-anchor" id="h-crating-empty-coll-catalogue">Creating empty collection catalogue</h3>
 
-<p>Collection catalogue is a file inside /data/_catalogues directory. Collection catalogue‘s filename should be the same as the collection's shortname used for registering collection as part of edition. In the example above we registered collection using string "nt_titus". That means the name of the file of the collection catalogue should be "nt_titus.js".</p>
+<p>Collection catalogue is a file inside /data/_catalogues/ directory. Collection catalogue‘s filename should be the same as the collection shortname. In the example above collection shortname was "nt_titus". That means the name of the file of the collection catalogue should be "nt_titus.js".</p>
 
 <p>The encoding of the collection catalogue file must be UTF-8 (no BOM).</p>
 
@@ -414,7 +416,9 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <h4 class="pc-anchor" id="h-parsed-text">Parsed text</h4>
 
-<p>As an example let‘s list parsed text resource for Epistle to Titus collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_parsed_text" (contains inside collection shortname and resource type):</p>
+<p>As an example let‘s list parsed text resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. The key used to list resource let's call "resource shortname". This is important term and will be used often in this documentation.</p>
+   
+<p>In this case the key is "nt_titus_parsed_text" (contains inside collection shortname and resource type):</p>
 
 <pre id="listing_parsed_text_res" class="prettyprint code_showarea">
   ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -441,27 +445,27 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}' target="_blank">Collections page</a>.</p>
 
-<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s surname and the year in brackets.</p>
+<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s name and the year in brackets.</p>
 
-<p>The key "library_app_panel_title" should have as its value the title of the resource in original language. It will be used inside the pane in which resource will be displayed.</p>
+<p>The key "library_app_panel_title" should have as its value the title of the resource in original language.</p>
 
-<p>The key "library_app_panel_subtitle" should have as its value the subtitle of the resource in original language. Here this key has empty string value because resource has no subtitle. It will be used inside the pane in which resource will be displayed.</p>
+<p>The key "library_app_panel_subtitle" should have as its value the subtitle of the resource in original language. Here this key has empty string value because resource has no subtitle.</p>
 
-<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book from which the text for parsing was taken. It will be used inside the pane in which resource will be displayed.</p>
+<p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book from which the text for parsing was taken.</p>
 
-<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments. It will be used inside the pane in which resource will be displayed.</p>
+<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments.</p>
 
 <p>The key "scanned_or_typed" should have as its value the string "typed" (it means "transcribed").</p>
 
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book from which the text for parsing was taken. Directory name includes title of the book, string "_ed_" and surnames of the authors.</p>
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book from which the text for parsing was taken. Directory name includes title of the book, string "ed" and names of the authors.</p>
 
-<p>The key "library_app_selectbox_title" should have as its value short English title of the resource. It will be displayed inside Resources selectbox.</p>
+<p>The key "library_app_selectbox_title" should have as its value short English title of the resource.</p>
 
 <p>The key "resource_type" should have the value "parsed_text".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "parsed_text" at the end of collection name and next adding the string "_contents" or the string indicating resource and the string "_contents". So, if the collection shortname was "nt_titus", the the name of parsed text resource contents file will be "nt_titus_parsed_text_contents" or "nt_titus_parsed_text_byzantine_contents". About creating contents file and placing it in directory will be explaided below.</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "parsed_text" at the end of collection name and next adding the string "contents" or the string indicating resource and the string "contents". So, if the collection shortname was "nt_titus", the the name of parsed text resource contents file will be "nt_titus_parsed_text_contents" or "nt_titus_parsed_text_byzantine_contents". About creating contents file and placing it in directory will be explaided below. [LINK TO BE ADDED]</p>
 
-<p>Since classics text usually consists of several books and each book usually will have its own collection with its own parsed text resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys  will be repeated for all resources of the type "Parsed text" based on Byzantyne textform, let's name the key "nt_parsed_text_byzantine":</p>
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own parsed text resource, the values of the many keys will be repeated listing those resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of many keys  will be repeated for all resources of the type "Parsed text" based on Byzantyne textform, let's name the key "nt_parsed_text_byzantine":</p>
 
 <pre id="parsed_text_proto" class="prettyprint code_showarea">
 const ParsedClassicsResProtos = {
@@ -482,7 +486,7 @@ const ParsedClassicsResProtos = {
 }
 </pre>
 
-<p>Now we can destructure the object ParsedClassicsCollProtos.nt_book anywhere we need the same values of its keys:</p>
+<p>Now we can destructure the object ParsedClassicsCollProtos.nt_parsed_text_byzantine anywhere we need the same values of its keys:</p>
 
 <pre id="listing_parsed_text_res2" class="prettyprint code_showarea">
   ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -504,7 +508,7 @@ const ParsedClassicsResProtos = {
 
 <p>There can be several original text resources inside collection. In principle, resources belonging to type "Original text" can be either scanned or transcribed, but they surely will be all scanned because it is very difficult to reproduce complex formatting of the scholarly editions using very limitted means available in HTML.</p>
 
-<p>As an example let‘s list original text resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_text_ed_antoniadis" (contains inside collection shortname and editor's surname'):</p>
+<p>As an example let‘s list original text resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key (resource shortnamw) is "nt_titus_text_ed_antoniadis" (contains inside collection shortname, resource type and editor's name):</p>
 
 <pre id="listing_original_text_res" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -531,7 +535,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}' target="_blank">Collections page</a>.</p>
 
-<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s surname and the year in brackets.</p>
+<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus editor‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value short title of the resource in English.</p>
 
@@ -543,15 +547,15 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "scanned_or_typed" should have as its value the string "scanned".</p>
 
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "_ed_" and surnames of the authors.</p>
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "ed" and name of the author.</p>
 
 <p>The key "library_app_selectbox_title" should have as its value short English title of the resource.</p>
 
 <p>The key "resource_type" should have the value "original_text".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "_ed" at the end of collection name, then adding name of editor and next adding the string "_contents". So, if the collection shortname was "nt_titus", and the editor was Antoniadis, then the name of original text resource contents file will be "nt_titus_ed_antoniadis_contents". About creating contents file and placing it in directory will be explaided below.</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "ed" at the end of collection name, then adding name of editor and next adding the string "contents". So, if the collection shortname was "nt_titus", and the editor was Antoniadis, then the name of original text resource contents file will be "nt_titus_ed_antoniadis_contents". About creating contents file and placing it in directory will be explained below. [LINK TO BE ADDED]</p>
 
-<p>Since classics text usually consists of several books and each book usually will have its own collection with its own original text resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys  will be repeated for all resources of the type "Original text" based on edition by Antoniadis, let's name the key "nt_text_ed_antoniadis":</p>
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own original text resource, the values of many keys will be repeated listing those resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of many keys  will be repeated for all resources of the type "Original text" based on edition by Antoniadis, let's name the key "nt_text_ed_antoniadis":</p>
 
 <pre id="original_text_proto" class="prettyprint code_showarea">
 const ParsedClassicsResProtos = {
@@ -594,7 +598,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>There can be many concordances inside a collection. Resource belonging to the type "Concordance" can be either scanned or transcribed.</p>
 
-<p>As examples let‘s list scanned and transcribed concordance resources for <em>Epistle to Titus</em></Epistle> collection. To do it we need to add JSON objects as the values of certain keys of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the keys are "concordance_by_moulton_geden" and "nt_conc_by_parsedclassics" (contains inside resource type and editor's surname'):</p>
+<p>As examples let‘s list scanned and transcribed concordance resources for <em>Epistle to Titus</em></Epistle> collection. To do it we need to add JSON objects as the values of certain keys of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the keys (resource shortnames) are "concordance_by_moulton_geden" and "nt_conc_by_parsedclassics" (contains inside resource type and editor's name):</p>
 
 <pre id="listing_concordance_res" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -633,7 +637,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>After you add these lines, you should see these resources listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
 
-<p>For scanned concordance resource the key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s surname and the year in brackets. Tor transcribed concordance resource the key "collections_page_resource_desc" should have as its value a string "compiled by" plus compilator‘s surname and the year in brackets.</p>
+<p>For scanned concordance resource the key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s name and the year in brackets. For transcribed concordance resource the key "collections_page_resource_desc" should have as its value a string "compiled by" plus compilator‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value short title of the resource in English.</p>
 
@@ -641,17 +645,17 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "library_app_panel_text_from" should have as its value bibliographic description of the book.</p>
 
-<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments. For transcribed concordance resource the value should be a string "Compiled by" plus compilator‘s surname and the year in brackets.</p>
+<p>The key "library_app_panel_note" should have as its value some text. Most probably it will be some acknowledgments. For transcribed concordance resource the value should be a string "Compiled by" plus compilator‘s name and the year in brackets.</p>
 
 <p>The key "scanned_or_typed" should have as its value the string "scanned" for scanned resource and "typed" for transcribed resource.</p>
 
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "_by_" and surnames of the authors. For transcribed concordance resource the value of this key should be an empty string.</p>
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "by" and names of the authors. For transcribed concordance resource the value of this key should be an empty string.</p>
 
 <p>The key "library_app_selectbox_title" should have as its value short English title of the resource.</p>
 
 <p>The key "resource_type" should have the value "concordance".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "_by" at the end of short title, then adding name of author or compiler and next adding the string "_contents". About creating contents file and placing it in directory will be explained below.</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "by" at the end of short title, then adding name of author or compiler and next adding the string "contents". About creating contents file and placing it in directory will be explained below. [LINK TO BE ADDED]</p>
 
 <p>Classics text usually consists of several books and each book usually will have its own collection. If we have certain concordance resource, it will be listed in all of these collections. That means there is no need to use ParsedClassicsResProtos object in listing concordance resources.</p>
 
@@ -659,7 +663,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>There can be many lexicons inside a collection. Resource belonging to the type "Lexicon" can be either scanned or transcribed.</p>
 
-<p>As examples let‘s list scanned and transcribed lexicon resources for <em>Epistle to Titus</em> collection. To do it we need to add JSON objects as the values of certain keys of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the keys are "greek_lexicon_of_nt_by_robinson" and "greek_lexicon_to_nt_by_green" (contains inside short title and author's surname'):</p>
+<p>As examples let‘s list scanned and transcribed lexicon resources for <em>Epistle to Titus</em> collection. To do it we need to add JSON objects as the values of certain keys of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the keys (resource shortnames) are "greek_lexicon_of_nt_by_robinson" and "greek_lexicon_to_nt_by_green" (contains inside short title and author's name):</p>
 
 <pre id="listing_lexicon_res" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -698,9 +702,9 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>After you add these lines, you should see these resources listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
 
-<p>The key "collections_page_resource_desc" should have as its value short title plus the string "by" plus author‘s surname and the year in brackets.</p>
+<p>The key "collections_page_resource_desc" should have as its value short title plus the string "by" plus author‘s name and the year in brackets.</p>
 
-<p>The key "library_app_panel_title" should have as its value short title plus the string "by" plus author‘s surname and the year in brackets.</p>
+<p>The key "library_app_panel_title" should have as its value short title plus the string "by" plus author‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resources has no subtitle.</p>
 
@@ -710,13 +714,13 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "scanned_or_typed" should have as its value the string "scanned" for scanned resource and "typed" for transcribed resource.</p>
 
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes title of the book, string "_by_" and surname of the author.</p>
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which have been uploaded the images of the pages of the book. Directory name includes title of the book, string "by" and name of the author.</p>
 
-<p>The key "library_app_selectbox_title" should have as its value short English title of the resource plus the string "by" plus author‘s surname and the year in brackets.</p>
+<p>The key "library_app_selectbox_title" should have as its value short English title of the resource plus the string "by" plus author‘s name and the year in brackets.</p>
 
 <p>The key "resource_type" should have the value "lexicon".</p>
 
-<p>The key "contents_shortname" for scanned lexicon resource should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "_by" at the end of short title, then adding name of author and next adding the string "_contents". About creating contents file and placing it in directory will be explained below. The key "contents_shortname" for transcriobed lexicon resource should have as its value an empty string.</p>
+<p>The key "contents_shortname" for scanned lexicon resource should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "by" at the end of short title, then adding name of author and next adding the string "contents". About creating contents file and placing it in directory will be explained below. [LINK TO BE ADDED] The key "contents_shortname" for transcribed lexicon resource should have as its value an empty string.</p>
 
 <p>Classics text usually consists of several books and each book usually will have its own collection. If we have certain lexicon resource, it will be listed in all of these collections. That means there is no need to use ParsedClassicsResProtos object in listing lexicon resources.</p>
 
@@ -724,7 +728,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>There can be several translation resources inside collection. In principle, resources belonging to type "Translation" can be either scanned or transcribed, but they most surely will be all scanned because there is little sense in transcribing translation of classics text.</p>
 
-<p>As an example let‘s list translation resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_tr_EN_young" (contains inside collection shortname, string "tr", code of the language and and translator's surname):</p>
+<p>As an example let‘s list translation resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_tr_EN_young" (contains inside collection shortname, string "tr", code of the language and and translator's name):</p>
 
 <pre id="listing_translation_res" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -751,9 +755,9 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
 
-<p>The key "collections_page_resource_desc" should have as its value a string "to" plus language plus "by" plus translator‘s surname and the year in brackets.</p>
+<p>The key "collections_page_resource_desc" should have as its value a string "to" plus language plus "by" plus translator‘s name and the year in brackets.</p>
 
-<p>The key "library_app_panel_title" should have as its value the language plus "translation by" plus translator‘s surname and the year in brackets.</p>
+<p>The key "library_app_panel_title" should have as its value the language plus "translation by" plus translator‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resource has no subtitle.</p>
 
@@ -763,15 +767,15 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "scanned_or_typed" should have as its value the string "scanned".</p>
 
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes short title of the book, string "_tr_" and surname of the translator.</p>
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes short title of the book, string "tr" and name of the translator.</p>
 
-<p>The key "library_app_selectbox_title" should have as its value string "Translation to" then language then "by" then translator's surname and year in brackets.</p>
+<p>The key "library_app_selectbox_title" should have as its value string "Translation to" then language then "by" then translator's name and year in brackets.</p>
 
 <p>The key "resource_type" should have the value "translation".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "_tr" at the end of collection name, then adding lamguage, surname of editor and last adding the string "_contents". So, if the collection shortname was "nt_titus", and the editor was Young who translated to English, then the name of translation resource contents file will be "nnt_titus_tr_EN_young_contents". Creating contents file and placing it in directory will be explaided below.</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "tr" at the end of collection name, then adding lamguage, name of translator and last adding the string "contents". So, if the collection shortname was "nt_titus", and the editor was Young who translated to English, then the name of translation resource contents file will be "nt_titus_tr_EN_young_contents". Creating contents file and placing it in directory will be explaided below. [LINK TO BE ADDED]</p>
 
-<p>Since classics text usually consists of several books and each book usually will have its own collection with its own translation resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those translation resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Translation" based on translation by Young, let's name the key "nt_tr_EN_young":</p>
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own translation resource, the values of the many keys will be repeated listing those translation resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of many keys will be repeated for all New Testament resources of the type "Translation" based on translation by Young, let's name the key "nt_tr_EN_young":</p>
 
 <pre id="translation_proto" class="prettyprint code_showarea">
 const ParsedClassicsResProtos = {
@@ -814,9 +818,9 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <h4 class="pc-anchor" id="h-commentary">Commentary</h4>
 
-<p>There can be several commentary resources inside collection. In principle, resources belonging to type "Commentary" can be either scanned or transcribed, but they most surely will be all scanned because there is little sense in transcribing comentary of classics text.</p>
+<p>There can be several commentary resources inside collection. In principle, resources belonging to type "Commentary" can be either scanned or transcribed, but they most surely will be all scanned because there is little sense in transcribing commentary of classics text.</p>
 
-<p>As an example let‘s list commentary resource for Epistle to Titus collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_commentary_by_nicoll" (contains inside collection shortname, type of resource, string "by" and author's surname):</p>
+<p>As an example let‘s list commentary resource for Epistle to Titus collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key (resource shortname) is "nt_titus_commentary_by_nicoll" (contains inside collection shortname, type of resource, string "by" and author's name):</p>
 
 <pre id="listing_commentary_res" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -841,9 +845,9 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
 
-<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus author‘s surname and the year in brackets.</p>
+<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus author‘s name and the year in brackets.</p>
 
-<p>The key "library_app_panel_title" should have as its value the language plus "Commentary ed. by" or "Commentary by" plus author‘s surname and the year in brackets.</p>
+<p>The key "library_app_panel_title" should have as its value the language plus "Commentary ed. by" or "Commentary by" plus author‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resource has no subtitle.</p>
 
@@ -853,15 +857,15 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "scanned_or_typed" should have as its value the string "scanned".</p>
 
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes short title of the book, string "ed" or "by" and surname of the author.</p>
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes short title of the book, string "ed" or "by" and name of the author.</p>
 
-<p>The key "library_app_selectbox_title" should have as its value string "Commentary ed. by" or "Commentary by" then author's surname and year in brackets.</p>
+<p>The key "library_app_selectbox_title" should have as its value string "Commentary ed. by" or "Commentary by" then author's name and year in brackets.</p>
 
 <p>The key "resource_type" should have the value "commentary".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by collection shortname plus resource type plus "by" plus author's name plus string "contents". Creating contents file and placing it in directory will be explaided below.</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by collection shortname plus resource type plus "by" plus author's name plus string "contents". Creating contents file and placing it in directory will be explaided below. [LINK TO BE ADDED]</p>
 
-<p>Since classics text usually consists of several books and each book usually will have its own collection with its own commentary references resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those commentary references resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Commentary" based on volume 4 of the commentary by Nicoll, let's name the key "nt_commentary_by_nicoll_vol_4":</p>
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own commentary resource, the values of many keys will be repeated listing those commentary resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of many keys will be repeated for all New Testament resources of the type "Commentary" based on volume 4 of the commentary by Nicoll, let's name the key "nt_commentary_by_nicoll_vol_4":</p>
 
 <pre id="commentary_proto" class="prettyprint code_showarea">
 const ParsedClassicsResProtos = {
@@ -902,11 +906,11 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <h4 class="pc-anchor" id="h-commentary-references">Commentary references</h4>
 
-<p>Resource of the type "Commentary references" contains list of page numbers – active links – which lead into pages of collections of scholia or collections of extant fragments of ancient commentaries. That's specific content and it is quite possible, that there is simply no such collections of scholia or collections of extant fragments published for certain classics texts or there is one or two. That means, that either there will not be possible to create resource of the type "Commentary references" or only one such resource will be created.</p>
+<p>Resource of the type "Commentary references" contains list of page numbers – active links – which lead into pages of collections of scholia or collections of extant fragments of ancient commentaries. That's specific content and it is quite possible, that there is simply no such collections of scholia or collections of extant fragments published for certain classics texts or there is only one or two. That means, that either there will not be possible to create resource of the type "Commentary references" or only one such resource will be created.</p>
 
 <p>Resource of the type "Commentary references" will be transcribed.</p>
 
-<p>As an example let‘s list commentary references resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_commentary_refs_by_parsedclassics" (contains inside collection shortname, type of resource, string "by" and author's name):</p>
+<p>As an example let‘s list commentary references resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key (resource shortname) is "nt_titus_commentary_refs_by_parsedclassics" (contains inside collection shortname, type of resource, string "by" and compilator's name):</p>
 
 <pre id="listing_commentary_refs_res" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -933,9 +937,9 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
 
-<p>The key "collections_page_resource_desc" should have as its value a string "compiled by" plus author‘s surname and the year in brackets.</p>
+<p>The key "collections_page_resource_desc" should have as its value a string "compiled by" plus author‘s name and the year in brackets.</p>
 
-<p>The key "library_app_panel_title" should have as its value the language plus "Commentary references".</p>
+<p>The key "library_app_panel_title" should have as its value "Commentary references".</p>
 
 <p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resource has no subtitle.</p>
 
@@ -947,13 +951,13 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "scanned_source_shortname" should have as its value empty string.</p>
 
-<p>The key "library_app_selectbox_title" should have as its value string "Commentary references by" then author's surname and year in brackets.</p>
+<p>The key "library_app_selectbox_title" should have as its value string "Commentary references by" then compilator's name and year in brackets.</p>
 
 <p>The key "resource_type" should have the value "commentary_refs".</p>
 
 <p>The key "contents_shortname" should have as its value empty string.</p>
 
-<p>Since classics text usually consists of several books and each book usually will have its own collection with its own commentary references resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname", "contents_shortname" will be repeated listing those commentary references resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Commentary" references", let's name the key "nt_commentary_refs_by_parsedclassics":</p>
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own commentary references resource, the values of many keys will be repeated listing those commentary references resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of many keys will be repeated for all New Testament resources of the type "Commentary references", let's name the key "nt_commentary_refs_by_parsedclassics":</p>
 
 <pre id="commentary_refs_proto" class="prettyprint code_showarea">
 const ParsedClassicsResProtos = {
@@ -1000,7 +1004,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>Resource of the type "Grammar references" will be transcribed.</p>
 
-<p>As an example let‘s list grammar references resource for Epistle to Titus collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_grammar_refs_by_parsedclassics" (contains inside collection shortname, type of resource, string "by" and author's name):</p>
+<p>As an example let‘s list grammar references resource for Epistle to Titus collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key (resource shortname) is "nt_titus_grammar_refs_by_parsedclassics" (contains inside collection shortname, type of resource, string "by" and compilator's name):</p>
 
 <pre id="listing_grammar_refs_res" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -1027,9 +1031,9 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
 
-<p>The key "collections_page_resource_desc" should have as its value a string "compiled by" plus author‘s surname and the year in brackets.</p>
+<p>The key "collections_page_resource_desc" should have as its value a string "compiled by" plus author‘s name and the year in brackets.</p>
 
-<p>The key "library_app_panel_title" should have as its value the language plus "Grammar references".</p>
+<p>The key "library_app_panel_title" should have as its value "Grammar references".</p>
 
 <p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resource has no subtitle.</p>
 
@@ -1041,13 +1045,13 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "scanned_source_shortname" should have as its value empty string.</p>
 
-<p>The key "library_app_selectbox_title" should have as its value string "Grammar references by" then author's surname and year in brackets.</p>
+<p>The key "library_app_selectbox_title" should have as its value string "Grammar references by" then compilator's name and year in brackets.</p>
 
 <p>The key "resource_type" should have the value "grammar_refs".</p>
 
 <p>The key "contents_shortname" should have as its value empty string.</p>
 
-<p>Since classics text usually consists of several books and each book usually will have its own collection with its own grammar references resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname", "contents_shortname" will be repeated listing those grammar references resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Grammar references", let's name the key "nt_grammar_refs_by_parsedclassics":</p>
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own grammar references resource, the values of many keys will be repeated listing those grammar references resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of many keys will be repeated for all New Testament resources of the type "Grammar references", let's name the key "nt_grammar_refs_by_parsedclassics":</p>
 
 <pre id="commentary_refs_proto" class="prettyprint code_showarea">
 const ParsedClassicsResProtos = {
@@ -1094,7 +1098,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>Resources of the type "Diagram set" are transcribed.</p>
 
-<p>As an example let‘s list diagram set resource for <em>Epistle to Ephesians</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_ephesians["resource_defs"] object. In this case the key is "nt_ephesians_diagrams_by_parsedclassics" (contains inside collection shortname, type of resource, string "by" and and author's surname):</p>
+<p>As an example let‘s list diagram set resource for <em>Epistle to Ephesians</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_ephesians["resource_defs"] object. In this case the key (resource shortname) is "nt_ephesians_diagrams_by_parsedclassics" (contains inside collection shortname, type of resource, string "by" and author's name):</p>
 
 <pre id="listing_diagram_set_res" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -1121,7 +1125,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
 
-<p>The key "collections_page_resource_desc" should have as its value a string "by" plus author‘s surname and the year in brackets.</p>
+<p>The key "collections_page_resource_desc" should have as its value a string "by" plus author‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value the language plus "Modernized Reed-Kellogg syntax diagrams by" plus author‘s name and the year in brackets.</p>
 
@@ -1133,15 +1137,15 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "scanned_or_typed" should have as its value the string "typed".</p>
 
-<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes short title of the book, string "ed" or "by" and surname of the author.</p>
+<p>The key "scanned_source_shortname" should have as its value the name of the directory (without path) in which has been uploaded the images of the pages of the book. Directory name includes short title of the book, string "ed" or "by" and name of the author.</p>
 
-<p>The key "library_app_selectbox_title" should have as its value string "Diagrams by", author's surname and year in brackets.</p>
+<p>The key "library_app_selectbox_title" should have as its value string "Diagrams by", author's name and year in brackets.</p>
 
 <p>The key "resource_type" should have the value "diagram_set".</p>
 
 <p>The key "contents_shortname" should have as its value empty string.</p>
 
-<p>Since classics text usually consists of several books and each book usually will have its own collection which may have its own diagram set resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those diagram set resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Diagram set", let's name the key "nt_diagrams_by_parsedclassics":</p>
+<p>Since classics text usually consists of several books and each book usually will have its own collection which may have its own diagram set resource, the values of many keys will be repeated listing those diagram set resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of many keys will be repeated for all New Testament resources of the type "Diagram set", let's name the key "nt_diagrams_by_parsedclassics":</p>
 
 <pre id="diagram_set_proto" class="prettyprint code_showarea">
 const ParsedClassicsResProtos = {
@@ -1188,7 +1192,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>Resources of the type "Audio recording" are transcribed.</p>
 
-<p>As an example let‘s list commentary resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key is "nt_titus_audio_by_karvounakis" (contains inside collection shortname, type of resource, string "by" and author's surname):</p>
+<p>As an example let‘s list commentary resource for <em>Epistle to Titus</em> collection. Todo it we need to add JSON object as the value of certain key of ParsedClassicsCollDefs.nt_titus["resource_defs"] object. In this case the key (resource shortname) is "nt_titus_audio_by_karvounakis" (contains inside collection shortname, type of resource, string "by" and author's name):</p>
 
 <pre id="listing_audio_recording_res" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -1215,9 +1219,9 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
 
-<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus author‘s name and the year in brackets.</p>
+<p>The key "collections_page_resource_desc" should have as its value a string "by" plus author‘s name and the year in brackets.</p>
 
-<p>The key "library_app_panel_title" should have as its value the language plus "Audio recording by" plus author‘s name and the year in brackets.</p>
+<p>The key "library_app_panel_title" should have as its value "Audio recording by" plus author‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_subtitle" should have as its value short subtitle of the resource. Here this key has empty string value because resource has no subtitle.</p>
 
@@ -1233,9 +1237,9 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "resource_type" should have the value "audio_recording".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by collection shortname plus resource type plus "by" plus author's name plus string "contents". Creating contents file and placing it in directory will be explaided below.</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by collection shortname plus resource type plus "by" plus author's name plus string "contents". Creating contents file and placing it in directory will be explained below. [LINK TO BE ADDED]</p>
 
-<p>Since classics text usually consists of several books and each book usually will have its own collection with its own audio recording resource, the values of the keys "collections_page_resource_desc", "library_app_selectbox_title", "library_app_panel_subtitle", "library_app_panel_text_from", "library_app_panel_note", "scanned_or_typed", "resource_type", "scanned_source_shortname" will be repeated listing those audio recording resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Audio recording", let's name the key "nt_audio_by_karvounakis":</p>
+<p>Since classics text usually consists of several books and each book usually will have its own collection with its own audio recording resource, the values of many keys will be repeated listing those audio recording resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Audio recording" by Kervounakis, let's name the key "nt_audio_by_karvounakis":</p>
 
 <pre id="_proto" class="prettyprint code_showarea">
 const ParsedClassicsResProtos = {
@@ -1282,7 +1286,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The book should also be listed.  The senior editor should add a key to object ParsedClassicsScannedBooks in the file /data/_catalogues/_scanned_books.js and a JSON object as the value of that key. The key to object ParsedClassicsScannedBooks should be no other than the value of "scanned_source_shortname" we entered while listing resource.</p>
 
-<p>Also there could be a need to list books which are referred to in resources of the type "Commentary references" or "Grammar references" (directories of the pages of such books are not entered as values of the key "scanned_source_shortname"). Listing of the book is done the same way.</p>
+<p>Also there could be a need to list books which are referred to in resources of the type "Commentary references" or "Grammar references" (directories of the pages of such books are not entered as values of the key "scanned_source_shortname"). Listing of these books is done the same way.</p>
 
 <p>For example, to list E. Robinson‘s book <em>Greek and English lexicon of the New Testament</em> the key "greek_and_english_lexicon_of_nt_by_robinson" and JSON object as its value has been added to ParsedClassicsScannedBooks object:</p>
 
@@ -1324,9 +1328,9 @@ ParsedClassicsScannedBooks = {
 }
 </pre>
 
-<p>As you see the key "greek_and_english_lexicon_of_nt_by_robinson" includes at the beginning lowercase book title whose words are separated by underscores, the string "_by_", and lowercase author name at the end.</p>
+<p>As you see the key "greek_and_english_lexicon_of_nt_by_robinson" includes at the beginning lowercase book title, the string "by", and lowercase author name at the end.</p>
 
-<p>This key is used as directory name: /_scans/greek_and_english_lexicon_of_nt_by_robinson . This directory contains images of the pages of the scanned book.</p>
+<p>This key is used as directory name: /_scans/greek_and_english_lexicon_of_nt_by_robinson/ . This directory contains images of the pages of the scanned book.</p>
 
 <p>The JSON object‘s key "bookTitle" should have as its value scanned book title in book's language.</p>
 
@@ -1358,13 +1362,13 @@ ParsedClassicsScannedBooks = {
 
 <p>Let‘s create contents file for parsed text resource <a class="inner-link" data-anchor="h-parsed-text">we listed</a> as part of <em>Epistle to Titus</em> collection.</p>
 
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we listed resource. We entered for this key the value "nt_titus_parsed_text_contents", so we now should enter it as the value of the field.</p>
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we listed resource [LINK TO BE ADDED]. We entered for this key the value "nt_titus_parsed_text_contents", so we now should enter it as the value of the field.</p>
 
 <p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In Epistle to Titus there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15 .</p>
 
-<p>The value of the form‘s field "Line number prefix" should be pipe delimited line prefixes, one for each chapter. Line number prefix usually indicates the number of the chapter. The chapters of the New Testament are usually indicated by the number; colon usually used to separate chapter number from verse number. So, the value of this field should be 1:|2:|3: .</p>
+<p>The value of the form‘s field "Line number prefix" should be pipe delimited line prefixes, one for each chapter. Line number prefix usually indicates the chapter. The chapters of the New Testament are usually indicated by the number; colon usually used to separate chapter number from verse number. So, the value of this field should be 1:|2:|3: .</p>
 
-<p>The value of the form‘s field "Line index prefix" should be be pipe delimited line index prefixes, one for each chapter. Line index prefixes usually are the same line number prefixes. SSo, the value of this field eill be 1:|2:|3: .</p>
+<p>The value of the form‘s field "Line index prefix" should be be pipe delimited line index prefixes, one for each chapter. Line index prefixes usually are the same line number prefixes. So, the value of this field eill be 1:|2:|3: .</p>
 
 <p>After filling the fields the form should have the following look:</p>
 
@@ -1478,11 +1482,11 @@ var nt_titus_parsed_text_contents = {
 };
 </pre>
 
-<p>This code should be saved in the file having the same name as the value of the key "contents_shortname" which was entered when we listed resource as part of collection. The value of the key "contents_shortname" is "nt_titus_parsed_text_contents", so the hilename should be "nt_titus_parsed_text_contents.js". The file should be placed in directory which has the same name as key used to list parsed text resource as part of collection. The key used to list parsed text resource as part of collection was "nt_titus_parsed_text", so the direcrory to place contents file should be /data/parsed_text/nt_titus_parsed_text/ .</p>
+<p>This code should be saved in the file having the same name as the value of the key "contents_shortname" which was entered when we listed [LINK TO BE ADDED] resource as part of collection. The value of the key "contents_shortname" is "nt_titus_parsed_text_contents", so the filename should be "nt_titus_parsed_text_contents.js". The file should be placed in directory which has the same name as resource shortname. The resource shortname is "nt_titus_parsed_text", so the direcrory to place contents file should be /data/parsed_text/nt_titus_parsed_text/ .</p>
 
 <h4 class="pc-anchor" id="h-parsed-text-typed-creating-data-file2">Creating data file</h4>
 
-<p>Data file‘s name should be the same as the key using which parsed text resource was listed as part of collection. The key is "nt_titus_parsed_text", so data file‘s name should be "nt_titus_parsed_text.js". Data file should be placed in directory having the same name: /data/parsed_text/nt_titus_parsed_text/ .</p>
+<p>Data file‘s name should be the same as resource shortname. The resource shortname is "nt_titus_parsed_text", so data file‘s name should be "nt_titus_parsed_text.js". Data file should be placed in directory having the same name: /data/parsed_text/nt_titus_parsed_text/ .</p>
 
 <h5 class="pc-anchor" id="h-parsed-text-typed-tags-and-required-attributes">Tags and required attributes</h5>
 
@@ -1496,7 +1500,7 @@ var nt_titus_parsed_text_contents = {
 
 <p>"span" tag having class attribute "para" should mark start of each new paragraph.</p>
 
-<p>HTML code formatted using these "span" tags should be converted to string and made the value of javascript global variable whose name is the same as the key using which parsed text resource was listed as part of collection.</p>
+<p>HTML code formatted using these "span" tags should be converted to string and made the value of javascript global variable whose name is the same as resource shortname.</p>
 
 <p>This way we get such data file:</p>
 
@@ -1561,7 +1565,7 @@ nt_titus_parsed_text =
 
 <h5 class="pc-anchor" id="h-parsed-text-transcribed-optional-attributes">Optional attributes</h5>
 
-<p>It happens, that more than one word has the same lemma. E.g. in Greek-English lexicon to the New Testament by Th. S. Green two words have the lemma δέω, two words have the lemma μήν, and two words have the lemma ὅτι. If one clicks in parsed text pane on the word whose lemma has more than one article in the dictionary, then by default the first article will be crolled into view.</p>
+<p>It happens, that more than one word has the same lemma. E.g. in <em>Greek-English lexicon to the New Testament</em> by Th. S. Green two words have the lemma δέω, two words have the lemma μήν, and two words have the lemma ὅτι. If one clicks in parsed text resource on the word whose lemma has more than one article in the dictionary, then by default the first article will be crolled into view.</p>
 
 <p>In cases second, third etc. lexicon article should be loaded we need to use two additional attributes for the tag "span" having class "word". These are attributes "data-lexicon" and "data-lexicon-entry". The value of the attribute "data-lexicon" should be resource shortname of the relevant lexicon; the value of the attribute "data-lexicon-entry" should be order number of the entry which should be scrolled into view. E.g. the verse Matthew 9:38 contains the word δεήθητε, whose lemma is δέω. The needed article in Green's lexicon is second article for the lemma δέω. To load second article the code for the word δεήθητε in parsed text resource should be as this:</p>
 
@@ -1570,297 +1574,6 @@ nt_titus_parsed_text =
 </pre>
 
 <h4 class="pc-anchor" id="h-parsed-text-transcribed-parsing-scheme">Parsing scheme</h4>
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
-
-
-
-<h2 class="pc-anchor" id="h-creating-resources">Creating resources</h2>
-
-<p>Library app supports following types of resources: Parsed text, Critical edition, Concordance, Lexicon, Translation, Commentary, Diagram set, Audio recording. Parsed text, Diagram set and Audio recording resources can only be transcribed; Critical edition, Concordance, Lexicon, Translation, Commentary resources can be transcribed or scanned. Creating transcribed and scanned resources will be described separately because the process is very different.</p>
-
-<h3 class="pc-anchor" id="h-parsed-text-transcribed">Parsed text (transcribed)</h3>
-
-<p>Creating Parsed text resource involves creating two files: contents file and data file. The content file of the Parsed text resource also serves as the content file for the whole collection.</p>
-
-<h4 class="pc-anchor" id="h-parsed-text-transcribed-creating-content file">Creating contents file</h4>
-
-<p>The contents file is being created by filling <a href="../tools/collection_contents_generator.html" target="_blank">Collection contents generator</a> form.</p>
-
-<p>Let‘s create contents file for <em>Epistle to Titus</em> collection.</p>
-
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" in collection‘s catalogue. While creating collection‘s catalogue for <em>Epistle to Titus</em> collection <a class="inner-link" data-anchor="h-creating-empty-collection-catalogue">we entered</a> for this key the value "coll_nt_titus_contents", so we now should enter it as the value of the field "Contents shortname".</p>
-
-<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In <em>Epistle to Titus</em> there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15.</p>
-
-<p>The value of the form‘s field "Line number prefix" should be pipe delimited line prefixes, one for each chapter. Line number prefix usually indicates the number of the chapter. The chapters of the New Testament are usually indicated by the number; colon usually used to separate chapter number from verse number. So, the value of this field should be 1:|2:|3: .</p>
-
-<p>The value of the form‘s field "Line class prefix" should be be pipe delimited class prefixes, one for each chapter. Class prefix should start with the letter "v" and follow with line number prefix in which special symbols are replaced with dashes. So, we replace colons in line number prefixes, add leading letter "v" and get the value for this field v1-|v2-|v3- .</p>
-
-<p>After filling the fields the form should have the following look:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_collection_contents.jpg"></p>
-
-<p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
-
-<p>The code will be as this:</p>
-
-<pre id="creating_collection_contents_file" class="prettyprint code_showarea">
-var coll_nt_titus_contents = {
-
-"v-title": ""
-
-, "levelstart-1": ""
-
-, "v1-1": "1:1"
-
-, "v1-2": "1:2"
-
-// part of code has been cut out
-
-, "v1-15": "1:15"
-
-, "v1-16": "1:16"
-
-, "levelend-1": ""
-
-, "levelstart-2": ""
-
-, "v2-1": "2:1"
-
-, "v2-2": "2:2"
-
-// part of code has been cut out
-
-, "v2-14": "2:14"
-
-, "v2-15": "2:15"
-
-, "levelend-2": ""
-
-, "levelstart-3": ""
-
-, "v3-1": "3:1"
-
-, "v3-2": "3:2"
-
-// part of code has been cut out
-
-, "v3-14": "3:14"
-
-, "v3-15": "3:15"
-
-, "levelend-3": ""
-
-};
-</pre>
-
-<p>Now let‘s copy this code to code editor and let‘s enter values for the keys "v-title" , "levelstart-1" , "levelstart-2", "levelstart-3". All these values should be in original language, in this case Greek. Since the key "v-title" is the class name of the title, let‘s enter "Τίτλος" as the value of this key. Since the keys "levelstart-1" , "levelstart-2", "levelstart-3" are the class names of the chapters, let‘s enter "Κεφάλαιον A&apos;", "Κεφάλαιον Β&apos;", "Κεφάλαιον Γ&apos;" as the values of these keys.</p>
-
-<p>After this the code will be as this:</p>
-
-<pre id="creating_collection_contents_file2" class="prettyprint code_showarea">
-var coll_nt_titus_contents = {
-
-"v-title": "Τίτλος"
-
-, "levelstart-1": "Κεφάλαιον A&apos;"
-
-, "v1-1": "1:1"
-
-, "v1-2": "1:2"
-
-// part of code has been cut out
-
-, "v1-15": "1:15"
-
-, "v1-16": "1:16"
-
-, "levelend-1": ""
-
-, "levelstart-2": "Κεφάλαιον Β&apos;"
-
-, "v2-1": "2:1"
-
-, "v2-2": "2:2"
-
-// part of code has been cut out
-
-, "v2-14": "2:14"
-
-, "v2-15": "2:15"
-
-, "levelend-2": ""
-
-, "levelstart-3": "Κεφάλαιον Γ&apos;"
-
-, "v3-1": "3:1"
-
-, "v3-2": "3:2"
-
-// part of code has been cut out
-
-, "v3-14": "3:14"
-
-, "v3-15": "3:15"
-
-, "levelend-3": ""
-
-};
-</pre>
-
-<p>This code should be saved in the file having the same name as the value in "Contents shortname" field. The file should be placed in "contents" directory: /data/contents/coll_nt_titus_contents.js</p>
-
-<h4 class="pc-anchor" id="h-parsed-text-transcribed-creating-data-file2">Creating data file</h4>
-
-<p>Data file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. Parsed text <a class="inner-link" data-anchor="h-parsed-text">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "nt_titus_parsed_text", so this should be data file‘s name. Data file should be placed in "parsed_text" directory: /data/resources/parsed_texts/nt_titus_parsed_text.js</p>
-
-<h5 class="pc-anchor" id="h-parsed-text-transcribed-tags-and-required-attributes">Tags and required attributes</h5>
-
-<p>Data file uses certain formatting conventions.</p>
-
-<p>HTML "span" tag having class attribute "verse" should wrap each line of the text.</p>
-
-<p>"span" tag having class attribute "verse-number" should wrap verse number in each line. The same "span" element should also have as its class attribute the line class as generated by contents generator.</p> 
-
-<p>"span" tag having class attribute "word" should wrap each word. The same "span" element should also have the attributes "data-form", "data-part-of-speech", "data-parsing", "data-lemma". These four attributes contain morphological data of the word.</p>
-
-<p>"span" tag having class attribute "para" should mark start of each new paragraph.</p>
-
-<p>HTML code formatted using these "span" tags should be converted to string and made the second argument of the function "ParsedClassicsData._loadResource". The first argument of this function should be the value of the key "resource_shortname" from collection catalogue. Parsed text <a class="inner-link" data-anchor="h-parsed-text">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "nt_titus_parsed_text", so this string will be the first argument.</p>
-
-<p>This way we get such data file:</p>
-
-<pre id="creating_parsedtext_datafile" class="prettyprint code_showarea">
-ParsedClassicsData._loadResource(&quot;nt_titus_parsed_text&quot;,
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-1&quot;&gt;1:1&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&Pi;&alpha;ῦ&lambda;&omicron;&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;nominative singular masculine&quot; data-lemma=&quot;&Pi;&alpha;ῦ&lambda;&omicron;&sigmaf;&quot;&gt;&Pi;&alpha;ῦ&lambda;&omicron;&sigmaf;,&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&delta;&omicron;ῦ&lambda;&omicron;&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;nominative singular masculine&quot; data-lemma=&quot;&delta;&omicron;ῦ&lambda;&omicron;&sigmaf;&quot;&gt;&delta;&omicron;ῦ&lambda;&omicron;&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&theta;&epsilon;&omicron;ῦ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;&theta;&epsilon;ό&sigmaf;&quot;&gt;&theta;&epsilon;&omicron;ῦ,&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἀ&pi;ό&sigma;&tau;&omicron;&lambda;&omicron;&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;nominative singular masculine&quot; data-lemma=&quot;ἀ&pi;ό&sigma;&tau;&omicron;&lambda;&omicron;&sigmaf;&quot;&gt;ἀ&pi;ό&sigma;&tau;&omicron;&lambda;&omicron;&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&delta;έ&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;&delta;έ&quot;&gt;&delta;ὲ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;Ἰ&eta;&sigma;&omicron;ῦ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;Ἰ&eta;&sigma;&omicron;ῦ&sigmaf;&quot;&gt;Ἰ&eta;&sigma;&omicron;ῦ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot;&gt;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ,&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;&tau;ά&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;&kappa;&alpha;&tau;ά&quot;&gt;&kappa;&alpha;&tau;ὰ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&pi;ί&sigma;&tau;&iota;&nu;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;&pi;ί&sigma;&tau;&iota;&sigmaf;&quot;&gt;&pi;ί&sigma;&tau;&iota;&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&kappa;&lambda;&epsilon;&kappa;&tau;ῶ&nu;&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;genitive plural masculine&quot; data-lemma=&quot;ἐ&kappa;&lambda;&epsilon;&kappa;&tau;ό&sigmaf;&quot;&gt;ἐ&kappa;&lambda;&epsilon;&kappa;&tau;ῶ&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&theta;&epsilon;&omicron;ῦ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;&theta;&epsilon;ό&sigmaf;&quot;&gt;&theta;&epsilon;&omicron;ῦ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;ί&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;&kappa;&alpha;ί&quot;&gt;&kappa;&alpha;ὶ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&pi;ί&gamma;&nu;&omega;&sigma;&iota;&nu;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;ἐ&pi;ί&gamma;&nu;&omega;&sigma;&iota;&sigmaf;&quot;&gt;ἐ&pi;ί&gamma;&nu;&omega;&sigma;&iota;&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἀ&lambda;&eta;&theta;&epsilon;ί&alpha;&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular feminine&quot; data-lemma=&quot;ἀ&lambda;ή&theta;&epsilon;&iota;&alpha;&quot;&gt;ἀ&lambda;&eta;&theta;&epsilon;ί&alpha;&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&tau;ῆ&sigmaf;&quot; data-part-of-speech=&quot;article&quot; data-parsing=&quot;genitive singular feminine&quot; data-lemma=&quot;ὁ&quot;&gt;&tau;ῆ&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;&tau;ά&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;&kappa;&alpha;&tau;ά&quot;&gt;&kappa;&alpha;&tau;&rsquo;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&epsilon;ὐ&sigma;έ&beta;&epsilon;&iota;&alpha;&nu;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;&epsilon;ὐ&sigma;έ&beta;&epsilon;&iota;&alpha;&quot;&gt;&epsilon;ὐ&sigma;έ&beta;&epsilon;&iota;&alpha;&nu;,&lt;/span&gt; &lt;/span&gt;' +
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-2&quot;&gt;1:2&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&pi;ί&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;ἐ&pi;ί&quot;&gt;ἐ&pi;&rsquo;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&lambda;&pi;ί&delta;&iota;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;dative singular feminine&quot; data-lemma=&quot;ἐ&lambda;&pi;ί&sigmaf;&quot;&gt;ἐ&lambda;&pi;ί&delta;&iota;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&zeta;&omega;ῆ&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular feminine&quot; data-lemma=&quot;&zeta;&omega;ή&quot;&gt;&zeta;&omega;ῆ&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&alpha;ἰ&omega;&nu;ί&omicron;&upsilon;&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;genitive singular feminine&quot; data-lemma=&quot;&alpha;ἰώ&nu;&iota;&omicron;&sigmaf;&quot;&gt;&alpha;ἰ&omega;&nu;ί&omicron;&upsilon;,&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἥ&nu;&quot; data-part-of-speech=&quot;relative pronoun&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;ὅ&sigmaf;&quot;&gt;ἣ&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&pi;&eta;&gamma;&gamma;&epsilon;ί&lambda;&alpha;&tau;&omicron;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist middle indicative 3rd person singular&quot; data-lemma=&quot;ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omicron;&mu;&alpha;&iota;&quot;&gt;ἐ&pi;&eta;&gamma;&gamma;&epsilon;ί&lambda;&alpha;&tau;&omicron;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ὁ&quot; data-part-of-speech=&quot;article&quot; data-parsing=&quot;nominative singular masculine&quot; data-lemma=&quot;ὁ&quot;&gt;ὁ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἀ&psi;&epsilon;&upsilon;&delta;ή&sigmaf;&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;nominative singular masculine&quot; data-lemma=&quot;ἀ&psi;&epsilon;&upsilon;&delta;ή&sigmaf;&quot;&gt;ἀ&psi;&epsilon;&upsilon;&delta;ὴ&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&theta;&epsilon;ό&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;nominative singular masculine&quot; data-lemma=&quot;&theta;&epsilon;ό&sigmaf;&quot;&gt;&theta;&epsilon;ὸ&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&pi;&rho;ό&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;&pi;&rho;ό&quot;&gt;&pi;&rho;ὸ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&chi;&rho;ό&nu;&omega;&nu;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive plural masculine&quot; data-lemma=&quot;&chi;&rho;ό&nu;&omicron;&sigmaf;&quot;&gt;&chi;&rho;ό&nu;&omega;&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&alpha;ἰ&omega;&nu;ί&omega;&nu;&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;genitive plural masculine&quot; data-lemma=&quot;&alpha;ἰώ&nu;&iota;&omicron;&sigmaf;&quot;&gt;&alpha;ἰ&omega;&nu;ί&omega;&nu;,&lt;/span&gt; &lt;/span&gt;' +
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-3&quot;&gt;1:3&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&phi;&alpha;&nu;έ&rho;&omega;&sigma;&epsilon;(&nu;)&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist active indicative 3rd person singular&quot; data-lemma=&quot;&phi;&alpha;&nu;&epsilon;&rho;ό&omega;&quot;&gt;ἐ&phi;&alpha;&nu;έ&rho;&omega;&sigma;&epsilon;&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&delta;έ&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;&delta;έ&quot;&gt;&delta;ὲ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;&iota;&rho;&omicron;ῖ&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;dative plural masculine&quot; data-lemma=&quot;&kappa;&alpha;&iota;&rho;ό&sigmaf;&quot;&gt;&kappa;&alpha;&iota;&rho;&omicron;ῖ&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἰ&delta;ί&omicron;&iota;&sigmaf;&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;dative plural masculine&quot; data-lemma=&quot;ἴ&delta;&iota;&omicron;&sigmaf;&quot;&gt;ἰ&delta;ί&omicron;&iota;&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&tau;ό&nu;&quot; data-part-of-speech=&quot;article&quot; data-parsing=&quot;accusative singular masculine&quot; data-lemma=&quot;ὁ&quot;&gt;&tau;ὸ&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&lambda;ό&gamma;&omicron;&nu;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular masculine&quot; data-lemma=&quot;&lambda;ό&gamma;&omicron;&sigmaf;&quot;&gt;&lambda;ό&gamma;&omicron;&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&alpha;ὐ&tau;&omicron;ῦ&quot; data-part-of-speech=&quot;personal pronoun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;&alpha;ὐ&tau;ό&sigmaf;&quot;&gt;&alpha;ὐ&tau;&omicron;ῦ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&nu;&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;ἐ&nu;&quot;&gt;ἐ&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&eta;&rho;ύ&gamma;&mu;&alpha;&tau;&iota;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;dative singular neuter&quot; data-lemma=&quot;&kappa;ή&rho;&upsilon;&gamma;&mu;&alpha;&quot;&gt;&kappa;&eta;&rho;ύ&gamma;&mu;&alpha;&tau;&iota;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ὅ&quot; data-part-of-speech=&quot;relative pronoun&quot; data-parsing=&quot;accusative singular neuter&quot; data-lemma=&quot;ὅ&sigmaf;&quot;&gt;ὃ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&pi;&iota;&sigma;&tau;&epsilon;ύ&theta;&eta;&nu;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist passive indicative 1st person singular&quot; data-lemma=&quot;&pi;&iota;&sigma;&tau;&epsilon;ύ&omega;&quot;&gt;ἐ&pi;&iota;&sigma;&tau;&epsilon;ύ&theta;&eta;&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&gamma;ώ&quot; data-part-of-speech=&quot;personal pronoun&quot; data-parsing=&quot;nominative singular&quot; data-lemma=&quot;ἐ&gamma;ώ&quot;&gt;ἐ&gamma;ὼ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;&tau;ά&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;&kappa;&alpha;&tau;ά&quot;&gt;&kappa;&alpha;&tau;&rsquo;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&pi;&iota;&tau;&alpha;&gamma;ή&nu;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;ἐ&pi;&iota;&tau;&alpha;&gamma;ή&quot;&gt;ἐ&pi;&iota;&tau;&alpha;&gamma;ὴ&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&tau;&omicron;ῦ&quot; data-part-of-speech=&quot;article&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;ὁ&quot;&gt;&tau;&omicron;ῦ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&sigma;&omega;&tau;ῆ&rho;&omicron;&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;&sigma;&omega;&tau;ή&rho;&quot;&gt;&sigma;&omega;&tau;ῆ&rho;&omicron;&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἡ&mu;ῶ&nu;&quot; data-part-of-speech=&quot;personal pronoun&quot; data-parsing=&quot;genitive plural&quot; data-lemma=&quot;ἐ&gamma;ώ&quot;&gt;ἡ&mu;ῶ&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&theta;&epsilon;&omicron;ῦ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;&theta;&epsilon;ό&sigmaf;&quot;&gt;&theta;&epsilon;&omicron;ῦ,&lt;/span&gt; &lt;/span&gt;' +
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-4&quot;&gt;1:4&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&Tau;ί&tau;ῳ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;dative singular masculine&quot; data-lemma=&quot;&Tau;ί&tau;&omicron;&sigmaf;&quot;&gt;&Tau;ί&tau;ῳ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&gamma;&nu;&eta;&sigma;ίῳ&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;dative singular neuter&quot; data-lemma=&quot;&gamma;&nu;ή&sigma;&iota;&omicron;&sigmaf;&quot;&gt;&gamma;&nu;&eta;&sigma;ίῳ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&tau;έ&kappa;&nu;ῳ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;dative singular neuter&quot; data-lemma=&quot;&tau;έ&kappa;&nu;&omicron;&nu;&quot;&gt;&tau;έ&kappa;&nu;ῳ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;&tau;ά&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;&kappa;&alpha;&tau;ά&quot;&gt;&kappa;&alpha;&tau;ὰ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&omicron;&iota;&nu;ή&nu;&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;&kappa;&omicron;&iota;&nu;ό&sigmaf;&quot;&gt;&kappa;&omicron;&iota;&nu;ὴ&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&pi;ί&sigma;&tau;&iota;&nu;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;&pi;ί&sigma;&tau;&iota;&sigmaf;&quot;&gt;&pi;ί&sigma;&tau;&iota;&nu;&middot;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&chi;ά&rho;&iota;&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;nominative singular feminine&quot; data-lemma=&quot;&chi;ά&rho;&iota;&sigmaf;&quot;&gt;&chi;ά&rho;&iota;&sigmaf;,&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἔ&lambda;&epsilon;&omicron;&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;nominative singular neuter&quot; data-lemma=&quot;ἔ&lambda;&epsilon;&omicron;&sigmaf;&quot;&gt;ἔ&lambda;&epsilon;&omicron;&sigmaf;,&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&epsilon;ἰ&rho;ή&nu;&eta;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;nominative singular feminine&quot; data-lemma=&quot;&epsilon;ἰ&rho;ή&nu;&eta;&quot;&gt;&epsilon;ἰ&rho;ή&nu;&eta;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἀ&pi;ό&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;ἀ&pi;ό&quot;&gt;ἀ&pi;ὸ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&theta;&epsilon;&omicron;ῦ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;&theta;&epsilon;ό&sigmaf;&quot;&gt;&theta;&epsilon;&omicron;ῦ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&pi;&alpha;&tau;&rho;ό&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;&pi;&alpha;&tau;ή&rho;&quot;&gt;&pi;&alpha;&tau;&rho;ό&sigmaf;,&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;ί&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;&kappa;&alpha;ί&quot;&gt;&kappa;&alpha;ὶ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&upsilon;&rho;ί&omicron;&upsilon;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;&kappa;ύ&rho;&iota;&omicron;&upsilon;&sigmaf;&quot;&gt;&kappa;&upsilon;&rho;ί&omicron;&upsilon;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;Ἰ&eta;&sigma;&omicron;ῦ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;Ἰ&eta;&sigma;&omicron;ῦ&sigmaf;&quot;&gt;Ἰ&eta;&sigma;&omicron;ῦ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot;&gt;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&tau;&omicron;ῦ&quot; data-part-of-speech=&quot;article&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;ὁ&quot;&gt;&tau;&omicron;ῦ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&sigma;&omega;&tau;ῆ&rho;&omicron;&sigmaf;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular masculine&quot; data-lemma=&quot;&sigma;&omega;&tau;ή&rho;&quot;&gt;&sigma;&omega;&tau;ῆ&rho;&omicron;&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἡ&mu;ῶ&nu;&quot; data-part-of-speech=&quot;personal pronoun&quot; data-parsing=&quot;genitive plural&quot; data-lemma=&quot;ἐ&gamma;ώ&quot;&gt;ἡ&mu;ῶ&nu;.&lt;/span&gt; &lt;/span&gt;' +
-
-'&lt;span class=&quot;para&quot;&gt;&lt;/span&gt;' +
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-5&quot;&gt;1:5&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&tau;&omicron;ύ&tau;&omicron;&upsilon;&quot; data-part-of-speech=&quot;demonstrative&quot; data-parsing=&quot;genitive singular neuter&quot; data-lemma=&quot;&omicron;ὗ&tau;&omicron;&sigmaf;&quot;&gt;&Tau;&omicron;ύ&tau;&omicron;&upsilon;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&chi;ά&rho;&iota;&nu;&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;&chi;ά&rho;&iota;&nu;&quot;&gt;&chi;ά&rho;&iota;&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;&tau;έ&lambda;&iota;&pi;ό&nu;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist active indicative 1st person singular&quot; data-lemma=&quot;&kappa;&alpha;&tau;&alpha;&lambda;&epsilon;ί&pi;&omega;&quot;&gt;&kappa;&alpha;&tau;έ&lambda;&iota;&pi;ό&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&sigma;&epsilon;&quot; data-part-of-speech=&quot;personal pronoun&quot; data-parsing=&quot;accusative singular&quot; data-lemma=&quot;&sigma;ύ&quot;&gt;&sigma;&epsilon;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&nu;&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;ἐ&nu;&quot;&gt;ἐ&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&Kappa;&rho;ή&tau;ῃ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;dative singular feminine&quot; data-lemma=&quot;&Kappa;&rho;ή&tau;&eta;&quot;&gt;&Kappa;&rho;ή&tau;ῃ,&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἵ&nu;&alpha;&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;ἵ&nu;&alpha;&quot;&gt;ἵ&nu;&alpha;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&tau;ά&quot; data-part-of-speech=&quot;article&quot; data-parsing=&quot;accusative plural neuter&quot; data-lemma=&quot;ὁ&quot;&gt;&tau;ὰ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&lambda;&epsilon;ί&pi;&omicron;&nu;&tau;&alpha;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;present active participle accusative plural neuter&quot; data-lemma=&quot;&lambda;&epsilon;ί&pi;&omega;&quot;&gt;&lambda;&epsilon;ί&pi;&omicron;&nu;&tau;&alpha;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&pi;&iota;&delta;&iota;&omicron;&rho;&theta;ώ&sigma;ῃ&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist middle subjunctive 2nd person singular&quot; data-lemma=&quot;ἐ&pi;&iota;&delta;&iota;&omicron;&rho;&theta;ό&omega;&quot;&gt;ἐ&pi;&iota;&delta;&iota;&omicron;&rho;&theta;ώ&sigma;ῃ,&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;ί&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;&kappa;&alpha;ί&quot;&gt;&kappa;&alpha;ὶ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;&tau;&alpha;&sigma;&tau;ή&sigma;ῃ&sigmaf;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist active subjunctive 2nd person singular&quot; data-lemma=&quot;&kappa;&alpha;&theta;ί&sigma;&tau;&eta;&mu;&iota;&quot;&gt;&kappa;&alpha;&tau;&alpha;&sigma;&tau;ή&sigma;ῃ&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;&tau;ά&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;&kappa;&alpha;&tau;ά&quot;&gt;&kappa;&alpha;&tau;ὰ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&pi;ό&lambda;&iota;&nu;&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;&pi;ό&lambda;&iota;&sigmaf;&quot;&gt;&pi;ό&lambda;&iota;&nu;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&pi;&rho;&epsilon;&sigma;&beta;&upsilon;&tau;έ&rho;&omicron;&upsilon;&sigmaf;&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;accusative plural masculine&quot; data-lemma=&quot;&pi;&rho;&epsilon;&sigma;&beta;ύ&tau;&epsilon;&rho;&omicron;&sigmaf;&quot;&gt;&pi;&rho;&epsilon;&sigma;&beta;&upsilon;&tau;έ&rho;&omicron;&upsilon;&sigmaf;,&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ὡ&sigmaf;&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;ὡ&sigmaf;&quot;&gt;ὡ&sigmaf;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&gamma;ώ&quot; data-part-of-speech=&quot;personal pronoun&quot; data-parsing=&quot;nominative singular&quot; data-lemma=&quot;ἐ&gamma;ώ&quot;&gt;ἐ&gamma;ώ&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&sigma;&omicron;&iota;&quot; data-part-of-speech=&quot;personal pronoun&quot; data-parsing=&quot;dative singular&quot; data-lemma=&quot;&sigma;ύ&quot;&gt;&sigma;&omicron;&iota;&lt;/span&gt;' +
-' &lt;span class=&quot;word&quot; data-form=&quot;&delta;&iota;&epsilon;&tau;&alpha;&xi;ά&mu;&eta;&nu;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist middle indicative 1st person singular&quot; data-lemma=&quot;&delta;&iota;&alpha;&tau;ά&sigma;&sigma;&omega;&quot;&gt;&delta;&iota;&epsilon;&tau;&alpha;&xi;ά&mu;&eta;&nu;&middot;&lt;/span&gt; &lt;/span&gt;' +
-
-// part of code has been cut out
-
-
-&quot;&quot;
-
-);
-</pre>
-
-<h5 class="pc-anchor" id="h-parsed-text-transcribed-optional-attributes2">Optional attributes</h5>
-
-<p>It happens, that more than one word has the same lemma. E.g. in Greek-English lexicon to the New Testament by Th. S. Green two words have the lemma δέω, two words have the lemma μήν, and two words have the lemma ὅτι. If one clicks in parsed text pane on the word whose lemma has more than one article in the dictionary, then by default the first article will be crolled into view.</p>
-
-<p>In cases second, third etc. lexicon article should be loaded we need to use two additional attributes for the tag "span" having class "word". These are attributes "data-lexicon" and "data-lexicon-entry". The value of the attribute "data-lexicon" should be resource shortname of the relevant lexicon; the value of the attribute "data-lexicon-entry" should be order number of the entry which should be scrolled into view. E.g. the verse Matthew 9:38 contains the word δεήθητε, whose lemma is δέω. The needed article in Green's lexicon is second article for the lemma δέω. To load second article the code for the word δεήθητε in parsed text resource should be as this:</p>
-
-<pre id="adding_parsedtext_optional_attributes2" class="prettyprint code_showarea">
-' &lt;span class=&quot;word&quot; data-form=&quot;&delta;&epsilon;ή&theta;&eta;&tau;&epsilon;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist passive imperative 2nd person plural&quot; data-lemma=&quot;&delta;έ&omega;&quot; data-lexicon=&quot;greek_lexicon_to_nt_by_green&quot; data-lexicon-entry=&quot;2&quot;&gt;&delta;&epsilon;ή&theta;&eta;&tau;&epsilon;&lt;/span&gt;' +
-</pre>
-
-<h4 class="pc-anchor" id="h-parsed-text-transcribed-parsing-scheme2">Parsing scheme</h4>
 
 <p>"span" tag having class attribute "word" should wrap each word in the data file. This "span" tag also has the attributes "data-form", "data-part-of-speech", "data-parsing", "data-lemma which contain morphological data of the word.</p>
 
@@ -2412,13 +2125,13 @@ particle
 <p>So, it may be that the critical edition parsed text resource is based on lacks certain lines included in some other critical edition. In such case parsed text resource should include the line numbers of missing lines. In the parsed text of the apostle Paul's epistle to Romans which is based on Robinson and Pierpont's edition of the New Testament, the lines 16:25-27 are represented in parsed text resource's data file by their line numbers:</p>
 
 <pre id="dealing-with-missing-lines" class="prettyprint code_showarea">
-' &lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v16-25&quot;&gt;16:25&lt;/span&gt;&lt;/span&gt;' +
+`&lt;span class=&quot;line&quot;&gt;&lt;span data-line-number="16:25" class=&quot;line-number&quot;&gt;16:25&lt;/span&gt;&lt;/span&gt;
 
 
-' &lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v16-26&quot;&gt;16:26&lt;/span&gt;&lt;/span&gt;' +
+&lt;span class=&quot;line&quot;&gt;&lt;span data-line-number="16:26" class=&quot;line-number&quot;&gt;16:26&lt;/span&gt;&lt;/span&gt;
 
 
-' &lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v16-27&quot;&gt;16:27&lt;/span&gt;&lt;/span&gt;' +
+&lt;span class=&quot;line&quot;&gt;&lt;span data-line-number="16:27" class=&quot;line-number&quot;&gt;16:27&lt;/span&gt;&lt;/span&gt;`
 </pre>
 
 <p>After including numbers of missing lines in parsed text resource's data file we should not forget to to add these same lines into contents file.</p>
@@ -2427,10 +2140,10 @@ particle
 
 <h5 class="pc-anchor" id="h-parsed-text-dealing-with-crasis">Dealing with crasis</h5>
 
-<p>Cases of crasis, such as κἀκεῖ, κἀκεῖθεν, κἀκεῖνος, κἄν, ταὐτά, τοὐναντίον, τοὔνομα, τουτέστι, although might be explained in certain dictionaries, should be treated as two words and those two words should be parsed separately. The "span" tag of the first word should contain that part of the crasis expression which is before vowel having breathing mark, and the "span" tag of the second word should contain part of the crasis expression strarting with vowel having breathin mark to the end of expression. E.g. in case of crasis expression κἀκεῖθεν the "span" tag of the first word will contain "κ" and the "span" tag of the second word will contain "ἀκεῖθεν". The code for crasis expression κἀκεῖθεν will be this:</p>
+<p>Cases of crasis, such as κἀκεῖ, κἀκεῖθεν, κἀκεῖνος, κἄν, ταὐτά, τοὐναντίον, τοὔνομα, τουτέστι, although might be explained in certain dictionaries, should be treated as two words and those two words should be parsed separately. The "span" tag of the first word should contain that part of the crasis expression which is before vowel having breathing mark, and the "span" tag of the second word should contain part of the crasis expression strarting with vowel having breathing mark to the end of expression. E.g. in case of crasis expression κἀκεῖθεν the "span" tag of the first word will contain "κ" and the "span" tag of the second word will contain "ἀκεῖθεν". The code for crasis expression κἀκεῖθεν will be this:</p>
 
 <pre id="dealing-with-crasis" class="prettyprint code_showarea">
-' &lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;ί&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;&kappa;&alpha;ί&quot;&gt;&kappa;&lt;/span&gt;&lt;span class=&quot;word&quot; data-form=&quot;ἐ&kappa;&epsilon;ῖ&theta;&epsilon;&nu;&quot; data-part-of-speech=&quot;adverb&quot; data-parsing=&quot;&quot; data-lemma=&quot;ἐ&kappa;&epsilon;ῖ&theta;&epsilon;&nu;&quot;&gt;ἀ&kappa;&epsilon;ῖ&theta;&epsilon;&nu;&lt;/span&gt;' +
+`&lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;ί&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;&kappa;&alpha;ί&quot;&gt;&kappa;&lt;/span&gt;&lt;span class=&quot;word&quot; data-form=&quot;ἐ&kappa;&epsilon;ῖ&theta;&epsilon;&nu;&quot; data-part-of-speech=&quot;adverb&quot; data-parsing=&quot;&quot; data-lemma=&quot;ἐ&kappa;&epsilon;ῖ&theta;&epsilon;&nu;&quot;&gt;ἀ&kappa;&epsilon;ῖ&theta;&epsilon;&nu;&lt;/span&gt;`
 </pre>
 
 <h5 class="pc-anchor" id="h-parsed-text-dealing-with-punctuation">Dealing with punctuation</h5>
@@ -2438,44 +2151,74 @@ particle
 <p>Punctuation marks, i.e. symbols ",", ".", "·", ";", "&ndash;", "&mdash;" should be outside "span" tag having class atribute "word", that is, "span" tag should not wrap the word together with punctuation symbol. E.g. in Matthew 2:10 there are punctuation marks "," and ".":</p>
 
 <pre id="dealing-with-punctuation" class="prettyprint code_showarea">
-&#39; &lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v2-10&quot;&gt;2:10&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;ἰδόντες&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist active participle nominative plural masculine&quot; data-lemma=&quot;ὁράω&quot;&gt;Ἰδόντες&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;δέ&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;δέ&quot;&gt;δὲ&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;τόν&quot; data-part-of-speech=&quot;article&quot; data-parsing=&quot;accusative singular masculine&quot; data-lemma=&quot;ὁ&quot;&gt;τὸν&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;ἀστέρα&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular masculine&quot; data-lemma=&quot;ἀστήρ&quot;&gt;ἀστέρα&lt;/span&gt;,&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;ἐχάρησαν&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist passive indicative 3rd person plural&quot; data-lemma=&quot;χαίρω&quot;&gt;ἐχάρησαν&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;χαράν&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;χαρά&quot;&gt;χαρὰν&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;μεγάλην&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;μέγας&quot;&gt;μεγάλην&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;σφόδρα&quot; data-part-of-speech=&quot;adverb&quot; data-parsing=&quot;&quot; data-lemma=&quot;σφόδρα&quot;&gt;σφόδρα&lt;/span&gt;.&#39; +
-&#39; &lt;/span&gt;&#39; +
+`&lt;span class=&quot;line&quot;&gt;&lt;span data-line-number="2:10" class=&quot;line-number&quot;&gt;2:10&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;ἰδόντες&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist active participle nominative plural masculine&quot; data-lemma=&quot;ὁράω&quot;&gt;Ἰδόντες&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;δέ&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;δέ&quot;&gt;δὲ&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;τόν&quot; data-part-of-speech=&quot;article&quot; data-parsing=&quot;accusative singular masculine&quot; data-lemma=&quot;ὁ&quot;&gt;τὸν&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;ἀστέρα&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular masculine&quot; data-lemma=&quot;ἀστήρ&quot;&gt;ἀστέρα&lt;/span&gt;,
+&lt;span class=&quot;word&quot; data-form=&quot;ἐχάρησαν&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist passive indicative 3rd person plural&quot; data-lemma=&quot;χαίρω&quot;&gt;ἐχάρησαν&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;χαράν&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;χαρά&quot;&gt;χαρὰν&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;μεγάλην&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;μέγας&quot;&gt;μεγάλην&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;σφόδρα&quot; data-part-of-speech=&quot;adverb&quot; data-parsing=&quot;&quot; data-lemma=&quot;σφόδρα&quot;&gt;σφόδρα&lt;/span&gt;.&#39; +
+&lt;/span&gt;`
 </pre>
 
 <p>The exception is apostroph symbol "’" marking elision. It should be inside "span" tag having class atribute "word", that is, "span" tag should wrap the word together with apostroph symbol. E.g. in Matthew 2:12 there are two apostroph symbols:</p>
 
 <pre id="dealing-with-punctuation-apostroph" class="prettyprint code_showarea">
-&#39; &lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v2-12&quot;&gt;2:12&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;καί&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;καί&quot;&gt;Καὶ&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;χρηματισθέντες&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist passive participle nominative plural masculine&quot; data-lemma=&quot;χρηματίζω&quot;&gt;χρηματισθέντες&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;κατά&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;κατά&quot;&gt;κατ’&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;ὄναρ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular neuter&quot; data-lemma=&quot;ὄναρ&quot;&gt;ὄναρ&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;μή&quot; data-part-of-speech=&quot;adverb&quot; data-parsing=&quot;&quot; data-lemma=&quot;μή&quot;&gt;μὴ&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;ἀνακάμψαι&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist active infinitive&quot; data-lemma=&quot;ἀνακάμπτω&quot;&gt;ἀνακάμψαι&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;πρός&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;πρός&quot;&gt;πρὸς&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;Ἡρῴδην&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular masculine&quot; data-lemma=&quot;Ἡρῴδης&quot;&gt;Ἡρῴδην&lt;/span&gt;,&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;διά&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;διά&quot;&gt;δι’&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;ἄλλης&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;genitive singular feminine&quot; data-lemma=&quot;ἄλλος&quot;&gt;ἄλλης&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;ὁδοῦ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular feminine&quot; data-lemma=&quot;ὁδός&quot;&gt;ὁδοῦ&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;ἀνεχώρησαν&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist active indicative 3rd person plural&quot; data-lemma=&quot;ἀναχωρέω&quot;&gt;ἀνεχώρησαν&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;εἰς&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;εἰς&quot;&gt;εἰς&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;τήν&quot; data-part-of-speech=&quot;article&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;ὁ&quot;&gt;τὴν&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;χώραν&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;χώρα&quot;&gt;χώραν&lt;/span&gt;&#39; +
-&#39; &lt;span class=&quot;word&quot; data-form=&quot;αὐτῶν&quot; data-part-of-speech=&quot;personal pronoun&quot; data-parsing=&quot;genitive plural masculine&quot; data-lemma=&quot;αὐτός&quot;&gt;αὐτῶν&lt;/span&gt;.&#39; +
-&#39; &lt;/span&gt;&#39; +
+`&lt;span class=&quot;line&quot;&gt;&lt;span data-line-number="2:12" class=&quot;line-number&quot;&gt;2:12&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;καί&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;καί&quot;&gt;Καὶ&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;χρηματισθέντες&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist passive participle nominative plural masculine&quot; data-lemma=&quot;χρηματίζω&quot;&gt;χρηματισθέντες&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;κατά&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;κατά&quot;&gt;κατ’&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;ὄναρ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular neuter&quot; data-lemma=&quot;ὄναρ&quot;&gt;ὄναρ&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;μή&quot; data-part-of-speech=&quot;adverb&quot; data-parsing=&quot;&quot; data-lemma=&quot;μή&quot;&gt;μὴ&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;ἀνακάμψαι&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist active infinitive&quot; data-lemma=&quot;ἀνακάμπτω&quot;&gt;ἀνακάμψαι&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;πρός&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;πρός&quot;&gt;πρὸς&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;Ἡρῴδην&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular masculine&quot; data-lemma=&quot;Ἡρῴδης&quot;&gt;Ἡρῴδην&lt;/span&gt;,
+&lt;span class=&quot;word&quot; data-form=&quot;διά&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;διά&quot;&gt;δι’&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;ἄλλης&quot; data-part-of-speech=&quot;adjective&quot; data-parsing=&quot;genitive singular feminine&quot; data-lemma=&quot;ἄλλος&quot;&gt;ἄλλης&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;ὁδοῦ&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;genitive singular feminine&quot; data-lemma=&quot;ὁδός&quot;&gt;ὁδοῦ&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;ἀνεχώρησαν&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist active indicative 3rd person plural&quot; data-lemma=&quot;ἀναχωρέω&quot;&gt;ἀνεχώρησαν&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;εἰς&quot; data-part-of-speech=&quot;preposition&quot; data-parsing=&quot;&quot; data-lemma=&quot;εἰς&quot;&gt;εἰς&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;τήν&quot; data-part-of-speech=&quot;article&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;ὁ&quot;&gt;τὴν&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;χώραν&quot; data-part-of-speech=&quot;noun&quot; data-parsing=&quot;accusative singular feminine&quot; data-lemma=&quot;χώρα&quot;&gt;χώραν&lt;/span&gt;
+&lt;span class=&quot;word&quot; data-form=&quot;αὐτῶν&quot; data-part-of-speech=&quot;personal pronoun&quot; data-parsing=&quot;genitive plural masculine&quot; data-lemma=&quot;αὐτός&quot;&gt;αὐτῶν&lt;/span&gt;.
+&lt;/span&gt;`
 </pre>
 
 <h5 class="pc-anchor" id="h-parsed-text-dealing-with-alternative-characters">Dealing with alternative characters</h5>
 
-<p>In unicode two or more code points may encode characters which look identically or have only stylistic difference. In order for all functionality to work correctly the uniformity of encoding must be enforced by using only characters from certain "standard" set. To achieve this go to <a href="../tools/unicode_characters_changer.html">Unicode Characters changer</a> and use the form to change unicode characters into "standard" ones.</p>
+<p>In unicode two or more code points may encode characters which look identically or have only stylistic difference. In order for all functionality to work correctly the uniformity of encoding must be enforced by using only characters from certain "standard" set. To achieve this go to <a target="_blank" href="../tools/unicode_characters_changer.html">Unicode Characters changer</a> and use the form to change unicode characters into "standard" ones.</p>
+
+<h3 class="pc-anchor" id="h-original-text-scanned">Original text (scanned)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
+
+
+
+<h2 class="pc-anchor" id="h-creating-resources">Creating resources</h2>
+
 
 <h3 class="pc-anchor" id="h-critical-edition-scanned">Critical edition (scanned)</h3>
 
