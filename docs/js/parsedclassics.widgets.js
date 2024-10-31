@@ -846,7 +846,7 @@ var ParsedClassicsInnerLink = {
         if (connav_container.length === 1 && anchor_el.length === 1) {
           connav_block_index = anchor_el.find('span.connav-block-index').text();
           if (connav_block_index) {
-            connav_table_item_index = connav_container.find('span.connav-table-item-index:contains("' + connav_block_index + '")');
+            connav_table_item_index = connav_container.find('span.connav-table-item-index:contains("' + connav_block_index + '")').filter(function() {return $(this).text() === connav_block_index;});
             if (connav_table_item_index.length === 1) {
               connav_table_item_text = connav_table_item_index.parent().find('span.connav-table-item-text');
             }
