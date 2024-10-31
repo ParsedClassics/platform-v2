@@ -2192,9 +2192,117 @@ particle
 
 <h3 class="pc-anchor" id="h-original-text-scanned">Original text (scanned)</h3>
 
+<p>In principle, resources belonging to type "Original text" can be either scanned or transcribed, but they surely will be all scanned because it is very difficult to reproduce complex formatting of the scholarly editions using very limitted means available in HTML. So, only creation of scanned resources of the type "Critical edition" will be described in Editor's documentation.</p>
 
+<h4 class="pc-anchor" id="h-critical-edition-scanned-creating-image-files">Creating image files</h4>
 
+<p>To create scanned resource of the type "Critical edition" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
 
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was as value of the key "scanned_source_shortname" when original text resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the original text edited by Antoniadis has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "kaine_diatheke_ed_antoniadis". It means that the pictures of the pages must be uploaded to the directory /_scans/kaine_diatheke_ed_antoniadis/ .</p>
+
+<p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
+
+<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?kaine_diatheke_ed_antoniadis</p>
+
+<h4 class="pc-anchor" id="h-critical-edition-scanned-creating-contents-file">Creating contents file</h4>
+
+<p>In order for critical edition to work in sync with parsed text, the contents file must be created. To create contents file go to  <a href="../tools/book_contents_generator.html" target="_blank">Scanned book contents generator</a> page and fill the form:</p>
+
+<p><img src="img2/original_text_typed_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In Epistle to Titus there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15 .</p>
+
+<p>The value of the form‘s field "Prefix" should be be pipe delimited  line prefixes, one for each chapter. The chapters of the New Testament are usually indicated by the number written to the left from verse number; colon usually used to separate chapter number from verse number.  So, the value for this field is 1:|2:|3: .</p>
+
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" which was entered while listing resource as part of collection [LINK TO BE ADDED]. The value we entered for this key was "nt_titus_ed_antoniadis_contents", so we now should enter it as the value of the field "Contents shortname".</p>
+
+<p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
+
+<p>The code will be as this:</p>
+
+<pre id="generated_original_text_contents" class="prettyprint code_showarea">
+nt_titus_ed_antoniadis_contents = {
+
+  "title": ""
+
+  , "1:1": ""
+
+  , "1:2": ""
+
+  // part of code has been cut out
+
+  , "1:15": ""
+
+  , "1:16": ""
+
+  , "2:1": ""
+
+  , "2:2": ""
+
+  // part of code has been cut out
+
+  , "2:14": ""
+
+  , "2:15": ""
+
+  , "3:1": ""
+
+  , "3:2": ""
+
+  // part of code has been cut out
+
+  , "3:14": ""
+
+  , "3:15": ""
+
+};
+</pre>
+
+<p>Now we need to enter values for each key of this JSON object. The keys are indexes of lines of the parsed text. "title" is the index of the title of the parsed text. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
+
+<pre id="generated_original_text_contents_edited" class="prettyprint code_showarea">
+nt_titus_ed_antoniadis_contents = {
+  
+    "title": "451"
+  
+    , "1:1": "451"
+  
+    , "1:2": "451"
+  
+    // part of code has been cut out
+  
+    , "1:15": "451"
+  
+    , "1:16": "451"
+  
+    , "2:1": "452"
+  
+    , "2:2": "452"
+  
+    // part of code has been cut out
+  
+    , "2:14": "452"
+  
+    , "2:15": "452"
+  
+    , "3:1": "452"
+  
+    , "3:2": "452"
+  
+    // part of code has been cut out
+  
+    , "3:14": "453"
+  
+    , "3:15": "453"
+  
+  };
+  </pre>
+
+<p>This code should be saved in the file having the same name as the value in "Contents shortname" field in the form, so it will be nt_titus_ed_antoniadis_contents.js . The file should be placed in directory whose name is the same ar resource shortname. Resource shortname is "nt_titus_text_ed_antoniadis" so the directory will be /data/original_text/nt_titus_text_ed_antoniadis/ .</p>
+
+<p>After doing this critical edition resource should work in sync with parsed text resource.</p>
+
+<h3 class="pc-anchor" id="h-concordance-scanned">Concordance (scanned)</h3>
 
 
 
@@ -2224,7 +2332,7 @@ particle
 
 <p>In principle, resources belonging to type "Critical edition" can be either scanned or transcribed, but they surely will be all scanned because it is very difficult to reproduce complex formatting of the scholarly editions using very limitted means available in HTML. So, only creation of scanned resources of the type "Critical edition" will be described in documentation.</p>
 
-<h4 class="pc-anchor" id="h-critical-edition-scanned-creating-image-files">Creating image files</h4>
+<h4 class="pc-anchor" id="h-critical-edition-scanned-creating-image-files2">Creating image files</h4>
 
 <p>To create scanned resource of the type "Critical edition" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a> the sections on scanning a book, on converting PDF file to images, on batch renaming of files, on cropping images, on retouching images, on optimizing size of JPG files.</p>
 
@@ -2234,7 +2342,7 @@ particle
 
 <p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?greek_new_testament_sbl_edition_ed_holmes</p>
 
-<h4 class="pc-anchor" id="h-critical-edition-scanned-creating-contents-file">Creating contents file</h4>
+<h4 class="pc-anchor" id="h-critical-edition-scanned-creating-contents-file2">Creating contents file</h4>
 
 <p>In order for critical edition to work in sync with parsed text, the contents file must be created. To create contents file go to  <a href="../tools/book_contents_generator.html" target="_blank">Scanned book contents generator</a> page and fill the form:</p>
 
@@ -2334,7 +2442,7 @@ var lines_nt_titus_ed_holmes_contents = {
 
 <p>After doing this critical edition resource should work in sync with parsed text resource.</p>
 
-<h3 class="pc-anchor" id="h-concordance-scanned">Concordance (scanned)</h3>
+<h3 class="pc-anchor" id="h-concordance-scanned2">Concordance (scanned)</h3>
 
 <h4 class="pc-anchor" id="h-concordance-scanned-creating-image-files">Creating image files</h4>
 
