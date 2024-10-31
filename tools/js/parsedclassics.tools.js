@@ -1677,7 +1677,7 @@ var ParsedClassicsBookContentsGenerator = {
 				book_contents = "{\n\n" + book_contents + "};"
 			
 				// add contents shortname
-				book_contents = "var " + contents_name + " = " + book_contents;
+				book_contents = contents_name + " = " + book_contents;
 			
 				// output book contents
 				output_textarea.val(book_contents);
@@ -2885,8 +2885,8 @@ var ParsedClassicsCollContentsGenerator = {
     // add braces
 				coll_contents = "{\n\n" + coll_contents + "};"
     
-    // add function name and function braces
-				coll_contents = 'var ' + contents_name + ' = ' + coll_contents;
+    // add variable name 
+				coll_contents = contents_name + ' = ' + coll_contents;
     
     // output collection contents
 				output_textarea.val(coll_contents);
