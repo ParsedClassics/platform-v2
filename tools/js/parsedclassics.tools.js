@@ -1530,13 +1530,13 @@ var ParsedClassicsLexContentsGenerator = {
 				}
 			
 				// add title page to contents
-				contents_code = '/*Title page*/	"w-title": ""\n\n' + contents_code;
+				contents_code = '/*Title page*/	"title": ""\n\n' + contents_code;
 			
 				// add JS object symbols
 				contents_code = "{\n\n" + contents_code + "};";
 			
 				// add contents shortname
-				contents_code = "var " + contents_name + " = " + contents_code;
+				contents_code = contents_name + " = " + contents_code;
 			
 				// output lexicon contents code
 				output_textarea.val(contents_code);
