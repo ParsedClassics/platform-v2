@@ -2202,13 +2202,13 @@ particle
 
 <p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
 
-<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?kaine_diatheke_ed_antoniadis</p>
+<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?kaine_diatheke_ed_antoniadis .</p>
 
 <h4 class="pc-anchor" id="h-critical-edition-scanned-creating-contents-file">Creating contents file</h4>
 
 <p>In order for critical edition to work in sync with parsed text, the contents file must be created. To create contents file go to  <a href="../tools/book_contents_generator.html" target="_blank">Scanned book contents generator</a> page and fill the form:</p>
 
-<p><img src="img2/original_text_typed_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+<p><img src="img2/original_text_scanned_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
 <p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In Epistle to Titus there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15 .</p>
 
@@ -2304,6 +2304,245 @@ nt_titus_ed_antoniadis_contents = {
 
 <h3 class="pc-anchor" id="h-concordance-scanned">Concordance (scanned)</h3>
 
+<h4 class="pc-anchor" id="h-concordance-scanned-creating-image-files">Creating image files</h4>
+
+<p>To create scanned resource of the type "Concordance" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was as value of the key "scanned_source_shortname" when concordance resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the concordance edited by W. F. Moulton and A. S. Geden has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "concordance_to_greek_testament_by_moulton_geden". It means that the pictures of the pages must be uploaded to the directory /_scans/concordance_to_greek_testament_by_moulton_geden/ .</p>
+
+<p><p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p></p>
+
+<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?concordance_to_greek_testament_by_moulton_geden .</p>
+
+<p>In order for concordance to work in sync with parsed text, the contents file should be prepared. Concordance resources, which use the same scanned book, share the same contents file. This means that there could be two cases: (1) there is no contents file and we need to create it; (2) there is contents file and we need to supplement it.</p>
+
+<h4 class="pc-anchor" id="h-concordance-scanned-creating-new-contents-file">Creating new contents file</h4>
+
+<p>To create new contents file go to  <a href="../tools/word_list_generator.html" target="_blank">Word list generator</a> page and fill the form:</p>
+
+<p><img src="img2/concordance_scanned_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Language" should be "Greek" because in Epistle to Titus collection parsed text resource is in Greek.</p>
+
+<p>The value of the form‘s field "Parsed text code" should be full HTML code of the parsed text. Use browser’s HTML inspector (available on right-click in every major browser) to copy parsed text's HTML code from Library app’s page. To do this right-click inside HTML inspector's panel on the "div" element having "class" attribute "parsed-text-split-top" and in context menu select option "Copy outerHTML":</p>
+
+<p><img src="img2/concordance_scanned_02.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>Then paste the copied string into form‘s field. After that select and delete all code before first "span" tag having "class" attribute "line" and closing "div" tag from the code pasted into field:</p>
+
+<p><img src="img2/concordance_scanned_03.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p><img src="img2/concordance_scanned_04.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
+
+<p>After loading text click the button "Generate list" and the pipe delimited alphabetical list of all words in the text will appear in "Word list" textarea.</p>
+
+<p>The word list will be as this:</p>
+
+<pre id="creating_word_list" class="prettyprint code_showarea">
+ἀγαθός|ἀγάπη|ἅγιος|ἁγνός|ἀδιαφθορία|ἀδόκιμος|ἀεί|αἱρετικός|αἰσχροκερδής|αἰσχρός|αἰτία|αἰών|αἰώνιος|ἄκαρπος|ἀκατάγνωστος|ἀλήθεια|ἀληθής|ἀλλά|ἀλλήλων|ἁμαρτάνω|ἄμαχος|ἀμήν|ἀναγκαῖος|ἀνακαίνωσις|ἀνατρέπω|ἀνέγκλητος|ἀνήρ|ἄνθρωπος|ἀνόητος|ἀνομία|ἀντέχομαι|ἀντιλέγω|ἀνυπότακτος|ἀνωφελής|ἀπειθής|ἄπιστος|ἀπό|Ἀπολλῶς|ἀπόστολος|ἀποστρέφω|ἀποτόμως|ἀργός|ἀρνέομαι|Ἀρτεμᾶς|ἀρχή|ἀσέβεια|ἀσπάζομαι|ἀσωτία|αὐθάδης|αὐτοκατάκριτος|αὐτός|ἀφθαρσία|ἀψευδής|βδελυκτός|βλασφημέω|βούλομαι|γάρ|γαστήρ|γενεαλογία|γίνομαι|γνήσιος|γυνή|δέ|δεσπότης|δεύτερος|δέω|διά|διαβεβαιόομαι|διάβολος|διάγω|διατάσσω|διδασκαλία|διδάσκω|διδαχή|δίδωμι|δίκαιος|δικαιοσύνη|δικαιόω|δικαίως|δόξα|δουλεύω|δοῦλος|δουλόω|δυνατός|ἑαυτοῦ|ἐγκρατής|ἐγώ|εἰ|εἰμί|εἰρήνη|εἷς|εἰς|ἐκ|ἐκεῖ|ἐκεῖνος|ἐκλεκτός|ἐκστρέφομαι|ἐκχέω|ἐλέγχω|ἔλεος|ἐλπίς|ἐν|ἐναντίος|ἐνδείκνυμι|ἐντολή|ἐντρέπω|ἐξουσία|ἐπαγγέλλομαι|ἐπί|ἐπίγνωσις|ἐπιδιορθόω|ἐπιεικής|ἐπιθυμία|ἐπίσκοπος|ἐπιστομίζω|ἐπιταγή|ἐπιφαίνω|ἐπιφάνεια|ἔργον|ἔρις|ἔρχομαι|ἕτοιμος|εὐάρεστος|εὐσέβεια|εὐσεβῶς|ἔχω|ζάω|ζηλωτής|Ζηνᾶς|ζήτησις|ζωή|ἤ|ἡδονή|ἡμέτερος|θεός|θηρίον|ἴδιος|ἱεροπρεπής|Ἰησοῦς|ἵνα|Ἰουδαϊκός|καθαρίζω|καθαρός|καθίστημι|καί|καιρός|κακία|κακός|καλοδιδάσκαλος|καλός|κατά|καταλείπω|κατάστημα|κατηγορία|κέρδος|κήρυγμα|κληρονόμος|κοινός|κοσμέω|κοσμικός|Κρής|Κρήτη|κρίνω|κύριους|λαλέω|λαός|λέγω|λείπω|λόγος|λουτρόν|λυτρόομαι|μακάριος|μάλιστα|μανθάνω|μαρτυρία|ματαιολόγος|μάταιος|μάχη|μέγας|μέν|μετά|μή|μηδείς|μιαίνω|μισέω|μῦθος|μωρός|νέος|νηφάλιος|Νικόπολις|νομικός|νοσφίζομαι|νουθεσία|νοῦς|νῦν|ὁ|οἶδα|οἰκονόμος|οἶκος|οἰκουργός|οἶνος|ὅλος|ὁμολογέω|ὁράω|ὀργίλος|ὅς|ὅσιος|ὅστις|ὅταν|ὅτε|ὅτι|οὐ|οὐδείς|οὗτος|παιδεύω|παλιγγενεσία|παραιτέομαι|παρακαλέω|παραχειμάζω|παρέχω|πάροινος|πᾶς|πατήρ|Παῦλος|πειθαρχέω|πέμπω|περί|περιΐστημι|περιούσιος|περιτομή|περιφρονέω|πιστεύω|πίστις|πιστός|πλανάω|πλήκτης|πλουσίως|πνεῦμα|ποιέω|ποικίλος|πόλις|πολύς|ποτέ|πραΰτης|πρέπω|πρεσβύτερος|πρεσβύτης|πρεσβῦτις|πρό|προΐστημι|προπέμπω|πρός|προσδέχομαι|προσέχω|προφήτης|σεαυτοῦ|σεμνός|σεμνότης|σπουδάζω|σπουδαίως|στυγητός|σύ|συνείδησις|σῴζω|σωτήρ|σωτήριος|σωφρονέω|σωφρονίζω|σωφρόνως|σώφρων|τέκνον|τίς|τις|Τίτος|τοιοῦτος|τύπος|Τυχικός|ὑγιαίνω|ὑγιής|ὑπέρ|ὑπομιμνῄσκω|ὑπομονή|ὑποτάσσω|φανερόω|φαῦλος|φθόνος|φιλάγαθος|φίλανδρος|φιλανθρωπία|φιλέω|φιλόξενος|φιλότεκνος|φρεναπάτης|φροντίζω|χάριν|χάρις|χρεία|χρηστότης|χριστός|χρόνος|ψεύστης|ὡς|ὡσαύτως|ὠφέλιμος
+</pre>
+
+<p>Then click the button "Check for completeness". After this all words beneath the heading "Parsed text" should be displayed on green backgound. If some words remain on white background, it means that the script was not able to generate complete list of words. Inform about it senior editor.</p>
+
+<p>When you have pipe delimited alphabetical list of all words in the parsed text, go to <a href="../tools/lexicon_contents_generator.html" target="_blank">Lexicon contents generator</a> page and fill the form:</p>
+
+<p><img src="img2/concordance_scanned_05.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we listed resource [LINK TO BE ADDED]. We entered for this key the value "oncordance_to_greek_testament_by_moulton_geden_contents", so we now should enter it as the value of the field.</p>
+
+<p>The value of the form‘s field "Word list" should be just created pipe delimited alphabetical list of all words in the parsed text.</p>
+
+<p>After filling fields with these values click the button "Generate contents" and the contents code will appear in "Contents code" textarea.</p>
+
+<p>The contents code will be as this:</p>
+
+<pre id="creating_concordance_contents_file" class="prettyprint code_showarea">
+concordance_to_greek_testament_by_moulton_geden_contents = {
+
+  /*Title page*/	"title": ""
+
+  , /*ἀγαθός*/ "w-7936-947-945-952-972-962": ""
+
+  , /*ἀγάπη*/ "w-7936-947-940-960-951": ""
+
+  , /*ἅγιος*/ "w-7941-947-953-959-962": ""
+
+  , /*ἁγνός*/ "w-7937-947-957-972-962": ""
+
+  // part of code has been cut out
+
+  , /*χριστός*/ "w-967-961-953-963-964-972-962": ""
+
+  , /*χρόνος*/ "w-967-961-972-957-959-962": ""
+
+  , /*ψεύστης*/ "w-968-949-973-963-964-951-962": ""
+
+  , /*ὡς*/ "w-8033-962": ""
+
+  , /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": ""
+
+  , /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": ""
+
+};
+</pre>
+
+<p>Now we need to enter values for each key of this JSON object. The keys are strings starting with "w" and consisting from numerical letter codes. "v-title" is the key for the title page of the concordane. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
+
+<p>We get the following code:</p>
+
+<pre id="creating_concordance_contents_file2" class="prettyprint code_showarea">
+concordance_to_greek_testament_by_moulton_geden_contents = {
+
+  /*Title page*/	"title": "3"
+
+  , /*ἀγαθός*/ "w-7936-947-945-952-972-962": "14"
+
+  , /*ἀγάπη*/ "w-7936-947-940-960-951": "18"
+
+  , /*ἅγιος*/ "w-7941-947-953-959-962": "23"
+
+  , /*ἁγνός*/ "w-7937-947-957-972-962": "26"
+
+  // part of code has been cut out
+
+  , /*χριστός*/ "w-967-961-953-963-964-972-962": "1023"
+
+  , /*χρόνος*/ "w-967-961-972-957-959-962": "1030"
+
+  , /*ψεύστης*/ "w-968-949-973-963-964-951-962": "1034"
+
+  , /*ὡς*/ "w-8033-962": "1038"
+
+  , /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": "1043"
+
+  , /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": "1044"
+
+};
+</pre>
+
+<p>This code should be saved in the file having the same name as the value in "Contents shortname" field. The file should be placed in directory whose name is the same ar resource shortname. Resource shortname is "concordance_by_moulton_geden" so the directory will be /data/concordance/concordance_by_moulton_geden/ </p>
+
+<p>After doing this Concordance resource should work in sync with parsed text resource.</p>
+
+<h4 class="pc-anchor" id="h-concordance-scanned-supplementing-contents-file">Supplementing contents file</h4>
+
+<p>In case there is already contents file which contains words from one book of classics text, and we want that contents file would include also the words from other book of classics text, we need to supplement contents.</p>
+
+<p>To do this go to <a href="../tools/lexicon_contents_supplementer.html" target="_blank">Lexicon contents supplementer</a> page and fill the form:</p>
+
+<p><img src="img2/concordance_scanned_06.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p>
+
+<p>The value of the form‘s field "Lexicon contents object" should be complete content of the concordance contents file. In previous section [LINK TO BE ADDED] we saved it as /data/concordance/concordance_by_moulton_geden/concordance_to_greek_testament_by_moulton_geden_contents.js .</p>
+
+<p>The value of the form‘s field "List of words to be added" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in previous section [LINK TO BE ADDED]. Here in this field we added list of words contained in parsed text resource from <em>Epistle to Philemon</em> collection.</p>
+
+<p>After filling fields with these values, click the button "Load contents" and the code of the concordance contents object will be displayed beneath "Initial contents object:" heading.</p>
+
+<p>Then click the button "Load words" and the list of words to be added to contents will be displayed beneath "Words to be added:" heading.</p>
+
+<p>After that click the button "Add to contents" and the code of supplemented contents object will appear in "Supplemented contents code" textarea.</p>
+
+<p>Then click the button "Check for completeness" and all words beneath the headings "Words to be added:" and "Initial contents object:" should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
+
+<p>The code generated will be as this:</p>
+
+<pre id="creating_concordance_contents_file3" class="prettyprint code_showarea">
+concordance_to_greek_testament_by_moulton_geden_contents = {
+
+  /*Title page*/	"title": "3"
+
+  , /*ἀγαθός*/ "w-7936-947-945-952-972-962": "14"
+
+  , /*ἀγάπη*/ "w-7936-947-940-960-951": "18"
+
+  , /*ἀγαπητός*/ "w-7936-947-945-960-951-964-972-962": ""
+
+  , /*ἅγιος*/ "w-7941-947-953-959-962": "23"
+
+  , /*ἁγνός*/ "w-7937-947-957-972-962": "26"
+
+  , /*ἀδελφός*/ "w-7936-948-949-955-966-972-962": ""
+
+  // part of code has been cut out
+
+  , /*χριστός*/ "w-967-961-953-963-964-972-962": "1023"
+
+  , /*χρόνος*/ "w-967-961-972-957-959-962": "1030"
+
+  , /*χωρίζω*/ "w-967-969-961-943-950-969": ""
+
+  , /*χωρίς*/ "w-967-969-961-943-962": ""
+
+  , /*ψεύστης*/ "w-968-949-973-963-964-951-962": "1034"
+
+  , /*ὥρα*/ "w-8037-961-945": ""
+
+  , /*ὡς*/ "w-8033-962": "1038"
+
+  , /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": "1043"
+
+  , /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": "1044"
+  
+};
+</pre>
+
+<p>Notice, tat some keys have numerical values while the other keys have empty strings as their values. The latter represents the words which were not included in the initial contents object.</p>
+
+<p>Now we need to enter numerical values for each key having empty string as its value. The values should be numbers from image file names (without zero padding). So, view images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
+
+<p>We get the following code:</p>
+
+<pre id="creating_concordance_contents_file4" class="prettyprint code_showarea">
+concordance_to_greek_testament_by_moulton_geden_contents = {
+  
+  /*Title page*/	"title": "3"
+
+  , /*ἀγαθός*/ "w-7936-947-945-952-972-962": "14"
+
+  , /*ἀγάπη*/ "w-7936-947-940-960-951": "18"
+
+  , /*ἀγαπητός*/ "w-7936-947-945-960-951-964-972-962": "19"
+
+  , /*ἅγιος*/ "w-7941-947-953-959-962": "23"
+
+  , /*ἁγνός*/ "w-7937-947-957-972-962": "26"
+
+  , /*ἀδελφός*/ "w-7936-948-949-955-966-972-962": "29"
+
+  // part of code has been cut out
+
+  , /*χριστός*/ "w-967-961-953-963-964-972-962": "1023"
+
+  , /*χρόνος*/ "w-967-961-972-957-959-962": "1030"
+
+  , /*χωρίζω*/ "w-967-969-961-943-950-969": "1032"
+
+  , /*χωρίς*/ "w-967-969-961-943-962": "1032"
+
+  , /*ψεύστης*/ "w-968-949-973-963-964-951-962": "1034"
+
+  , /*ὥρα*/ "w-8037-961-945": "1037"
+
+  , /*ὡς*/ "w-8033-962": "1038"
+
+  , /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": "1043"
+
+  , /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": "1044"
+    
+};
+</pre>
+
+<p>Replace with this code the contents of the file from which initial code was taken (in our case this was the file /data/concordance/concordance_by_moulton_geden/concordance_to_greek_testament_by_moulton_geden_contents.js) and save it.</p>
+
+<p>After doing this concordance resource should work in sync with parsed text resource.</p>
+
+<h4 class="pc-anchor" id="h-concordance-workflows-for-multiple-collections">Workflows for multiple collections</h4>
+
+
 
 
 
@@ -2325,126 +2564,11 @@ nt_titus_ed_antoniadis_contents = {
 
 
 
-<h2 class="pc-anchor" id="h-creating-resources">Creating resources</h2>
-
-
-<h3 class="pc-anchor" id="h-critical-edition-scanned">Critical edition (scanned)</h3>
-
-<p>In principle, resources belonging to type "Critical edition" can be either scanned or transcribed, but they surely will be all scanned because it is very difficult to reproduce complex formatting of the scholarly editions using very limitted means available in HTML. So, only creation of scanned resources of the type "Critical edition" will be described in documentation.</p>
-
-<h4 class="pc-anchor" id="h-critical-edition-scanned-creating-image-files2">Creating image files</h4>
-
-<p>To create scanned resource of the type "Critical edition" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a> the sections on scanning a book, on converting PDF file to images, on batch renaming of files, on cropping images, on retouching images, on optimizing size of JPG files.</p>
-
-<p>When you have a series of JPG files each image picturing one page of the book and named sttarting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory specified in catalogue file as the value of the key "scanned_source_shortname". For example, in the <em>Epistle to Titus</em> collection  the critical edition by M. W. Holmes <a class="inner-link" data-anchor="h-critical-edition">has been listed</a> and the  value of the key "scanned_source_shortname" is "greek_new_testament_sbl_edition_ed_holmes". It means that the pictures of the pages must be uploaded to the directory  /_scans/ greek_new_testament_sbl_edition_ed_holmes .</p>
-
-<p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
-
-<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?greek_new_testament_sbl_edition_ed_holmes</p>
-
-<h4 class="pc-anchor" id="h-critical-edition-scanned-creating-contents-file2">Creating contents file</h4>
-
-<p>In order for critical edition to work in sync with parsed text, the contents file must be created. To create contents file go to  <a href="../tools/book_contents_generator.html" target="_blank">Scanned book contents generator</a> page and fill the form:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_scanned_book_contents.jpg"></p>
-
-<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In Epistle to Titus there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15.</p>
-
-<p>The value of the form‘s field "Line class prefix" should be be pipe delimited class prefixes, one for each chapter. The chapters of the New Testament are usually indicated by the number written to the left from verse number; colon usually used to separate chapter number from verse number. Class prefix should start with the letter "v" and follow with line number prefix in which special symbols are replaced with dashes. So, we replace colons in line number prefixes, add leading letter "v" and get the value for this field v1-|v2-|v3- .</p>
-
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" in collection‘s catalogue. While creating collection‘s catalogue for <em>Epistle to Titus</em> collection <a class="inner-link" data-anchor="h-critical-edition">we entered</a> for this key the value "lines_nt_titus_ed_holmes_contents", so we now should enter it as the value of the field "Contents shortname".</p>
-
-<p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
-
-<p>The code will be as this:</p>
-
-<pre id="creating_critical_edition_contents_file" class="prettyprint code_showarea">
-var lines_nt_titus_ed_holmes_contents = {
-
-"v-title": ""
-
-, "v1-1": ""
-
-, "v1-2": ""
-
-// part of code has been cut out
-
-, "v1-15": ""
-
-, "v1-16": ""
-
-, "v2-1": ""
-
-, "v2-2": ""
-
-// part of code has been cut out
-
-, "v2-14": ""
-
-, "v2-15": ""
-
-, "v3-1": ""
-
-, "v3-2": ""
-
-// part of code has been cut out
-
-, "v3-14": ""
-
-, "v3-15": ""
-
-};
-</pre>
-
-<p>Now we need to enter values for each key of this JSON object. The keys are class names of lines of the parsed text. "v-title" is the class name of the title of the parsed text. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
-
-<p>We get the following code:</p>
-
-<pre id="creating_critical_edition_contents_file2" class="prettyprint code_showarea">
-var lines_nt_titus_ed_holmes_contents = {
-
-"v-title": "451"
-
-, "v1-1": "451"
-
-, "v1-2": "451"
-
-// part of code has been cut out
-
-, "v1-15": "451"
-
-, "v1-16": "451"
-
-, "v2-1": "452"
-
-, "v2-2": "452"
-
-// part of code has been cut out
-
-, "v2-14": "452"
-
-, "v2-15": "452"
-
-, "v3-1": "452"
-
-, "v3-2": "452"
-
-// part of code has been cut out
-
-, "v3-14": "453"
-
-, "v3-15": "453"
-
-}; 
-</pre>
-
-<p>This code should be saved in the file having the same name as the value in "Contents shortname" field. The file should be placed in "contents" directory: /data/contents/lines_nt_titus_ed_holmes_contents.js</p>
-
-<p>After doing this critical edition resource should work in sync with parsed text resource.</p>
+<h2 class="pc-anchor" id="h-creating-resources2">Creating resources</h2>
 
 <h3 class="pc-anchor" id="h-concordance-scanned2">Concordance (scanned)</h3>
 
-<h4 class="pc-anchor" id="h-concordance-scanned-creating-image-files">Creating image files</h4>
+<h4 class="pc-anchor" id="h-concordance-scanned-creating-image-files2">Creating image files</h4>
 
 <p>To create scanned resource of the type "Concordance" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a> the sections on scanning a book, on converting PDF file to images, on batch renaming of files, on retouching images, on cropping images, on optimizing size of JPG files.</p>
 
@@ -2456,7 +2580,7 @@ var lines_nt_titus_ed_holmes_contents = {
 
 <p>In order for concordance to work in sync with parsed text, the contents file should be prepared. Concordance resources, which use the same scanned book, share the same contents file. This means that there could be two cases: (1) there is no contents file and we need to create it; (2) there is contents file and we need to supplement it.</p> 
 
-<h4 class="pc-anchor" id="h-concordance-scanned-creating-new-contents-file">Creating new contents file</h4>
+<h4 class="pc-anchor" id="h-concordance-scanned-creating-new-contents-file2">Creating new contents file</h4>
 
 <p>To create new contents file go to  <a href="../tools/word_list_generator.html" target="_blank">Word list generator</a> page and fill the form:</p>
 
@@ -2480,7 +2604,7 @@ var lines_nt_titus_ed_holmes_contents = {
 
 <p>The word list will be as this:</p>
 
-<pre id="creating_word_list" class="prettyprint code_showarea">
+<pre id="creating_word_list2" class="prettyprint code_showarea">
 ἀγαθός|ἀγάπη|ἅγιος|ἁγνός|ἀδιαφθορία|ἀδόκιμος|ἀεί|αἱρετικός|αἰσχροκερδής|αἰσχρός|αἰτία|αἰών|αἰώνιος|ἄκαρπος|ἀκατάγνωστος|ἀλήθεια|ἀληθής|ἀλλά|ἀλλήλων|ἁμαρτάνω|ἄμαχος|ἀμήν|ἀναγκαῖος|ἀνακαίνωσις|ἀνατρέπω|ἀνέγκλητος|ἀνήρ|ἄνθρωπος|ἀνόητος|ἀνομία|ἀντέχομαι|ἀντιλέγω|ἀνυπότακτος|ἀνωφελής|ἀπειθής|ἄπιστος|ἀπό|Ἀπολλῶς|ἀπόστολος|ἀποστρέφω|ἀποτόμως|ἀργός|ἀρνέομαι|Ἀρτεμᾶς|ἀρχή|ἀσέβεια|ἀσπάζομαι|ἀσωτία|αὐθάδης|αὐτοκατάκριτος|αὐτός|ἀφθαρσία|ἀψευδής|βδελυκτός|βλασφημέω|βούλομαι|γάρ|γαστήρ|γενεαλογία|γίνομαι|γνήσιος|γυνή|δέ|δεσπότης|δεύτερος|δέω|διά|διαβεβαιόομαι|διάβολος|διάγω|διατάσσω|διδασκαλία|διδάσκω|διδαχή|δίδωμι|δίκαιος|δικαιοσύνη|δικαιόω|δικαίως|δόξα|δουλεύω|δοῦλος|δουλόω|δυνατός|ἑαυτοῦ|ἐγκρατής|ἐγώ|εἰ|εἰμί|εἰρήνη|εἷς|εἰς|ἐκ|ἐκεῖ|ἐκεῖνος|ἐκλεκτός|ἐκστρέφομαι|ἐκχέω|ἐλέγχω|ἔλεος|ἐλπίς|ἐν|ἐναντίος|ἐνδείκνυμι|ἐντολή|ἐντρέπω|ἐξουσία|ἐπαγγέλλομαι|ἐπί|ἐπίγνωσις|ἐπιδιορθόω|ἐπιεικής|ἐπιθυμία|ἐπίσκοπος|ἐπιστομίζω|ἐπιταγή|ἐπιφαίνω|ἐπιφάνεια|ἔργον|ἔρις|ἔρχομαι|ἕτοιμος|εὐάρεστος|εὐσέβεια|εὐσεβῶς|ἔχω|ζάω|ζηλωτής|Ζηνᾶς|ζήτησις|ζωή|ἤ|ἡδονή|ἡμέτερος|θεός|θηρίον|ἴδιος|ἱεροπρεπής|Ἰησοῦς|ἵνα|Ἰουδαϊκός|καθαρίζω|καθαρός|καθίστημι|καί|καιρός|κακία|κακός|καλοδιδάσκαλος|καλός|κατά|καταλείπω|κατάστημα|κατηγορία|κέρδος|κήρυγμα|κληρονόμος|κοινός|κοσμέω|κοσμικός|Κρής|Κρήτη|κρίνω|κύριους|λαλέω|λαός|λέγω|λείπω|λόγος|λουτρόν|λυτρόομαι|μακάριος|μάλιστα|μανθάνω|μαρτυρία|ματαιολόγος|μάταιος|μάχη|μέγας|μέν|μετά|μή|μηδείς|μιαίνω|μισέω|μῦθος|μωρός|νέος|νηφάλιος|Νικόπολις|νομικός|νοσφίζομαι|νουθεσία|νοῦς|νῦν|ὁ|οἶδα|οἰκονόμος|οἶκος|οἰκουργός|οἶνος|ὅλος|ὁμολογέω|ὁράω|ὀργίλος|ὅς|ὅσιος|ὅστις|ὅταν|ὅτε|ὅτι|οὐ|οὐδείς|οὗτος|παιδεύω|παλιγγενεσία|παραιτέομαι|παρακαλέω|παραχειμάζω|παρέχω|πάροινος|πᾶς|πατήρ|Παῦλος|πειθαρχέω|πέμπω|περί|περιΐστημι|περιούσιος|περιτομή|περιφρονέω|πιστεύω|πίστις|πιστός|πλανάω|πλήκτης|πλουσίως|πνεῦμα|ποιέω|ποικίλος|πόλις|πολύς|ποτέ|πραΰτης|πρέπω|πρεσβύτερος|πρεσβύτης|πρεσβῦτις|πρό|προΐστημι|προπέμπω|πρός|προσδέχομαι|προσέχω|προφήτης|σεαυτοῦ|σεμνός|σεμνότης|σπουδάζω|σπουδαίως|στυγητός|σύ|συνείδησις|σῴζω|σωτήρ|σωτήριος|σωφρονέω|σωφρονίζω|σωφρόνως|σώφρων|τέκνον|τίς|τις|Τίτος|τοιοῦτος|τύπος|Τυχικός|ὑγιαίνω|ὑγιής|ὑπέρ|ὑπομιμνῄσκω|ὑπομονή|ὑποτάσσω|φανερόω|φαῦλος|φθόνος|φιλάγαθος|φίλανδρος|φιλανθρωπία|φιλέω|φιλόξενος|φιλότεκνος|φρεναπάτης|φροντίζω|χάριν|χάρις|χρεία|χρηστότης|χριστός|χρόνος|ψεύστης|ὡς|ὡσαύτως|ὠφέλιμος
 </pre>
 
@@ -2498,7 +2622,7 @@ var lines_nt_titus_ed_holmes_contents = {
 
 <p>The contents code will be as this:</p>
 
-<pre id="creating_concordance_contents_file" class="prettyprint code_showarea">
+<pre id="creating_concordance_contents_file2a" class="prettyprint code_showarea">
 var words_concordance_to_greek_testament_by_moulton_geden_contents = {
 
 /*Title page*/	"w-title": ""
@@ -2532,7 +2656,7 @@ var words_concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>We get the following code:</p>
 
-<pre id="creating_concordance_contents_file2" class="prettyprint code_showarea">
+<pre id="creating_concordance_contents_file2b" class="prettyprint code_showarea">
 var words_concordance_to_greek_testament_by_moulton_geden_contents = {
 
 /*Title page*/	"w-title": "3"
@@ -2566,7 +2690,7 @@ var words_concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>After doing this Concordance resource should work in sync with parsed text resource.</p>
 
-<h4 class="pc-anchor" id="h-concordance-scanned-supplementing-contents-file">Supplementing contents file</h4>
+<h4 class="pc-anchor" id="h-concordance-scanned-supplementing-contents-file2">Supplementing contents file</h4>
 
 <p>In case there is already contents file for scanned concordance book we need to supplement contents.</p>
 
@@ -2590,7 +2714,7 @@ var words_concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>The code generated will be as this:</p>
 
-<pre id="creating_concordance_contents_file3" class="prettyprint code_showarea">
+<pre id="creating_concordance_contents_file3a" class="prettyprint code_showarea">
 var words_concordance_to_greek_testament_by_moulton_geden_contents = {
 
 /*Title page*/	"w-title": "3"
@@ -2692,7 +2816,7 @@ var words_concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>After doing this concordance resource should work in sync with parsed text resource.</p>
 
-<h4 class="pc-anchor" id="h-concordance-workflows-for-multiple-collections">Workflows for multiple collections</h4>
+<h4 class="pc-anchor" id="h-concordance-workflows-for-multiple-collections2">Workflows for multiple collections</h4>
 
 <p>Usually scanned resource of the type "Concordance" is being included into several collections. E.g. such resource as concordance edited by W. F. Moulton and A. S. Geden will be used in every collection dedicated to certain book of the New Testament. This means that the same contents file of the scanned resource of the type "Concordance" will be used by all relevant collections.</p>
 
