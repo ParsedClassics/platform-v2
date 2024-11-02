@@ -2542,7 +2542,51 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <h4 class="pc-anchor" id="h-concordance-workflows-for-multiple-collections">Workflows for multiple collections</h4>
 
+<p>Usually scanned resource of the type "Concordance" is being included into several collections. E.g. such resource as concordance edited by W. F. Moulton and A. S. Geden will be used in every collection dedicated to certain book of the New Testament. This means that the same contents file of the scanned resource of the type "Concordance" will be used by all relevant collections.</p>
 
+<p>There are several workflows for creating contents file to be used by several collections.</p>
+
+<h5 class="pc-anchor" id="h-concordance-workflows-supplementing-in-stages">Supplementing in stages</h5>
+
+<p>One possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-concordance-scanned-creating-new-contents-file">create new contents file</a> to be used by certain single collection and fill the gaps with page numbers for all lemmas found in the original text of that collection. Then we <a class="inner-link" data-anchor="h-concordance-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in original text of another collection and fill the gaps with page numbers of these lemmas. And we repeat this process again and again untill all lemmas of the all original texts of the all relevant collections are included in the contents file and all relevant page numbers are filled in.</p>
+
+<p>This workflow has the advantage that we can work only with lemmas of the original text of the single collection and doing so quickly prepare one or more resources of the type "Concordance" to be used inside single collection. The disadvantage is that in each cycle we need again to browse through all pages of the scanned book in search for relevant lemmas and that takes a lot of time.</p>
+
+<h5 class="pc-anchor" id="h-concordance-workflows-supplementing-at-start">Supplementing at start</h5>
+
+<p>Another possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-concordance-scanned-creating-new-contents-file">create new contents file</a> to be used by certain single collection. Then we don't fill the gaps with page numbers, but instead <a class="inner-link" data-anchor="h-concordance-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in original text of another collection. And we repeat this process again and again untill all lemmas of the all original texts of the all relevant collections are included in the contents file. Then we browse through all pages of the scanned book, find the page numbers of the all lemmas and fill the gaps in contents file with these page numbers.</p>
+
+<p>This workflow has the advantage that we must browse though all pages of the scanned book only once and this takes much less time than repeated browsing of the workflow described above. But the disadvantage is that we cannot work with the single collection at the time and must create huge contents file at once.</p>
+
+<h5 class="pc-anchor" id="h-concordance-workflows-cleaning-page-numbers">Cleaning page numbers</h5>
+
+<p>By using the first or the second workflow of those described above we get contents file of the resource of the type "Concordance"  which is being used by multiple collections. We may need to add another resource of the type "Concordance" to the same collections. E.g. after having added concordance edited by W. F. Moulton and A. S. Geden to every collection dedicated to certain book of the New Testament we may need to add concordance edited by Ch. F. Hudson and E. Abbot to the same collections. In such cases we can shortcut the process by using the third workflow.</p>
+
+<p>The contents file for the new resource of the type "Concordance" should contain the same lemmas. This means that we can reuse existing contens file: we only need to remove page numbers, to change the name of the contents object and to change the name of the file. To remove page numbers from the contents file use <a href="../tools/lexicon_page_numbers_cleaner.html" target="_blank">Lexicon page numbers cleaner</a>. Copy contents object from the contens file, paste it in the field "Lexicon contents object" and click the button "Clean page numbers":</p>
+
+<p><img src="img2/concordance_scanned_07.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>Then save the outputted contens object without page numbers using relevant contents object name and file name.</p>
+
+<h5 class="pc-anchor" id="h-concordance-workflows-importing-after-cleaning">Importing after cleaning</h5>
+
+<p>It may happen that one resource of the type "Concordance" has been added to multiple collections and another resource of the type "Concordance" has been added  to just single or several collections. E.g. such resource as concordance edited by W. F. Moulton and A. S. Geden has been added to every collection dedicated to certain book of the New Testament, but such resource as concordance edited by Ch. F. Hudson and E. Abbot has been added to one or couple of collections. Now we need to add this resource to remaining collections.<p>
+
+<p>In this case we need to use the following workflow. At first we should take that bigger contents file which contains comprehensive list of lemmas found in multiple collections and <a class="inner-link" data-anchor="h-concordance-workflows-cleaning-page-numbers">remove the page numbers</a> from it. After that we need to import data into cleaned contents object from the contents object which contains less comprehensive list of lemmas from single collection or couple of collections. To do this go to <a href="../tools/lexicon_contents_importer.html" target="_blank">Lexicon contents importer</a> form anf fill the fields:</p>
+
+<p><img src="img2/concordance_scanned_08.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Language" should be "Greek" because lemmas in both contents objects are in Greek.<p>
+
+<p>The value of the field "Lexicon contents object" should be contents object in which page numbers have been removed, i.e. that contents object which contains comprehensive list of lemmas found in multiple collections.</p>
+
+<p>The value of the field "Lexicon contents object to be imported" should be contents object with all page numbers intact which contains less comprehensive list of lemmas from single collection or couple of collections.</p>
+
+<p>After filling fields with such values click the button "Load contents" which is below the first textarea and the list of lemmas contained in the initial contents object will be displayed below the heading "Initial contents object:". Then click the button "Load contents" which is below the second textarea and the list of lemmas contained in contents object to be imported will be displayed below the heading "Contents object to be imported:". After that click the button "Import contents" and the resulting contents object will be outputted inside textarea "Resulting contents object code". Then click the button "Check for completeness". All lemmas below the headings "Contents object to be imported:" and "Initial contents object:" should be colored green. If certain lemmas remain not colored, inform about it senior editor.</p>
+
+<p>Then save the resulting contents object using relevant object name and file name.<p>
+
+<h3 class="pc-anchor" id="h-concordance-transcribed">Concordance (transcribed)</h3>
 
 
 
@@ -2862,7 +2906,7 @@ var words_concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>Then save the resulting contents object using relevant object name and file name.<p>
 
-<h3 class="pc-anchor" id="h-concordance-transcribed">Concordance (transcribed)</h3>
+<h3 class="pc-anchor" id="h-concordance-transcribed2">Concordance (transcribed)</h3>
 
 <p>Creating transcribed resource of the type "concordance" involves creating data file and contents file.</p>
 
