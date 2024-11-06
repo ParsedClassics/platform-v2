@@ -73,7 +73,7 @@ var ParsedClassicsVars = {
   , verseNumClassSeparator: "-"
   , lineNumberAttr: "data-line-number"
   // selected word
-	, wordClassSelectedByDefault: "w-title"
+	, wordClassSelectedByDefault: "title"
   , wordClass: "word"
   , selectedWordClass: "selected-word"
   , formAttr: "data-form"
