@@ -67,10 +67,11 @@ var ParsedClassicsVars = {
   // selected line
   , lineClassSelectedByDefault: "v-title"
   , selectedLineClass: "selected-verse"
-  , verseNumberClass: "verse-number"
-  , verseClass: "verse"
+  , verseNumberClass: "line-number"
+  , verseClass: "line"
   , verseNumClassPrefix: "v"
   , verseNumClassSeparator: "-"
+  , lineNumberAttr: "data-line-number"
   // selected word
 	, wordClassSelectedByDefault: "w-title"
   , wordClass: "word"
@@ -88,9 +89,9 @@ var ParsedClassicsVars = {
   , grammarBookAttr: "data-grammar"
   , grammarPageAttr: "data-page"
   // concordance
-  , concordanceLineNumClass: "concordance-verse-number"
-  , concordanceLineClassAttr: "data-concordance-verse-class"
-  , concordanceVerseClass: "concordance-verse"
+  , concordanceLineNumClass: "concordance-line-number"
+  , concordanceLineClassAttr: "data-concordance-line-class"
+  , concordanceVerseClass: "concordance-line"
   , concordanceWordClass: "concordance-word"
   , concordanceHeadingClass: "concordance-heading"
   , concordanceEntryClass: "concordance-entry"
