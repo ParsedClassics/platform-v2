@@ -458,7 +458,8 @@ var ParsedClassicsConcordance = {
 						line_num = word_el.siblings("." + ParsedClassicsVars.verseNumberClass).first().text();
 
 						//convert line number to line class
-						line_num_class = ParsedClassicsData._findLineNumClass(line_num);
+						//line_num_class = ParsedClassicsData._findLineNumClass(line_num);
+						line_num_class = line_num;
 
 						// put info about certain word into output html
 						if (j == 0 || word_form != word_form_prev || part_of_speech != part_of_speech_prev || parsing != parsing_prev) {
@@ -814,7 +815,7 @@ var ParsedClassicsConcordance = {
 			, conc_lines
 			, msg_el
 			, single_word_el
-			, line_class
+			, line_num
 			, word_form
 			, single_parsed_text_line
 			, parsed_text_words
@@ -885,11 +886,11 @@ var ParsedClassicsConcordance = {
 				// loop through <span> els containing line num and line class
 				for (var j = 0; j < line_num_els.length; j++) {
 					
-					// get line class 
-					line_class = $(line_num_els[j]).attr(ParsedClassicsVars.concordanceLineClassAttr);
+					// get line number 
+					line_num = $(line_num_els[j]).attr(ParsedClassicsVars.concordanceLineClassAttr);
 
 					// find relevant line of parsed text
-					single_parsed_text_line = parsed_text_container.find("." + line_class).parent();
+					single_parsed_text_line = parsed_text_container.find("[" + ParsedClassicsVars.lineNumberAttr + "='" + line_num + "']").parent();
 
 					// find words in parsed text line having relevant form
 					parsed_text_words = single_parsed_text_line.find("[" + ParsedClassicsVars.formAttr + "='" + word_form + "']");
