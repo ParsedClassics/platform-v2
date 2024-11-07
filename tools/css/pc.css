@@ -551,6 +551,30 @@ svg {
   filter: brightness(0) invert(1);
 }
 
+#pc-append-code-container span.line:not(:last-child) {
+  padding-bottom: 16px;
+}
+
+#pc-append-code-container span.line {
+  display: block;
+}
+
+span.concordance-line {
+  display: block;
+  margin-top: 1rem;
+}
+
+span.concordance-lines-button {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 6px;
+  transition: opacity 0s;
+  border-radius: 3px;
+}
+
 /* ****************************************
 Resizable text inputs from https://jsfiddle.net/ElMoonLite/qh703tbe/
 *** v3: ********************************
@@ -1205,25 +1229,20 @@ h5 {
   opacity: 0.5;
 }
 
-.concordance-lines-button:hover {
-  /*background-color: #ffdddd;*/
-  background-color: #87CEEB;
-}
-
 .concordance-lines-button.expanded {
   background-image: url(../img/chevron-up.svg);
+}
+
+.concordance-lines-button.expanded:hover{
+  background-image: url(../img/chevron-up2.svg);
 }
 
 .concordance-lines-button.collapsed {
   background-image: url(../img/chevron-down.svg);
 }
 
-#tools_page .concordance-lines-button.expanded {
-  background-image: url(../img/chevron-down.svg);
-}
-
-#tools_page .concordance-lines-button.collapsed {
-  background-image: url(../img/chevron-up.svg);
+.concordance-lines-button.collapsed:hover {
+  background-image: url(../img/chevron-down2.svg);
 }
 
 /*.pc-show-verses .verse:not(:first-child) {
