@@ -2588,6 +2588,182 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <h3 class="pc-anchor" id="h-concordance-transcribed">Concordance (transcribed)</h3>
 
+<p>Creating transcribed resource of the type "concordance" involves creating data file, contents file and target text files.</p>
+
+<h4 class="pc-anchor" id="h-concordance-transcribed-creating-data-file">Creating data file</h4>
+
+<p>Let‘s create data file of the transcribed concordance of the <em>Epistle to Titus</em> text.</p>
+
+<p>The data file is being created by filling <a href="../tools/concordance_generator.html" target="_blank">Concordance generator</a> form:</p>
+
+<p><img src="img2/concordance_typed_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p>
+
+<p>The value of the form‘s field "Book abbreviation" should be standard abbreviation of the title of the classical book. For example, abbreviation of the apostle Paul's First Epistle to Thessalonians would be "1 Thess.", abbreviation of the Revelation to John the Theologian would be "Rev.".</p>
+
+<p>The value of the form‘s field "Parsed text code" should be HTML code of the parsed text starting from the first "span" tag having class attribute value "line" and ending with the last "span" tag having the same class attribute value. Use browser’s HTML inspector [LINK TO BE ADDED] (available on right-click in every major browser) to copy this part of code from Library app’s page.</p> 
+
+<p>The value of the form‘s field "Word list" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in the section on <a class="inner-link" data-anchor="h-concordance-scanned-creating-new-contents-file">Creating new contents file</a> for scanned concordance resource.</p>
+
+<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
+
+<p>After loading text click the button "Generate concordance" and the concordance code will appear in "Concordance code" textarea.</p>
+
+<p>Then click the button "Check for completeness" and all words beneath the heading "Parsed text:"  should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
+
+<p>The generated concordance code will be as this:</p>
+
+<pre id="creating_concordance_typed_data_file" class="prettyprint code_showarea">
+&lt;div class="concordance-entry">
+  &lt;h2>&lt;span class="concordance-heading" data-lemma="ἀγαθός">ἀγαθός&lt;/span>&lt;/h2>
+  &lt;span class="concordance-line">
+    &lt;span class="concordance-lines-button collapsed">&lt;/span>
+    &lt;span class="concordance-word" data-lemma="ἀγαθός" data-form="ἀγαθήν" data-parsing="accusative singular feminine" data-part-of-speech="adjective">
+      ἀγαθήν adjective accusative singular feminine
+      &lt;span class="concordance-lines-list">
+        &lt;span class="concordance-line-number" data-concordance-line-class="2:10">Titus&nbsp;2:10&lt;/span>
+      &lt;/span>
+    &lt;/span>
+  &lt;/span>
+  &lt;span class="concordance-line">
+    &lt;span class="concordance-lines-button collapsed">&lt;/span>
+    &lt;span class="concordance-word" data-lemma="ἀγαθός" data-form="ἀγαθάς" data-parsing="accusative plural feminine" data-part-of-speech="adjective">
+      ἀγαθάς adjective accusative plural feminine
+      &lt;span class="concordance-lines-list">
+        &lt;span class="concordance-line-number" data-concordance-line-class="2:5">Titus&nbsp;2:5&lt;/span>
+      &lt;/span>
+    &lt;/span>
+  &lt;/span>
+  &lt;span class="concordance-line">
+    &lt;span class="concordance-lines-button collapsed">&lt;/span>
+    &lt;span class="concordance-word" data-lemma="ἀγαθός" data-form="ἀγαθόν" data-parsing="accusative singular neuter" data-part-of-speech="adjective">
+      ἀγαθόν adjective accusative singular neuter
+      &lt;span class="concordance-lines-list">
+        &lt;span class="concordance-line-number" data-concordance-line-class="1:16">Titus&nbsp;1:16&lt;/span>, 
+        &lt;span class="concordance-line-number" data-concordance-line-class="3:1">Titus&nbsp;3:1&lt;/span>
+      &lt;/span>
+    &lt;/span>
+  &lt;/span>
+&lt;/div>
+
+// part of code has been cut out
+
+&lt;div class="concordance-entry">
+  &lt;h2>&lt;span class="concordance-heading" data-lemma="χάρις">χάρις&lt;/span>&lt;/h2>
+  &lt;span class="concordance-line">
+    &lt;span class="concordance-lines-button collapsed">&lt;/span>
+    &lt;span class="concordance-word" data-lemma="χάρις" data-form="χάρις" data-parsing="nominative singular feminine" data-part-of-speech="noun">
+      χάρις noun nominative singular feminine
+      &lt;span class="concordance-lines-list">
+        &lt;span class="concordance-line-number" data-concordance-line-class="1:4">Titus&nbsp;1:4&lt;/span>, 
+        &lt;span class="concordance-line-number" data-concordance-line-class="2:11">Titus&nbsp;2:11&lt;/span>, 
+        &lt;span class="concordance-line-number" data-concordance-line-class="3:15">Titus&nbsp;3:15&lt;/span>
+      &lt;/span>
+    &lt;/span>
+  &lt;/span>
+  &lt;span class="concordance-line">
+    &lt;span class="concordance-lines-button collapsed">&lt;/span>
+    &lt;span class="concordance-word" data-lemma="χάρις" data-form="χάριτι" data-parsing="dative singular feminine" data-part-of-speech="noun">
+      χάριτι noun dative singular feminine
+      &lt;span class="concordance-lines-list">
+        &lt;span class="concordance-line-number" data-concordance-line-class="3:7">Titus&nbsp;3:7&lt;/span>
+      &lt;/span>
+    &lt;/span>
+  &lt;/span>
+&lt;/div>
+</pre>
+
+<p>Concordance HTML code should be converted to string and made the value of the variable having the same name as resource shortname. Transcribed concordance resource was listed [LINK TO BE ADDED] using  "nt_conc_by_parsedclassics" as its shortname, so this will be variable name. To convert concordance HTML code to string it should be enclosed by the backtick/grave accent (` `) character.</p>
+
+<p>This way we get such data file:</p>
+
+<pre id="creating_concordance_typed_data_file2" class="prettyprint code_showarea">
+nt_conc_by_parsedclassics =
+
+`&lt;div class="concordance-entry">
+  &lt;h2>&lt;span class="concordance-heading" data-lemma="ἀγαθός">ἀγαθός&lt;/span>&lt;/h2>
+  &lt;span class="concordance-line">
+    &lt;span class="concordance-lines-button collapsed">&lt;/span>
+    &lt;span class="concordance-word" data-lemma="ἀγαθός" data-form="ἀγαθήν" data-parsing="accusative singular feminine" data-part-of-speech="adjective">
+      ἀγαθήν adjective accusative singular feminine
+      &lt;span class="concordance-lines-list">
+        &lt;span class="concordance-line-number" data-concordance-line-class="2:10">Titus&nbsp;2:10&lt;/span>
+      &lt;/span>
+    &lt;/span>
+  &lt;/span>
+  &lt;span class="concordance-line">
+    &lt;span class="concordance-lines-button collapsed">&lt;/span>
+    &lt;span class="concordance-word" data-lemma="ἀγαθός" data-form="ἀγαθάς" data-parsing="accusative plural feminine" data-part-of-speech="adjective">
+      ἀγαθάς adjective accusative plural feminine
+      &lt;span class="concordance-lines-list">
+        &lt;span class="concordance-line-number" data-concordance-line-class="2:5">Titus&nbsp;2:5&lt;/span>
+      &lt;/span>
+    &lt;/span>
+  &lt;/span>
+  &lt;span class="concordance-line">
+    &lt;span class="concordance-lines-button collapsed">&lt;/span>
+    &lt;span class="concordance-word" data-lemma="ἀγαθός" data-form="ἀγαθόν" data-parsing="accusative singular neuter" data-part-of-speech="adjective">
+      ἀγαθόν adjective accusative singular neuter
+      &lt;span class="concordance-lines-list">
+        &lt;span class="concordance-line-number" data-concordance-line-class="1:16">Titus&nbsp;1:16&lt;/span>, 
+        &lt;span class="concordance-line-number" data-concordance-line-class="3:1">Titus&nbsp;3:1&lt;/span>
+      &lt;/span>
+    &lt;/span>
+  &lt;/span>
+&lt;/div>
+
+// part of code has been cut out
+
+&lt;div class="concordance-entry">
+  &lt;h2>&lt;span class="concordance-heading" data-lemma="χάρις">χάρις&lt;/span>&lt;/h2>
+  &lt;span class="concordance-line">
+    &lt;span class="concordance-lines-button collapsed">&lt;/span>
+    &lt;span class="concordance-word" data-lemma="χάρις" data-form="χάρις" data-parsing="nominative singular feminine" data-part-of-speech="noun">
+      χάρις noun nominative singular feminine
+      &lt;span class="concordance-lines-list">
+        &lt;span class="concordance-line-number" data-concordance-line-class="1:4">Titus&nbsp;1:4&lt;/span>, 
+        &lt;span class="concordance-line-number" data-concordance-line-class="2:11">Titus&nbsp;2:11&lt;/span>, 
+        &lt;span class="concordance-line-number" data-concordance-line-class="3:15">Titus&nbsp;3:15&lt;/span>
+      &lt;/span>
+    &lt;/span>
+  &lt;/span>
+  &lt;span class="concordance-line">
+    &lt;span class="concordance-lines-button collapsed">&lt;/span>
+    &lt;span class="concordance-word" data-lemma="χάρις" data-form="χάριτι" data-parsing="dative singular feminine" data-part-of-speech="noun">
+      χάριτι noun dative singular feminine
+      &lt;span class="concordance-lines-list">
+        &lt;span class="concordance-line-number" data-concordance-line-class="3:7">Titus&nbsp;3:7&lt;/span>
+      &lt;/span>
+    &lt;/span>
+  &lt;/span>
+&lt;/div>`;
+</pre>
+
+<p>Data file‘s name should be the same as resource shrtname. Transcribed concordance resource was listed [LINK TO BE ADDED] using  "nt_conc_by_parsedclassics" as its shortname, so the filename will be "nt_conc_by_parsedclassics.js". Data file should be placed in directory also named after resource shortname: /data/concordance/nt_conc_by_parsedclassics/ .</p>
+
+<p>After doing this concordance resource should work in sync with parsed text resource.</p>
+
+<p>We compiled grammatical concordance just for one book. In some cases this might be enough, but usually concordance compiled just for one book is not very useful. Much more useful would be to compile concordance for all books of certain classical text or to compile concordance for all texts written by certain author. We can compile concordance for several books by using <a href="../tools/concordance_supplementer.html" target="_blank">Concordance supplementer</a> form:</p>
+
+<p><img src="img2/concordance_typed_02.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>Let's say we want to compile grammatical concordance for all books of the New Testament starting from Gospel according to Matthew and ending with Revelation to John the Theologian. To achieve this we at first need to supplement concordance of the Gospel according to Matthew with the concordance of the Gospel according to Mark, then the resulting concordance we should supplement with the concordance of the Gospel according to Luke etc. until we reach the last book of the New Testament, the Revelation to John the Theologian.</p>
+
+<p>The value of the form‘s field "Language" should be "Greek" because New Testament is in Greek.</p>
+
+<p>The value of the form‘s field "Concordance to be supplemented" should be the code of the concordance of the Gospel according to Matthew.</p>
+
+<p>The value of the form‘s field "Concordance to be supplemented" should be the code of the concordance of the Gospel according to Mark.</p>
+
+<p>Having filled form's fields with these values, we should load both concordances by clicking "Load concordance" buttons and then we should click the button "Supplement concordance". The code of resulting concordance will be outputted in "Concordance code" textarea and resulting concordance will be displayed under "Concordance supplemented:" heading. Now we can click "Check for completeness" button to see if everything which was included in concordance to be supplemented and in concordance to be added is also included in resulting concordance. All words and line numbers of the concordance to be supplemented and of the concordance to be added should become green. If any word or line number became red and is included in square brackets (symbols []), inform about it senior editor.</p>
+
+<p>Now that we have grammatical concordance of the Gospels according to Matthew and Mark, let's copy its code and paste it in the field "Concordance to be supplemented", then let's paste the code of the concordance of the Gospel according to Luke in the field "Concordance to be added". After clicking button "Supplement concordance" we will have concordance which includes words of these three books. We can repeat this process until we compile concordance for all 27 books of the New Testament. The resulting concordance code should be converted to string and be made the value of the variable "nt_conc_by_parsedclassics" as has been described above.</p>
+
+<p>The code resulting should be saved in the file named as the variable i.e. "nt_conc_by_parsedclassics.js". The file should be placed in directory /data/concordance/nt_conc_by_parsedclassics .</p>
+
+<h4 class="pc-anchor" id="h-concordance-transcribed-creating-contents-file">Creating contents file</h4>
+
 
 
 
@@ -2610,307 +2786,11 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <h2 class="pc-anchor" id="h-creating-resources2">Creating resources</h2>
 
-<h3 class="pc-anchor" id="h-concordance-scanned2">Concordance (scanned)</h3>
-
-<h4 class="pc-anchor" id="h-concordance-scanned-creating-image-files2">Creating image files</h4>
-
-<p>To create scanned resource of the type "Concordance" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a> the sections on scanning a book, on converting PDF file to images, on batch renaming of files, on retouching images, on cropping images, on optimizing size of JPG files.</p>
-
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor which will upload those files to the server. The files will be uploaded to the directory specified in catalogue file as the value of the key "scanned_source_shortname". For example in the <em>Epistle to Titus</em> collection  the concordance edited by W. F. Moulton and A. S. Geden <a class="inner-link" data-anchor="h-concordance">has been listed</a> and the  value of the key "scanned_source_shortname" is "concordance_to_greek_testament_by_moulton_geden". It means that the pictures of the pages must be uploaded to the directory  /_scans/concordance_to_greek_testament_by_moulton_geden .</p>
-
-<p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
-
-<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?concordance_to_greek_testament_by_moulton_geden</p>
-
-<p>In order for concordance to work in sync with parsed text, the contents file should be prepared. Concordance resources, which use the same scanned book, share the same contents file. This means that there could be two cases: (1) there is no contents file and we need to create it; (2) there is contents file and we need to supplement it.</p> 
-
-<h4 class="pc-anchor" id="h-concordance-scanned-creating-new-contents-file2">Creating new contents file</h4>
-
-<p>To create new contents file go to  <a href="../tools/word_list_generator.html" target="_blank">Word list generator</a> page and fill the form:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_word_list_generator.png"></p>
-
-<p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p> 
-
-<p>The value of the form‘s field "Parsed text code" should be full HTML code of the parsed text. Use browser’s HTML inspector (available on right-click in every major browser) to copy parsed text's HTML code from Library app’s page. To do this right-click inside HTML inspector's panel  on the "div" element having "class" attribute "pc-content-panel-inner" and in context menu select option "Copy outerHTML":</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/copying_text_html.png"></p>
-
-<p>Then paste the copied string into form‘s field. After that select and delete opening and closing "div" tags from the code pasted into field:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/copying_text_html2.png"></p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/copying_text_html3.png"></p>
-
-<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
-
-<p>After loading text click the button "Generate list" and the pipe delimited alphabetical list of all words in the text will appear in "Word list" textarea.</p>
-
-<p>The word list will be as this:</p>
-
-<pre id="creating_word_list2" class="prettyprint code_showarea">
-ἀγαθός|ἀγάπη|ἅγιος|ἁγνός|ἀδιαφθορία|ἀδόκιμος|ἀεί|αἱρετικός|αἰσχροκερδής|αἰσχρός|αἰτία|αἰών|αἰώνιος|ἄκαρπος|ἀκατάγνωστος|ἀλήθεια|ἀληθής|ἀλλά|ἀλλήλων|ἁμαρτάνω|ἄμαχος|ἀμήν|ἀναγκαῖος|ἀνακαίνωσις|ἀνατρέπω|ἀνέγκλητος|ἀνήρ|ἄνθρωπος|ἀνόητος|ἀνομία|ἀντέχομαι|ἀντιλέγω|ἀνυπότακτος|ἀνωφελής|ἀπειθής|ἄπιστος|ἀπό|Ἀπολλῶς|ἀπόστολος|ἀποστρέφω|ἀποτόμως|ἀργός|ἀρνέομαι|Ἀρτεμᾶς|ἀρχή|ἀσέβεια|ἀσπάζομαι|ἀσωτία|αὐθάδης|αὐτοκατάκριτος|αὐτός|ἀφθαρσία|ἀψευδής|βδελυκτός|βλασφημέω|βούλομαι|γάρ|γαστήρ|γενεαλογία|γίνομαι|γνήσιος|γυνή|δέ|δεσπότης|δεύτερος|δέω|διά|διαβεβαιόομαι|διάβολος|διάγω|διατάσσω|διδασκαλία|διδάσκω|διδαχή|δίδωμι|δίκαιος|δικαιοσύνη|δικαιόω|δικαίως|δόξα|δουλεύω|δοῦλος|δουλόω|δυνατός|ἑαυτοῦ|ἐγκρατής|ἐγώ|εἰ|εἰμί|εἰρήνη|εἷς|εἰς|ἐκ|ἐκεῖ|ἐκεῖνος|ἐκλεκτός|ἐκστρέφομαι|ἐκχέω|ἐλέγχω|ἔλεος|ἐλπίς|ἐν|ἐναντίος|ἐνδείκνυμι|ἐντολή|ἐντρέπω|ἐξουσία|ἐπαγγέλλομαι|ἐπί|ἐπίγνωσις|ἐπιδιορθόω|ἐπιεικής|ἐπιθυμία|ἐπίσκοπος|ἐπιστομίζω|ἐπιταγή|ἐπιφαίνω|ἐπιφάνεια|ἔργον|ἔρις|ἔρχομαι|ἕτοιμος|εὐάρεστος|εὐσέβεια|εὐσεβῶς|ἔχω|ζάω|ζηλωτής|Ζηνᾶς|ζήτησις|ζωή|ἤ|ἡδονή|ἡμέτερος|θεός|θηρίον|ἴδιος|ἱεροπρεπής|Ἰησοῦς|ἵνα|Ἰουδαϊκός|καθαρίζω|καθαρός|καθίστημι|καί|καιρός|κακία|κακός|καλοδιδάσκαλος|καλός|κατά|καταλείπω|κατάστημα|κατηγορία|κέρδος|κήρυγμα|κληρονόμος|κοινός|κοσμέω|κοσμικός|Κρής|Κρήτη|κρίνω|κύριους|λαλέω|λαός|λέγω|λείπω|λόγος|λουτρόν|λυτρόομαι|μακάριος|μάλιστα|μανθάνω|μαρτυρία|ματαιολόγος|μάταιος|μάχη|μέγας|μέν|μετά|μή|μηδείς|μιαίνω|μισέω|μῦθος|μωρός|νέος|νηφάλιος|Νικόπολις|νομικός|νοσφίζομαι|νουθεσία|νοῦς|νῦν|ὁ|οἶδα|οἰκονόμος|οἶκος|οἰκουργός|οἶνος|ὅλος|ὁμολογέω|ὁράω|ὀργίλος|ὅς|ὅσιος|ὅστις|ὅταν|ὅτε|ὅτι|οὐ|οὐδείς|οὗτος|παιδεύω|παλιγγενεσία|παραιτέομαι|παρακαλέω|παραχειμάζω|παρέχω|πάροινος|πᾶς|πατήρ|Παῦλος|πειθαρχέω|πέμπω|περί|περιΐστημι|περιούσιος|περιτομή|περιφρονέω|πιστεύω|πίστις|πιστός|πλανάω|πλήκτης|πλουσίως|πνεῦμα|ποιέω|ποικίλος|πόλις|πολύς|ποτέ|πραΰτης|πρέπω|πρεσβύτερος|πρεσβύτης|πρεσβῦτις|πρό|προΐστημι|προπέμπω|πρός|προσδέχομαι|προσέχω|προφήτης|σεαυτοῦ|σεμνός|σεμνότης|σπουδάζω|σπουδαίως|στυγητός|σύ|συνείδησις|σῴζω|σωτήρ|σωτήριος|σωφρονέω|σωφρονίζω|σωφρόνως|σώφρων|τέκνον|τίς|τις|Τίτος|τοιοῦτος|τύπος|Τυχικός|ὑγιαίνω|ὑγιής|ὑπέρ|ὑπομιμνῄσκω|ὑπομονή|ὑποτάσσω|φανερόω|φαῦλος|φθόνος|φιλάγαθος|φίλανδρος|φιλανθρωπία|φιλέω|φιλόξενος|φιλότεκνος|φρεναπάτης|φροντίζω|χάριν|χάρις|χρεία|χρηστότης|χριστός|χρόνος|ψεύστης|ὡς|ὡσαύτως|ὠφέλιμος
-</pre>
-
-<p>Then click the button "Check for completeness". After this all words beneath the heading "Parsed text" should be displayed on green backgound. If some words remain on white background, it means that the script was not able to generate complete list of words. Inform about it senior editor.</p>
-
-<p>When you have pipe delimited alphabetical list of all words in the parsed text, go to <a href="../tools/lexicon_contents_generator.html" target="_blank">Lexicon contents generator</a> page and fill the form:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_lexicon_contents_generator.png"></p>
-
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" in collection‘s catalogue. While creating collection‘s catalogue for <em>Epistle to Titus</em> collection <a class="inner-link" data-anchor="h-concordance">we entered</a> for this key the value "words_concordance_to_greek_testament_by_moulton_geden_contents", so we now should enter it as the value of the field "Contents shortname".</p>
-
-<p>The value of the form‘s field "Word list" should be just created pipe delimited alphabetical list of all words in the parsed text.</p> 
-
-<p>After filling fields with these values click the button "Generate contents" and the contents code will appear in "Contents code" textarea.</p>
-
-<p>The contents code will be as this:</p>
-
-<pre id="creating_concordance_contents_file2a" class="prettyprint code_showarea">
-var words_concordance_to_greek_testament_by_moulton_geden_contents = {
-
-/*Title page*/	"w-title": ""
-
-, /*ἀγαθός*/ "w-7936-947-945-952-972-962": ""
-
-, /*ἀγάπη*/ "w-7936-947-940-960-951": ""
-
-, /*ἅγιος*/ "w-7941-947-953-959-962": ""
-
-, /*ἁγνός*/ "w-7937-947-957-972-962": ""
-
-// part of code has been cut out
-
-, /*χριστός*/ "w-967-961-953-963-964-972-962": ""
-
-, /*χρόνος*/ "w-967-961-972-957-959-962": ""
-
-, /*ψεύστης*/ "w-968-949-973-963-964-951-962": ""
-
-, /*ὡς*/ "w-8033-962": ""
-
-, /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": ""
-
-, /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": ""
-
-};
-</pre>
-
-<p>Now we need to enter values for each key of this JSON object. The keys are strings starting with "w" and consisting from numerical letter codes. "v-title" is the key for the title page of the concordane. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p> 
-
-<p>We get the following code:</p>
-
-<pre id="creating_concordance_contents_file2b" class="prettyprint code_showarea">
-var words_concordance_to_greek_testament_by_moulton_geden_contents = {
-
-/*Title page*/	"w-title": "3"
-
-, /*ἀγαθός*/ "w-7936-947-945-952-972-962": "14"
-
-, /*ἀγάπη*/ "w-7936-947-940-960-951": "18"
-
-, /*ἅγιος*/ "w-7941-947-953-959-962": "23"
-
-, /*ἁγνός*/ "w-7937-947-957-972-962": "26"
-
-// part of code has been cut out
-
-, /*χριστός*/ "w-967-961-953-963-964-972-962": "1023"
-
-, /*χρόνος*/ "w-967-961-972-957-959-962": "1030"
-
-, /*ψεύστης*/ "w-968-949-973-963-964-951-962": "1034"
-
-, /*ὡς*/ "w-8033-962": "1038"
-
-, /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": "1043"
-
-, /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": "1044"
-
-};
-</pre>
-
-<p>This code should be saved in the file having the same name as the value in "Contents shortname" field. The file should be placed in "contents" directory: /data/contents/words_concordance_to_greek_testament_by_moulton_geden_contents.js</p>
-
-<p>After doing this Concordance resource should work in sync with parsed text resource.</p>
-
-<h4 class="pc-anchor" id="h-concordance-scanned-supplementing-contents-file2">Supplementing contents file</h4>
-
-<p>In case there is already contents file for scanned concordance book we need to supplement contents.</p>
-
-<p>To do this go to <a href="../tools/lexicon_contents_supplementer.html" target="_blank">Lexicon contents supplementer</a> page and fill the form:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_concordance_contents_supplementer.jpg"></p>
-
-<p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p> 
-
-<p>The value of the form‘s field "Lexicon contents object" should be complete content of the concordance contents file. In <a class="inner-link" data-anchor="h-concordance-scanned-creating-new-contents-file">previous section</a> we saved it as /data/contents/words_concordance_to_greek_testament_by_moulton_geden_contents.js</p>
-
-<p>The value of the form‘s field "List of words to be added" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in the section <a class="inner-link" data-anchor="h-concordance-scanned-creating-new-contents-file">Creating new contents file</a>.</p>
-
-<p>After filling fields with these values, click the button "Load contents" and the code of the concordance contents object will be displayed beneath "Initial contents object:" heading.</p>
-
-<p>Then click the button "Load words" and the list of words to be added to contents will be displayed beneath "Words to be added:" heading.</p>
-
-<p>After that click the button "Add to contents" and the code of supplemented contents object will appear in "Supplemented contents code" textarea.</p>
-
-<p>Then click the button "Check for completeness" and all words beneath the headings "Words to be added:" and "Initial contents object:" should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
-
-<p>The code generated will be as this:</p>
-
-<pre id="creating_concordance_contents_file3a" class="prettyprint code_showarea">
-var words_concordance_to_greek_testament_by_moulton_geden_contents = {
-
-/*Title page*/	"w-title": "3"
-
-, /*ἀγαθός*/ "w-7936-947-945-952-972-962": "14"
-
-, /*ἀγαπάω*/ "w-7936-947-945-960-940-969": "16"
-
-, /*ἀγάπη*/ "w-7936-947-940-960-951": "18"
-
-, /*ἀγαπητός*/ "w-7936-947-945-960-951-964-972-962": "19"
-
-, /*ἄγγελος*/ "w-7940-947-947-949-955-959-962": "20"
-
-, /*ἅγιος*/ "w-7941-947-953-959-962": "23"
-
-, /*ἁγνός*/ "w-7937-947-957-972-962": ""
-
-, /*ἀγών*/ "w-7936-947-974-957": "29"
-
-// part of code has been cut out
-
-, /*χρόνος*/ "w-967-961-972-957-959-962": ""
-
-, /*ψαλμός*/ "w-968-945-955-956-972-962": "1033"
-
-, /*ψεύδομαι*/ "w-968-949-973-948-959-956-945-953": "1033"
-
-, /*ψεύστης*/ "w-968-949-973-963-964-951-962": ""
-
-, /*ψυχή*/ "w-968-965-967-942": "1034"
-
-, /*ὧδε*/ "w-8039-948-949": "1036"
-
-, /*ᾠδή*/ "w-8096-948-942": "1036"
-
-, /*ὡς*/ "w-8033-962": "1038"
-
-, /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": ""
-
-, /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": ""
-
-};
-</pre>
-
-<p>Notice, tat some keys have numerical values while the other keys have empty strings as their values. The latter represents the words which were not included in the initial contents object.</p>
-
-<p>Now we need to enter numerical values for each key having empty string as its value. The values should be numbers from image file names (without zero padding). So, view images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
-
-<p>We get the following code:</p>
-
-<pre id="creating_concordance_contents_file4" class="prettyprint code_showarea">
-var words_concordance_to_greek_testament_by_moulton_geden_contents = {
-
-/*Title page*/	"w-title": "3"
-
-, /*ἀγαθός*/ "w-7936-947-945-952-972-962": "14"
-
-, /*ἀγαπάω*/ "w-7936-947-945-960-940-969": "16"
-
-, /*ἀγάπη*/ "w-7936-947-940-960-951": "18"
-
-, /*ἀγαπητός*/ "w-7936-947-945-960-951-964-972-962": "19"
-
-, /*ἄγγελος*/ "w-7940-947-947-949-955-959-962": "20"
-
-, /*ἅγιος*/ "w-7941-947-953-959-962": "23"
-
-, /*ἁγνός*/ "w-7937-947-957-972-962": "26"
-
-, /*ἀγών*/ "w-7936-947-974-957": "29"
-
-// part of code has been cut out
-
-, /*χρόνος*/ "w-967-961-972-957-959-962": "1030"
-
-, /*ψαλμός*/ "w-968-945-955-956-972-962": "1033"
-
-, /*ψεύδομαι*/ "w-968-949-973-948-959-956-945-953": "1033"
-
-, /*ψεύστης*/ "w-968-949-973-963-964-951-962": "1034"
-
-, /*ψυχή*/ "w-968-965-967-942": "1034"
-
-, /*ὧδε*/ "w-8039-948-949": "1036"
-
-, /*ᾠδή*/ "w-8096-948-942": "1036"
-
-, /*ὡς*/ "w-8033-962": "1038"
-
-, /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": "1043"
-
-, /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": "1045"
-
-};
-</pre>
-
-<p>Replace with this code the contents of the file from which initial code was taken (in our case this was the file /data/contents/words_concordance_to_greek_testament_by_moulton_geden_contents.js) and save it.</p>
-
-<p>After doing this concordance resource should work in sync with parsed text resource.</p>
-
-<h4 class="pc-anchor" id="h-concordance-workflows-for-multiple-collections2">Workflows for multiple collections</h4>
-
-<p>Usually scanned resource of the type "Concordance" is being included into several collections. E.g. such resource as concordance edited by W. F. Moulton and A. S. Geden will be used in every collection dedicated to certain book of the New Testament. This means that the same contents file of the scanned resource of the type "Concordance" will be used by all relevant collections.</p>
-
-<p>There are several workflows for creating contents file to be used by several collections.</p>
-
-<h5 class="pc-anchor" id="h-concordance-workflows-supplementing-in-stages">Supplementing in stages</h5>
-
-<p>One possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-concordance-scanned-creating-new-contents-file">create new contents file</a> to be used by certain single collection and fill the gaps with page numbers for all lemmas found in the original text of that collection. Then we <a class="inner-link" data-anchor="h-concordance-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in original text of another collection and fill the gaps with page numbers of these lemmas. And we repeat this process again and again untill all lemmas of the all original texts of the all relevant collections are included in the contents file and all relevant page numbers are filled in.</p>
-
-<p>This workflow has the advantage that we can work only with lemmas of the original text of the single collection and doing so quickly prepare one or more resources of the type "Concordance" to be used inside single collection. The disadvantage is that in each cycle we need again to browse through all pages of the scanned book in search for relevant lemmas and that takes a lot of time.</p>
-
-<h5 class="pc-anchor" id="h-concordance-workflows-supplementing-at-start">Supplementing at start</h5>
-
-<p>Another possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-concordance-scanned-creating-new-contents-file">create new contents file</a> to be used by certain single collection. Then we don't fill the gaps with page numbers, but instead <a class="inner-link" data-anchor="h-concordance-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in original text of another collection. And we repeat this process again and again untill all lemmas of the all original texts of the all relevant collections are included in the contents file. Then we browse through all pages of the scanned book, find the page numbers of the all lemmas and fill the gaps in contents file with these page numbers.</p>
-
-<p>This workflow has the advantage that we must browse though all pages of the scanned book only once and this takes much less time than repeated browsing of the workflow described above. But the disadvantage is that we cannot work with the single collection at the time and must create huge contents file at once.</p>
-
-<h5 class="pc-anchor" id="h-concordance-workflows-cleaning-page-numbers">Cleaning page numbers</h5>
-
-<p>By using the first or the second workflow of those described above we get contents file of the resource of the type "Concordance"  which is being used by multiple collections. We may need to add another resource of the type "Concordance" to the same collections. E.g. after having added concordance edited by W. F. Moulton and A. S. Geden to every collection dedicated to certain book of the New Testament we may need to add concordance edited by Ch. F. Hudson and E. Abbot to the same collections. In such cases we can shortcut the process by using the third workflow.</p>
-
-<p>The contents file for the new resource of the type "Concordance" should contain the same lemmas. This means that we can reuse existing contens file: we only need to remove page numbers, to change the name of the contents object and to change the name of the file. To remove page numbers from the contents file use <a href="../tools/lexicon_page_numbers_cleaner.html" target="_blank">Lexicon page numbers cleaner</a>. Copy contents object from the contens file, paste it in the field "Lexicon contents object" and click the button "Clean page numbers":</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/cleaning_concordance_page_nums.png"></p>
-
-<p>Then save the outputted contens object without page numbers using relevant contents object name and file name.</p>
-
-<h5 class="pc-anchor" id="h-concordance-workflows-importing-after-cleaning">Importing after cleaning</h5>
-
-<p>It may happen that one resource of the type "Concordance" has been added to multiple collections and another resource of the type "Concordance" has been added  to just single or several collections. E.g. such resource as concordance edited by W. F. Moulton and A. S. Geden has been added to every collection dedicated to certain book of the New Testament, but such resource as concordance edited by Ch. F. Hudson and E. Abbot has been added to one or couple of collections. Now we need to add this resource to remaining collections.<p>
-
-<p>In this case we need to use the following workflow. At first we should take that bigger contents file which contains comprehensive list of lemmas found in multiple collections and <a class="inner-link" data-anchor="h-concordance-workflows-cleaning-page-numbers">remove the page numbers</a> from it. After that we need to import data into cleaned contents object from the contents object which contains less comprehensive list of lemmas from single collection or couple of collections. To do this go to <a href="../tools/lexicon_contents_importer.html" target="_blank">Lexicon contents importer</a> form anf fill the fields:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/importing_concordance_page_nums.png"></p>
-
-<p>The value of the form‘s field "Language" should be "Greek" because lemmas in both contents objects are in Greek.<p>
-
-<p>The value of the field "Lexicon contents object" should be contents object in which page numbers have been removed, i.e. that contents object which contains comprehensive list of lemmas found in multiple collections.</p>
-
-<p>The value of the field "Lexicon contents object to be imported" should be contents object with all page numbers intact which contains less comprehensive list of lemmas from single collection or couple of collections.</p>
-
-<p>After filling fields with such values click the button "Load contents" which is below the first textarea and the list of lemmas contained in the initial contents object will be displayed below the heading "Initial contents object:". Then click the button "Load contents" which is below the second textarea and the list of lemmas contained in contents object to be imported will be displayed below the heading "Contents object to be imported:". After that click the button "Import contents" and the resulting contents object will be outputted inside textarea "Resulting contents object code". Then click the button "Check for completeness". All lemmas below the headings "Contents object to be imported:" and "Initial contents object:" should be colored green. If certain lemmas remain not colored, inform about it senior editor.</p>
-
-<p>Then save the resulting contents object using relevant object name and file name.<p>
-
 <h3 class="pc-anchor" id="h-concordance-transcribed2">Concordance (transcribed)</h3>
 
 <p>Creating transcribed resource of the type "concordance" involves creating data file and contents file.</p>
 
-<h4 class="pc-anchor" id="h-concordance-transcribed-creating-data-file">Creating data file</h4>
+<h4 class="pc-anchor" id="h-concordance-transcribed-creating-data-file2">Creating data file</h4>
 
 <p>Let‘s create data file of the transcribed concordance of the <em>Epistle to Titus</em> text.</p>
 
@@ -3047,7 +2927,7 @@ ParsedClassicsData._loadResource(&quot;nt_titus_conc_by_parsedclassics&quot;,
 
 <p>The code of the function "ParsedClassicsData._loadResource" with its arguments should be saved in the file named, e.g. "nt_conc_by_parsedclassics.js". The file should be placed in directory /data/resources/concordance .</p>
 
-<h4 class="pc-anchor" id="h-concordance-transcribed-creating-contents-file">Creating contents file</h4>
+<h4 class="pc-anchor" id="h-concordance-transcribed-creating-contents-file2">Creating contents file</h4>
 
 <p>Concordance data file includes for each word form the list book abbreviations together with line numbers indicating places where the word form is present. Clicking the line number should open the original text in exact place. To enable this functionality we need to add contents file.</p>
 
