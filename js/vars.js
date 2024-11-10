@@ -61,6 +61,7 @@ const ParsedClassicsAppVars = {
   concordanceLinesBtnExpandedClass: "expanded",
   concordanceLinesListClass: "concordance-lines-list",
   concordanceContainerLeftPartClass: "concordance-split-left",
+  concordanceContainerLeftPartInnerClass: "concordance-split-left-inner",
   concordanceContainerRightPartClass: "concordance-split-right",
   concordanceDependencyTopPartClass: "concordance-dependency-split-top",
   concordanceDependencyBottomPartClass: "concordance-dependency-split-bottom",
@@ -71,11 +72,13 @@ const ParsedClassicsAppVars = {
   dependentResourceAttr: "data-dependent-res-shortname",
   // grammar refs container
   grammarRefsContainerLeftPartClass: "grammar-refs-split-left",
+  grammarRefsContainerLeftPartInnerClass: "grammar-refs-split-left-inner",
   grammarRefsContainerRightPartClass: "grammar-refs-split-right",
   grammarBookAttr: "data-grammar",
   grammarPageAttr: "data-page",
   // commentary refs container
   commentaryRefsContainerLeftPartClass: "commentary-refs-split-left",
+  commentaryRefsContainerLeftPartInnerClass: "commentary-refs-split-left-inner",
   commentaryRefsContainerRightPartClass: "commentary-refs-split-right",
   commentaryBookAttr: "data-commentary",
   // menu
