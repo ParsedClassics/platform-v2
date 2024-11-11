@@ -8,7 +8,7 @@
 
 lexicon_graeco_latinum_in_libros_novi_testamenti_grimm_contents = {
 
-/*Title page*/	"w-title": "1"
+/*Title page*/	"title": "1"
 
 , /*Ἀαρών*/ "w-7944-945-961-974-957": "13"
 

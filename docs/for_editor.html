@@ -2198,7 +2198,7 @@ particle
 
 <p>To create scanned resource of the type "Critical edition" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
 
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was as value of the key "scanned_source_shortname" when original text resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the original text edited by Antoniadis has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "kaine_diatheke_ed_antoniadis". It means that the pictures of the pages must be uploaded to the directory /_scans/kaine_diatheke_ed_antoniadis/ .</p>
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when original text resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the original text edited by Antoniadis has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "kaine_diatheke_ed_antoniadis". It means that the pictures of the pages must be uploaded to the directory /_scans/kaine_diatheke_ed_antoniadis/ .</p>
 
 <p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
 
@@ -2308,21 +2308,21 @@ nt_titus_ed_antoniadis_contents = {
 
 <p>To create scanned resource of the type "Concordance" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
 
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was as value of the key "scanned_source_shortname" when concordance resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the concordance edited by W. F. Moulton and A. S. Geden has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "concordance_to_greek_testament_by_moulton_geden". It means that the pictures of the pages must be uploaded to the directory /_scans/concordance_to_greek_testament_by_moulton_geden/ .</p>
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when concordance resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the concordance edited by W. F. Moulton and A. S. Geden has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "concordance_to_greek_testament_by_moulton_geden". It means that the pictures of the pages must be uploaded to the directory /_scans/concordance_to_greek_testament_by_moulton_geden/ .</p>
 
 <p><p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p></p>
 
 <p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?concordance_to_greek_testament_by_moulton_geden .</p>
 
-<p>In order for concordance to work in sync with parsed text, the contents file should be prepared. Concordance resources, which use the same scanned book, share the same contents file. This means that there could be two cases: (1) there is no contents file and we need to create it; (2) there is contents file and we need to supplement it.</p>
+<p>In order for concordance to work in sync with parsed text, the contents file should be prepared. The same concordance resource can be listed as part of several collections. This means that there could be two cases: (1) there is no contents file and we need to create it; (2) there is contents file, but the words of certain classics book are not fully dealt with, so we need to supplement it.</p>
 
-<h4 class="pc-anchor" id="h-concordance-scanned-creating-new-contents-file">Creating new contents file</h4>
+<h4 class="pc-anchor" id="h-concordance-scanned-creating-contents-file">Creating contents file</h4>
 
 <p>To create new contents file go to  <a href="../tools/word_list_generator.html" target="_blank">Word list generator</a> page and fill the form:</p>
 
 <p><img src="img2/concordance_scanned_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
-<p>The value of the form‘s field "Language" should be "Greek" because in Epistle to Titus collection parsed text resource is in Greek.</p>
+<p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p>
 
 <p>The value of the form‘s field "Parsed text code" should be full HTML code of the parsed text. Use browser’s HTML inspector (available on right-click in every major browser) to copy parsed text's HTML code from Library app’s page. To do this right-click inside HTML inspector's panel on the "div" element having "class" attribute "parsed-text-split-top" and in context menu select option "Copy outerHTML":</p>
 
@@ -2344,7 +2344,7 @@ nt_titus_ed_antoniadis_contents = {
 ἀγαθός|ἀγάπη|ἅγιος|ἁγνός|ἀδιαφθορία|ἀδόκιμος|ἀεί|αἱρετικός|αἰσχροκερδής|αἰσχρός|αἰτία|αἰών|αἰώνιος|ἄκαρπος|ἀκατάγνωστος|ἀλήθεια|ἀληθής|ἀλλά|ἀλλήλων|ἁμαρτάνω|ἄμαχος|ἀμήν|ἀναγκαῖος|ἀνακαίνωσις|ἀνατρέπω|ἀνέγκλητος|ἀνήρ|ἄνθρωπος|ἀνόητος|ἀνομία|ἀντέχομαι|ἀντιλέγω|ἀνυπότακτος|ἀνωφελής|ἀπειθής|ἄπιστος|ἀπό|Ἀπολλῶς|ἀπόστολος|ἀποστρέφω|ἀποτόμως|ἀργός|ἀρνέομαι|Ἀρτεμᾶς|ἀρχή|ἀσέβεια|ἀσπάζομαι|ἀσωτία|αὐθάδης|αὐτοκατάκριτος|αὐτός|ἀφθαρσία|ἀψευδής|βδελυκτός|βλασφημέω|βούλομαι|γάρ|γαστήρ|γενεαλογία|γίνομαι|γνήσιος|γυνή|δέ|δεσπότης|δεύτερος|δέω|διά|διαβεβαιόομαι|διάβολος|διάγω|διατάσσω|διδασκαλία|διδάσκω|διδαχή|δίδωμι|δίκαιος|δικαιοσύνη|δικαιόω|δικαίως|δόξα|δουλεύω|δοῦλος|δουλόω|δυνατός|ἑαυτοῦ|ἐγκρατής|ἐγώ|εἰ|εἰμί|εἰρήνη|εἷς|εἰς|ἐκ|ἐκεῖ|ἐκεῖνος|ἐκλεκτός|ἐκστρέφομαι|ἐκχέω|ἐλέγχω|ἔλεος|ἐλπίς|ἐν|ἐναντίος|ἐνδείκνυμι|ἐντολή|ἐντρέπω|ἐξουσία|ἐπαγγέλλομαι|ἐπί|ἐπίγνωσις|ἐπιδιορθόω|ἐπιεικής|ἐπιθυμία|ἐπίσκοπος|ἐπιστομίζω|ἐπιταγή|ἐπιφαίνω|ἐπιφάνεια|ἔργον|ἔρις|ἔρχομαι|ἕτοιμος|εὐάρεστος|εὐσέβεια|εὐσεβῶς|ἔχω|ζάω|ζηλωτής|Ζηνᾶς|ζήτησις|ζωή|ἤ|ἡδονή|ἡμέτερος|θεός|θηρίον|ἴδιος|ἱεροπρεπής|Ἰησοῦς|ἵνα|Ἰουδαϊκός|καθαρίζω|καθαρός|καθίστημι|καί|καιρός|κακία|κακός|καλοδιδάσκαλος|καλός|κατά|καταλείπω|κατάστημα|κατηγορία|κέρδος|κήρυγμα|κληρονόμος|κοινός|κοσμέω|κοσμικός|Κρής|Κρήτη|κρίνω|κύριους|λαλέω|λαός|λέγω|λείπω|λόγος|λουτρόν|λυτρόομαι|μακάριος|μάλιστα|μανθάνω|μαρτυρία|ματαιολόγος|μάταιος|μάχη|μέγας|μέν|μετά|μή|μηδείς|μιαίνω|μισέω|μῦθος|μωρός|νέος|νηφάλιος|Νικόπολις|νομικός|νοσφίζομαι|νουθεσία|νοῦς|νῦν|ὁ|οἶδα|οἰκονόμος|οἶκος|οἰκουργός|οἶνος|ὅλος|ὁμολογέω|ὁράω|ὀργίλος|ὅς|ὅσιος|ὅστις|ὅταν|ὅτε|ὅτι|οὐ|οὐδείς|οὗτος|παιδεύω|παλιγγενεσία|παραιτέομαι|παρακαλέω|παραχειμάζω|παρέχω|πάροινος|πᾶς|πατήρ|Παῦλος|πειθαρχέω|πέμπω|περί|περιΐστημι|περιούσιος|περιτομή|περιφρονέω|πιστεύω|πίστις|πιστός|πλανάω|πλήκτης|πλουσίως|πνεῦμα|ποιέω|ποικίλος|πόλις|πολύς|ποτέ|πραΰτης|πρέπω|πρεσβύτερος|πρεσβύτης|πρεσβῦτις|πρό|προΐστημι|προπέμπω|πρός|προσδέχομαι|προσέχω|προφήτης|σεαυτοῦ|σεμνός|σεμνότης|σπουδάζω|σπουδαίως|στυγητός|σύ|συνείδησις|σῴζω|σωτήρ|σωτήριος|σωφρονέω|σωφρονίζω|σωφρόνως|σώφρων|τέκνον|τίς|τις|Τίτος|τοιοῦτος|τύπος|Τυχικός|ὑγιαίνω|ὑγιής|ὑπέρ|ὑπομιμνῄσκω|ὑπομονή|ὑποτάσσω|φανερόω|φαῦλος|φθόνος|φιλάγαθος|φίλανδρος|φιλανθρωπία|φιλέω|φιλόξενος|φιλότεκνος|φρεναπάτης|φροντίζω|χάριν|χάρις|χρεία|χρηστότης|χριστός|χρόνος|ψεύστης|ὡς|ὡσαύτως|ὠφέλιμος
 </pre>
 
-<p>Then click the button "Check for completeness". After this all words beneath the heading "Parsed text" should be displayed on green backgound. If some words remain on white background, it means that the script was not able to generate complete list of words. Inform about it senior editor.</p>
+<p>Then click the button "Check for completeness". After this all words beneath the heading "Parsed text:" should be displayed on green backgound. If some words remain on white background, it means that the script was not able to generate complete list of words. Inform about it senior editor.</p>
 
 <p>When you have pipe delimited alphabetical list of all words in the parsed text, go to <a href="../tools/lexicon_contents_generator.html" target="_blank">Lexicon contents generator</a> page and fill the form:</p>
 
@@ -2388,7 +2388,7 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 };
 </pre>
 
-<p>Now we need to enter values for each key of this JSON object. The keys are strings starting with "w" and consisting from numerical letter codes. "v-title" is the key for the title page of the concordane. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
+<p>Now we need to enter values for each key of this JSON object. The keys are strings starting with "w" and consisting from numerical letter codes. "title" is the key for the title page of the concordane. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
 
 <p>We get the following code:</p>
 
@@ -2422,7 +2422,7 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 };
 </pre>
 
-<p>This code should be saved in the file having the same name as the value in "Contents shortname" field. The file should be placed in directory whose name is the same ar resource shortname. Resource shortname is "concordance_by_moulton_geden" so the directory will be /data/concordance/concordance_by_moulton_geden/ </p>
+<p>This code should be saved in the file having the same name as the value in "Contents shortname" field in the form. The file should be placed in directory whose name is the same ar resource shortname. Resource shortname is "concordance_by_moulton_geden" so the directory will be /data/concordance/concordance_by_moulton_geden/ </p>
 
 <p>After doing this Concordance resource should work in sync with parsed text resource.</p>
 
@@ -2548,13 +2548,13 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <h5 class="pc-anchor" id="h-concordance-workflows-supplementing-in-stages">Supplementing in stages</h5>
 
-<p>One possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-concordance-scanned-creating-new-contents-file">create new contents file</a> to be used by certain single collection and fill the gaps with page numbers for all lemmas found in the original text of that collection. Then we <a class="inner-link" data-anchor="h-concordance-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in original text of another collection and fill the gaps with page numbers of these lemmas. And we repeat this process again and again untill all lemmas of the all original texts of the all relevant collections are included in the contents file and all relevant page numbers are filled in.</p>
+<p>One possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-concordance-scanned-creating-contents-file">create new contents file</a> to be used by certain single collection and fill the gaps with page numbers for all lemmas found in the parsed text of that collection. Then we <a class="inner-link" data-anchor="h-concordance-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in parsed text of another collection and fill the gaps with page numbers of these lemmas. And we repeat this process again and again until all lemmas of the all parsed texts of the all relevant collections are included in the contents file and all relevant page numbers are filled in.</p>
 
-<p>This workflow has the advantage that we can work only with lemmas of the original text of the single collection and doing so quickly prepare one or more resources of the type "Concordance" to be used inside single collection. The disadvantage is that in each cycle we need again to browse through all pages of the scanned book in search for relevant lemmas and that takes a lot of time.</p>
+<p>This workflow has the advantage that we can work only with lemmas of the parsed text of the single collection and doing so quickly prepare one or more resources of the type "Concordance" to be used inside single collection. The disadvantage is that in each cycle we need again to browse through all pages of the scanned book in search for relevant lemmas and that takes a lot of time.</p>
 
 <h5 class="pc-anchor" id="h-concordance-workflows-supplementing-at-start">Supplementing at start</h5>
 
-<p>Another possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-concordance-scanned-creating-new-contents-file">create new contents file</a> to be used by certain single collection. Then we don't fill the gaps with page numbers, but instead <a class="inner-link" data-anchor="h-concordance-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in original text of another collection. And we repeat this process again and again untill all lemmas of the all original texts of the all relevant collections are included in the contents file. Then we browse through all pages of the scanned book, find the page numbers of the all lemmas and fill the gaps in contents file with these page numbers.</p>
+<p>Another possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-concordance-scanned-creating-contents-file">create new contents file</a> to be used by certain single collection. Then we don't fill the gaps with page numbers, but instead <a class="inner-link" data-anchor="h-concordance-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in original text of another collection. And we repeat this process again and again until all lemmas of the all original texts of the all relevant collections are included in the contents file. Then we browse through all pages of the scanned book, find the page numbers of the all lemmas and fill the gaps in contents file with these page numbers.</p>
 
 <p>This workflow has the advantage that we must browse though all pages of the scanned book only once and this takes much less time than repeated browsing of the workflow described above. But the disadvantage is that we cannot work with the single collection at the time and must create huge contents file at once.</p>
 
@@ -2562,17 +2562,17 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>By using the first or the second workflow of those described above we get contents file of the resource of the type "Concordance"  which is being used by multiple collections. We may need to add another resource of the type "Concordance" to the same collections. E.g. after having added concordance edited by W. F. Moulton and A. S. Geden to every collection dedicated to certain book of the New Testament we may need to add concordance edited by Ch. F. Hudson and E. Abbot to the same collections. In such cases we can shortcut the process by using the third workflow.</p>
 
-<p>The contents file for the new resource of the type "Concordance" should contain the same lemmas. This means that we can reuse existing contens file: we only need to remove page numbers, to change the name of the contents object and to change the name of the file. To remove page numbers from the contents file use <a href="../tools/lexicon_page_numbers_cleaner.html" target="_blank">Lexicon page numbers cleaner</a>. Copy contents object from the contens file, paste it in the field "Lexicon contents object" and click the button "Clean page numbers":</p>
+<p>The contents file for the new resource of the type "Concordance" should contain the same lemmas. This means that we can reuse existing contents file: we only need to remove page numbers, to change the name of the contents object and to change the name of the file. To remove page numbers from the contents file use <a href="../tools/lexicon_page_numbers_cleaner.html" target="_blank">Lexicon page numbers cleaner</a>. Copy contents object from the contents file, paste it in the field "Lexicon contents object" and click the button "Clean page numbers":</p>
 
 <p><img src="img2/concordance_scanned_07.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
-<p>Then save the outputted contens object without page numbers using relevant contents object name and file name.</p>
+<p>Then save the outputted contents object without page numbers using relevant variable name and file name.</p>
 
 <h5 class="pc-anchor" id="h-concordance-workflows-importing-after-cleaning">Importing after cleaning</h5>
 
 <p>It may happen that one resource of the type "Concordance" has been added to multiple collections and another resource of the type "Concordance" has been added  to just single or several collections. E.g. such resource as concordance edited by W. F. Moulton and A. S. Geden has been added to every collection dedicated to certain book of the New Testament, but such resource as concordance edited by Ch. F. Hudson and E. Abbot has been added to one or couple of collections. Now we need to add this resource to remaining collections.<p>
 
-<p>In this case we need to use the following workflow. At first we should take that bigger contents file which contains comprehensive list of lemmas found in multiple collections and <a class="inner-link" data-anchor="h-concordance-workflows-cleaning-page-numbers">remove the page numbers</a> from it. After that we need to import data into cleaned contents object from the contents object which contains less comprehensive list of lemmas from single collection or couple of collections. To do this go to <a href="../tools/lexicon_contents_importer.html" target="_blank">Lexicon contents importer</a> form anf fill the fields:</p>
+<p>In this case we need to use the following workflow. At first we should take that bigger contents file which contains comprehensive list of lemmas found in multiple collections and <a class="inner-link" data-anchor="h-concordance-workflows-cleaning-page-numbers">remove the page numbers</a> from it. After that we need to import data into cleaned contents object from the contents object which contains less comprehensive list of lemmas from single collection or couple of collections. To do this go to <a href="../tools/lexicon_contents_importer.html" target="_blank">Lexicon contents importer</a> form and fill the fields:</p>
 
 <p><img src="img2/concordance_scanned_08.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
@@ -2604,7 +2604,7 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>The value of the form‘s field "Parsed text code" should be HTML code of the parsed text starting from the first "span" tag having class attribute value "line" and ending with the last "span" tag having the same class attribute value. Use browser’s HTML inspector [LINK TO BE ADDED] (available on right-click in every major browser) to copy this part of code from Library app’s page.</p> 
 
-<p>The value of the form‘s field "Word list" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in the section on <a class="inner-link" data-anchor="h-concordance-scanned-creating-new-contents-file">Creating new contents file</a> for scanned concordance resource.</p>
+<p>The value of the form‘s field "Word list" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in the section on <a class="inner-link" data-anchor="h-concordance-scanned-creating-contents-file">Creating contents file</a> for scanned concordance resource.</p>
 
 <p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
 
@@ -2760,7 +2760,7 @@ nt_conc_by_parsedclassics =
 
 <p>Now that we have grammatical concordance of the Gospels according to Matthew and Mark, let's copy its code and paste it in the field "Concordance to be supplemented", then let's paste the code of the concordance of the Gospel according to Luke in the field "Concordance to be added". After clicking button "Supplement concordance" we will have concordance which includes words of these three books. We can repeat this process until we compile concordance for all 27 books of the New Testament. The resulting concordance code should be converted to string and be made the value of the variable "nt_conc_by_parsedclassics" as has been described above.</p>
 
-<p>The code resulting should be saved in the file named as the variable i.e. "nt_conc_by_parsedclassics.js". The file should be placed in directory /data/concordance/nt_conc_by_parsedclassics .</p>
+<p>The code resulting should be saved in the file named as the variable i.e. "nt_conc_by_parsedclassics.js". The file should be placed in directory /data/concordance/nt_conc_by_parsedclassics/ .</p>
 
 <h4 class="pc-anchor" id="h-concordance-transcribed-creating-contents-file">Creating contents file</h4>
 
@@ -2954,6 +2954,302 @@ nt_conc_by_parsedclassics_titus_parsed_text =
 
 <h3 class="pc-anchor" id="h-lexicon-scanned">Lexicon (scanned)</h3>
 
+<h4 class="pc-anchor" id="h-lexicon-scanned-creating-image-files">Creating image files</h4>
+
+<p>To create scanned resource of the type "Lexicon" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when lexicon resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the lexicon by E. Robinson has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "greek_and_english_lexicon_of_nt_by_robinson". It means that the pictures of the pages must be uploaded to the directory /_scans/greek_and_english_lexicon_of_nt_by_robinson/ .</p>
+
+<p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
+
+<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?greek_and_english_lexicon_of_nt_by_robinson .</p>
+
+<p>In order for lexicon to work in sync with parsed text, the contents file should be prepared. The same lexicon resource can be listed as part of several collections. This means that there could be two cases: (1) there is no contents file and we need to create it; (2) there is contents file, but the words of certain classics book are not fully dealt with, so we need to supplement it.</p>
+
+<h4 class="pc-anchor" id="h-lexicon-scanned-creating-contents-file">Creating contents file</h4>
+
+<p>To create new contents file go to  <a href="../tools/word_list_generator.html" target="_blank">Word list generator</a> page and fill the form:</p>
+
+<p><img src="img2/concordance_scanned_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p>
+
+<p>The value of the form‘s field "Parsed text code" should be full HTML code of the parsed text. Use browser’s HTML inspector (available on right-click in every major browser) to copy parsed text's HTML code from Library app’s page. To do this right-click inside HTML inspector's panel on the "div" element having "class" attribute "parsed-text-split-top" and in context menu select option "Copy outerHTML":</p>
+
+<p><img src="img2/concordance_scanned_02.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>Then paste the copied string into form‘s field. After that select and delete all code before first "span" tag having "class" attribute "line" and closing "div" tag from the code pasted into field:</p>
+
+<p><img src="img2/concordance_scanned_03.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p><img src="img2/concordance_scanned_04.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
+
+<p>After loading text click the button "Generate list" and the pipe delimited alphabetical list of all words in the text will appear in "Word list" textarea.</p>
+
+<p>The word list will be as this:</p>
+
+<pre id="creating_word_list" class="prettyprint code_showarea">
+ἀγαθός|ἀγάπη|ἅγιος|ἁγνός|ἀδιαφθορία|ἀδόκιμος|ἀεί|αἱρετικός|αἰσχροκερδής|αἰσχρός|αἰτία|αἰών|αἰώνιος|ἄκαρπος|ἀκατάγνωστος|ἀλήθεια|ἀληθής|ἀλλά|ἀλλήλων|ἁμαρτάνω|ἄμαχος|ἀμήν|ἀναγκαῖος|ἀνακαίνωσις|ἀνατρέπω|ἀνέγκλητος|ἀνήρ|ἄνθρωπος|ἀνόητος|ἀνομία|ἀντέχομαι|ἀντιλέγω|ἀνυπότακτος|ἀνωφελής|ἀπειθής|ἄπιστος|ἀπό|Ἀπολλῶς|ἀπόστολος|ἀποστρέφω|ἀποτόμως|ἀργός|ἀρνέομαι|Ἀρτεμᾶς|ἀρχή|ἀσέβεια|ἀσπάζομαι|ἀσωτία|αὐθάδης|αὐτοκατάκριτος|αὐτός|ἀφθαρσία|ἀψευδής|βδελυκτός|βλασφημέω|βούλομαι|γάρ|γαστήρ|γενεαλογία|γίνομαι|γνήσιος|γυνή|δέ|δεσπότης|δεύτερος|δέω|διά|διαβεβαιόομαι|διάβολος|διάγω|διατάσσω|διδασκαλία|διδάσκω|διδαχή|δίδωμι|δίκαιος|δικαιοσύνη|δικαιόω|δικαίως|δόξα|δουλεύω|δοῦλος|δουλόω|δυνατός|ἑαυτοῦ|ἐγκρατής|ἐγώ|εἰ|εἰμί|εἰρήνη|εἷς|εἰς|ἐκ|ἐκεῖ|ἐκεῖνος|ἐκλεκτός|ἐκστρέφομαι|ἐκχέω|ἐλέγχω|ἔλεος|ἐλπίς|ἐν|ἐναντίος|ἐνδείκνυμι|ἐντολή|ἐντρέπω|ἐξουσία|ἐπαγγέλλομαι|ἐπί|ἐπίγνωσις|ἐπιδιορθόω|ἐπιεικής|ἐπιθυμία|ἐπίσκοπος|ἐπιστομίζω|ἐπιταγή|ἐπιφαίνω|ἐπιφάνεια|ἔργον|ἔρις|ἔρχομαι|ἕτοιμος|εὐάρεστος|εὐσέβεια|εὐσεβῶς|ἔχω|ζάω|ζηλωτής|Ζηνᾶς|ζήτησις|ζωή|ἤ|ἡδονή|ἡμέτερος|θεός|θηρίον|ἴδιος|ἱεροπρεπής|Ἰησοῦς|ἵνα|Ἰουδαϊκός|καθαρίζω|καθαρός|καθίστημι|καί|καιρός|κακία|κακός|καλοδιδάσκαλος|καλός|κατά|καταλείπω|κατάστημα|κατηγορία|κέρδος|κήρυγμα|κληρονόμος|κοινός|κοσμέω|κοσμικός|Κρής|Κρήτη|κρίνω|κύριους|λαλέω|λαός|λέγω|λείπω|λόγος|λουτρόν|λυτρόομαι|μακάριος|μάλιστα|μανθάνω|μαρτυρία|ματαιολόγος|μάταιος|μάχη|μέγας|μέν|μετά|μή|μηδείς|μιαίνω|μισέω|μῦθος|μωρός|νέος|νηφάλιος|Νικόπολις|νομικός|νοσφίζομαι|νουθεσία|νοῦς|νῦν|ὁ|οἶδα|οἰκονόμος|οἶκος|οἰκουργός|οἶνος|ὅλος|ὁμολογέω|ὁράω|ὀργίλος|ὅς|ὅσιος|ὅστις|ὅταν|ὅτε|ὅτι|οὐ|οὐδείς|οὗτος|παιδεύω|παλιγγενεσία|παραιτέομαι|παρακαλέω|παραχειμάζω|παρέχω|πάροινος|πᾶς|πατήρ|Παῦλος|πειθαρχέω|πέμπω|περί|περιΐστημι|περιούσιος|περιτομή|περιφρονέω|πιστεύω|πίστις|πιστός|πλανάω|πλήκτης|πλουσίως|πνεῦμα|ποιέω|ποικίλος|πόλις|πολύς|ποτέ|πραΰτης|πρέπω|πρεσβύτερος|πρεσβύτης|πρεσβῦτις|πρό|προΐστημι|προπέμπω|πρός|προσδέχομαι|προσέχω|προφήτης|σεαυτοῦ|σεμνός|σεμνότης|σπουδάζω|σπουδαίως|στυγητός|σύ|συνείδησις|σῴζω|σωτήρ|σωτήριος|σωφρονέω|σωφρονίζω|σωφρόνως|σώφρων|τέκνον|τίς|τις|Τίτος|τοιοῦτος|τύπος|Τυχικός|ὑγιαίνω|ὑγιής|ὑπέρ|ὑπομιμνῄσκω|ὑπομονή|ὑποτάσσω|φανερόω|φαῦλος|φθόνος|φιλάγαθος|φίλανδρος|φιλανθρωπία|φιλέω|φιλόξενος|φιλότεκνος|φρεναπάτης|φροντίζω|χάριν|χάρις|χρεία|χρηστότης|χριστός|χρόνος|ψεύστης|ὡς|ὡσαύτως|ὠφέλιμος
+</pre>
+
+<p>Then click the button "Check for completeness". After this all words beneath the heading "Parsed text:" should be displayed on green backgound. If some words remain on white background, it means that the script was not able to generate complete list of words. Inform about it senior editor.</p>
+
+<p>When you have pipe delimited alphabetical list of all words in the parsed text, go to <a href="../tools/lexicon_contents_generator.html" target="_blank">Lexicon contents generator</a> page and fill the form:</p>
+
+<p><img src="img2/lexicon_scanned_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we listed resource [LINK TO BE ADDED]. We entered for this key the value "greek_and_english_lexicon_of_nt_by_robinson_contents", so we now should enter it as the value of the field.</p>
+
+<p>The value of the form‘s field "Word list" should be just created pipe delimited alphabetical list of all words in the parsed text.</p>
+
+<p>After filling fields with these values click the button "Generate contents" and the contents code will appear in "Contents code" textarea.</p>
+
+<p>The contents code will be as this:</p>
+
+<pre id="creating_lexicon_contents_file" class="prettyprint code_showarea">
+greek_and_english_lexicon_of_nt_by_robinson_contents = {
+
+  /*Title page*/	"title": ""
+
+  , /*ἀγαθός*/ "w-7936-947-945-952-972-962": ""
+
+  , /*ἀγάπη*/ "w-7936-947-940-960-951": ""
+
+  , /*ἅγιος*/ "w-7941-947-953-959-962": ""
+
+  , /*ἁγνός*/ "w-7937-947-957-972-962": ""
+
+  // part of code has been cut out
+
+  , /*χριστός*/ "w-967-961-953-963-964-972-962": ""
+
+  , /*χρόνος*/ "w-967-961-972-957-959-962": ""
+
+  , /*ψεύστης*/ "w-968-949-973-963-964-951-962": ""
+
+  , /*ὡς*/ "w-8033-962": ""
+
+  , /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": ""
+
+  , /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": ""
+
+};
+</pre>
+
+<p>Now we need to enter values for each key of this JSON object. The keys are strings starting with "w" and consisting from numerical letter codes. "title" is the key for the title page of the lexicon. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
+
+<p>We get the following code:</p>
+
+<pre id="creating_lexicon_contents_file2" class="prettyprint code_showarea">
+greek_and_english_lexicon_of_nt_by_robinson_contents = {
+
+  /*Title page*/	"title": ""
+
+  , /*ἀγαθός*/ "w-7936-947-945-952-972-962": "15"
+
+  , /*ἀγάπη*/ "w-7936-947-940-960-951": "17"
+
+  , /*ἅγιος*/ "w-7941-947-953-959-962": "19"
+
+  , /*ἁγνός*/ "w-7937-947-957-972-962": "21"
+
+  // part of code has been cut out
+
+  , /*χριστός*/ "w-967-961-953-963-964-972-962": "799"
+
+  , /*χρόνος*/ "w-967-961-972-957-959-962": "800"
+
+  , /*ψεύστης*/ "w-968-949-973-963-964-951-962": "804"
+
+  , /*ὡς*/ "w-8033-962": "810"
+
+  , /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": "813"
+
+  , /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": "815"
+
+};
+</pre>
+
+<p>This code should be saved in the file having the same name as the value in "Contents shortname" field in the form. The file should be placed in directory whose name is the same ar resource shortname. Resource shortname is "greek_lexicon_of_nt_by_robinson" so the directory will be /data/lexicon/greek_lexicon_of_nt_by_robinson/ .</p>
+
+<p>After doing this lexicon resource should work in sync with parsed text resource.</p>
+
+<h4 class="pc-anchor" id="h-lexicon-scanned-supplementing-contents-file">Supplementing contents file</h4>
+
+<p>In case there is already contents file which contains words from one book of classics text, and we want that contents file would include also the words from other book of classics text, we need to supplement contents.</p>
+
+<p>To do this go to <a href="../tools/lexicon_contents_supplementer.html" target="_blank">Lexicon contents supplementer</a> page and fill the form:</p>
+
+<p><img src="img2/lexicon_scanned_02.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p>
+
+<p>The value of the form‘s field "Lexicon contents object" should be complete content of the lexicon contents file. In previous section [LINK TO BE ADDED] we saved it as /data/lexicon/greek_lexicon_of_nt_by_robinson/greek_and_english_lexicon_of_nt_by_robinson_contents.js .</p>
+
+<p>The value of the form‘s field "List of words to be added" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in previous section [LINK TO BE ADDED]. Here in this field we added list of words contained in parsed text resource from <em>Epistle to Philemon</em> collection.</p>
+
+<p>After filling fields with these values, click the button "Load contents" and the code of the concordance contents object will be displayed beneath "Initial contents object:" heading.</p>
+
+<p>Then click the button "Load words" and the list of words to be added to contents will be displayed beneath "Words to be added:" heading.</p>
+
+<p>After that click the button "Add to contents" and the code of supplemented contents object will appear in "Supplemented contents code" textarea.</p>
+
+<p>Then click the button "Check for completeness" and all words beneath the headings "Words to be added:" and "Initial contents object:" should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
+
+<p>The code generated will be as this:</p>
+
+<pre id="creating_lexicon_contents_file3" class="prettyprint code_showarea">
+greek_and_english_lexicon_of_nt_by_robinson_contents = {
+
+  /*Title page*/	"title": "3"
+
+  , /*ἀγαθός*/ "w-7936-947-945-952-972-962": "14"
+
+  , /*ἀγάπη*/ "w-7936-947-940-960-951": "18"
+
+  , /*ἀγαπητός*/ "w-7936-947-945-960-951-964-972-962": ""
+
+  , /*ἅγιος*/ "w-7941-947-953-959-962": "23"
+
+  , /*ἁγνός*/ "w-7937-947-957-972-962": "26"
+
+  , /*ἀδελφός*/ "w-7936-948-949-955-966-972-962": ""
+
+  // part of code has been cut out
+
+  , /*χριστός*/ "w-967-961-953-963-964-972-962": "1023"
+
+  , /*χρόνος*/ "w-967-961-972-957-959-962": "1030"
+
+  , /*χωρίζω*/ "w-967-969-961-943-950-969": ""
+
+  , /*χωρίς*/ "w-967-969-961-943-962": ""
+
+  , /*ψεύστης*/ "w-968-949-973-963-964-951-962": "1034"
+
+  , /*ὥρα*/ "w-8037-961-945": ""
+
+  , /*ὡς*/ "w-8033-962": "1038"
+
+  , /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": "1043"
+
+  , /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": "1044"
+
+};
+</pre>
+
+<p>Notice, tat some keys have numerical values while the other keys have empty strings as their values. The latter represents the words which were not included in the initial contents object.</p>
+
+<p>Now we need to enter numerical values for each key having empty string as its value. The values should be numbers from image file names (without zero padding). So, view images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
+
+<p>We get the following code:</p>
+
+<pre id="creating_lexicon_contents_file4" class="prettyprint code_showarea">
+greek_and_english_lexicon_of_nt_by_robinson_contents = {
+
+  /*Title page*/	"title": "3"
+
+  , /*ἀγαθός*/ "w-7936-947-945-952-972-962": "14"
+
+  , /*ἀγάπη*/ "w-7936-947-940-960-951": "18"
+
+  , /*ἀγαπητός*/ "w-7936-947-945-960-951-964-972-962": "19"
+
+  , /*ἅγιος*/ "w-7941-947-953-959-962": "23"
+
+  , /*ἁγνός*/ "w-7937-947-957-972-962": "26"
+
+  , /*ἀδελφός*/ "w-7936-948-949-955-966-972-962": "29"
+
+  // part of code has been cut out
+
+  , /*χριστός*/ "w-967-961-953-963-964-972-962": "1023"
+
+  , /*χρόνος*/ "w-967-961-972-957-959-962": "1030"
+
+  , /*χωρίζω*/ "w-967-969-961-943-950-969": "1032"
+
+  , /*χωρίς*/ "w-967-969-961-943-962": "1032"
+
+  , /*ψεύστης*/ "w-968-949-973-963-964-951-962": "1034"
+
+  , /*ὥρα*/ "w-8037-961-945": "1037"
+
+  , /*ὡς*/ "w-8033-962": "1038"
+
+  , /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": "1043"
+
+  , /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": "1044"
+  
+};
+</pre>
+
+<p>Replace with this code the contents of the file from which initial code was taken (in our case this was the file /data/lexicon/greek_lexicon_of_nt_by_robinson/greek_and_english_lexicon_of_nt_by_robinson_contents.js) and save it.</p>
+
+<p>After doing this lexicon resource should work in sync with parsed text resource.</p>
+
+<h4 class="pc-anchor" id="h-lexicon-workflows-for-multiple-collections">Workflows for multiple collections</h4>
+
+<p>Usually scanned resource of the type "Lexicon" is being included into several collections. E.g. such resource as lexicon by E. Robertson will be used in every collection dedicated to certain book of the New Testament. This means that the same contents file of the scanned resource of the type "Lexicon" will be used by all relevant collections.</p>
+
+<p>There are several workflows for creating contents file to be used by several collections.</p>
+
+<h5 class="pc-anchor" id="h-concordance-workflows-supplementing-in-stages">Supplementing in stages</h5>
+
+<p>One possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-lexicon-scanned-creating-contents-file">create new contents file</a> to be used by certain single collection and fill the gaps with page numbers for all lemmas found in the parsed text of that collection. Then we <a class="inner-link" data-anchor="h-lexicon-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in parsed text of another collection and fill the gaps with page numbers of these lemmas. And we repeat this process again and again until all lemmas of the all parsed texts of the all relevant collections are included in the contents file and all relevant page numbers are filled in.</p>
+
+<p>This workflow has the advantage that we can work only with lemmas of the parsed text of the single collection and doing so quickly prepare one or more resources of the type "Lexicon" to be used inside single collection. The disadvantage is that in each cycle we need again to browse through all pages of the scanned book in search for relevant lemmas and that takes a lot of time.</p>
+
+<h5 class="pc-anchor" id="h-lexicon-workflows-supplementing-at-start">Supplementing at start</h5>
+
+<p>Another possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-lexicon-scanned-creating-contents-file">create new contents file</a> to be used by certain single collection. Then we don't fill the gaps with page numbers, but instead <a class="inner-link" data-anchor="h-lexicon-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in original text of another collection. And we repeat this process again and again until all lemmas of the all original texts of the all relevant collections are included in the contents file. Then we browse through all pages of the scanned book, find the page numbers of the all lemmas and fill the gaps in contents file with these page numbers.</p>
+
+<p>This workflow has the advantage that we must browse though all pages of the scanned book only once and this takes much less time than repeated browsing of the workflow described above. But the disadvantage is that we cannot work with the single collection at the time and must create huge contents file at once.</p>
+
+<h5 class="pc-anchor" id="h-lexicon-workflows-cleaning-page-numbers">Cleaning page numbers</h5>
+
+<p>By using the first or the second workflow of those described above we get contents file of the resource of the type "Lexicon"  which is being used by multiple collections. We may need to add another resource of the type "Lexicon" to the same collections. E.g. after having added lexicon by E. Robinson to every collection dedicated to certain book of the New Testament we may need to add F. Zorell's <em>Lexicon Graecum Novi Testamenti</em> to the same collections. In such cases we can shortcut the process by using the third workflow.</p>
+
+<p>The contents file for the new resource of the type "Lexicon" should contain the same lemmas. This means that we can reuse existing contents file: we only need to remove page numbers, to change the name of the contents object and to change the name of the file. To remove page numbers from the contents file use <a href="../tools/lexicon_page_numbers_cleaner.html" target="_blank">Lexicon page numbers cleaner</a>. Copy contents object from the contents file, paste it in the field "Lexicon contents object" and click the button "Clean page numbers":</p>
+
+<p><img src="img2/lexicon_scanned_03.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>Then save the outputted contents object without page numbers using relevant variable name and file name.</p>
+
+<h5 class="pc-anchor" id="h-lexicon-workflows-importing-after-cleaning">Importing after cleaning</h5>
+
+<p>It may happen that one resource of the type "Lexicon" has been added to multiple collections and another resource of the type "Lexicon" has been added  to just single or several collections. E.g. such resource as  E. Robinson's <em>Greek and English lexicon of the New Testament</em> has been added to every collection dedicated to certain book of the New Testament, but such resource as F. Zorell's <em>Lexicon Graecum Novi Testamenti</em> has been added to one or couple of collections. Now we need to add this resource to remaining collections.<p>
+
+<p>In this case we need to use the following workflow. At first we should take that bigger contents file which contains comprehensive list of lemmas found in multiple collections and <a class="inner-link" data-anchor="h-lexicon-workflows-cleaning-page-numbers">remove the page numbers</a> from it. After that we need to import data into cleaned contents object from the contents object which contains less comprehensive list of lemmas from single collection or couple of collections. To do this go to <a href="../tools/lexicon_contents_importer.html" target="_blank">Lexicon contents importer</a> form and fill the fields:</p>
+
+<p><img src="img2/lexicon_scanned_04.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Language" should be "Greek" because lemmas in both contents objects are in Greek.</p>
+
+<p>The value of the field "Lexicon contents object" should be contents object in which page numbers have been removed, i.e. that contents object which contains comprehensive list of lemmas found in multiple collections.</p>
+
+<p>The value of the field "Lexicon contents object to be imported" should be contents object with all page numbers intact which contains less comprehensive list of lemmas from single collection or couple of collections.</p>
+
+<p>After filling fields with such values click the button "Load contents" which is below the first textarea and the list of lemmas contained in the initial contents object will be displayed below the heading "Initial contents object:". Then click the button "Load contents" which is below the second textarea and the list of lemmas contained in contents object to be imported will be displayed below the heading "Contents object to be imported:". After that click the button "Import contents" and the resulting contents object will be outputted inside textarea "Resulting contents object code". Then click the button "Check for completeness". All lemmas below the headings "Contents object to be imported:" and "Initial contents object:" should be colored green. If certain lemmas remain not colored, inform about it senior editor.</p>
+
+<p>Then save the resulting contents object using relevant variable name and file name.</p>
+
+<h3 class="pc-anchor" id="h-lexicon-transcribed">Lexicon (transcribed)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2979,303 +3275,7 @@ nt_conc_by_parsedclassics_titus_parsed_text =
 
 <h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
 
-<h3 class="pc-anchor" id="h-lexicon-scanned2">Lexicon (scanned)</h3>
-
-<h4 class="pc-anchor" id="h-lexicon-scanned-creating-image-files">Creating image files</h4>
-
-<p>To create scanned resource of the type "Lexicon" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a> the sections on scanning a book, on converting PDF file to images, on batch renaming of files, on cropping images, on retouching images, on optimizing size of JPG files.</p>
-
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor which will upload those files to the server. The files will be uploaded to the directory specified in catalogue file as the value of the key "scanned_source_shortname". For example in the <em>Epistle to Titus</em> collection  the  Greek and English lexicon of the New Testament by E. Robinson <a class="inner-link" data-anchor="h-lexicon">has been listed</a> and the  value of the key "scanned_source_shortname" is "greek_and_english_lexicon_of_nt_by_robinson". It means that the pictures of the pages must be uploaded to the directory  /_scans/greek_and_english_lexicon_of_nt_by_robinson .</p>
-
-<p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
-
-<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?greek_and_english_lexicon_of_nt_by_robinson</p>
-
-<p>In order for lexicon to work in sync with parsed text, the contents file should be prepared. Lexicon resources, which use the same scanned book, share the same contents file. This means that there can be two cases: (1) there is no contents file and we need to create it; (2) there is contents file and we need to supplement it.</p>
-
-<h4 class="pc-anchor" id="h-lexicon-scanned-creating-new-contents-file">Creating new contents file</h4>
-
-<p>To create new contents file go to  <a href="../tools/word_list_generator.html" target="_blank">Word list generator</a> page and fill the form:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_word_list_generator.png"></p>
-
-<p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p> 
-
-<p>The value of the form‘s field "Parsed text code" should be full HTML code of the parsed text. Use browser’s HTML inspector (available on right-click in every major browser) to copy parsed text's HTML code from Library app’s page. To do this right-click inside HTML inspector's panel  on the "div" element having "class" attribute "pc-content-panel-inner" and in context menu select option "Copy outerHTML":</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/copying_text_html.png"></p>
-
-<p>Then paste the copied string into form‘s field. After that select and delete opening and closing "div" tags from the code pasted into field:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/copying_text_html2.png"></p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/copying_text_html3.png"></p>
-
-<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
-
-<p>Then click the button "Generate list" and the pipe delimited alphabetical list of all words in the text will appear in "Word list" textarea.</p>
-
-<p>The word list will be as this:</p>
-
-<pre id="creating_word_list" class="prettyprint code_showarea">
-ἀγαθός|ἀγάπη|ἅγιος|ἁγνός|ἀδιαφθορία|ἀδόκιμος|ἀεί|αἱρετικός|αἰσχροκερδής|αἰσχρός|αἰτία|αἰών|αἰώνιος|ἄκαρπος|ἀκατάγνωστος|ἀλήθεια|ἀληθής|ἀλλά|ἀλλήλων|ἁμαρτάνω|ἄμαχος|ἀμήν|ἀναγκαῖος|ἀνακαίνωσις|ἀνατρέπω|ἀνέγκλητος|ἀνήρ|ἄνθρωπος|ἀνόητος|ἀνομία|ἀντέχομαι|ἀντιλέγω|ἀνυπότακτος|ἀνωφελής|ἀπειθής|ἄπιστος|ἀπό|Ἀπολλῶς|ἀπόστολος|ἀποστρέφω|ἀποτόμως|ἀργός|ἀρνέομαι|Ἀρτεμᾶς|ἀρχή|ἀσέβεια|ἀσπάζομαι|ἀσωτία|αὐθάδης|αὐτοκατάκριτος|αὐτός|ἀφθαρσία|ἀψευδής|βδελυκτός|βλασφημέω|βούλομαι|γάρ|γαστήρ|γενεαλογία|γίνομαι|γνήσιος|γυνή|δέ|δεσπότης|δεύτερος|δέω|διά|διαβεβαιόομαι|διάβολος|διάγω|διατάσσω|διδασκαλία|διδάσκω|διδαχή|δίδωμι|δίκαιος|δικαιοσύνη|δικαιόω|δικαίως|δόξα|δουλεύω|δοῦλος|δουλόω|δυνατός|ἑαυτοῦ|ἐγκρατής|ἐγώ|εἰ|εἰμί|εἰρήνη|εἷς|εἰς|ἐκ|ἐκεῖ|ἐκεῖνος|ἐκλεκτός|ἐκστρέφομαι|ἐκχέω|ἐλέγχω|ἔλεος|ἐλπίς|ἐν|ἐναντίος|ἐνδείκνυμι|ἐντολή|ἐντρέπω|ἐξουσία|ἐπαγγέλλομαι|ἐπί|ἐπίγνωσις|ἐπιδιορθόω|ἐπιεικής|ἐπιθυμία|ἐπίσκοπος|ἐπιστομίζω|ἐπιταγή|ἐπιφαίνω|ἐπιφάνεια|ἔργον|ἔρις|ἔρχομαι|ἕτοιμος|εὐάρεστος|εὐσέβεια|εὐσεβῶς|ἔχω|ζάω|ζηλωτής|Ζηνᾶς|ζήτησις|ζωή|ἤ|ἡδονή|ἡμέτερος|θεός|θηρίον|ἴδιος|ἱεροπρεπής|Ἰησοῦς|ἵνα|Ἰουδαϊκός|καθαρίζω|καθαρός|καθίστημι|καί|καιρός|κακία|κακός|καλοδιδάσκαλος|καλός|κατά|καταλείπω|κατάστημα|κατηγορία|κέρδος|κήρυγμα|κληρονόμος|κοινός|κοσμέω|κοσμικός|Κρής|Κρήτη|κρίνω|κύριους|λαλέω|λαός|λέγω|λείπω|λόγος|λουτρόν|λυτρόομαι|μακάριος|μάλιστα|μανθάνω|μαρτυρία|ματαιολόγος|μάταιος|μάχη|μέγας|μέν|μετά|μή|μηδείς|μιαίνω|μισέω|μῦθος|μωρός|νέος|νηφάλιος|Νικόπολις|νομικός|νοσφίζομαι|νουθεσία|νοῦς|νῦν|ὁ|οἶδα|οἰκονόμος|οἶκος|οἰκουργός|οἶνος|ὅλος|ὁμολογέω|ὁράω|ὀργίλος|ὅς|ὅσιος|ὅστις|ὅταν|ὅτε|ὅτι|οὐ|οὐδείς|οὗτος|παιδεύω|παλιγγενεσία|παραιτέομαι|παρακαλέω|παραχειμάζω|παρέχω|πάροινος|πᾶς|πατήρ|Παῦλος|πειθαρχέω|πέμπω|περί|περιΐστημι|περιούσιος|περιτομή|περιφρονέω|πιστεύω|πίστις|πιστός|πλανάω|πλήκτης|πλουσίως|πνεῦμα|ποιέω|ποικίλος|πόλις|πολύς|ποτέ|πραΰτης|πρέπω|πρεσβύτερος|πρεσβύτης|πρεσβῦτις|πρό|προΐστημι|προπέμπω|πρός|προσδέχομαι|προσέχω|προφήτης|σεαυτοῦ|σεμνός|σεμνότης|σπουδάζω|σπουδαίως|στυγητός|σύ|συνείδησις|σῴζω|σωτήρ|σωτήριος|σωφρονέω|σωφρονίζω|σωφρόνως|σώφρων|τέκνον|τίς|τις|Τίτος|τοιοῦτος|τύπος|Τυχικός|ὑγιαίνω|ὑγιής|ὑπέρ|ὑπομιμνῄσκω|ὑπομονή|ὑποτάσσω|φανερόω|φαῦλος|φθόνος|φιλάγαθος|φίλανδρος|φιλανθρωπία|φιλέω|φιλόξενος|φιλότεκνος|φρεναπάτης|φροντίζω|χάριν|χάρις|χρεία|χρηστότης|χριστός|χρόνος|ψεύστης|ὡς|ὡσαύτως|ὠφέλιμος
-</pre>
-
-<p>Then click the button "Check for completeness". After this all words beneath the heading "Parsed text" should be displayed on green backgound. If some words remain on white background, it means that the script was not able to generate complete list of words. Inform about it senior editor.</p>
-
-<p>When you have pipe delimited alphabetical list of all words in the parsed text, go to <a href="../tools/lexicon_contents_generator.html" target="_blank">Lexicon contents generator</a> page and fill the form:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_lexicon_contents_generator2.png"></p>
-
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" in collection‘s catalogue. While creating collection‘s catalogue for <em>Epistle to Titus</em> collection <a class="inner-link" data-anchor="h-lexicon">we entered</a> for this key the value "words_greek_and_english_lexicon_of_nt_by_robinson_contents", so we now should enter it as the value of the field "Contents shortname".</p>
-
-<p>The value of the form‘s field "Word list" should be just created pipe delimited alphabetical list of all words in the parsed text.</p> 
-
-<p>After filling fields with these values click the button "Generate contents" and the contents code will appear in "Contents code" textarea.</p>
-
-<p>The contents code will be as this:</p>
-
-<pre id="creating_lexicon_contents_file" class="prettyprint code_showarea">
-var words_greek_and_english_lexicon_of_nt_by_robinson_contents = {
-
-/*Title page*/	"w-title": ""
-
-, /*ἀγαθός*/ "w-7936-947-945-952-972-962": ""
-
-, /*ἀγάπη*/ "w-7936-947-940-960-951": ""
-
-, /*ἅγιος*/ "w-7941-947-953-959-962": ""
-
-, /*ἁγνός*/ "w-7937-947-957-972-962": ""
-
-// part of code has been cut out
-
-, /*χριστός*/ "w-967-961-953-963-964-972-962": ""
-
-, /*χρόνος*/ "w-967-961-972-957-959-962": ""
-
-, /*ψεύστης*/ "w-968-949-973-963-964-951-962": ""
-
-, /*ὡς*/ "w-8033-962": ""
-
-, /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": ""
-
-, /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": ""
-
-};
-</pre>
-
-<p>Now we need to enter values for each key of this JSON object. The keys are strings starting with "w" and consisting from numerical letter codes. "v-title" is the key for the title page of the lexicon. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p> 
-
-<p>We get the following code:</p>
-
-<pre id="creating_lexicon_contents_file2" class="prettyprint code_showarea">
-var words_greek_and_english_lexicon_of_nt_by_robinson_contents = {
-
-/*Title page*/	"w-title": ""
-
-, /*ἀγαθός*/ "w-7936-947-945-952-972-962": "15"
-
-, /*ἀγάπη*/ "w-7936-947-940-960-951": "17"
-
-, /*ἅγιος*/ "w-7941-947-953-959-962": "19"
-
-, /*ἁγνός*/ "w-7937-947-957-972-962": "21"
-
-// part of code has been cut out
-
-, /*χριστός*/ "w-967-961-953-963-964-972-962": "799"
-
-, /*χρόνος*/ "w-967-961-972-957-959-962": "800"
-
-, /*ψεύστης*/ "w-968-949-973-963-964-951-962": "804"
-
-, /*ὡς*/ "w-8033-962": "810"
-
-, /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": "813"
-
-, /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": "815"
-
-};
-</pre>
-
-<p>This code should be saved in the file having the same name as the value in "Contents shortname" field. The file should be placed in "contents" directory: /data/contents/words_greek_and_english_lexicon_of_nt_by_robinson_contents.js</p>
-
-<p>After doing this concordance resource should work in sync with parsed text resource.</p>
-
-<h4 class="pc-anchor" id="h-lexicon-scanned-supplementing-contents-file">Supplementing contents file</h4>
-
-<p>In case there is already contents file for scanned lexicon we need to supplement contents.</p>
-
-<p>To do this go to <a href="../tools/lexicon_contents_supplementer.html" target="_blank">Lexicon contents supplementer</a> page and fill the form:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_lexicon_contents_supplementer.jpg"></p>
-
-<p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p> 
-
-<p>The value of the form‘s field "Lexicon contents object" should be complete content of the lexicon contents file. In previous section <a class="inner-link" data-anchor="h-lexicon-scanned-creating-new-contents-file">we saved</a> it as /data/contents/words_greek_and_english_lexicon_of_nt_by_robinson_contents.js</p>
-
-<p>The value of the form‘s field "List of words to be added" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in the section <a class="inner-link" data-anchor="h-lexicon-scanned-creating-new-contents-file">Creating new contents file</a>.</p>
-
-<p>After filling fields with these values, click the button "Load contents" and the code of the lexicon contents object will be displayed beneath "Initial contents object:" heading.</p>
-
-<p>Then click the button "Load words" and the list of words to be added to contents will be displayed beneath "Words to be added:" heading.</p>
-
-<p>After that click the button "Add to contents" and the code of supplemented contents object will appear in "Supplemented contents code" textarea.</p>
-
-<p>Then click the button "Check for completeness" and all words beneath the headings "Words to be added:" and "Initial contents object:" should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
-
-<p>The code generated will be as this:</p>
-
-<pre id="creating_lexicon_contents_file3" class="prettyprint code_showarea">
-var words_greek_and_english_lexicon_of_nt_by_robinson_contents = {
-
-/*Title page*/	"w-title": "1"
-
-, /*ἀγαθός*/ "w-7936-947-945-952-972-962": "15"
-
-, /*ἀγαπάω*/ "w-7936-947-945-960-940-969": "16"
-
-, /*ἀγάπη*/ "w-7936-947-940-960-951": "17"
-
-, /*ἀγαπητός*/ "w-7936-947-945-960-951-964-972-962": "17"
-
-, /*ἄγγελος*/ "w-7940-947-947-949-955-959-962": "18"
-
-, /*ἅγιος*/ "w-7941-947-953-959-962": "19"
-
-, /*ἁγνός*/ "w-7937-947-957-972-962": ""
-
-, /*ἀγών*/ "w-7936-947-974-957": "23"
-
-// part of code has been cut out
-
-, /*χρόνος*/ "w-967-961-972-957-959-962": ""
-
-, /*ψαλμός*/ "w-968-945-955-956-972-962": "803"
-
-, /*ψεύδομαι*/ "w-968-949-973-948-959-956-945-953": "803"
-
-, /*ψεύστης*/ "w-968-949-973-963-964-951-962": ""
-
-, /*ψυχή*/ "w-968-965-967-942": "805"
-
-, /*ὧδε*/ "w-8039-948-949": "808"
-
-, /*ᾠδή*/ "w-8096-948-942": "808"
-
-, /*ὡς*/ "w-8033-962": "810"
-
-, /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": ""
-
-, /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": ""
-
-};
-</pre>
-
-<p>Notice, tat some keys have numerical values while the other keys have empty strings as their values. The latter represents the words which were not included in the initial contents object.</p>
-
-<p>Now we need to enter numerical values for each key having empty string as its value. The values should be numbers from image file names (without zero padding). So, view images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
-
-<p>We get the following code:</p>
-
-<pre id="creating_lexicon_contents_file4" class="prettyprint code_showarea">
-var words_greek_and_english_lexicon_of_nt_by_robinson_contents = {
-
-/*Title page*/	"w-title": "1"
-
-, /*ἀγαθός*/ "w-7936-947-945-952-972-962": "15"
-
-, /*ἀγαπάω*/ "w-7936-947-945-960-940-969": "16"
-
-, /*ἀγάπη*/ "w-7936-947-940-960-951": "17"
-
-, /*ἀγαπητός*/ "w-7936-947-945-960-951-964-972-962": "17"
-
-, /*ἄγγελος*/ "w-7940-947-947-949-955-959-962": "18"
-
-, /*ἅγιος*/ "w-7941-947-953-959-962": "19"
-
-, /*ἁγνός*/ "w-7937-947-957-972-962": "21"
-
-, /*ἀγών*/ "w-7936-947-974-957": "23"
-
-// part of code has been cut out
-
-, /*χρόνος*/ "w-967-961-972-957-959-962": "800"
-
-, /*ψαλμός*/ "w-968-945-955-956-972-962": "803"
-
-, /*ψεύδομαι*/ "w-968-949-973-948-959-956-945-953": "803"
-
-, /*ψεύστης*/ "w-968-949-973-963-964-951-962": "804"
-
-, /*ψυχή*/ "w-968-965-967-942": "805"
-
-, /*ὧδε*/ "w-8039-948-949": "808"
-
-, /*ᾠδή*/ "w-8096-948-942": "808"
-
-, /*ὡς*/ "w-8033-962": "810"
-
-, /*ὡσαύτως*/ "w-8033-963-945-973-964-969-962": "813"
-
-, /*ὠφέλιμος*/ "w-8032-966-941-955-953-956-959-962": "815"
-
-};
-</pre>
-
-<p>Replace with this code the contents of the file from which initial code was taken (in our case this <a class="inner-link" data-anchor="h-lexicon-scanned-creating-new-contents-file">was the file</a> /data/contents/words_greek_and_english_lexicon_of_nt_by_robinson_contents.js) and save it.</p>
-
-<p>After doing this lexicon resource should work in sync with parsed text resource.</p>
-
-<h4 class="pc-anchor" id="h-lexicon-workflows-for-multiple-collections">Workflows for multiple collections</h4>
-
-<p>Usually scanned resource of the type "Lexicon" is being included into several collections. E.g. such resource as E. Robinson's <em>Greek and English lexicon of the New Testament</em> will be used in every collection dedicated to certain book of the New Testament. This means that the same contents file of the scanned resource of the type "Lexicon" will be used by all relevant collections.</p>
-
-<p>There are several workflows for creating contents file to be used by several collections.</p>
-
-<h5 class="pc-anchor" id="h-lexicon-workflows-supplementing-in-stages">Supplementing in stages</h5>
-
-<p>One possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-lexicon-scanned-creating-new-contents-file">create new contents file</a> to be used by certain single collection and fill the gaps with page numbers for all lemmas found in the original text of that collection. Then we <a class="inner-link" data-anchor="h-lexicon-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in original text of another collection and fill the gaps with page numbers of these lemmas. And we repeat this process again and again untill all lemmas of the all original texts of the all relevant collections are included in the contents file and all relevant page numbers are filled in.</p>
-
-<p>This workflow has the advantage that we can work only with lemmas of the original text of the single collection and doing so quickly prepare one or more resources of the type "Lexicon" to be used inside single collection. The disadvantage is that in each cycle we need again to browse through all pages of the scanned book in search for relevant lemmas and that takes a lot of time.</p>
-
-<h5 class="pc-anchor" id="h-lexicon-workflows-supplementing-at-start">Supplementing at start</h5>
-
-<p>Another possible workflow is as follows: at first we <a class="inner-link" data-anchor="h-lexicon-scanned-creating-new-contents-file">create new contents file</a> to be used by certain single collection. Then we don't fill the gaps with page numbers, but instead <a class="inner-link" data-anchor="h-lexicon-scanned-supplementing-contents-file">supplement the contents file</a> with the lemmas found in original text of another collection. And we repeat this process again and again untill all lemmas of the all original texts of the all relevant collections are included in the contents file. Then we browse through all scanned pages of the scanned book, find the page numbers of the all lemmas and fill the gaps in contents file with these page numbers.</p>
-
-<p>This workflow has the advantage that we must browse though all pages of the scanned book only once and this takes much less time than repeated browsing of the workflow described above. But the disadvantage is that we cannot work with the single collection at the time and must create huge contents file at once.</p>
-
-<h5 class="pc-anchor" id="h-lexicon-workflows-cleaning-page-numbers">Cleaning page numbers</h5>
-
-<p>By using the first or the second workflow of those described above we get contents file of the resource of the type "Lexicon"  which is being used by multiple collections. We may need to add another resource of the type "Lexicon" to the same collections. E.g. after having added E. Robinson's <em>Greek and English lexicon of the New Testament</em> to every collection dedicated to certain book of the New Testament we may need to add F. Zorell's <em>Lexicon Graecum Novi Testamenti</em> to the same collections. In such cases we can shortcut the process by using the third workflow.</p>
-
-<p>The contents file for the new resource of the type "Lexicon" should contain the same lemmas. This means that we can reuse existing contens file: we only need to remove page numbers, to change the name of the contents object and to change the name of the file. To remove page numbers from the contents file use <a href="../tools/lexicon_page_numbers_cleaner.html" target="_blank">Lexicon page numbers cleaner</a>. Copy contents object from the contens file, paste it in the field "Lexicon contents object" and click the button "Clean page numbers":</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/cleaning_lexicon_page_nums.png"></p>
-
-<p>Then save the outputted contens object without page numbers using relevant contents object name and file name.</p>
-
-<h5 class="pc-anchor" id="h-lexicon-workflows-importing-after-cleaning">Importing after cleaning</h5>
-
-<p>It may happen that one resource of the type "Lexicon" has been added to multiple collections and another resource of the type "Lexicon" has been added  to just single or several collections. E.g. such resource as  E. Robinson's <em>Greek and English lexicon of the New Testament</em> has been added to every collection dedicated to certain book of the New Testament, but such resource as F. Zorell's <em>Lexicon Graecum Novi Testamenti</em> has been added to one or couple of collections. Now we need to add this resource to remaining collections.<p>
-
-<p>In this case we need to use the following workflow. At first we should take that bigger contents file which contains comprehensive list of lemmas found in multiple collections and <a class="inner-link" data-anchor="h-lexicon-workflows-cleaning-page-numbers">remove the page numbers</a> from it. After that we need to import data into cleaned contents object from the contents object which contains less comprehensive list of lemmas from single collection or couple of collections. To do this go to <a href="../tools/lexicon_contents_importer.html" target="_blank">Lexicon contents importer</a> form anf fill the fields:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/importing_lexicon_contents.png"></p>
-
-<p>The value of the form‘s field "Language" should be "Greek" because lemmas in both contents objects are in Greek.<p>
-
-<p>The value of the field "Lexicon contents object" should be contents object in which page numbers have been removed, i.e. that contents object which contains comprehensive list of lemmas found in multiple collections.</p>
-
-<p>The value of the field "Lexicon contents object to be imported" should be contents object with all page numbers intact which contains less comprehensive list of lemmas from single collection or couple of collections.</p>
-
-<p>After filling fields with such values click the button "Load contents" which is below the first textarea and the list of lemmas contained in the initial contents object will be displayed below the heading "Initial contents object:". Then click the button "Load contents" which is below the second textarea and the list of lemmas contained in contents object to be imported will be displayed below the heading "Contents object to be imported:". After that click the button "Import contents" and the resulting contents object will be outputted inside textarea "Resulting contents object code". Then click the button "Check for completeness". All lemmas below the headings "Contents object to be imported:" and "Initial contents object:" should be colored green. If certain lemmas remain not colored, inform about it senior editor.</p>
-
-<p>Then save the resulting contents object using relevant object name and file name.<p>
-
-<h3 class="pc-anchor" id="h-lexicon-transcribed">Lexicon (transcribed)</h3>
+<h3 class="pc-anchor" id="h-lexicon-transcribed2">Lexicon (transcribed)</h3>
 
 <p>Usually lexicon contains many hundreds of pages of text which uses complex formatting. In such situation there are no sense to create transcribed resource; scanned resource will be adequate solution.</p>
 
@@ -4283,7 +4283,7 @@ ParsedClassicsData._loadResource("nt_titus_audio_by_robinson",
 
 <h4 class="pc-anchor" id="h-audio-recording-transcribed-creating-contents-file">Creating contents file</h4>
 
-<p>In order for audio recording resource to work in sync with parsed text, the contens file should be created.</p>
+<p>In order for audio recording resource to work in sync with parsed text, the contents file should be created.</p>
 
 <p>To create contents file go to <a href="../tools/audio_contents_generator.html" target="_blank">Audio recording contents generator</a> page and fill the form:</p>
 
@@ -4339,7 +4339,7 @@ var sounds_nt_titus_audio_by_robinson_contents = {
 
 <p>It may happen that certain lines, which are included in parsed text resource are not recorded inside audio recording. E.g. inside parsed text of apostle Paul's Epistle to Romans there are lines 14:24-26 which are not recorded in Th. Karvounakis's audio recording. If we ignore this discrepancy, clicking on the lines 14:24-26 inside parsed text pane will not bring in sync the audio resource. The recomended way of dealing with this situation is as follows.</p>
 
-<p>First, check how long is the silence inside the sound file at the place where unrecorded lines might be. In case there are at least 0.25 second of silence for each unrecorded line, we can leave the sound file as it is and make changes only to data file and contens file. Inside data file we should to add numbers of unrecorded lines indicating that each should play 0.25 second or a little longer:</p>
+<p>First, check how long is the silence inside the sound file at the place where unrecorded lines might be. In case there are at least 0.25 second of silence for each unrecorded line, we can leave the sound file as it is and make changes only to data file and contents file. Inside data file we should to add numbers of unrecorded lines indicating that each should play 0.25 second or a little longer:</p>
 
 <pre id="unrecorded-lines-data-file" class="prettyprint code_showarea">
 // part of code has been cut out
@@ -4357,7 +4357,7 @@ var sounds_nt_titus_audio_by_robinson_contents = {
 // part of code has been cut out
 </pre>
 
-<p>Then we should introduce relevant changes into contens file by using <a href="../tools/audio_contents_generator.html">Audio recording contents generator</a> as described <a class="inner-link" data-anchor="h-audio-recording-transcribed-creating-contents-file">above</a>:</p>
+<p>Then we should introduce relevant changes into contents file by using <a href="../tools/audio_contents_generator.html">Audio recording contents generator</a> as described <a class="inner-link" data-anchor="h-audio-recording-transcribed-creating-contents-file">above</a>:</p>
 
 <pre id="unrecorded-lines-contents-file" class="prettyprint code_showarea">
 // part of code has been cut out
