@@ -18,7 +18,7 @@ griechisch_deutsches_handwoerterbuch_preuschen_contents = {
 
 
 
-/*Title page*/	"w-title": "1"
+/*Title page*/	"title": "1"
 
 
 

@@ -8,7 +8,7 @@
 
 lexicon_graecum_novi_testamenti_zorell_contents = {
 
-/*Title page*/	"w-title": "3"
+/*Title page*/	"title": "3"
 
 , /*Ἀαρών*/ "w-7944-945-961-974-957": "25"
 
