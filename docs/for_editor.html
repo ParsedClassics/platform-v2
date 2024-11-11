@@ -2764,6 +2764,203 @@ nt_conc_by_parsedclassics =
 
 <h4 class="pc-anchor" id="h-concordance-transcribed-creating-contents-file">Creating contents file</h4>
 
+<p>Concordance data file includes for each word form the list book abbreviations together with line numbers indicating places where the word form is present. Clicking the line number should open the original text in exact place. To enable this functionality we need to add contents file.</p>
+
+<p>Let's create contents file for concordance containing words of all 27 New Testament's books. The name of the contents file should be formed by adding "contents" to the end of the data file's name, and this way we get file name "nt_conc_by_parsedclassics_contents.js".</p>
+
+<p>The code inside the file "nt_conc_by_parsedclassics_contents.js" will be as follows:</p>
+
+<pre id="creating_concordance_typed_contents_file" class="prettyprint code_showarea">
+nt_conc_by_parsedclassics_contents = {
+
+  "Matt.": "nt_conc_by_parsedclassics_matthew_parsed_text",
+  "Mark": "nt_conc_by_parsedclassics_mark_parsed_text",
+  "Luke": "nt_conc_by_parsedclassics_luke_parsed_text",
+  "John": "nt_conc_by_parsedclassics_john_parsed_text",
+  "Acts": "nt_conc_by_parsedclassics_acts_parsed_text",
+  "James": "nt_conc_by_parsedclassics_james_parsed_text",
+  "1 Pet.": "nt_conc_by_parsedclassics_peter_1_parsed_text",
+  "2 Pet.": "nt_conc_by_parsedclassics_peter_2_parsed_text",
+  "1 John": "nt_conc_by_parsedclassics_john_1_parsed_text",
+  "2 John": "nt_conc_by_parsedclassics_john_2_parsed_text",
+  "3 John": "nt_conc_by_parsedclassics_john_3_parsed_text",
+  "Jude": "nt_conc_by_parsedclassics_jude_parsed_text",
+  "Rom.": "nt_conc_by_parsedclassics_romans_parsed_text",
+  "1 Cor.": "nt_conc_by_parsedclassics_corinthians_1_parsed_text",
+  "2 Cor.": "nt_conc_by_parsedclassics_corinthians_2_parsed_text",
+  "Gal.": "nt_conc_by_parsedclassics_galatians_parsed_text",
+  "Eph.": "nt_conc_by_parsedclassics_ephesians_parsed_text",
+  "Phil.": "nt_conc_by_parsedclassics_philippians_parsed_text",
+  "Col.": "nt_conc_by_parsedclassics_colossians_parsed_text",
+  "1 Thess.": "nt_conc_by_parsedclassics_thessalonians_1_parsed_text",
+  "2 Thess.": "nt_conc_by_parsedclassics_thessalonians_2_parsed_text",
+  "Heb.": "nt_conc_by_parsedclassics_hebrews_parsed_text",
+  "1 Tim.": "nt_conc_by_parsedclassics_timothy_1_parsed_text",
+  "2 Tim.": "nt_conc_by_parsedclassics_timothy_2_parsed_text",
+  "Titus": "nt_conc_by_parsedclassics_titus_parsed_text",
+  "Philem.": "nt_conc_by_parsedclassics_philemon_parsed_text",
+  "Rev.": "nt_conc_by_parsedclassics_revelation_parsed_text",
+
+  "titles": {
+
+      "nt_conc_by_parsedclassics_matthew_parsed_text": {
+        "author_orig": "Ἡ Καινὴ Διαθήκη",
+        "library_app_panel_text_from": "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing.",
+        "scanned_source_shortname": "new_testament_in_original_greek_ed_robinson_pierpont",
+        "library_app_panel_note": "",
+        "library_app_panel_title": "Τὸ κατὰ Ματθαῖον εὐαγγέλιον"
+      },
+      
+      // part of code has been cut out
+      
+      "nt_conc_by_parsedclassics_revelation_parsed_text": {
+        "author_orig": "Ἡ Καινὴ Διαθήκη",
+        "library_app_panel_text_from": "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing.",
+        "scanned_source_shortname": "new_testament_in_original_greek_ed_robinson_pierpont",
+        "library_app_panel_note": "",
+        "library_app_panel_title": "Ἀποκάλυψις Ἰωάννου τοῦ θεολόγου"
+      }
+
+  }
+
+};
+</pre>
+
+<p>This code initializes global variable "nt_conc_by_parsedclassics_contents", which as you see has the same name as the file. The value of this variable is JSON object. The keys of this object are abbreviations of the titles of the New Testament books and the values of these keys are strings which refer to files containing parsed text of relevant New Testament books. There are also the key "titles" whose value is an JSON object having as its keys just mentioned strings. The values of these keys are JSON objects having several keys: "author_orig", "library_app_panel_text_from", "scanned_source_shortname", "library_app_panel_note", "library_app_panel_title". These keys together with their values should be copied from the files which contain relevant collection and resource definitions, i.e. from files _collections.js and _res_protos.js from /data/catalogues/ directory.</p>
+
+<p>As you can see, the keys of the object nt_conc_by_parsedclassics_contents.titles have many common values. To avoid the repetitios we can desctructure relevant objects from _collections.js and _res_protos.js files. The code would be as follows:</p>
+
+<pre id="creating_concordance_typed_contents_file2" class="prettyprint code_showarea">
+nt_conc_by_parsedclassics_contents = {
+
+  "Matt.": "nt_conc_by_parsedclassics_matthew_parsed_text",
+  "Mark": "nt_conc_by_parsedclassics_mark_parsed_text",
+  "Luke": "nt_conc_by_parsedclassics_luke_parsed_text",
+  "John": "nt_conc_by_parsedclassics_john_parsed_text",
+  "Acts": "nt_conc_by_parsedclassics_acts_parsed_text",
+  "James": "nt_conc_by_parsedclassics_james_parsed_text",
+  "1 Pet.": "nt_conc_by_parsedclassics_peter_1_parsed_text",
+  "2 Pet.": "nt_conc_by_parsedclassics_peter_2_parsed_text",
+  "1 John": "nt_conc_by_parsedclassics_john_1_parsed_text",
+  "2 John": "nt_conc_by_parsedclassics_john_2_parsed_text",
+  "3 John": "nt_conc_by_parsedclassics_john_3_parsed_text",
+  "Jude": "nt_conc_by_parsedclassics_jude_parsed_text",
+  "Rom.": "nt_conc_by_parsedclassics_romans_parsed_text",
+  "1 Cor.": "nt_conc_by_parsedclassics_corinthians_1_parsed_text",
+  "2 Cor.": "nt_conc_by_parsedclassics_corinthians_2_parsed_text",
+  "Gal.": "nt_conc_by_parsedclassics_galatians_parsed_text",
+  "Eph.": "nt_conc_by_parsedclassics_ephesians_parsed_text",
+  "Phil.": "nt_conc_by_parsedclassics_philippians_parsed_text",
+  "Col.": "nt_conc_by_parsedclassics_colossians_parsed_text",
+  "1 Thess.": "nt_conc_by_parsedclassics_thessalonians_1_parsed_text",
+  "2 Thess.": "nt_conc_by_parsedclassics_thessalonians_2_parsed_text",
+  "Heb.": "nt_conc_by_parsedclassics_hebrews_parsed_text",
+  "1 Tim.": "nt_conc_by_parsedclassics_timothy_1_parsed_text",
+  "2 Tim.": "nt_conc_by_parsedclassics_timothy_2_parsed_text",
+  "Titus": "nt_conc_by_parsedclassics_titus_parsed_text",
+  "Philem.": "nt_conc_by_parsedclassics_philemon_parsed_text",
+  "Rev.": "nt_conc_by_parsedclassics_revelation_parsed_text",
+
+  "titles": {
+
+    "nt_conc_by_parsedclassics_matthew_parsed_text": {
+      ...ParsedClassicsCollProtos.nt_book,
+      ...ParsedClassicsResProtos.nt_parsed_text_byzantine,
+      library_app_panel_title: "Τὸ κατὰ Ματθαῖον εὐαγγέλιον",
+    },
+
+    // part of code has been cut out
+
+    "nt_conc_by_parsedclassics_revelation_parsed_text": {
+      ...ParsedClassicsCollProtos.nt_book,
+      ...ParsedClassicsResProtos.nt_parsed_text_byzantine,
+      library_app_panel_title: "Ἀποκάλυψις Ἰωάννου τοῦ θεολόγου",
+    }
+
+  }
+};
+</pre>
+
+<p>Now put the file "nt_conc_by_parsedclassics_contents.js" to the directory /data/concordance/nt_conc_by_parsedclassics/ .</p>
+
+<h4 class="pc-anchor" id="h-concordance-transcribed-creating-target-text-files">Creating target text files</h4>
+
+<p>Contents file we just created is the link between concordance and original text. Clicking on line numbers in concordance (rendered by data file) should display the original text (rendered by target text file) at exact place. One target file contains one book of classics text, so, since classics text usually consists of several books, most often there will be a need to create several target text files.</p>
+
+<p>For New Testament corcondance we need to create 27 target text files. Their names will be the strings from contents file which are values of abbreviations of the titles of the New Testament books. E.g. abbreviation "Titus" as a key has as its value the string "nt_conc_by_parsedclassics_titus_parsed_text", so the file name will be "nt_conc_by_parsedclassics_titus_parsed_text.js".</p>
+
+<p>Inside this file there should be the variable of the same name and its value should be the string containing parsed text of the relevant book. Parsed text can be taken from data file of relevant parsed text resource.</p>
+
+<p>The code would be as this:</p>
+
+<pre id="concordance_typed_target_text_file" class="prettyprint code_showarea">
+nt_conc_by_parsedclassics_titus_parsed_text =
+  
+`&lt;span class="line">&lt;span data-line-number="1:1" class="line-number">1:1&lt;/span>
+&lt;span class="word" data-form="Παῦλος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Παῦλος">Παῦλος&lt;/span>,
+&lt;span class="word" data-form="δοῦλος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="δοῦλος">δοῦλος&lt;/span>
+&lt;span class="word" data-form="θεοῦ" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="θεός">θεοῦ&lt;/span>,
+&lt;span class="word" data-form="ἀπόστολος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="ἀπόστολος">ἀπόστολος&lt;/span>
+&lt;span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ&lt;/span>
+&lt;span class="word" data-form="Ἰησοῦ" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="Ἰησοῦς">Ἰησοῦ&lt;/span>
+&lt;span class="word" data-form="χριστοῦ" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="χριστός">χριστοῦ&lt;/span>,
+&lt;span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατὰ&lt;/span>
+&lt;span class="word" data-form="πίστιν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="πίστις">πίστιν&lt;/span>
+&lt;span class="word" data-form="ἐκλεκτῶν" data-part-of-speech="adjective" data-parsing="genitive plural masculine" data-lemma="ἐκλεκτός">ἐκλεκτῶν&lt;/span>
+&lt;span class="word" data-form="θεοῦ" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="θεός">θεοῦ&lt;/span>
+&lt;span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ&lt;/span>
+&lt;span class="word" data-form="ἐπίγνωσιν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="ἐπίγνωσις">ἐπίγνωσιν&lt;/span>
+&lt;span class="word" data-form="ἀληθείας" data-part-of-speech="noun" data-parsing="genitive singular feminine" data-lemma="ἀλήθεια">ἀληθείας&lt;/span>
+&lt;span class="word" data-form="τῆς" data-part-of-speech="article" data-parsing="genitive singular feminine" data-lemma="ὁ">τῆς&lt;/span>
+&lt;span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατ’&lt;/span>
+&lt;span class="word" data-form="εὐσέβειαν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="εὐσέβεια">εὐσέβειαν&lt;/span>, &lt;/span>
+
+&lt;span class="line">&lt;span data-line-number="1:2" class="line-number">1:2&lt;/span>
+&lt;span class="word" data-form="ἐπί" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐπί">ἐπ’&lt;/span>
+&lt;span class="word" data-form="ἐλπίδι" data-part-of-speech="noun" data-parsing="dative singular feminine" data-lemma="ἐλπίς">ἐλπίδι&lt;/span>
+&lt;span class="word" data-form="ζωῆς" data-part-of-speech="noun" data-parsing="genitive singular feminine" data-lemma="ζωή">ζωῆς&lt;/span>
+&lt;span class="word" data-form="αἰωνίου" data-part-of-speech="adjective" data-parsing="genitive singular feminine" data-lemma="αἰώνιος">αἰωνίου&lt;/span>,
+&lt;span class="word" data-form="ἥν" data-part-of-speech="relative pronoun" data-parsing="accusative singular feminine" data-lemma="ὅς">ἣν&lt;/span>
+&lt;span class="word" data-form="ἐπηγγείλατο" data-part-of-speech="verb" data-parsing="aorist middle indicative 3rd person singular" data-lemma="ἐπαγγέλλομαι">ἐπηγγείλατο&lt;/span>
+&lt;span class="word" data-form="ὁ" data-part-of-speech="article" data-parsing="nominative singular masculine" data-lemma="ὁ">ὁ&lt;/span>
+&lt;span class="word" data-form="ἀψευδής" data-part-of-speech="adjective" data-parsing="nominative singular masculine" data-lemma="ἀψευδής">ἀψευδὴς&lt;/span>
+&lt;span class="word" data-form="θεός" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="θεός">θεὸς&lt;/span>
+&lt;span class="word" data-form="πρό" data-part-of-speech="preposition" data-parsing="" data-lemma="πρό">πρὸ&lt;/span>
+&lt;span class="word" data-form="χρόνων" data-part-of-speech="noun" data-parsing="genitive plural masculine" data-lemma="χρόνος">χρόνων&lt;/span>
+&lt;span class="word" data-form="αἰωνίων" data-part-of-speech="adjective" data-parsing="genitive plural masculine" data-lemma="αἰώνιος">αἰωνίων&lt;/span>, &lt;/span>
+
+&lt;span class="line">&lt;span data-line-number="1:3" class="line-number">1:3&lt;/span>
+&lt;span class="word" data-form="ἐφανέρωσε(ν)" data-part-of-speech="verb" data-parsing="aorist active indicative 3rd person singular" data-lemma="φανερόω">ἐφανέρωσεν&lt;/span>
+&lt;span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ&lt;/span>
+&lt;span class="word" data-form="καιροῖς" data-part-of-speech="noun" data-parsing="dative plural masculine" data-lemma="καιρός">καιροῖς&lt;/span>
+&lt;span class="word" data-form="ἰδίοις" data-part-of-speech="adjective" data-parsing="dative plural masculine" data-lemma="ἴδιος">ἰδίοις&lt;/span>
+&lt;span class="word" data-form="τόν" data-part-of-speech="article" data-parsing="accusative singular masculine" data-lemma="ὁ">τὸν&lt;/span>
+&lt;span class="word" data-form="λόγον" data-part-of-speech="noun" data-parsing="accusative singular masculine" data-lemma="λόγος">λόγον&lt;/span>
+&lt;span class="word" data-form="αὐτοῦ" data-part-of-speech="personal pronoun" data-parsing="genitive singular masculine" data-lemma="αὐτός">αὐτοῦ&lt;/span>
+&lt;span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν&lt;/span>
+&lt;span class="word" data-form="κηρύγματι" data-part-of-speech="noun" data-parsing="dative singular neuter" data-lemma="κήρυγμα">κηρύγματι&lt;/span>
+&lt;span class="word" data-form="ὅ" data-part-of-speech="relative pronoun" data-parsing="accusative singular neuter" data-lemma="ὅς">ὃ&lt;/span>
+&lt;span class="word" data-form="ἐπιστεύθην" data-part-of-speech="verb" data-parsing="aorist passive indicative 1st person singular" data-lemma="πιστεύω">ἐπιστεύθην&lt;/span>
+&lt;span class="word" data-form="ἐγώ" data-part-of-speech="personal pronoun" data-parsing="nominative singular" data-lemma="ἐγώ">ἐγὼ&lt;/span>
+&lt;span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατ’&lt;/span>
+&lt;span class="word" data-form="ἐπιταγήν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="ἐπιταγή">ἐπιταγὴν&lt;/span>
+&lt;span class="word" data-form="τοῦ" data-part-of-speech="article" data-parsing="genitive singular masculine" data-lemma="ὁ">τοῦ&lt;/span>
+&lt;span class="word" data-form="σωτῆρος" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="σωτήρ">σωτῆρος&lt;/span>
+&lt;span class="word" data-form="ἡμῶν" data-part-of-speech="personal pronoun" data-parsing="genitive plural" data-lemma="ἐγώ">ἡμῶν&lt;/span>
+&lt;span class="word" data-form="θεοῦ" data-part-of-speech="noun" data-parsing="genitive singular masculine" data-lemma="θεός">θεοῦ&lt;/span>, &lt;/span>`;
+
+// part of code has been cut out
+</pre>
+
+<h3 class="pc-anchor" id="h-lexicon-scanned">Lexicon (scanned)</h3>
+
+
+
+
+
+
+
+
 
 
 
@@ -2782,241 +2979,7 @@ nt_conc_by_parsedclassics =
 
 <h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
 
-
-
-<h2 class="pc-anchor" id="h-creating-resources2">Creating resources</h2>
-
-<h3 class="pc-anchor" id="h-concordance-transcribed2">Concordance (transcribed)</h3>
-
-<p>Creating transcribed resource of the type "concordance" involves creating data file and contents file.</p>
-
-<h4 class="pc-anchor" id="h-concordance-transcribed-creating-data-file2">Creating data file</h4>
-
-<p>Let‘s create data file of the transcribed concordance of the <em>Epistle to Titus</em> text.</p>
-
-<p>The data file is being created by filling <a href="../tools/concordance_generator.html" target="_blank">Concordance generator</a> form:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_concordance_generator.png"></p>
-
-<p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p>
-
-<p>The value of the form‘s field "Book abbreviation" should be standard abbreviation of the title of the classical book. For example, abbreviation of the apostle Paul's First Epistle to Thessalonians would be "1 Thess.", abbreviation of the Revelation to John the Theologian would be "Rev.".</p>
-
-<p>The value of the form‘s field "Parsed text code" should be HTML code of the parsed text starting from the first "span" tag having class attribute value "verse" and ending with the last "span" tag having the same attribute value. Use browser’s HTML inspector (available on right-click in every major browser) to copy this part of code from Library app’s page.</p> 
-
-<p>The value of the form‘s field "Word list" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in the section on <a class="inner-link" data-anchor="h-concordance-scanned-creating-new-contents-file">Creating new contents file</a> for scanned concordance resource.</p>
-
-<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
-
-<p>After loading text click the button "Generate concordance" and the concordance code will appear in "Concordance code" textarea.</p>
-
-<p>Then click the button "Check for completeness" and all words beneath the heading "Parsed text:"  should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
-
-<p>The generated concordance code will be as this:</p>
-
-<pre id="creating_concordance_datafile" class="prettyprint code_showarea">
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:10&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-10&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot; data-form=&quot;ἀ&gamma;&alpha;&theta;ή&nu;&quot;&gt;ἀ&gamma;&alpha;&theta;ή&nu;&lt;/span&gt; adjective accusative singular feminine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:16&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-16&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot; data-form=&quot;ἀ&gamma;&alpha;&theta;ό&nu;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&nu;&lt;/span&gt; adjective accusative singular neuter&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:1&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-1&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot; data-form=&quot;ἀ&gamma;&alpha;&theta;ό&nu;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&nu;&lt;/span&gt; adjective accusative singular neuter&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:5&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-5&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot; data-form=&quot;ἀ&gamma;&alpha;&theta;ά&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ά&sigmaf;&lt;/span&gt; adjective accusative plural feminine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ἀ&gamma;ά&pi;&eta;&quot;&gt;ἀ&gamma;ά&pi;&eta;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:2&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-2&quot; data-lemma=&quot;ἀ&gamma;ά&pi;&eta;&quot; data-form=&quot;ἀ&gamma;ά&pi;ῃ&quot;&gt;ἀ&gamma;ά&pi;ῃ&lt;/span&gt; noun dative singular feminine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ἅ&gamma;&iota;&omicron;&sigmaf;&quot;&gt;ἅ&gamma;&iota;&omicron;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:5&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-5&quot; data-lemma=&quot;ἅ&gamma;&iota;&omicron;&sigmaf;&quot; data-form=&quot;ἁ&gamma;ί&omicron;&upsilon;&quot;&gt;ἁ&gamma;ί&omicron;&upsilon;&lt;/span&gt; adjective genitive singular neuter&lt;/span&gt; 
-
-// part of code has been cut out
-
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&chi;ά&rho;&iota;&sigmaf;&quot;&gt;&chi;ά&rho;&iota;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:4&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-4&quot; data-lemma=&quot;&chi;ά&rho;&iota;&sigmaf;&quot; data-form=&quot;&chi;ά&rho;&iota;&sigmaf;&quot;&gt;&chi;ά&rho;&iota;&sigmaf;&lt;/span&gt; noun nominative singular feminine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:11&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-11&quot; data-lemma=&quot;&chi;ά&rho;&iota;&sigmaf;&quot; data-form=&quot;&chi;ά&rho;&iota;&sigmaf;&quot;&gt;&chi;ά&rho;&iota;&sigmaf;&lt;/span&gt; noun nominative singular feminine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:15&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-15&quot; data-lemma=&quot;&chi;ά&rho;&iota;&sigmaf;&quot; data-form=&quot;&chi;ά&rho;&iota;&sigmaf;&quot;&gt;&chi;ά&rho;&iota;&sigmaf;&lt;/span&gt; noun nominative singular feminine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:7&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-7&quot; data-lemma=&quot;&chi;ά&rho;&iota;&sigmaf;&quot; data-form=&quot;&chi;ά&rho;&iota;&tau;&iota;&quot;&gt;&chi;ά&rho;&iota;&tau;&iota;&lt;/span&gt; noun dative singular feminine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&chi;&rho;&epsilon;ί&alpha;&quot;&gt;&chi;&rho;&epsilon;ί&alpha;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:14&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-14&quot; data-lemma=&quot;&chi;&rho;&epsilon;ί&alpha;&quot; data-form=&quot;&chi;&rho;&epsilon;ί&alpha;&sigmaf;&quot;&gt;&chi;&rho;&epsilon;ί&alpha;&sigmaf;&lt;/span&gt; noun accusative plural feminine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&chi;&rho;&eta;&sigma;&tau;ό&tau;&eta;&sigmaf;&quot;&gt;&chi;&rho;&eta;&sigma;&tau;ό&tau;&eta;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:4&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-4&quot; data-lemma=&quot;&chi;&rho;&eta;&sigma;&tau;ό&tau;&eta;&sigmaf;&quot; data-form=&quot;&chi;&rho;&eta;&sigma;&tau;ό&tau;&eta;&sigmaf;&quot;&gt;&chi;&rho;&eta;&sigma;&tau;ό&tau;&eta;&sigmaf;&lt;/span&gt; noun nominative singular feminine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot;&gt;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:1&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-1&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot; data-form=&quot;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&quot;&gt;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&lt;/span&gt; noun genitive singular masculine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:4&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-4&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot; data-form=&quot;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&quot;&gt;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&lt;/span&gt; noun genitive singular masculine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:13&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-13&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot; data-form=&quot;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&quot;&gt;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&lt;/span&gt; noun genitive singular masculine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:6&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-6&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot; data-form=&quot;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&quot;&gt;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&lt;/span&gt; noun genitive singular masculine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&chi;&rho;ό&nu;&omicron;&sigmaf;&quot;&gt;&chi;&rho;ό&nu;&omicron;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:2&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-2&quot; data-lemma=&quot;&chi;&rho;ό&nu;&omicron;&sigmaf;&quot; data-form=&quot;&chi;&rho;ό&nu;&omega;&nu;&quot;&gt;&chi;&rho;ό&nu;&omega;&nu;&lt;/span&gt; noun genitive plural masculine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&psi;&epsilon;ύ&sigma;&tau;&eta;&sigmaf;&quot;&gt;&psi;&epsilon;ύ&sigma;&tau;&eta;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:12&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-12&quot; data-lemma=&quot;&psi;&epsilon;ύ&sigma;&tau;&eta;&sigmaf;&quot; data-form=&quot;&psi;&epsilon;ῦ&sigma;&tau;&alpha;&iota;&quot;&gt;&psi;&epsilon;ῦ&sigma;&tau;&alpha;&iota;&lt;/span&gt; noun nominative plural masculine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ὡ&sigmaf;&quot;&gt;ὡ&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:5&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-5&quot; data-lemma=&quot;ὡ&sigmaf;&quot; data-form=&quot;ὡ&sigmaf;&quot;&gt;ὡ&sigmaf;&lt;/span&gt; conjunction &lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:7&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-7&quot; data-lemma=&quot;ὡ&sigmaf;&quot; data-form=&quot;ὡ&sigmaf;&quot;&gt;ὡ&sigmaf;&lt;/span&gt; conjunction &lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&quot;&gt;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:3&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-3&quot; data-lemma=&quot;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&quot; data-form=&quot;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&quot;&gt;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&lt;/span&gt; adverb &lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:6&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-6&quot; data-lemma=&quot;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&quot; data-form=&quot;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&quot;&gt;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&lt;/span&gt; adverb &lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ὠ&phi;έ&lambda;&iota;&mu;&omicron;&sigmaf;&quot;&gt;ὠ&phi;έ&lambda;&iota;&mu;&omicron;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:8&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-8&quot; data-lemma=&quot;ὠ&phi;έ&lambda;&iota;&mu;&omicron;&sigmaf;&quot; data-form=&quot;ὠ&phi;έ&lambda;&iota;&mu;&alpha;&quot;&gt;ὠ&phi;έ&lambda;&iota;&mu;&alpha;&lt;/span&gt; adjective nominative plural neuter&lt;/span&gt;
-</pre>
-
-<p>Concordance HTML code should be converted to string and made the second argument of the function "ParsedClassicsData._loadResource". To convert concordance HTML code to string it should be enclosed by the backtick/grave accent (` `) character. The first argument of the function "ParsedClassicsData._loadResource" should be the value of the key "resource_shortname" from collection catalogue. Transcribed concordance resource shortname <a class="inner-link" data-anchor="h-concordance">from <em>Epistle to Titus</em> catalogue</a> is "nt_titus_conc_by_hieronymus", so this string will be the first argument.</p>
-
-<p>This way we get such data file:</p>
-
-<pre id="creating_concordance_datafile2" class="prettyprint code_showarea">
-ParsedClassicsData._loadResource(&quot;nt_titus_conc_by_parsedclassics&quot;,
-
-`&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:10&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-10&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot; data-form=&quot;ἀ&gamma;&alpha;&theta;ή&nu;&quot;&gt;ἀ&gamma;&alpha;&theta;ή&nu;&lt;/span&gt; adjective accusative singular feminine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:16&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-16&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot; data-form=&quot;ἀ&gamma;&alpha;&theta;ό&nu;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&nu;&lt;/span&gt; adjective accusative singular neuter&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:1&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-1&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot; data-form=&quot;ἀ&gamma;&alpha;&theta;ό&nu;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&nu;&lt;/span&gt; adjective accusative singular neuter&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:5&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-5&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot; data-form=&quot;ἀ&gamma;&alpha;&theta;ά&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ά&sigmaf;&lt;/span&gt; adjective accusative plural feminine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ἀ&gamma;ά&pi;&eta;&quot;&gt;ἀ&gamma;ά&pi;&eta;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:2&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-2&quot; data-lemma=&quot;ἀ&gamma;ά&pi;&eta;&quot; data-form=&quot;ἀ&gamma;ά&pi;ῃ&quot;&gt;ἀ&gamma;ά&pi;ῃ&lt;/span&gt; noun dative singular feminine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ἅ&gamma;&iota;&omicron;&sigmaf;&quot;&gt;ἅ&gamma;&iota;&omicron;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:5&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-5&quot; data-lemma=&quot;ἅ&gamma;&iota;&omicron;&sigmaf;&quot; data-form=&quot;ἁ&gamma;ί&omicron;&upsilon;&quot;&gt;ἁ&gamma;ί&omicron;&upsilon;&lt;/span&gt; adjective genitive singular neuter&lt;/span&gt; 
-
-// part of code has been cut out
-
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&chi;ά&rho;&iota;&sigmaf;&quot;&gt;&chi;ά&rho;&iota;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:4&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-4&quot; data-lemma=&quot;&chi;ά&rho;&iota;&sigmaf;&quot; data-form=&quot;&chi;ά&rho;&iota;&sigmaf;&quot;&gt;&chi;ά&rho;&iota;&sigmaf;&lt;/span&gt; noun nominative singular feminine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:11&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-11&quot; data-lemma=&quot;&chi;ά&rho;&iota;&sigmaf;&quot; data-form=&quot;&chi;ά&rho;&iota;&sigmaf;&quot;&gt;&chi;ά&rho;&iota;&sigmaf;&lt;/span&gt; noun nominative singular feminine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:15&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-15&quot; data-lemma=&quot;&chi;ά&rho;&iota;&sigmaf;&quot; data-form=&quot;&chi;ά&rho;&iota;&sigmaf;&quot;&gt;&chi;ά&rho;&iota;&sigmaf;&lt;/span&gt; noun nominative singular feminine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:7&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-7&quot; data-lemma=&quot;&chi;ά&rho;&iota;&sigmaf;&quot; data-form=&quot;&chi;ά&rho;&iota;&tau;&iota;&quot;&gt;&chi;ά&rho;&iota;&tau;&iota;&lt;/span&gt; noun dative singular feminine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&chi;&rho;&epsilon;ί&alpha;&quot;&gt;&chi;&rho;&epsilon;ί&alpha;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:14&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-14&quot; data-lemma=&quot;&chi;&rho;&epsilon;ί&alpha;&quot; data-form=&quot;&chi;&rho;&epsilon;ί&alpha;&sigmaf;&quot;&gt;&chi;&rho;&epsilon;ί&alpha;&sigmaf;&lt;/span&gt; noun accusative plural feminine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&chi;&rho;&eta;&sigma;&tau;ό&tau;&eta;&sigmaf;&quot;&gt;&chi;&rho;&eta;&sigma;&tau;ό&tau;&eta;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:4&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-4&quot; data-lemma=&quot;&chi;&rho;&eta;&sigma;&tau;ό&tau;&eta;&sigmaf;&quot; data-form=&quot;&chi;&rho;&eta;&sigma;&tau;ό&tau;&eta;&sigmaf;&quot;&gt;&chi;&rho;&eta;&sigma;&tau;ό&tau;&eta;&sigmaf;&lt;/span&gt; noun nominative singular feminine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot;&gt;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:1&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-1&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot; data-form=&quot;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&quot;&gt;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&lt;/span&gt; noun genitive singular masculine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:4&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-4&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot; data-form=&quot;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&quot;&gt;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&lt;/span&gt; noun genitive singular masculine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:13&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-13&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot; data-form=&quot;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&quot;&gt;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&lt;/span&gt; noun genitive singular masculine&lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:6&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-6&quot; data-lemma=&quot;&chi;&rho;&iota;&sigma;&tau;ό&sigmaf;&quot; data-form=&quot;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&quot;&gt;&chi;&rho;&iota;&sigma;&tau;&omicron;ῦ&lt;/span&gt; noun genitive singular masculine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&chi;&rho;ό&nu;&omicron;&sigmaf;&quot;&gt;&chi;&rho;ό&nu;&omicron;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:2&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-2&quot; data-lemma=&quot;&chi;&rho;ό&nu;&omicron;&sigmaf;&quot; data-form=&quot;&chi;&rho;ό&nu;&omega;&nu;&quot;&gt;&chi;&rho;ό&nu;&omega;&nu;&lt;/span&gt; noun genitive plural masculine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;&psi;&epsilon;ύ&sigma;&tau;&eta;&sigmaf;&quot;&gt;&psi;&epsilon;ύ&sigma;&tau;&eta;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:12&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-12&quot; data-lemma=&quot;&psi;&epsilon;ύ&sigma;&tau;&eta;&sigmaf;&quot; data-form=&quot;&psi;&epsilon;ῦ&sigma;&tau;&alpha;&iota;&quot;&gt;&psi;&epsilon;ῦ&sigma;&tau;&alpha;&iota;&lt;/span&gt; noun nominative plural masculine&lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ὡ&sigmaf;&quot;&gt;ὡ&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:5&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-5&quot; data-lemma=&quot;ὡ&sigmaf;&quot; data-form=&quot;ὡ&sigmaf;&quot;&gt;ὡ&sigmaf;&lt;/span&gt; conjunction &lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;1:7&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v1-7&quot; data-lemma=&quot;ὡ&sigmaf;&quot; data-form=&quot;ὡ&sigmaf;&quot;&gt;ὡ&sigmaf;&lt;/span&gt; conjunction &lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&quot;&gt;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:3&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-3&quot; data-lemma=&quot;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&quot; data-form=&quot;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&quot;&gt;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&lt;/span&gt; adverb &lt;/span&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;2:6&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v2-6&quot; data-lemma=&quot;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&quot; data-form=&quot;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&quot;&gt;ὡ&sigma;&alpha;ύ&tau;&omega;&sigmaf;&lt;/span&gt; adverb &lt;/span&gt; 
-&lt;h2&gt;&lt;span class=&quot;concordance-heading&quot; data-lemma=&quot;ὠ&phi;έ&lambda;&iota;&mu;&omicron;&sigmaf;&quot;&gt;ὠ&phi;έ&lambda;&iota;&mu;&omicron;&sigmaf;&lt;/span&gt;&lt;/h2&gt; 
-&lt;span class=&quot;concordance-verse&quot;&gt;&lt;span class=&quot;concordance-verse-number&quot;&gt;3:8&lt;/span&gt; &lt;span class=&quot;concordance-word&quot; data-concordance-verse-class=&quot;v3-8&quot; data-lemma=&quot;ὠ&phi;έ&lambda;&iota;&mu;&omicron;&sigmaf;&quot; data-form=&quot;ὠ&phi;έ&lambda;&iota;&mu;&alpha;&quot;&gt;ὠ&phi;έ&lambda;&iota;&mu;&alpha;&lt;/span&gt; adjective nominative plural neuter&lt;/span&gt;`
-
-);
-</pre>
-
-
-<p>Data file‘s name should be the same as the value of the key "resource_shortname" <a class="inner-link" data-anchor="h-concordance">from collection catalogue</a>. Transcribed concordance resource shortname from <em>Epistle to Titus</em> catalogue is "nt_titus_conc_by_hieronymus", so this should be data file‘s name. Data file should be placed in "concordance" directory: /data/resources/concordance/nt_titus_conc_by_parsedclassics.js</p>
-
-<p>After doing this concordance resource should work in sync with parsed text resource.</p>
-
-<p>We compiled grammatical concordance just for one book. In some cases this might be enough, but usually concordance compiled just for one book is not very useful. Much more useful would be to compile concordance for all books of certain classical text or to compile concordance for all texts written by certain author. We can compile concordance for serveral books by using <a href="../tools/concordance_supplementer.html" target="_blank">Concordance supplementer</a> form:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_concordance_supplementer.png"></p>
-
-<p>Let's say we want to compile grammatical concordance for all books of the New Testament starting from Gospel according to Matthew and ending with Revelation to John the Theologian. To achieve this we at first need to supplement concordance of the Gospel according to Matthew with the concordance of the Gospel according to Mark, then the resulting concordance we should supplement with the concordance of the Gospel according to Luke etc. until we reach the last book of the New Testament, the Revelation to John the Theologian.</p>
-
-<p>The value of the form‘s field "Language" should be "Greek" because New Testament is in Greek.</p>
-
-<p>The value of the form‘s field "Concordance to be supplemented" should be the code of the concordance of the Gospel according to Matthew.</p>
-
-<p>The value of the form‘s field "Concordance to be supplemented" should be the code of the concordance of the Gospel according to Mark.</p>
-
-<p>Having filled form's fields with these values, we should load both concordances by clicking "Load concordance" buttons and then we should click the button "Supplement concordance". The code of resulting concordance will be outputted in "Concordance code" textarea and resulting concordance will be displayed under "Concordance supplemented:" heading. Now we can click "Check for completeness" button to see if everything which was included in concordance to be supplemented and in concordance to be added is also included in resulting concordance. All words and line numbers of the concordance to be supplemented and of the concordance to be added should become green. If any word or line number became red and is included in square brackets (symbols []), inform about it senior editor.</p>
-
-<p>Now that we have grammatical concordance of the Gospels according to Matthew and Mark, let's copy its code and paste it in the field "Concordance to be supplemented", then let's paste the code of the concordance of the Gospel according to Luke in the field "Concordance to be added". After clicking button "Supplement concordance" we will have concordance which includes words of these three books. We can repeat this process untill we compile concordance for all 27 books of the New Testament. The resulting concordance code should be converted to string and be made the second argument of the function "ParsedClassicsData._loadResource" as has been described above.</p>
-
-<p>The code of the function "ParsedClassicsData._loadResource" with its arguments should be saved in the file named, e.g. "nt_conc_by_parsedclassics.js". The file should be placed in directory /data/resources/concordance .</p>
-
-<h4 class="pc-anchor" id="h-concordance-transcribed-creating-contents-file2">Creating contents file</h4>
-
-<p>Concordance data file includes for each word form the list book abbreviations together with line numbers indicating places where the word form is present. Clicking the line number should open the original text in exact place. To enable this functionality we need to add contents file.</p>
-
-<p>Let's create contents file for concordance containing words of all 27 New Testament's books. The name of the contents file should be formed by adding "lines_" and "_contents" to respectively beginning and end of the data file's name, and this way we get file name "lines_nt_conc_by_parsedclassics_contents.js".</p>
-
-<p>The code inside the file "lines_nt_conc_by_parsedclassics_contents.js" will be as follows:</p>
-
-<pre id="creating_concordance_contentsfile" class="prettyprint code_showarea">
-var lines_nt_conc_by_parsedclassics_contents = {
-
-	"nt_matthew_parsed_text": "Matt."
-	, "nt_mark_parsed_text": "Mark"
-	, "nt_luke_parsed_text": "Luke"
-	, "nt_john_parsed_text": "John"
-	, "nt_acts_parsed_text": "Acts"
-	, "nt_james_parsed_text": "James"
-	, "nt_peter_1_parsed_text": "1 Pet."
-	, "nt_peter_2_parsed_text": "2 Pet."
-	, "nt_john_1_parsed_text": "1 John"
-	, "nt_john_2_parsed_text": "2 John"
-	, "nt_john_3_parsed_text": "3 John"
-	, "nt_jude_parsed_text": "Jude"
-	, "nt_romans_parsed_text": "Rom."
-	, "nt_corinthians_1_parsed_text": "1 Cor."
-	, "nt_corinthians_2_parsed_text": "2 Cor."
-	, "nt_galatians_parsed_text": "Gal."
-	, "nt_ephesians_parsed_text": "Eph."
-	, "nt_philippians_parsed_text": "Phil."
-	, "nt_colossians_parsed_text": "Col."
-	, "nt_thessalonians_1_parsed_text": "1 Thess."
-	, "nt_thessalonians_2_parsed_text": "2 Thess."
-	, "nt_hebrews_parsed_text": "Heb."
-	, "nt_timothy_1_parsed_text": "1 Tim."
-	, "nt_timothy_2_parsed_text": "2 Tim."
-	, "nt_titus_parsed_text": "Titus"
-	, "nt_philemon_parsed_text": "Philem."
-	, "nt_revelation_parsed_text": "Rev."
-	
-	, "titles": {
-
-		"nt_matthew_parsed_text": {
-
-            "author_orig": "Ἡ Καινὴ Διαθήκη"
-            , "collections_page_title_orig": "Τὸ κατὰ Ματθαῖον εὐαγγέλιον"
-            , "library_app_panel_text_from": "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing."
-            , "scanned_source_shortname": "new_testament_in_original_greek_ed_robinson_pierpont"
-            , "library_app_panel_note": "Parsing based on: morphological tagging by J. K. Tauber (2016)."
-
-        }
-        , "nt_mark_parsed_text": {
-
-            "author_orig": "Ἡ Καινὴ Διαθήκη"
-            , "collections_page_title_orig": "Τὸ κατὰ Μάρκον εὐαγγέλιον"
-            , "library_app_panel_text_from": "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing."
-            , "scanned_source_shortname": "new_testament_in_original_greek_ed_robinson_pierpont"
-            , "library_app_panel_note": "Parsing based on: morphological tagging by J. K. Tauber (2016)."
-
-        }
-        , "nt_luke_parsed_text": {
-
-            "author_orig": "Ἡ Καινὴ Διαθήκη"
-            , "collections_page_title_orig": "Τὸ κατὰ Λουκᾶν εὐαγγέλιον"
-            , "library_app_panel_text_from": "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing."
-            , "scanned_source_shortname": "new_testament_in_original_greek_ed_robinson_pierpont"
-            , "library_app_panel_note": "Parsing based on: morphological tagging by J. K. Tauber (2016)."
-
-		}
-		
-		// part of code has been cut out
-
-		, "nt_revelation_parsed_text": {
-
-            "author_orig": "Ἡ Καινὴ Διαθήκη"
-            , "collections_page_title_orig": "Ἀποκάλυψις Ἰωάννου τοῦ θεολόγου"
-            , "library_app_panel_text_from": "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing."
-            , "scanned_source_shortname": "new_testament_in_original_greek_ed_robinson_pierpont"
-            , "library_app_panel_note": "Parsing based on: morphological tagging by J. K. Tauber (2016)."
-
-        }
-
-	}
-};		
-</pre>
-
-<p>This code initializes global variable "lines_nt_conc_by_parsedclassics_contents", which as you see has the same name as the file. The value of this variable JSON object. The keys of this object are resource shortnames of parsed text resources and the values of these keys are abbreviations of the titles of the New Testament books. There are also the key "titles" whose value is an JSON object having as its keys also resource shortnames of the parsed text resources. The values of these keys are JSON objects having several keys: "author_orig", "collections_page_title_orig", "library_app_panel_text_from", "scanned_source_shortname", "library_app_panel_note". These keys together with their values should be copied from the files which contain relevant collection definitions, i.e. from files in /data/catalogues directory.</p>
-
-<p>Now put the file "lines_nt_conc_by_parsedclassics_contents.js" to the directory /data/contents and then clicking on line numbers in concordance should open the original text in exact place.</p>
-
-<h3 class="pc-anchor" id="h-lexicon-scanned">Lexicon (scanned)</h3>
+<h3 class="pc-anchor" id="h-lexicon-scanned2">Lexicon (scanned)</h3>
 
 <h4 class="pc-anchor" id="h-lexicon-scanned-creating-image-files">Creating image files</h4>
 

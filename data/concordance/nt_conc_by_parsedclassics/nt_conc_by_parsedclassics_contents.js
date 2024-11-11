@@ -44,10 +44,10 @@ nt_conc_by_parsedclassics_contents = {
         template of objects inside "titles" object:
 
         "author_orig": "",
-        "collections_page_title_orig": "",
         "library_app_panel_text_from": "",
         "scanned_source_shortname": "",
         "library_app_panel_note": "",
+        "library_app_panel_title": ""
         */
 
         "nt_conc_by_parsedclassics_matthew_parsed_text": {
