@@ -551,11 +551,11 @@ svg {
   filter: brightness(0) invert(1);
 }
 
-#pc-append-code-container span.line:not(:last-child) {
+#pc-append-code-container span.line:not(:last-child), #pc-append-code-container2 span.line:not(:last-child) {
   padding-bottom: 16px;
 }
 
-#pc-append-code-container span.line {
+#pc-append-code-container span.line, #pc-append-code-container2 span.line {
   display: block;
 }
 
