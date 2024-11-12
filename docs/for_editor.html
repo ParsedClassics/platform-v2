@@ -3238,9 +3238,226 @@ greek_and_english_lexicon_of_nt_by_robinson_contents = {
 
 <h3 class="pc-anchor" id="h-lexicon-transcribed">Lexicon (transcribed)</h3>
 
+<p>Usually lexicon contains many hundreds of pages of text which uses complex formatting. In such situation there are no sense to create transcribed resource; scanned resource will be adequate solution.</p>
+
+<p>But there are some smaller and simpler lexicons which do not use complex formatting. In such case creating transcribed resource might be considered. As an example of transcribed lexicon resource Greek-English lexicon to the New Testament by Th. S. Green <a class="inner-link" data-anchor="h-lexicon">has been listed</a> in the <em>Epistle to Titus</em> collection.</p> 
+
+<p>Creating transcribed resource of the type "lexicon" involves creating one data file.</p>
+
+<h4 class="pc-anchor" id="h-lexicon-transcribed-creating-data-file">Creating data file</h4>
+
+<p>The text of lexicon articles should be HTML formatted according simple convention. Here is example of HTML formatted lexicon articles:</p>
+
+<pre id="creating_lexicon_datafile" class="prettyprint code_showarea">
+&lt;h3&gt;&Alpha;, &alpha;, &lt;i&gt;Ἄ&lambda;&phi;&alpha;&lt;/i&gt;&lt;/h3&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&quot;&gt;&Alpha;&lt;/span&gt;, &alpha;, &lt;i&gt;Alpha&lt;/i&gt;,&lt;/dt&gt;
+&lt;dd&gt;the first letter in the Greek Alphabet, and used for the &lt;i&gt;first&lt;/i&gt;, Re. 1.8, 11; 21.6; 22.13.&lt;/dd&gt;
+&lt;dd&gt;In composition, it denotes privation; sometimes augmentation, and union.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&beta;&alpha;&rho;ή&sigmaf;&quot;&gt;&Alpha;&beta;ᾰ&rho;ή&sigmaf;&lt;/span&gt;, έ&omicron;&sigmaf;, &omicron;ῦ&sigmaf;, ὁ, ἡ, &tau;ὸ, -έ&sigmaf;, (ἀ &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&beta;&alpha;&rho;&omicron;&sigmaf;&quot;&gt;&beta;ά&rho;&omicron;&sigmaf;&lt;/a&gt;)&lt;/dt&gt;
+&lt;dd&gt;not burdensome, not chargeable, 2 Co. 11.9.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&beta;&beta;ᾶ&quot;&gt;&Alpha;&beta;&beta;ᾶ&lt;/span&gt;&lt;/dt&gt;
+&lt;dd&gt;ind. ch. or Sy. &lt;span class=&quot;hebrew&quot;&gt;אבא&lt;/span&gt;, father, Mar. 14.36. Ro.8.15 Ga. 4.6.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἄ&beta;&upsilon;&sigma;&sigma;&omicron;&sigmaf;&quot;&gt;Ἄ&beta;&upsilon;&sigma;&sigma;&omicron;&sigmaf;&lt;/span&gt;, &omicron;&upsilon;, ἡ,&lt;/dt&gt;
+&lt;dd&gt;&lt;i&gt;pr.&lt;/i&gt; bottomless; place of the dead, hell.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&epsilon;&rho;&gamma;έ&omega;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&epsilon;&rho;&gamma;έ&omega;&lt;/span&gt;, ῶ, Ἀ&gamma;&alpha;&theta;&omicron;&upsilon;&rho;&gamma;ῶ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/a&gt; &amp;amp;  &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&epsilon;&rho;&gamma;&omicron;&nu;&quot;&gt;ἔ&rho;&gamma;&omicron;&nu;&lt;/a&gt;)&lt;/dt&gt;
+&lt;dd&gt;f. ή&sigma;&omega;, &lt;/dd&gt;
+&lt;dd&gt;to do good, confer benefits, 1 Ti.6.18 N.T.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;έ&omega;&quot;&gt;&Alpha;&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;έ&omega;&lt;/span&gt;, ῶ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/a&gt; &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&pi;&omicron;&iota;&epsilon;&omega;&quot;&gt;&pi;&omicron;&iota;έ&omega;&lt;/a&gt;)&lt;/dt&gt;
+&lt;dd&gt;f. ή&sigma;&omega;, &lt;/dd&gt;
+&lt;dd&gt;to do good, benefit, do well: (S.) &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ΐ&alpha;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ΐ&alpha;&lt;/span&gt;, &alpha;&sigmaf;, ἡ,&lt;/dt&gt;
+&lt;dd&gt;well-doing, probity, 1 Pe. 4.19 L.G.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ό&sigmaf;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ό&sigmaf;&lt;/span&gt;, &omicron;ῦ, ὁ, ἡ,&lt;/dt&gt;
+&lt;dd&gt;a well-doer, 1 Pe. 2.14 L.G.&lt;/dd&gt;
+&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot;&gt;Ἀ&gamma;ᾰ&theta;ό&sigmaf;&lt;/span&gt;&lt;/a&gt;, ή, ό&nu;, &lt;/dt&gt;
+&lt;dd&gt;good, profitable, generous, beneficent, upright, virtuous: &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;
+              
+&lt;!-- part of code has been cut out --&gt;
+
+&lt;/dl&gt;
+
+&lt;h3&gt;&Beta;, &beta;, &lt;i&gt;&Beta;ῆ&tau;&alpha;&lt;/i&gt;&lt;/h3&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&theta;&mu;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;&mu;ό&sigmaf;&quot;&gt;&Beta;&alpha;&theta;&mu;ό&sigmaf;&lt;/span&gt;&lt;/a&gt;, &omicron;ῦ, ὁ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&beta;&alpha;&iota;&nu;&omega;&quot;&gt;&beta;&alpha;ί&nu;&omega;&lt;/a&gt;)&lt;/dt&gt;
+&lt;dd&gt;&lt;i&gt;pr.&lt;/i&gt; a step, stair; &lt;i&gt;met.&lt;/i&gt; grade of dignity, degree, rank standing, 1 Ti 3.13.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;ά&theta;&omicron;&sigmaf;&quot;&gt;&Beta;ά&theta;&omicron;&sigmaf;&lt;/span&gt;, &epsilon;&omicron;&sigmaf;, &omicron;&upsilon;&sigmaf;, &tau;ό,&lt;/dt&gt;
+&lt;dd&gt;depth; &tau;ὸ &beta;ά&theta;&omicron;&sigmaf;, deep water, Lu. 5.4. Mat. 13.5, et al.; &lt;i&gt;met.&lt;/i&gt; fullness, abundance, immensity, Ro. 11.33. 2 Co. 8.2; an extreme degree, 2 Co. 8.2; &lt;i&gt;pl.&lt;/i&gt; deep laid plans, profound, secret things, 1 Co. 2.10. Re. 2.24.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;ύ&nu;&omega;&quot;&gt;&Beta;&alpha;&theta;ύ&nu;&omega;&lt;/span&gt;, &lt;/dt&gt;
+&lt;dd&gt;f. ῠ&nu;ῶ, &lt;/dd&gt;
+&lt;dd&gt;to deepen, excavate, Lu. 6.48 &lt;i&gt;from&lt;/i&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&theta;&upsilon;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;ύ&sigmaf;&quot;&gt;&Beta;&alpha;&theta;ύ&sigmaf;&lt;/span&gt;&lt;/a&gt;, &epsilon;ῖ&alpha;, ύ, &lt;/dt&gt;
+&lt;dd&gt;deep. Jno. 4.11; &lt;i&gt;met.&lt;/i&gt; deep, profound, Ac. 20.9; ὄ&rho;&theta;&rho;&omicron;&upsilon; &beta;&alpha;&theta;έ&omicron;&sigmaf;, &lt;i&gt;lit.&lt;/i&gt; at deep morning twilight &lt;i&gt;i.e.&lt;/i&gt; at the earliest dawn, Lu. 24.1.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;άϊ&omicron;&nu;&quot;&gt;&Beta;άϊ&omicron;&nu;&lt;/span&gt;, &lt;i&gt;v.&lt;/i&gt; &Beta;&alpha;ΐ&omicron;&nu;, &omicron;&upsilon;, &tau;ό, &lt;/dt&gt;
+&lt;dd&gt;a palm branch, Jno. 12.13. S.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&lambda;ά&nu;&tau;&iota;&omicron;&nu;&quot;&gt;&Beta;&alpha;&lambda;ά&nu;&tau;&iota;&omicron;&nu;&lt;/span&gt;, &omicron;&upsilon;, &tau;ό, &lt;/dt&gt;
+&lt;dd&gt;a bag, purse, Lu. 10.4; 12.33; 22.35, 36.&lt;/dd&gt;
+
+&lt;!-- part of code has been cut out --&gt;
+
+&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&rho;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;ά&rho;&omicron;&sigmaf;&quot;&gt;&Beta;ά&rho;&omicron;&sigmaf;&lt;/span&gt;&lt;/a&gt;, &epsilon;&omicron;&sigmaf;, &tau;ό,&lt;/dt&gt;
+&lt;dd&gt;weight, heaviness; a burden, any thing grievous and hard to be borne, Mat. 20.12. Ac. 15.28. Re. 2.24; burden, charge, &lt;i&gt;or,&lt;/i&gt; weight, influence, dignity, honour, 1 Thes. 2.6; &lt;i&gt;with another noun in government,&lt;/i&gt; fullness, abundance, excellence, 2 Co. 4.17.&lt;/dd&gt;
+
+&lt;!-- part of code has been cut out --&gt;
+
+&lt;/dl&gt;
+
+&lt;!-- part of code has been cut out --&gt;
+</pre>
+
+<p>The following conventions are used to format lexicon articles.</p>
+
+<p>(1) On the top of the series of articles on words starting from certain letter is that letter wrapped by "h3" tag.</p>
+
+<p>(2) Series of articles on words starting from certain letter is wrapped by "dl" tag.</p>
+
+<p>(3) The words which the lexicon explains are wrapped by "dt" tag.</p>
+
+<p>(4) The lemmas of explained words are wrapped by "span" tags having "class" attribute value "lexicon-heading". These "span" tags have "data-lemma" attribute. The value of this attribute is lowercase lemma of the explained word.</p>
+
+<p>(5) Explanation of the word is wrapped by "dd" tag. Certain word may have several explanations, so below "dt" tag may stand several "dd" tags.</p>
+
+<p>(6) Inner links, i.e. the links that lead from one place in the lexicon to another place in the same lexicon are wrapped by "a" tags. Inner link anchor has "class" attribute value "pc-anchor" and "id" attribute value consisting from lowercase lemma prefixed by certain string indicating lexicon title. Inner link himself has "class" attribute value "inner-link" and "data-anchor" attribute value consisting from lowercase lemma prefixed by certain string indicating lexicon title. In code example above there is link &lt;a class="inner-link" data-anchor="green-nt-lex-βαρος" >βάρος&lt;/a> which leads to its anchor &lt;a class="pc-anchor" id="green-nt-lex-βαρος" >Βάρος&lt;/a>.</p>
+
+<p>Using these conventions lexicon articles should be formatted. There are no definite conventions how to format introduction, table of contents, various indexes, etc. Ask about it senior editor.</p>
+
+<p>HTML formatted lexicon text should be converted to javascript string. It is easy to do by wrapping HTML code by backtick (``) symbols. If there are apostrophs in the text, they should be escaped using "\" symbol. The string we get be applying backticks should be made the value of the variable whose name is the same as the shortname of the resource [LINK TO BE ADDED].</p>
+
+<p>This way we get the following code:</p>
+
+<pre id="creating_lexicon_datafile2" class="prettyprint code_showarea">
+greek_lexicon_to_nt_by_green =
+
+`&lt;h3&gt;&Alpha;, &alpha;, &lt;i&gt;Ἄ&lambda;&phi;&alpha;&lt;/i&gt;&lt;/h3&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&quot;&gt;&Alpha;&lt;/span&gt;, &alpha;, &lt;i&gt;Alpha&lt;/i&gt;,&lt;/dt&gt;
+&lt;dd&gt;the first letter in the Greek Alphabet, and used for the &lt;i&gt;first&lt;/i&gt;, Re. 1.8, 11; 21.6; 22.13.&lt;/dd&gt;
+&lt;dd&gt;In composition, it denotes privation; sometimes augmentation, and union.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&beta;&alpha;&rho;ή&sigmaf;&quot;&gt;&Alpha;&beta;ᾰ&rho;ή&sigmaf;&lt;/span&gt;, έ&omicron;&sigmaf;, &omicron;ῦ&sigmaf;, ὁ, ἡ, &tau;ὸ, -έ&sigmaf;, (ἀ &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&beta;&alpha;&rho;&omicron;&sigmaf;&quot;&gt;&beta;ά&rho;&omicron;&sigmaf;&lt;/a&gt;)&lt;/dt&gt;
+&lt;dd&gt;not burdensome, not chargeable, 2 Co. 11.9.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&beta;&beta;ᾶ&quot;&gt;&Alpha;&beta;&beta;ᾶ&lt;/span&gt;&lt;/dt&gt;
+&lt;dd&gt;ind. ch. or Sy. &lt;span class=&quot;hebrew&quot;&gt;אבא&lt;/span&gt;, father, Mar. 14.36. Ro.8.15 Ga. 4.6.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἄ&beta;&upsilon;&sigma;&sigma;&omicron;&sigmaf;&quot;&gt;Ἄ&beta;&upsilon;&sigma;&sigma;&omicron;&sigmaf;&lt;/span&gt;, &omicron;&upsilon;, ἡ,&lt;/dt&gt;
+&lt;dd&gt;&lt;i&gt;pr.&lt;/i&gt; bottomless; place of the dead, hell.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&epsilon;&rho;&gamma;έ&omega;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&epsilon;&rho;&gamma;έ&omega;&lt;/span&gt;, ῶ, Ἀ&gamma;&alpha;&theta;&omicron;&upsilon;&rho;&gamma;ῶ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/a&gt; &amp;amp;  &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&epsilon;&rho;&gamma;&omicron;&nu;&quot;&gt;ἔ&rho;&gamma;&omicron;&nu;&lt;/a&gt;)&lt;/dt&gt;
+&lt;dd&gt;f. ή&sigma;&omega;, &lt;/dd&gt;
+&lt;dd&gt;to do good, confer benefits, 1 Ti.6.18 N.T.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;έ&omega;&quot;&gt;&Alpha;&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;έ&omega;&lt;/span&gt;, ῶ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/a&gt; &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&pi;&omicron;&iota;&epsilon;&omega;&quot;&gt;&pi;&omicron;&iota;έ&omega;&lt;/a&gt;)&lt;/dt&gt;
+&lt;dd&gt;f. ή&sigma;&omega;, &lt;/dd&gt;
+&lt;dd&gt;to do good, benefit, do well: (S.) &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ΐ&alpha;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ΐ&alpha;&lt;/span&gt;, &alpha;&sigmaf;, ἡ,&lt;/dt&gt;
+&lt;dd&gt;well-doing, probity, 1 Pe. 4.19 L.G.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ό&sigmaf;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ό&sigmaf;&lt;/span&gt;, &omicron;ῦ, ὁ, ἡ,&lt;/dt&gt;
+&lt;dd&gt;a well-doer, 1 Pe. 2.14 L.G.&lt;/dd&gt;
+&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot;&gt;Ἀ&gamma;ᾰ&theta;ό&sigmaf;&lt;/span&gt;&lt;/a&gt;, ή, ό&nu;, &lt;/dt&gt;
+&lt;dd&gt;good, profitable, generous, beneficent, upright, virtuous: &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;
+              
+&lt;!-- part of code has been cut out --&gt;
+
+&lt;/dl&gt;
+
+&lt;h3&gt;&Beta;, &beta;, &lt;i&gt;&Beta;ῆ&tau;&alpha;&lt;/i&gt;&lt;/h3&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&theta;&mu;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;&mu;ό&sigmaf;&quot;&gt;&Beta;&alpha;&theta;&mu;ό&sigmaf;&lt;/span&gt;&lt;/a&gt;, &omicron;ῦ, ὁ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&beta;&alpha;&iota;&nu;&omega;&quot;&gt;&beta;&alpha;ί&nu;&omega;&lt;/a&gt;)&lt;/dt&gt;
+&lt;dd&gt;&lt;i&gt;pr.&lt;/i&gt; a step, stair; &lt;i&gt;met.&lt;/i&gt; grade of dignity, degree, rank standing, 1 Ti 3.13.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;ά&theta;&omicron;&sigmaf;&quot;&gt;&Beta;ά&theta;&omicron;&sigmaf;&lt;/span&gt;, &epsilon;&omicron;&sigmaf;, &omicron;&upsilon;&sigmaf;, &tau;ό,&lt;/dt&gt;
+&lt;dd&gt;depth; &tau;ὸ &beta;ά&theta;&omicron;&sigmaf;, deep water, Lu. 5.4. Mat. 13.5, et al.; &lt;i&gt;met.&lt;/i&gt; fullness, abundance, immensity, Ro. 11.33. 2 Co. 8.2; an extreme degree, 2 Co. 8.2; &lt;i&gt;pl.&lt;/i&gt; deep laid plans, profound, secret things, 1 Co. 2.10. Re. 2.24.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;ύ&nu;&omega;&quot;&gt;&Beta;&alpha;&theta;ύ&nu;&omega;&lt;/span&gt;, &lt;/dt&gt;
+&lt;dd&gt;f. ῠ&nu;ῶ, &lt;/dd&gt;
+&lt;dd&gt;to deepen, excavate, Lu. 6.48 &lt;i&gt;from&lt;/i&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&theta;&upsilon;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;ύ&sigmaf;&quot;&gt;&Beta;&alpha;&theta;ύ&sigmaf;&lt;/span&gt;&lt;/a&gt;, &epsilon;ῖ&alpha;, ύ, &lt;/dt&gt;
+&lt;dd&gt;deep. Jno. 4.11; &lt;i&gt;met.&lt;/i&gt; deep, profound, Ac. 20.9; ὄ&rho;&theta;&rho;&omicron;&upsilon; &beta;&alpha;&theta;έ&omicron;&sigmaf;, &lt;i&gt;lit.&lt;/i&gt; at deep morning twilight &lt;i&gt;i.e.&lt;/i&gt; at the earliest dawn, Lu. 24.1.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;άϊ&omicron;&nu;&quot;&gt;&Beta;άϊ&omicron;&nu;&lt;/span&gt;, &lt;i&gt;v.&lt;/i&gt; &Beta;&alpha;ΐ&omicron;&nu;, &omicron;&upsilon;, &tau;ό, &lt;/dt&gt;
+&lt;dd&gt;a palm branch, Jno. 12.13. S.&lt;/dd&gt;
+&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&lambda;ά&nu;&tau;&iota;&omicron;&nu;&quot;&gt;&Beta;&alpha;&lambda;ά&nu;&tau;&iota;&omicron;&nu;&lt;/span&gt;, &omicron;&upsilon;, &tau;ό, &lt;/dt&gt;
+&lt;dd&gt;a bag, purse, Lu. 10.4; 12.33; 22.35, 36.&lt;/dd&gt;
+
+&lt;!-- part of code has been cut out --&gt;
+
+&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&rho;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;ά&rho;&omicron;&sigmaf;&quot;&gt;&Beta;ά&rho;&omicron;&sigmaf;&lt;/span&gt;&lt;/a&gt;, &epsilon;&omicron;&sigmaf;, &tau;ό,&lt;/dt&gt;
+&lt;dd&gt;weight, heaviness; a burden, any thing grievous and hard to be borne, Mat. 20.12. Ac. 15.28. Re. 2.24; burden, charge, &lt;i&gt;or,&lt;/i&gt; weight, influence, dignity, honour, 1 Thes. 2.6; &lt;i&gt;with another noun in government,&lt;/i&gt; fullness, abundance, excellence, 2 Co. 4.17.&lt;/dd&gt;
+
+&lt;!-- part of code has been cut out --&gt;
+
+&lt;/dl&gt;
+
+&lt;!-- part of code has been cut out --&gt;`;
+</pre>
+
+<p> The code should be saved in the file whose name is the same as resorce shortname, i.e. "greek_lexicon_to_nt_by_green.js" . Data file should be placed in following directory: /data/lexicon/greek_lexicon_to_nt_by_green/ .</p>
+
+<p>After doing this transcribed lexicon resource should work in sync with parsed text resource.</p>
+
+<h4 class="pc-anchor" id="h-lexicon-transcribed-checking-completeness">Checking completeness</h4>
+
+<p>Created transcribed lexicon resource should be checked for completenes.</p>
+
+<p>To do this go to <a href="../tools/lexicon_completeness_checker.html" target="_blank">Lexicon completeness checker</a> page and fill the form:</p>
+
+<p><img src="img2/lexicon_typed_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Lexicon code" should be full HTML code of the lexicon. Use browser’s HTML inspector (available on right-click in every major browser) to copy lexicon‘s HTML code from Library app’s page. To do this right-click inside HTML inspector's panel on the "div" element having "class" attribute "tab__content-inner" and in context menu select option "Copy outerHTML":</p>
+
+<p><img src="img2/lexicon_typed_02.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>Then paste the copied string into form‘s field. After that select and delete opening and closing "div" tags from the code pasted into field:</p>
+
+<p><img src="img2/lexicon_typed_03.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p><img src="img2/lexicon_typed_04.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Parsed text code" should be HTML code of the parsed text. Use browser’s HTML inspector to copy this part of code from Library app’s page. As with lexicon's code, right-click inside HTML inspector's panel on the "div" element having "class" attribute "parsed-text-split-top" and in context menu select option "Copy outerHTML"; after that select and delete all code before first "span" tag having "class" attribute "line" and closing "div" tag from the code pasted into field:</p>
+
+<p><img src="img2/lexicon_typed_05.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p><img src="img2/lexicon_typed_06.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
 
+<p>After filling fields with these values, click the button "Load lexicon" and the lexicon text will be displayed beneath "Lexicon:" heading.</p>
 
+<p>Then click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
+
+<p>After loading lexicon and parsed text click the button "Check for completeness" and all words beneath the heading "Parsed text:" should be displayed in green background.</p>
+
+<p>If some words will not be displayed in green background, this may be for two reasons: (1) the word is not included in the lexicon (proper names are often not included in smaller lexicons); (2) the lemma of the same word in parsed text and in the lexicon are slightly different.</p>
+
+<p>In the case (2) the code of lexicon‘s data file should be edited.</p>
+
+<p>For example, in <em>Epistle to Titus</em> collection parsed text data file there is such line:</p>
+
+<pre id="creating_lexicon_datafile4" class="prettyprint code_showarea">
+` &lt;span class=&quot;word&quot; data-form=&quot;ἐ&pi;&eta;&gamma;&gamma;&epsilon;ί&lambda;&alpha;&tau;&omicron;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist middle indicative 3rd person singular&quot; data-lemma=&quot;ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omicron;&mu;&alpha;&iota;&quot;&gt;ἐ&pi;&eta;&gamma;&gamma;&epsilon;ί&lambda;&alpha;&tau;&omicron;&lt;/span&gt;`
+</pre>
+  
+<p>In Th. S. Green‘s Greek-English lexicon resource data file the code of the relevant article is as follows:</p>
+  
+<pre id="creating_lexicon_datafile5" class="prettyprint code_showarea">
+`&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omega;&quot;&gt;Ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omega;&lt;/span&gt;, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&epsilon;&pi;&iota;&quot;&gt;ἐ&pi;ί&lt;/a&gt; &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&gamma;&epsilon;&lambda;&lambda;&omega;&quot;&gt;ἀ&gamma;&gamma;έ&lambda;&lambda;&omega;&lt;/a&gt;)&lt;/dt&gt;
+&lt;dd&gt;f. &epsilon;&lambda;ώ,&lt;/dd&gt;
+&lt;dd&gt;to declare, announce; &lt;i&gt;mid.&lt;/i&gt; to promise, undertake, Mar. 14.11. Ro. 4.21, et al.; to profess, 1 Ti. 2.10: &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;`
+</pre>
+  
+<p>The value of "data-lemma" attribute in parsed text code is "ἐπαγγέλλομαι"; the value of "data-lemma" attribute in lexicon is "ἐπαγγέλλω". Since the values of "data-lemma" attribute in parsed text code and in lexicon code do not match, clicking on the word in parsed text pane will result into error message being displayed inside lexicon‘s content panel. To avoid this we need to add another "span" tag having class attribute value "lexicon-heading" and "data-lemma" attribute value "ἐπαγγέλλομαι":</p>
+  
+<pre id="creating_lexicon_datafile6" class="prettyprint code_showarea">
+`&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omega;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omicron;&mu;&alpha;&iota;&quot;&gt;Ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omega;&lt;/span&gt;&lt;/span&gt;, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&epsilon;&pi;&iota;&quot;&gt;ἐ&pi;ί&lt;/a&gt; &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&gamma;&epsilon;&lambda;&lambda;&omega;&quot;&gt;ἀ&gamma;&gamma;έ&lambda;&lambda;&omega;&lt;/a&gt;)&lt;/dt&gt;
+&lt;dd&gt;f. &epsilon;&lambda;ώ,&lt;/dd&gt;
+&lt;dd&gt;to declare, announce; &lt;i&gt;mid.&lt;/i&gt; to promise, undertake, Mar. 14.11. Ro. 4.21, et al.; to profess, 1 Ti. 2.10: &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;`
+</pre>
+  
+<p>This should solve the issue. Similarly proceed with the other words which for the same reason were not displayed in the green background.</p>
+
+<h4 class="pc-anchor" id="h-lexicon-coding-policy">Coding policy</h4>
+
+<h5 class="pc-anchor" id="h-lexicon-dealing-with-alternative-characters">Dealing with alternative characters</h5>
+
+<p>In unicode two or more code points may encode characters which look identically or have only stylistic difference. In order for all functionality to work correctly the uniformity of encoding must be enforced by using only characters from certain "standard" set. To achieve this go to <a href="../tools/unicode_characters_changer.html" target="_blank">Unicode Characters changer</a> and use the form to change unicode characters into "standard" ones.</p>
+
+<h3 class="pc-anchor" id="h-translation-scanned">Translation (scanned)</h3>
 
 
 
@@ -3275,289 +3492,7 @@ greek_and_english_lexicon_of_nt_by_robinson_contents = {
 
 <h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
 
-<h3 class="pc-anchor" id="h-lexicon-transcribed2">Lexicon (transcribed)</h3>
-
-<p>Usually lexicon contains many hundreds of pages of text which uses complex formatting. In such situation there are no sense to create transcribed resource; scanned resource will be adequate solution.</p>
-
-<p>But there are some smaller and simpler lexicons which do not use complex formatting. In such case creating transcribed resource might be considered. As an example of transcribed lexicon resource Greek-English lexicon to the New Testament by Th. S. Green <a class="inner-link" data-anchor="h-lexicon">has been listed</a> in the <em>Epistle to Titus</em> collection.</p> 
-
-<p>Creating transcribed resource of the type "lexicon" involves creating one data file.</p>
-
-<h4 class="pc-anchor" id="h-lexicon-transcribed-creating-data-file">Creating data file</h4>
-
-<p>The text of lexicon articles should be HTML formatted according simple convention. Here is example of HTML formatted lexicon articles:</p>
-
-<pre id="creating_lexicon_datafile" class="prettyprint code_showarea">
-&lt;h3&gt;&Alpha;, &alpha;, &lt;i&gt;Ἄ&lambda;&phi;&alpha;&lt;/i&gt;&lt;/h3&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&quot;&gt;&Alpha;&lt;/span&gt;, &alpha;, &lt;i&gt;Alpha&lt;/i&gt;,&lt;/dt&gt;
-	&lt;dd&gt;the first letter in the Greek Alphabet, and used for the &lt;i&gt;first&lt;/i&gt;, Re. 1.8, 11; 21.6; 22.13.&lt;/dd&gt;
-	&lt;dd&gt;In composition, it denotes privation; sometimes augmentation, and union.&lt;/dd&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&beta;&alpha;&rho;ή&sigmaf;&quot;&gt;&Alpha;&beta;ᾰ&rho;ή&sigmaf;&lt;/span&gt;, έ&omicron;&sigmaf;, &omicron;ῦ&sigmaf;, ὁ, ἡ, &tau;ὸ, -έ&sigmaf;, (ἀ &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&beta;&alpha;&rho;&omicron;&sigmaf;&quot;&gt;&beta;ά&rho;&omicron;&sigmaf;&lt;/a&gt;)&lt;/dt&gt;
-	&lt;dd&gt;not burdensome, not chargeable, 2 Co. 11.9.&lt;/dd&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&beta;&beta;ᾶ&quot;&gt;&Alpha;&beta;&beta;ᾶ&lt;/span&gt;&lt;/dt&gt;
-	&lt;dd&gt;ind. ch. or Sy. &lt;span class=&quot;hebrew&quot;&gt;אבא&lt;/span&gt;, father, Mar. 14.36. Ro.8.15 Ga. 4.6.&lt;/dd&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἄ&beta;&upsilon;&sigma;&sigma;&omicron;&sigmaf;&quot;&gt;Ἄ&beta;&upsilon;&sigma;&sigma;&omicron;&sigmaf;&lt;/span&gt;, &omicron;&upsilon;, ἡ,&lt;/dt&gt;
-	&lt;dd&gt;&lt;i&gt;pr.&lt;/i&gt; bottomless; place of the dead, hell.&lt;/dd&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&epsilon;&rho;&gamma;έ&omega;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&epsilon;&rho;&gamma;έ&omega;&lt;/span&gt;, ῶ, Ἀ&gamma;&alpha;&theta;&omicron;&upsilon;&rho;&gamma;ῶ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/a&gt; &amp;amp;  &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&epsilon;&rho;&gamma;&omicron;&nu;&quot;&gt;ἔ&rho;&gamma;&omicron;&nu;&lt;/a&gt;)&lt;/dt&gt;
-	&lt;dd&gt;f. ή&sigma;&omega;, &lt;/dd&gt;
-	&lt;dd&gt;to do good, confer benefits, 1 Ti.6.18 N.T.&lt;/dd&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;έ&omega;&quot;&gt;&Alpha;&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;έ&omega;&lt;/span&gt;, ῶ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/a&gt; &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&pi;&omicron;&iota;&epsilon;&omega;&quot;&gt;&pi;&omicron;&iota;έ&omega;&lt;/a&gt;)&lt;/dt&gt;
-	&lt;dd&gt;f. ή&sigma;&omega;, &lt;/dd&gt;
-	&lt;dd&gt;to do good, benefit, do well: (S.) &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ΐ&alpha;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ΐ&alpha;&lt;/span&gt;, &alpha;&sigmaf;, ἡ,&lt;/dt&gt;
-	&lt;dd&gt;well-doing, probity, 1 Pe. 4.19 L.G.&lt;/dd&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ό&sigmaf;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ό&sigmaf;&lt;/span&gt;, &omicron;ῦ, ὁ, ἡ,&lt;/dt&gt;
-	&lt;dd&gt;a well-doer, 1 Pe. 2.14 L.G.&lt;/dd&gt;
-&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot;&gt;Ἀ&gamma;ᾰ&theta;ό&sigmaf;&lt;/span&gt;&lt;/a&gt;, ή, ό&nu;, &lt;/dt&gt;
-	&lt;dd&gt;good, profitable, generous, beneficent, upright, virtuous: &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;
-                
-&lt;!-- part of code has been cut out --&gt;
-
-&lt;/dl&gt;
-
-&lt;h3&gt;&Beta;, &beta;, &lt;i&gt;&Beta;ῆ&tau;&alpha;&lt;/i&gt;&lt;/h3&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&theta;&mu;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;&mu;ό&sigmaf;&quot;&gt;&Beta;&alpha;&theta;&mu;ό&sigmaf;&lt;/span&gt;&lt;/a&gt;, &omicron;ῦ, ὁ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&beta;&alpha;&iota;&nu;&omega;&quot;&gt;&beta;&alpha;ί&nu;&omega;&lt;/a&gt;)&lt;/dt&gt;
-	&lt;dd&gt;&lt;i&gt;pr.&lt;/i&gt; a step, stair; &lt;i&gt;met.&lt;/i&gt; grade of dignity, degree, rank standing, 1 Ti 3.13.&lt;/dd&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;ά&theta;&omicron;&sigmaf;&quot;&gt;&Beta;ά&theta;&omicron;&sigmaf;&lt;/span&gt;, &epsilon;&omicron;&sigmaf;, &omicron;&upsilon;&sigmaf;, &tau;ό,&lt;/dt&gt;
-	&lt;dd&gt;depth; &tau;ὸ &beta;ά&theta;&omicron;&sigmaf;, deep water, Lu. 5.4. Mat. 13.5, et al.; &lt;i&gt;met.&lt;/i&gt; fullness, abundance, immensity, Ro. 11.33. 2 Co. 8.2; an extreme degree, 2 Co. 8.2; &lt;i&gt;pl.&lt;/i&gt; deep laid plans, profound, secret things, 1 Co. 2.10. Re. 2.24.&lt;/dd&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;ύ&nu;&omega;&quot;&gt;&Beta;&alpha;&theta;ύ&nu;&omega;&lt;/span&gt;, &lt;/dt&gt;
-	&lt;dd&gt;f. ῠ&nu;ῶ, &lt;/dd&gt;
-	&lt;dd&gt;to deepen, excavate, Lu. 6.48 &lt;i&gt;from&lt;/i&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&theta;&upsilon;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;ύ&sigmaf;&quot;&gt;&Beta;&alpha;&theta;ύ&sigmaf;&lt;/span&gt;&lt;/a&gt;, &epsilon;ῖ&alpha;, ύ, &lt;/dt&gt;
-	&lt;dd&gt;deep. Jno. 4.11; &lt;i&gt;met.&lt;/i&gt; deep, profound, Ac. 20.9; ὄ&rho;&theta;&rho;&omicron;&upsilon; &beta;&alpha;&theta;έ&omicron;&sigmaf;, &lt;i&gt;lit.&lt;/i&gt; at deep morning twilight &lt;i&gt;i.e.&lt;/i&gt; at the earliest dawn, Lu. 24.1.&lt;/dd&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;άϊ&omicron;&nu;&quot;&gt;&Beta;άϊ&omicron;&nu;&lt;/span&gt;, &lt;i&gt;v.&lt;/i&gt; &Beta;&alpha;ΐ&omicron;&nu;, &omicron;&upsilon;, &tau;ό, &lt;/dt&gt;
-	&lt;dd&gt;a palm branch, Jno. 12.13. S.&lt;/dd&gt;
-&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&lambda;ά&nu;&tau;&iota;&omicron;&nu;&quot;&gt;&Beta;&alpha;&lambda;ά&nu;&tau;&iota;&omicron;&nu;&lt;/span&gt;, &omicron;&upsilon;, &tau;ό, &lt;/dt&gt;
-	&lt;dd&gt;a bag, purse, Lu. 10.4; 12.33; 22.35, 36.&lt;/dd&gt;
-
-&lt;!-- part of code has been cut out --&gt;
-
-&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&rho;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;ά&rho;&omicron;&sigmaf;&quot;&gt;&Beta;ά&rho;&omicron;&sigmaf;&lt;/span&gt;&lt;/a&gt;, &epsilon;&omicron;&sigmaf;, &tau;ό,&lt;/dt&gt;
-	&lt;dd&gt;weight, heaviness; a burden, any thing grievous and hard to be borne, Mat. 20.12. Ac. 15.28. Re. 2.24; burden, charge, &lt;i&gt;or,&lt;/i&gt; weight, influence, dignity, honour, 1 Thes. 2.6; &lt;i&gt;with another noun in government,&lt;/i&gt; fullness, abundance, excellence, 2 Co. 4.17.&lt;/dd&gt;
-
-&lt;!-- part of code has been cut out --&gt;
-
-&lt;/dl&gt;
-
-&lt;!-- part of code has been cut out --&gt;
-</pre>
-
-<p>The following conventions are used to format lexicon articles.</p>
-
-<p>(1) On the top of the series of articles on words starting from certain letter is that letter wrapped by "h3" tag.</p>
-
-<p>(2) Series of articles on words starting from certain letter is wrapped by "dl" tag.</p>
-
-<p>(3) The words which the lexicon explains are wrapped by "dt" tag.</p>
-
-<p>(4) The lemmas of explained words are wrapped by "span" tags having "class" attribute value "lexicon-heading". These "span" tags have "data-lemma" attribute. The value of this attribute is lowercase lemma of the explained word.</p>
-
-<p>(5) Explanation of the word is wrapped by "dd" tag. Certain word may have several explanations, so below "dt" tag may stand several "dd" tags.</p>
-
-<p>(6) Inner links, i.e. the links that lead from one place in the lexicon to another place in the same lexicon are wrapped by "a" tags. Inner link anchor has "class" attribute value "pc-anchor" and "id" attribute value consisting from lowercase lemma prefixed by certain string indicating lexicon title. Inner link himself has "class" attribute value "inner-link" and "data-anchor" attribute value consisting from lowercase lemma prefixed by certain string indicating lexicon title. In code example above there is link &lt;a class="inner-link" data-anchor="green-nt-lex-βαρος" >βάρος&lt;/a> which leads to its anchor &lt;a class="pc-anchor" id="green-nt-lex-βαρος" >Βάρος&lt;/a>.</p>
-
-<p>Using these conventions lexicon articles should be formatted. There are no definite conventions how to format introduction, table of contents, various indexes, etc. Ask about it senior editor.</p>
-
-<p>HTML formatted lexicon text should be converted to javascript string. It is easy to do by wrapping each line by apostroph symbols and using plus symbol at the end of the lines (if there are apostrophs in the text, they should be escaped using "\" symbol):</p> 
-
-<pre id="creating_lexicon_datafile2" class="prettyprint code_showarea">
-'&lt;h3&gt;&Alpha;, &alpha;, &lt;i&gt;Ἄ&lambda;&phi;&alpha;&lt;/i&gt;&lt;/h3&gt;' +  
-
-'&lt;dl&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&quot;&gt;&Alpha;&lt;/span&gt;, &alpha;, &lt;i&gt;Alpha&lt;/i&gt;,&lt;/dt&gt;' + 
-	'&lt;dd&gt;the first letter in the Greek Alphabet, and used for the &lt;i&gt;first&lt;/i&gt;, Re. 1.8, 11; 21.6; 22.13.&lt;/dd&gt;' + 
-	'&lt;dd&gt;In composition, it denotes privation; sometimes augmentation, and union.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&beta;&alpha;&rho;ή&sigmaf;&quot;&gt;&Alpha;&beta;ᾰ&rho;ή&sigmaf;&lt;/span&gt;, έ&omicron;&sigmaf;, &omicron;ῦ&sigmaf;, ὁ, ἡ, &tau;ὸ, -έ&sigmaf;, (ἀ &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&beta;&alpha;&rho;&omicron;&sigmaf;&quot;&gt;&beta;ά&rho;&omicron;&sigmaf;&lt;/a&gt;)&lt;/dt&gt;' + 
-	'&lt;dd&gt;not burdensome, not chargeable, 2 Co. 11.9.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&beta;&beta;ᾶ&quot;&gt;&Alpha;&beta;&beta;ᾶ&lt;/span&gt;&lt;/dt&gt;' + 
-	'&lt;dd&gt;ind. ch. or Sy. &lt;span class=&quot;hebrew&quot;&gt;אבא&lt;/span&gt;, father, Mar. 14.36. Ro.8.15 Ga. 4.6.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἄ&beta;&upsilon;&sigma;&sigma;&omicron;&sigmaf;&quot;&gt;Ἄ&beta;&upsilon;&sigma;&sigma;&omicron;&sigmaf;&lt;/span&gt;, &omicron;&upsilon;, ἡ,&lt;/dt&gt;' + 
-	'&lt;dd&gt;&lt;i&gt;pr.&lt;/i&gt; bottomless; place of the dead, hell.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&epsilon;&rho;&gamma;έ&omega;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&epsilon;&rho;&gamma;έ&omega;&lt;/span&gt;, ῶ, Ἀ&gamma;&alpha;&theta;&omicron;&upsilon;&rho;&gamma;ῶ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/a&gt; &amp;amp;  &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&epsilon;&rho;&gamma;&omicron;&nu;&quot;&gt;ἔ&rho;&gamma;&omicron;&nu;&lt;/a&gt;)&lt;/dt&gt;' + 
-	'&lt;dd&gt;f. ή&sigma;&omega;, &lt;/dd&gt;' + 
-	'&lt;dd&gt;to do good, confer benefits, 1 Ti.6.18 N.T.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;έ&omega;&quot;&gt;&Alpha;&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;έ&omega;&lt;/span&gt;, ῶ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/a&gt; &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&pi;&omicron;&iota;&epsilon;&omega;&quot;&gt;&pi;&omicron;&iota;έ&omega;&lt;/a&gt;)&lt;/dt&gt;' + 
-	'&lt;dd&gt;f. ή&sigma;&omega;, &lt;/dd&gt;' + 
-	'&lt;dd&gt;to do good, benefit, do well: (S.) &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ΐ&alpha;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ΐ&alpha;&lt;/span&gt;, &alpha;&sigmaf;, ἡ,&lt;/dt&gt;' + 
-	'&lt;dd&gt;well-doing, probity, 1 Pe. 4.19 L.G.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ό&sigmaf;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ό&sigmaf;&lt;/span&gt;, &omicron;ῦ, ὁ, ἡ,&lt;/dt&gt;' + 
-	'&lt;dd&gt;a well-doer, 1 Pe. 2.14 L.G.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot;&gt;Ἀ&gamma;ᾰ&theta;ό&sigmaf;&lt;/span&gt;&lt;/a&gt;, ή, ό&nu;, &lt;/dt&gt;' + 
-	'&lt;dd&gt;good, profitable, generous, beneficent, upright, virtuous: &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;' + 
-                
-// part of code has been cut out 
-
-'&lt;/dl&gt;' + 
-
-'&lt;h3&gt;&Beta;, &beta;, &lt;i&gt;&Beta;ῆ&tau;&alpha;&lt;/i&gt;&lt;/h3&gt;' + 
-
-'&lt;dl&gt;' + 
-'&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&theta;&mu;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;&mu;ό&sigmaf;&quot;&gt;&Beta;&alpha;&theta;&mu;ό&sigmaf;&lt;/span&gt;&lt;/a&gt;, &omicron;ῦ, ὁ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&beta;&alpha;&iota;&nu;&omega;&quot;&gt;&beta;&alpha;ί&nu;&omega;&lt;/a&gt;)&lt;/dt&gt;' + 
-	'&lt;dd&gt;&lt;i&gt;pr.&lt;/i&gt; a step, stair; &lt;i&gt;met.&lt;/i&gt; grade of dignity, degree, rank standing, 1 Ti 3.13.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;ά&theta;&omicron;&sigmaf;&quot;&gt;&Beta;ά&theta;&omicron;&sigmaf;&lt;/span&gt;, &epsilon;&omicron;&sigmaf;, &omicron;&upsilon;&sigmaf;, &tau;ό,&lt;/dt&gt;' + 
-	'&lt;dd&gt;depth; &tau;ὸ &beta;ά&theta;&omicron;&sigmaf;, deep water, Lu. 5.4. Mat. 13.5, et al.; &lt;i&gt;met.&lt;/i&gt; fullness, abundance, immensity, Ro. 11.33. 2 Co. 8.2; an extreme degree, 2 Co. 8.2; &lt;i&gt;pl.&lt;/i&gt; deep laid plans, profound, secret things, 1 Co. 2.10. Re. 2.24.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;ύ&nu;&omega;&quot;&gt;&Beta;&alpha;&theta;ύ&nu;&omega;&lt;/span&gt;, &lt;/dt&gt;' + 
-	'&lt;dd&gt;f. ῠ&nu;ῶ, &lt;/dd&gt;' + 
-	'&lt;dd&gt;to deepen, excavate, Lu. 6.48 &lt;i&gt;from&lt;/i&gt;&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&theta;&upsilon;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;ύ&sigmaf;&quot;&gt;&Beta;&alpha;&theta;ύ&sigmaf;&lt;/span&gt;&lt;/a&gt;, &epsilon;ῖ&alpha;, ύ, &lt;/dt&gt;' + 
-	'&lt;dd&gt;deep. Jno. 4.11; &lt;i&gt;met.&lt;/i&gt; deep, profound, Ac. 20.9; ὄ&rho;&theta;&rho;&omicron;&upsilon; &beta;&alpha;&theta;έ&omicron;&sigmaf;, &lt;i&gt;lit.&lt;/i&gt; at deep morning twilight &lt;i&gt;i.e.&lt;/i&gt; at the earliest dawn, Lu. 24.1.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;άϊ&omicron;&nu;&quot;&gt;&Beta;άϊ&omicron;&nu;&lt;/span&gt;, &lt;i&gt;v.&lt;/i&gt; &Beta;&alpha;ΐ&omicron;&nu;, &omicron;&upsilon;, &tau;ό, &lt;/dt&gt;' + 
-	'&lt;dd&gt;a palm branch, Jno. 12.13. S.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&lambda;ά&nu;&tau;&iota;&omicron;&nu;&quot;&gt;&Beta;&alpha;&lambda;ά&nu;&tau;&iota;&omicron;&nu;&lt;/span&gt;, &omicron;&upsilon;, &tau;ό, &lt;/dt&gt;' + 
-	'&lt;dd&gt;a bag, purse, Lu. 10.4; 12.33; 22.35, 36.&lt;/dd&gt;' + 
-
-// part of code has been cut out 
-
-'&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&rho;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;ά&rho;&omicron;&sigmaf;&quot;&gt;&Beta;ά&rho;&omicron;&sigmaf;&lt;/span&gt;&lt;/a&gt;, &epsilon;&omicron;&sigmaf;, &tau;ό,&lt;/dt&gt;' + 
-	'&lt;dd&gt;weight, heaviness; a burden, any thing grievous and hard to be borne, Mat. 20.12. Ac. 15.28. Re. 2.24; burden, charge, &lt;i&gt;or,&lt;/i&gt; weight, influence, dignity, honour, 1 Thes. 2.6; &lt;i&gt;with another noun in government,&lt;/i&gt; fullness, abundance, excellence, 2 Co. 4.17.&lt;/dd&gt;' + 
-
-// part of code has been cut out 
-
-'&lt;/dl&gt;' + 
-
-// part of code has been cut out
-</pre>
-
-<p>This string should be made the second argument of the function "ParsedClassicsData._loadResource". The first argument of this function should be the value of the key "resource_shortname" from collection catalogue. Transcribed lexicon <a class="inner-link" data-anchor="h-lexicon">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "greek_lexicon_to_nt_by_green", so this string will be the first argument.</p>
-
-<p>This way we get such data file:</p>
-
-<pre id="creating_lexicon_datafile3" class="prettyprint code_showarea">
-ParsedClassicsData._loadResource(&quot;greek_lexicon_to_nt_by_green&quot;,
-
-'&lt;h3&gt;&Alpha;, &alpha;, &lt;i&gt;Ἄ&lambda;&phi;&alpha;&lt;/i&gt;&lt;/h3&gt;' +  
-
-'&lt;dl&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&quot;&gt;&Alpha;&lt;/span&gt;, &alpha;, &lt;i&gt;Alpha&lt;/i&gt;,&lt;/dt&gt;' + 
-	'&lt;dd&gt;the first letter in the Greek Alphabet, and used for the &lt;i&gt;first&lt;/i&gt;, Re. 1.8, 11; 21.6; 22.13.&lt;/dd&gt;' + 
-	'&lt;dd&gt;In composition, it denotes privation; sometimes augmentation, and union.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&beta;&alpha;&rho;ή&sigmaf;&quot;&gt;&Alpha;&beta;ᾰ&rho;ή&sigmaf;&lt;/span&gt;, έ&omicron;&sigmaf;, &omicron;ῦ&sigmaf;, ὁ, ἡ, &tau;ὸ, -έ&sigmaf;, (ἀ &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&beta;&alpha;&rho;&omicron;&sigmaf;&quot;&gt;&beta;ά&rho;&omicron;&sigmaf;&lt;/a&gt;)&lt;/dt&gt;' + 
-	'&lt;dd&gt;not burdensome, not chargeable, 2 Co. 11.9.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&beta;&beta;ᾶ&quot;&gt;&Alpha;&beta;&beta;ᾶ&lt;/span&gt;&lt;/dt&gt;' + 
-	'&lt;dd&gt;ind. ch. or Sy. &lt;span class=&quot;hebrew&quot;&gt;אבא&lt;/span&gt;, father, Mar. 14.36. Ro.8.15 Ga. 4.6.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἄ&beta;&upsilon;&sigma;&sigma;&omicron;&sigmaf;&quot;&gt;Ἄ&beta;&upsilon;&sigma;&sigma;&omicron;&sigmaf;&lt;/span&gt;, &omicron;&upsilon;, ἡ,&lt;/dt&gt;' + 
-	'&lt;dd&gt;&lt;i&gt;pr.&lt;/i&gt; bottomless; place of the dead, hell.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&epsilon;&rho;&gamma;έ&omega;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&epsilon;&rho;&gamma;έ&omega;&lt;/span&gt;, ῶ, Ἀ&gamma;&alpha;&theta;&omicron;&upsilon;&rho;&gamma;ῶ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/a&gt; &amp;amp;  &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&epsilon;&rho;&gamma;&omicron;&nu;&quot;&gt;ἔ&rho;&gamma;&omicron;&nu;&lt;/a&gt;)&lt;/dt&gt;' + 
-	'&lt;dd&gt;f. ή&sigma;&omega;, &lt;/dd&gt;' + 
-	'&lt;dd&gt;to do good, confer benefits, 1 Ti.6.18 N.T.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&alpha;&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;έ&omega;&quot;&gt;&Alpha;&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;έ&omega;&lt;/span&gt;, ῶ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;ἀ&gamma;&alpha;&theta;ό&sigmaf;&lt;/a&gt; &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&pi;&omicron;&iota;&epsilon;&omega;&quot;&gt;&pi;&omicron;&iota;έ&omega;&lt;/a&gt;)&lt;/dt&gt;' + 
-	'&lt;dd&gt;f. ή&sigma;&omega;, &lt;/dd&gt;' + 
-	'&lt;dd&gt;to do good, benefit, do well: (S.) &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ΐ&alpha;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ΐ&alpha;&lt;/span&gt;, &alpha;&sigmaf;, ἡ,&lt;/dt&gt;' + 
-	'&lt;dd&gt;well-doing, probity, 1 Pe. 4.19 L.G.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ό&sigmaf;&quot;&gt;Ἀ&gamma;&alpha;&theta;&omicron;&pi;&omicron;&iota;ό&sigmaf;&lt;/span&gt;, &omicron;ῦ, ὁ, ἡ,&lt;/dt&gt;' + 
-	'&lt;dd&gt;a well-doer, 1 Pe. 2.14 L.G.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&alpha;&gamma;&alpha;&theta;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἀ&gamma;&alpha;&theta;ό&sigmaf;&quot;&gt;Ἀ&gamma;ᾰ&theta;ό&sigmaf;&lt;/span&gt;&lt;/a&gt;, ή, ό&nu;, &lt;/dt&gt;' + 
-	'&lt;dd&gt;good, profitable, generous, beneficent, upright, virtuous: &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;' + 
-                
-// part of code has been cut out 
-
-'&lt;/dl&gt;' + 
-
-'&lt;h3&gt;&Beta;, &beta;, &lt;i&gt;&Beta;ῆ&tau;&alpha;&lt;/i&gt;&lt;/h3&gt;' + 
-
-'&lt;dl&gt;' + 
-'&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&theta;&mu;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;&mu;ό&sigmaf;&quot;&gt;&Beta;&alpha;&theta;&mu;ό&sigmaf;&lt;/span&gt;&lt;/a&gt;, &omicron;ῦ, ὁ, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&beta;&alpha;&iota;&nu;&omega;&quot;&gt;&beta;&alpha;ί&nu;&omega;&lt;/a&gt;)&lt;/dt&gt;' + 
-	'&lt;dd&gt;&lt;i&gt;pr.&lt;/i&gt; a step, stair; &lt;i&gt;met.&lt;/i&gt; grade of dignity, degree, rank standing, 1 Ti 3.13.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;ά&theta;&omicron;&sigmaf;&quot;&gt;&Beta;ά&theta;&omicron;&sigmaf;&lt;/span&gt;, &epsilon;&omicron;&sigmaf;, &omicron;&upsilon;&sigmaf;, &tau;ό,&lt;/dt&gt;' + 
-	'&lt;dd&gt;depth; &tau;ὸ &beta;ά&theta;&omicron;&sigmaf;, deep water, Lu. 5.4. Mat. 13.5, et al.; &lt;i&gt;met.&lt;/i&gt; fullness, abundance, immensity, Ro. 11.33. 2 Co. 8.2; an extreme degree, 2 Co. 8.2; &lt;i&gt;pl.&lt;/i&gt; deep laid plans, profound, secret things, 1 Co. 2.10. Re. 2.24.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;ύ&nu;&omega;&quot;&gt;&Beta;&alpha;&theta;ύ&nu;&omega;&lt;/span&gt;, &lt;/dt&gt;' + 
-	'&lt;dd&gt;f. ῠ&nu;ῶ, &lt;/dd&gt;' + 
-	'&lt;dd&gt;to deepen, excavate, Lu. 6.48 &lt;i&gt;from&lt;/i&gt;&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&theta;&upsilon;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&theta;ύ&sigmaf;&quot;&gt;&Beta;&alpha;&theta;ύ&sigmaf;&lt;/span&gt;&lt;/a&gt;, &epsilon;ῖ&alpha;, ύ, &lt;/dt&gt;' + 
-	'&lt;dd&gt;deep. Jno. 4.11; &lt;i&gt;met.&lt;/i&gt; deep, profound, Ac. 20.9; ὄ&rho;&theta;&rho;&omicron;&upsilon; &beta;&alpha;&theta;έ&omicron;&sigmaf;, &lt;i&gt;lit.&lt;/i&gt; at deep morning twilight &lt;i&gt;i.e.&lt;/i&gt; at the earliest dawn, Lu. 24.1.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;άϊ&omicron;&nu;&quot;&gt;&Beta;άϊ&omicron;&nu;&lt;/span&gt;, &lt;i&gt;v.&lt;/i&gt; &Beta;&alpha;ΐ&omicron;&nu;, &omicron;&upsilon;, &tau;ό, &lt;/dt&gt;' + 
-	'&lt;dd&gt;a palm branch, Jno. 12.13. S.&lt;/dd&gt;' + 
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;&alpha;&lambda;ά&nu;&tau;&iota;&omicron;&nu;&quot;&gt;&Beta;&alpha;&lambda;ά&nu;&tau;&iota;&omicron;&nu;&lt;/span&gt;, &omicron;&upsilon;, &tau;ό, &lt;/dt&gt;' + 
-	'&lt;dd&gt;a bag, purse, Lu. 10.4; 12.33; 22.35, 36.&lt;/dd&gt;' + 
-
-// part of code has been cut out 
-
-'&lt;dt&gt;&lt;a class=&quot;pc-anchor&quot; id=&quot;green-nt-lex-&beta;&alpha;&rho;&omicron;&sigmaf;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;&beta;ά&rho;&omicron;&sigmaf;&quot;&gt;&Beta;ά&rho;&omicron;&sigmaf;&lt;/span&gt;&lt;/a&gt;, &epsilon;&omicron;&sigmaf;, &tau;ό,&lt;/dt&gt;' + 
-	'&lt;dd&gt;weight, heaviness; a burden, any thing grievous and hard to be borne, Mat. 20.12. Ac. 15.28. Re. 2.24; burden, charge, &lt;i&gt;or,&lt;/i&gt; weight, influence, dignity, honour, 1 Thes. 2.6; &lt;i&gt;with another noun in government,&lt;/i&gt; fullness, abundance, excellence, 2 Co. 4.17.&lt;/dd&gt;' + 
-
-// part of code has been cut out 
-
-'&lt;/dl&gt;' + 
-
-// part of code has been cut out 
-
-
-''
-
-);
-</pre>
-
-<p>Data file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. Transcribed lexicon <a class="inner-link" data-anchor="h-lexicon">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "greek_lexicon_to_nt_by_green", so this should be data file‘s name. Data file should be placed in "lexicons" directory: /data/resources/lexicons/greek_lexicon_to_nt_by_green.js</p>
-
-<p>After doing this transcribed lexicon resource should work in sync with parsed text resource.</p>
-
-<h4 class="pc-anchor" id="h-lexicon-transcribed-checking-completeness">Checking completeness</h4>
-
-<p>Created transcribed lexicon resource should be checked for completenes.</p>
-
-<p>To do this go to <a href="../tools/lexicon_completeness_checker.html" target="_blank">Lexicon completeness checker</a> page and fill the form:</p> 
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_lexicon_completeness_check.jpg"></p>
-
-<p>The value of the form‘s field "Lexicon code" should be full HTML code of the lexicon. Use browser’s HTML inspector (available on right-click in every major browser) to copy lexicon‘s HTML code from Library app’s page. To do this right-click inside HTML inspector's panel  on the "div" element having "class" attribute "pc-content-panel-inner" and in context menu select option "Copy outerHTML":</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/copying_lexicon_html.png"></p>
-
-<p>Then paste the copied string into form‘s field. After that select and delete opening and closing "div" tags from the code pasted into field:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/copying_lexicon_html2.png"></p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/copying_lexicon_html3.png"></p>
-
-<p>The value of the form‘s field "Parsed text code" should be HTML code of the parsed text. Use browser’s HTML inspector to copy this part of code from Library app’s page. As with lexicon's code, right-click inside HTML inspector's panel  on the "div" element having "class" attribute "pc-content-panel-inner" and in context menu select option "Copy outerHTML"; after that select and delete opening and closing "div" tags from the code pasted into field.</p>
-
-<p>After filling fields with these values, click the button "Load lexicon" and the lexicon text will be displayed beneath "Lexicon:" heading.</p>
-
-<p>Then click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
-
-<p>After loading lexicon and parsed text click the button "Check for completeness" and all words beneath the heading "Parsed text:"  should be displayed in green background.</p> 
-
-<p>If some words will not be displayed in green background, this may be for two reasons: (1) the word is not included in the lexicon (proper names are often not included in smaller lexicons); (2) the lemma of the same word in parsed text and in the lexicon are slightly different.</p> 
-
-<p>In the case (2) the code of lexicon‘s data file should be edited.</p>
-
-<p>For example, in <em>Epistle to Titus</em> collection parsed text data file there is such line:</p>
-
-<pre id="creating_lexicon_datafile4" class="prettyprint code_showarea">
-' &lt;span class=&quot;word&quot; data-form=&quot;ἐ&pi;&eta;&gamma;&gamma;&epsilon;ί&lambda;&alpha;&tau;&omicron;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist middle indicative 3rd person singular&quot; data-lemma=&quot;ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omicron;&mu;&alpha;&iota;&quot;&gt;ἐ&pi;&eta;&gamma;&gamma;&epsilon;ί&lambda;&alpha;&tau;&omicron;&lt;/span&gt;' +
-</pre>
-
-<p>In Th. S. Green‘s Greek-English lexicon resource data file the code of the relevant article is as follows:</p>
-
-<pre id="creating_lexicon_datafile5" class="prettyprint code_showarea">
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omega;&quot;&gt;Ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omega;&lt;/span&gt;, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&epsilon;&pi;&iota;&quot;&gt;ἐ&pi;ί&lt;/a&gt; &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&gamma;&epsilon;&lambda;&lambda;&omega;&quot;&gt;ἀ&gamma;&gamma;έ&lambda;&lambda;&omega;&lt;/a&gt;)&lt;/dt&gt;' +
-	'&lt;dd&gt;f. &epsilon;&lambda;ώ,&lt;/dd&gt;' +
-	'&lt;dd&gt;to declare, announce; &lt;i&gt;mid.&lt;/i&gt; to promise, undertake, Mar. 14.11. Ro. 4.21, et al.; to profess, 1 Ti. 2.10: &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;' +
-</pre>
-
-<p>The value of "data-lemma" attribute in parsed text code is "ἐπαγγέλλομαι"; the value of "data-lemma" attribute in lexicon is "ἐπαγγέλλω". Since the values of "data-lemma" attribute in parsed text code and in lexicon code do not match, clicking on the word in parsed text pane will result into error message being displayed inside lexicon‘s content panel. To avoid this we need to add another "span" tag having class attribute value "lexicon-heading" and "data-lemma" attribute value "ἐπαγγέλλομαι":</p>
-
-<pre id="creating_lexicon_datafile6" class="prettyprint code_showarea">
-'&lt;dt&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omega;&quot;&gt;&lt;span class=&quot;lexicon-heading&quot; data-lemma=&quot;ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omicron;&mu;&alpha;&iota;&quot;&gt;Ἐ&pi;&alpha;&gamma;&gamma;έ&lambda;&lambda;&omega;&lt;/span&gt;&lt;/span&gt;, (&lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&epsilon;&pi;&iota;&quot;&gt;ἐ&pi;ί&lt;/a&gt; &amp;amp; &lt;a class=&quot;inner-link&quot; data-anchor=&quot;green-nt-lex-&alpha;&gamma;&gamma;&epsilon;&lambda;&lambda;&omega;&quot;&gt;ἀ&gamma;&gamma;έ&lambda;&lambda;&omega;&lt;/a&gt;)&lt;/dt&gt;' +
-	'&lt;dd&gt;f. &epsilon;&lambda;ώ,&lt;/dd&gt;' +
-	'&lt;dd&gt;to declare, announce; &lt;i&gt;mid.&lt;/i&gt; to promise, undertake, Mar. 14.11. Ro. 4.21, et al.; to profess, 1 Ti. 2.10: &lt;i&gt;whence&lt;/i&gt;&lt;/dd&gt;' +
-</pre>
-
-<p>This should solve the issue. Similarly proceed with the other words which were not displayed in the green background.</p>
-
-<h4 class="pc-anchor" id="h-lexicon-coding-policy">Coding policy</h4>
-
-<h5 class="pc-anchor" id="h-lexicon-dealing-with-alternative-characters">Dealing with alternative characters</h5>
-
-<p>In unicode two or more code points may encode characters which look identically or have only stylistic difference. In order for all functionality to work correctly the uniformity of encoding must be enforced by using only characters from certain "standard" set. To achieve this go to <a href="../tools/unicode_characters_changer.html">Unicode Characters changer</a> and use the form to change unicode characters into "standard" ones.</p>
-
-<h3 class="pc-anchor" id="h-translation-scanned">Translation (scanned)</h3>
+<h3 class="pc-anchor" id="h-translation-scanned2">Translation (scanned)</h3>
 
 <h4 class="pc-anchor" id="h-translation-scanned-creating-image-files">Creating image files</h4>
 
