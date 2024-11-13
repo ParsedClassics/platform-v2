@@ -3323,6 +3323,26 @@ greek_and_english_lexicon_of_nt_by_robinson_contents = {
 
 <p>Using these conventions lexicon articles should be formatted. There are no definite conventions how to format introduction, table of contents, various indexes, etc. Ask about it senior editor.</p>
 
+<p>If we have lexicon articles in which the words explained are wrapped by "dt" tag and explanations are wrapped by "dd" tag, for further formatting <a href="../tools/lexicon_code_formatter.html" target="_blank">Lexicon code formatter</a> can be used. This tool wraps the words explained by "span" tags having "class" attribute value "lexicon-heading" and "data-lemma" attribute having as value the lemma of the word:</p>
+
+<p><img src="img2/lexicon_typed_07.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the field "Lexicon code" should be the HTML code containing lexicon articles in which the words explained are wrapped by "dt" tag and explanations are wrapped by "dd" tag</p>
+
+<p>Having pasted such code in the field "Lexicon code" click the button "Load code", and lexicon articles should be rendered below the heading "Lexicon:". Then click the button "Format code" and formatted code will be outputted in "Lexicon code ooutput" textarea. The outputted code will be as this:</p>
+
+<pre id="" class="prettyprint code_showarea">
+&lt;!-- part of code has been cut out --&gt;
+&lt;dt>&lt;span class="lexicon-heading" data-lemma="γῆ">Γῆ&lt;/span>, γῆς, ἡ, (contr. fr. γέα)&lt;/dt>
+&lt;dd>earth, soil, Mat. 13.5. Mar. 4.8, et al.; the ground, surface of the earth, Mat. 10.29. Lu. 6.49, et al.; the land, &lt;i>as opposed to the sea or a lake,&lt;/i> Lu. 5.11. Jno. 21.8, 9, 11; the earth, world, Mat. 5.18, 35, et al.; a land, region, tract, country, territory, Mat. 2.20; 14.34; &lt;i>by way of eminence,&lt;/i> Canaan or Palestine, Mat. 5.5; 24.30; 27.45. Ep. 6.3; the inhabitants of any region or country, Mat. 10.15; 11.24, et al.&lt;/dd>
+&lt;dt>&lt;span class="lexicon-heading" data-lemma="γῆρας">Γῆρας&lt;/span>, αος, ως, τό, &lt;i>dat.&lt;/i> γήραϊ, γήρᾳ, also γήρει,&lt;/dt>
+&lt;dd>old age, Lu. 1.36: &lt;i>whence&lt;/i> &lt;/dd>
+&lt;dt>&lt;span class="lexicon-heading" data-lemma="γηράσκω">Γηράσκω&lt;/span>, v. γηράω, ω,&lt;/dt>
+&lt;dd>f. άσομαι, a.1. ἐγήρᾱσα, &amp; ἐγήρᾱνα,&lt;/dd>
+&lt;dd>to be or become old, Jno. 21.18. He. 8.13.&lt;/dd>
+&lt;!-- part of code has been cut out --&gt;
+</pre>
+
 <p>HTML formatted lexicon text should be converted to javascript string. It is easy to do by wrapping HTML code by backtick (``) symbols. If there are apostrophs in the text, they should be escaped using "\" symbol. The string we get be applying backticks should be made the value of the variable whose name is the same as the shortname of the resource [LINK TO BE ADDED].</p>
 
 <p>This way we get the following code:</p>
