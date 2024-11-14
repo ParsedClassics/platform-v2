@@ -235,6 +235,18 @@ Be: es este
 --- Future Imperative ---
 Be: esto esto estote sunto
 
+--- Present Active Infinitive ---
+Be: esse
+
+--- Perfect Active Infinitive ---
+Be: fuisse
+
+--- Future Active Infinitive ---
+Be: futurus esse
+
+--- Future Active Participle ---
+Be: futurus
+
 
 
 
