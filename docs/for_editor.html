@@ -2198,7 +2198,7 @@ particle
 
 <p>To create scanned resource of the type "Critical edition" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
 
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when original text resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the original text edited by Antoniadis has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "kaine_diatheke_ed_antoniadis". It means that the pictures of the pages must be uploaded to the directory /_scans/kaine_diatheke_ed_antoniadis/ .</p>
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when original text resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the original text edited by V. Antoniadis has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "kaine_diatheke_ed_antoniadis". It means that the pictures of the pages must be uploaded to the directory /_scans/kaine_diatheke_ed_antoniadis/ .</p>
 
 <p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
 
@@ -3329,7 +3329,7 @@ greek_and_english_lexicon_of_nt_by_robinson_contents = {
 
 <p>The value of the field "Lexicon code" should be the HTML code containing lexicon articles in which the words explained are wrapped by "dt" tag and explanations are wrapped by "dd" tag</p>
 
-<p>Having pasted such code in the field "Lexicon code" click the button "Load code", and lexicon articles should be rendered below the heading "Lexicon:". Then click the button "Format code" and formatted code will be outputted in "Lexicon code ooutput" textarea. The outputted code will be as this:</p>
+<p>Having pasted such code in the field "Lexicon code" click the button "Load code", and lexicon articles should be rendered below the heading "Lexicon:". Then click the button "Format code" and formatted code will be outputted in "Lexicon code output" textarea. The outputted code will be as this:</p>
 
 <pre id="" class="prettyprint code_showarea">
 &lt;!-- part of code has been cut out --&gt;
@@ -3479,6 +3479,118 @@ greek_lexicon_to_nt_by_green =
 
 <h3 class="pc-anchor" id="h-translation-scanned">Translation (scanned)</h3>
 
+<h4 class="pc-anchor" id="h-translation-scanned-creating-image-files">Creating image files</h4>
+
+<p>To create scanned resource of the type "Translation" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when original text resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the translation by R. Young has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "nt_titus_tr_EN_young_contents". It means that the pictures of the pages must be uploaded to the directory /_scans/nt_titus_tr_EN_young_contents/ .</p>
+
+<p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
+
+<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?nt_titus_tr_EN_young_contents .</p>
+
+<h4 class="pc-anchor" id="h-translation-scanned-creating-contents-file">Creating contents file</h4>
+
+<p>In order for translation to work in sync with parsed text, the contents file must be created. To create contents file go to  <a href="../tools/book_contents_generator.html" target="_blank">Scanned book contents generator</a> page and fill the form:</p>
+
+<p><img src="img2/translation_scanned_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In <em>Epistle to Titus</em> there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15 .</p>
+
+<p>The value of the form‘s field "Prefix" should be be pipe delimited line prefixes, one for each chapter. The chapters of the New Testament are usually indicated by the number written to the left from verse number; colon usually used to separate chapter number from verse number. So, the value for this field is 1:|2:|3: .</p>
+
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" which was entered while listing resource as part of collection [LINK TO BE ADDED]. The value we entered for this key was "nt_titus_tr_EN_young_contents", so we now should enter it as the value of the field "Contents shortname".</p>
+
+<p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
+
+<p>The code will be as this:</p>
+
+<pre id="creating_translation_contents_file" class="prettyprint code_showarea">
+nt_titus_tr_EN_young_contents = {
+
+  "title": ""
+
+  , "1:1": ""
+  
+  , "1:2": ""
+  
+  // part of code has been cut out
+  
+  , "1:15": ""
+  
+  , "1:16": ""
+  
+  , "2:1": ""
+  
+  , "2:2": ""
+  
+  // part of code has been cut out
+  
+  , "2:14": ""
+  
+  , "2:15": ""
+  
+  , "3:1": ""
+  
+  , "3:2": ""
+  
+  // part of code has been cut out
+  
+  , "3:14": ""
+  
+  , "3:15": ""
+
+}
+</pre>
+  
+<p>Now we need to enter values for each key of this JSON object. The keys are indexes of lines of the parsed text. "title" is the index of the title of the parsed text. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p> 
+
+<p>We get the following code:</p>
+  
+<pre id="creating_translation_contents_file2" class="prettyprint code_showarea">
+nt_titus_tr_EN_young_contents = {
+
+  "title": "753"
+
+  , "1:1": "753"
+
+  , "1:2": "753"
+
+  // part of code has been cut out
+
+  , "1:15": "753"
+
+  , "1:16": "753"
+
+  , "2:1": "753"
+
+  , "2:2": "753"
+
+  // part of code has been cut out
+
+  , "2:14": "753"
+
+  , "2:15": "753"
+
+  , "3:1": "753"
+
+  , "3:2": "753"
+
+  // part of code has been cut out
+
+  , "3:14": "753"
+
+  , "3:15": "753"
+
+}; 
+</pre>
+
+<p>This code should be saved in the file having the same name as the value in "Contents shortname" field in the form, so it will be nt_titus_tr_EN_young_contents.js . The file should be placed in directory whose name is the same as resource shortname. Resource shortname is "nt_titus_tr_EN_young" so the directory will be /data/translation/nt_titus_tr_EN_young/ .</p>
+
+<p>After doing this translation resource should work in sync with parsed text resource.</p>
+
+<h3 class="pc-anchor" id="h-translation-transcribed">Translation (transcribed)</h3>
+
 
 
 
@@ -3512,119 +3624,7 @@ greek_lexicon_to_nt_by_green =
 
 <h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
 
-<h3 class="pc-anchor" id="h-translation-scanned2">Translation (scanned)</h3>
-
-<h4 class="pc-anchor" id="h-translation-scanned-creating-image-files">Creating image files</h4>
-
-<p>To create scanned resource of the type "translation" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a> the sections on scanning a book, on converting PDF file to images, on batch renaming of files, on cropping images, on retouching images, on optimizing size of JPG files.</p>
-
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory specified in catalogue file as the value of the key "scanned_source_shortname". For example in the <em>Epistle to Titus</em> collection  the translation to Latin by Saint Jerome <a class="inner-link" data-anchor="h-translation">has been listed</a> and the  value of the key "scanned_source_shortname" is "novum_testamentum_latine_ed_brandscheid". It means that the pictures of the pages must be uploaded to the directory  /_scans/novum_testamentum_latine_ed_brandscheid .</p>
-
-<p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
-
-<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?novum_testamentum_latine_ed_brandscheid</p>
-
-<h4 class="pc-anchor" id="h-translation-scanned-creating-contents-file">Creating contents file</h4>
-
-<p>In order for translation to work in sync with parsed text, the contents file must be created. To create contents file go to  <a href="../tools/book_contents_generator.html" target="_blank">Scanned book contents generator</a> page and fill the form:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_scanned_translation_contents.jpg"></p>
-
-<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In <em>Epistle to Titus</em> there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15.</p>
-
-<p>The value of the form‘s field "Line class prefix" should be be pipe delimited class prefixes, one for each chapter. The chapters of the New Testament are usually indicated by the number written to the left from verse number; colon usually used to separate chapter number from verse number. Class prefix should start with the letter "v" and follow with line number prefix in which special symbols are replaced with dashes. So, we replace colons in line number prefixes, add leading letter "v" and get the value for this field v1-|v2-|v3- .</p>
-
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" in collection‘s catalogue. While creating collection‘s catalogue for <em>Epistle to Titus</em> collection <a class="inner-link" data-anchor="h-translation">we entered</a> for this key the value "lines_nt_titus_tr_LA_hieronymus_contents", so we now should enter it as the value of the field "Contents shortname".</p>
-
-<p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
-
-<p>The code will be as this:</p>
-
-<pre id="creating_translation_contents_file" class="prettyprint code_showarea">
-var lines_nt_titus_tr_LA_ hieronymus _contents = {
-
-"v-title": ""
-
-, "v1-1": ""
-
-, "v1-2": ""
-
-// part of code has been cut out
-
-, "v1-15": ""
-
-, "v1-16": ""
-
-, "v2-1": ""
-
-, "v2-2": ""
-
-// part of code has been cut out
-
-, "v2-14": ""
-
-, "v2-15": ""
-
-, "v3-1": ""
-
-, "v3-2": ""
-
-// part of code has been cut out
-
-, "v3-14": ""
-
-, "v3-15": ""
-
-}; 
-</pre>
-
-<p>Now we need to enter values for each key of this JSON object. The keys are class names of lines of the parsed text. "v-title" is the class name of the title of the parsed text. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p> 
-
-<p>We get the following code:</p>
-
-<pre id="creating_translation_contents_file2" class="prettyprint code_showarea">
-var lines_nt_titus_tr_LA_ hieronymus _contents = {
-
-"v-title": "589"
-
-, "v1-1": "589"
-
-, "v1-2": "589"
-
-// part of code has been cut out
-
-, "v1-15": "590"
-
-, "v1-16": "590"
-
-, "v2-1": "590"
-
-, "v2-2": "590"
-
-// part of code has been cut out
-
-, "v2-14": "591"
-
-, "v2-15": "591"
-
-, "v3-1": "591"
-
-, "v3-2": "591"
-
-// part of code has been cut out
-
-, "v3-14": "592"
-
-, "v3-15": "592"
-
-}; 
-</pre>
-
-<p>This code should be saved in the file having the same name as the value in "Contents shortname" field. The file should be placed in "contents" directory: /data/contents/lines_nt_titus_tr_LA_hieronymus_contents.js</p>
-
-<p>After doing this translation resource should work in sync with parsed text resource.</p>
-
-<h3 class="pc-anchor" id="h-translation-transcribed">Translation (transcribed)</h3>
+<h3 class="pc-anchor" id="h-translation-transcribed2">Translation (transcribed)</h3>
 
 <p>Creating transcribed resource of the type "Translation" involves creating one data file.</p>
 
