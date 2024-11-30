@@ -759,7 +759,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
     scanned_or_typed: "typed",
     resource_type: "translation",
     scanned_source_shortname: "twofold_nt_tr_green",
-    contents_shortname: "nt_titus_tr_EN_green_contents",
+    contents_shortname: "",
   },
 
   // some lines have been omitted
@@ -838,8 +838,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
   },
 
   nt_titus_tr_EN_green: {
-    ...ParsedClassicsResProtos.nt_tr_EN_green,
-    contents_shortname: "nt_titus_tr_EN_green_contents",
+    ...ParsedClassicsResProtos.nt_tr_EN_green
   },
 
   // some lines have been omitted
@@ -869,11 +868,22 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
     contents_shortname: "nt_titus_commentary_by_nicoll_contents"
   },
 
+  nt_titus_commentary_by_bengel: { 
+    "collections_page_resource_desc": "ed. by J. A. Bengel (1877)", 
+    "library_app_selectbox_title": "Commentary ed. by J. A. Bengel (1877)",
+    "library_app_panel_title": "Commentary ed. by J. A. Bengel (1877)",
+    "library_app_panel_text_from": "Gnomon of the New Testament. By J. A. Bengel. Volume 4. 1877. Edinburgh: T. & A. Clark.",
+    "library_app_panel_note": "",
+    "scanned_or_typed": "typed",
+    "scanned_source_shortname": "gnomon_of_new_testament_ed_bengel_vol_4", 
+    "contents_shortname": ""
+  }
+
   // some lines have been omitted
 }
 </pre>
 
-<p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
+<p>After you add these lines, you should see these resources listed in Resources selectbox and in <a target="_blank" href='../site/collections.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
 
 <p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus author‘s name and the year in brackets.</p>
 
@@ -915,11 +925,22 @@ const ParsedClassicsResProtos = {
     scanned_source_shortname: "expositors_greek_testament_ed_nicoll_vol_4",
   },
 
+  nt_commentary_by_bengel: { 
+    "collections_page_resource_desc": "ed. by J. A. Bengel (1877)", 
+    "library_app_selectbox_title": "Commentary ed. by J. A. Bengel (1877)",
+    "library_app_panel_title": "Commentary ed. by J. A. Bengel (1877)",
+    "library_app_panel_text_from": "Gnomon of the New Testament. By J. A. Bengel. Volume 4. 1877. Edinburgh: T. & A. Clark.",
+    "library_app_panel_note": "",
+    "scanned_or_typed": "typed",
+    "scanned_source_shortname": "gnomon_of_new_testament_ed_bengel_vol_4", 
+    "contents_shortname": ""
+  }
+
   // some lines have been omitted
 }
 </pre>
 
-<p>Now we can destructure the object ParsedClassicsCollProtos.nt_commentary_by_nicoll_vol_4 anywhere we need the same values of its keys:</p>
+<p>Now we can destructure the objects ParsedClassicsCollProtos.nt_commentary_by_nicoll_vol_4 and ParsedClassicsCollProtos.t_commentary_by_bengel anywhere we need the same values of its keys:</p>
 
 <pre id="listing_commentary_res2" class="prettyprint code_showarea">
 ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
@@ -929,6 +950,10 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
     ...ParsedClassicsResProtos.nt_commentary_by_nicoll_vol_4, 
     contents_shortname: "nt_titus_commentary_by_nicoll_contents"
   },
+
+  nt_titus_commentary_by_bengel: {
+    ...ParsedClassicsResProtos.nt_commentary_by_bengel
+  }
 
   // some lines have been omitted
 }
@@ -3513,11 +3538,11 @@ greek_lexicon_to_nt_by_green =
 
 <p>To create scanned resource of the type "Translation" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
 
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when original text resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the translation by R. Young has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "nt_titus_tr_EN_young_contents". It means that the pictures of the pages must be uploaded to the directory /_scans/nt_titus_tr_EN_young_contents/ .</p>
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when translation resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the translation by R. Young has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "holy_bible_tr_young". It means that the pictures of the pages must be uploaded to the directory /_scans/holy_bible_tr_young/ .</p>
 
 <p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
 
-<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?nt_titus_tr_EN_young_contents .</p>
+<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?holy_bible_tr_young .</p>
 
 <h4 class="pc-anchor" id="h-translation-scanned-creating-contents-file">Creating contents file</h4>
 
@@ -3685,6 +3710,170 @@ nt_titus_tr_EN_green =
 
 <h3 class="pc-anchor" id="h-commentary-scanned">Commentary (scanned)</h3>
 
+<h4 class="pc-anchor" id="h-commentary-scanned-creating-image-files">Creating image files</h4>
+
+<p>To create scanned resource of the type "Commentary" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when commentary resource was listed as part of collection. For example, in the Epistle to Titus collection the commentary edited by W. R. Nicoll has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "expositors_greek_testament_ed_nicoll_vol_4". It means that the pictures of the pages must be uploaded to the directory /_scans/expositors_greek_testament_ed_nicoll_vol_4/ .</p>
+
+<p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books" target="_blank">Listing scanned books</a>.</p>
+
+<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?expositors_greek_testament_ed_nicoll_vol_4 .</p>
+
+<h4 class="pc-anchor" id="h-commentary-scanned-creating-contents-file">Creating contents file</h4>
+
+<p>In order for commentary to work in sync with parsed text, the contents file must be created. To create contents file go to  <a href="../tools/book_contents_generator.html" target="_blank">Scanned book contents generator</a> page and fill the form:</p>
+
+<p><img src="img2/commentary_scanned_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In Epistle to Titus there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15 .</p>
+
+<p>The value of the form‘s field "Prefix" should be be pipe delimited line prefixes, one for each chapter. The chapters of the New Testament are usually indicated by the number written to the left from verse number; colon usually used to separate chapter number from verse number. So, the value for this field is 1:|2:|3: .</p>
+
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" which was entered while listing resource as part of collection [LINK TO BE ADDED]. The value we entered for this key was "nt_titus_commentary_by_nicoll_contents", so we now should enter it as the value of the field "Contents shortname".</p>
+
+<p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
+
+<p>The code will be as this:</p>
+
+<pre id="creating_commentary_contents_file" class="prettyprint code_showarea">
+nt_titus_commentary_by_nicoll_contents = {
+
+  "title": ""
+
+  , "1:1": ""
+
+  , "1:2": ""
+
+  // part of code has been cut out
+
+  , "1:15": ""
+
+  , "1:16": ""
+
+  , "2:1": ""
+
+  , "2:2": ""
+
+  // part of code has been cut out
+
+  , "2:14": ""
+
+  , "2:15": ""
+
+  , "3:1": ""
+
+  , "3:2": ""
+
+  // part of code has been cut out
+
+  , "3:14": ""
+
+  , "3:15": ""
+
+}
+</pre>
+
+<p>Now we need to enter values for each key of this JSON object. The keys are indexes of lines of the parsed text. "title" is the index of the title of the parsed text. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
+
+<p>We get the following code:</p>
+
+<pre id="creating_commentary_contents_file2" class="prettyprint code_showarea">
+nt_titus_commentary_by_nicoll_contents = {
+
+  "v-title": "189"
+
+  , "v1-1": "189"
+
+  , "v1-2": "189"
+
+  // part of code has been cut out
+
+  , "v1-15": "194"
+
+  , "v1-16": "194"
+
+  , "v2-1": "195"
+
+  , "v2-2": "195"
+
+  // part of code has been cut out
+
+  , "v2-14": "200"
+
+  , "v2-15": "201"
+
+  , "v3-1": "201"
+
+  , "v3-2": "201"
+
+  // part of code has been cut out
+
+  , "v3-14": "206"
+
+  , "v3-15": "206"
+
+}; 
+</pre>
+
+<p>This code should be saved in the file having the same name as the value in "Contents shortname" field in the form, so it will be nt_titus_commentary_by_nicoll_contents.js . The file should be placed in directory whose name is the same as resource shortname. Resource shortname is "nt_titus_commentary_by_nicoll" so the directory will be /data/commentary/nt_titus_commentary_by_nicoll/ .</p>
+
+<p>After doing this commentary resource should work in sync with parsed text resource.</p>
+
+<h3 class="pc-anchor" id="h-commentary-transcribed">Commentary (transcribed)</h3>
+
+<p>Creating transcribed resource of the type "Commentary" involves creating one data file.</p>
+
+<h4 class="pc-anchor" id="h-commentary-transcribed-creating-data-file">Creating data file</h4>
+
+<p>Data file uses certain formatting conventions.</p>
+
+<p>HTML "span" tag having class attribute "verse" should wrap each line of the text.</p>
+
+<p>"span" tag having class attribute "verse-number" should wrap verse number in each line. The same "span" element should also have attribute "data-line-number" whose value should be line number. Line numbers should be the same as in parsed text resource.</p>
+
+<p>"span" tag having class attribute "para" should mark start of each new paragraph.</p>
+
+<p>HTML code formatted using these "span" tags should be converted to string and made the value of javascript global variable whose name is the same as resource shortname. We listed [LINK TO BE ADDED] transcribed commentary resource whose resource shotname is "nt_titus_commentary_by_bengel", so this will be variable's name.</p>
+
+<p>This way we get such data file:</p>
+
+<p>This way we get such data file:</p>
+
+<pre id="creating_commentary_datafile" class="prettyprint code_showarea">
+nt_titus_commentary_by_bengel =
+
+`&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-1&quot;&gt;1:1&lt;/span&gt; &Pi;&alpha;&upsilon;&lambda;&omicron;&sigmaf;, &lt;em&gt;Paul&lt;em/&gt;) A title suitable to the character of Paul, and to the office of Titus.&mdash;&kappa;&alpha;&tau;ὰ, &lt;em&gt;according to&lt;em/&gt;) Comp. &kappa;&alpha;&tau;ὰ, Titus 1:4; Titus 1:9; 2 Timothy 1:1, note. &lt;/span&gt;
+
+&lt;span class=&quot;para&quot;&gt;&lt;/span&gt;
+
+It is the duty of an apostle to propagate the faith, Romans 1:5.&mdash;&pi;ί&sigma;&tau;&iota;&nu;, &lt;em&gt;faith&lt;em/&gt;) &lt;em&gt;faith&mdash;hope&lt;em/&gt; are the sum of Christianity; and these things Titus ought to regard in all his teaching, and avoid everything else; comp. 1 Timothy 1:5; 1 Timothy 3:15-16; 1 Timothy 4:1; 1 Timothy 4:3; 1 Timothy 4:10.&mdash;ἐ&kappa;&lambda;&epsilon;&kappa;&tau;ῶ&nu; &Theta;&epsilon;&omicron;ῦ, &lt;em&gt;the elect of God&lt;em/&gt;) for whose sake we ought to do and endure all things, 2 Timothy 2:10. &lt;em&gt;The elect&lt;em/&gt; were from among Jews and Gentiles; and their faith was &lt;em&gt;common&lt;em/&gt;, Titus 1:4; 2 Peter 1:1 : of the former was Paul; of the latter, Titus. &lt;/span&gt;
+
+&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-2&quot;&gt;1:2&lt;/span&gt; Ἐ&lambda;&pi;ί&delta;&iota; &zeta;&omega;ῆ&sigmaf; &alpha;ἰ&omega;&nu;ί&omicron;&upsilon;, in &lt;em&gt;the hope of eternal life&lt;em/&gt;) ch. Titus 3:7. Hope has reference to &lt;em&gt;the promise&lt;em/&gt;.&mdash;ἣ&nu;, &lt;em&gt;which&lt;em/&gt;) &lt;em&gt;life&lt;em/&gt;.&mdash;ἀ&psi;&epsilon;&upsilon;&delta;ὴ&sigmaf;, &lt;em&gt;who cannot lie&lt;em/&gt;) The foundation of our confidence.&mdash;&pi;&rho;ὸ &chi;&rho;ό&nu;&omega;&nu; &alpha;ἰ&omega;&nu;ί&omega;&nu;, &lt;em&gt;before eternal ages, before the world began&lt;em/&gt;) &lt;em&gt;The promise&lt;em/&gt; of eternal life is already contained in the appellation, &lt;em&gt;the God of Abraham&lt;em/&gt;, etc.[Luke 20:37]. There is here implied an explicit promise to men. See Genesis 3, etc. The &chi;&rho;ό&nu;&omicron;&iota; &alpha;ἰ&omega;&nu;&iota;&omicron;&iota; &lt;em&gt;followed&lt;em/&gt; the creation and the fall. &lt;/span&gt;
+
+&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-3&quot;&gt;1:3&lt;/span&gt; &Kappa;&alpha;&iota;&rho;&omicron;ῖ&sigmaf;) &chi;&rho;ό&nu;&omicron;&iota; were longer than these. &lt;/span&gt;
+
+// part of code has been cut out
+
+&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v3-12&quot;&gt;3:12&lt;/span&gt; Ἀ&rho;&tau;&epsilon;&mu;ᾶ&nu; ἢ &Tau;&upsilon;&chi;&iota;&chi;ὸ&nu;, &lt;em&gt;Artemas or Tychicus&lt;em/&gt;) into whose hands Titus might deliver the lamp of the Gospel.&mdash;ἐ&lambda;&theta;&epsilon;ῖ&nu; &pi;&rho;ό&sigmaf; &mu;&epsilon;, &lt;em&gt;to come to me&lt;em/&gt;) when affairs in Crete shall have been more fully set in order.&mdash;ἐ&kappa;&epsilon;ῖ, &lt;em&gt;there&lt;em/&gt;) He does not say &lt;em&gt;here&lt;em/&gt;. Paul was not yet at Nicopolis. &lt;/span&gt;
+ 
+&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v3-13&quot;&gt;3:13&lt;/span&gt; Ἵ&nu;&alpha; &mu;&eta;&delta;ὲ&nu;, &lt;em&gt;that nothing&lt;em/&gt;) Titus therefore had the means. They did not go empty. &lt;/span&gt;
+
+&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v3-14&quot;&gt;3:14&lt;/span&gt; &Mu;&alpha;&nu;&theta;&alpha;&nu;έ&tau;&omega;&sigma;&alpha;&nu;, &lt;em&gt;let them learn&lt;em/&gt;) by thy admonition and example.&mdash;&kappa;&alpha;ὶ &omicron;ἱ ἡ&mu;έ&tau;&epsilon;&rho;&omicron;&iota;, &lt;em&gt;ours also&lt;em/&gt;) not only we, but also ours, whom we have gained at Crete. These seem not to have given sufficient assistance to Zenas and Apollos, when they ought to have done so. [&lt;em&gt;It is not proper that some should ever and anon devolve the business in hand from themselves upon others.&lt;em/&gt;&mdash;V. g.] Zenas and Apollos were already in Crete with Titus; for this is the reason why he distinguishes them from Artemas and Tychicus, who were not until afterwards to be sent.&mdash;&epsilon;ἰ&sigmaf; &tau;ὰ&sigmaf; ἀ&nu;&alpha;&gamma;&kappa;&epsilon;ί&alpha;&sigmaf; &chi;&rho;&epsilon;ί&alpha;&sigmaf;, &lt;em&gt;for necessary uses&lt;em/&gt;) even as spiritual &lt;em&gt;necessity&lt;em/&gt; [&lt;em&gt;i.e.&lt;em/&gt; the &lt;em&gt;tie&lt;em/&gt; which &lt;em&gt;necessarily&lt;em/&gt; binds saints to help one another] requires; so &chi;&rho;&epsilon;ί&alpha;, Acts 6:3. &lt;em&gt;Spiritual necessity&lt;em/&gt; [&lsquo;necessitudo,&rsquo; tie of necessary obligation or relationship] lays the foundation of obligations, so that one cannot withdraw from another [so as not to help him]. &lt;/span&gt;`
+</pre>
+
+<p>Data file‘s name should be the same as resource shortname. The resource shortname is "nt_titus_commentary_by_bengel", so data file‘s name should be "nt_titus_commentary_by_bengel.js". Data file should be placed in directory having the same name: /data/commentary/nt_titus_commentary_by_bengel/ .</p>
+
+<p>After doing this commentary resource should work in sync with parsed text resource.</p>
+
+<h3 class="pc-anchor" id="h-grammar-references-transcribed">Grammar references (transcribed)</h3>
+
+<p>Creating resource of the type "grammar references" involves creating data file and image files of the grammar books. The data file contains links to image files of the scanned grammar books, so the latter should be created first.</p>
+
+<h4 class="pc-anchor" id="h-grammar-references-transcribed-creating-image-files">Creating image files</h4>
+
+
+
 
 
 
@@ -3716,171 +3905,11 @@ nt_titus_tr_EN_green =
 
 <h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
 
-<h3 class="pc-anchor" id="h-commentary-scanned2">Commentary (scanned)</h3>
-
-<h4 class="pc-anchor" id="h-commentary-scanned-creating-image-files">Creating image files</h4>
-
-<p>To create scanned resource of the type "Commentary" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a> the sections on scanning a book, on converting PDF file to images, on batch renaming of files, on cropping images, on retouching images, on optimizing size of JPG files.</p>
-
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory specified in catalogue file as the value of the key "scanned_source_shortname". For example in the <em>Epistle to Titus</em> collection  the commentary edited by W. R. Nicoll <a class="inner-link" data-anchor="h-commentary">has been listed</a> and the  value of the key "scanned_source_shortname" is "expositors_greek_testament_ed_nicoll_vol_4". It means that the pictures of the pages must be uploaded to the directory  /_scans/expositors_greek_testament_ed_nicoll_vol_4 .</p>
-
-<p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
-
-<p>After uploading the files of the scanned book and listing it among scanned books, it can be browsed using the value of the key "scanned_source_shortname" in the URL: parsedclassics.com/reader/embedded_bookreader.html?expositors_greek_testament_ed_nicoll_vol_4</p>
-
-<h4 class="pc-anchor" id="h-commentary-scanned-creating-contents-file">Creating contents file</h4>
-
-<p>In order for commentary edition to work in sync with parsed text, the contents file must be created. To create contents file go to <a href="../tools/book_contents_generator.html" target="_blank">Scanned book contents generator</a> page and fill the form:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_scanned_commentary_contents.jpg"></p>
-
-<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In <em>Epistle to Titus</em> there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15.</p>
-
-<p>The value of the form‘s field "Line class prefix" should be be pipe delimited class prefixes, one for each chapter. The chapters of the New Testament are usually indicated by the number written to the left from verse number; colon usually used to separate chapter number from verse number. Class prefix should start with the letter "v" and follow with line number prefix in which special symbols are replaced with dashes. So, we replace colons in line number prefixes, add leading letter "v" and get the value for this field v1-|v2-|v3- .</p>
-
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" in collection‘s catalogue. While creating collection‘s catalogue for <em>Epistle to Titus</em> collection <a class="inner-link" data-anchor="h-commentary">we entered</a> for this key the value "lines_nt_titus_commentary_by_nicoll_contents", so we now should enter it as the value of the field "Contents shortname".</p>
-
-<p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
-
-<p>The code will be as this:</p>
-
-<pre id="creating_commentary_contents_file" class="prettyprint code_showarea">
-var lines_nt_titus_commentary_by_nicoll_contents = {
-
-"v-title": ""
-
-, "v1-1": ""
-
-, "v1-2": ""
-
-// part of code has been cut out
-
-, "v1-15": ""
-
-, "v1-16": ""
-
-, "v2-1": ""
-
-, "v2-2": ""
-
-// part of code has been cut out
-
-, "v2-14": ""
-
-, "v2-15": ""
-
-, "v3-1": ""
-
-, "v3-2": ""
-
-// part of code has been cut out
-
-, "v3-14": ""
-
-, "v3-15": ""
-
-}; 
-</pre>
-
-<p>Now we need to enter values for each key of this JSON object. The keys are class names of lines of the parsed text. "v-title" is the class name of the title of the parsed text. The values should be numbers from image file names (without zero padding). View images of the scanned files, look for the numbers in their file names and enter those numbers as the values for relevant keys.</p>
-
-<p>We get the following code:</p>
-
-<pre id="creating_commentary_contents_file2" class="prettyprint code_showarea">
-var lines_nt_titus_commentary_by_nicoll_contents = {
-
-"v-title": "189"
-
-, "v1-1": "189"
-
-, "v1-2": "189"
-
-// part of code has been cut out
-
-, "v1-15": "194"
-
-, "v1-16": "194"
-
-, "v2-1": "195"
-
-, "v2-2": "195"
-
-// part of code has been cut out
-
-, "v2-14": "200"
-
-, "v2-15": "201"
-
-, "v3-1": "201"
-
-, "v3-2": "201"
-
-// part of code has been cut out
-
-, "v3-14": "206"
-
-, "v3-15": "206"
-
-}; 
-</pre>
-
-<p>This code should be saved in the file having the same name as the value in "Contents shortname" field. The file should be placed in "contents" directory: /data/contents/lines_nt_titus_commentary_by_nicoll_contents.js</p>
-
-<p>After doing this commentary resource should work in sync with parsed text resource.</p>
-
-<h3 class="pc-anchor" id="h-commentary-transcribed">Commentary (transcribed)</h3>
-
-<p>Creating transcribed resource of the type "Commentary" involves creating one data file.</p>
-
-<h4 class="pc-anchor" id="h-commentary-transcribed-creating-data-file">Creating data file</h4>
-
-<p>Data file uses certain formatting conventions.</p>
-
-<p>HTML "span" tag having class attribute "verse" should wrap each line of the text.</p>
-
-<p>"span" tag having class attribute "verse-number" should wrap verse number in each line. The same "span" element should also have as its class attribute the string indicating line number, such as "v1-1", "v1-2", etc. The latter class strings should be the same as in parsed text resource.</p>
-
-<p>"span" tag having class attribute "para" should mark start of each new paragraph.</p>
-
-<p>HTML code formatted using these "span" tags should be converted to string and made the second argument of the function "ParsedClassicsData._loadResource". The first argument of this function should be the value of the key "resource_shortname" from collection catalogue. Transcribed commentary <a class="inner-link" data-anchor="h-commentary">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "nt_titus_commentary_by_bengel", so this string will be the first argument.</p>
-
-<p>This way we get such data file:</p>
-
-<pre id="creating_commentary_datafile" class="prettyprint code_showarea">
-ParsedClassicsData._loadResource(&quot;nt_titus_commentary_by_bengel&quot;,
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-1&quot;&gt;1:1&lt;/span&gt; &Pi;&alpha;&upsilon;&lambda;&omicron;&sigmaf;, &lt;em&gt;Paul&lt;em/&gt;) A title suitable to the character of Paul, and to the office of Titus.&mdash;&kappa;&alpha;&tau;ὰ, &lt;em&gt;according to&lt;em/&gt;) Comp. &kappa;&alpha;&tau;ὰ, Titus 1:4; Titus 1:9; 2 Timothy 1:1, note. &lt;/span&gt;' +
-
-'&lt;span class=&quot;para&quot;&gt;&lt;/span&gt;' +
-
-'It is the duty of an apostle to propagate the faith, Romans 1:5.&mdash;&pi;ί&sigma;&tau;&iota;&nu;, &lt;em&gt;faith&lt;em/&gt;) &lt;em&gt;faith&mdash;hope&lt;em/&gt; are the sum of Christianity; and these things Titus ought to regard in all his teaching, and avoid everything else; comp. 1 Timothy 1:5; 1 Timothy 3:15-16; 1 Timothy 4:1; 1 Timothy 4:3; 1 Timothy 4:10.&mdash;ἐ&kappa;&lambda;&epsilon;&kappa;&tau;ῶ&nu; &Theta;&epsilon;&omicron;ῦ, &lt;em&gt;the elect of God&lt;em/&gt;) for whose sake we ought to do and endure all things, 2 Timothy 2:10. &lt;em&gt;The elect&lt;em/&gt; were from among Jews and Gentiles; and their faith was &lt;em&gt;common&lt;em/&gt;, Titus 1:4; 2 Peter 1:1 : of the former was Paul; of the latter, Titus. &lt;/span&gt;' +
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-2&quot;&gt;1:2&lt;/span&gt; Ἐ&lambda;&pi;ί&delta;&iota; &zeta;&omega;ῆ&sigmaf; &alpha;ἰ&omega;&nu;ί&omicron;&upsilon;, in &lt;em&gt;the hope of eternal life&lt;em/&gt;) ch. Titus 3:7. Hope has reference to &lt;em&gt;the promise&lt;em/&gt;.&mdash;ἣ&nu;, &lt;em&gt;which&lt;em/&gt;) &lt;em&gt;life&lt;em/&gt;.&mdash;ἀ&psi;&epsilon;&upsilon;&delta;ὴ&sigmaf;, &lt;em&gt;who cannot lie&lt;em/&gt;) The foundation of our confidence.&mdash;&pi;&rho;ὸ &chi;&rho;ό&nu;&omega;&nu; &alpha;ἰ&omega;&nu;ί&omega;&nu;, &lt;em&gt;before eternal ages, before the world began&lt;em/&gt;) &lt;em&gt;The promise&lt;em/&gt; of eternal life is already contained in the appellation, &lt;em&gt;the God of Abraham&lt;em/&gt;, etc.[Luke 20:37]. There is here implied an explicit promise to men. See Genesis 3, etc. The &chi;&rho;ό&nu;&omicron;&iota; &alpha;ἰ&omega;&nu;&iota;&omicron;&iota; &lt;em&gt;followed&lt;em/&gt; the creation and the fall. &lt;/span&gt;' +
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-3&quot;&gt;1:3&lt;/span&gt; &Kappa;&alpha;&iota;&rho;&omicron;ῖ&sigmaf;) &chi;&rho;ό&nu;&omicron;&iota; were longer than these. &lt;/span&gt;' +
-
-// part of code has been cut out
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v3-12&quot;&gt;3:12&lt;/span&gt; Ἀ&rho;&tau;&epsilon;&mu;ᾶ&nu; ἢ &Tau;&upsilon;&chi;&iota;&chi;ὸ&nu;, &lt;em&gt;Artemas or Tychicus&lt;em/&gt;) into whose hands Titus might deliver the lamp of the Gospel.&mdash;ἐ&lambda;&theta;&epsilon;ῖ&nu; &pi;&rho;ό&sigmaf; &mu;&epsilon;, &lt;em&gt;to come to me&lt;em/&gt;) when affairs in Crete shall have been more fully set in order.&mdash;ἐ&kappa;&epsilon;ῖ, &lt;em&gt;there&lt;em/&gt;) He does not say &lt;em&gt;here&lt;em/&gt;. Paul was not yet at Nicopolis. &lt;/span&gt;' +
- 
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v3-13&quot;&gt;3:13&lt;/span&gt; Ἵ&nu;&alpha; &mu;&eta;&delta;ὲ&nu;, &lt;em&gt;that nothing&lt;em/&gt;) Titus therefore had the means. They did not go empty. &lt;/span&gt;' +
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v3-14&quot;&gt;3:14&lt;/span&gt; &Mu;&alpha;&nu;&theta;&alpha;&nu;έ&tau;&omega;&sigma;&alpha;&nu;, &lt;em&gt;let them learn&lt;em/&gt;) by thy admonition and example.&mdash;&kappa;&alpha;ὶ &omicron;ἱ ἡ&mu;έ&tau;&epsilon;&rho;&omicron;&iota;, &lt;em&gt;ours also&lt;em/&gt;) not only we, but also ours, whom we have gained at Crete. These seem not to have given sufficient assistance to Zenas and Apollos, when they ought to have done so. [&lt;em&gt;It is not proper that some should ever and anon devolve the business in hand from themselves upon others.&lt;em/&gt;&mdash;V. g.] Zenas and Apollos were already in Crete with Titus; for this is the reason why he distinguishes them from Artemas and Tychicus, who were not until afterwards to be sent.&mdash;&epsilon;ἰ&sigmaf; &tau;ὰ&sigmaf; ἀ&nu;&alpha;&gamma;&kappa;&epsilon;ί&alpha;&sigmaf; &chi;&rho;&epsilon;ί&alpha;&sigmaf;, &lt;em&gt;for necessary uses&lt;em/&gt;) even as spiritual &lt;em&gt;necessity&lt;em/&gt; [&lt;em&gt;i.e.&lt;em/&gt; the &lt;em&gt;tie&lt;em/&gt; which &lt;em&gt;necessarily&lt;em/&gt; binds saints to help one another] requires; so &chi;&rho;&epsilon;ί&alpha;, Acts 6:3. &lt;em&gt;Spiritual necessity&lt;em/&gt; [&lsquo;necessitudo,&rsquo; tie of necessary obligation or relationship] lays the foundation of obligations, so that one cannot withdraw from another [so as not to help him]. &lt;/span&gt;' +
-
-&quot;&quot;
-
-);
-</pre>
-
-<p>Data file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. Transcribed commentary <a class="inner-link" data-anchor="h-commentary">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "nt_titus_commentary_by_bengel", so this should be data file‘s name. Data file should be placed in "commentaries" directory: /data/resources/commentaries/nt_titus_commentary_by_bengel.js</p>
-
-<p>After doing this commentary resource should work in sync with parsed text resource.</p>
-
-<h3 class="pc-anchor" id="h-grammar-references-transcribed">Grammar references (transcribed)</h3>
+<h3 class="pc-anchor" id="h-grammar-references-transcribed_a">Grammar references (transcribed)</h3>
 
 <p>Creating resource of the type "grammar references" involves creating data file and image files of the grammar books. The data file contains links to image files of the scanned grammar books, so the latter should be created first.</p>
 
-<h4 class="pc-anchor" id="h-grammar-references-transcribed-creating-image-files">Creating image files</h4>
+<h4 class="pc-anchor" id="h-grammar-references-transcribed-creating-image-files_a">Creating image files</h4>
 
 <p>To create resource of the type "grammar references" you first need to have one or more scanned grammar books. To create a scanned grammar book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned book, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a> the sections on scanning a book, on converting PDF file to images, on batch renaming of files, on cropping images, on retouching images, on optimizing size of JPG files.</p>
 
