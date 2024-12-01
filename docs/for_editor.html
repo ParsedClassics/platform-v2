@@ -869,14 +869,14 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
   },
 
   nt_titus_commentary_by_bengel: { 
-    "collections_page_resource_desc": "ed. by J. A. Bengel (1877)", 
-    "library_app_selectbox_title": "Commentary ed. by J. A. Bengel (1877)",
-    "library_app_panel_title": "Commentary ed. by J. A. Bengel (1877)",
-    "library_app_panel_text_from": "Gnomon of the New Testament. By J. A. Bengel. Volume 4. 1877. Edinburgh: T. & A. Clark.",
-    "library_app_panel_note": "",
-    "scanned_or_typed": "typed",
-    "scanned_source_shortname": "gnomon_of_new_testament_ed_bengel_vol_4", 
-    "contents_shortname": ""
+    collections_page_resource_desc: "ed. by J. A. Bengel (1877)", 
+    library_app_selectbox_title: "Commentary ed. by J. A. Bengel (1877)",
+    library_app_panel_title: "Commentary ed. by J. A. Bengel (1877)",
+    library_app_panel_text_from: "Gnomon of the New Testament. By J. A. Bengel. Volume 4. 1877. Edinburgh: T. & A. Clark.",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    scanned_source_shortname: "gnomon_of_new_testament_ed_bengel_vol_4", 
+    contents_shortname: ""
   }
 
   // some lines have been omitted
@@ -926,14 +926,14 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_bengel: { 
-    "collections_page_resource_desc": "ed. by J. A. Bengel (1877)", 
-    "library_app_selectbox_title": "Commentary ed. by J. A. Bengel (1877)",
-    "library_app_panel_title": "Commentary ed. by J. A. Bengel (1877)",
-    "library_app_panel_text_from": "Gnomon of the New Testament. By J. A. Bengel. Volume 4. 1877. Edinburgh: T. & A. Clark.",
-    "library_app_panel_note": "",
-    "scanned_or_typed": "typed",
-    "scanned_source_shortname": "gnomon_of_new_testament_ed_bengel_vol_4", 
-    "contents_shortname": ""
+    collections_page_resource_desc: "ed. by J. A. Bengel (1877)", 
+    library_app_selectbox_title: "Commentary ed. by J. A. Bengel (1877)",
+    library_app_panel_title: "Commentary ed. by J. A. Bengel (1877)",
+    library_app_panel_text_from: "Gnomon of the New Testament. By J. A. Bengel. Volume 4. 1877. Edinburgh: T. & A. Clark.",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    scanned_source_shortname: "gnomon_of_new_testament_ed_bengel_vol_4", 
+    contents_shortname: ""
   }
 
   // some lines have been omitted
@@ -3838,8 +3838,6 @@ nt_titus_commentary_by_nicoll_contents = {
 
 <p>This way we get such data file:</p>
 
-<p>This way we get such data file:</p>
-
 <pre id="creating_commentary_datafile" class="prettyprint code_showarea">
 nt_titus_commentary_by_bengel =
 
@@ -3872,11 +3870,64 @@ It is the duty of an apostle to propagate the faith, Romans 1:5.&mdash;&pi;ί&si
 
 <h4 class="pc-anchor" id="h-grammar-references-transcribed-creating-image-files">Creating image files</h4>
 
+<p>To create resource of the type "grammar references" you first need to have one or more scanned grammar books. To create a scanned grammar book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
 
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server.</p>
 
+<p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
 
+<p>For example, in the file _scanned_books.js the key of the entry for A. T. Robertson's "Grammar of the New Testament in the light of historical research"  is "grammar_of_greek_nt_in_light_of_hist_research_robertson". That means that image files of this book were uploaded to the directory /_scans/grammar_of_greek_nt_in_light_of_hist_research_robertson/ and can be browsed using the URL the URL parsedclassics.com/reader/embedded_bookreader.html?grammar_of_greek_nt_in_light_of_hist_research_robertson .</p>
 
+<h4 class="pc-anchor" id="h-grammar-references-creating-data-file">Creating data file</h4>
 
+<p>Data file uses certain formatting conventions.</p>
+
+<p>The file should contain "Grammars" heading and "References" heading both wrapped by "h2" tags.</p>
+
+<p>Below the heading "Grammars" should be list of grammars. Each item of the list should be wrapped by "span" tag having class attribute "text_from". Every list item should contain abbreviated name of the grammar (usually author's surname) on the left and its bibliographical data to the right, separated by n-dash. Bibliographical data should be wrapped by "a" tag, having the value "_blank" of the attribute "target" and the relative URL as the value of the attribute "href".</p>
+
+<p>Below the heading "References" should be list of references to grammars for the each line of the classical text. "span" tag having class attribute "line" should wrap all references for the single line. "span" tag having class attribute "line-number" should wrap line number of the line. The same "span" element should also have line number as the value of its "data-line-number" attribute.</p>
+
+<p>Each reference to the grammar book consists of abbreviated grammar name and page number. Abbreviated name and page number should be wrapped by "a" tag having attribute "data-grammar" and attribute "data-page". The value of the attribute "data-grammar" should be the key of the relevant grammar book from the file _scanned_books.js. The value of the attribute "data-page" should be the number from the name of the image file (not the number of the page pictured!).</p>
+
+<p>HTML code formatted using these tags should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We listed [LINK TO BE ADDED] grammar references resource whose resource shotname is "nt_titus_grammar_refs_by_parsedclassics", so this will be variable's name.</p>
+
+<p>This way we get such data file:</p>
+
+<pre id="creating_grammar_references_datafile" class="prettyprint code_showarea">
+nt_titus_grammar_refs_by_parsedclassics = 
+
+`&lt;h2>Grammars&lt;/h2> 
+
+&lt;span class="text-from">Robertson &ndash; &lt;a href="./reader/index.html?grammar_of_greek_nt_in_light_of_hist_research_robertson" target="blank">A Grammar of the Greek New Testament in the light of historical research. By A.T. Robertson. 4-th edition. 1924. New York: George H. Doran Company.&lt;/a>&lt;/span>
+
+&lt;span class="text-from">Winer &ndash; &lt;a href="./reader/index.html?treatise_on_grammar_of_nt_greek_winer" target="blank">A treatise on the grammar of New Testament Greek, regarded as a sure basis for New Testament exegesis. By dr. G. B. Winer. Translated from the German, with large additions and full indices, by rev. W. F. Moulton. Third edition, revised. (Ninth English edition.) 1882. Edinburgh: T. & T. Clark.&lt;/a>&lt;/span> 
+
+&lt;h2>References&lt;/h2>
+
+&lt;span class="line">&lt;span data-line-number="1:1" class="line-number">1:1&lt;/span>
+&lt;a data-grammar="treatise_on_grammar_of_nt_greek_winer" data-page="530">Winer 502&lt;/a>
+&lt;/span>
+
+&lt;span class="line">&lt;span data-line-number="1:1" class="line-number">1:1 sqq.&lt;/span>
+&lt;a data-grammar="treatise_on_grammar_of_nt_greek_winer" data-page="735">Winer 707&lt;/a>
+&lt;/span>
+
+&lt;span class="line">&lt;span data-line-number="1:2" class="line-number">1:2&lt;/span>
+&lt;a data-grammar="grammar_of_greek_nt_in_light_of_hist_research_robertson" data-page="310">Robertson 224&lt;/a>, 
+&lt;a data-grammar="treatise_on_grammar_of_nt_greek_winer" data-page="726">Winer 698&lt;/a>
+&lt;/span>`;
+
+// part of code has been cut out
+</pre>
+
+<p>Data file‘s name should be the same as resource shortname. Resource shotname is "nt_titus_grammar_refs_by_parsedclassics", so data file‘s name will be "nt_titus_grammar_refs_by_parsedclassics.js". Data file should be placed in the directory of the same name: /data/grammar_refs/nt_titus_grammar_refs_by_parsedclassics/ .</p>
+  
+<p>After doing this grammar references resource should work in sync with parsed text resource.</p>
+
+<p>Coding data file by hand is tedious. The work can be made more effective by using tools.</p>
+
+<p><a target="blank" href="../tools/grammar_refs_generator.html">Grammar references generator</a> tool is used to enter data of single grammar book and to generate data file:</p>
 
 
 
@@ -3904,75 +3955,6 @@ It is the duty of an apostle to propagate the faith, Romans 1:5.&mdash;&pi;ί&si
 
 
 <h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
-
-<h3 class="pc-anchor" id="h-grammar-references-transcribed_a">Grammar references (transcribed)</h3>
-
-<p>Creating resource of the type "grammar references" involves creating data file and image files of the grammar books. The data file contains links to image files of the scanned grammar books, so the latter should be created first.</p>
-
-<h4 class="pc-anchor" id="h-grammar-references-transcribed-creating-image-files_a">Creating image files</h4>
-
-<p>To create resource of the type "grammar references" you first need to have one or more scanned grammar books. To create a scanned grammar book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned book, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a> the sections on scanning a book, on converting PDF file to images, on batch renaming of files, on cropping images, on retouching images, on optimizing size of JPG files.</p>
-
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will list the scanned book in the file _scanned_books.js and upload image files to the server. About the file _scanned_books.js read in the section on <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>. The image files will be uploaded to the directory  named according to the key in the file _scanned_books.js . For example, in the file _scanned_books.js the key of the entry for A. T. Robertson's "Grammar of the New Testament in the light of historical research"  is "grammar_of_greek_nt_in_light_of_hist_research_robertson". That means that image files of this book should be uploaded to the directory /_scans/grammar_of_greek_nt_in_light_of_hist_research_robertson .</p>
-
-<p>After listing the book in the file _scanned_books.js and uploading the image files to the server, the book can be browsed using its key from the file _scanned_books.js in the URL:
-parsedclassics.com/reader/embedded_bookreader.html?grammar_of_greek_nt_in_light_of_hist_research_robertson</p>
-
-<h4 class="pc-anchor" id="h-grammar-references-creating-data-file">Creating data file</h4>
-
-<p>Data file uses certain formatting conventions.</p>
-
-<p>The file should contain "Grammars" heading and "References" heading both wrapped by "h2" tags. The heading "Grammars" should contain empty "span" tag having class attribute "v-title".</p>
-
-<p>Below the heading "Grammars" should be list of grammars. Earch item of the list should be wrapped by "span" tag having class attribute "text_from". Every list item should contain abbreviated name of the grammar on the left and its bibliographical data to the right, separated by n-dash. Bibliographical data should be wrapped by "a" tag, having the value "_blank" of the attribute "target" and the relative URL as the value of the attribute "href".</p>
-
-<p>Below the heading "References" should be list of references to grammars for the each line of the classical text. "span" tag having class attribute "verse" should wrap all references for the single line. "span" tag having class attribute "verse-number" should wrap verse number of the line. The same "span" element should also have as its class attribute the line class <a class="inner-link" data-anchor="h-parsed-text-transcribed-creating-data-file">as in data file of parsed text resource</a>.</p>
-
-<p>Each reference to the grammar book consists of abbreviated grammar name and page number. Abbreviated name and page number should be wrapped by "a" tag having attribute "data-grammar" and attribute "data-page". The value of the attribute "data-grammar" should be the key of the relevant grammar from the file _scanned_books.js. The value of the attribute "data-page" should be the number from the name of the image file (not the number of the page pictured!).</p>
-
-<p>HTML code formatted using these tags should be converted to string and made the second argument of the function "ParsedClassicsData._loadResource". The first argument of this function should be the value of the key "resource_shortname" from collection catalogue. Grammar references <a class="inner-link" data-anchor="h-grammar-references">resource shortname from Epistle to Philemon catalogue</a> is "nt_philemon_grammar_refs_by_parsedclassics", so this string will be the first argument.</p>
-
-<p>This way we get such data file:</p>
-
-<pre id="creating_grammar_references_datafile" class="prettyprint code_showarea">
-ParsedClassicsData._loadResource(&quot;nt_philemon_grammar_refs_by_parsedclassics&quot;,
-
-'&lt;h2&gt;&lt;span class=&quot;v-title&quot;&gt;&lt;/span&gt;Grammars&lt;/h2&gt;' +
-
-'&lt;span class=&quot;text_from&quot;&gt;Robertson &amp;ndash; &lt;a href=&quot;../reader/index.html?grammar_of_greek_nt_in_light_of_hist_research_robertson&quot; target=&quot;blank&quot;&gt;A Grammar of the Greek New Testament in the light of historical research. By A.T. Robertson. 4-th edition. 1924. New York: George H. Doran Company.&lt;/a&gt;&lt;/span&gt;' +
-
-'&lt;h2&gt;References&lt;/h2&gt;' +
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-2&quot;&gt;1:2&lt;/span&gt;' +
-' &lt;a data-grammar=&quot;grammar_of_greek_nt_in_light_of_hist_research_robertson&quot; data-page=&quot;301&quot;&gt;Robertson 215&lt;/a&gt;' +
-' &lt;/span&gt;' +
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-5&quot;&gt;1:5&lt;/span&gt;' +
-' &lt;a data-grammar=&quot;grammar_of_greek_nt_in_light_of_hist_research_robertson&quot; data-page=&quot;710&quot;&gt;Robertson 624&lt;/a&gt;,' +
-' &lt;a data-grammar=&quot;grammar_of_greek_nt_in_light_of_hist_research_robertson&quot; data-page=&quot;1286&quot;&gt;Robertson 1200&lt;/a&gt;' +
-' &lt;/span&gt;' +
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-9&quot;&gt;1:9&lt;/span&gt;' +
-' &lt;a data-grammar=&quot;grammar_of_greek_nt_in_light_of_hist_research_robertson&quot; data-page=&quot;287&quot;&gt;Robertson 201&lt;/a&gt;,' +
-' &lt;a data-grammar=&quot;grammar_of_greek_nt_in_light_of_hist_research_robertson&quot; data-page=&quot;796&quot;&gt;Robertson 710&lt;/a&gt;' +
-' &lt;/span&gt;' + 
-
-'&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-10&quot;&gt;1:10&lt;/span&gt;' +
-' &lt;a data-grammar=&quot;grammar_of_greek_nt_in_light_of_hist_research_robertson&quot; data-page=&quot;799&quot;&gt;Robertson 713&lt;/a&gt;,' +
-' &lt;a data-grammar=&quot;grammar_of_greek_nt_in_light_of_hist_research_robertson&quot; data-page=&quot;804&quot;&gt;Robertson 718&lt;/a&gt;' +
-' &lt;/span&gt;' +
-
-// part of code has been cut out
-
-&quot;&quot;
-
-);
-</pre>
-
-<p>Data file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. Grammar references <a class="inner-link" data-anchor="h-grammar-references">resource shortname from Epistle to Philemon catalogue</a> is "nt_philemon_grammar_refs_by_parsedclassics", so this should be data file‘s name. Data file should be placed in "grammar_references" directory: 
-/data/resources/grammar_references/nt_philemon_grammar_refs_by_parsedclassics.js</p>
-
-<p>After doing this grammar references resource should work in sync with parsed text resource.</p>
 
 <h3 class="pc-anchor" id="h-diagram-set-transcribed">Diagram set (transcribed)</h3>
 
