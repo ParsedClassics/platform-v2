@@ -119,7 +119,7 @@ nt_hebrews_grammar_refs_by_parsedclassics =
 <a data-grammar="grammar_of_greek_nt_in_light_of_hist_research_robertson" data-page="1082">Robertson 996</a>
 </span>
 
-<span class="line"><span data-line-number="2:2" class="line-number v2-2 v2-3 v2-4">2:2-4</span>
+<span class="line"><span data-line-number="2:2" class="line-number">2:2-4</span>
 <span data-line-number="2:3" class="line-number"></span>
 <span data-line-number="2:4" class="line-number"></span>
 <a data-grammar="grammar_of_greek_nt_in_light_of_hist_research_robertson" data-page="518">Robertson 432</a>
