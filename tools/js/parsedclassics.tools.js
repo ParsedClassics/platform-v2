@@ -3526,8 +3526,10 @@ var ParsedClassicsGrammarRefsGenerator = {
     ParsedClassicsGrammarRefsGenerator.fileNumOffset = $("#" + ParsedClassicsGrammarRefsGenerator.fileNumOffsetInputId).val().trim();
     ParsedClassicsGrammarRefsGenerator.scannedBookShortname = $("#" + ParsedClassicsGrammarRefsGenerator.scannedBookShortnameInputId).val().trim();
     ParsedClassicsGrammarRefsGenerator.scannedBookShorttitle = $("#" + ParsedClassicsGrammarRefsGenerator.scannedBookShorttitleInputId).val().trim();
-    collContent = $("#" + ParsedClassicsGrammarRefsGenerator.collContentInputId).val().trim();
-
+    collContent = $("#" + ParsedClassicsGrammarRefsGenerator.collContentInputId).val();
+		collContent = collContent.substr(collContent.indexOf('{'));
+		collContent = collContent.substr(0, collContent.lastIndexOf('}') + 1);
+	
     if (ParsedClassicsGrammarRefsGenerator.fileNumOffset === "") {
       // put message text inside message el
       msg_el.html("File number offset must be defined!");
@@ -3574,7 +3576,7 @@ var ParsedClassicsGrammarRefsGenerator = {
 
     // loop collection contents object
     Object.entries(collContent).forEach(([lineClass, lineNum]) => {
-      if (lineClass !== "v-title" && lineClass.indexOf("levelstart") !== 0  && lineClass.indexOf("levelend") !== 0) {
+      if (lineClass !== "title" && lineClass.indexOf("levelstart") !== 0  && lineClass.indexOf("levelend") !== 0) {
         ParsedClassicsGrammarRefsGenerator.inputsHTML += ParsedClassicsGrammarRefsGenerator.createInputsBlock(lineNum, lineClass);
       } 
     });
@@ -3598,14 +3600,14 @@ var ParsedClassicsGrammarRefsGenerator = {
     lineClass = typeof lineClass !== 'undefined' ? lineClass : "";
 
     html = `
-      <div class="${ParsedClassicsGrammarRefsGenerator.inputsBlockClass}">  
+      <div style="border: solid 1px silver; margin-top: 16px; padding: 8px" class="${ParsedClassicsGrammarRefsGenerator.inputsBlockClass}">  
         <div>
           <div style="float: left; width: 30%;" class="pc-padding-right-4">
-            Line(s)
-            <input type="text" value="${lineNum}" class="${ParsedClassicsGrammarRefsGenerator.lineInputClass} pc-width-100">
+            Line(s) collectively
+            <input style="margin-bottom: 8px;" type="text" value="${lineNum}" class="${ParsedClassicsGrammarRefsGenerator.lineInputClass} pc-width-100">
           </div>
           <div style="float: left; width: 70%;" class="pc-padding-left-4">
-            Line class(es)
+            Line(s) separately<div class="dialogue-close-wrapper"><div class="dialogue-close"><div class="dialogue-close-outer-btn"><div class="dialogue-close-btn" title="Close"><img class="dialogue-close-img" src="../img/close.svg"></div></div></div></div>
             <span class="resizable-input-v3"><input type="text" value="${lineClass}" class="${ParsedClassicsGrammarRefsGenerator.lineClassInputClass} pc-width-100"></span>
           </div>
         </div>
@@ -3637,7 +3639,7 @@ var ParsedClassicsGrammarRefsGenerator = {
 
     html = `
       <div style="text-align: right;">
-        <button class="${ParsedClassicsGrammarRefsGenerator.insertInputBlockBtnClass} w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Insert inputs block</button>
+        <button class="${ParsedClassicsGrammarRefsGenerator.insertInputBlockBtnClass} w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Insert inputs block below</button>
       </div>
     `;
 
@@ -3657,19 +3659,25 @@ var ParsedClassicsGrammarRefsGenerator = {
       block = block.parent();
     }
 
-    html = ParsedClassicsGrammarRefsGenerator.createInputsBlock();
+    html = $(ParsedClassicsGrammarRefsGenerator.createInputsBlock());
+		html.find('.dialogue-close-wrapper').show();
+		html.find('.dialogue-close-btn').bind('click', () => html.hide(400));
 
-    block.after(html);
+    block.after(html.show(400));
   },
 
   createOutputCodeBlock: function(line, lineClass, pagenum) {
-    var html, pagesHtml, pagenumArr, pagenum, filenum, num, comma;
+    var html, pagesHtml, pagenumArr, pagenum, filenum, num, comma, lineClassArr, lineClassStr;
 
     // define vars
     pagesHtml = "";
+		lineClassStr = "";
 
     // form line class string
-    lineClass = lineClass.split("|").join(" ");
+    lineClassArr = lineClass.split("|");
+		for (var i = 0; i < lineClassArr.length; i++) {
+			lineClassStr += `<span data-line-number="${lineClassArr[i]}" class="line-number">${i == 0 ? line: ""}</span>\n`;
+		}
 
     // form pagenum arr
     pagenumArr = pagenum.split("|");
@@ -3681,7 +3689,7 @@ var ParsedClassicsGrammarRefsGenerator = {
       pagesHtml += `<a data-grammar="${ParsedClassicsGrammarRefsGenerator.scannedBookShortname}" data-page="${filenum}">${ParsedClassicsGrammarRefsGenerator.scannedBookShorttitle} ${pagenumArr[i]}</a>${comma}\n`;
     }
 
-    html = `<span class="verse"><span class="verse-number ${lineClass}">${line}</span>\n${pagesHtml}</span>\n\n`;
+    html = `<span class="line">\n${lineClassStr}${pagesHtml}</span>\n\n`;
 
     return html;
   },
@@ -3714,6 +3722,9 @@ var ParsedClassicsGrammarRefsGenerator = {
       line = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsGrammarRefsGenerator.lineInputClass).val());
       lineClass = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsGrammarRefsGenerator.lineClassInputClass).val());
       pagenum = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsGrammarRefsGenerator.filenameInputClass).val());
+			console.log('line', line);
+			console.log('lineClass', lineClass);
+			console.log('pagenum', pagenum);
       if (line && lineClass && pagenum) {
         html += ParsedClassicsGrammarRefsGenerator.createOutputCodeBlock(line, lineClass, pagenum);
       }

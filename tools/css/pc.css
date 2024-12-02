@@ -323,6 +323,51 @@ a:hover {
   text-align: right;
 }
 
+.dialogue-close-wrapper {
+  float: right;
+  display: none;
+}
+
+.dialogue-close {
+  display: flex;
+  width: 20px;
+  height: 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialogue-close-outer-btn{
+  display: inline-block;
+}
+
+.dialogue-close-btn {
+  display: flex;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  padding: 4px;
+  border-radius: 3px;
+  transition: opacity 0s;
+  user-select: none;
+}
+.dialogue-close-img {
+  width: 8px;
+  height: 8px;
+}
+
+.dialogue-close-btn:active {
+  opacity: 0.5;
+}
+
+.dialogue-close-btn:hover {
+  background-color: #616161;
+}
+
+.dialogue-close-btn:hover .dialogue-close-img {
+  filter: brightness(0) invert(1);
+}
+
 /* DOCS styles */
 
 #docs #logo {
