@@ -3927,7 +3927,25 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>Coding data file by hand is tedious. The work can be made more effective by using tools.</p>
 
-<p><a target="blank" href="../tools/grammar_refs_generator.html">Grammar references generator</a> tool is used to enter data of single grammar book and to generate data file:</p>
+<p><a target="blank" href="../tools/grammar_refs_generator.html">Grammar references generator</a> tool is used to generate data file. Let's use this tool to create data file containing references to apostle Paul's <em>Epistle to Titus</em> found in Robertson's "Grammar of the New Testament in the light of historical research":</p>
+
+<p><img src="img2/grammar_refs_typed_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the field "File number offset" should be a number expressing the difference between the number of the page in the image file and the number in the name of the image file. Here the value is "86" beacause e.g. the page 224 is pictured in the file whose name is page0310.jpg . </p>
+
+<p>The value of the field "Scanned book shortname" should be index of the entry of the grammar book from _scans.php file.</p>
+
+<p>The value of the field "Scanned book shorttile" should be short string (usually author's name) which respresents the grammar book. It should be the same as was used in the Grammars list as described in this section above.</p>
+
+<p>The value of the field "Collection content object" should be the code of the contens file of the parsed text resource which is used as collection's contents.</p>
+
+<p>After entering such values the Load button should be clicked. This will result into input blocks being displayed below the heading "Grammar references data inputs", one input block for each line:</p>
+
+<p><img src="img2/grammar_refs_typed_02.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>Each inputs block contains three fields and a button "Insert inputs block below". Clicking such button will result into new inputs block with empty fields created below current block. Newly created inputs block can be removed by clicking Close button in top right corner.</p>
+
+<p>Let's enter some values in the fields of such inputs blocks:</p>
 
 
 
