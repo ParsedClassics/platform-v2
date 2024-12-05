@@ -3777,6 +3777,8 @@ var ParsedClassicsGrammarRefsSupplementer = {
 
     // get code from textarea
     code = inputTextarea.val();
+		code = code.substr(code.indexOf('`') + 1);
+		code = code.substr(0, code.lastIndexOf('`'));
 
     // trim code
 		code = $.trim(code);
@@ -3798,6 +3800,9 @@ var ParsedClassicsGrammarRefsSupplementer = {
 
     // display refrerences inside container
 		showArea.html(code);
+		// remove unneded headings and text from info
+		showArea.find('h2').remove();
+		showArea.find('span.text-from').remove();
 
     // show container
 		showArea.show();
@@ -3903,11 +3908,13 @@ var ParsedClassicsGrammarRefsSupplementer = {
       certainLine = $(additionalLines[i]);
       // find line number
       lineNum = certainLine.find("span." + ParsedClassicsVars.verseNumberClass).text();
+			console.log('lineNum', lineNum);
       // find in references to be supplemented the line having the same line number
       initialLineToSupplement = initialLines.filter(function() { return $(this).find("span." + ParsedClassicsVars.verseNumberClass).text() === lineNum; })
       if (initialLineToSupplement.length == 1) {
-        // get html of lite to be supplemented
+        // get html of line to be supplemented
         initialLineToSupplementHtml = $.trim(initialLineToSupplement.html());
+				console.log('initialLineToSupplementHtml', initialLineToSupplementHtml);
         // clone additional line
         additionalLineClone = certainLine.clone(true);
         //remove line number from cloned additional line
@@ -3989,11 +3996,11 @@ var ParsedClassicsGrammarRefsSupplementer = {
         // get anchor text and color it in "success" color
         anchorText = $(anchorEls[j]).addClass("w3-pale-green").text();
         // get anchor having the same text from relevant initial line 
-        anchorElFromInitialLine = initialLineNeeded.find("a").filter(`:contains(${anchorText})`);
+        anchorElFromInitialLine = initialLineNeeded.find("a").filter(function(){return $(this).text() == anchorText}); // `:contains(${anchorText})`
         // color found anchor in "success" color
         anchorElFromInitialLine.addClass("w3-pale-green");
         // get anchor having the same text from relevant additional line 
-        anchorElFromAdditionalLine = additionalLineNeeded.find("a").filter(`:contains(${anchorText})`);
+        anchorElFromAdditionalLine = additionalLineNeeded.find("a").filter(function(){return $(this).text() == anchorText}); // `:contains(${anchorText})`
         // color found anchor in "success" color
         anchorElFromAdditionalLine.addClass("w3-pale-green");
 
