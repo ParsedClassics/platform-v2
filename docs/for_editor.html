@@ -3939,7 +3939,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>The value of the field "Collection content object" should be the code of the contens file of the parsed text resource which is used as collection's contents.</p>
 
-<p>After entering such values the Load button should be clicked. This will result into input blocks being displayed below the heading "Grammar references data inputs", one input block for each line:</p>
+<p>After entering such values the button "Load" should be clicked. This will result into input blocks being displayed below the heading "Grammar references data inputs", one input block for each line:</p>
 
 <p><img src="img2/grammar_refs_typed_02.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
@@ -3947,6 +3947,37 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>Let's enter some values in the fields of such inputs blocks:</p>
 
+<p><img src="img2/grammar_refs_typed_03.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>In the first block in the field "Line(s) collectively" line range "1:1-3" was entered. I necessitates to enter pipe separated line numbers from that range in the field "Line(s) separately". In the field "Page" was entered page number of the grammar book which refers to that range of lines in <em>Epistle to Titus</em>.</p>
+
+<p>The second block was inserted by clicking the button "Insert inputs block below" in the first block. The value of the field "Line(s) collectively" is "1:1 f." and refers to range of lines, but the range is not explicitely defined, so in the field "Line(s) separately" is enough to enter the same line number "1:1". In the field "Page" was entered page number of the grammar book which refers to the "1:1 f." range of lines.</p>
+
+<p>In the third block in the field "Pages" was entered pipe delimited series of pages of grammar book which refer to the line "1:2".</p>
+
+<p>Having entered the values for all lines for which exist references in the grammar book, click the button "Generate code" and the code will be outputted in the textarea "Grammar references code".</p>
+
+<p>The code generated should, as described above, made the value of the variable "nt_titus_grammar_refs_by_parsedclassics" and saved in the file of the same name.</p>
+
+<h4 class="pc-anchor" id="h-grammar-references-supplementing-data-file">Creating data file</h4>
+
+<p>I previous section using a target="blank" href="../tools/grammar_refs_generator.html">Grammar references generator</a> tool we created data file which contains references only to one grammar book. What should be done if we need to create grammar references resource which contains references to two or more grammar books? In such case we can use <a target="_blank" href="../tools/grammar_refs_supplementer.html">Grammar references supplementer</a> script.</p>
+
+<p>In order to use it we first need to create two data files, one containing references to one grammar book, and other containing references to second grammar book. Then the form should be filled:</p>
+
+<p><img src="img2/grammar_refs_typed_04.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the field "Grammar references to be supplemented code" should be the code containing the references to one grammar book. Here the code entered contains references to Robertson's  "Grammar of the Greek New Testament in the light of historical research".</p>
+
+<p>The value of the field "Grammar references to be added code" should be the code containing the references to second grammar book. Here the code entered contains references to Winer's "Treatise on the grammar of New Testament Greek".</p>
+
+<p>Having entered such values in these fields we should click the buttons "Load grammar refs" below these fields. This will result into fererences displayed below the headings "Grammar references to be supplemented" and "Grammar references to be added".</p>
+
+<p>After that the button "Supplement grammar refs" should be clicked. This will result into three things: (a) the code combining references from both pieces of code will be generated and outputted into "Grammar references code" textarea; (b) part of code containing references to the second grammar book which the script was not able to include in the combined code will be outputted into "Grammar references not added code" textarea; (c) combined references will be displayed below the heading "Grammar references supplemented".</p>
+
+<p>Now the button "Check for completeness" should be clicked. It will result in references which are included into combined code being highlighted green and references which are not included being highlighted red.</p>
+
+<p>It remains to analyze the code from "Grammar references not added code" textarea and include manually it piece by piece ito combined code. Then combined code should be made the value of of the variable "nt_titus_grammar_refs_by_parsedclassics" and saved in the file of the same name as described in previous section.</p>
 
 
 
