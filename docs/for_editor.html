@@ -3864,6 +3864,105 @@ It is the duty of an apostle to propagate the faith, Romans 1:5.&mdash;&pi;ί&si
 
 <p>After doing this commentary resource should work in sync with parsed text resource.</p>
 
+<h3 class="pc-anchor" id="h-commentary-references-transcribed">Commentary references (transcribed)</h3>
+
+<p>Creating resource of the type "commentary references" involves creating data file and image files of the commentary books. The data file contains links to image files of the scanned commentary books, so the latter should be created first.</p>
+
+<h4 class="pc-anchor" id="h-commentary-references-transcribed-creating-image-files">Creating image files</h4>
+
+<p>To create resource of the type "commentary references" you first need to have one or more scanned commentary (collection of scholia) books. To create a scanned commentary book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server.</p>
+
+<p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
+
+<p>For example, in the file _scanned_books.js the key of the entry for K. Staab's "Pauluskommentare aus der Griechischen Kirche"  is "staab_pauluskommentare_aus_griechishen_kirche". That means that image files of this book were uploaded to the directory /_scans/staab_pauluskommentare_aus_griechishen_kirche/ and can be browsed using the URL the URL parsedclassics.com/reader/embedded_bookreader.html?staab_pauluskommentare_aus_griechishen_kirche .</p>
+
+<h4 class="pc-anchor" id="h-commentary-references-creating-data-file">Creating data file</h4>
+
+<p>Data file uses certain formatting conventions.</p>
+
+<p>The file should contain "Commentaries" heading and "References" heading both wrapped by "h2" tags.</p>
+
+<p>Below the heading "Commentaries" should be list of commentaries. Each item of the list should be wrapped by "span" tag having class attribute "text_from". Every list item should contain abbreviated name of the commentary book (usually author's surname) on the left and its bibliographical data to the right, separated by n-dash. Bibliographical data should be wrapped by "a" tag, having the value "_blank" of the attribute "target" and the relative URL as the value of the attribute "href".</p>
+
+<p>Below the heading "References" should be list of references to commentaries for the each line of the classical text. "span" tag having class attribute "line" should wrap all references for the single line. "span" tag having class attribute "line-number" should wrap line number of the line. The same "span" element should also have line number as the value of its "data-line-number" attribute.</p>
+
+<p>Each reference to the commentary book consists of commentary author name, abbreviated name of commentary book in brackets and page number. Commentary author name, abbreviated name of commentary book in brackets and page number should be wrapped by "a" tag having attribute "data-commentary" and attribute "data-page". The value of the attribute "data-commentary" should be the key of the relevant grammar book from the file _scanned_books.js. The value of the attribute "data-page" should be the number from the name of the image file (not the number of the page pictured!).</p>
+
+<p>HTML code formatted using these tags should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We listed [LINK TO BE ADDED] commentary references resource whose resource shortname is "nt_titus_commentary_refs_by_parsedclassics", so this will be variable's name.</p>
+
+<p>This way we get such data file:</p>
+
+<pre id="creating_commentary_references_datafile" class="prettyprint code_showarea">
+nt_romans_commentary_refs_by_parsedclassics = 
+
+`&lt;h2>Commentaries&lt;/h2> 
+
+&lt;span class="text-from">Staab &ndash; &lt;a href="./reader/index.html?staab_pauluskommentare_aus_griechishen_kirche" target="blank">Pauluskommentare aus der griechishen Kirche. Aus Katenenhandschriften gesammelt und herausgegeben. Von Dr. Karl Staab. 1933. Münster i. W.: Verlag der Aschendorfschen Verlagsbuchhandlung.&lt;/a>&lt;/span> 
+
+&lt;h2>References&lt;/h2>
+
+&lt;span class="line">&lt;span data-line-number="1:1" class="line-number">1:1&lt;/span>
+&lt;a data-commentary="staab_pauluskommentare_aus_griechishen_kirche" data-page="98">Eusebius von Emesa (Staab 46)&lt;/a>,
+&lt;a data-commentary="staab_pauluskommentare_aus_griechishen_kirche" data-page="165">Theodor von Mopsuestia (Staab 113)&lt;/a>,
+&lt;a data-commentary="staab_pauluskommentare_aus_griechishen_kirche" data-page="265">Severian von Gabala (Staab 213)&lt;/a>,
+&lt;a data-commentary="staab_pauluskommentare_aus_griechishen_kirche" data-page="522">Photius von Konstantinopel (Staab 470)&lt;/a>
+&lt;/span>
+
+&lt;span class="line">&lt;span data-line-number="1:2" class="line-number">1:2&lt;/span>
+&lt;a data-commentary="staab_pauluskommentare_aus_griechishen_kirche" data-page="109">Apollinaris von Laodicea (Staab 57)&lt;/a>,
+&lt;a data-commentary="staab_pauluskommentare_aus_griechishen_kirche" data-page="265">Severian von Gabala (Staab 213)&lt;/a>,
+&lt;a data-commentary="staab_pauluskommentare_aus_griechishen_kirche" data-page="522">Photius von Konstantinopel (Staab 470)&lt;/a>
+&lt;/span>
+
+&lt;span class="line">&lt;span data-line-number="1:3" class="line-number">1:3-4&lt;/span>
+&lt;span data-line-number="1:4" class="line-number">&lt;/span>
+&lt;a data-commentary="staab_pauluskommentare_aus_griechishen_kirche" data-page="109">Apollinaris von Laodicea (Staab 57)&lt;/a>
+&lt;/span>
+
+&lt;span class="line">&lt;span data-line-number="1:3" class="line-number">1:3-5&lt;/span>
+&lt;span data-line-number="1:4" class="line-number">&lt;/span>
+&lt;span data-line-number="1:5" class="line-number">&lt;/span>
+&lt;a data-commentary="staab_pauluskommentare_aus_griechishen_kirche" data-page="522">Photius von Konstantinopel (Staab 470)&lt;/a>
+&lt;/span>`;
+// part of code has been cut out
+</pre>
+
+<p>Data file‘s name should be the same as resource shortname. Resource shortname is "nt_titus_commentary_refs_by_parsedclassics", so data file‘s name will be "nt_titus_commentary_refs_by_parsedclassics.js". Data file should be placed in the directory of the same name: /data/grammar_refs/nt_titus_commentary_refs_by_parsedclassics/ .</p>
+  
+<p>After doing this commentary references resource should work in sync with parsed text resource.</p>
+
+<p>Coding data file by hand is tedious. The work can be made more effective by using tools.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h3 class="pc-anchor" id="h-grammar-references-transcribed">Grammar references (transcribed)</h3>
 
 <p>Creating resource of the type "grammar references" involves creating data file and image files of the grammar books. The data file contains links to image files of the scanned grammar books, so the latter should be created first.</p>
@@ -3921,7 +4020,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 // part of code has been cut out
 </pre>
 
-<p>Data file‘s name should be the same as resource shortname. Resource shotname is "nt_titus_grammar_refs_by_parsedclassics", so data file‘s name will be "nt_titus_grammar_refs_by_parsedclassics.js". Data file should be placed in the directory of the same name: /data/grammar_refs/nt_titus_grammar_refs_by_parsedclassics/ .</p>
+<p>Data file‘s name should be the same as resource shortname. Resource shortname is "nt_titus_grammar_refs_by_parsedclassics", so data file‘s name will be "nt_titus_grammar_refs_by_parsedclassics.js". Data file should be placed in the directory of the same name: /data/grammar_refs/nt_titus_grammar_refs_by_parsedclassics/ .</p>
   
 <p>After doing this grammar references resource should work in sync with parsed text resource.</p>
 
@@ -3959,7 +4058,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>The code generated should, as described above, made the value of the variable "nt_titus_grammar_refs_by_parsedclassics" and saved in the file of the same name.</p>
 
-<h4 class="pc-anchor" id="h-grammar-references-supplementing-data-file">Creating data file</h4>
+<h4 class="pc-anchor" id="h-grammar-references-supplementing-data-file">Supplementing data file</h4>
 
 <p>I previous section using a target="blank" href="../tools/grammar_refs_generator.html">Grammar references generator</a> tool we created data file which contains references only to one grammar book. What should be done if we need to create grammar references resource which contains references to two or more grammar books? In such case we can use <a target="_blank" href="../tools/grammar_refs_supplementer.html">Grammar references supplementer</a> script.</p>
 
