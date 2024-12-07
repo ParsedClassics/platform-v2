@@ -366,7 +366,7 @@ div[data-resource-type="commentary_refs"][data-scanned-or-typed="typed"] .line:n
   padding-bottom: 16px;
 }
 
-div[data-resource-type="commentary_refs"][data-scanned-or-typed="typed"] a[data-grammar] {
+div[data-resource-type="commentary_refs"][data-scanned-or-typed="typed"] a[data-commentary] {
   color: #3176c4;
   text-decoration: none;
   cursor: pointer;

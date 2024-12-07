@@ -921,13 +921,13 @@ ParsedClassicsScannedBookMode = {
 
 ParsedClassicsRefLink = {
 
-  refLinkClick: function(event, refsContainerRightPart) {
+  refLinkClick: function(event, refsContainerRightPart, bookAttrName) {
 
-    // find clicked link
+    // find clicked link 
     const clickedLink = $(event.target);
     
     // find grammar book's resource shortname
-    const scannedBook = clickedLink.attr(ParsedClassicsAppVars.grammarBookAttr);
+    const scannedBook = clickedLink.attr(bookAttrName);
     
     // find grammar book's page
     const bookPage = clickedLink.attr(ParsedClassicsAppVars.grammarPageAttr);

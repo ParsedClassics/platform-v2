@@ -75,6 +75,7 @@ const ParsedClassicsAppVars = {
   grammarRefsContainerLeftPartInnerClass: "grammar-refs-split-left-inner",
   grammarRefsContainerRightPartClass: "grammar-refs-split-right",
   grammarBookAttr: "data-grammar",
+  commentaryBookAttr: "data-commentary",
   grammarPageAttr: "data-page",
   // commentary refs container
   commentaryRefsContainerLeftPartClass: "commentary-refs-split-left",

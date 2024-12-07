@@ -261,7 +261,7 @@ const ParsedClassicsContentContainers = {
           // generate html of grammar refs text resource and put it into left part of splitted container
           ParsedClassicsContentContainers.createCommentaryRefsResourceHtml(commentaryRefsContainerLeftPart, collectionDef, resourceDef, resourceData);
           // delegate "click" event from <a> els to left part of splitted container
-          commentaryRefsContainerLeftPart.delegate('a', 'click', (event) => ParsedClassicsRefLink.refLinkClick(event, commentaryRefsContainerRightPart));
+          commentaryRefsContainerLeftPart.delegate('a', 'click', (event) => ParsedClassicsRefLink.refLinkClick(event, commentaryRefsContainerRightPart, ParsedClassicsAppVars.commentaryBookAttr));
           // scroll to the selected line
           ParsedClassicsContentContainers.scrollToLineResourceLoading(commentaryRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
           break;
@@ -272,7 +272,7 @@ const ParsedClassicsContentContainers = {
           // generate html of grammar refs text resource and put it into left part of splitted container
           ParsedClassicsContentContainers.createGrammarRefsResourceHtml(grammarRefsContainerLeftPart, collectionDef, resourceDef, resourceData);
           // delegate "click" event from <a> els to left part of splitted container
-          grammarRefsContainerLeftPart.delegate('a', 'click', (event) => ParsedClassicsRefLink.refLinkClick(event, grammarRefsContainerRightPart));
+          grammarRefsContainerLeftPart.delegate('a', 'click', (event) => ParsedClassicsRefLink.refLinkClick(event, grammarRefsContainerRightPart, ParsedClassicsAppVars.grammarBookAttr));
           // scroll to the selected line
           ParsedClassicsContentContainers.scrollToLineResourceLoading(grammarRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
           break;
