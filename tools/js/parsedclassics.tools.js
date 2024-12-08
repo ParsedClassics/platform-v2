@@ -3470,6 +3470,316 @@ var ParsedClassicsUrlListGenerator = {
 
 /*
 
+Commentary references generator script 
+
+to generate code of Commentary refs resource
+
+*/
+
+var ParsedClassicsCommentaryRefsGenerator = {
+
+	loadInputsButtonId: "load-button",
+
+  generateButtonId: "generate-button",
+
+  inputsAreaId: "data-inputs-area",
+
+  inputsArea: null,
+
+  inputsHTML: "",
+
+  inputsBlockClass: "inputs-block",
+
+  lineInputClass: "line-input",
+
+  lineClassInputClass: "line-class",
+
+  filenameInputClass: "filename-input",
+
+  fileNumOffsetInputId: "file-num-offset-input",
+
+  fileNumOffset: "",
+
+  scannedBookShortnameInputId: "scanned-book-shortname-input",
+
+  scannedBookShortname: "",
+
+  scannedBookShorttitleInputId: "scanned-book-shorttitle-input",
+
+  scannedBookShorttitle: "",
+
+	commentatorsNamesInputId: "commentators-names-input",
+
+	commentatorsNamesSelectboxClass: "commentators-names-selectbox",
+
+  collContentInputId: "coll-content-input",
+
+  insertInputBlockBtnClass: "insert-input-block-btn",
+
+  commentaryRefsOutputId: "grammar-refs-output",
+
+	commentatorsSelectboxHtml: "",
+
+	loadInputs: function(e) {
+		var commentatorsNames, commentatorsNamesArr, commentatorsSelectboxHtml, collContent, msg_el;
+
+    e.preventDefault();
+
+    // get message el
+    msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+
+		// get input data
+    ParsedClassicsCommentaryRefsGenerator.fileNumOffset = $("#" + ParsedClassicsCommentaryRefsGenerator.fileNumOffsetInputId).val().trim();
+    ParsedClassicsCommentaryRefsGenerator.scannedBookShortname = $("#" + ParsedClassicsCommentaryRefsGenerator.scannedBookShortnameInputId).val().trim();
+    ParsedClassicsCommentaryRefsGenerator.scannedBookShorttitle = $("#" + ParsedClassicsCommentaryRefsGenerator.scannedBookShorttitleInputId).val().trim();
+		commentatorsNames = $("#" + ParsedClassicsCommentaryRefsGenerator.commentatorsNamesInputId).val().trim();
+		commentatorsNamesArr = commentatorsNames ? commentatorsNames.split("|") : [];
+    collContent = $("#" + ParsedClassicsCommentaryRefsGenerator.collContentInputId).val();
+		collContent = collContent.substr(collContent.indexOf('{'));
+		collContent = collContent.substr(0, collContent.lastIndexOf('}') + 1);
+
+		if (ParsedClassicsCommentaryRefsGenerator.fileNumOffset === "") {
+      // put message text inside message el
+      msg_el.html("File number offset must be defined!");
+      // display modal dialogue
+      ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+      return;
+    }
+
+		if (ParsedClassicsCommentaryRefsGenerator.scannedBookShortname === "") {
+      // put message text inside message el
+      msg_el.html("Scanned book shortname must be defined!");
+      // display modal dialogue
+      ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+      return;
+    }
+
+		if (ParsedClassicsCommentaryRefsGenerator.scannedBookShorttitle === "") {
+      // put message text inside message el
+      msg_el.html("Scanned book shorttitle must be defined!");
+      // display modal dialogue
+      ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+      return;
+    }
+
+		if (commentatorsNamesArr.length === 0) {
+			// put message text inside message el
+      msg_el.html("Commentators names list must be defined!");
+      // display modal dialogue
+      ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+      return;
+		}
+
+		if (collContent === "") {
+      // put message text inside message el
+      msg_el.html("Collection content must be defined!");
+      // display modal dialogue
+      ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+      return;
+    }
+
+		// parse JSON of collection content
+    try {
+      collContent = JSON.parse(collContent);
+    }
+    catch(err) {
+       // put message text inside message el
+      msg_el.html(err.message);
+      // display modal dialogue
+      ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+      return;
+    }
+
+		ParsedClassicsCommentaryRefsGenerator.commentatorsSelectboxHtml = ParsedClassicsCommentaryRefsGenerator.createCommentatorsSelectbox(commentatorsNamesArr); 
+
+		// loop collection contents object
+    Object.entries(collContent).forEach(([lineClass, lineNum]) => {
+      if (lineClass !== "title" && lineClass.indexOf("levelstart") !== 0  && lineClass.indexOf("levelend") !== 0) {
+        ParsedClassicsCommentaryRefsGenerator.inputsHTML += ParsedClassicsCommentaryRefsGenerator.createInputsBlock(lineNum, lineClass); 
+      } 
+    });
+
+		// get inputs area
+    inputsArea = $("#" + ParsedClassicsCommentaryRefsGenerator.inputsAreaId);
+		// put inputs html into inputs area
+    inputsArea.append(ParsedClassicsCommentaryRefsGenerator.createInputsBlockFirst()); 
+    inputsArea.append(ParsedClassicsCommentaryRefsGenerator.inputsHTML);
+
+		// delegate "click" evt from els having class "insert-input-block-btn" to inputs area
+    inputsArea.delegate("." + ParsedClassicsCommentaryRefsGenerator.insertInputBlockBtnClass, "click", ParsedClassicsCommentaryRefsGenerator.insertInputsBlock);
+	},
+
+	createCommentatorsSelectbox: function(commentatorsNamesArr) {
+		var selectboxHtml;
+		selectboxHtml = `<select class="${ParsedClassicsCommentaryRefsGenerator.commentatorsNamesSelectboxClass} pc-float-left pc-width-100 w3-padding-small">`;
+		selectboxHtml += '<option>------</option>';
+		commentatorsNamesArr.forEach(name => selectboxHtml += `<option value="${name}">${name}</option>`);
+		selectboxHtml += '<select>';
+		return selectboxHtml;
+	},
+
+	createInputsBlock: function(lineNum, lineClass) {
+    var html;
+		
+    // default values of lineClass and LineNum is empty string
+    lineNum = typeof lineNum !== 'undefined' ? lineNum : "";
+    lineClass = typeof lineClass !== 'undefined' ? lineClass : "";
+
+    html = `
+      <div style="border: solid 1px silver; margin-top: 16px; padding: 8px" class="${ParsedClassicsCommentaryRefsGenerator.inputsBlockClass}">  
+        <div>
+          <div style="float: left; width: 30%;" class="pc-padding-right-4">
+            Line(s) collectively
+            <input style="margin-bottom: 8px;" type="text" value="${lineNum}" class="${ParsedClassicsCommentaryRefsGenerator.lineInputClass} pc-width-100">
+          </div>
+          <div style="float: left; width: 70%;" class="pc-padding-left-4">
+            Line(s) separately<div class="dialogue-close-wrapper"><div class="dialogue-close"><div class="dialogue-close-outer-btn"><div class="dialogue-close-btn" title="Close"><img class="dialogue-close-img" src="../img/close.svg"></div></div></div></div>
+            <span class="resizable-input-v3"><input type="text" value="${lineClass}" class="${ParsedClassicsCommentaryRefsGenerator.lineClassInputClass} pc-width-100"></span>
+          </div>
+        </div>
+        <div>
+					<div style="float: left; width: 30%;" class="pc-padding-right-4">
+						Commentator
+						${ParsedClassicsCommentaryRefsGenerator.commentatorsSelectboxHtml}
+					</div>
+					<div style="float: left; width: 70%;" class="pc-padding-left-4">
+          	Page(s)
+          	<span class="resizable-input-v3"><input type="text" class="${ParsedClassicsCommentaryRefsGenerator.filenameInputClass} pc-width-100"></span>
+					</div>
+        </div>
+				 ${ParsedClassicsCommentaryRefsGenerator.createButtonBlock()}
+      </div>
+    `;
+
+    return html;
+  },
+
+	createInputsBlockFirst: function() {
+    var html;
+
+    html = `
+      <div class="${ParsedClassicsCommentaryRefsGenerator.inputsBlockClass}">
+        ${ParsedClassicsCommentaryRefsGenerator.createButtonBlock()}
+      </div>
+    `;
+
+    return html;
+  },
+
+	createButtonBlock: function() {
+    var html;
+
+    html = `
+		<div style="text-align: right;">	
+			<button class="${ParsedClassicsCommentaryRefsGenerator.insertInputBlockBtnClass} w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Insert inputs block below</button>
+		</div>
+    `;
+
+    return html;
+  },
+
+	createOutputCodeBlock: function(line, lineClass, pagenum, commentator) {
+		var html, pagesHtml, pagenumArr, pagenum, filenum, num, comma, lineClassArr, lineClassStr;
+
+		// define vars
+    pagesHtml = "";
+		lineClassStr = "";
+
+		// form line class string
+    lineClassArr = lineClass.split("|");
+		for (var i = 0; i < lineClassArr.length; i++) {
+			lineClassStr += `<span data-line-number="${lineClassArr[i]}" class="line-number">${i == 0 ? line: ""}</span>\n`;
+		}
+
+		// form pagenum arr
+    pagenumArr = pagenum.split("|");
+		// loop filenum arr
+    for (var i = 0; i < pagenumArr.length; i++) {
+      num = pagenumArr[i].replace(/[^0-9]/g,'');
+      filenum = parseInt(num) + parseInt(ParsedClassicsCommentaryRefsGenerator.fileNumOffset);
+      comma = i < pagenumArr.length - 1 ? "," : "";
+      pagesHtml += `<a data-commentary="${ParsedClassicsCommentaryRefsGenerator.scannedBookShortname}" data-page="${filenum}">${commentator} (${ParsedClassicsCommentaryRefsGenerator.scannedBookShorttitle} ${pagenumArr[i]})</a>${comma}\n`;
+    }
+
+		html = `<span class="line">\n${lineClassStr}${pagesHtml}</span>\n\n`;
+
+    return html;
+	},
+
+	insertInputsBlock: function(e) {
+		var btn, html, block;
+
+    e.preventDefault();
+
+    btn = $(e.target);
+
+    // get inputs block
+    block = btn;
+    while (!block.hasClass(ParsedClassicsCommentaryRefsGenerator.inputsBlockClass)) {
+      block = block.parent();
+    }
+
+		html = $(ParsedClassicsCommentaryRefsGenerator.createInputsBlock());
+		html.find('.dialogue-close-wrapper').show();
+		html.find('.dialogue-close-btn').bind('click', () => html.hide(400));
+
+    block.after(html.show(400));
+	},
+
+	generate: function(e) {
+		var inputsArea, inputsBlocks, html, line, lineClass, pagenum, commentator, msgEl, commentaryRefsOutputTextarea;
+
+		e.preventDefault();
+
+    // define vars
+    html = "";
+
+    // get inputs area
+    inputsArea = $("#" + ParsedClassicsCommentaryRefsGenerator.inputsAreaId);
+    // get inputs blocks
+    inputsBlocks = inputsArea.find("." + ParsedClassicsCommentaryRefsGenerator.inputsBlockClass);
+
+		if (inputsBlocks.length === 0) {
+      // get message el
+      msgEl = $("#" + ParsedClassicsVars.errorMsgTextElId);
+      // put message text inside message el
+      msgEl.html("No grammar references data inputs found!");
+      // display modal dialogue
+      ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+      return;
+    }
+
+		// loop inputs blocks
+    for (var i = 0; i < inputsBlocks.length; i++) {
+      line = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsCommentaryRefsGenerator.lineInputClass).val());
+      lineClass = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsCommentaryRefsGenerator.lineClassInputClass).val());
+      pagenum = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsCommentaryRefsGenerator.filenameInputClass).val());
+			commentator = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsCommentaryRefsGenerator.commentatorsNamesSelectboxClass).val());
+      if (line && lineClass && pagenum && commentator) {
+        html += ParsedClassicsCommentaryRefsGenerator.createOutputCodeBlock(line, lineClass, pagenum, commentator);
+      }
+    }
+
+		// get output textarea
+    commentaryRefsOutputTextarea = $("#" + ParsedClassicsCommentaryRefsGenerator.commentaryRefsOutputId);
+    commentaryRefsOutputTextarea.val(html);
+
+	},
+
+	init: function() {
+    var loadInputsButton, generateButton;
+
+    loadInputsButton = $("#" + ParsedClassicsCommentaryRefsGenerator.loadInputsButtonId);
+    generateButton = $("#" + ParsedClassicsCommentaryRefsGenerator.generateButtonId);
+
+    loadInputsButton.bind("click", ParsedClassicsCommentaryRefsGenerator.loadInputs);
+    generateButton.bind("click", ParsedClassicsCommentaryRefsGenerator.generate);
+  }
+
+}
+
+/*
+
 Grammar references generator script 
 
 to generate code of Grammar refs resource
@@ -3515,7 +3825,7 @@ var ParsedClassicsGrammarRefsGenerator = {
   grammarRefsOutputId: "grammar-refs-output",
 
   loadInputs: function(e) {
-    var inputsArea, inputsHTML, resShortnameInput, fileNumOffsetInput, scannedBookShortnameInput, collContentInput, msg_el;
+    var inputsArea, collContent, msg_el;
 
     e.preventDefault();
 
@@ -3722,9 +4032,6 @@ var ParsedClassicsGrammarRefsGenerator = {
       line = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsGrammarRefsGenerator.lineInputClass).val());
       lineClass = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsGrammarRefsGenerator.lineClassInputClass).val());
       pagenum = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsGrammarRefsGenerator.filenameInputClass).val());
-			console.log('line', line);
-			console.log('lineClass', lineClass);
-			console.log('pagenum', pagenum);
       if (line && lineClass && pagenum) {
         html += ParsedClassicsGrammarRefsGenerator.createOutputCodeBlock(line, lineClass, pagenum);
       }
@@ -3908,13 +4215,11 @@ var ParsedClassicsGrammarRefsSupplementer = {
       certainLine = $(additionalLines[i]);
       // find line number
       lineNum = certainLine.find("span." + ParsedClassicsVars.verseNumberClass).text();
-			console.log('lineNum', lineNum);
       // find in references to be supplemented the line having the same line number
       initialLineToSupplement = initialLines.filter(function() { return $(this).find("span." + ParsedClassicsVars.verseNumberClass).text() === lineNum; })
       if (initialLineToSupplement.length == 1) {
         // get html of line to be supplemented
         initialLineToSupplementHtml = $.trim(initialLineToSupplement.html());
-				console.log('initialLineToSupplementHtml', initialLineToSupplementHtml);
         // clone additional line
         additionalLineClone = certainLine.clone(true);
         //remove line number from cloned additional line
