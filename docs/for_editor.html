@@ -3929,13 +3929,33 @@ nt_romans_commentary_refs_by_parsedclassics =
 // part of code has been cut out
 </pre>
 
-<p>Data file‘s name should be the same as resource shortname. Resource shortname is "nt_titus_commentary_refs_by_parsedclassics", so data file‘s name will be "nt_titus_commentary_refs_by_parsedclassics.js". Data file should be placed in the directory of the same name: /data/grammar_refs/nt_titus_commentary_refs_by_parsedclassics/ .</p>
+<p>Data file‘s name should be the same as resource shortname. Resource shortname is "nt_titus_commentary_refs_by_parsedclassics", so data file‘s name will be "nt_titus_commentary_refs_by_parsedclassics.js". Data file should be placed in the directory of the same name: /data/commentary_refs/nt_titus_commentary_refs_by_parsedclassics/ .</p>
   
 <p>After doing this commentary references resource should work in sync with parsed text resource.</p>
 
 <p>Coding data file by hand is tedious. The work can be made more effective by using tools.</p>
 
 <p>Commentary references generator [LINK TO BE ADDED] tool is used to generate data file. Let's use this tool to create data file containing references to apostle Paul's <em>Epistle to Titus</em> found in Staabs's "Pauluskommentare aus der Griechischen Kirche":</p>
+
+<p><img src="img2/commentary_refs_typed_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The value of the field "File number offset" should be a number expressing the difference between the number of the page in the image file and the number in the name of the image file. Here the value is "52" because e.g. the page 259 is pictured in the file whose name is page0311.jpg .</p>
+
+<p>The value of the field "Scanned book shortname" should be index of the entry of the commentary book from _scans.php file.</p>
+
+<p>The value of the field "Scanned book shorttile" should be short string (usually author's name) which respresents the commentary book. It should be the same as was used in the Commentaries list as described in this section above.</p>
+
+<p>The value of the field "Commentators names list" should be pipe delimited list of commentators names whose commentaries are included in commentary book.</p>
+
+<p>The value of the field "Collection content object" should be the code of the contents file of the parsed text resource which is used as collection's contents.</p>
+
+<p>After entering such values the button "Load" should be clicked. This will result into input blocks being displayed below the heading "Commentary references data inputs", one input block for each line:</p>
+
+<p><img src="img2/commentary_refs_typed_02.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>Each inputs block contains four fields and a button "Insert inputs block below". Clicking such button will result into new inputs block with empty fields created below current block. Newly created inputs block can be removed by clicking Close button in top right corner.</p>
+
+<p>Let's enter some values in the fields of such inputs blocks:</p>
 
 
 
@@ -4032,13 +4052,13 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p><img src="img2/grammar_refs_typed_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
-<p>The value of the field "File number offset" should be a number expressing the difference between the number of the page in the image file and the number in the name of the image file. Here the value is "86" beacause e.g. the page 224 is pictured in the file whose name is page0310.jpg . </p>
+<p>The value of the field "File number offset" should be a number expressing the difference between the number of the page in the image file and the number in the name of the image file. Here the value is "86" because e.g. the page 224 is pictured in the file whose name is page0310.jpg . </p>
 
 <p>The value of the field "Scanned book shortname" should be index of the entry of the grammar book from _scans.php file.</p>
 
 <p>The value of the field "Scanned book shorttile" should be short string (usually author's name) which respresents the grammar book. It should be the same as was used in the Grammars list as described in this section above.</p>
 
-<p>The value of the field "Collection content object" should be the code of the contens file of the parsed text resource which is used as collection's contents.</p>
+<p>The value of the field "Collection content object" should be the code of the contents file of the parsed text resource which is used as collection's contents.</p>
 
 <p>After entering such values the button "Load" should be clicked. This will result into input blocks being displayed below the heading "Grammar references data inputs", one input block for each line:</p>
 
@@ -4078,7 +4098,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>Now the button "Check for completeness" should be clicked. It will result in references which are included into combined code being highlighted green and references which are not included being highlighted red.</p>
 
-<p>It remains to analyze the code from "Grammar references not added code" textarea and include manually it piece by piece ito combined code. Then combined code should be made the value of of the variable "nt_titus_grammar_refs_by_parsedclassics" and saved in the file of the same name as described in previous section.</p>
+<p>It remains to analyze the code from "Grammar references not added code" textarea and include it manually piece by piece into combined code. Then combined code should be made the value of of the variable "nt_titus_grammar_refs_by_parsedclassics" and saved in the file of the same name as described in previous section.</p>
 
 
 
