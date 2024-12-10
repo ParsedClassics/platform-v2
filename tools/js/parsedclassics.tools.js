@@ -3516,6 +3516,10 @@ var ParsedClassicsCommentaryRefsGenerator = {
 
   insertInputBlockBtnClass: "insert-input-block-btn",
 
+	commentatorPagesFieldsClass: "commentator-pages-fields",
+
+	insertCommentatorPagesFieldsBtnClass: "insert-commentator-pages-block-btn",
+
   commentaryRefsOutputId: "grammar-refs-output",
 
 	commentatorsSelectboxHtml: "",
@@ -3607,6 +3611,9 @@ var ParsedClassicsCommentaryRefsGenerator = {
 
 		// delegate "click" evt from els having class "insert-input-block-btn" to inputs area
     inputsArea.delegate("." + ParsedClassicsCommentaryRefsGenerator.insertInputBlockBtnClass, "click", ParsedClassicsCommentaryRefsGenerator.insertInputsBlock);
+
+		// ParsedClassicsCommentaryRefsGenerator.insertCommentatorPagesFieldsBtnClass
+		inputsArea.delegate("." + ParsedClassicsCommentaryRefsGenerator.insertCommentatorPagesFieldsBtnClass, "click", ParsedClassicsCommentaryRefsGenerator.insertCommentatorPagesBlock);
 	},
 
 	createCommentatorsSelectbox: function(commentatorsNamesArr) {
@@ -3633,33 +3640,46 @@ var ParsedClassicsCommentaryRefsGenerator = {
             <input style="margin-bottom: 8px;" type="text" value="${lineNum}" class="${ParsedClassicsCommentaryRefsGenerator.lineInputClass} pc-width-100">
           </div>
           <div style="float: left; width: 70%;" class="pc-padding-left-4">
-            Line(s) separately<div class="dialogue-close-wrapper"><div class="dialogue-close"><div class="dialogue-close-outer-btn"><div class="dialogue-close-btn" title="Close"><img class="dialogue-close-img" src="../img/close.svg"></div></div></div></div>
+            Line(s) separately<div class="dialogue-close-wrapper"><div class="dialogue-close"><div class="dialogue-close-outer-btn"><div class="dialogue-close-btn" title="Close inputs block"><img class="dialogue-close-img" src="../img/close.svg"></div></div></div></div>
             <span class="resizable-input-v3"><input type="text" value="${lineClass}" class="${ParsedClassicsCommentaryRefsGenerator.lineClassInputClass} pc-width-100"></span>
           </div>
         </div>
-        <div>
-					<div style="float: left; width: 30%;" class="pc-padding-right-4">
-						Commentator
-						${ParsedClassicsCommentaryRefsGenerator.commentatorsSelectboxHtml}
-					</div>
-					<div style="float: left; width: 70%;" class="pc-padding-left-4">
-          	Page(s)
-          	<span class="resizable-input-v3"><input type="text" class="${ParsedClassicsCommentaryRefsGenerator.filenameInputClass} pc-width-100"></span>
-					</div>
-        </div>
-				 ${ParsedClassicsCommentaryRefsGenerator.createButtonBlock()}
+        ${ParsedClassicsCommentaryRefsGenerator.createCommentatorPagesBlock()}
+				<div style="text-align: right;">
+					<button class="${ParsedClassicsCommentaryRefsGenerator.insertCommentatorPagesFieldsBtnClass} w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Insert Commentator/Page(s) fields</button>
+				 	${ParsedClassicsCommentaryRefsGenerator.createButtonBlock()}
+				</div>
       </div>
     `;
 
     return html;
   },
 
+	createCommentatorPagesBlock: function() {
+		var html;
+		html = `
+			<div class="${ParsedClassicsCommentaryRefsGenerator.commentatorPagesFieldsClass}">
+				<div style="float: left; width: 30%;" class="pc-padding-right-4">
+					Commentator
+					${ParsedClassicsCommentaryRefsGenerator.commentatorsSelectboxHtml}
+				</div>
+				<div style="float: left; width: 70%;" class="pc-padding-left-4">
+					Page(s)<div class="dialogue-close-wrapper"><div class="dialogue-close"><div class="dialogue-close-outer-btn"><div class="dialogue-close-btn" title="Close Commentator/Page(s) inputs block"><img class="dialogue-close-img" src="../img/close.svg"></div></div></div></div>
+					<span class="resizable-input-v3"><input type="text" class="${ParsedClassicsCommentaryRefsGenerator.filenameInputClass} pc-width-100"></span>
+				</div>
+      </div>
+		`;
+		return html;
+	},
+
 	createInputsBlockFirst: function() {
     var html;
 
     html = `
       <div class="${ParsedClassicsCommentaryRefsGenerator.inputsBlockClass}">
-        ${ParsedClassicsCommentaryRefsGenerator.createButtonBlock()}
+				<div style="text-align: right;">
+        	${ParsedClassicsCommentaryRefsGenerator.createButtonBlock()}
+				</div>
       </div>
     `;
 
@@ -3670,9 +3690,7 @@ var ParsedClassicsCommentaryRefsGenerator = {
     var html;
 
     html = `
-		<div style="text-align: right;">	
 			<button class="${ParsedClassicsCommentaryRefsGenerator.insertInputBlockBtnClass} w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Insert inputs block below</button>
-		</div>
     `;
 
     return html;
@@ -3706,6 +3724,32 @@ var ParsedClassicsCommentaryRefsGenerator = {
     return html;
 	},
 
+	insertCommentatorPagesBlock: function(e) {
+		var btn, block, html;
+
+		e.preventDefault();
+
+    btn = $(e.target);
+
+		// get inputs block
+    block = btn;
+    while (!block.hasClass(ParsedClassicsCommentaryRefsGenerator.inputsBlockClass)) {
+      block = block.parent();
+    }
+
+		// create Commentator/Page(s) fields block html
+		html = $(ParsedClassicsCommentaryRefsGenerator.createCommentatorPagesBlock());
+		html.find('.dialogue-close-wrapper').show();
+		html.find('.dialogue-close-btn').bind('click', () => {
+			if (confirm("Do you really want to close Commentator/Page(s) block?")) {
+				html.hide(400);
+			}
+		});
+
+		// find last Commentator/Page(s) fields block and insert new ommentator/Page(s) fields block after it
+		block.find("." + ParsedClassicsCommentaryRefsGenerator.commentatorPagesFieldsClass).last().after(html);
+	},
+
 	insertInputsBlock: function(e) {
 		var btn, html, block;
 
@@ -3720,8 +3764,12 @@ var ParsedClassicsCommentaryRefsGenerator = {
     }
 
 		html = $(ParsedClassicsCommentaryRefsGenerator.createInputsBlock());
-		html.find('.dialogue-close-wrapper').show();
-		html.find('.dialogue-close-btn').bind('click', () => html.hide(400));
+		html.find('.dialogue-close-wrapper').first().show();
+		html.find('.dialogue-close-btn').first().bind('click', () => {
+			if (confirm("Do you really want to close inputs block?")) {
+				html.hide(400);
+			}
+		});
 
     block.after(html.show(400));
 	},
