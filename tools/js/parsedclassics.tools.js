@@ -3741,9 +3741,11 @@ var ParsedClassicsCommentaryRefsGenerator = {
 		html = $(ParsedClassicsCommentaryRefsGenerator.createCommentatorPagesBlock());
 		html.find('.dialogue-close-wrapper').show();
 		html.find('.dialogue-close-btn').bind('click', () => {
-			if (confirm("Do you really want to close Commentator/Page(s) block?")) {
-				html.hide(400);
-			}
+			ParsedClassicsConfirmDialogue.openConfirmDialogue(
+				'close-commentator-pages-block',
+				{heading: 'Confirm', message: 'Do you really want to close Commentator/Page(s) block?'},
+				() => {html.hide(400);}
+			);
 		});
 
 		// find last Commentator/Page(s) fields block and insert new ommentator/Page(s) fields block after it
@@ -3766,9 +3768,11 @@ var ParsedClassicsCommentaryRefsGenerator = {
 		html = $(ParsedClassicsCommentaryRefsGenerator.createInputsBlock());
 		html.find('.dialogue-close-wrapper').first().show();
 		html.find('.dialogue-close-btn').first().bind('click', () => {
-			if (confirm("Do you really want to close inputs block?")) {
-				html.hide(400);
-			}
+			ParsedClassicsConfirmDialogue.openConfirmDialogue(
+				'close-inputs-block',
+				{heading: 'Confirm', message: 'Do you really want to close inputs block?'},
+				() => {html.hide(400);}
+			);
 		});
 
     block.after(html.show(400));

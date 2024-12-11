@@ -111,6 +111,94 @@ var ParsedClassicsModalDialogues = {
 };
 
 /*
+Confirm dialogue
+*/
+
+const ParsedClassicsConfirmDialogue = {
+
+  createConfirmDialogue: function(paneId) {
+    // create confirm dialogue html
+    const confirmDialogueHtml = ParsedClassicsConfirmDialogue.createConfirmDialogueHtml(paneId);
+    // create confirm dialogue 
+    const confirmDialogue = $(confirmDialogueHtml);
+    // get close btn
+    const closeButton = confirmDialogue.find(`.dialogue-close-btn`);
+    // bind func to close button
+    closeButton.bind('click', () => {
+      ParsedClassicsConfirmDialogue.closeConfirmDialogueWithClick(confirmDialogue);
+    });
+    // get cancel button
+    const cancelButton = confirmDialogue.find(`.dialogue-cancel-btn`);
+    // bind func to cancel button
+    cancelButton.bind('click', () => {
+      ParsedClassicsConfirmDialogue.closeConfirmDialogueWithClick(confirmDialogue);
+    });
+
+    return confirmDialogue;
+  },
+  
+  createConfirmDialogueHtml: function(paneId) {
+    // create alert dialogue html
+    const confirmDialogueHtml = `
+      <div id="confirm-dialogue-${paneId}" class="pc-dialogue" style="displayx: block;">
+        <div class="pc-modal-content">
+          <div class="header"><div class="header-inner"><div class="header-text">Confirm</div></div><div class="dialogue-close"><div class="dialogue-close-btn" title="Close dialogue"><img class="dialogue-close-img" src="../img/close.svg" /></div></div></div>
+          <div class="message-text pc-container pc-padding-16">
+            Confirm
+          </div>
+          <div class="pc-container pc-padding-bottom-16">
+            <button class="dialogue-confirm-btn pc-action-button w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">
+              OK
+            </button>
+            <button class="dialogue-cancel-btn pc-action-button w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    return confirmDialogueHtml;
+  },
+
+  openConfirmDialogue: function(paneId, argObj, callback) {
+    const heading = argObj.heading;
+    const message = argObj.message;
+    console.log('openConfirmDialogue');
+    // create confirm dialogue
+    const confirmDialogue = ParsedClassicsConfirmDialogue.createConfirmDialogue(paneId);
+    $('body').append(confirmDialogue);
+    // insert heading
+    confirmDialogue.find(`.header-text`).text(heading);
+    // insert message
+    confirmDialogue.find(`.message-text`).text(message);
+    // get confirm button
+    const confirmButton = confirmDialogue.find(`.dialogue-confirm-btn`);
+    // bind callback to confirm button
+    confirmButton.bind('click', callback);
+    confirmButton.bind('click', () => {
+      ParsedClassicsConfirmDialogue.closeConfirmDialogueWithClick(confirmDialogue);
+    });
+
+    // display dialogue
+    confirmDialogue.show();
+  },
+
+  closeConfirmDialogueWithClick: function(confirmDialogue) {
+    confirmDialogue.hide();
+    confirmDialogue.remove();
+  },
+
+  closeConfirmDialogueWithoutClick: function(paneId) {
+    // get confirm dialogue
+    const confirmDialogue = $(`#confirm-dialogue-${paneId}`);
+    confirmDialogue.hide();
+    confirmDialogue.remove();
+  }
+
+};
+
+/*
 Tabbed panel
 */
 
