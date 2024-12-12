@@ -3696,7 +3696,7 @@ var ParsedClassicsCommentaryRefsGenerator = {
     return html;
   },
 
-	createOutputCodeBlock: function(line, lineClass, pagenum, commentator) {
+	createOutputCodeBlock: function(line, lineClass, commentatorAndPageHtml) {
 		var html, pagesHtml, pagenumArr, pagenum, filenum, num, comma, lineClassArr, lineClassStr;
 
 		// define vars
@@ -3709,17 +3709,7 @@ var ParsedClassicsCommentaryRefsGenerator = {
 			lineClassStr += `<span data-line-number="${lineClassArr[i]}" class="line-number">${i == 0 ? line: ""}</span>\n`;
 		}
 
-		// form pagenum arr
-    pagenumArr = pagenum.split("|");
-		// loop filenum arr
-    for (var i = 0; i < pagenumArr.length; i++) {
-      num = pagenumArr[i].replace(/[^0-9]/g,'');
-      filenum = parseInt(num) + parseInt(ParsedClassicsCommentaryRefsGenerator.fileNumOffset);
-      comma = i < pagenumArr.length - 1 ? "," : "";
-      pagesHtml += `<a data-commentary="${ParsedClassicsCommentaryRefsGenerator.scannedBookShortname}" data-page="${filenum}">${commentator} (${ParsedClassicsCommentaryRefsGenerator.scannedBookShorttitle} ${pagenumArr[i]})</a>${comma}\n`;
-    }
-
-		html = `<span class="line">\n${lineClassStr}${pagesHtml}</span>\n\n`;
+		html = `<span class="line">\n${lineClassStr}${commentatorAndPageHtml}</span>\n\n`;
 
     return html;
 	},
@@ -3779,7 +3769,7 @@ var ParsedClassicsCommentaryRefsGenerator = {
 	},
 
 	generate: function(e) {
-		var inputsArea, inputsBlocks, html, line, lineClass, pagenum, commentator, msgEl, commentaryRefsOutputTextarea;
+		var inputsArea, inputsBlocks, html,commentatorAndPageHtml, line, lineClass, pagenum, commentator, commentatorPagesBlocks, msgEl, commentaryRefsOutputTextarea;
 
 		e.preventDefault();
 
@@ -3805,17 +3795,40 @@ var ParsedClassicsCommentaryRefsGenerator = {
     for (var i = 0; i < inputsBlocks.length; i++) {
       line = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsCommentaryRefsGenerator.lineInputClass).val());
       lineClass = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsCommentaryRefsGenerator.lineClassInputClass).val());
-      pagenum = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsCommentaryRefsGenerator.filenameInputClass).val());
-			commentator = $.trim($(inputsBlocks[i]).find("." + ParsedClassicsCommentaryRefsGenerator.commentatorsNamesSelectboxClass).val());
-      if (line && lineClass && pagenum && commentator) {
-        html += ParsedClassicsCommentaryRefsGenerator.createOutputCodeBlock(line, lineClass, pagenum, commentator);
-      }
+
+			commentatorPagesBlocks = $(inputsBlocks[i]).find("." + ParsedClassicsCommentaryRefsGenerator.commentatorPagesFieldsClass);
+
+			if (!line || !lineClass) {continue;}
+
+			commentatorAndPageHtml = ""
+			for(var j = 0; j < commentatorPagesBlocks.length; j++) {
+				commentator = $.trim($(commentatorPagesBlocks[j]).find("." + ParsedClassicsCommentaryRefsGenerator.commentatorsNamesSelectboxClass).val());
+				pagenum = $.trim($(commentatorPagesBlocks[j]).find("." + ParsedClassicsCommentaryRefsGenerator.filenameInputClass).val());
+
+				if (!commentator || !pagenum) {continue;}
+
+				if (line && lineClass && pagenum && commentator) {
+					// form pagenum arr
+					pagenumArr = pagenum.split("|");
+					// loop filenum arr
+					for (var k = 0; k < pagenumArr.length; k++) {
+						num = pagenumArr[k].replace(/[^0-9]/g,'');
+						filenum = parseInt(num) + parseInt(ParsedClassicsCommentaryRefsGenerator.fileNumOffset);
+						comma = k < pagenumArr.length - 1 ? "," : "";
+						commentatorAndPageHtml += `<a data-commentary="${ParsedClassicsCommentaryRefsGenerator.scannedBookShortname}" data-page="${filenum}">${commentator} (${ParsedClassicsCommentaryRefsGenerator.scannedBookShorttitle} ${pagenumArr[k]})</a>${comma}\n`;
+					}
+				}
+				
+			} 
+			if (commentatorAndPageHtml) {
+				html += ParsedClassicsCommentaryRefsGenerator.createOutputCodeBlock(line, lineClass, commentatorAndPageHtml);
+			}
+			
     }
 
 		// get output textarea
     commentaryRefsOutputTextarea = $("#" + ParsedClassicsCommentaryRefsGenerator.commentaryRefsOutputId);
     commentaryRefsOutputTextarea.val(html);
-
 	},
 
 	init: function() {
