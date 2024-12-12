@@ -4023,7 +4023,15 @@ var ParsedClassicsGrammarRefsGenerator = {
 
     html = $(ParsedClassicsGrammarRefsGenerator.createInputsBlock());
 		html.find('.dialogue-close-wrapper').show();
-		html.find('.dialogue-close-btn').bind('click', () => html.hide(400));
+		html.find('.dialogue-close-btn').bind('click', () => {
+
+			ParsedClassicsConfirmDialogue.openConfirmDialogue(
+				'close-inputs-block',
+				{heading: 'Confirm', message: 'Do you really want to close inputs block?'},
+				() => {html.hide(400);}
+			);
+
+		});
 
     block.after(html.show(400));
   },
