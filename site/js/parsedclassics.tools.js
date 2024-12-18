@@ -3737,7 +3737,7 @@ var ParsedClassicsGrammarRefsGenerator = {
 
 /*
 
-Grammar references supplementer script 
+References supplementer script 
 
 to generate code of Grammar refs resource
 
