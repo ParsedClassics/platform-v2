@@ -4116,9 +4116,33 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p><img src="img2/diagram_set_typed_02.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
-<p>Creating of syntax diagram is being done by manipulating inputs blocks such as that displayed after clicking the button "Load sentence". Let's do it for the sentence from the line 1:2 of the aposte Paul's <em>Epistle to Ephesians</em>.</p>
+<p>Creating of syntax diagram is being done by manipulating inputs blocks such as that displayed after clicking the button "Load sentence".</p>
 
-<p>Inputs blocks are displayed in lines. Each line describes one syntactic relation between words/phrases. The order of the lines is not essential. Only one Syntactic relation can be marked as "Root relation" by checking checkbox. (Predication is root relation in simple sentence; in complex sentence, depending on its type, root relation is either coordination relation or predication relation of the main clause.)</p>
+<p>Inputs blocks are displayed in lines. Each line describes one syntactic relation between words/phrases. The order of the lines is not essential.</p>
+
+<p>Only one Syntactic relation can be marked as "Root relation" by checking checkbox. (Predication (complementation) is root relation in simple sentence; in complex sentence, depending on its type, root relation is either coordination relation or predication (complementation) relation of the main clause.)</p>
+
+<p>Let's fill the form for the sentence from the line 1:2 of the aposte Paul's <em>Epistle to Ephesians</em>. It is the sentence χάρις ὑμῖν καὶ εἰρήνη ἀπὸ θεοῦ πατρὸς ἡμῶν καὶ κυρίου Ἰησοῦ χριστοῦ.</p>
+
+<p>It is better to start with syntactic relations which join words, not phrases, and only join phrase into relation when the phrase itself is analyzed. This approach allows you to click the buttons "Generate JSON" and "Generate diagram" after filling each line of input blocks and so to see the progrees of generating the diagram.</p>
+
+<p>At first we will fill the fields for the phrase "χάρις καὶ εἰρήνη". This phrase has three words, so we need to click three time the button "Word" in order to insert input block for each word. Then the fields of the four input blocks should be filled this way:</p>
+
+<p><img src="img2/diagram_set_typed_03.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>The fields of the left inputs block describe syntax relation itself. We entered "Coordination" as the value of the field "Relation name", the phrase "χάρις καὶ εἰρήνη" as the value of the field "Resulting phrase", the string "phr01" as the value of the field "Internal index". The latter field cannot be empty and should have as the value any unique string, but usully the string "phr" with padded number is being used.</p>
+
+<p>The next three inputs blocks describe the words. The values of "Word form" fields are lemmas of relevant words. The values of "Internal index" fields are unique string which are added automatically, so you need not to bother about them.</p>
+
+<p>The value of the field "Syntactic role" in the inputs block of the word "καί" is "J." which means "junctor". The fields "Syntactic role" in the inputs blocks for the words "χάρις" and "εἰρήνη" are left empty because syntactic roles of the words which are connected by junctor word are not different.</p>
+
+<p>After filling fields of inputs blocks with these values we can generate fragment of the diagram. In order to gerenare frangment of diagram we need temporarily check the checkbox "Root relation", click the button "Generate JSON", and then click the button "Generate diagram".</p>
+
+<p>Three things will happen (a) JSON code will be outputted in the textarea "JSON output", (b) syntax diagram HTML code will be outputted in the textarea "Syntax diagram code output", (c) syntax diagram will be displayed below the heading "Syntax diagram":</p>
+
+<p><img src="img2/diagram_set_typed_04.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
+
+<p>Now let's click the button "Syntactic relation", then the in the new inputs block let's click the buttons "Phrase" and "Word". In the new line of inputs blocks let's enter the values of the fields:</p>
 
 
 
