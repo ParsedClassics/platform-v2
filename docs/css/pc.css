@@ -50,6 +50,26 @@ Styles for ParsedClassics library application and website
   max-width: 120%;
 }
 
+.max-width-130 {
+  max-width: 130%;
+}
+
+.max-width-140 {
+  max-width: 140%;
+}
+
+.max-width-150 {
+  max-width: 150%;
+}
+
+.max-width-160 {
+  max-width: 160%;
+}
+
+.max-width-160 {
+  max-width: 170%;
+}
+
 /* margins */
 
 .pc-margin-top-8 {
