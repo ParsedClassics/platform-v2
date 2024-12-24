@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.4.2",
+  diagrammer_version: "1.4.3",
   
   debug: false,
 
@@ -1923,13 +1923,13 @@ var ParsedClassicsDiagramGenerator = {
 
             // draw rectangle around the word
             rect = draw
-            .rect(bbox.width, bbox.height)
+            .rect(bbox.width, bbox.height + 10) // "10" needed to add 5px top and bottom padding around text
             .attr("fill", ParsedClassicsDiagramGenerator.fill_color)
             .attr("fill-opacity", ParsedClassicsDiagramGenerator.fill_opacity)
             .attr("stroke", ParsedClassicsDiagramGenerator.line_color)
             .attr("stroke-width", ParsedClassicsDiagramGenerator.word_border_width + "px")
             .attr("rx", 1.5)
-            .move(bbox.x, bbox.y);
+            .move(bbox.x, bbox.y - 5); // "5" needed to add 5px top and bottom padding around text
 
             // draw left hotspot
             hotspot_l = ParsedClassicsDiagramGenerator.mark_word_hotspots(draw, rect, "hotspot_l");
@@ -3283,13 +3283,13 @@ var ParsedClassicsDiagramGenerator = {
         bbox = text_el.node.getBBox();
         // draw rectangle around the word
         rect = draw
-        .rect(bbox.width, bbox.height)
+        .rect(bbox.width, bbox.height + 10) // "10" needed to add 5px top and bottom padding around text
         .attr("fill", ParsedClassicsDiagramGenerator.fill_color)
         .attr("fill-opacity", ParsedClassicsDiagramGenerator.fill_opacity)
         .attr("stroke", ParsedClassicsDiagramGenerator.line_color)
         .attr("stroke-width", ParsedClassicsDiagramGenerator.word_border_width + "px")
         .attr("rx", 1.5)
-        .move(bbox.x, bbox.y);
+        .move(bbox.x, bbox.y - 5); // "5" needed to add 5px top and bottom padding around text
 
         // draw left hotspot
         hotspot_l = ParsedClassicsDiagramGenerator.mark_word_hotspots(draw, rect, "hotspot_l", recursion_level_block);
