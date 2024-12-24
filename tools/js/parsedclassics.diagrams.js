@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.4.3",
+  diagrammer_version: "1.4.4",
   
   debug: false,
 
@@ -196,7 +196,7 @@ var ParsedClassicsDiagramGenerator = {
     // if line numbers not exist, push word forms to array
     else {
       // get all word_els
-      word_els = $(".word");
+      word_els = $("span.word");
       for (var i = 0; i < word_els.length; i++) {
         word_form = $(word_els[i]).attr("data-form");
         ParsedClassicsDiagramGenerator.words_arr.push(word_form);
