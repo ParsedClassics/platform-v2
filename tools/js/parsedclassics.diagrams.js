@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.4.4",
+  diagrammer_version: "1.4.5",
   
   debug: false,
 
@@ -907,7 +907,8 @@ var ParsedClassicsDiagramGenerator = {
     phrases_info_container,
     heading,
     info_html,
-    popover_info_phrases;
+    popover_info_phrases,
+    root_relation;
     
     popover_info_phrases = [];
     // get all relation inputs blocks
@@ -924,14 +925,24 @@ var ParsedClassicsDiagramGenerator = {
         info_obj = {};
         info_obj.phrase_internal_index = phrase_internal_index;
         info_obj.phrase = phrase;
-        // push info obj into popover info arr
+        if (phrase_internal_index != 'root_relation') {
+          // push info obj into popover info arr
         popover_info_phrases.push(info_obj);
+        }
+        else {
+          root_relation = info_obj;
+        }
       }
     }
+
     // remove duplicates from popover_info_phrases arr
     popover_info_phrases = [...new Map(popover_info_phrases.map(item => [item.phrase_internal_index, item])).values()];
     // sort popover_info_phrases arr
     popover_info_phrases.sort((a, b) => (a.phrase_internal_index < b.phrase_internal_index ? -1 : 1));
+    // add root relation at the start of arr
+    if (root_relation) {
+      popover_info_phrases.unshift(root_relation);
+    }
     //get container to display info about phrases
     phrases_info_container = $("#pc-info-popover .pc-info-popover-phrases");
     // get list heading's outer html
