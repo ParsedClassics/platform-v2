@@ -175,7 +175,7 @@ var ParsedClassicsDiagramGenerator = {
     sentence_code.show(400);
 
     // get all line els
-    line_els = $(".verse");
+    line_els = $(".line");
 
     ParsedClassicsDiagramGenerator.lines_arr = {};
     ParsedClassicsDiagramGenerator.words_arr = [];
@@ -184,7 +184,7 @@ var ParsedClassicsDiagramGenerator = {
     if (line_els.length > 0) {
       for (var j = 0; j < line_els.length; j++) {
         line_single_el = $(line_els[j]);
-        line_num = line_single_el.find(".verse-number").text();
+        line_num = line_single_el.find(".line-number").text();
         ParsedClassicsDiagramGenerator.lines_arr[line_num] = [];
         word_els = line_single_el.find(".word");
         for (var i = 0; i < word_els.length; i++) {
@@ -1005,7 +1005,7 @@ var ParsedClassicsDiagramGenerator = {
     sentence_html = $(sentence_html).clone();
 
     // remove sentence numbers from sentence
-    sentence_html.find(".verse-number").remove();
+    sentence_html.find(".line-number").remove();
 
     // get sentence text
     sentence_text = $.trim(sentence_html.text());
