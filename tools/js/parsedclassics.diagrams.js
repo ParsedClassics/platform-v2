@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.4.5",
+  diagrammer_version: "1.4.6",
   
   debug: false,
 
@@ -3708,7 +3708,7 @@ var ParsedClassicsDiagramGenerator = {
         draw.size(bbox.width, bbox.height);
         // output svg code together with json code
         json_textarea = $("#json-output-textarea");
-        json_from_textarea = "<!--" + json_textarea.val() + "-->";
+        json_from_textarea = "<!--" + json_textarea.val() + "-->\n\n";
         svg_code = '<div class="svg-diagram-container">' + draw.svg() + '</div>';
         svg_output_textarea = $("#svg-output-textarea");
         svg_output_textarea.val(json_from_textarea + svg_code);
