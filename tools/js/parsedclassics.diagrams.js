@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.4.6",
+  diagrammer_version: "1.4.7",
   
   debug: false,
 
@@ -532,13 +532,25 @@ var ParsedClassicsDiagramGenerator = {
   },
 
   root_checked_unique: function(event) {
-    var syntax_data_container, clicked_root_input, root_inputs_all;
+    var syntax_data_container, clicked_root_input, internal_index_input, root_inputs_all;
 
     // get container for syntax data
     syntax_data_container = $("#syntax-data-container");
 
     // get clicked root checkbox
     clicked_root_input = event.target;
+
+    // get internal index input
+    internal_index_input = $(clicked_root_input).parent().parent().find('input[name="internal-index"]');
+
+    if (clicked_root_input.checked) {
+      // root relation will have internal index "root_relation"
+      internal_index_input.val('root_relation');
+    }
+    else {
+      // remove internal index since relation is no longer root relation
+      internal_index_input.val('');
+    }
 
     // get all root checkboxes
     root_inputs_all = syntax_data_container.find('input[name="root"]');
@@ -549,7 +561,11 @@ var ParsedClassicsDiagramGenerator = {
 
     // uncheck checkboxes except the one clicked
     for (var i = 0; i < root_inputs_all.length; i++) {
-      root_inputs_all[i].checked = false;
+      if (root_inputs_all[i].checked) {
+        root_inputs_all[i].checked = false;
+        // remove internal index since relation is no longer root relation
+        $(root_inputs_all[i]).parent().parent().find('input[name="internal-index"]').val('');
+      }
     }
 
   },
@@ -653,6 +669,9 @@ var ParsedClassicsDiagramGenerator = {
     // attach function to update popover info about block-building phrases
     relation_inputs_html.find('[name="resulting-phrase"], [name="internal-index"], [name="external-index"]').bind("blur", ParsedClassicsDiagramGenerator.compilePopoverInfo);
     relation_inputs_html.find('[name="syntactic-relation"]').bind("change", ParsedClassicsDiagramGenerator.compilePopoverInfo);
+
+    // attach function to generate automatically internal index of the phrase
+    relation_inputs_html.find('[name="syntactic-relation"]').bind("change", ParsedClassicsDiagramGenerator.generatePhraseInternalIndex);
 
     return relation_inputs_html;
   },
@@ -765,6 +784,43 @@ var ParsedClassicsDiagramGenerator = {
       // compile info about all clauses and their external indexes
       ParsedClassicsDiagramGenerator.compile_clauses_info();
 
+    }
+  },
+
+  generatePhraseInternalIndex: function(e) {
+    var selectbox, inner_index_input, inner_index_inputs_all, inner_index, padded_number, parsed_number, biggest_number, inner_index_new;
+
+    // get target of "change" event
+    selectbox = $(e.target);
+
+    // define var
+    biggest_number = 0;
+
+    // get inner index input of syntactic relation
+    inner_index_input = selectbox.parent().parent().find('input[name="internal-index"]');
+
+    // is inner index input of syntactic relation empty?
+    if (inner_index_input.val().trim() == '') {
+      // get all inner index inputs
+      inner_index_inputs_all = $('div.relation-inputs-block').find('input[name="internal-index"]');
+      for (var i = 0; i < inner_index_inputs_all.length; i++) {
+        inner_index = $(inner_index_inputs_all[i]).val().trim();
+        if (inner_index) {
+          // get number from inner index
+          padded_number = inner_index.match(/\d+/gi).join('');
+          // remove leading zeroes from number
+          parsed_number = padded_number.replace(/^0+(?!\.|$)/, '');
+          //change found biggest number if parsed_number is biggest than current biggest number
+          biggest_number = parsed_number > biggest_number ? parsed_number : biggest_number;
+        }
+      }
+      // increase number of new inner index by 1
+      inner_index_new = Number(biggest_number) + 1;
+      // padd by zeroes new inner index
+      inner_index_new = String(inner_index_new).padStart(3, '0');
+      // add string 'phr' on the left
+      inner_index_new = 'phr' + inner_index_new;
+      inner_index_input.val(inner_index_new);
     }
   },
 
@@ -1434,20 +1490,20 @@ var ParsedClassicsDiagramGenerator = {
       return invalidation_msg;
     }
 
-    //(f) relations except root relation must have internal index and internal index must be unique
+    //(f) relations must have internal index and internal index must be unique
     internal_index_arr = [];
     for (var i = 0; i < relation_inputs_blocks.length; i++) {
       root_checkbox = $(relation_inputs_blocks[i]).find('input[name="root"]');
       root_value = root_checkbox.is(":checked");
+      internal_index_input = $(relation_inputs_blocks[i]).find(
+        'input[name="internal-index"]'
+      );
       if (root_value != true) {
-        internal_index_input = $(relation_inputs_blocks[i]).find(
-          'input[name="internal-index"]'
-        );
         internal_index = $.trim(internal_index_input.val());
         internal_index_arr.push(internal_index);
         if (!internal_index) {
           ParsedClassicsDiagramGenerator.show_error_msg(
-            "Each relation except root relation must have internal index!"
+            "Each relation must have internal index!"
           );
           center_pane.scrollTo(internal_index_input, 400);
           return invalidation_msg;
@@ -1460,6 +1516,10 @@ var ParsedClassicsDiagramGenerator = {
           center_pane.scrollTo(internal_index_input, 400);
           return invalidation_msg;
         }
+      }
+      else {
+        // inner index of root relation must be "root_relation"
+        internal_index_input.val('root_relation');
       }
     }
 
