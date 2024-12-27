@@ -38,6 +38,10 @@ Styles for ParsedClassics library application and website
   width: 25%;
 }
 
+.pc-width-1 {
+  width: 1%;
+}
+
 /* margins */
 
 .pc-margin-top-8 {
@@ -205,6 +209,10 @@ table.pc-valign-top td {
 
 .pc-hide {
   display: none;
+}
+
+.pc-display-block {
+  display: block;
 }
 
 /* tables */

@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.5.0",
+  diagrammer_version: "1.6.0",
   
   debug: false,
 
@@ -84,7 +84,9 @@ var ParsedClassicsDiagramGenerator = {
 
   intercolumn_direction_change_pos: 25, // distance from column at which signs of modification, apposition, relativization can change direction
 
-  column_left_distance: 250,
+  column_left_distance_default: [75],
+
+  column_left_distance: [], // in version 1.5.0 the value was 250 (number, not array!)
   
   font_size_small: "80%",
 
@@ -97,6 +99,17 @@ var ParsedClassicsDiagramGenerator = {
 
     dialogue = $(event.target).parent().parent().parent();
     dialogue.hide();
+  },
+
+  show_success_msg: function (msg) {
+    var msg_el, dialogue;
+    // find message el
+    msg_el = $("#success-msg-text-el");
+    // put message text inside message el
+    msg_el.html(msg);
+    // display modal dialogue
+    dialogue = $("#pc-tools-success-dialogue");
+    dialogue.show();
   },
 
   show_error_msg: function (msg) {
@@ -136,6 +149,106 @@ var ParsedClassicsDiagramGenerator = {
     cancel_action_button.bind("click", function (event) {
       ParsedClassicsDiagramGenerator.closeDialogue(event);
     });
+  },
+
+  show_options_panel: function(e) {
+    var options_checkbox, options_panel;
+
+    options_checkbox = $(e.target);
+    options_panel = $("#options-panel");
+
+    if (options_checkbox.is(":checked")) {
+      options_panel.show(400);
+    }
+    else {
+      options_panel.hide(400);
+    }
+  },
+
+  prefillOptionsInputs: function() {
+    var val_from_storage, val_default, field, value_arr, value_arr_clean, num;
+    
+    // (1) column_left_distance option
+
+    // get value from local storage
+    val_from_storage = localStorage.getItem("column_left_distance");
+    // get default value
+    val_default = ParsedClassicsDiagramGenerator.column_left_distance_default;
+    // get field input
+    field = $("#options-panel").find('input[name="column-left-distance"]');
+    // define var
+    value_arr_clean = [];
+    // put value from local storage inside field input and update global var for Diagram generator script
+    if (val_from_storage) {
+      field.val(val_from_storage);
+      // set global var for Diagram generator script
+      value_arr = val_from_storage.split("|");
+      for (var i = 0; i < value_arr.length; i++) {
+        num = value_arr[i].trim();
+        value_arr_clean.push(Number(num));
+      }
+      ParsedClassicsDiagramGenerator.column_left_distance = value_arr_clean;
+    }
+    // put default value inside field input
+    else {
+      field.val(val_default);
+    }
+  },
+
+  save_options: function() {
+    var center_pane, field, value_from_field, value_arr, value_arr_clean, num, value_valid, success_msg;
+
+    // get center pane 
+    center_pane = $(".ui-layout-center");
+
+    // define var
+    success_msg = "";
+
+    // (1) column_left_distance option
+
+    // get field input
+    field = $("#options-panel").find('input[name="column-left-distance"]');
+    // get value from field
+    value_from_field = field.val().trim();
+    // define var
+    value_arr_clean = [];
+
+    // there is value in the field, so check if value from field input is valid
+    if (value_from_field) {
+      value_valid = true;
+      value_arr = value_from_field.split("|");
+      // is each value a number and number bigger than 50?
+      for (var i = 0; i < value_arr.length; i++) {
+        num = value_arr[i].trim();
+        value_arr_clean.push(Number(num));
+        if (!Number(num) || !(Number(num) > 50)) {
+          value_valid = false;
+        }
+      }
+      // pipe delimited 
+      if (value_valid) {
+        // save value in local storage
+        localStorage.setItem("column_left_distance", value_arr_clean.join("|"));
+        // set global var for Diagram generator script
+        ParsedClassicsDiagramGenerator.column_left_distance = value_arr_clean;
+      }
+      else {
+        // show error message
+        ParsedClassicsDiagramGenerator.show_error_msg("column_left_distance must be a number or pipe delimited series of numbers each bigger than 50!");
+        center_pane.scrollTo(field, 400);
+        return;
+      }
+    }
+    // there is no value in the field, so remove item from local storage and fill field with default value(s)
+    else {
+      localStorage.removeItem("column_left_distance");
+      field.val(ParsedClassicsDiagramGenerator.column_left_distance_default.join("|"));
+      success_msg += "Default value of column_left_distance restored.<br>"
+    }
+
+    // no error messages shown, so show sucsess message
+    success_msg += "Options saved."
+    ParsedClassicsDiagramGenerator.show_success_msg(success_msg);
   },
 
   load_sentence: function () {
@@ -1014,9 +1127,10 @@ var ParsedClassicsDiagramGenerator = {
   },
 
   init: function () {
-    var load_sentence_button, generate_diagram_button, load_form_values_button, load_from_storage_button;
+    var load_sentence_button, generate_diagram_button, load_form_values_button, load_from_storage_button, options_checkbox, save_options_button;
 
     ParsedClassicsDiagramGenerator.initAllCloseDialogueButtons();
+    ParsedClassicsDiagramGenerator.prefillOptionsInputs();
 
     load_sentence_button = $("#load-sentence-button");
     load_sentence_button.bind(
@@ -1040,6 +1154,18 @@ var ParsedClassicsDiagramGenerator = {
     load_from_storage_button.bind(
       "click",
       ParsedClassicsDiagramGenerator.load_json_from_storage
+    );
+
+    options_checkbox = $("#options-checkbox");
+    options_checkbox.bind(
+      "change",
+      ParsedClassicsDiagramGenerator.show_options_panel
+    );
+
+    save_options_button = $("#save-options-button");
+    save_options_button.bind(
+      "click",
+      ParsedClassicsDiagramGenerator.save_options
     );
   },
 
@@ -1078,10 +1204,13 @@ var ParsedClassicsDiagramGenerator = {
     // get sentence text
     sentence_text = $.trim(sentence_html.text());
 
-    // put diagrammer's version, sentence text and html to json obj
+    // put diagrammer's version, sentence text and html, options to json obj
     json_obj["diagrammer_version"] = ParsedClassicsDiagramGenerator.diagrammer_version;
     json_obj["sentence"] = sentence_text;
     json_obj["sentence_html"] = sentence_container.html().replace('"', '\"');
+    json_obj["options"] = {
+      "column_left_distance": ParsedClassicsDiagramGenerator.column_left_distance
+    };
 
     // get all relation containers
     relation_containers = $("#syntax-data-container .relation-container");
@@ -1233,7 +1362,8 @@ var ParsedClassicsDiagramGenerator = {
     new_word_button,
     new_phrase_button,
     word_or_phrase_container,
-    sentence_text_container;
+    sentence_text_container,
+    options_container;
 
     json_textarea = $("#json-output-textarea");
 
@@ -1275,6 +1405,14 @@ var ParsedClassicsDiagramGenerator = {
       // remove text from text container
       sentence_text_container = $("#sentence-text-container");
       sentence_text_container.html("");
+
+      // get options container and restore options values
+      options_container = $("#options-panel");
+      if (typeof json.options.column_left_distance != "undefined" && $.isArray(json.options.column_left_distance) && json.options.column_left_distance.length > 0) {
+        options_container.find('input[name="column-left-distance"]').val(json.options.column_left_distance.join("|"));
+        //localStorage.setItem("column_left_distance", json.options.column_left_distance.join("|"));
+        ParsedClassicsDiagramGenerator.column_left_distance = json.options.column_left_distance;
+      }
 
       if (typeof json.sentence_html != "undefined" && json.sentence_html) {
         
@@ -3574,7 +3712,7 @@ var ParsedClassicsDiagramGenerator = {
     return hotspot;
   },
 
-  draw_phase_2: function(draw, json, root_block, resulting_group) {
+  draw_phase_2: function(draw, json, root_block, resulting_group, counter = 0) {
     var nonblock_root_relation,
     args_obj,
     expr_els_all_arr,
@@ -3625,9 +3763,15 @@ var ParsedClassicsDiagramGenerator = {
     svg_output_textarea,
     svg_code,
     json_textarea,
-    json_from_textarea;
+    json_from_textarea,
+    column_left_distance_arr,
+    column_left_distance;
 
     syntactic_relations = json.syntactic_relations;
+
+    // get column left distance for current call of function draw_phase_2
+    column_left_distance_arr = typeof json.options.column_left_distance != "undefined" ? json.options.column_left_distance : ParsedClassicsDiagramGenerator.column_left_distance;
+    column_left_distance = typeof column_left_distance_arr[counter] != "undefined" ? column_left_distance_arr[counter] : column_left_distance_arr[column_left_distance_arr.length - 1];
 
     // find block of root relation
     if (root_block === null) {
@@ -3653,7 +3797,7 @@ var ParsedClassicsDiagramGenerator = {
 
       // find x coord of the new column
       bbox = root_block[0].node.getBBox();
-      column_x = bbox.x + bbox.width + ParsedClassicsDiagramGenerator.column_left_distance;
+      column_x = bbox.x + bbox.width + column_left_distance;
 
       // object to hold info needed for phase 2
       json.phase_2 = {};
@@ -4091,7 +4235,7 @@ var ParsedClassicsDiagramGenerator = {
       // run current function in respect of the new_root_block just formed
       root_block = [];
       root_block[0] = new_root_block;
-      ParsedClassicsDiagramGenerator.draw_phase_2(draw, json, root_block, resulting_group);
+      ParsedClassicsDiagramGenerator.draw_phase_2(draw, json, root_block, resulting_group, counter + 1);
     }
   },
 
