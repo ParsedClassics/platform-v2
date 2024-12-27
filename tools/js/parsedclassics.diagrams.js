@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.0",
+  diagrammer_version: "1.6.1",
   
   debug: false,
 
@@ -243,6 +243,7 @@ var ParsedClassicsDiagramGenerator = {
     else {
       localStorage.removeItem("column_left_distance");
       field.val(ParsedClassicsDiagramGenerator.column_left_distance_default.join("|"));
+      ParsedClassicsDiagramGenerator.column_left_distance = ParsedClassicsDiagramGenerator.column_left_distance_default;
       success_msg += "Default value of column_left_distance restored.<br>"
     }
 
