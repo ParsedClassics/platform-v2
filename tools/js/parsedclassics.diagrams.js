@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.4.7",
+  diagrammer_version: "1.5.0",
   
   debug: false,
 
@@ -648,6 +648,7 @@ var ParsedClassicsDiagramGenerator = {
     <div class="pc-margin-top-8"><input type="checkbox" name="root" value="true"> Root relation</div>
     <input type="text" name="external-index" title="External index" placeholder="External index">
     <input type="text" name="internal-index" title="Internal index" placeholder="Internal index">
+    <textarea class="pc-width-100" name="clause-type" title="Clause type" placeholder="Clause type"></textarea>
     <span class="popover-wrapper">
     <button class="show-popover w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" data-role="popover" data-target="pc-info-popover">i</button>
     </span>
@@ -1096,10 +1097,11 @@ var ParsedClassicsDiagramGenerator = {
       );
       // get values from inputs in relation block
       rel_obj["relation"] = relation_inputs_block.find('select[name="syntactic-relation"]').val();
-      rel_obj["resulting_phrase"] = relation_inputs_block.find('textarea[name="resulting-phrase"]').val();
+      rel_obj["resulting_phrase"] = relation_inputs_block.find('textarea[name="resulting-phrase"]').val().trim();
       rel_obj["root"] = relation_inputs_block.find('input[name="root"]').is(":checked") ? true : false;
-      rel_obj["external_index"] = relation_inputs_block.find('input[name="external-index"]').val();
-      rel_obj["internal_index"] = relation_inputs_block.find('input[name="root"]').is(":checked") ? "root_relation" : relation_inputs_block.find('input[name="internal-index"]').val();
+      rel_obj["external_index"] = relation_inputs_block.find('input[name="external-index"]').val().trim();
+      rel_obj["internal_index"] = relation_inputs_block.find('input[name="root"]').is(":checked") ? "root_relation" : relation_inputs_block.find('input[name="internal-index"]').val().trim();
+      rel_obj["clause_type"] = relation_inputs_block.find('textarea[name="clause-type"]').val().trim();
 
       // create array to hold info about words and phrases
       rel_obj["words_and_phrases"] = [];
@@ -1119,15 +1121,15 @@ var ParsedClassicsDiagramGenerator = {
         word_phrase_obj["subscript"] = "";
         if ($(word_phrase_blocks[j]).hasClass("word-inputs-block")) {
           word_phrase_obj["word"] = $(word_phrase_blocks[j]).find('select[name="word"]').val();
-          word_phrase_obj["word2"] = $(word_phrase_blocks[j]).find('input[name="word2"]').val();
-          word_phrase_obj["subscript"] = $(word_phrase_blocks[j]).find('input[name="subscript"]').val();
+          word_phrase_obj["word2"] = $(word_phrase_blocks[j]).find('input[name="word2"]').val().trim();
+          word_phrase_obj["subscript"] = $(word_phrase_blocks[j]).find('input[name="subscript"]').val().trim();
         }
         if ($(word_phrase_blocks[j]).hasClass("phrase-inputs-block")) {
-          word_phrase_obj["phrase"] = $(word_phrase_blocks[j]).find('textarea[name="phrase"]').val();
+          word_phrase_obj["phrase"] = $(word_phrase_blocks[j]).find('textarea[name="phrase"]').val().trim();
         }
-        word_phrase_obj["syntactic_role"] = $(word_phrase_blocks[j]).find('input[name="syntactic-role"]').val();
-        word_phrase_obj["external_index"] = $(word_phrase_blocks[j]).find('input[name="external-index"]').val();
-        word_phrase_obj["internal_index"] = $(word_phrase_blocks[j]).find('input[name="internal-index"]').val();
+        word_phrase_obj["syntactic_role"] = $(word_phrase_blocks[j]).find('input[name="syntactic-role"]').val().trim();
+        word_phrase_obj["external_index"] = $(word_phrase_blocks[j]).find('input[name="external-index"]').val().trim();
+        word_phrase_obj["internal_index"] = $(word_phrase_blocks[j]).find('input[name="internal-index"]').val().trim();
 
         rel_obj["words_and_phrases"].push(word_phrase_obj);
       }
@@ -1301,6 +1303,8 @@ var ParsedClassicsDiagramGenerator = {
           relation_container.find('input[name="external-index"]').val(json.syntactic_relations[i].external_index);
           // set internal index
           relation_container.find('input[name="internal-index"]').val(json.syntactic_relations[i].internal_index);
+          // set clause type
+          relation_container.find('textarea[name="clause-type"]').val(json.syntactic_relations[i].clause_type);
 
           // get new word button
           new_word_button = relation_container.find('button.add-word');
@@ -1401,7 +1405,9 @@ var ParsedClassicsDiagramGenerator = {
       intro_rel_expr_2_arr,
       expr_non_unique_index,
       rel_non_unique_index,
-      internal_index_arr;
+      internal_index_arr,
+      clause_type_textarea,
+      clause_type;
 
     validation_msg = "validated";
     invalidation_msg = "invalidated";
@@ -1520,6 +1526,21 @@ var ParsedClassicsDiagramGenerator = {
       else {
         // inner index of root relation must be "root_relation"
         internal_index_input.val('root_relation');
+      }
+    }
+
+    // (g) if relation has external index, it also must have clause type
+    for (var i = 0; i < relation_inputs_blocks.length; i++) {
+      external_index_input = $(relation_inputs_blocks[i]).find('input[name="external-index"]'); 
+      external_index = external_index_input.val().trim();
+      if (external_index) {
+        clause_type_textarea = $(relation_inputs_blocks[i]).find('textarea[name="clause-type"]');
+        clause_type = clause_type_textarea.val().trim();
+        if (!clause_type) {
+          ParsedClassicsDiagramGenerator.show_error_msg("Clause type of each clause must be defined!");
+          center_pane.scrollTo(clause_type_textarea, 400);
+          return invalidation_msg;
+        }
       }
     }
 
@@ -2372,6 +2393,7 @@ var ParsedClassicsDiagramGenerator = {
     recursion_level_block,
     rel_internal_index,
     rel_external_index,
+    rel_clause_type,
     x_coord,
     bbox,
     top_corner,
@@ -2393,6 +2415,7 @@ var ParsedClassicsDiagramGenerator = {
     external_index_y,
     hotspot_external_index,
     text_el,
+    title_el,
     rect;
 
     syntactic_relation = argsObj.syntactic_relation;
@@ -2404,6 +2427,9 @@ var ParsedClassicsDiagramGenerator = {
 
     // get external index of the relation
     rel_external_index = syntactic_relation.external_index;
+
+    // get clause type of the relation
+    rel_clause_type = syntactic_relation.clause_type;
 
     // x coord of the blocks
     x_coord = ParsedClassicsDiagramGenerator.left_padding;
@@ -2507,6 +2533,11 @@ var ParsedClassicsDiagramGenerator = {
           .attr("stroke", ParsedClassicsDiagramGenerator.line_color)
           .attr("stroke-width", 0)
           .move(bbox.x, bbox.y);
+          // add tooltip displaying clause type
+          if (rel_clause_type) {
+            title_el = draw.element('title').words(rel_clause_type);
+            title_el.putIn(rect);
+          }
           group_new.add(rect);
         }
       }
