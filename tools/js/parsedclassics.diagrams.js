@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.3",
+  diagrammer_version: "1.6.4",
   
   debug: false,
 
@@ -912,7 +912,7 @@ var ParsedClassicsDiagramGenerator = {
     biggest_number = 0;
 
     // get inner index input of syntactic relation
-    inner_index_input = selectbox.parent().parent().find('input[name="internal-index"]');
+    inner_index_input = selectbox.parent().find('input[name="internal-index"]');
 
     // is inner index input of syntactic relation empty?
     if (inner_index_input.val().trim() == '') {
