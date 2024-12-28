@@ -447,6 +447,13 @@ div[data-resource-type="diagram_set"][data-scanned-or-typed="typed"] .line {
   max-width: var(--text-max-width);
 }
 
+div[data-resource-type="diagram_set"][data-scanned-or-typed="typed"] .svg-diagram-container {
+  display: inline-block;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 48px;
+}
+
 div[data-resource-type="diagram_set"][data-scanned-or-typed="typed"] .line:not(:last-child) {
   padding-bottom: 16px;
 }
