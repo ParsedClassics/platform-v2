@@ -922,7 +922,9 @@ var ParsedClassicsDiagramGenerator = {
         inner_index = $(inner_index_inputs_all[i]).val().trim();
         if (inner_index) {
           // get number from inner index
-          padded_number = inner_index.match(/\d+/gi).join('');
+          padded_number = inner_index.match(/\d+/gi);
+          if (!padded_number) {continue;}
+          padded_number = padded_number.join('');
           // remove leading zeroes from number
           parsed_number = padded_number.replace(/^0+(?!\.|$)/, '');
           //change found biggest number if parsed_number is biggest than current biggest number
