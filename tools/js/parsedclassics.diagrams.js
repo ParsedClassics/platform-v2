@@ -1409,7 +1409,7 @@ var ParsedClassicsDiagramGenerator = {
 
       // get options container and restore options values
       options_container = $("#options-panel");
-      if (typeof json.options.column_left_distance != "undefined" && $.isArray(json.options.column_left_distance) && json.options.column_left_distance.length > 0) {
+      if (typeof json.options != "undefined" && typeof json.options.column_left_distance != "undefined" && $.isArray(json.options.column_left_distance) && json.options.column_left_distance.length > 0) {
         options_container.find('input[name="column-left-distance"]').val(json.options.column_left_distance.join("|"));
         //localStorage.setItem("column_left_distance", json.options.column_left_distance.join("|"));
         ParsedClassicsDiagramGenerator.column_left_distance = json.options.column_left_distance;
