@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.4",
+  diagrammer_version: "1.6.5",
   
   debug: false,
 
@@ -3199,6 +3199,7 @@ var ParsedClassicsDiagramGenerator = {
     group_new,
     rel_internal_index,
     rel_external_index,
+    rel_clause_type,
     x_coord,
     bbox,
     recursion_level_block,
@@ -3216,6 +3217,7 @@ var ParsedClassicsDiagramGenerator = {
     polyline,
     hotspot_l,
     index_el,
+    title_el,
     rect,
     expr_els_arr,
     lowest_word_el_id,
@@ -3232,6 +3234,9 @@ var ParsedClassicsDiagramGenerator = {
 
     // get external index of the relation
     rel_external_index = syntactic_relation.external_index;
+
+    // get clause type of the relation
+    rel_clause_type = syntactic_relation.clause_type;
 
     // x coord of the blocks
     x_coord = ParsedClassicsDiagramGenerator.left_padding;
@@ -3331,6 +3336,11 @@ var ParsedClassicsDiagramGenerator = {
       .attr("stroke", ParsedClassicsDiagramGenerator.line_color)
       .attr("stroke-width", 0)
       .move(bbox.x, bbox.y);
+      // add tooltip displaying clause type
+      if (rel_clause_type) {
+        title_el = draw.element('title').words(rel_clause_type);
+        title_el.putIn(rect);
+      }
     }
 
     group_new.add(blocks_arr[0]);
