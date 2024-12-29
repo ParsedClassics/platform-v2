@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.5",
+  diagrammer_version: "1.6.6",
   
   debug: false,
 
@@ -927,6 +927,7 @@ var ParsedClassicsDiagramGenerator = {
           padded_number = padded_number.join('');
           // remove leading zeroes from number
           parsed_number = padded_number.replace(/^0+(?!\.|$)/, '');
+          parsed_number = Number(parsed_number);
           //change found biggest number if parsed_number is biggest than current biggest number
           biggest_number = parsed_number > biggest_number ? parsed_number : biggest_number;
         }
