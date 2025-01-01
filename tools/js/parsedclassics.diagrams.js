@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.6",
+  diagrammer_version: "1.6.7",
   
   debug: false,
 
@@ -3733,11 +3733,13 @@ var ParsedClassicsDiagramGenerator = {
     expr_els_cl_adjunct_arr,
     expr_els_cl_adjunct_arr2,
     expr_els_intro_marker_arr,
+    expr_els_intro_marker_arr2,
     syntactic_relations,
     relations_non_block_forming,
     cl_adjunct_relations,
     intro_relations,
     intro_relation_block,
+    fork_relations,
     fork_point,
     fork_point_id,
     fork_point_arr,
@@ -3828,7 +3830,9 @@ var ParsedClassicsDiagramGenerator = {
 
       // (b) find words in clausal adjunct blocks and correct their place in expr_els_all_arr
       cl_adjunct_relations = syntactic_relations.filter(item => item.relation == "clausal-adjunction");
-      cl_adjunct_relations = cl_adjunct_relations.filter(item => SVG(root_block[0]).find('g[id="' + item.internal_index + '"]').length === 1);
+      cl_adjunct_relations = cl_adjunct_relations.filter(item => {
+        return item.internal_index == 'root_relation' || SVG(root_block[0]).find('g[id="' + item.internal_index + '"]').length === 1;
+      });
       for (var i = 0; i < cl_adjunct_relations.length; i++) {
         // get first and second block of clausal adjunction group
         first_block = SVG.find('g[id="' + cl_adjunct_relations[i].words_and_phrases[0].internal_index + '"]');
@@ -3857,7 +3861,7 @@ var ParsedClassicsDiagramGenerator = {
 
       // (c) find words in introduction marker blocks and correct their place in expr_els_all_arr
       intro_relations = syntactic_relations.filter(item => item.relation == "introduction");
-      intro_relations = intro_relations.filter(item => SVG(root_block[0]).find('g[id="' + item.internal_index + '"]').length === 1);
+      intro_relations = intro_relations.filter(item => item.internal_index == 'root_relation' || SVG(root_block[0]).find('g[id="' + item.internal_index + '"]').length === 1);
       for (var i = 0; i < intro_relations.length; i++) {
         // get first and second block of introduction group
         first_block = SVG.find('g[id="' + intro_relations[i].words_and_phrases[0].internal_index + '"]');
@@ -3867,19 +3871,26 @@ var ParsedClassicsDiagramGenerator = {
         args_obj.block = first_block[0];
         expr_els_intro_marker_arr = ParsedClassicsDiagramGenerator.expressions_by_y_axis(args_obj);
         // modifiers of the word in first block should be drawn relative the first block, which we name here "root_block_local"
-        expr_els_intro_marker_arr.forEach(id => json.phase_2[id].root_block_local = intro_relations[i].words_and_phrases[0].internal_index);
+        expr_els_intro_marker_arr.forEach(id => {
+          if (typeof json.phase_2[id] != "undefined") {
+            json.phase_2[id].root_block_local = intro_relations[i].words_and_phrases[0].internal_index;
+          }
+        });
         // find if there is fork point inside introduction relation block
-        intro_relation_block = SVG(root_block[0]).find('g[id="' + intro_relations[i].internal_index + '"]');
-        fork_point = SVG(intro_relation_block[0]).find('path[class="fork_point"]');
-        if (fork_point.length == 1) {
-          fork_point_id = fork_point[0].attr("id");
+        var fork_relations = syntactic_relations.filter(item => item.relation == "fork");
+        fork_relations = fork_relations.filter(item => item.words_and_phrases[0].internal_index == intro_relations[i].words_and_phrases[0].internal_index && item.words_and_phrases[1].internal_index == intro_relations[i].words_and_phrases[1].internal_index);
+        if (fork_relations.length == 1) {
+          fork_point_id = fork_relations[0].internal_index;
           expr_els_intro_marker_arr.push(fork_point_id);
           json.phase_2[fork_point_id] = {};
           json.phase_2[fork_point_id].fork_point = true;
         }
-
         // modifiers of the words in first block should go around  the second block
-        expr_els_intro_marker_arr.forEach(id => json.phase_2[id].block_around = intro_relations[i].words_and_phrases[1].internal_index);
+        expr_els_intro_marker_arr.forEach(id => {
+          if (typeof json.phase_2[id] !== "undefined") {
+            json.phase_2[id].block_around = intro_relations[i].words_and_phrases[1].internal_index;
+          }
+        });
         // find order of words in the second block
         args_obj = {};
         args_obj.block = second_block[0];
@@ -3899,7 +3910,9 @@ var ParsedClassicsDiagramGenerator = {
       // loop through all words of this block
       for (var i = 0; i < expr_els_all_arr.length; i++) {
         expr_internal_index = expr_els_all_arr[i];
-        json.phase_2[expr_internal_index].related_to = [];
+        if (typeof json.phase_2[expr_internal_index] !== "undefined") {
+          json.phase_2[expr_internal_index].related_to = [];
+        }
         // loop through all non-block-building relations and find relations of current word
         relations_non_block_forming_of_word = [];
         for (var j = 0; j < relations_non_block_forming.length; j++) {
@@ -3946,7 +3959,11 @@ var ParsedClassicsDiagramGenerator = {
       }
 
       // clean  expr_els_all_arr to leave only those which are in at least one non-block-building relation
-      expr_els_in_rels_arr =  expr_els_all_arr.filter(item => json.phase_2[item].related_to.length > 0);
+      expr_els_in_rels_arr =  expr_els_all_arr.filter(item => {
+        if (typeof json.phase_2[item] !== "undefined") {
+          return json.phase_2[item].related_to.length > 0;
+        }
+      });
 
       // no expressions in expr_els_in_rels_arr? then put resulting diagram in place, set its dimensions and end the recursion
       if (expr_els_in_rels_arr.length == 0) {
