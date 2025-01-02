@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.7",
+  diagrammer_version: "1.6.8",
   
   debug: false,
 
@@ -3939,9 +3939,11 @@ var ParsedClassicsDiagramGenerator = {
           if (relations_non_block_forming_of_word[j].relation != "fork2") {
             // get expression the current word is in relation to
             expr_el =  SVG.find('#' + relations_non_block_forming_of_word[j].words_and_phrases[1].internal_index);
-            bbox2 = expr_el[0].node.getBBox();
-            // calculate cumulative height of all expressions the current word is in relation to
-            cumulative_height += bbox2.height;
+            if (expr_el.length > 0) {
+              bbox2 = expr_el[0].node.getBBox();
+              // calculate cumulative height of all expressions the current word is in relation to
+              cumulative_height += bbox2.height;
+            }
           }
           
           if (j == relations_non_block_forming_of_word.length - 1) {
@@ -3952,12 +3954,13 @@ var ParsedClassicsDiagramGenerator = {
           info_obj.internal_index = relations_non_block_forming_of_word[j].relation != "fork2" ? relations_non_block_forming_of_word[j].words_and_phrases[1].internal_index : relations_non_block_forming_of_word[j].internal_index;
           info_obj.relation = relations_non_block_forming_of_word[j].relation;
           info_obj.bbox = bbox2;
-          json.phase_2[expr_internal_index].related_to.push(info_obj);
-          json.phase_2[expr_internal_index].bbox = bbox;
-          json.phase_2[expr_internal_index].cumulative_height = cumulative_height;
+          if (typeof json.phase_2[expr_internal_index] != "undefined") {
+            json.phase_2[expr_internal_index].related_to.push(info_obj);
+            json.phase_2[expr_internal_index].bbox = bbox;
+            json.phase_2[expr_internal_index].cumulative_height = cumulative_height;
+          }
         }
       }
-
       // clean  expr_els_all_arr to leave only those which are in at least one non-block-building relation
       expr_els_in_rels_arr =  expr_els_all_arr.filter(item => {
         if (typeof json.phase_2[item] !== "undefined") {
@@ -4101,15 +4104,17 @@ var ParsedClassicsDiagramGenerator = {
             for (j = 0; j < json.phase_2[expr_internal_index].related_to.length; j++) {
               if (json.phase_2[expr_internal_index].related_to[j].relation != "fork2") {
                 block = SVG.find("#" + json.phase_2[expr_internal_index].related_to[j].internal_index);
-                if (j == 0) {
-                  block[0].move(column_x, json.phase_2[expr_internal_index].bbox.y);
+                if (block.lenhth > 0) {
+                  if (j == 0) {
+                    block[0].move(column_x, json.phase_2[expr_internal_index].bbox.y);
+                  }
+                  else {
+                    bbox = block_last.node.getBBox();
+                    block[0].move(column_x, bbox.y + bbox.height + ParsedClassicsDiagramGenerator.space_y_between_words);
+                  }
+                  new_root_block.add(block[0]);
+                  block_last = block[0];
                 }
-                else {
-                  bbox = block_last.node.getBBox();
-                  block[0].move(column_x, bbox.y + bbox.height + ParsedClassicsDiagramGenerator.space_y_between_words);
-                }
-                new_root_block.add(block[0]);
-                block_last = block[0];
               }
             }
           }
@@ -4200,15 +4205,17 @@ var ParsedClassicsDiagramGenerator = {
             for (j = 0; j < json.phase_2[expr_internal_index].related_to.length; j++) {
               if (json.phase_2[expr_internal_index].related_to[j].relation != "fork2") {
                 block = SVG.find("#" + json.phase_2[expr_internal_index].related_to[j].internal_index);
-                if (j == 0) {
-                  block[0].move(column_x, json.phase_2[expr_internal_index].bbox.y);
+                if (block.length > 0) {
+                  if (j == 0) {
+                    block[0].move(column_x, json.phase_2[expr_internal_index].bbox.y);
+                  }
+                  else {
+                    bbox = block_last.node.getBBox();
+                    block[0].move(column_x, bbox.y + bbox.height + ParsedClassicsDiagramGenerator.space_y_between_words);
+                  }
+                  new_root_block.add(block[0]);
+                  block_last = block[0];
                 }
-                else {
-                  bbox = block_last.node.getBBox();
-                  block[0].move(column_x, bbox.y + bbox.height + ParsedClassicsDiagramGenerator.space_y_between_words);
-                }
-                new_root_block.add(block[0]);
-                block_last = block[0];
               }
             }
           }
@@ -4647,8 +4654,8 @@ var ParsedClassicsDiagramGenerator = {
 
               // draw polyline
 
-              // is point2 lower than point1?
-              if (point1_coords.y < point2_coords.y) {
+              // is point2 lower than point1? but point4 not lower than point2?
+              if (point1_coords.y < point2_coords.y && !(point2_coords.y < point4_coords.y)) {
                 // draw straight line
                 polyline = draw
                 .polyline([[right_block_hotspot_bbox.x + ParsedClassicsDiagramGenerator.word_border_width/2, right_block_hotspot_bbox.y + ParsedClassicsDiagramGenerator.word_border_width/2], 
