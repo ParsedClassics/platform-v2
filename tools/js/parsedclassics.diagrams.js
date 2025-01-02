@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.8",
+  diagrammer_version: "1.6.9",
   
   debug: false,
 
@@ -4104,7 +4104,7 @@ var ParsedClassicsDiagramGenerator = {
             for (j = 0; j < json.phase_2[expr_internal_index].related_to.length; j++) {
               if (json.phase_2[expr_internal_index].related_to[j].relation != "fork2") {
                 block = SVG.find("#" + json.phase_2[expr_internal_index].related_to[j].internal_index);
-                if (block.lenhth > 0) {
+                if (block.length > 0) {
                   if (j == 0) {
                     block[0].move(column_x, json.phase_2[expr_internal_index].bbox.y);
                   }
