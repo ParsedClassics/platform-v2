@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.9",
+  diagrammer_version: "1.6.10",
   
   debug: false,
 
@@ -3830,9 +3830,7 @@ var ParsedClassicsDiagramGenerator = {
 
       // (b) find words in clausal adjunct blocks and correct their place in expr_els_all_arr
       cl_adjunct_relations = syntactic_relations.filter(item => item.relation == "clausal-adjunction");
-      cl_adjunct_relations = cl_adjunct_relations.filter(item => {
-        return item.internal_index == 'root_relation' || SVG(root_block[0]).find('g[id="' + item.internal_index + '"]').length === 1;
-      });
+      cl_adjunct_relations = cl_adjunct_relations.filter(item =>  (counter == 0 && item.internal_index == 'root_relation') || SVG(root_block[0]).find('g[id="' + item.internal_index + '"]').length === 1);
       for (var i = 0; i < cl_adjunct_relations.length; i++) {
         // get first and second block of clausal adjunction group
         first_block = SVG.find('g[id="' + cl_adjunct_relations[i].words_and_phrases[0].internal_index + '"]');
@@ -3861,7 +3859,7 @@ var ParsedClassicsDiagramGenerator = {
 
       // (c) find words in introduction marker blocks and correct their place in expr_els_all_arr
       intro_relations = syntactic_relations.filter(item => item.relation == "introduction");
-      intro_relations = intro_relations.filter(item => item.internal_index == 'root_relation' || SVG(root_block[0]).find('g[id="' + item.internal_index + '"]').length === 1);
+      intro_relations = intro_relations.filter(item => (counter == 0 && item.internal_index == 'root_relation') || SVG(root_block[0]).find('g[id="' + item.internal_index + '"]').length === 1);
       for (var i = 0; i < intro_relations.length; i++) {
         // get first and second block of introduction group
         first_block = SVG.find('g[id="' + intro_relations[i].words_and_phrases[0].internal_index + '"]');
