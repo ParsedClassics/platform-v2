@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.10",
+  diagrammer_version: "1.6.11",
   
   debug: false,
 
@@ -3834,27 +3834,36 @@ var ParsedClassicsDiagramGenerator = {
       for (var i = 0; i < cl_adjunct_relations.length; i++) {
         // get first and second block of clausal adjunction group
         first_block = SVG.find('g[id="' + cl_adjunct_relations[i].words_and_phrases[0].internal_index + '"]');
-        second_block = SVG.find('g[id="' + cl_adjunct_relations[i].words_and_phrases[1].internal_index + '"]');
+        // is there second block?
+        if (cl_adjunct_relations[i].words_and_phrases.length > 1) {
+          second_block = SVG.find('g[id="' + cl_adjunct_relations[i].words_and_phrases[1].internal_index + '"]');
+        }
         // find order of words in the first block
         args_obj = {};
         args_obj.block = first_block[0];
         expr_els_cl_adjunct_arr = ParsedClassicsDiagramGenerator.expressions_by_y_axis(args_obj);
         // modifiers of the words in first block should go around  the second block
-        expr_els_cl_adjunct_arr.forEach(id => json.phase_2[id].block_around = cl_adjunct_relations[i].words_and_phrases[1].internal_index);
+        if (cl_adjunct_relations[i].words_and_phrases.length > 1) {
+          expr_els_cl_adjunct_arr.forEach(id => json.phase_2[id].block_around = cl_adjunct_relations[i].words_and_phrases[1].internal_index);
+        }
         // modifiers of the words in first block should be drawn relative the first block, which we name here "root_block_local"
         expr_els_cl_adjunct_arr.forEach(id => json.phase_2[id].root_block_local = cl_adjunct_relations[i].words_and_phrases[0].internal_index);
         // find order of words in the second block
-        args_obj = {};
-        args_obj.block = second_block[0];
-        expr_els_cl_adjunct_arr2 = ParsedClassicsDiagramGenerator.expressions_by_y_axis(args_obj);
+        if (second_block) {
+          args_obj = {};
+          args_obj.block = second_block[0];
+          expr_els_cl_adjunct_arr2 = ParsedClassicsDiagramGenerator.expressions_by_y_axis(args_obj);
+        }
         // remove from expr_els_all_arr all words present in first block
         expr_els_all_arr = expr_els_all_arr.filter(item => expr_els_cl_adjunct_arr.includes(item) === false);
-        // find the highest word el in second block
-        expr_el_highest = expr_els_cl_adjunct_arr2[0];
-        // get index of the highest word from second block in all words arr
-        index = expr_els_all_arr.indexOf(expr_el_highest);
-        // put removed words in their place, i.e. before the highest word from second block
-        expr_els_cl_adjunct_arr.reverse().forEach(item => expr_els_all_arr.splice(index, 0, item));
+        if (second_block) {
+          // find the highest word el in second block
+          expr_el_highest = expr_els_cl_adjunct_arr2[0];
+          // get index of the highest word from second block in all words arr
+          index = expr_els_all_arr.indexOf(expr_el_highest);
+          // put removed words in their place, i.e. before the highest word from second block
+          expr_els_cl_adjunct_arr.reverse().forEach(item => expr_els_all_arr.splice(index, 0, item));
+        }
       }
 
       // (c) find words in introduction marker blocks and correct their place in expr_els_all_arr
