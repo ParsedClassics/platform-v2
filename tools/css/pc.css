@@ -445,11 +445,11 @@ textarea {
   overflow-y: hidden;
 }
 
-.diagram_page .ui-layout-pane {
+.diagram_page .ui-layout-pane, .diagramming_playground_page .ui-layout-pane {
   border: 0;
 }
 
-.diagram_page .ui-layout-resizer {
+.diagram_page .ui-layout-resizer, .diagramming_playground_page .ui-layout-resizer {
   border-top: solid 1px #bbb;
   border-bottom: solid 1px #bbb;
   height: 5px !important;

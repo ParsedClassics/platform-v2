@@ -4412,3 +4412,39 @@ var ParsedClassicsGrammarRefsSupplementer = {
     checkCompletenessButton.bind("click", ParsedClassicsGrammarRefsSupplementer.checkForCompleteness);
   }
 };
+
+/*
+
+Syntax diagramming playground script 
+
+to have playgroung allowing to check correctness of generating of diagrams
+
+*/
+
+var ParsedClassicsDiagrammingPlayground = {
+	
+	init: function() {
+		var generate_diagram_from_example_json_buttons, generate_diagram_from_custom_json_buttons;
+		
+		console.log('ParsedClassicsDiagrammingPlayground.init');
+
+		ParsedClassicsDiagramGenerator.initAllCloseDialogueButtons();
+
+		generate_diagram_from_example_json_buttons = $('.generate-diagram-from-example-json-button');
+		generate_diagram_from_example_json_buttons.bind(
+			'click',
+			function() {
+
+			}
+		);
+
+		generate_diagram_from_custom_json_buttons = $('.generate-diagram-from-custom-json-button');
+		generate_diagram_from_custom_json_buttons.bind(
+			'click',
+			function() {
+
+			}
+		);
+	}
+
+};
