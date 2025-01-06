@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.11",
+  diagrammer_version: "1.6.12",
   
   debug: false,
 
@@ -3519,7 +3519,7 @@ var ParsedClassicsDiagramGenerator = {
       }
       
       // in case of complementation or coordination we need to add technical crowbar symbol 
-      if (relation_name == "complementation" || relation_name == "coordination" || relation_name == "coordination-initial" || relation_name == "specification" || relation_name == "introduction") {
+      if (relation_name == "complementation" || relation_name == "coordination" || relation_name == "coordination-initial" || relation_name == "specification" || relation_name == "introduction" || relation_name == "clausal-adjunction") {
         // get coords of the <g> el picturing phrase
         bbox = block[0].node.getBBox();
         block_x_coord = bbox.x;
