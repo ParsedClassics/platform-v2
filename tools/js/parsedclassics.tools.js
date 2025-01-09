@@ -4425,24 +4425,63 @@ var ParsedClassicsDiagrammingPlayground = {
 	
 	init: function() {
 		var generate_diagram_from_example_json_buttons, generate_diagram_from_custom_json_buttons;
-		
-		console.log('ParsedClassicsDiagrammingPlayground.init');
 
 		ParsedClassicsDiagramGenerator.initAllCloseDialogueButtons();
 
 		generate_diagram_from_example_json_buttons = $('.generate-diagram-from-example-json-button');
 		generate_diagram_from_example_json_buttons.bind(
 			'click',
-			function() {
+			function(e) {
+				var playground_section, json_textarea, svg_diagram_container, svg_diagram_as_should_be, svg_diagram_as_should_be_parent, svg_diagram_from_custom_json, svg_diagram_from_custom_json_parent;
 
+				playground_section = $(e.target);
+				while (!playground_section.hasClass('diagramming-playground-section') && playground_section[0] != document.body) {
+					playground_section = playground_section.parent();
+				}
+				json_textarea = playground_section.find('.example-json-textarea');
+				svg_diagram_container = playground_section.find('.svg-diagram-from-example-json');
+
+				svg_diagram_as_should_be = playground_section.find('.svg-diagram-as-should-be');
+				svg_diagram_as_should_be_parent = svg_diagram_as_should_be.parent();
+				svg_diagram_as_should_be = svg_diagram_as_should_be.detach();
+
+				svg_diagram_from_custom_json = playground_section.find('.svg-diagram-from-custom-json');
+				svg_diagram_from_custom_json_parent = svg_diagram_from_custom_json.parent();
+				svg_diagram_from_custom_json = svg_diagram_from_custom_json.detach();
+
+				ParsedClassicsDiagramGenerator.generate_diagram(e, json_textarea, svg_diagram_container);
+
+				svg_diagram_as_should_be_parent.prepend(svg_diagram_as_should_be);
+				svg_diagram_from_custom_json_parent.prepend(svg_diagram_from_custom_json);
 			}
 		);
 
 		generate_diagram_from_custom_json_buttons = $('.generate-diagram-from-custom-json-button');
 		generate_diagram_from_custom_json_buttons.bind(
 			'click',
-			function() {
+			function(e) {
+				var playground_section, json_textarea, svg_diagram_container, svg_diagram_as_should_be, svg_diagram_as_should_be_parent, svg_diagram_from_example_json, svg_diagram_from_custom_example_parent;
 
+				playground_section = $(e.target);
+				while (!playground_section.hasClass('diagramming-playground-section') && playground_section[0] != document.body) {
+					playground_section = playground_section.parent();
+				}
+
+				json_textarea = playground_section.find('.custom-json-textarea');
+				svg_diagram_container = playground_section.find('.svg-diagram-from-custom-json');
+
+				svg_diagram_as_should_be = playground_section.find('.svg-diagram-as-should-be');
+				svg_diagram_as_should_be_parent = svg_diagram_as_should_be.parent();
+				svg_diagram_as_should_be = svg_diagram_as_should_be.detach();
+
+				svg_diagram_from_example_json = playground_section.find('.svg-diagram-from-example-json');
+				svg_diagram_from_example_json_parent = svg_diagram_from_example_json.parent();
+				svg_diagram_from_example_json = svg_diagram_from_example_json.detach();
+
+				ParsedClassicsDiagramGenerator.generate_diagram(e, json_textarea, svg_diagram_container);
+
+				svg_diagram_as_should_be_parent.prepend(svg_diagram_as_should_be);
+				svg_diagram_from_example_json_parent.prepend(svg_diagram_from_example_json);
 			}
 		);
 	}
