@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.12",
+  diagrammer_version: "1.6.13",
   
   debug: false,
 
@@ -2014,14 +2014,14 @@ var ParsedClassicsDiagramGenerator = {
     return json;
   },
 
-  generate_diagram: function () {
-    var json_output_textarea,
-    json,
+  generate_diagram: function(e, json_output_textarea, svg_diagram_container) {
+    var json,
     draw,
-    svg_diagram_container,
     resulting_group;
-      
-    json_output_textarea = $("#json-output-textarea");
+    
+    if (!json_output_textarea) {
+      json_output_textarea = $("#json-output-textarea");
+    }
     json = $.trim(json_output_textarea.val());
 
     // is the string in json output textarea really json string?
@@ -2044,13 +2044,15 @@ var ParsedClassicsDiagramGenerator = {
 
     if (json) {
       // get diagram container
-      svg_diagram_container = $("#svg-diagram-container");
+      if (!svg_diagram_container) {
+        svg_diagram_container = $("#svg-diagram-container");
+      }
 
       // remove existing SVG diagram from diagram container
       svg_diagram_container.find("svg").remove();
 
       // initialize SVG.js 
-      var draw = SVG().addTo("#svg-diagram-container");
+      var draw = SVG().addTo(svg_diagram_container[0]);
       //draw.size(2500, 5500)
 
       // Phase 0.: generate <text> el for each word and mark hotspots
