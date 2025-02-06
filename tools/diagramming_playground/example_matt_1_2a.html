@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+This file is part of ParsedClassics app
+=====================================================
+Copyright (c) Eleutherius Joannides
+=====================================================
+-->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+
+    <title>Syntax diagramming playground | ParsedClassics</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/w3.css" />
+
+    <link type="text/css" rel="stylesheet" href="../css/pc.css" />
+
+    <script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+
+    <script type="text/javascript" src="../js/jquery.scrollTo-2.1.2.js"></script>
+
+    <script type="text/javascript" src="../js/_navigation2.js"></script>
+
+    <script type="text/javascript" src="../js/nojquery.svg.js"></script>
+
+    <script type="text/javascript" src="../js/parsedclassics.diagrams.js"></script>
+
+    <script type="text/javascript" src="../js/parsedclassics.tools.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        ParsedClassicsDiagrammingPlayground.init();
+      });
+    </script>
+  </head>
+
+  <body id="tools_page" class="diagramming_playground_page">
+    <div id="pc-site-content" class="pc-padding-top-0 pc-padding-left-8 pc-padding-right-8 pc-padding-bottom-8">
+
+        <div class="pc-center-pane-maxwidth">
+          <h1>Syntax diagramming playground</h1>
+        </div>
+
+        <!-- Start of .diagramming-playground-section -->
+        <div class="diagramming-playground-section">
+
+          <h2>Example</h2>
+
+          <p>Matt 1:2 Ἰακὼβ ἐγέννησεν τὸν Ἰούδαν, τοὺς ἀδελφοὺς·</p>
+
+          <div class="pc-center-pane-maxwidth">
+
+            <h2>Custom JSON:</h2>
+            <textarea class="custom-json-textarea pc-width-100"></textarea>
+            <div class="pc-padding-8">
+              <button
+                class="generate-diagram-from-custom-json-button w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey"
+              >
+                Generate diagram
+              </button>
+            </div>
+
+            <h2>Example JSON:</h2>
+            <textarea class="example-json-textarea pc-width-100">{"sentence":"Ἀβραὰμ ἐγέννησεν τὸν Ἰσαάκ· Ἰσαὰκ δὲ ἐγέννησεν τὸν Ἰακώβ· Ἰακὼβ δὲ ἐγέννησεν τὸν Ἰούδαν, τοὺς ἀδελφοὺς αὐτοῦ·","sentence_html":"<span class=\"line\"><span class=\"line-number v1-2\">1:2</span> <span class=\"word\" data-form=\"Ἀβραάμ\" data-part-of-speech=\"noun\" data-parsing=\"nominative singular masculine\" data-lemma=\"Ἀβραάμ\">Ἀβραὰμ</span> <span class=\"word\" data-form=\"ἐγέννησε(ν)\" data-part-of-speech=\"verb\" data-parsing=\"aorist active indicative 3rd person singular\" data-lemma=\"γεννάω\">ἐγέννησεν</span> <span class=\"word\" data-form=\"τόν\" data-part-of-speech=\"article\" data-parsing=\"accusative singular masculine\" data-lemma=\"ὁ\">τὸν</span> <span class=\"word\" data-form=\"Ἰσαάκ\" data-part-of-speech=\"noun\" data-parsing=\"accusative singular masculine\" data-lemma=\"Ἰσαάκ\">Ἰσαάκ</span>· <span class=\"word\" data-form=\"Ἰσαάκ\" data-part-of-speech=\"noun\" data-parsing=\"nominative singular masculine\" data-lemma=\"Ἰσαάκ\">Ἰσαὰκ</span> <span class=\"word\" data-form=\"δέ\" data-part-of-speech=\"conjunction\" data-parsing=\"\" data-lemma=\"δέ\">δὲ</span> <span class=\"word\" data-form=\"ἐγέννησε(ν)\" data-part-of-speech=\"verb\" data-parsing=\"aorist active indicative 3rd person singular\" data-lemma=\"γεννάω\">ἐγέννησεν</span> <span class=\"word\" data-form=\"τόν\" data-part-of-speech=\"article\" data-parsing=\"accusative singular masculine\" data-lemma=\"ὁ\">τὸν</span> <span class=\"word\" data-form=\"Ἰακώβ\" data-part-of-speech=\"noun\" data-parsing=\"accusative singular masculine\" data-lemma=\"Ἰακώβ\">Ἰακώβ</span>· <span class=\"word\" data-form=\"Ἰακώβ\" data-part-of-speech=\"noun\" data-parsing=\"nominative singular masculine\" data-lemma=\"Ἰακώβ\">Ἰακὼβ</span> <span class=\"word\" data-form=\"δέ\" data-part-of-speech=\"conjunction\" data-parsing=\"\" data-lemma=\"δέ\">δὲ</span> <span class=\"word\" data-form=\"ἐγέννησε(ν)\" data-part-of-speech=\"verb\" data-parsing=\"aorist active indicative 3rd person singular\" data-lemma=\"γεννάω\">ἐγέννησεν</span> <span class=\"word\" data-form=\"τόν\" data-part-of-speech=\"article\" data-parsing=\"accusative singular masculine\" data-lemma=\"ὁ\">τὸν</span> <span class=\"word\" data-form=\"Ἰούδαν\" data-part-of-speech=\"noun\" data-parsing=\"accusative singular masculine\" data-lemma=\"Ἰούδας\">Ἰούδαν</span> <span class=\"word\" data-form=\"καί\" data-part-of-speech=\"conjunction\" data-parsing=\"\" data-lemma=\"καί\">καὶ</span> <span class=\"word\" data-form=\"τούς\" data-part-of-speech=\"article\" data-parsing=\"accusative plural masculine\" data-lemma=\"ὁ\">τοὺς</span> <span class=\"word\" data-form=\"ἀδελφούς\" data-part-of-speech=\"noun\" data-parsing=\"accusative plural masculine\" data-lemma=\"ἀδελφός\">ἀδελφοὺς</span> <span class=\"word\" data-form=\"αὐτοῦ\" data-part-of-speech=\"personal pronoun\" data-parsing=\"genitive singular masculine\" data-lemma=\"αὐτός\">αὐτοῦ</span>· </span>","syntactic_relations":[{"relation":"complementation","resulting_phrase":"Ἰακὼβ ἐγέννησεν τὸν Ἰούδαν καὶ τοὺς ἀδελφοὺς","root":true,"external_index":"b","internal_index":"root_relation","words_and_phrases":[{"word":"Ἰακώβ","word2":"","phrase":"","syntactic_role":"S.","external_index":"","internal_index":"w009","recursion_level":0},{"word":"ἐγέννησε(ν)","word2":"","phrase":"","syntactic_role":"P.","external_index":"","internal_index":"w012","recursion_level":0},{"word":"","word2":"","phrase":"τὸν Ἰούδαν, τοὺς ἀδελφοὺς","syntactic_role":"O.","external_index":"","internal_index":"phr001","recursion_level":1}],"recursion_level":2},{"relation":"coordination","resulting_phrase":"τὸν Ἰούδαν, τοὺς ἀδελφοὺς","root":false,"external_index":"","internal_index":"phr001","words_and_phrases":[{"word":"","word2":"τὸν Ἰούδαν","phrase":"","syntactic_role":"","external_index":"","internal_index":"wa001","recursion_level":0},{"word":"","word2":"τοὺς ἀδελφοὺς","phrase":"","syntactic_role":"","external_index":"","internal_index":"wa002","recursion_level":0}],"recursion_level":1}]}</textarea>
+            <div class="pc-padding-8">
+              <button
+                class="generate-diagram-from-example-json-button w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey"
+              >
+                Generate diagram
+              </button>
+            </div>
+          </div>
+
+          <h2>Syntax diagram from custom JSON: <span class="phase-info"></span></h2>
+          <div class="svg-diagram-wrapper">
+            <div class="svg-diagram-from-custom-json svg-diagram-container">
+
+            </div>
+          </div>
+
+          <h2>Syntax diagram from example JSON: <span class="phase-info"></span></h2>
+          <div class="svg-diagram-wrapper">
+            <div class="svg-diagram-from-example-json svg-diagram-container">
+
+            </div>
+          </div>
+
+          <h2>Syntax diagram as should be:</h2>
+          <div class="svg-diagram-wrapper">
+            <div class="svg-diagram-as-should-be svg-diagram-container"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="315.1256103515625" height="257.3199768066406"><g id="mrk_diagram"><g id="root_relation" data-recursion-level="2"><g id="w009" class="word" data-recursion-level="0"><text xml:space="preserve" x="45.28184509277344" y="-6.020000457763672" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="45.28184509277344" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> S. Ἰακώβ </tspan></text><rect width="91.6328125" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="45.28184509277344" y="0.75"></rect><circle r="0.75" cx="45.28184509277344" cy="17.165008544921875" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="45.28184509277344" cy="33.579986572265625" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="91.09823608398438" cy="0.75" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="128.7071533203125" cy="0.75" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="91.09823608398438" cy="33.579986572265625" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="128.7071533203125" cy="33.579986572265625" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="136.91464233398438" cy="0.75" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="136.91464233398438" cy="8.957489013671875" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="136.91464233398438" cy="17.165008544921875" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="136.91464233398438" cy="25.37249755859375" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="136.91464233398438" cy="33.579986572265625" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><g id="w012" class="word" data-recursion-level="0"><text xml:space="preserve" x="45.28184509277344" y="68.30998611450195" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="45.28184509277344" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> P. ἐγέννησε(ν) </tspan></text><rect width="143.0234375" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="45.28184509277344" y="75.07998657226562"></rect><circle r="0.75" cx="45.28184509277344" cy="91.49496459960938" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="45.28184509277344" cy="107.91000366210938" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="116.79354858398438" cy="75.07998657226562" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="180.09774780273438" cy="75.07998657226562" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="116.79354858398438" cy="107.91000366210938" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="180.09774780273438" cy="107.91000366210938" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="188.30526733398438" cy="75.07998657226562" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="188.30526733398438" cy="83.28750610351562" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="188.30526733398438" cy="91.49496459960938" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="188.30526733398438" cy="99.70248413085938" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="188.30526733398438" cy="107.91000366210938" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><line x1="45.28184509277344" y1="91.49496459960938" x2="4.5318450927734375" y2="91.28750610351562" stroke-width="1.5" stroke="#666666"></line><g id="phr001" data-recursion-level="1"><g><text xml:space="preserve" x="45.28184509277344" y="141.81000328063965" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="45.28184509277344" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> O. </tspan></text><rect width="30.40625" height="31.999998092651367" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="45.28184509277344" y="149.41000366210938"></rect><circle r="0.75" cx="45.28184509277344" cy="165.41000366210938" fill="transparent" data-recursion-level="1" class="hotspot_l"></circle><circle r="0.75" cx="75.68807983398438" cy="165.41000366210938" fill="transparent" data-recursion-level="1" class="hotspot_r3"></circle></g><g><g id="wa001" class="word" data-recursion-level="0"><text xml:space="preserve" x="167.93809509277344" y="142.6400032043457" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="167.93809509277344" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> τὸν Ἰούδαν </tspan></text><rect width="117.65625" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="167.93807983398438" y="149.41000366210938"></rect><circle r="0.75" cx="167.93807983398438" cy="165.82498168945312" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="167.93807983398438" cy="182.23995971679688" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="226.76620483398438" cy="149.41000366210938" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="277.3868408203125" cy="149.41000366210938" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="226.76620483398438" cy="182.23995971679688" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="277.3868408203125" cy="182.23995971679688" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="285.5943298339844" cy="149.41000366210938" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="285.5943298339844" cy="157.61746215820312" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="285.5943298339844" cy="165.82498168945312" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="285.5943298339844" cy="174.03250122070312" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="285.5943298339844" cy="182.23995971679688" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><g id="wa002" class="word" data-recursion-level="0"><text xml:space="preserve" x="167.93809509277344" y="216.96998977661133" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="167.93809509277344" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> τοὺς ἀδελφοὺς </tspan></text><rect width="146.4375" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="167.93807983398438" y="223.73995971679688"></rect><circle r="0.75" cx="167.93807983398438" cy="240.15499877929688" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="167.93807983398438" cy="256.5699768066406" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="241.15682983398438" cy="223.73995971679688" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="306.1680603027344" cy="223.73995971679688" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="241.15682983398438" cy="256.5699768066406" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="306.1680603027344" cy="256.5699768066406" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="314.3756103515625" cy="223.73995971679688" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="314.3756103515625" cy="231.94747924804688" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="314.3756103515625" cy="240.15499877929688" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="314.3756103515625" cy="248.36245727539062" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="314.3756103515625" cy="256.5699768066406" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><polyline points="167.9381103515625,240.15499877929688 127.1881103515625,240.15499877929688 127.1881103515625,165.82498168945312 167.9381103515625,165.82498168945312" stroke-width="1.5" stroke="#666666" stroke-linejoin="round" fill="none"></polyline><circle r="0.75" cx="127.18807983398438" cy="202.98995971679688" fill="transparent" class="hotspot_l"></circle></g><polyline points="75.6881103515625,165.41000366210938 101.4381103515625,165.41000366210938 101.4381103515625,202.989990234375 127.1881103515625,202.989990234375" stroke-width="1.5" stroke="#666666" stroke-linejoin="round" fill="none"></polyline></g><path d="M45.28184509277344 17.165008544921875L4.5318450927734375 91.28750610351562L45.28184509277344 165.41000366210938 " stroke-width="1.5" stroke="#666666" stroke-linejoin="round" fill="none"></path><circle r="0.75" cx="11.758255004882812" cy="104.43203735351562" fill="transparent" data-recursion-level="2" class="hotspot_external_index"></circle><text xml:space="preserve" font-size="80%" text-anchor="end" class="external_index" x="9.508255004882812" y="94.55203819274902" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="22.880000000000003" x="9.508255004882812" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}">b</tspan></text><rect width="9.508255004882812" height="17.5" fill="white" fill-opacity=".3" stroke="#666666" stroke-width="0" x="0" y="104.43203735351562"></rect><circle r="0.75" cx="4.5318450927734375" cy="91.28750610351562" fill="transparent" data-recursion-level="2" class="hotspot_l"></circle></g></g></svg></div>
+          </div>
+
+        </div>
+        <!-- End of .diagramming-playground-section -->
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- End of #pc-site-content -->
+
+    <!-- Modal success code should be below all content -->
+    <div id="pc-tools-success-dialogue" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+        <header class="w3-container w3-dark-grey">
+          <span
+            class="pc-close-dialogue-button w3-button w3-dark-grey w3-xlarge w3-hover-white w3-display-topright"
+            >&times;</span
+          >
+
+          <h2>Success</h2>
+        </header>
+
+        <div
+          id="success-msg-text-el"
+          class="pc-modal-content-inner w3-container w3-padding-16"
+        ></div>
+        <!-- End of div element containing message -->
+      </div>
+      <!-- End of .w3-modal-content -->
+    </div>
+    <!-- End of #pc-tools-success-dialogue -->
+
+    <!-- Modal dialogue code should be below all content -->
+    <div id="pc-tools-error-dialogue" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+        <header class="w3-container w3-dark-grey">
+          <span
+            class="pc-close-dialogue-button w3-button w3-dark-grey w3-xlarge w3-hover-white w3-display-topright"
+            >&times;</span
+          >
+
+          <h2>Error</h2>
+        </header>
+
+        <div
+          id="error-msg-text-el"
+          class="pc-modal-content-inner w3-container w3-padding-16"
+        ></div>
+        <!-- End of div element containing message -->
+      </div>
+      <!-- End of .w3-modal-content -->
+    </div>
+    <!-- End of #pc-tools-error-dialogue -->
+
+    <div id="pc-tools-attention-dialogue" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+        <header class="w3-container w3-dark-grey">
+          <span
+            class="pc-close-dialogue-button w3-button w3-dark-grey w3-xlarge w3-hover-white w3-display-topright"
+            >&times;</span
+          >
+
+          <h2>Attention</h2>
+        </header>
+
+        <div
+          id="attention-msg-text-el"
+          class="pc-modal-content-inner w3-container w3-padding-16"
+        ></div>
+        <div class="pc-padding-left-16 pc-padding-bottom-16">
+          <button
+            id="ok-action-button"
+            class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey"
+          >
+            OK
+          </button>
+          <button
+            id="cancel-action-button"
+            class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey"
+          >
+            Cancel
+          </button>
+        </div>
+        <!-- End of div element containing message -->
+      </div>
+      <!-- End of .w3-modal-content -->
+    </div>
+    <!-- End of #pc-tools-attention-dialogue -->
+  </body>
+</html>
