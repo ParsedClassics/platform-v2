@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.13",
+  diagrammer_version: "1.6.14",
   
   debug: false,
 
@@ -192,6 +192,7 @@ var ParsedClassicsDiagramGenerator = {
     // put default value inside field input
     else {
       field.val(val_default);
+      ParsedClassicsDiagramGenerator.column_left_distance = val_default;
     }
   },
 
