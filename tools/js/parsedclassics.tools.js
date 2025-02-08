@@ -4427,6 +4427,7 @@ var ParsedClassicsDiagrammingPlayground = {
 		var generate_diagram_from_example_json_buttons, generate_diagram_from_custom_json_buttons;
 
 		ParsedClassicsDiagramGenerator.initAllCloseDialogueButtons();
+		ParsedClassicsDiagramGenerator.prefillOptionsInputs();
 
 		generate_diagram_from_example_json_buttons = $('.generate-diagram-from-example-json-button');
 		generate_diagram_from_example_json_buttons.bind(
