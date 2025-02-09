@@ -192,6 +192,7 @@ var ParsedClassicsDiagramGenerator = {
     // put default value inside field input
     else {
       field.val(val_default);
+      ParsedClassicsDiagramGenerator.column_left_distance = val_default; // added in v. 1.6.11 from v. 1.6.14 in order to be able to display diagram when no column_left_distance saved in local storage
     }
   },
 
