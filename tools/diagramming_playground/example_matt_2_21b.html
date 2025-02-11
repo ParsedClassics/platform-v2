@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+This file is part of ParsedClassics app
+=====================================================
+Copyright (c) Eleutherius Joannides
+=====================================================
+-->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+
+    <title>Syntax diagramming playground | ParsedClassics</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/w3.css" />
+
+    <link type="text/css" rel="stylesheet" href="../css/pc.css" />
+
+    <script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+
+    <script type="text/javascript" src="../js/jquery.scrollTo-2.1.2.js"></script>
+
+    <script type="text/javascript" src="../js/_navigation2.js"></script>
+
+    <script type="text/javascript" src="../js/nojquery.svg.js"></script>
+
+    <script type="text/javascript" src="../js/parsedclassics.diagrams.js"></script>
+
+    <script type="text/javascript" src="../js/parsedclassics.tools.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        ParsedClassicsDiagrammingPlayground.init();
+      });
+    </script>
+  </head>
+
+  <body id="tools_page" class="diagramming_playground_page">
+    <div id="pc-site-content" class="pc-padding-top-0 pc-padding-left-8 pc-padding-right-8 pc-padding-bottom-8">
+
+        <div class="pc-center-pane-maxwidth">
+          <h1>Syntax diagramming playground</h1>
+        </div>
+
+        <!-- Start of .diagramming-playground-section -->
+        <div class="diagramming-playground-section">
+
+          <h2>Example</h2>
+
+          <p>Matt 2:21 λέγει αὐτῷ ὁ Ἰησοῦς, Ὁ δὲ παρέλαβεν τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ</p>
+
+          <div class="pc-center-pane-maxwidth">
+
+            <h2>Custom JSON:</h2>
+            <textarea class="custom-json-textarea pc-width-100"></textarea>
+            <div class="pc-padding-8">
+              <button
+                class="generate-diagram-from-custom-json-button w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey"
+              >
+                Generate diagram
+              </button>
+            </div>
+
+            <h2>Example JSON:</h2>
+            <textarea class="example-json-textarea pc-width-100">{"sentence":"λέγει αὐτῷ ὁ Ἰησοῦς, Ὁ δὲ παρέλαβεν τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ","sentence_html":"<span>λέγει αὐτῷ ὁ Ἰησοῦς, Ὁ δὲ παρέλαβεν τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ</span>","syntactic_relations":[{"relation":"complementation","resulting_phrase":"λέγει αὐτῷ ὁ Ἰησοῦς, Ὁ δὲ παρέλαβεν τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ","root":true,"external_index":"a","internal_index":"root_relation","words_and_phrases":[{"word":"","word2":"ὁ Ἰησοῦς","phrase":"","syntactic_role":"S.","external_index":"","internal_index":"aw000001","recursion_level":0},{"word":"λέγει","word2":"","phrase":"","syntactic_role":"P.","external_index":"","internal_index":"w000002","recursion_level":0},{"word":"αὐτῷ","word2":"","phrase":"","syntactic_role":"OO.","external_index":"","internal_index":"w000003","recursion_level":0},{"word":"","word2":"","phrase":"Ὁ δὲ παρέλαβεν τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ","syntactic_role":"O.","external_index":"","internal_index":"phr000009","recursion_level":0}],"recursion_level":5},{"relation":"coordination-initial","resulting_phrase":"Ὁ δὲ παρέλαβεν τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ","root":false,"external_index":"","internal_index":"phr000009","words_and_phrases":[{"word":"δέ","word2":"","phrase":"","syntactic_role":"J.","external_index":"","internal_index":"w002","recursion_level":0},{"word":"","word2":"","phrase":"Ὁ παρέλαβεν τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ","syntactic_role":"","external_index":"","internal_index":"phr001","recursion_level":3}],"recursion_level":4},{"relation":"complementation","resulting_phrase":"Ὁ παρέλαβεν τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ","root":false,"external_index":"b","internal_index":"phr001","words_and_phrases":[{"word":"ὁ","word2":"","phrase":"","syntactic_role":"S.","external_index":"","internal_index":"w001","recursion_level":0},{"word":"παρέλαβε(ν)","word2":"","phrase":"","syntactic_role":"P.","external_index":"","internal_index":"w004","recursion_level":0},{"word":"","word2":"","phrase":"τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ","syntactic_role":"O.","external_index":"","internal_index":"phr002","recursion_level":2}],"recursion_level":3},{"relation":"coordination","resulting_phrase":"τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ","root":false,"external_index":"","internal_index":"phr002","words_and_phrases":[{"word":"","word2":"τὸ παιδίον","phrase":"","syntactic_role":"","external_index":"","internal_index":"wa001","recursion_level":0},{"word":"καί","word2":"","phrase":"","syntactic_role":"J.","external_index":"","internal_index":"w007","recursion_level":0},{"word":"","word2":"","phrase":"τὴν μητέρα αὐτοῦ","syntactic_role":"","external_index":"","internal_index":"phr003","recursion_level":1}],"recursion_level":2},{"relation":"complementation","resulting_phrase":"τὴν μητέρα αὐτοῦ","root":false,"external_index":"","internal_index":"phr003","words_and_phrases":[{"word":"","word2":"τὴν μητέρα","phrase":"","syntactic_role":"F.","external_index":"","internal_index":"wa002","recursion_level":0},{"word":"αὐτοῦ","word2":"","phrase":"","syntactic_role":"C","external_index":"","internal_index":"w010","recursion_level":0}],"recursion_level":1}]}</textarea>
+            <div class="pc-padding-8">
+              <button
+                class="generate-diagram-from-example-json-button w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey"
+              >
+                Generate diagram
+              </button>
+            </div>
+          </div>
+
+          <h2>Syntax diagram from custom JSON: <span class="phase-info"></span></h2>
+          <div class="svg-diagram-wrapper">
+            <div class="svg-diagram-from-custom-json svg-diagram-container">
+
+            </div>
+          </div>
+
+          <h2>Syntax diagram from example JSON: <span class="phase-info"></span></h2>
+          <div class="svg-diagram-wrapper">
+            <div class="svg-diagram-from-example-json svg-diagram-container">
+
+            </div>
+          </div>
+
+          <h2>Syntax diagram as should be:</h2>
+          <div class="svg-diagram-wrapper">
+            <div class="svg-diagram-as-should-be svg-diagram-container"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="514.12353515625" height="736.134765625"><g id="mrk_diagram"><g id="root_relation" data-recursion-level="5"><g id="aw000001" class="word" data-recursion-level="0"><text xml:space="preserve" x="46.772064208984375" y="-6.020000457763672" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="46.772064208984375" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> S. ὁ Ἰησοῦς </tspan></text><rect width="117.8359375" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="46.772064208984375" y="0.75"></rect><circle r="0.75" cx="46.772064208984375" cy="17.1650390625" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="46.772064208984375" cy="33.580078125" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="105.69003295898438" cy="0.75" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="156.4005126953125" cy="0.75" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="105.69003295898438" cy="33.580078125" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="156.4005126953125" cy="33.580078125" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="164.60800170898438" cy="0.75" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="164.60800170898438" cy="8.95751953125" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="164.60800170898438" cy="17.1650390625" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="164.60800170898438" cy="25.37255859375" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="164.60800170898438" cy="33.580078125" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><g id="w000002" class="word" data-recursion-level="0"><text xml:space="preserve" x="46.772064208984375" y="68.31007766723633" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="46.772064208984375" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> P. λέγει </tspan></text><rect width="81.7578125" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="46.772064208984375" y="75.080078125"></rect><circle r="0.75" cx="46.772064208984375" cy="91.4951171875" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="46.772064208984375" cy="107.91015625" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="87.65097045898438" cy="75.080078125" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="120.3223876953125" cy="75.080078125" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="87.65097045898438" cy="107.91015625" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="120.3223876953125" cy="107.91015625" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="128.52987670898438" cy="75.080078125" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="128.52987670898438" cy="83.28759765625" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="128.52987670898438" cy="91.4951171875" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="128.52987670898438" cy="99.70263671875" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="128.52987670898438" cy="107.91015625" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><line x1="46.772064208984375" y1="91.4951171875" x2="6.022064208984375" y2="128.45263671875" stroke-width="1.5" stroke="#666666"></line><g id="w000003" class="word" data-recursion-level="0"><text xml:space="preserve" x="46.772064208984375" y="142.64015579223633" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="46.772064208984375" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> OO. αὐτῷ </tspan></text><rect width="99.359375" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="46.772064208984375" y="149.41015625"></rect><circle r="0.75" cx="46.772064208984375" cy="165.8251953125" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="46.772064208984375" cy="182.240234375" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="96.45175170898438" cy="149.41015625" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="137.9239501953125" cy="149.41015625" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="96.45175170898438" cy="182.240234375" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="137.9239501953125" cy="182.240234375" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="146.13143920898438" cy="149.41015625" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="146.13143920898438" cy="157.61767578125" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="146.13143920898438" cy="165.8251953125" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="146.13143920898438" cy="174.03271484375" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="146.13143920898438" cy="182.240234375" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><line x1="46.772064208984375" y1="165.8251953125" x2="6.022064208984375" y2="128.45263671875" stroke-width="1.5" stroke="#666666"></line><g id="phr000009" data-recursion-level="4"><g><text xml:space="preserve" x="46.772064208984375" y="216.14023399353027" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="46.772064208984375" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> O. </tspan></text><rect width="30.40625" height="31.999998092651367" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="46.772064208984375" y="223.740234375"></rect><circle r="0.75" cx="46.772064208984375" cy="239.740234375" fill="transparent" data-recursion-level="4" class="hotspot_l"></circle><circle r="0.75" cx="77.17831420898438" cy="239.740234375" fill="transparent" data-recursion-level="4" class="hotspot_r3"></circle></g><g><g id="w002" class="word" data-recursion-level="0"><text xml:space="preserve" x="169.42831420898438" y="249.80519485473633" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="169.42831420898438" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> J. δέ </tspan></text><rect width="49.7890625" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="169.42831420898438" y="256.5751953125"></rect><circle r="0.75" cx="169.42831420898438" cy="272.990234375" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="169.42831420898438" cy="289.405029296875" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="194.32284545898438" cy="256.5751953125" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="211.00985717773438" cy="256.5751953125" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="194.32284545898438" cy="289.405029296875" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="211.00985717773438" cy="289.405029296875" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="219.21737670898438" cy="256.5751953125" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="219.21737670898438" cy="264.78271484375" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="219.21737670898438" cy="272.990234375" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="219.21737670898438" cy="281.197509765625" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="219.21737670898438" cy="289.405029296875" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><g id="phr001" data-recursion-level="3"><g id="w001" class="word" data-recursion-level="0"><text xml:space="preserve" x="210.17831420898438" y="324.1351509094238" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="210.17831420898438" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> S. ὁ </tspan></text><rect width="44.359375" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="210.17831420898438" y="330.905029296875"></rect><circle r="0.75" cx="210.17831420898438" cy="347.320068359375" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="210.17831420898438" cy="363.735107421875" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="232.35800170898438" cy="330.905029296875" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="246.33016967773438" cy="330.905029296875" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="232.35800170898438" cy="363.735107421875" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="246.33016967773438" cy="363.735107421875" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="254.53768920898438" cy="330.905029296875" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="254.53768920898438" cy="339.112548828125" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="254.53768920898438" cy="347.320068359375" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="254.53768920898438" cy="355.527587890625" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="254.53768920898438" cy="363.735107421875" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><g id="w004" class="word" data-recursion-level="0"><text xml:space="preserve" x="210.17831420898438" y="398.4651069641113" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="210.17831420898438" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> P. παρέλαβε(ν) </tspan></text><rect width="147.734375" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="210.17831420898438" y="405.235107421875"></rect><circle r="0.75" cx="210.17831420898438" cy="421.650146484375" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="210.17831420898438" cy="438.06494140625" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="284.0455017089844" cy="405.235107421875" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="349.70513916015625" cy="405.235107421875" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="284.0455017089844" cy="438.06494140625" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="349.70513916015625" cy="438.06494140625" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="357.91265869140625" cy="405.235107421875" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="357.91265869140625" cy="413.442626953125" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="357.91265869140625" cy="421.650146484375" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="357.91265869140625" cy="429.857421875" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="357.91265869140625" cy="438.06494140625" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><line x1="210.17831420898438" y1="421.650146484375" x2="169.42831420898438" y2="421.442626953125" stroke-width="1.5" stroke="#666666"></line><g id="phr002" data-recursion-level="2"><g><text xml:space="preserve" x="210.17831420898438" y="471.9650630950928" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="210.17831420898438" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> O. </tspan></text><rect width="30.40625" height="31.999998092651367" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="210.17831420898438" y="479.56494140625"></rect><circle r="0.75" cx="210.17831420898438" cy="495.56494140625" fill="transparent" data-recursion-level="2" class="hotspot_l"></circle><circle r="0.75" cx="240.58456420898438" cy="495.56494140625" fill="transparent" data-recursion-level="2" class="hotspot_r3"></circle></g><g><g id="wa001" class="word" data-recursion-level="0"><text xml:space="preserve" x="332.8345642089844" y="472.7950630187988" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="332.8345642089844" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> τὸ παιδίον </tspan></text><rect width="106.8984375" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="332.83453369140625" y="479.56494140625"></rect><circle r="0.75" cx="332.83453369140625" cy="495.97998046875" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="332.83453369140625" cy="512.39501953125" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="386.28375244140625" cy="479.56494140625" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="431.52545166015625" cy="479.56494140625" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="386.28375244140625" cy="512.39501953125" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="431.52545166015625" cy="512.39501953125" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="439.73297119140625" cy="479.56494140625" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="439.73297119140625" cy="487.7724609375" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="439.73297119140625" cy="495.97998046875" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="439.73297119140625" cy="504.1875" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="439.73297119140625" cy="512.39501953125" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><g id="w007" class="word" data-recursion-level="0"><text xml:space="preserve" x="332.8345642089844" y="547.1250190734863" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="332.8345642089844" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> J. καί </tspan></text><rect width="57.796875" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="332.83453369140625" y="553.89501953125"></rect><circle r="0.75" cx="332.83453369140625" cy="570.309814453125" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="332.83453369140625" cy="586.724853515625" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="361.73297119140625" cy="553.89501953125" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="382.42388916015625" cy="553.89501953125" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="361.73297119140625" cy="586.724853515625" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="382.42388916015625" cy="586.724853515625" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="390.63140869140625" cy="553.89501953125" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="390.63140869140625" cy="562.1025390625" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="390.63140869140625" cy="570.309814453125" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="390.63140869140625" cy="578.517333984375" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="390.63140869140625" cy="586.724853515625" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><line x1="332.8345642089844" y1="570.309814453125" x2="292.8345642089844" y2="570.309814453125" stroke-width="1.5" stroke="#666666"></line><g id="phr003" data-recursion-level="1"><g id="wa002" class="word" data-recursion-level="0"><text xml:space="preserve" x="373.5845642089844" y="621.4550361633301" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="373.5845642089844" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> F. τὴν μητέρα </tspan></text><rect width="139.7890625" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="373.58453369140625" y="628.224853515625"></rect><circle r="0.75" cx="373.58453369140625" cy="644.6396484375" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="373.58453369140625" cy="661.0546875" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="443.47906494140625" cy="628.224853515625" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="505.166015625" cy="628.224853515625" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="443.47906494140625" cy="661.0546875" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="505.166015625" cy="661.0546875" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="513.37353515625" cy="628.224853515625" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="513.37353515625" cy="636.432373046875" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="513.37353515625" cy="644.6396484375" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="513.37353515625" cy="652.84716796875" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="513.37353515625" cy="661.0546875" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><g id="w010" class="word" data-recursion-level="0"><text xml:space="preserve" x="373.5845642089844" y="695.7850532531738" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="28.6" x="373.5845642089844" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}"> C αὐτοῦ </tspan></text><rect width="84.5078125" height="32.82999801635742" fill="#cccccc" fill-opacity=".3" stroke="#666666" stroke-width="1.5px" rx="1.5" x="373.58453369140625" y="702.5546875"></rect><circle r="0.75" cx="373.58453369140625" cy="718.9697265625" fill="transparent" data-recursion-level="0" class="hotspot_l"></circle><circle r="0.75" cx="373.58453369140625" cy="735.384765625" fill="transparent" data-recursion-level="0" class="hotspot_lb"></circle><circle r="0.75" cx="415.83843994140625" cy="702.5546875" fill="transparent" data-recursion-level="0" class="hotspot_tc"></circle><circle r="0.75" cx="449.88482666015625" cy="702.5546875" fill="transparent" data-recursion-level="0" class="hotspot_tr"></circle><circle r="0.75" cx="415.83843994140625" cy="735.384765625" fill="transparent" data-recursion-level="0" class="hotspot_bc"></circle><circle r="0.75" cx="449.88482666015625" cy="735.384765625" fill="transparent" data-recursion-level="0" class="hotspot_br"></circle><circle r="0.75" cx="458.09234619140625" cy="702.5546875" fill="transparent" data-recursion-level="0" class="hotspot_r1"></circle><circle r="0.75" cx="458.09234619140625" cy="710.76220703125" fill="transparent" data-recursion-level="0" class="hotspot_r2"></circle><circle r="0.75" cx="458.09234619140625" cy="718.9697265625" fill="transparent" data-recursion-level="0" class="hotspot_r3"></circle><circle r="0.75" cx="458.09234619140625" cy="727.17724609375" fill="transparent" data-recursion-level="0" class="hotspot_r4"></circle><circle r="0.75" cx="458.09234619140625" cy="735.384765625" fill="transparent" data-recursion-level="0" class="hotspot_r5"></circle></g><path d="M373.5845642089844 644.6400146484375L332.8345642089844 681.8050231933594L373.5845642089844 718.9700317382812 " stroke-width="1.5" stroke="#666666" stroke-linejoin="round" fill="none"></path><circle r="0.75" cx="332.83453369140625" cy="681.8046875" fill="transparent" data-recursion-level="1" class="hotspot_l"></circle></g><polyline points="332.8345642089844,681.80517578125 292.0845642089844,681.80517578125 292.0845642089844,495.980224609375 332.8345642089844,495.980224609375" stroke-width="1.5" stroke="#666666" stroke-linejoin="round" fill="none"></polyline><circle r="0.75" cx="292.0845642089844" cy="570.309814453125" fill="transparent" class="hotspot_l"></circle></g><polyline points="240.58456420898438,495.56494140625 266.3345642089844,495.56494140625 266.3345642089844,570.3098754882812 292.0845642089844,570.3098754882812" stroke-width="1.5" stroke="#666666" stroke-linejoin="round" fill="none"></polyline></g><path d="M210.17831420898438 347.3201904296875L169.42831420898438 421.442626953125L210.17831420898438 495.5650634765625 " stroke-width="1.5" stroke="#666666" stroke-linejoin="round" fill="none"></path><circle r="0.75" cx="176.65472412109375" cy="434.587158203125" fill="transparent" data-recursion-level="3" class="hotspot_external_index"></circle><text xml:space="preserve" font-size="80%" text-anchor="end" class="external_index" x="174.4047393798828" y="424.7071590423584" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="22.880000000000003" x="174.4047393798828" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}">b</tspan></text><rect width="9.508255004882812" height="17.5" fill="white" fill-opacity=".3" stroke="#666666" stroke-width="0" x="164.896484375" y="434.587158203125"></rect><circle r="0.75" cx="169.42831420898438" cy="421.442626953125" fill="transparent" data-recursion-level="3" class="hotspot_l"></circle></g><polyline points="169.42831420898438,421.442626953125 128.67831420898438,421.442626953125 128.67831420898438,272.990234375 169.42831420898438,272.990234375" stroke-width="1.5" stroke="#666666" stroke-linejoin="round" fill="none"></polyline><line x1="128.67831420898438" y1="272.990234375" x2="128.67831420898438" y2="242.990234375" stroke-width="1.5" stroke="#666666"></line><line x1="128.67831420898438" y1="242.990234375" x2="128.67831420898438" y2="222.990234375" style="stroke-dasharray: 3, 1" stroke-width="1.5" stroke="#666666"></line><circle r="0.75" cx="128.67831420898438" cy="347.21630859375" fill="transparent" class="hotspot_l"></circle></g><polyline points="77.17831420898438,239.740234375 102.92831420898438,239.740234375 102.92831420898438,347.2164306640625 128.67831420898438,347.2164306640625" stroke-width="1.5" stroke="#666666" stroke-linejoin="round" fill="none"></polyline></g><path d="M46.772064208984375 17.1650390625L6.022064208984375 128.45263671875L46.772064208984375 239.740234375 " stroke-width="1.5" stroke="#666666" stroke-linejoin="round" fill="none"></path><circle r="0.75" cx="11.1796875" cy="142.5380859375" fill="transparent" data-recursion-level="5" class="hotspot_external_index"></circle><text xml:space="preserve" font-size="80%" text-anchor="end" class="external_index" x="8.9296875" y="132.6580867767334" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="22.880000000000003" x="8.9296875" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}">a</tspan></text><rect width="8.9296875" height="17.5" fill="white" fill-opacity=".3" stroke="#666666" stroke-width="0" x="0" y="142.5380859375"></rect><circle r="0.75" cx="6.022064208984375" cy="128.45263671875" fill="transparent" data-recursion-level="5" class="hotspot_l"></circle></g></g></svg></div>
+          </div>
+
+        </div>
+        <!-- End of .diagramming-playground-section -->
+
+    </div>
+    <!-- End of #pc-site-content -->
+
+    <!-- Modal success code should be below all content -->
+    <div id="pc-tools-success-dialogue" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+        <header class="w3-container w3-dark-grey">
+          <span
+            class="pc-close-dialogue-button w3-button w3-dark-grey w3-xlarge w3-hover-white w3-display-topright"
+            >&times;</span
+          >
+
+          <h2>Success</h2>
+        </header>
+
+        <div
+          id="success-msg-text-el"
+          class="pc-modal-content-inner w3-container w3-padding-16"
+        ></div>
+        <!-- End of div element containing message -->
+      </div>
+      <!-- End of .w3-modal-content -->
+    </div>
+    <!-- End of #pc-tools-success-dialogue -->
+
+    <!-- Modal dialogue code should be below all content -->
+    <div id="pc-tools-error-dialogue" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+        <header class="w3-container w3-dark-grey">
+          <span
+            class="pc-close-dialogue-button w3-button w3-dark-grey w3-xlarge w3-hover-white w3-display-topright"
+            >&times;</span
+          >
+
+          <h2>Error</h2>
+        </header>
+
+        <div
+          id="error-msg-text-el"
+          class="pc-modal-content-inner w3-container w3-padding-16"
+        ></div>
+        <!-- End of div element containing message -->
+      </div>
+      <!-- End of .w3-modal-content -->
+    </div>
+    <!-- End of #pc-tools-error-dialogue -->
+
+    <div id="pc-tools-attention-dialogue" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+        <header class="w3-container w3-dark-grey">
+          <span
+            class="pc-close-dialogue-button w3-button w3-dark-grey w3-xlarge w3-hover-white w3-display-topright"
+            >&times;</span
+          >
+
+          <h2>Attention</h2>
+        </header>
+
+        <div
+          id="attention-msg-text-el"
+          class="pc-modal-content-inner w3-container w3-padding-16"
+        ></div>
+        <div class="pc-padding-left-16 pc-padding-bottom-16">
+          <button
+            id="ok-action-button"
+            class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey"
+          >
+            OK
+          </button>
+          <button
+            id="cancel-action-button"
+            class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey"
+          >
+            Cancel
+          </button>
+        </div>
+        <!-- End of div element containing message -->
+      </div>
+      <!-- End of .w3-modal-content -->
+    </div>
+    <!-- End of #pc-tools-attention-dialogue -->
+  </body>
+</html>
