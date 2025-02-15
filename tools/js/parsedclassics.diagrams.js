@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.14",
+  diagrammer_version: "1.6.15",
   
   debug: false,
 
@@ -2044,6 +2044,17 @@ var ParsedClassicsDiagramGenerator = {
     }
 
     if (json) {
+      // add "options" object if such was not found
+      if (typeof json.options == "undefined") {
+        json.options = {};
+      }
+      
+      // add options editable by user into JSON
+      json.options.column_left_distance = ParsedClassicsDiagramGenerator.column_left_distance;
+
+      // add version of the program being used to generate diagram into "options" object
+      json.options.diagrammer_version = ParsedClassicsDiagramGenerator.diagrammer_version;
+      
       // get diagram container
       if (!svg_diagram_container) {
         svg_diagram_container = $("#svg-diagram-container");
@@ -3781,8 +3792,7 @@ var ParsedClassicsDiagramGenerator = {
     fork_point_hotspot_r3_bbox,
     svg_output_textarea,
     svg_code,
-    json_textarea,
-    json_from_textarea,
+    json_string,
     column_left_distance_arr,
     column_left_distance;
 
@@ -3986,11 +3996,10 @@ var ParsedClassicsDiagramGenerator = {
         bbox = resulting_group.node.getBBox();
         draw.size(bbox.width, bbox.height);
         // output svg code together with json code
-        json_textarea = $("#json-output-textarea");
-        json_from_textarea = "<!--" + json_textarea.val() + "-->\n\n";
+        json_string = "<!--" + JSON.stringify(json) + "-->\n\n";
         svg_code = '<div class="svg-diagram-container">' + draw.svg() + '</div>';
         svg_output_textarea = $("#svg-output-textarea");
-        svg_output_textarea.val(json_from_textarea + svg_code);
+        svg_output_textarea.val(json_string + svg_code);
         
         return;
       }
