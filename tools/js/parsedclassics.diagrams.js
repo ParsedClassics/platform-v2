@@ -3800,7 +3800,10 @@ var ParsedClassicsDiagramGenerator = {
 
     // get column left distance for current call of function draw_phase_2
     column_left_distance_arr = typeof json.options != "undefined" && typeof json.options.column_left_distance != "undefined" ? json.options.column_left_distance : ParsedClassicsDiagramGenerator.column_left_distance;
+    console.log('counter', counter);
+    console.log('column_left_distance_arr', column_left_distance_arr);
     column_left_distance = typeof column_left_distance_arr[counter] != "undefined" ? column_left_distance_arr[counter] : column_left_distance_arr[column_left_distance_arr.length - 1];
+    console.log('column_left_distance', column_left_distance);
 
     // find block of root relation
     if (root_block === null) {
