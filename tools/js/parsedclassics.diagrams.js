@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.16",
+  diagrammer_version: "1.6.17",
   
   debug: false,
 
@@ -1011,6 +1011,8 @@ var ParsedClassicsDiagramGenerator = {
     for (var i = 0; i < relation_inputs_blocks.length; i++) {
       // get resulting phrase form
       phrase = $(relation_inputs_blocks[i]).find('[name="resulting-phrase"]').val().trim();
+      // put subscripts between <sub> tags
+      phrase = phrase.replace(/(\(\d+\))/g, (match) => '<sub>' + match + '</sub>');
       // get internal index of resulting phrase
       phrase_external_index = $(relation_inputs_blocks[i]).find('[name="external-index"]').val().trim();
       // get relation
@@ -1108,6 +1110,8 @@ var ParsedClassicsDiagramGenerator = {
     for (var i = 0; i < relation_inputs_blocks.length; i++) {
       // get resulting phrase form
       phrase = $(relation_inputs_blocks[i]).find('[name="resulting-phrase"]').val().trim();
+      // put subscripts between <sub> tags
+      phrase = phrase.replace(/(\(\d+\))/g, (match) => '<sub>' + match + '</sub>');
       // get internal index of resulting phrase
       phrase_internal_index = $(relation_inputs_blocks[i]).find('[name="internal-index"]').val().trim();
       // get relation
