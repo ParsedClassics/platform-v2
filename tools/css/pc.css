@@ -459,6 +459,10 @@ textarea {
   height: 5px !important;
 }
 
+.diagram_page .popover-body a.inner-link {
+  text-decoration: none;
+}
+
 #syntax-data-container button {
   vertical-align: top;
 }

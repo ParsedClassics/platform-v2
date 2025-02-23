@@ -49,6 +49,10 @@ Copyright (c) Eleutherius Joannides
       $(document).ready(function () {
         ParsedClassicsDiagramGenerator.init();
       });
+      /*Initialization of inner links*/
+      $(document).ready(function(){
+        $(document).delegate(".inner-link", "click", ParsedClassicsDiagramGenerator.innerLinkClick);
+      });
     </script>
   </head>
 
