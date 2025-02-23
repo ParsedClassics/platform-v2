@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.15",
+  diagrammer_version: "1.6.16",
   
   debug: false,
 
@@ -736,12 +736,13 @@ var ParsedClassicsDiagramGenerator = {
   },
 
   create_relation_inputs_html: function () {
+    var id = `relation_${ParsedClassicsDiagramGenerator.generateUID()}`;
     var relation_inputs_html = `
     <div class="relation-container">    
     <fieldset>
     <legend>Syntactic relation &#8645;</legend>
     <div>
-    <div class="relation-inputs-block">
+    <div class="relation-inputs-block" id="${id}">
     <select title="Relation name" name="syntactic-relation">
     <option value="">Relation name</option>
     <option value="complementation">Complementation</option>
@@ -793,7 +794,7 @@ var ParsedClassicsDiagramGenerator = {
   },
 
   create_word_inputs_html: function () {
-    var word_inputs_html, options_html;
+    var word_inputs_html, options_html, id;
 
     // create option el for each word in the sentence
     options_html = "";
@@ -822,9 +823,11 @@ var ParsedClassicsDiagramGenerator = {
           "</option>\n";
       }
     }
+
+    id = `word_${ParsedClassicsDiagramGenerator.generateUID()}`;
     
     word_inputs_html = `
-    <div class="word-inputs-block">
+    <div class="word-inputs-block" id="${id}">
     <label>Word &rlarr;</label>
     <select title="Word form" name="word"> 
     <option value="">Word form</option>
@@ -847,8 +850,9 @@ var ParsedClassicsDiagramGenerator = {
   },
 
   create_phrase_inputs_html: function () {
+    var id = `phrase_${ParsedClassicsDiagramGenerator.generateUID()}`;
     var phrase_inputs_html = `
-    <div class="phrase-inputs-block">
+    <div class="phrase-inputs-block" id="${id}">
     <label>Phrase &rlarr;</label>
     <textarea name="phrase" title="Phrase" placeholder="Phrase text"></textarea>
     <input type="text" name="syntactic-role" title="Syntactic role" placeholder="Syntactic role">
@@ -950,7 +954,8 @@ var ParsedClassicsDiagramGenerator = {
     info_obj,
     pronouns_info_container,
     info_html,
-    popover_info_pronouns;
+    popover_info_pronouns,
+    id;
 
     popover_info_pronouns = [];
     // get all word inputs blocks
@@ -961,11 +966,14 @@ var ParsedClassicsDiagramGenerator = {
       word_form = word_form ? word_form : $(word_inputs_blocks[i]).find('[name="word2"]').val().trim();
       // get subscript
       word_subscript = $(word_inputs_blocks[i]).find('[name="subscript"]').val().trim();
+      // get "id" attribute
+      id = $(word_inputs_blocks[i]).attr('id');
       if (word_form && word_subscript) {
         // create info obj
         info_obj = {};
         info_obj.word_subscript = word_subscript;
         info_obj.word_form = word_form;
+        info_obj.id = id;
         // push info obj into popover info arr
         popover_info_pronouns.push(info_obj);
       }
@@ -979,7 +987,7 @@ var ParsedClassicsDiagramGenerator = {
     // generate word info html
     info_html = "";
     popover_info_pronouns.forEach((item) => {
-      info_html += `<p>${item.word_subscript} - ${item.word_form}</p>\n`;
+      info_html += `<p>${item.word_subscript} <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.word_form}</p>\n`;
     });
 
     //add new info about words
@@ -994,7 +1002,8 @@ var ParsedClassicsDiagramGenerator = {
     info_obj,
     clauses_info_container,
     info_html,
-    popover_info_clauses;
+    popover_info_clauses,
+    id;
 
     popover_info_clauses = [];
     // get all relation inputs blocks
@@ -1006,11 +1015,14 @@ var ParsedClassicsDiagramGenerator = {
       phrase_external_index = $(relation_inputs_blocks[i]).find('[name="external-index"]').val().trim();
       // get relation
       relation = $(relation_inputs_blocks[i]).find('[name="syntactic-relation"]').val();
+      // get "id" attribute
+      id = $(relation_inputs_blocks[i]).attr('id');
       if (phrase_external_index && relation == "complementation" && phrase) {
         // create info obj
         info_obj = {};
         info_obj.phrase_external_index = phrase_external_index;
         info_obj.phrase = phrase;
+        info_obj.id = id;
         // push info obj into popover info arr
         popover_info_clauses.push(info_obj);
       }
@@ -1022,7 +1034,7 @@ var ParsedClassicsDiagramGenerator = {
     // generate clauses info html
     info_html = "";
     popover_info_clauses.forEach((item) => {
-      info_html += `<p>${item.phrase_external_index} - ${item.phrase}</p>\n`;
+      info_html += `<p>${item.phrase_external_index} <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
     });
     //add new info about clauses
     clauses_info_container[0].innerHTML = info_html;
@@ -1036,7 +1048,8 @@ var ParsedClassicsDiagramGenerator = {
     word_info_container,
     heading,
     info_html,
-    popover_info_words;
+    popover_info_words,
+    id;
     
     popover_info_words = [];
     // get all word inputs blocks
@@ -1046,11 +1059,14 @@ var ParsedClassicsDiagramGenerator = {
       word_form = $(word_inputs_blocks[i]).find('[name="word2"]').val().trim();
       // get internal index of word
       word_internal_index = $(word_inputs_blocks[i]).find('[name="internal-index"]').val().trim();
+      // get "id" attribute
+      id = $(word_inputs_blocks[i]).attr('id');
       if (word_form && word_internal_index) {
         // create info obj
         info_obj = {};
         info_obj.word_internal_index = word_internal_index;
         info_obj.word_form = word_form;
+        info_obj.id = id;
         // push info obj into popover info arr
         popover_info_words.push(info_obj);
       }
@@ -1067,7 +1083,7 @@ var ParsedClassicsDiagramGenerator = {
     // generate word info html
     info_html = "";
     popover_info_words.forEach((item) => {
-      info_html += `<p>${item.word_internal_index} - ${item.word_form}</p>\n`;
+      info_html += `<p>${item.word_internal_index} <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.word_form}</p>\n`;
     });
     //add new info about words
     word_info_container[0].innerHTML = heading + "\n" + info_html;
@@ -1083,7 +1099,8 @@ var ParsedClassicsDiagramGenerator = {
     heading,
     info_html,
     popover_info_phrases,
-    root_relation;
+    root_relation,
+    id;
     
     popover_info_phrases = [];
     // get all relation inputs blocks
@@ -1095,14 +1112,17 @@ var ParsedClassicsDiagramGenerator = {
       phrase_internal_index = $(relation_inputs_blocks[i]).find('[name="internal-index"]').val().trim();
       // get relation
       relation = $(relation_inputs_blocks[i]).find('[name="syntactic-relation"]').val();
+      // get "id" attribute
+      id = $(relation_inputs_blocks[i]).attr('id');
       if (relation && $.inArray(relation, ["complementation", "coordination", "coordination-initial", "specification", "introduction", "clausal-adjunction", "hook"]) !== -1 && phrase && phrase_internal_index) {
         // create info obj
         info_obj = {};
         info_obj.phrase_internal_index = phrase_internal_index;
         info_obj.phrase = phrase;
+        info_obj.id = id;
         if (phrase_internal_index != 'root_relation') {
           // push info obj into popover info arr
-        popover_info_phrases.push(info_obj);
+          popover_info_phrases.push(info_obj);
         }
         else {
           root_relation = info_obj;
@@ -1125,10 +1145,35 @@ var ParsedClassicsDiagramGenerator = {
     // generate phrases info html
     info_html = "";
     popover_info_phrases.forEach((item) => {
-      info_html += `<p>${item.phrase_internal_index} - ${item.phrase}</p>\n`;
+      info_html += `<p>${item.phrase_internal_index} <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
     });
     //add new info about words
     phrases_info_container[0].innerHTML = heading + "\n" + info_html;
+  },
+
+  innerLinkClick: function(event) {
+    var inner_link_el, anchor_attr, anchor_el;
+
+    // get clicked inner link el
+    inner_link_el = $(event.target);
+
+    // get "data-anchor" attr, which contains "id" of the anchor el
+    anchor_attr = inner_link_el.attr("data-anchor");
+
+    // get anchor el, make sure it's unique
+    anchor_el = $("#" + anchor_attr).first();
+
+    // anchor el not found? then nothing to do except to display error message
+    if (anchor_el.length != 1) {
+      ParsedClassicsDiagramGenerator.show_error_msg(
+        "Link anchor not found!"
+      );
+      return;
+    }
+
+    // scroll to top anchor el
+    $(".ui-layout-pane-center").scrollTo(anchor_el, 400);
+    
   },
 
   init: function () {
@@ -3800,10 +3845,7 @@ var ParsedClassicsDiagramGenerator = {
 
     // get column left distance for current call of function draw_phase_2
     column_left_distance_arr = typeof json.options != "undefined" && typeof json.options.column_left_distance != "undefined" ? json.options.column_left_distance : ParsedClassicsDiagramGenerator.column_left_distance;
-    console.log('counter', counter);
-    console.log('column_left_distance_arr', column_left_distance_arr);
     column_left_distance = typeof column_left_distance_arr[counter] != "undefined" ? column_left_distance_arr[counter] : column_left_distance_arr[column_left_distance_arr.length - 1];
-    console.log('column_left_distance', column_left_distance);
 
     // find block of root relation
     if (root_block === null) {
@@ -5049,6 +5091,17 @@ var ParsedClassicsDiagramGenerator = {
         }
       }
     }
+  },
+
+  generateUID: function () {
+    // I generate the UID from two parts here
+    // to ensure the random number provide enough bits.
+    // from https://stackoverflow.com/questions/6248666/how-to-generate-short-uid-like-ax4j9z-in-js
+    var firstPart = (Math.random() * 46656) | 0;
+    var secondPart = (Math.random() * 46656) | 0;
+    firstPart = ("000" + firstPart.toString(36)).slice(-3);
+    secondPart = ("000" + secondPart.toString(36)).slice(-3);
+    return firstPart + secondPart;
   },
 
   // from http://complexdan.com/svg-circleellipse-to-path-converter/ based on https://stackoverflow.com/questions/5737975/circle-drawing-with-svgs-arc-path/10477334#10477334
