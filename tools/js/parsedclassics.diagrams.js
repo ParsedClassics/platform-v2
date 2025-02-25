@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.17",
+  diagrammer_version: "1.6.18",
   
   debug: false,
 
@@ -838,6 +838,7 @@ var ParsedClassicsDiagramGenerator = {
     <input type="text" name="external-index" title="External index" placeholder="External index">
     <input type="text" name="internal-index" title="Internal index" placeholder="Internal index">
     <input type="text" name="subscript" title="Subscript" placeholder="Subscript">
+    <textarea class="pc-width-100" name="clause-type" title="Clause type" placeholder="Clause type"></textarea>
     <button class="cancel-word w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Remove</button>
     </div>
     `;
@@ -1306,6 +1307,7 @@ var ParsedClassicsDiagramGenerator = {
           word_phrase_obj["word"] = $(word_phrase_blocks[j]).find('select[name="word"]').val();
           word_phrase_obj["word2"] = $(word_phrase_blocks[j]).find('input[name="word2"]').val().trim();
           word_phrase_obj["subscript"] = $(word_phrase_blocks[j]).find('input[name="subscript"]').val().trim();
+          word_phrase_obj["clause_type"] = $(word_phrase_blocks[j]).find('textarea[name="clause-type"]').val().trim();
         }
         if ($(word_phrase_blocks[j]).hasClass("phrase-inputs-block")) {
           word_phrase_obj["phrase"] = $(word_phrase_blocks[j]).find('textarea[name="phrase"]').val().trim();
@@ -1528,6 +1530,10 @@ var ParsedClassicsDiagramGenerator = {
             // set subscript value
             if ($.trim(json.syntactic_relations[i].words_and_phrases[j].subscript)) {
               word_or_phrase_container.find('input[name="subscript"]').val($.trim(json.syntactic_relations[i].words_and_phrases[j].subscript));
+            }
+            // set clause type value
+            if ($.trim(json.syntactic_relations[i].words_and_phrases[j].clause_type)) {
+              word_or_phrase_container.find('textarea[name="clause-type"]').val($.trim(json.syntactic_relations[i].words_and_phrases[j].clause_type));
             }
             // set syntactic role value
             if ($.trim(json.syntactic_relations[i].words_and_phrases[j].syntactic_role)) {
@@ -2151,6 +2157,8 @@ var ParsedClassicsDiagramGenerator = {
     text_y_coord,
     word_internal_index,
     word_external_index,
+    clause_type,
+    title_el,
     group_el,
     group_new,
     rect,
@@ -2196,6 +2204,8 @@ var ParsedClassicsDiagramGenerator = {
           word_internal_index = exp_info.internal_index;
           // get word's external index
           word_external_index = exp_info.external_index;
+          // get clause type (one word can represent clause, e.g. pariciple)
+          clause_type = exp_info.clause_type;
 
           // find if there is svg group having its "id" equal to word_internal_index
           group_el = draw.find("#" + word_internal_index);
@@ -2275,6 +2285,11 @@ var ParsedClassicsDiagramGenerator = {
               .attr("stroke", ParsedClassicsDiagramGenerator.line_color)
               .attr("stroke-width", 0)
               .move(bbox2.x, bbox2.y);
+              // add tooltip displaying clause type
+              if (clause_type) {
+                title_el = draw.element('title').words(clause_type);
+                title_el.putIn(rect2);
+              }
             }
             
             // join rectangle, text, hotspots, external index into group
