@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.18",
+  diagrammer_version: "1.6.19",
   
   debug: false,
 
@@ -176,28 +176,50 @@ var ParsedClassicsDiagramGenerator = {
     val_default = ParsedClassicsDiagramGenerator.column_left_distance_default;
     // get field input
     field = $("#options-panel").find('input[name="column-left-distance"]');
-    // define var
-    value_arr_clean = [];
     // put value from local storage inside field input and update global var for Diagram generator script
     if (val_from_storage) {
       field.val(val_from_storage);
-      // set global var for Diagram generator script
-      value_arr = val_from_storage.split("|");
-      for (var i = 0; i < value_arr.length; i++) {
-        num = value_arr[i].trim();
-        value_arr_clean.push(Number(num));
-      }
-      ParsedClassicsDiagramGenerator.column_left_distance = value_arr_clean;
     }
     // put default value inside field input
     else {
-      field.val(val_default);
-      ParsedClassicsDiagramGenerator.column_left_distance = val_default;
+      field.val(val_default.join("|"));
     }
   },
 
+  clean_value_column_left_distance: function(value_from_field, return_as_array) {
+    var value_arr, value_arr_clean, num, value_valid;
+    // there is value in the field, so check if value from field input is valid
+    if (value_from_field.trim()) {
+      value_valid = true;
+      value_arr_clean = [];
+      value_arr = value_from_field.split("|");
+      // is each value a number and number bigger than 50?
+      for (var i = 0; i < value_arr.length; i++) {
+        num = value_arr[i].trim();
+        value_arr_clean.push(Number(num));
+        if (!Number(num) || !(Number(num) > 50)) {
+          value_valid = false;
+        }
+      }
+      if (value_valid) {
+        if (return_as_array == true) {
+          return value_arr_clean;
+        }
+        else {
+          return value_arr_clean.join("|");
+        }
+      }
+      else {
+        // show error message
+        ParsedClassicsDiagramGenerator.show_error_msg("column_left_distance must be a number or pipe delimited series of numbers each bigger than 50!");
+        center_pane.scrollTo(field, 400);
+        return;
+      }
+    }
+  }, 
+
   save_options: function() {
-    var center_pane, field, value_from_field, value_arr, value_arr_clean, num, value_valid, success_msg;
+    var center_pane, field, value_from_field, success_msg;
 
     // get center pane 
     center_pane = $(".ui-layout-center");
@@ -211,45 +233,23 @@ var ParsedClassicsDiagramGenerator = {
     field = $("#options-panel").find('input[name="column-left-distance"]');
     // get value from field
     value_from_field = field.val().trim();
-    // define var
-    value_arr_clean = [];
 
-    // there is value in the field, so check if value from field input is valid
+    // clean value from field
+    value_from_field = ParsedClassicsDiagramGenerator.clean_value_column_left_distance(value_from_field, false);
+
     if (value_from_field) {
-      value_valid = true;
-      value_arr = value_from_field.split("|");
-      // is each value a number and number bigger than 50?
-      for (var i = 0; i < value_arr.length; i++) {
-        num = value_arr[i].trim();
-        value_arr_clean.push(Number(num));
-        if (!Number(num) || !(Number(num) > 50)) {
-          value_valid = false;
-        }
-      }
-      // pipe delimited 
-      if (value_valid) {
-        // save value in local storage
-        localStorage.setItem("column_left_distance", value_arr_clean.join("|"));
-        // set global var for Diagram generator script
-        ParsedClassicsDiagramGenerator.column_left_distance = value_arr_clean;
-      }
-      else {
-        // show error message
-        ParsedClassicsDiagramGenerator.show_error_msg("column_left_distance must be a number or pipe delimited series of numbers each bigger than 50!");
-        center_pane.scrollTo(field, 400);
-        return;
-      }
+      // save value in local storage
+      localStorage.setItem("column_left_distance", value_from_field);
     }
     // there is no value in the field, so remove item from local storage and fill field with default value(s)
     else {
       localStorage.removeItem("column_left_distance");
       field.val(ParsedClassicsDiagramGenerator.column_left_distance_default.join("|"));
-      ParsedClassicsDiagramGenerator.column_left_distance = ParsedClassicsDiagramGenerator.column_left_distance_default;
-      success_msg += "Default value of column_left_distance restored.<br>"
+      success_msg += "Default value of column_left_distance restored.<br>";
     }
 
     // no error messages shown, so show sucsess message
-    success_msg += "Options saved."
+    success_msg += "Options saved.";
     ParsedClassicsDiagramGenerator.show_success_msg(success_msg);
   },
 
@@ -1229,6 +1229,8 @@ var ParsedClassicsDiagramGenerator = {
       sentence_container,
       sentence_html,
       sentence_text,
+      column_left_distance_str,
+      column_left_distance_clean,
       json_obj,
       json_string,
       output_textarea,
@@ -1259,12 +1261,18 @@ var ParsedClassicsDiagramGenerator = {
     // get sentence text
     sentence_text = $.trim(sentence_html.text());
 
+    // get column_left_distance option from field
+    column_left_distance_str = $("#options-panel").find('input[name="column-left-distance"]').val();
+    // clean column_left_distance option value from field
+    column_left_distance_clean = ParsedClassicsDiagramGenerator.clean_value_column_left_distance(column_left_distance_str, true);
+
     // put diagrammer's version, sentence text and html, options to json obj
     json_obj["diagrammer_version"] = ParsedClassicsDiagramGenerator.diagrammer_version;
     json_obj["sentence"] = sentence_text;
     json_obj["sentence_html"] = sentence_container.html().replace('"', '\"');
     json_obj["options"] = {
-      "column_left_distance": ParsedClassicsDiagramGenerator.column_left_distance
+      "column_left_distance": column_left_distance_clean ? column_left_distance_clean : ParsedClassicsDiagramGenerator.column_left_distance_default,
+      "diagrammer_version": ParsedClassicsDiagramGenerator.diagrammer_version
     };
 
     // get all relation containers
@@ -1466,8 +1474,6 @@ var ParsedClassicsDiagramGenerator = {
       options_container = $("#options-panel");
       if (typeof json.options != "undefined" && typeof json.options.column_left_distance != "undefined" && $.isArray(json.options.column_left_distance) && json.options.column_left_distance.length > 0) {
         options_container.find('input[name="column-left-distance"]').val(json.options.column_left_distance.join("|"));
-        //localStorage.setItem("column_left_distance", json.options.column_left_distance.join("|"));
-        ParsedClassicsDiagramGenerator.column_left_distance = json.options.column_left_distance;
       }
 
       if (typeof json.sentence_html != "undefined" && json.sentence_html) {
@@ -2099,16 +2105,23 @@ var ParsedClassicsDiagramGenerator = {
     }
 
     if (json) {
+      
       // add "options" object if such was not found
       if (typeof json.options == "undefined") {
         json.options = {};
       }
       
-      // add options editable by user into JSON
-      json.options.column_left_distance = ParsedClassicsDiagramGenerator.column_left_distance;
-
-      // add version of the program being used to generate diagram into "options" object
-      json.options.diagrammer_version = ParsedClassicsDiagramGenerator.diagrammer_version;
+      
+      if (typeof json.options.column_left_distance != "undefined" || $.isArray(json.options.column_left_distance)) {
+        ParsedClassicsDiagramGenerator.column_left_distance = json.options.column_left_distance
+      }
+      else {
+        ParsedClassicsDiagramGenerator.column_left_distance = ParsedClassicsDiagramGenerator.column_left_distance_default;
+        // add options editable by user into JSON
+        json.options.column_left_distance = ParsedClassicsDiagramGenerator.column_left_distance_default;
+        // add version of the program being used to generate diagram into "options" object
+        json.options.diagrammer_version = ParsedClassicsDiagramGenerator.diagrammer_version;
+      }
       
       // get diagram container
       if (!svg_diagram_container) {
@@ -3863,7 +3876,7 @@ var ParsedClassicsDiagramGenerator = {
     syntactic_relations = json.syntactic_relations;
 
     // get column left distance for current call of function draw_phase_2
-    column_left_distance_arr = typeof json.options != "undefined" && typeof json.options.column_left_distance != "undefined" ? json.options.column_left_distance : ParsedClassicsDiagramGenerator.column_left_distance;
+    column_left_distance_arr = ParsedClassicsDiagramGenerator.column_left_distance;
     column_left_distance = typeof column_left_distance_arr[counter] != "undefined" ? column_left_distance_arr[counter] : column_left_distance_arr[column_left_distance_arr.length - 1];
 
     // find block of root relation
