@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.19",
+  diagrammer_version: "1.6.20",
   
   debug: false,
 
@@ -997,9 +997,12 @@ var ParsedClassicsDiagramGenerator = {
 
   compile_clauses_info: function() {
     var relation_inputs_blocks,
+    word_inputs_blocks,
     phrase,
+    word,
     relation,
     phrase_external_index,
+    word_external_index,
     info_obj,
     clauses_info_container,
     info_html,
@@ -1010,12 +1013,15 @@ var ParsedClassicsDiagramGenerator = {
     // get all relation inputs blocks
     relation_inputs_blocks = $("div.relation-inputs-block");
     for (var i = 0; i < relation_inputs_blocks.length; i++) {
+      // get external index of resulting phrase
+      phrase_external_index = $(relation_inputs_blocks[i]).find('[name="external-index"]').val().trim();
+      if (!phrase_external_index) {
+        continue;
+      }
       // get resulting phrase form
       phrase = $(relation_inputs_blocks[i]).find('[name="resulting-phrase"]').val().trim();
       // put subscripts between <sub> tags
       phrase = phrase.replace(/(\(\d+\))/g, (match) => '<sub>' + match + '</sub>');
-      // get internal index of resulting phrase
-      phrase_external_index = $(relation_inputs_blocks[i]).find('[name="external-index"]').val().trim();
       // get relation
       relation = $(relation_inputs_blocks[i]).find('[name="syntactic-relation"]').val();
       // get "id" attribute
@@ -1030,6 +1036,32 @@ var ParsedClassicsDiagramGenerator = {
         popover_info_clauses.push(info_obj);
       }
     }
+    // get all word inputs blocks
+    word_inputs_blocks = $("div.word-inputs-block");
+    for (var i = 0; i < word_inputs_blocks.length; i++) {
+      // get external index of word
+      word_external_index = $(word_inputs_blocks[i]).find('[name="external-index"]').val().trim();
+      if (!word_external_index) {
+        continue;
+      }
+      // get word form
+      word = $(word_inputs_blocks[i]).find('[name="word"]').val().trim();
+      if (!word) {
+        word = $(word_inputs_blocks[i]).find('[name="word2"]').val().trim();
+      }
+      // get "id" attribute
+      id = $(word_inputs_blocks[i]).attr('id');
+      if (word_external_index && word) {
+        // create info obj
+        info_obj = {};
+        info_obj.phrase_external_index = word_external_index;
+        info_obj.phrase = word;
+        info_obj.id = id;
+        // push info obj into popover info arr
+        popover_info_clauses.push(info_obj);
+      }
+    }
+
     // sort popover_info_clauses arr
     popover_info_clauses.sort((a, b) => (a.phrase_external_index < b.phrase_external_index ? -1 : 1));
     //get container to display info about clauses
