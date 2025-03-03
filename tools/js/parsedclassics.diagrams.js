@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.20",
+  diagrammer_version: "1.6.21",
   
   debug: false,
 
@@ -2947,7 +2947,7 @@ var ParsedClassicsDiagramGenerator = {
     junctors_arr = [];
     if (syntactic_relation.relation != "coordination-initial") {
       for (var i = 0; i < syntactic_relation.words_and_phrases.length; i++) {
-        if ($.trim(syntactic_relation.words_and_phrases[i].syntactic_role) != "") {
+        if ($.trim(syntactic_relation.words_and_phrases[i].syntactic_role) != "" && $.trim(syntactic_relation.words_and_phrases[i].external_index) == "" && $.trim(syntactic_relation.words_and_phrases[i].clause_type) == "") { 
           junctors_arr.push(syntactic_relation.words_and_phrases[i]);
         }
       }
@@ -4546,7 +4546,6 @@ var ParsedClassicsDiagramGenerator = {
     relation = argsObj[left_block_id].related_to[right_block_order].relation;
     line_width = relation == "apposition" ? ParsedClassicsDiagramGenerator.appos_line_width : ParsedClassicsDiagramGenerator.line_width;
     to_forkpoint = typeof argsObj[left_block_id].related_to[right_block_order].to_forkpoint == "undefined" ? false : argsObj[left_block_id].related_to[right_block_order].to_forkpoint;
-
     right_block_id = argsObj[left_block_id].related_to[right_block_order].internal_index;
 
     left_block_hotspot_class = argsObj[left_block_id].related_to[right_block_order].left_hotspot;
