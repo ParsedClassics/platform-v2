@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.22",
+  diagrammer_version: "1.6.23",
   
   debug: false,
 
@@ -1643,7 +1643,14 @@ var ParsedClassicsDiagramGenerator = {
       rel_non_unique_index,
       internal_index_arr,
       clause_type_textarea,
-      clause_type;
+      clause_type,
+      non_block_relation_containers,
+      curr_relation_index,
+      antecedent_index,
+      antecedent_index_input,
+      inner_indexes_all,
+      antecedent_found,
+      word_phrase_inputs_blocks;
 
     validation_msg = "validated";
     invalidation_msg = "invalidated";
@@ -1873,7 +1880,7 @@ var ParsedClassicsDiagramGenerator = {
       }
     }
 
-    // (f) internal index of the phrase used but not defined
+    // (c) internal index of the phrase used but not defined
     internal_indexes_defined = [];
     for (var i = 0; i < relation_inputs_blocks.length; i++) {
       root_checkbox = $(relation_inputs_blocks[i]).find('input[name="root"]');
@@ -1966,7 +1973,7 @@ var ParsedClassicsDiagramGenerator = {
 
     // (d) in introduction relation:
     // - expression can play the role of introductory word only in one introduction relation 
-    // - expression can ce second constituent only in one introduction relation
+    // - expression can be second constituent only in one introduction relation
 
     // get all containers of introduction relation
     introduction_relation_containers = relation_containers.filter(function(index, element) {
@@ -2000,6 +2007,46 @@ var ParsedClassicsDiagramGenerator = {
       internal_index_input = introduction_relation_containers.find('input').filter(function() { return this.value == intro_rel_expr_2_arr[expr_non_unique_index] }).last();
       center_pane.scrollTo(internal_index_input, 400);
       return invalidation_msg;
+    }
+
+    // (e) in modification, relativization, apposition relations:
+    // - if not case of root phrase, antecedent referred by inner index should exist at lower level than the phrase 
+
+    // remove from relation containers that which has root_clause checked
+    non_block_relation_containers = relation_containers.filter(function(index, element) {
+      return $(element).find('input[name="root"]:checked').length !== 1;
+    });
+    
+    // get all relation containers of modification, relativization, apposition
+    non_block_relation_containers = relation_containers.filter(function(index, element) {
+      return $(element).find('option[value="modification"]:selected, option[value="relativization"]:selected, option[value="apposition"]:selected').length === 1;
+    });
+    
+    // loop through all relation containers
+    for (var i = 0; i < relation_containers.length; i++) {
+      // find if current relation is relation of modification, relativization, apposition
+      if (non_block_relation_containers.is(relation_containers[i])) {
+        // get internal index of antecedent
+        word_phrase_inputs_blocks = $(relation_containers[i]).find('.word-inputs-block, .phrase-inputs-block');
+        antecedent_index_input = word_phrase_inputs_blocks.first().find('input[name="internal-index"]');
+        antecedent_index = antecedent_index_input.val();
+        // loop through previous relation containers and search for antecedent
+        var curr_relation_index = i;
+        antecedent_found = false;
+        for (var j = 0; j < curr_relation_index; j++) {
+          inner_indexes_all = $(relation_containers[j]).find('input[name="internal-index"]').map((i, el) => el.value).toArray();
+          antecedent_found = inner_indexes_all.includes(antecedent_index);
+          if (antecedent_found) {
+            break;
+          }
+        }
+        if (!antecedent_found) {
+          relation_name = $(relation_containers[j]).find('select[name="syntactic-relation"]').val();
+          ParsedClassicsDiagramGenerator.show_error_msg(`Antecedent of ${relation_name} relation referred by internal index "${antecedent_index}" was not found as part of previous syntactic relation.`);
+          center_pane.scrollTo(antecedent_index_input, 400);
+          return invalidation_msg;
+        }
+      }
     }
 
     return validation_msg;
