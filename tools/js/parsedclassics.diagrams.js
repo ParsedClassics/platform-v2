@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.23",
+  diagrammer_version: "1.6.24",
   
   debug: false,
 
@@ -1650,7 +1650,10 @@ var ParsedClassicsDiagramGenerator = {
       antecedent_index_input,
       inner_indexes_all,
       antecedent_found,
-      word_phrase_inputs_blocks;
+      word_phrase_inputs_blocks,
+      back_fork_relation_containers,
+      back_fork_inner_indexes,
+      word_inner_index_inputs_all;
 
     validation_msg = "validated";
     invalidation_msg = "invalidated";
@@ -2042,10 +2045,33 @@ var ParsedClassicsDiagramGenerator = {
         }
         if (!antecedent_found) {
           relation_name = $(relation_containers[j]).find('select[name="syntactic-relation"]').val();
-          ParsedClassicsDiagramGenerator.show_error_msg(`Antecedent of ${relation_name} relation referred by internal index "${antecedent_index}" was not found as part of previous syntactic relation.`);
+          ParsedClassicsDiagramGenerator.show_error_msg(`Antecedent of ${relation_name} relation referred by internal index "${antecedent_index}" was not found as part of any previous syntactic relation.`);
           center_pane.scrollTo(antecedent_index_input, 400);
           return invalidation_msg;
         }
+      }
+    }
+
+    // (f) result of Back Fork technical "relation" should enter in other relations as phrase
+
+    // get all Back Fork relation containers
+    back_fork_relation_containers = relation_containers.filter(function(index, element) {
+      return $(element).find('option[value="fork2"]:selected').length === 1;
+    });
+    // get internal indexes of all Back Fork technical "relations"
+    back_fork_inner_indexes = back_fork_relation_containers.find('.relation-inputs-block input[name="internal-index"]').map((i, el) => el.value).toArray();
+
+    // get internal index inputs of all word inputs blocks
+    word_inner_index_inputs_all = relation_containers.find('.word-inputs-block input[name="internal-index"]');
+    // loop through internal index inputs of all word inputs blocks
+    for (var i = 0; i < word_inner_index_inputs_all.length; i++) {
+      // get internal index from input
+      internal_index = $(word_inner_index_inputs_all[i]).val();
+      // is internal index the index of Back Fork technical "relation"?
+      if (back_fork_inner_indexes.includes(internal_index)) {
+        ParsedClassicsDiagramGenerator.show_error_msg(`The result of Back fork technical "relation" referred by index "${internal_index}" was entered as word.`);
+        center_pane.scrollTo(word_inner_index_inputs_all[i], 400);
+        return invalidation_msg;
       }
     }
 
