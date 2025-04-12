@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.24",
+  diagrammer_version: "1.6.25",
   
   debug: false,
 
@@ -1130,14 +1130,24 @@ var ParsedClassicsDiagramGenerator = {
     relation,
     phrase_internal_index,
     info_obj,
+    info_obj2,
+    info_obj3,
     phrases_info_container,
+    phrases_info_container2,
+    phrases_info_container3,
     heading,
     info_html,
+    info_html2,
+    info_html3,
     popover_info_phrases,
+    popover_info_phrases2,
+    popover_info_phrases3,
     root_relation,
     id;
     
     popover_info_phrases = [];
+    popover_info_phrases2 = [];
+    popover_info_phrases3 = [];
     // get all relation inputs blocks
     relation_inputs_blocks = $("div.relation-inputs-block");
     for (var i = 0; i < relation_inputs_blocks.length; i++) {
@@ -1151,6 +1161,8 @@ var ParsedClassicsDiagramGenerator = {
       relation = $(relation_inputs_blocks[i]).find('[name="syntactic-relation"]').val();
       // get "id" attribute
       id = $(relation_inputs_blocks[i]).attr('id');
+
+      // (a) Block-building phrases
       if (relation && $.inArray(relation, ["complementation", "coordination", "coordination-initial", "specification", "introduction", "clausal-adjunction", "hook"]) !== -1 && phrase && phrase_internal_index) {
         // create info obj
         info_obj = {};
@@ -1165,7 +1177,28 @@ var ParsedClassicsDiagramGenerator = {
           root_relation = info_obj;
         }
       }
+
+      // (b) Non-block-building phrases
+      if (relation && $.inArray(relation, ["modification", "relativization", "apposition", "parenthesis"]) !== -1 && phrase && phrase_internal_index) {
+        // create info obj
+        info_obj2 = {};
+        info_obj2.phrase_internal_index = phrase_internal_index;
+        info_obj2.phrase = phrase;
+        info_obj2.id = id;
+        popover_info_phrases2.push(info_obj2);
+      }
+
+      // (c) Technical "phrases"
+      if (relation && $.inArray(relation, ["fork", "fork2", "cable"]) !== -1 && phrase && phrase_internal_index) {
+        info_obj3 = {};
+        info_obj3.phrase_internal_index = phrase_internal_index;
+        info_obj3.phrase = phrase;
+        info_obj3.id = id;
+        popover_info_phrases3.push(info_obj3);
+      }
     }
+
+    // (a) Again Block-building phrases
 
     // remove duplicates from popover_info_phrases arr
     popover_info_phrases = [...new Map(popover_info_phrases.map(item => [item.phrase_internal_index, item])).values()];
@@ -1184,8 +1217,40 @@ var ParsedClassicsDiagramGenerator = {
     popover_info_phrases.forEach((item) => {
       info_html += `<p>${item.phrase_internal_index} <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
     });
-    //add new info about words
+    //add new info about phrases
     phrases_info_container[0].innerHTML = heading + "\n" + info_html;
+
+    // (b) Again Non-block-building phrases
+    
+    // remove duplicates from popover_info_phrases2 arr
+    popover_info_phrases2 = [...new Map(popover_info_phrases2.map(item => [item.phrase_internal_index, item])).values()];
+    // sort popover_info_phrases2 arr
+    popover_info_phrases2.sort((a, b) => (a.phrase_internal_index < b.phrase_internal_index ? -1 : 1));
+    //get container to display info about phrases
+    phrases_info_container2 = $("#pc-info-popover .pc-info-popover-non-block-phrases");
+    // generate phrases info html
+    info_html2 = "";
+    popover_info_phrases2.forEach((item) => {
+      info_html2 += `<p>${item.phrase_internal_index} <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
+    });
+    //add new info about phrases
+    phrases_info_container2[0].innerHTML = info_html2;
+
+    // (c) Again Technical "phrases"
+
+    // remove duplicates from popover_info_phrases3 arr
+    popover_info_phrases3 = [...new Map(popover_info_phrases3.map(item => [item.phrase_internal_index, item])).values()];
+    // sort popover_info_phrases3 arr
+    popover_info_phrases3.sort((a, b) => (a.phrase_internal_index < b.phrase_internal_index ? -1 : 1));
+    //get container to display info about phrases
+    phrases_info_container3 = $("#pc-info-popover .pc-info-popover-tech-phrases");
+    // generate phrases info html
+    info_html3 = "";
+    popover_info_phrases3.forEach((item) => {
+      info_html3 += `<p>${item.phrase_internal_index} <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
+    });
+    //add new info about phrases
+    phrases_info_container3[0].innerHTML = info_html3;
   },
 
   innerLinkClick: function(event) {
