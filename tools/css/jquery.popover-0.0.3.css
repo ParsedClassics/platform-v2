@@ -113,3 +113,7 @@
 .popover-modal .list-heading {
 	font-weight: 500;
 }
+
+.popover-modal .internal-index, .popover-modal .clause-type {
+	cursor: default;
+}

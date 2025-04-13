@@ -10,7 +10,7 @@ Syntax diagram generator
 
 var ParsedClassicsDiagramGenerator = {
   
-  diagrammer_version: "1.6.25",
+  diagrammer_version: "1.6.26",
   
   debug: false,
 
@@ -997,6 +997,7 @@ var ParsedClassicsDiagramGenerator = {
 
   compile_clauses_info: function() {
     var relation_inputs_blocks,
+    clause_type,
     word_inputs_blocks,
     phrase,
     word,
@@ -1013,6 +1014,8 @@ var ParsedClassicsDiagramGenerator = {
     // get all relation inputs blocks
     relation_inputs_blocks = $("div.relation-inputs-block");
     for (var i = 0; i < relation_inputs_blocks.length; i++) {
+      // get clause type
+      clause_type = $(relation_inputs_blocks[i]).find('textarea[name="clause-type"]').val();
       // get external index of resulting phrase
       phrase_external_index = $(relation_inputs_blocks[i]).find('[name="external-index"]').val().trim();
       if (!phrase_external_index) {
@@ -1021,7 +1024,7 @@ var ParsedClassicsDiagramGenerator = {
       // get resulting phrase form
       phrase = $(relation_inputs_blocks[i]).find('[name="resulting-phrase"]').val().trim();
       // put subscripts between <sub> tags
-      phrase = phrase.replace(/(\(\d+\))/g, (match) => '<sub>' + match + '</sub>');
+      phrase = phrase.replace(/(\([\d\&]+\))/g, (match) => '<sub>' + match + '</sub>');
       // get relation
       relation = $(relation_inputs_blocks[i]).find('[name="syntactic-relation"]').val();
       // get "id" attribute
@@ -1030,6 +1033,7 @@ var ParsedClassicsDiagramGenerator = {
         // create info obj
         info_obj = {};
         info_obj.phrase_external_index = phrase_external_index;
+        info_obj.clause_type = clause_type;
         info_obj.phrase = phrase;
         info_obj.id = id;
         // push info obj into popover info arr
@@ -1069,7 +1073,7 @@ var ParsedClassicsDiagramGenerator = {
     // generate clauses info html
     info_html = "";
     popover_info_clauses.forEach((item) => {
-      info_html += `<p>${item.phrase_external_index} <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
+      info_html += `<p><span class="clause-type" title="${item.clause_type}">${item.phrase_external_index}</span> <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
     });
     //add new info about clauses
     clauses_info_container[0].innerHTML = info_html;
@@ -1126,6 +1130,7 @@ var ParsedClassicsDiagramGenerator = {
 
   compile_phrases_info: function() {
     var relation_inputs_blocks,
+    syntactic_relation,
     phrase,
     relation,
     phrase_internal_index,
@@ -1151,10 +1156,12 @@ var ParsedClassicsDiagramGenerator = {
     // get all relation inputs blocks
     relation_inputs_blocks = $("div.relation-inputs-block");
     for (var i = 0; i < relation_inputs_blocks.length; i++) {
+      // get syntactic relation
+      syntactic_relation = $(relation_inputs_blocks[i]).find('select[name="syntactic-relation"] option:selected').text();
       // get resulting phrase form
       phrase = $(relation_inputs_blocks[i]).find('[name="resulting-phrase"]').val().trim();
       // put subscripts between <sub> tags
-      phrase = phrase.replace(/(\(\d+\))/g, (match) => '<sub>' + match + '</sub>');
+      phrase = phrase.replace(/(\([\d\&]+\))/g, (match) => '<sub>' + match + '</sub>');
       // get internal index of resulting phrase
       phrase_internal_index = $(relation_inputs_blocks[i]).find('[name="internal-index"]').val().trim();
       // get relation
@@ -1167,6 +1174,7 @@ var ParsedClassicsDiagramGenerator = {
         // create info obj
         info_obj = {};
         info_obj.phrase_internal_index = phrase_internal_index;
+        info_obj.syntactic_relation = syntactic_relation;
         info_obj.phrase = phrase;
         info_obj.id = id;
         if (phrase_internal_index != 'root_relation') {
@@ -1183,6 +1191,7 @@ var ParsedClassicsDiagramGenerator = {
         // create info obj
         info_obj2 = {};
         info_obj2.phrase_internal_index = phrase_internal_index;
+        info_obj2.syntactic_relation = syntactic_relation;
         info_obj2.phrase = phrase;
         info_obj2.id = id;
         popover_info_phrases2.push(info_obj2);
@@ -1192,6 +1201,7 @@ var ParsedClassicsDiagramGenerator = {
       if (relation && $.inArray(relation, ["fork", "fork2", "cable"]) !== -1 && phrase && phrase_internal_index) {
         info_obj3 = {};
         info_obj3.phrase_internal_index = phrase_internal_index;
+        info_obj3.syntactic_relation = syntactic_relation;
         info_obj3.phrase = phrase;
         info_obj3.id = id;
         popover_info_phrases3.push(info_obj3);
@@ -1215,7 +1225,7 @@ var ParsedClassicsDiagramGenerator = {
     // generate phrases info html
     info_html = "";
     popover_info_phrases.forEach((item) => {
-      info_html += `<p>${item.phrase_internal_index} <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
+      info_html += `<p><span class="internal-index" title="${item.syntactic_relation}">${item.phrase_internal_index}</span> <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
     });
     //add new info about phrases
     phrases_info_container[0].innerHTML = heading + "\n" + info_html;
@@ -1231,7 +1241,7 @@ var ParsedClassicsDiagramGenerator = {
     // generate phrases info html
     info_html2 = "";
     popover_info_phrases2.forEach((item) => {
-      info_html2 += `<p>${item.phrase_internal_index} <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
+      info_html2 += `<p><span class="internal-index" title="${item.syntactic_relation}">${item.phrase_internal_index}</span> <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
     });
     //add new info about phrases
     phrases_info_container2[0].innerHTML = info_html2;
@@ -1247,7 +1257,7 @@ var ParsedClassicsDiagramGenerator = {
     // generate phrases info html
     info_html3 = "";
     popover_info_phrases3.forEach((item) => {
-      info_html3 += `<p>${item.phrase_internal_index} <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
+      info_html3 += `<p><span class="internal-index" title="${item.syntactic_relation}">${item.phrase_internal_index}</span> <a class="inner-link" data-anchor="${item.id}">∞</a> ${item.phrase}</p>\n`;
     });
     //add new info about phrases
     phrases_info_container3[0].innerHTML = info_html3;
