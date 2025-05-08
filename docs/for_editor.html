@@ -4342,27 +4342,6 @@ nt_ephesians_diagrams_by_parsedclassics = `
 
 <p>After doing this diagram set resource should work in sync with parsed text resource.</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
-
 <h3 class="pc-anchor" id="h-audio-recording-transcribed">Audio recording (transcribed)</h3>
 
 <p>Creating resource of the type "audio recording" involves creating three files: MP3 sound file, data file and contents file.</p>
@@ -4385,7 +4364,7 @@ nt_ephesians_diagrams_by_parsedclassics = `
 
 <p><img class="w3-border w3-border-dark-gray" src="img2/creating_audio_soundfile3.jpg"></p>
 
-<p>Sound file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. Audio recording <a class="inner-link" data-anchor="h-audio-recording">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "nt_titus_audio_by_robinson", so this should be sound file‘s name. Sound file should be placed in "_audio" directory: /_audio/nt_titus_audio_by_robinson.mp3</p>
+<p>Sound file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. Audio recording <a class="inner-link" data-anchor="h-audio-recording">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "nt_titus_audio_by_karvounakis", so this should be sound file‘s name. Sound file should be placed in the directory of the same name: _audio/nt_titus_audio_by_karvounakis/nt_titus_audio_by_karvounakis.mp3</p>
 
 <p>After doing this you should be able to listen to the recording using audio controls in resources pane.</p>
 
@@ -4447,116 +4426,65 @@ nt_ephesians_diagrams_by_parsedclassics = `
 
 <p>IMPORTANT! The time without any text to the right indicating the end of the recording is required at the end of the file, otherwise the last line will remain highlighted after playing of the recording will end.</p>
 
-<p>This code should be converted to javascript string. It should be done by wrapping each line by apostroph symbols on the left and new line symbol, apostroph symbol, plus symbol on the right (if there are apostrophs in the text, they should be escaped using "\" symbol):</p> 
-
-<pre id="creating_audio_datafile2" class="prettyprint code_showarea">
-'[00:00.00]\n' +
-
-'[00:08.10]1:1 Παῦλος, δοῦλος θεοῦ, ἀπόστολος δὲ Ἰησοῦ χριστοῦ, κατὰ πίστιν ἐκλεκτῶν θεοῦ καὶ ἐπίγνωσιν ἀληθείας τῆς κατ’ εὐσέβειαν,\n' + 
-
-'[00:23.00]1:2 ἐπ’ ἐλπίδι ζωῆς αἰωνίου, ἣν ἐπηγγείλατο ὁ ἀψευδὴς θεὸς πρὸ χρόνων αἰωνίων,\n' + 
-
-'[00:33.80]1:3 ἐφανέρωσεν δὲ καιροῖς ἰδίοις τὸν λόγον αὐτοῦ ἐν κηρύγματι ὃ ἐπιστεύθην ἐγὼ κατ’ ἐπιταγὴν τοῦ σωτῆρος ἡμῶν θεοῦ,\n' +
-
-'[00:49.50]1:4 Τίτῳ γνησίῳ τέκνῳ κατὰ κοινὴν πίστιν· χάρις, ἔλεος, εἰρήνη ἀπὸ θεοῦ πατρός, καὶ κυρίου Ἰησοῦ χριστοῦ τοῦ σωτῆρος ἡμῶν.\n' + 
-
-'[01:05.80]1:5 Τούτου χάριν κατέλιπόν σε ἐν Κρήτῃ, ἵνα τὰ λείποντα ἐπιδιορθώσῃ, καὶ καταστήσῃς κατὰ πόλιν πρεσβυτέρους, ὡς ἐγώ σοι διεταξάμην·\n' + 
-
-// part of code has been cut out
-
-'[04:05.90]\n' +
-
-'[04:07.70]2:1 Σὺ δὲ λάλει ἃ πρέπει τῇ ὑγιαινούσῃ διδασκαλίᾳ·\n' + 
-
-'[04:14.80]2:2 πρεσβύτας νηφαλέους εἶναι, σεμνούς, σώφρονας, ὑγιαίνοντας τῇ πίστει, τῇ ἀγάπῃ, τῇ ὑπομονῇ·\n' + 
-
-'[04:28.20]2:3 πρεσβύτιδας ὡσαύτως ἐν καταστήματι ἱεροπρεπεῖς, μὴ διαβόλους, μὴ οἴνῳ πολλῷ δεδουλωμένας, καλοδιδασκάλους,\n' + 
-
-'[04:43.30]2:4 ἵνα σωφρονίζωσιν τὰς νέας φιλάνδρους εἶναι, φιλοτέκνους,\n' + 
-
-'[04:51.60]2:5 σώφρονας, ἁγνάς, οἰκουρούς ἀγαθάς, ὑποτασσομένας τοῖς ἰδίοις ἀνδράσιν, ἵνα μὴ ὁ λόγος τοῦ θεοῦ βλασφημῆται·\n' + 
-
-// part of code has been cut out
-
-'[07:13.70]\n' +
-
-'[07:15.80]3:1 Ὑπομίμνησκε αὐτοὺς ἀρχαῖς καὶ ἐξουσίαις ὑποτάσσεσθαι, πειθαρχεῖν, πρὸς πᾶν ἔργον ἀγαθὸν ἑτοίμους εἶναι,\n' + 
-
-'[07:29.30]3:2 μηδένα βλασφημεῖν, ἀμάχους εἶναι, ἐπιεικεῖς, πᾶσαν ἐνδεικνυμένους πρᾳότητα πρὸς πάντας ἀνθρώπους.\n' + 
-
-'[07:42.40]3:3 Ἦμεν γάρ ποτε καὶ ἡμεῖς ἀνόητοι, ἀπειθεῖς, πλανώμενοι, δουλεύοντες ἐπιθυμίαις καὶ ἡδοναῖς ποικίλαις, ἐν κακίᾳ καὶ φθόνῳ διάγοντες, στυγητοί, μισοῦντες ἀλλήλους.\n' + 
-
-'[08:04.90]3:4 Ὅτε δὲ ἡ χρηστότης καὶ ἡ φιλανθρωπία ἐπεφάνη τοῦ σωτῆρος ἡμῶν θεοῦ,\n' + 
-
-'[08:15.10]3:5 οὐκ ἐξ ἔργων τῶν ἐν δικαιοσύνῃ ὧν ἐποιήσαμεν ἡμεῖς, ἀλλὰ κατὰ τὸν αὐτοῦ ἔλεον ἔσωσεν ἡμᾶς, διὰ λουτροῦ παλιγγενεσίας καὶ ἀνακαινώσεως πνεύματος ἁγίου,\n' +
-
-// part of code has been cut out
-
-'[10:43.60]\n' +
-</pre>
-
-<p>This string should be made the second argument of the function "ParsedClassicsData._loadResource". The first argument of this function should be the value of the key "resource_shortname" from collection catalogue. Audio recording <a class="inner-link" data-anchor="h-audio-recording">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "nt_titus_audio_by_robinson", so this string will be the first argument.</p>
+<p>This code should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We listed [LINK TO BE ADDED] audio recording resource whose resource shotname is "nt_titus_audio_by_karvounakis", so this will be variable's name.</p> 
 
 <p>This way we get such data file:</p>
 
 <pre id="creating_audio_datafile3" class="prettyprint code_showarea">
-ParsedClassicsData._loadResource("nt_titus_audio_by_robinson",
+nt_titus_audio_by_karvounakis = `
+[00:00.00]
 
-'[00:00.00]\n' +
+[00:08.10]1:1 Παῦλος, δοῦλος θεοῦ, ἀπόστολος δὲ Ἰησοῦ χριστοῦ, κατὰ πίστιν ἐκλεκτῶν θεοῦ καὶ ἐπίγνωσιν ἀληθείας τῆς κατ’ εὐσέβειαν
 
-'[00:08.10]1:1 Παῦλος, δοῦλος θεοῦ, ἀπόστολος δὲ Ἰησοῦ χριστοῦ, κατὰ πίστιν ἐκλεκτῶν θεοῦ καὶ ἐπίγνωσιν ἀληθείας τῆς κατ’ εὐσέβειαν,\n' + 
+[00:23.00]1:2 ἐπ’ ἐλπίδι ζωῆς αἰωνίου, ἣν ἐπηγγείλατο ὁ ἀψευδὴς θεὸς πρὸ χρόνων αἰωνίων
 
-'[00:23.00]1:2 ἐπ’ ἐλπίδι ζωῆς αἰωνίου, ἣν ἐπηγγείλατο ὁ ἀψευδὴς θεὸς πρὸ χρόνων αἰωνίων,\n' + 
+[00:33.80]1:3 ἐφανέρωσεν δὲ καιροῖς ἰδίοις τὸν λόγον αὐτοῦ ἐν κηρύγματι ὃ ἐπιστεύθην ἐγὼ κατ’ ἐπιταγὴν τοῦ σωτῆρος ἡμῶν θεοῦ
 
-'[00:33.80]1:3 ἐφανέρωσεν δὲ καιροῖς ἰδίοις τὸν λόγον αὐτοῦ ἐν κηρύγματι ὃ ἐπιστεύθην ἐγὼ κατ’ ἐπιταγὴν τοῦ σωτῆρος ἡμῶν θεοῦ,\n' +
+[00:49.50]1:4 Τίτῳ γνησίῳ τέκνῳ κατὰ κοινὴν πίστιν· χάρις, ἔλεος, εἰρήνη ἀπὸ θεοῦ πατρός, καὶ κυρίου Ἰησοῦ χριστοῦ τοῦ σωτῆρος ἡμῶν.
 
-'[00:49.50]1:4 Τίτῳ γνησίῳ τέκνῳ κατὰ κοινὴν πίστιν· χάρις, ἔλεος, εἰρήνη ἀπὸ θεοῦ πατρός, καὶ κυρίου Ἰησοῦ χριστοῦ τοῦ σωτῆρος ἡμῶν.\n' + 
-
-'[01:05.80]1:5 Τούτου χάριν κατέλιπόν σε ἐν Κρήτῃ, ἵνα τὰ λείποντα ἐπιδιορθώσῃ, καὶ καταστήσῃς κατὰ πόλιν πρεσβυτέρους, ὡς ἐγώ σοι διεταξάμην·\n' + 
-
-// part of code has been cut out
-
-'[04:05.90]\n' +
-
-'[04:07.70]2:1 Σὺ δὲ λάλει ἃ πρέπει τῇ ὑγιαινούσῃ διδασκαλίᾳ·\n' + 
-
-'[04:14.80]2:2 πρεσβύτας νηφαλέους εἶναι, σεμνούς, σώφρονας, ὑγιαίνοντας τῇ πίστει, τῇ ἀγάπῃ, τῇ ὑπομονῇ·\n' + 
-
-'[04:28.20]2:3 πρεσβύτιδας ὡσαύτως ἐν καταστήματι ἱεροπρεπεῖς, μὴ διαβόλους, μὴ οἴνῳ πολλῷ δεδουλωμένας, καλοδιδασκάλους,\n' + 
-
-'[04:43.30]2:4 ἵνα σωφρονίζωσιν τὰς νέας φιλάνδρους εἶναι, φιλοτέκνους,\n' + 
-
-'[04:51.60]2:5 σώφρονας, ἁγνάς, οἰκουρούς ἀγαθάς, ὑποτασσομένας τοῖς ἰδίοις ἀνδράσιν, ἵνα μὴ ὁ λόγος τοῦ θεοῦ βλασφημῆται·\n' + 
+[01:05.80]1:5 Τούτου χάριν κατέλιπόν σε ἐν Κρήτῃ, ἵνα τὰ λείποντα ἐπιδιορθώσῃ, καὶ καταστήσῃς κατὰ πόλιν πρεσβυτέρους, ὡς ἐγώ σοι διεταξάμην· 
 
 // part of code has been cut out
 
-'[07:13.70]\n' +
+[04:05.90]
 
-'[07:15.80]3:1 Ὑπομίμνησκε αὐτοὺς ἀρχαῖς καὶ ἐξουσίαις ὑποτάσσεσθαι, πειθαρχεῖν, πρὸς πᾶν ἔργον ἀγαθὸν ἑτοίμους εἶναι,\n' + 
+[04:07.70]2:1 Σὺ δὲ λάλει ἃ πρέπει τῇ ὑγιαινούσῃ διδασκαλίᾳ·
 
-'[07:29.30]3:2 μηδένα βλασφημεῖν, ἀμάχους εἶναι, ἐπιεικεῖς, πᾶσαν ἐνδεικνυμένους πρᾳότητα πρὸς πάντας ἀνθρώπους.\n' + 
+[04:14.80]2:2 πρεσβύτας νηφαλέους εἶναι, σεμνούς, σώφρονας, ὑγιαίνοντας τῇ πίστει, τῇ ἀγάπῃ, τῇ ὑπομονῇ·
 
-'[07:42.40]3:3 Ἦμεν γάρ ποτε καὶ ἡμεῖς ἀνόητοι, ἀπειθεῖς, πλανώμενοι, δουλεύοντες ἐπιθυμίαις καὶ ἡδοναῖς ποικίλαις, ἐν κακίᾳ καὶ φθόνῳ διάγοντες, στυγητοί, μισοῦντες ἀλλήλους.\n' + 
+[04:28.20]2:3 πρεσβύτιδας ὡσαύτως ἐν καταστήματι ἱεροπρεπεῖς, μὴ διαβόλους, μὴ οἴνῳ πολλῷ δεδουλωμένας, καλοδιδασκάλους,
 
-'[08:04.90]3:4 Ὅτε δὲ ἡ χρηστότης καὶ ἡ φιλανθρωπία ἐπεφάνη τοῦ σωτῆρος ἡμῶν θεοῦ,\n' + 
+[04:43.30]2:4 ἵνα σωφρονίζωσιν τὰς νέας φιλάνδρους εἶναι, φιλοτέκνους,
 
-'[08:15.10]3:5 οὐκ ἐξ ἔργων τῶν ἐν δικαιοσύνῃ ὧν ἐποιήσαμεν ἡμεῖς, ἀλλὰ κατὰ τὸν αὐτοῦ ἔλεον ἔσωσεν ἡμᾶς, διὰ λουτροῦ παλιγγενεσίας καὶ ἀνακαινώσεως πνεύματος ἁγίου,\n' +
+[04:51.60]2:5 σώφρονας, ἁγνάς, οἰκουρούς ἀγαθάς, ὑποτασσομένας τοῖς ἰδίοις ἀνδράσιν, ἵνα μὴ ὁ λόγος τοῦ θεοῦ βλασφημῆται·
 
 // part of code has been cut out
 
-'[10:43.60]\n' +
+[07:13.70]
 
-""
-);
+[07:15.80]3:1 Ὑπομίμνησκε αὐτοὺς ἀρχαῖς καὶ ἐξουσίαις ὑποτάσσεσθαι, πειθαρχεῖν, πρὸς πᾶν ἔργον ἀγαθὸν ἑτοίμους εἶναι,
+
+[07:29.30]3:2 μηδένα βλασφημεῖν, ἀμάχους εἶναι, ἐπιεικεῖς, πᾶσαν ἐνδεικνυμένους πρᾳότητα πρὸς πάντας ἀνθρώπους. 
+
+[07:42.40]3:3 Ἦμεν γάρ ποτε καὶ ἡμεῖς ἀνόητοι, ἀπειθεῖς, πλανώμενοι, δουλεύοντες ἐπιθυμίαις καὶ ἡδοναῖς ποικίλαις, ἐν κακίᾳ καὶ φθόνῳ διάγοντες, στυγητοί, μισοῦντες ἀλλήλους. 
+
+[08:04.90]3:4 Ὅτε δὲ ἡ χρηστότης καὶ ἡ φιλανθρωπία ἐπεφάνη τοῦ σωτῆρος ἡμῶν θεοῦ, 
+
+[08:15.10]3:5 οὐκ ἐξ ἔργων τῶν ἐν δικαιοσύνῃ ὧν ἐποιήσαμεν ἡμεῖς, ἀλλὰ κατὰ τὸν αὐτοῦ ἔλεον ἔσωσεν ἡμᾶς, διὰ λουτροῦ παλιγγενεσίας καὶ ἀνακαινώσεως πνεύματος ἁγίου,
+
+// part of code has been cut out
+
+[10:43.60]
+`;
 </pre>
 
-<p>Data file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. Audio recording <a class="inner-link" data-anchor="h-audio-recording">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "nt_titus_audio_by_robinson", so this should be data file‘s name. Data file should be placed in "audio" directory: /data/resources/audio/nt_titus_audio_by_robinson.js</p>
+<p>Data file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. Audio recording <a class="inner-link" data-anchor="h-audio-recording">resource shortname from <em>Epistle to Titus</em> catalogue</a> is "nt_titus_audio_by_karvounakis", so this should be data file‘s name. Data file should be placed in the directory of the same name: /data/audio_recording/nt_titus_audio_by_karvounakis/nt_titus_audio_by_karvounakis.js</p>
 
-<p>After doing this the the text from the data file should be synchronized with the sound.</p>
+<p>After doing this the text from the data file should be synchronized with the sound.</p>
 
 <p>Creating data file can be made easier by using <a href="../tools/audio_datafile_generator.html">Audio recording data file generator</a>.</p>
 
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_audio_datafile.png"></p>
+<p><img class="w3-border w3-border-dark-gray max-width-120" src="img2/form_audio_datafile.png"></p>
 
 <p>The value of the form‘s field "Data file shortname" should be shortname of the resource.</p>
 
@@ -4565,6 +4493,32 @@ ParsedClassicsData._loadResource("nt_titus_audio_by_robinson",
 <p>After filling the fields with these values click the button "Load text". The text will be displayed below the heading "Recorded text:". Then click the button "Generate code" and the data file code will appear in "Data file code" textarea.</p>
 
 <p>Save the code in the file as described above and enter relevant numbers inside the strings "[00:00.00]" at the beginning of the each line of text.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
+
+<h3 class="pc-anchor" id="h-audio-recording-transcribeda">Audio recording (transcribed)</h3>
 
 <h4 class="pc-anchor" id="h-audio-recording-transcribed-creating-contents-file">Creating contents file</h4>
 
