@@ -4494,41 +4494,15 @@ nt_titus_audio_by_karvounakis = `
 
 <p>Save the code in the file as described above and enter relevant numbers inside the strings "[00:00.00]" at the beginning of the each line of text.</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="pc-anchor" id="h-edited-until-here" style="color: red;">Edited until here</h2>
-
-<h3 class="pc-anchor" id="h-audio-recording-transcribeda">Audio recording (transcribed)</h3>
-
 <h4 class="pc-anchor" id="h-audio-recording-transcribed-creating-contents-file">Creating contents file</h4>
 
 <p>In order for audio recording resource to work in sync with parsed text, the contents file should be created.</p>
 
 <p>To create contents file go to <a href="../tools/audio_contents_generator.html" target="_blank">Audio recording contents generator</a> page and fill the form:</p>
 
-<p><img class="w3-border w3-border-dark-gray" src="img2/form_audio_contents.jpg"></p>
+<p><img class="w3-border w3-border-dark-gray max-width-120" src="./img2/form_audio_contents.png"></p>
 
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" in collection‘s catalogue. While creating collection‘s catalogue for <em>Epistle to Titus</em> collection <a class="inner-link" data-anchor="h-audio-recording">we entered</a> for this key the value "sounds_nt_titus_audio_by_robinson_contents", so we now should enter it as the value of the field "Contents shortname".</p>
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" in collection‘s catalogue. While creating collection‘s catalogue for <em>Epistle to Titus</em> collection <a class="inner-link" data-anchor="h-audio-recording">we entered</a> for this key the value "nt_titus_audio_by_karvounakis_contents", so we now should enter it as the value of the field "Contents shortname".</p>
 
 <p>The value of the form‘s field "Recorded text code" should be HTML code of the recorded text starting from the first "div" tag having class attribute value "line" and ending with the last "div" tag having the same attribute value. Use browser’s HTML inspector (available on right-click in every major browser) to copy this part of code from Library app’s page.</p>
 
@@ -4539,7 +4513,7 @@ nt_titus_audio_by_karvounakis = `
 <p>The contents code will be as this:</p>
 
 <pre id="creating_audio_contentsfile" class="prettyprint code_showarea">
-var sounds_nt_titus_audio_by_robinson_contents = {
+nt_titus_audio_by_karvounakis_contents = {
 
 "v-title": 0
 
@@ -4568,7 +4542,7 @@ var sounds_nt_titus_audio_by_robinson_contents = {
 };
 </pre>
 
-<p>This code should be saved in the file having the same name as the value in "Contents shortname" field. The file should be placed in "contents" directory: /data/contents/sounds_nt_titus_audio_by_robinson_contents.js</p>
+<p>This code should be saved in the file having the same name as the value in "Contents shortname" field. The file should be placed in directory having the same name as the value of "Resource shortname" field: /data/audio_recording/nt_titus_audio_by_karvounakis/nt_titus_audio_by_karvounakis_contents.js</p>
 
 <p>After doing this audio recording resource should work in sync with parsed text resource.</p>
 
@@ -4646,7 +4620,6 @@ var sounds_nt_titus_audio_by_robinson_contents = {
 
 <p>Save the PDF file. Now it can be converted to series of JPG images. </p>
 
-
 <h4 class="pc-anchor" id="h-common-tasks-converting-pdf-to_img">Converting PDF file to images</h4>
 
 <p>To convert PDF file to series of images use conversion software "Boxoft PDF To JPG Converter" (Win, free).</p>
@@ -4657,7 +4630,7 @@ var sounds_nt_titus_audio_by_robinson_contents = {
 
 <h4 class="pc-anchor" id="h-common-tasks-bulk-download-of-images">Bulk download of images</h4>
 
-<p>Quite often you may find a scanned book published in the internet as a set of .jpg failes inside some bookreading web app, as e.g. in archive.org. In this case you should copy all .jpg files of the scanned book. To copy images one by one would be tedious, so you should use tools which allow to do bulk download of the all needed files.</p>
+<p>Quite often you may find a scanned book published in the internet as a set of .jpg failes. In this case you should copy all .jpg files of the scanned book. To copy images one by one would be tedious, so you should use tools which allow to do bulk download of the all needed files.</p>
 
 <p>At first you need to generate list of URL addresses of the image files to be downloaded. To do that go to <a href="../tools/url_list_generator.html">URL list generator</a>, fill the form and click "Generate URL list" button:</p>
 
@@ -4836,18 +4809,6 @@ var sounds_nt_titus_audio_by_robinson_contents = {
 <p>FileOptimizer program by default creates in the same directory backup files having .bak extension. Disable this feature in the Options:</p>
 
 <p><img class="w3-border w3-border-dark-gray" src="img2/fileoptimizer_options.jpg"></p>
-
-<h4 class="pc-anchor" id="h-common-tasks-landscape-pages">Dealing with "landscape" pages</h4>
-
-<p>In the books which have "portrait" pages there can be some "landscape" pages. Since the Bookreader which is used to display scanned books in Library app does not allow to rotate pages, the "landscape" pages need special treatment.</p>
-
-<p>At first we need to look what are dimensions of the images of the scanned book. Let's say, dimensions are 1000px with and 1500px height. Then we need to generate the image of these dimentions having as background color the color used in Bookreader of the Library app.</p>
-
-<p>After that we need to rotate our "landscape" page, resize it so that its width would be 1000px and add it on the top of just generated monochrome image. The result will be as this:</p>
-
-<p><img class="w3-border w3-border-dark-gray" src="img2/resizing_landscape_images.jpg"></p>
-
-<p>"Landscape" page viewed in Bookreader will probably be too small, but it can be zoomed in order to discern the details comfortably.</p>
 
 <h3 class="pc-anchor" id="h-common-tasks-transcribed-resources">Transcribed resources</h3>
 
