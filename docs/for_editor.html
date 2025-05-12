@@ -4853,69 +4853,100 @@ nt_titus_audio_by_karvounakis_contents = {
 <tr>
 <td class="w3-border pc-whitespace-nowrap">\shref="([^"]*)"</td>
 <td class="w3-border pc-whitespace-nowrap">empty</td>
-<td class="w3-border">removing "href" attributes</td>
+<td class="w3-border">Removing "href" attributes.</td>
 <td class="w3-border">Notepad++</td>
 </tr>
 
 <tr>
 <td class="w3-border pc-whitespace-nowrap">\sid="([^"]*)"</td>
 <td class="w3-border pc-whitespace-nowrap">empty</td>
-<td class="w3-border">removing "id" attributes</td>
+<td class="w3-border">Removing "id" attributes.</td>
 <td class="w3-border">Notepad++</td>
 </tr>
 
 <tr>
 <td class="w3-border pc-whitespace-nowrap"><\s*div.*?></td>
 <td class="w3-border pc-whitespace-nowrap">empty</td>
-<td class="w3-border">removing opening part of "div" tags</td>
+<td class="w3-border">Removing opening part of "div" tags.</td>
 <td class="w3-border">Notepad++</td>
 </tr>
 
 <tr>
 <td class="w3-border pc-whitespace-nowrap"><\s*\/\s*div\s*.*?></td>
 <td class="w3-border pc-whitespace-nowrap">empty</td>
-<td class="w3-border">removing closing part of "div" tags</td>
+<td class="w3-border">Removing closing part of "div" tags.</td>
 <td class="w3-border">Notepad++</td>
 </tr>
 
 <tr>
 <td class="w3-border pc-whitespace-nowrap">&lt;/span></td>
 <td class="w3-border pc-whitespace-nowrap">&lt;/span>\r\n</td>
-<td class="w3-border">adding new line after closing "span" tags</td>
+<td class="w3-border">Adding new line after closing "span" tags.</td>
 <td class="w3-border">Notepad++</td>
 </tr>
 
 <tr>
 <td class="w3-border pc-whitespace-nowrap">>[\r\n]*&lt;span</td>
 <td class="w3-border pc-whitespace-nowrap">>&lt;span</td>
-<td class="w3-border">removing new lines before opening "span" tags</td>
+<td class="w3-border">Removing new lines before opening "span" tags.</td>
 <td class="w3-border">Notepad++</td>
 </tr>
 
 <tr>
 <td class="w3-border pc-whitespace-nowrap">(&lt;a[^<>]*class="verse_num"[^<>]*>[\s\S]*?&lt;/a>)(&lt;span[^<>]*class="verse"[^<>]*>)</td>
 <td class="w3-border pc-whitespace-nowrap">\2\1</td>
-<td class="w3-border">reversing order of the "a" tag having class "verse_num" with the opening part of the "span" tag having class "verse"</td>
+<td class="w3-border">Reversing order of the "a" tag having class "verse_num" with the opening part of the "span" tag having class "verse".<br>
+  E. g. from:<br>
+  <span class="pc-whitespace-nowrap">&lt;a class="verse_num" data-verse="10-22">22&lt;/a>&lt;span class="verse"></span><br>
+  To:<br>
+  <span class="pc-whitespace-nowrap">&lt;span class="verse">&lt;a class="verse_num" data-verse="10-22">22&lt;/a></span></td>
 <td class="w3-border">Notepad++</td>
 </tr>
 
 <tr>
 <td class="w3-border pc-whitespace-nowrap">(&lt;a[^<>]*data-verse="(\d+)-\d+"[^<>]*>)(\d+)(&lt;/a>)</td>
 <td class="w3-border pc-whitespace-nowrap">\1\2:\3\4</td>
-<td class="w3-border">extracting chapter number fom attribute "data-verse" and put it before line number inside the text of "a" tag</td>
+<td class="w3-border">Extracting chapter number fom attribute "data-verse" and put it before line number inside the text of "a" tag.<br>
+  E.g. from:<br>
+  <span class="pc-whitespace-nowrap">&lt;a class="verse_num" data-verse="10-22">22&lt;/a></span><br>
+  To:<br>
+  <span class="pc-whitespace-nowrap">&lt;a class="verse_num" data-verse="10-22">10:22&lt;/a></span></td>
 <td class="w3-border">Notepad++</td>
 </tr>
 
 <tr>
 <td class="w3-border pc-whitespace-nowrap">([0-9]+)(\s+)</td>
 <td class="w3-border pc-whitespace-nowrap">1:$1 </td>
-<td class="w3-border">adding chapter number (in this case "1:") before line number and empty space after line number (empty space symbol not seen in "Replace" regex)</td>
+<td class="w3-border">Adding chapter number (in this case "1:") before line number and empty space after line number (empty space symbol not seen in "Replace" regex).<br>
+  E.g. from:<br>
+  <span class="pc-whitespace-nowrap">&lt;span class="verse">&lt;a class="verse_num" data-verse="10-22">22 &lt;/a></span><br>
+  To:<br>
+  <span class="pc-whitespace-nowrap">&lt;span class="verse">&lt;a class="verse_num" data-verse="10-22">1:22 &lt;/a></span></td>
+<td class="w3-border">Notepad++</td>
+</tr>
+
+<tr>
+<td class="w3-border pc-whitespace-nowrap">(a) class="verse-number<br>(b) &lt;span class="line-number v\d+-\d+"<br>(c) (&lt;span[^<>]*)(class="line-number[^<>]*>)(\d+:\d+)(&lt;/span>)</td>
+<td class="w3-border pc-whitespace-nowrap">(a) class="line-number<br>(b) &lt;span class="line-number"<br>(c) \1data-line-number="\3" \2\3\4</td>
+<td class="w3-border">E.g. from:<br>
+  <span class="pc-whitespace-nowrap">&lt;span class="verse-number v1-1">1:1&lt;/span></span><br>
+  To:<br>
+  <span class="pc-whitespace-nowrap">&lt;span data-line-number="1:1" class="line-number">1:1&lt;/span></span></td>
+<td class="w3-border">Notepad++</td>
+</tr>
+
+<tr>
+<td class="w3-border pc-whitespace-nowrap">"v(\d+)-(\d+)"</td>
+<td class="w3-border pc-whitespace-nowrap">"\1:\2"</td>
+<td class="w3-border">E.g. from:<br>
+  "v1-1"<br>
+  To:<br>
+  "1:1"</td>
 <td class="w3-border">Notepad++</td>
 </tr>
 
 </tbody>
 </table>
-
 
 <h4 class="pc-anchor" id="h-common-tasks-comparing-text-versions">Comparing versions of text</h4>
 
