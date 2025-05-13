@@ -2582,7 +2582,7 @@ var ParsedClassicsAudioContentsGenerator = {
       // add starting and ending braces
       object_code = '{\n\n' + object_code + '};';
       // add object name
-      object_code = 'var ' + contents_name + ' = ' + object_code;
+      object_code = contents_name + ' = ' + object_code;
       
       // put object code into contents code ouput texarea
       output_textarea.val(object_code);
@@ -2696,10 +2696,10 @@ var ParsedClassicsAudioDatafileGenerator = {
 		}
 
 		// add first line of datafile code
-		datafile_code = 'ParsedClassicsData._loadResource("' + datafile_name + '", \n\n' + datafile_code;
+		datafile_code = datafile_name + ' = \n\n' + datafile_code;
 
 		// add last line of datafile code
-		datafile_code += '""\n\n);';
+		datafile_code += '"";';
 
 		// put datafile code into datafile code ouput texarea
 		output_textarea.val(datafile_code);
