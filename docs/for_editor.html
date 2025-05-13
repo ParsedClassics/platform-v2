@@ -4436,6 +4436,8 @@ nt_ephesians_diagrams_by_parsedclassics = `
 
 <p>Notice, that in the code there are three places where the time is indicated without any text to the right. These are starting points in the sound file where there are no text to sync with.</p>
 
+<p>IMPORTANT! The first line should never have the time [00:00.00] because this time is reserved for the case the title of the resource is selected in lines selectbox. The first line should have the time [00:00.01] or bigger.</p>
+
 <p>IMPORTANT! The time without any text to the right indicating the end of the recording is required at the end of the file, otherwise the last line will remain highlighted after playing of the recording will end.</p>
 
 <p>This code should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We listed [LINK TO BE ADDED] audio recording resource whose resource shotname is "nt_titus_audio_by_karvounakis", so this will be variable's name.</p> 
@@ -4502,9 +4504,13 @@ nt_titus_audio_by_karvounakis = `
 
 <p>The value of the form‘s field "Recorded text" should be the lines of the text with line numbers on the left of each line. Each  line should be separated from the next line by new line symbol. The easiest way to get the text formatted this way is to copy and paste the text from parsed text pane. IMPORTANT! Copy and paste the text using Chrome or Opera browser, because using Mozilla browser new line symbols may be lost.</p>
 
+<p>IMPORTANT! As explained above, on top and on bottom of the data file there should be strings "[00:00.00]" without ane text to the right. In order to get these strings generated, leave an empty line on the top of the text and an empty line on the bottom of the text inside "Recorded text" textarea.</p>
+
 <p>After filling the fields with these values click the button "Load text". The text will be displayed below the heading "Recorded text:". Then click the button "Generate code" and the data file code will appear in "Data file code" textarea.</p>
 
 <p>Save the code in the file as described above and enter relevant numbers inside the strings "[00:00.00]" at the beginning of the each line of text.</p>
+
+<p>IMPORTANT! In order to ensure correct movement of color indicator marking the text being played, the correct treatment of pauses and of lack of pauses between lines is necessary. If there is some pause between lines, then add 7/100-10/100 of the second to the duration of the last word of the first line; if there is no pause between lines, then subtract 10/000-12/100 of the second from the duration of the last word of the first line.</p>
 
 <h4 class="pc-anchor" id="h-audio-recording-transcribed-creating-contents-file">Creating contents file</h4>
 
