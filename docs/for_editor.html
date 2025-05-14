@@ -4970,6 +4970,92 @@ nt_titus_audio_by_karvounakis_contents = {
 
 <p><img class="w3-border w3-border-dark-gray" src="img2/compare_versions_of_text_3.jpg"></p>
 
+<h2 class="pc-anchor" id="h-url-scheme">Appendix. URL stucture</h2>
+
+<p>Almost everything you do in Library app will be reflected in URL. In other words, URL reflects the state of the Library app.</p>
+
+<p>Only what is displayed in bottom subpane, right subpane, top right subpane, bottom right subpane is not reflected in URL.</p>
+
+<p>URL is structured in the way that makes it easily readable.</p>
+
+<p>To see how the state of the Library app is reflected in the URL let's analyze this example URL:</p>
+
+<pre id="url-example" class="prettyprint code_showarea">
+https://www.parsedclassics.com/app.html#{"L":{"a":[["nt_titus|nt_titus_parsed_text","nt_titus|nt_titus_text_ed_robinson_pierpont"]],"b":[["nt_titus|nt_titus_tr_LA_s_hieronymus","nt_titus|nt_titus_tr_EN_young"],["nt_titus|greek_lexicon_to_nt_by_green"]]},"P":{"nt_titus":{"line":"2:8","word":"ἐντρέπω"}},"D":{"a":[["zwdfzv",50],["kke9uh",100,["i4yoe6","o1sscd"],0]],"b":[["z11wu3",50],["xewahx",50,["vowggx","c8neaw"],1,"max"],["1agxr3",50,["4ryhqx"],0]]}}
+</pre>
+
+<p>In this URL app.html is the page of Library app, and the part after # is JSON object representing the state of the Library app. This JSON object has 3 keys &ndash; "L", "P" and "D", whose values are JSON objects.</p>
+
+<h3 class="pc-anchor" id="h-url-L-part">"L" part of URL</h3>
+
+<p>Let's repeat "L" part of the URL:</p>
+
+<pre id="url-example_l_part" class="prettyprint code_showarea">
+"L":{"a":[["nt_titus|nt_titus_parsed_text","nt_titus|nt_titus_text_ed_robinson_pierpont"]],"b":[["nt_titus|nt_titus_tr_LA_s_hieronymus","nt_titus|nt_titus_tr_EN_young"],["nt_titus|greek_lexicon_to_nt_by_green"]]}
+</pre>
+
+<p>The key "L" means "layout". JSON object which is the value of the key "L" represents how the layout of the Library app is split into sections and panes and which resources are loaded.</p>
+
+<p>The lower Latin keys "a" and "b" are indexes for the first and second section. If there were third, fouth etc. section, their keys would be "c", "d" etc.</p>
+
+<p>Each lower Latin key has at its value two-level array, i.e. array whose members are arrays. The members of the first-level arrays are strings. Second-level array represents section, first level arrays represent panes and strings represent resources.</p>
+
+<p>Inside the second-level array which is the value of the "a" key there is only one first-level array. It means that only one pane is inside the first section. Inside this first-level array there are two strings as its members. That means that the tabs of the only pane contain two resources. Each string representing resource contain two parts separated by pipe symbol: collection shortname and resource shortname. So, the first string represents resource whose shortname is "nt_titus_parsed_text" from collection whose shortname is "nt_titus"; the second string represents resource whose shortname is "nt_titus_text_ed_robinson_pierpont" from collection whose shortname is "nt_titus".</p>
+
+<p>Inside the second-level array which is the value of the "b" key there are two first-level arrays. It means that there are two panes inside the second section. Inside the first of these two first-level arrays there are two strings as its members. That means that the tabs of the upper pane contain two resources. The first string represents resource whose shortname is "nt_titus_tr_LA_s_hieronymus" from collection whose shortname is "nt_titus"; the second string represents resource whose shortname is "nt_titus_tr_EN_young" from collection whose shortname is "nt_titus". Inside the second of two first-level arrays there is one string as its member. This string represents resource whose shortname is "greek_lexicon_to_nt_by_green" from collection whose shortname is "nt_titus".</p>
+
+<h3 class="pc-anchor" id="h-url-P-part">"P" part of URL</h3>
+
+<p>Let's repeat "P" part of the URL:</p>
+
+<pre id="url-example_p_part" class="prettyprint code_showarea">
+"P":{"nt_titus":{"line":"2:8","word":"ἐντρέπω"}}
+</pre>
+
+<p>The key "P" means "position". JSON object which is the value of the key "P" represents at which position are opened resources of certain collection or collections.</p>
+
+<p>Resources can be line-indexed (resources of the types Parsed text, Parsed text, Translation, Commentary, Commentary references, Grammar references, Diagram set, Audio recording) or word-indexed (resources of the types Concordance, Lexicon). Position of the line-indexed resources is represented by the value of the key "line"; position of the word-indexed resources is represented by the value of the key "word".</p>
+
+<p>The meaning of JSON object in our example is as follows: inside the collection whose shortname is "nt_titus" line-indexed resources are opened at the line "2:8" and word-indexed resources are opened at the word "ἐντρέπω".</p>
+
+<p>For representing position in word-indexed resources 2 optional keys can be used: "lexicon" and "lexentry". They are used in those cases when <a class="inner-link" data-anchor="h-parsed-text-transcribed-optional-attributes">more than one word has the same lemma</a>.</p>
+
+<p>Let's inspect as an example such "P" part of the URL:</p>
+
+<pre id="url-example_p_part2" class="prettyprint code_showarea">
+"P":{"nt_matthew":{"line":"9:38","word":"δέω","lexicon":"greek_lexicon_to_nt_by_green","lexentry":"2"}}
+</pre>
+
+<p>The meaning of JSON object in example is as follows: inside the collection whose shortname is "nt_matthew" line-indexed resources are opened at the line "2:8" and word-indexed resources are opened at the word "δέω"; the word-indexed resource whose shortname is "greek_lexicon_to_nt_by_green" should be opened at the second entry indexed by the word "δέω".</p>
+
+<h3 class="pc-anchor" id="h-url-D-part">"D" part of URL</h3>
+
+<p>Let's repeat "D" part of the URL:</p>
+
+<pre id="url-example_d_part" class="prettyprint code_showarea">
+"D":{"a":[["zwdfzv",50],["kke9uh",100,["i4yoe6","o1sscd"],0]],"b":[["z11wu3",50],["xewahx",50,["vowggx","c8neaw"],1,"max"],["1agxr3",50,["4ryhqx"],0]]}
+</pre>
+
+<p>The key "D" means "dimension". JSON object which is the value of the key "D" represents width of sections, height of panes, which tabs are active, which tab is maximized.</p>
+
+<p>The lower Latin keys "a" and "b" are indexes for the first and second section. These are exactly the same keys as in part "L" of the URL.</p>
+
+<p>Each lower Latin key has at its value second-level array, i.e. array whose members are arrays.</p>
+
+<p>The key "a" has as its value second-level array which has two first-level arrays as its members.</p>
+
+<p>The first of them is ["zwdfzv",50]. It represents section. "zwdfzv" is section's unique id, 50 is section''s width in percents.</p>
+
+<p>The second of them is ["kke9uh",100,["i4yoe6","o1sscd"],0]]. It represents the only pane of the section. "kke9uh" is pane's unique id, 100 is pane's height in percents, ["i4yoe6","o1sscd"] is array of the unique ids of the pane's tabs, 0 is the index of the active tab.</p>
+
+<p>The key "b" has as its value second-level array which has three first-level arrays as its members.</p>
+
+<p>The first of them is ["z11wu3",50]. It represents section. "z11wu3" is section's unique id, 50 is section''s width in percents.</p>
+
+<p>The second of them is ["xewahx",50,["vowggx","c8neaw"],1,"max"]. It represents the top pane of the section. "xewahx" is pane's unique id, 50 is pane's height in percents, ["vowggx","c8neaw"] is array of the unique ids of the pane's tabs, 1 is the index of the active tab, "max" signifies that the active tab is maximized.</p>
+
+<p>The third of them is ["1agxr3",50,["4ryhqx"],0]. It represents the bottom pane of the section. "1agxr3" is pane's unique id, 50 is pane's height in percents, ["4ryhqx"] is array of the unique ids of the pane's tabs, 0 is the index of the active tab.</p>
+
 </div><!-- End of .connav-auto-block  -->
 </div><!-- End of #docs_text  -->
 
