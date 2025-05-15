@@ -463,7 +463,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "resource_type" should have the value "parsed_text".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "parsed_text" at the end of collection name and next adding the string "contents" or the string indicating resource and the string "contents". So, if the collection shortname was "nt_titus", the the name of parsed text resource contents file will be "nt_titus_parsed_text_contents" or "nt_titus_parsed_text_byzantine_contents". About creating contents file and placing it in directory will be explaided below. [LINK TO BE ADDED]</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "parsed_text" at the end of collection name and next adding the string "contents" or the string indicating resource and the string "contents". So, if the collection shortname was "nt_titus", the the name of parsed text resource contents file will be "nt_titus_parsed_text_contents" or "nt_titus_parsed_text_byzantine_contents". About creating contents file and placing it in directory will be <a class="inner-link" data-anchor="h-parsed-text-typed-creating-content_file">explained below</a>.</p>
 
 <p>Since classics text usually consists of several books and each book usually will have its own collection with its own parsed text resource, the values of the many keys will be repeated listing those resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of many keys  will be repeated for all resources of the type "Parsed text" based on Byzantyne textform, let's name the key "nt_parsed_text_byzantine":</p>
 
@@ -553,7 +553,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "resource_type" should have the value "original_text".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "ed" at the end of collection name, then adding name of editor and next adding the string "contents". So, if the collection shortname was "nt_titus", and the editor was Antoniadis, then the name of original text resource contents file will be "nt_titus_ed_antoniadis_contents". About creating contents file and placing it in directory will be explained below. [LINK TO BE ADDED]</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "ed" at the end of collection name, then adding name of editor and next adding the string "contents". So, if the collection shortname was "nt_titus", and the editor was Antoniadis, then the name of original text resource contents file will be "nt_titus_ed_antoniadis_contents". About creating contents file and placing it in directory will be <a class="inner-link" data-anchor="h-critical-edition-scanned-creating-contents-file">explained below</a>.</p>
 
 <p>Since classics text usually consists of several books and each book usually will have its own collection with its own original text resource, the values of many keys will be repeated listing those resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of many keys  will be repeated for all resources of the type "Original text" based on edition by Antoniadis, let's name the key "nt_text_ed_antoniadis":</p>
 
@@ -655,7 +655,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "resource_type" should have the value "concordance".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "by" at the end of short title, then adding name of author or compiler and next adding the string "contents". About creating contents file and placing it in directory will be explained below. [LINK TO BE ADDED]</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "by" at the end of short title, then adding name of author or compiler and next adding the string "contents". About creating contents file and placing it in directory will be <a class="inner-link" data-anchor="h-concordance-transcribed-creating-contents-file">explained below</a>.</p>
 
 <p>Classics text usually consists of several books and each book usually will have its own collection. If we have certain concordance resource, it will be listed in all of these collections. That means there is no need to use ParsedClassicsResProtos object in listing concordance resources.</p>
 
@@ -720,7 +720,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "resource_type" should have the value "lexicon".</p>
 
-<p>The key "contents_shortname" for scanned lexicon resource should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "by" at the end of short title, then adding name of author and next adding the string "contents". About creating contents file and placing it in directory will be explained below. [LINK TO BE ADDED] The key "contents_shortname" for transcribed lexicon resource should have as its value an empty string.</p>
+<p>The key "contents_shortname" for scanned lexicon resource should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "by" at the end of short title, then adding name of author and next adding the string "contents". About creating contents file and placing it in directory will be <a class="inner-link" data-anchor="h-lexicon-scanned-creating-contents-file">explained below</a>. The key "contents_shortname" for transcribed lexicon resource should have as its value an empty string.</p>
 
 <p>Classics text usually consists of several books and each book usually will have its own collection. If we have certain lexicon resource, it will be listed in all of these collections. That means there is no need to use ParsedClassicsResProtos object in listing lexicon resources.</p>
 
@@ -786,7 +786,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "resource_type" should have the value "translation".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "tr" at the end of collection name, then adding lamguage code, name of translator and last adding the string "contents". So, if the collection shortname was "nt_titus", and the editor was Young who translated to English, then the name of translation resource contents file will be "nt_titus_tr_EN_young_contents". Creating contents file and placing it in directory will be explaided below. [LINK TO BE ADDED]</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by adding the string "tr" at the end of collection name, then adding lamguage code, name of translator and last adding the string "contents". So, if the collection shortname was "nt_titus", and the editor was Young who translated to English, then the name of translation resource contents file will be "nt_titus_tr_EN_young_contents". Creating contents file and placing it in directory will be <a class="inner-link" data-anchor="h-translation-scanned-creating-contents-file">explained below</a>.</p>
 
 <p>Since classics text usually consists of several books and each book usually will have its own collection with its own translation resource, the values of the many keys will be repeated listing those translation resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of many keys will be repeated for all New Testament resources of the type "Translation" based on translation by Young, let's name the key "nt_tr_EN_young":</p>
 
@@ -903,7 +903,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "resource_type" should have the value "commentary".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by collection shortname plus resource type plus "by" plus author's name plus string "contents". Creating contents file and placing it in directory will be explaided below. [LINK TO BE ADDED]</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by collection shortname plus resource type plus "by" plus author's name plus string "contents". Creating contents file and placing it in directory will be <a class="inner-link" data-anchor="h-commentary-scanned-creating-contents-file">explained below</a>.</p>
 
 <p>Since classics text usually consists of several books and each book usually will have its own collection with its own commentary resource, the values of many keys will be repeated listing those commentary resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of many keys will be repeated for all New Testament resources of the type "Commentary" based on volume 4 of the commentary by Nicoll, let's name the key "nt_commentary_by_nicoll_vol_4":</p>
 
@@ -1292,7 +1292,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <p>The key "resource_type" should have the value "audio_recording".</p>
 
-<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by collection shortname plus resource type plus "by" plus author's name plus string "contents". Creating contents file and placing it in directory will be explained below. [LINK TO BE ADDED]</p>
+<p>The key "contents_shortname" should have as its value the name of the file containing resource's contents. The name of this file is usually formed by collection shortname plus resource type plus "by" plus author's name plus string "contents". Creating contents file and placing it in directory will be <a class="inner-link" data-anchor="h-audio-recording-transcribed-creating-contents-file">explained below</a>.</p>
 
 <p>Since classics text usually consists of several books and each book usually will have its own collection with its own audio recording resource, the values of many keys will be repeated listing those audio recording resources. In order to avoid repetitions it is recommended to define JSON object containing all keys whose values would be repeated. That JSON object should be the value of certain key of ParsedClassicsResProtos object which is in the file /data/_catalogues/_res_protos.js . Since the values of mentioned keys will be repeated for all New Testament resources of the type "Audio recording" by Kervounakis, let's name the key "nt_audio_by_karvounakis":</p>
 
@@ -1429,7 +1429,7 @@ ParsedClassicsScannedBooks = {
 
 <p>Let‘s create contents file for parsed text resource <a class="inner-link" data-anchor="h-parsed-text">we listed</a> as part of <em>Epistle to Titus</em> collection.</p>
 
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we listed resource [LINK TO BE ADDED]. We entered for this key the value "nt_titus_parsed_text_contents", so we now should enter it as the value of the field.</p>
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we <a class="inner-link" data-anchor="h-parsed-text">listed resource</a>. We entered for this key the value "nt_titus_parsed_text_contents", so we now should enter it as the value of the field.</p>
 
 <p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In Epistle to Titus there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15 .</p>
 
@@ -1549,7 +1549,7 @@ var nt_titus_parsed_text_contents = {
 };
 </pre>
 
-<p>This code should be saved in the file having the same name as the value of the key "contents_shortname" which was entered when we listed [LINK TO BE ADDED] resource as part of collection. The value of the key "contents_shortname" is "nt_titus_parsed_text_contents", so the filename should be "nt_titus_parsed_text_contents.js". The file should be placed in directory which has the same name as resource shortname. The resource shortname is "nt_titus_parsed_text", so the direcrory to place contents file should be /data/parsed_text/nt_titus_parsed_text/ .</p>
+<p>This code should be saved in the file having the same name as the value of the key "contents_shortname" which was entered when we <a class="inner-link" data-anchor="h-parsed-text">listed resource</a> as part of collection. The value of the key "contents_shortname" is "nt_titus_parsed_text_contents", so the filename should be "nt_titus_parsed_text_contents.js". The file should be placed in directory which has the same name as resource shortname. The resource shortname is "nt_titus_parsed_text", so the direcrory to place contents file should be /data/parsed_text/nt_titus_parsed_text/ .</p>
 
 <h4 class="pc-anchor" id="h-parsed-text-typed-creating-data-file2">Creating data file</h4>
 
@@ -2263,9 +2263,9 @@ particle
 
 <h4 class="pc-anchor" id="h-critical-edition-scanned-creating-image-files">Creating image files</h4>
 
-<p>To create scanned resource of the type "Critical edition" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+<p>To create scanned resource of the type "Critical edition" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
 
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when original text resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the original text edited by V. Antoniadis has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "kaine_diatheke_ed_antoniadis". It means that the pictures of the pages must be uploaded to the directory /_scans/kaine_diatheke_ed_antoniadis/ .</p>
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when original text resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the original text edited by V. Antoniadis <a class="inner-link" data-anchor="h-original-text">has been listed</a> and the value of the key "scanned_source_shortname" is "kaine_diatheke_ed_antoniadis". It means that the pictures of the pages must be uploaded to the directory /_scans/kaine_diatheke_ed_antoniadis/ .</p>
 
 <p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
 
@@ -2281,7 +2281,7 @@ particle
 
 <p>The value of the form‘s field "Prefix" should be be pipe delimited  line prefixes, one for each chapter. The chapters of the New Testament are usually indicated by the number written to the left from verse number; colon usually used to separate chapter number from verse number.  So, the value for this field is 1:|2:|3: .</p>
 
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" which was entered while listing resource as part of collection [LINK TO BE ADDED]. The value we entered for this key was "nt_titus_ed_antoniadis_contents", so we now should enter it as the value of the field "Contents shortname".</p>
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" which was entered while <a class="inner-link" data-anchor="h-original-text">listing resource</a> as part of collection. The value we entered for this key was "nt_titus_ed_antoniadis_contents", so we now should enter it as the value of the field "Contents shortname".</p>
 
 <p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
 
@@ -2373,9 +2373,9 @@ nt_titus_ed_antoniadis_contents = {
 
 <h4 class="pc-anchor" id="h-concordance-scanned-creating-image-files">Creating image files</h4>
 
-<p>To create scanned resource of the type "Concordance" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+<p>To create scanned resource of the type "Concordance" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
 
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when concordance resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the concordance edited by W. F. Moulton and A. S. Geden has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "concordance_to_greek_testament_by_moulton_geden". It means that the pictures of the pages must be uploaded to the directory /_scans/concordance_to_greek_testament_by_moulton_geden/ .</p>
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when concordance resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the concordance edited by W. F. Moulton and A. S. Geden <a class="inner-link" data-anchor="h-concordance">has been listed</a> and the value of the key "scanned_source_shortname" is "concordance_to_greek_testament_by_moulton_geden". It means that the pictures of the pages must be uploaded to the directory /_scans/concordance_to_greek_testament_by_moulton_geden/ .</p>
 
 <p><p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p></p>
 
@@ -2417,7 +2417,7 @@ nt_titus_ed_antoniadis_contents = {
 
 <p><img src="img2/concordance_scanned_05.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we listed resource [LINK TO BE ADDED]. We entered for this key the value "oncordance_to_greek_testament_by_moulton_geden_contents", so we now should enter it as the value of the field.</p>
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we <a class="inner-link" data-anchor="h-concordance">listed resource</a>. We entered for this key the value "oncordance_to_greek_testament_by_moulton_geden_contents", so we now should enter it as the value of the field.</p>
 
 <p>The value of the form‘s field "Word list" should be just created pipe delimited alphabetical list of all words in the parsed text.</p>
 
@@ -2503,9 +2503,9 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p>
 
-<p>The value of the form‘s field "Lexicon contents object" should be complete content of the concordance contents file. In previous section [LINK TO BE ADDED] we saved it as /data/concordance/concordance_by_moulton_geden/concordance_to_greek_testament_by_moulton_geden_contents.js .</p>
+<p>The value of the form‘s field "Lexicon contents object" should be complete content of the concordance contents file. In <a class="inner-link" data-anchor="h-concordance-scanned-creating-contents-file">previous section</a> we saved it as /data/concordance/concordance_by_moulton_geden/concordance_to_greek_testament_by_moulton_geden_contents.js .</p>
 
-<p>The value of the form‘s field "List of words to be added" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in previous section [LINK TO BE ADDED]. Here in this field we added list of words contained in parsed text resource from <em>Epistle to Philemon</em> collection.</p>
+<p>The value of the form‘s field "List of words to be added" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in <a class="inner-link" data-anchor="h-concordance-scanned-creating-contents-file">previous section</a>. Here in this field we added list of words contained in parsed text resource from <em>Epistle to Philemon</em> collection.</p>
 
 <p>After filling fields with these values, click the button "Load contents" and the code of the concordance contents object will be displayed beneath "Initial contents object:" heading.</p>
 
@@ -2669,7 +2669,7 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>The value of the form‘s field "Book abbreviation" should be standard abbreviation of the title of the classical book. For example, abbreviation of the apostle Paul's First Epistle to Thessalonians would be "1 Thess.", abbreviation of the Revelation to John the Theologian would be "Rev.".</p>
 
-<p>The value of the form‘s field "Parsed text code" should be HTML code of the parsed text starting from the first "span" tag having class attribute value "line" and ending with the last "span" tag having the same class attribute value. Use browser’s HTML inspector [LINK TO BE ADDED] (available on right-click in every major browser) to copy this part of code from Library app’s page.</p> 
+<p>The value of the form‘s field "Parsed text code" should be HTML code of the parsed text starting from the first "span" tag having class attribute value "line" and ending with the last "span" tag having the same class attribute value. <a class="inner-link" data-anchor="h-concordance-scanned-creating-contents-file">Use browser’s HTML inspector</a> (available on right-click in every major browser) to copy this part of code from Library app’s page.</p> 
 
 <p>The value of the form‘s field "Word list" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in the section on <a class="inner-link" data-anchor="h-concordance-scanned-creating-contents-file">Creating contents file</a> for scanned concordance resource.</p>
 
@@ -2741,7 +2741,7 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 &lt;/div>
 </pre>
 
-<p>Concordance HTML code should be converted to string and made the value of the variable having the same name as resource shortname. Transcribed concordance resource was listed [LINK TO BE ADDED] using  "nt_conc_by_parsedclassics" as its shortname, so this will be variable name. To convert concordance HTML code to string it should be enclosed by the backtick/grave accent (` `) character.</p>
+<p>Concordance HTML code should be converted to string and made the value of the variable having the same name as resource shortname. Transcribed concordance resource <a class="inner-link" data-anchor="h-concordance">was listed</a> using  "nt_conc_by_parsedclassics" as its shortname, so this will be variable name. To convert concordance HTML code to string it should be enclosed by the backtick/grave accent (` `) character.</p>
 
 <p>This way we get such data file:</p>
 
@@ -2807,7 +2807,7 @@ nt_conc_by_parsedclassics =
 &lt;/div>`;
 </pre>
 
-<p>Data file‘s name should be the same as resource shrtname. Transcribed concordance resource was listed [LINK TO BE ADDED] using  "nt_conc_by_parsedclassics" as its shortname, so the filename will be "nt_conc_by_parsedclassics.js". Data file should be placed in directory also named after resource shortname: /data/concordance/nt_conc_by_parsedclassics/ .</p>
+<p>Data file‘s name should be the same as resource shortname. Transcribed concordance resource <a class="inner-link" data-anchor="h-concordance">was listed</a> using  "nt_conc_by_parsedclassics" as its shortname, so the filename will be "nt_conc_by_parsedclassics.js". Data file should be placed in directory also named after resource shortname: /data/concordance/nt_conc_by_parsedclassics/ .</p>
 
 <p>After doing this concordance resource should work in sync with parsed text resource.</p>
 
@@ -3023,9 +3023,9 @@ nt_conc_by_parsedclassics_titus_parsed_text =
 
 <h4 class="pc-anchor" id="h-lexicon-scanned-creating-image-files">Creating image files</h4>
 
-<p>To create scanned resource of the type "Lexicon" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+<p>To create scanned resource of the type "Lexicon" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
 
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when lexicon resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the lexicon by E. Robinson has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "greek_and_english_lexicon_of_nt_by_robinson". It means that the pictures of the pages must be uploaded to the directory /_scans/greek_and_english_lexicon_of_nt_by_robinson/ .</p>
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when lexicon resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the lexicon by E. Robinson <a class="inner-link" data-anchor="h-lexicon">has been listed</a> and the value of the key "scanned_source_shortname" is "greek_and_english_lexicon_of_nt_by_robinson". It means that the pictures of the pages must be uploaded to the directory /_scans/greek_and_english_lexicon_of_nt_by_robinson/ .</p>
 
 <p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
 
@@ -3067,7 +3067,7 @@ nt_conc_by_parsedclassics_titus_parsed_text =
 
 <p><img src="img2/lexicon_scanned_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we listed resource [LINK TO BE ADDED]. We entered for this key the value "greek_and_english_lexicon_of_nt_by_robinson_contents", so we now should enter it as the value of the field.</p>
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we <a class="inner-link" data-anchor="h-lexicon">listed resource</a>. We entered for this key the value "greek_and_english_lexicon_of_nt_by_robinson_contents", so we now should enter it as the value of the field.</p>
 
 <p>The value of the form‘s field "Word list" should be just created pipe delimited alphabetical list of all words in the parsed text.</p>
 
@@ -3153,9 +3153,9 @@ greek_and_english_lexicon_of_nt_by_robinson_contents = {
 
 <p>The value of the form‘s field "Language" should be "Greek" because in <em>Epistle to Titus</em> collection parsed text resource is in Greek.</p>
 
-<p>The value of the form‘s field "Lexicon contents object" should be complete content of the lexicon contents file. In previous section [LINK TO BE ADDED] we saved it as /data/lexicon/greek_lexicon_of_nt_by_robinson/greek_and_english_lexicon_of_nt_by_robinson_contents.js .</p>
+<p>The value of the form‘s field "Lexicon contents object" should be complete content of the lexicon contents file. In <a class="inner-link" data-anchor="h-lexicon-scanned-creating-contents-file">previous section</a> we saved it as /data/lexicon/greek_lexicon_of_nt_by_robinson/greek_and_english_lexicon_of_nt_by_robinson_contents.js .</p>
 
-<p>The value of the form‘s field "List of words to be added" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in previous section [LINK TO BE ADDED]. Here in this field we added list of words contained in parsed text resource from <em>Epistle to Philemon</em> collection.</p>
+<p>The value of the form‘s field "List of words to be added" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in <a class="inner-link" data-anchor="h-lexicon-scanned-creating-contents-file">previous section</a>. Here in this field we added list of words contained in parsed text resource from <em>Epistle to Philemon</em> collection.</p>
 
 <p>After filling fields with these values, click the button "Load contents" and the code of the concordance contents object will be displayed beneath "Initial contents object:" heading.</p>
 
@@ -3410,7 +3410,7 @@ greek_and_english_lexicon_of_nt_by_robinson_contents = {
 &lt;!-- part of code has been cut out --&gt;
 </pre>
 
-<p>HTML formatted lexicon text should be converted to javascript string. It is easy to do by wrapping HTML code by backtick (``) symbols. If there are apostrophs in the text, they should be escaped using "\" symbol. The string we get be applying backticks should be made the value of the variable whose name is the same as the shortname of the resource [LINK TO BE ADDED].</p>
+<p>HTML formatted lexicon text should be converted to javascript string. It is easy to do by wrapping HTML code by backtick (``) symbols. If there are apostrophs in the text, they should be escaped using "\" symbol. The string we get be applying backticks should be made the value of the variable whose name is the same as the shortname of the resource as was defined while <a class="inner-link" data-anchor="h-lexicon">listing resource</a>.</p>
 
 <p>This way we get the following code:</p>
 
@@ -3548,9 +3548,9 @@ greek_lexicon_to_nt_by_green =
 
 <h4 class="pc-anchor" id="h-translation-scanned-creating-image-files">Creating image files</h4>
 
-<p>To create scanned resource of the type "Translation" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+<p>To create scanned resource of the type "Translation" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
 
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when translation resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the translation by R. Young has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "holy_bible_tr_young". It means that the pictures of the pages must be uploaded to the directory /_scans/holy_bible_tr_young/ .</p>
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when translation resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the translation by R. Young <a class="inner-link" data-anchor="h-translation">has been listed</a> and the value of the key "scanned_source_shortname" is "holy_bible_tr_young". It means that the pictures of the pages must be uploaded to the directory /_scans/holy_bible_tr_young/ .</p>
 
 <p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
 
@@ -3566,7 +3566,7 @@ greek_lexicon_to_nt_by_green =
 
 <p>The value of the form‘s field "Prefix" should be be pipe delimited line prefixes, one for each chapter. The chapters of the New Testament are usually indicated by the number written to the left from verse number; colon usually used to separate chapter number from verse number. So, the value for this field is 1:|2:|3: .</p>
 
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" which was entered while listing resource as part of collection [LINK TO BE ADDED]. The value we entered for this key was "nt_titus_tr_EN_young_contents", so we now should enter it as the value of the field "Contents shortname".</p>
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" which was entered while <a class="inner-link" data-anchor="h-translation">listing resource</a> as part of collection. The value we entered for this key was "nt_titus_tr_EN_young_contents", so we now should enter it as the value of the field "Contents shortname".</p>
 
 <p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
 
@@ -3670,7 +3670,7 @@ nt_titus_tr_EN_young_contents = {
 
 <p>"span" tag having class attribute "para" should mark start of each new paragraph.</p>
 
-<p>HTML code formatted using these "span" tags should be converted to string and made the value of javascript global variable whose name is the same as resource shortname. We listed [LINK TO BE ADDED] transcribed translation resource whose resource shotname is "nt_titus_tr_EN_green", so this will be variable's name.</p>
+<p>HTML code formatted using these "span" tags should be converted to string and made the value of javascript global variable whose name is the same as resource shortname. We <a class="inner-link" data-anchor="h-translation">listed</a> transcribed translation resource whose resource shortname is "nt_titus_tr_EN_green", so this will be variable's name.</p>
 
 <p>This way we get such data file:</p>
 
@@ -3724,9 +3724,9 @@ nt_titus_tr_EN_green =
 
 <h4 class="pc-anchor" id="h-commentary-scanned-creating-image-files">Creating image files</h4>
 
-<p>To create scanned resource of the type "Commentary" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+<p>To create scanned resource of the type "Commentary" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
 
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when commentary resource was listed as part of collection. For example, in the Epistle to Titus collection the commentary edited by W. R. Nicoll has been listed [LINK TO BE ADDED] and the value of the key "scanned_source_shortname" is "expositors_greek_testament_ed_nicoll_vol_4". It means that the pictures of the pages must be uploaded to the directory /_scans/expositors_greek_testament_ed_nicoll_vol_4/ .</p>
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when commentary resource was listed as part of collection. For example, in the Epistle to Titus collection the commentary edited by W. R. Nicoll <a class="inner-link" data-anchor="h-commentary">has been listed</a> and the value of the key "scanned_source_shortname" is "expositors_greek_testament_ed_nicoll_vol_4". It means that the pictures of the pages must be uploaded to the directory /_scans/expositors_greek_testament_ed_nicoll_vol_4/ .</p>
 
 <p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books" target="_blank">Listing scanned books</a>.</p>
 
@@ -3742,7 +3742,7 @@ nt_titus_tr_EN_green =
 
 <p>The value of the form‘s field "Prefix" should be be pipe delimited line prefixes, one for each chapter. The chapters of the New Testament are usually indicated by the number written to the left from verse number; colon usually used to separate chapter number from verse number. So, the value for this field is 1:|2:|3: .</p>
 
-<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" which was entered while listing resource as part of collection [LINK TO BE ADDED]. The value we entered for this key was "nt_titus_commentary_by_nicoll_contents", so we now should enter it as the value of the field "Contents shortname".</p>
+<p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" which was entered while <a class="inner-link" data-anchor="h-commentary">listing resource</a> as part of collection. The value we entered for this key was "nt_titus_commentary_by_nicoll_contents", so we now should enter it as the value of the field "Contents shortname".</p>
 
 <p>After filling fields with these values, click the button "Generate contents" and the contents code will be displayed in "Contents code output" textarea.</p>
 
@@ -3846,7 +3846,7 @@ nt_titus_commentary_by_nicoll_contents = {
 
 <p>"span" tag having class attribute "para" should mark start of each new paragraph.</p>
 
-<p>HTML code formatted using these "span" tags should be converted to string and made the value of javascript global variable whose name is the same as resource shortname. We listed [LINK TO BE ADDED] transcribed commentary resource whose resource shotname is "nt_titus_commentary_by_bengel", so this will be variable's name.</p>
+<p>HTML code formatted using these "span" tags should be converted to string and made the value of javascript global variable whose name is the same as resource shortname. We <a class="inner-link" data-anchor="h-commentary">listed</a> transcribed commentary resource whose resource shortname is "nt_titus_commentary_by_bengel", so this will be variable's name.</p>
 
 <p>This way we get such data file:</p>
 
@@ -3882,7 +3882,7 @@ It is the duty of an apostle to propagate the faith, Romans 1:5.&mdash;&pi;ί&si
 
 <h4 class="pc-anchor" id="h-commentary-references-transcribed-creating-image-files">Creating image files</h4>
 
-<p>To create resource of the type "commentary references" you first need to have one or more scanned commentary (collection of scholia) books. To create a scanned commentary book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+<p>To create resource of the type "commentary references" you first need to have one or more scanned commentary (collection of scholia) books. To create a scanned commentary book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
 
 <p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server.</p>
 
@@ -3902,7 +3902,7 @@ It is the duty of an apostle to propagate the faith, Romans 1:5.&mdash;&pi;ί&si
 
 <p>Each reference to the commentary book consists of commentary author name, abbreviated name of commentary book in brackets and page number. Commentary author name, abbreviated name of commentary book in brackets and page number should be wrapped by "a" tag having attribute "data-commentary" and attribute "data-page". The value of the attribute "data-commentary" should be the key of the relevant grammar book from the file _scanned_books.js. The value of the attribute "data-page" should be the number from the name of the image file (not the number of the page pictured!).</p>
 
-<p>HTML code formatted using these tags should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We listed [LINK TO BE ADDED] commentary references resource whose resource shortname is "nt_titus_commentary_refs_by_parsedclassics", so this will be variable's name.</p>
+<p>HTML code formatted using these tags should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We <a class="inner-link" data-anchor="h-commentary-references">listed</a> commentary references resource whose resource shortname is "nt_titus_commentary_refs_by_parsedclassics", so this will be variable's name.</p>
 
 <p>This way we get such data file:</p>
 
@@ -3947,7 +3947,7 @@ nt_romans_commentary_refs_by_parsedclassics =
 
 <p>Coding data file by hand is tedious. The work can be made more effective by using tools.</p>
 
-<p>Commentary references generator [LINK TO BE ADDED] tool is used to generate data file. Let's use this tool to create data file containing references to apostle Paul's <em>Epistle to Titus</em> found in Staabs's "Pauluskommentare aus der Griechischen Kirche":</p>
+<p><a target="_blank" href="../tools/commentary_refs_generator.html">Commentary references generator</a> tool is used to generate data file. Let's use this tool to create data file containing references to apostle Paul's <em>Epistle to Titus</em> found in Staabs's "Pauluskommentare aus der Griechischen Kirche":</p>
 
 <p><img src="img2/commentary_refs_typed_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
@@ -4005,7 +4005,7 @@ nt_romans_commentary_refs_by_parsedclassics =
 
 <h4 class="pc-anchor" id="h-grammar-references-transcribed-creating-image-files">Creating image files</h4>
 
-<p>To create resource of the type "grammar references" you first need to have one or more scanned grammar books. To create a scanned grammar book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in Common tasks [LINK TO BE ADDED].</p>
+<p>To create resource of the type "grammar references" you first need to have one or more scanned grammar books. To create a scanned grammar book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
 
 <p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server.</p>
 
@@ -4025,7 +4025,7 @@ nt_romans_commentary_refs_by_parsedclassics =
 
 <p>Each reference to the grammar book consists of abbreviated grammar name and page number. Abbreviated name and page number should be wrapped by "a" tag having attribute "data-grammar" and attribute "data-page". The value of the attribute "data-grammar" should be the key of the relevant grammar book from the file _scanned_books.js. The value of the attribute "data-page" should be the number from the name of the image file (not the number of the page pictured!).</p>
 
-<p>HTML code formatted using these tags should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We listed [LINK TO BE ADDED] grammar references resource whose resource shotname is "nt_titus_grammar_refs_by_parsedclassics", so this will be variable's name.</p>
+<p>HTML code formatted using these tags should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We <a class="inner-link" data-anchor="h-grammar-references">listed</a> grammar references resource whose resource shortname is "nt_titus_grammar_refs_by_parsedclassics", so this will be variable's name.</p>
 
 <p>This way we get such data file:</p>
 
@@ -4329,7 +4329,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>After one or several "span" tag having class attribute "line" should be the code representing the diagram. This is the code outputted into "Syntax diagram code output" textarea when the button "Genenerate diagram" is being clicked.</p>
 
-<p>HTML formatted lines of text and diagram code should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We listed [LINK TO BE ADDED] diagram set resource whose resource shotname is "nt_ephesians_diagrams_by_parsedclassics", so this will be variable's name.</p>
+<p>HTML formatted lines of text and diagram code should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We <a class="inner-link" data-anchor="h-diagram-set">listed</a> diagram set resource whose resource shortname is "nt_ephesians_diagrams_by_parsedclassics", so this will be variable's name.</p>
 
 <p>This way we get such data file:</p>
 
@@ -4350,7 +4350,7 @@ nt_ephesians_diagrams_by_parsedclassics = `
 `;
 </pre>
 
-<p>Data file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. We listed [LINK TO BE ADDED] diagram set resource whose resource shotname is "nt_ephesians_diagrams_by_parsedclassics", so this will be file's name. Data file should be placed in the directory of the same name: /data/diagram_set/nt_ephesians_diagrams_by_parsedclassics/nt_ephesians_diagrams_by_parsedclassics.js</p>
+<p>Data file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. We <a class="inner-link" data-anchor="h-diagram-set">listed</a>  diagram set resource whose resource shortname is "nt_ephesians_diagrams_by_parsedclassics", so this will be file's name. Data file should be placed in the directory of the same name: /data/diagram_set/nt_ephesians_diagrams_by_parsedclassics/nt_ephesians_diagrams_by_parsedclassics.js</p>
 
 <p>After doing this diagram set resource should work in sync with parsed text resource.</p>
 
@@ -4440,7 +4440,7 @@ nt_ephesians_diagrams_by_parsedclassics = `
 
 <p>IMPORTANT! The time without any text to the right indicating the end of the recording is required at the end of the file, otherwise the last line will remain highlighted after playing of the recording will end.</p>
 
-<p>This code should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We listed [LINK TO BE ADDED] audio recording resource whose resource shotname is "nt_titus_audio_by_karvounakis", so this will be variable's name.</p> 
+<p>This code should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We <a class="inner-link" data-anchor="h-audio-recording">listed</a> audio recording resource whose resource shortname is "nt_titus_audio_by_karvounakis", so this will be variable's name.</p> 
 
 <p>This way we get such data file:</p>
 
