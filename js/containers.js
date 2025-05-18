@@ -107,7 +107,7 @@ const ParsedClassicsContentContainers = {
           break;
 
         case 'concordance':
-          const concordanceContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.concordanceContainerLeftPartClass}`);
+          const concordanceContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.concordanceContainerLeftPartInnerClass}`);
           // scroll to selected word
           //if (wordUrl && wordUrl !== wordDom) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
             ParsedClassicsContentContainers.scrollToWordResourceLoaded(concordanceContainerLeftPart, wordUrl, ParsedClassicsAppVars.concordanceWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
@@ -115,7 +115,7 @@ const ParsedClassicsContentContainers = {
           break;
 
         case 'commentary_refs':
-          const commentaryRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.commentaryRefsContainerLeftPartClass}`);
+          const commentaryRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.commentaryRefsContainerLeftPartInnerClass}`);
           // scroll to the selected line
           //if (lineIndicatorUrl !== lineIndicatorDom) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
             ParsedClassicsContentContainers.scrollToLineResourceLoaded(commentaryRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
@@ -123,7 +123,7 @@ const ParsedClassicsContentContainers = {
           break;
 
         case 'grammar_refs':
-          const grammarRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.grammarRefsContainerLeftPartClass}`);
+          const grammarRefsContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.grammarRefsContainerLeftPartInnerClass}`);
           // scroll to the selected line
           //if (lineIndicatorUrl !== lineIndicatorDom) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
             ParsedClassicsContentContainers.scrollToLineResourceLoaded(grammarRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
@@ -251,7 +251,8 @@ const ParsedClassicsContentContainers = {
           concordanceContainerRightPart.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseleave", () => ParsedClassicsMorphology.selectedWordMouseLeave(dependencyContainerBottomPart));
           // scroll to selected word
           if (wordUrl) {
-            ParsedClassicsContentContainers.scrollToWordResourceLoading(concordanceContainerLeftPart, wordUrl, ParsedClassicsAppVars.concordanceWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
+            const concordanceContainerLeftPartInner = concordanceContainerLeftPart.find(`.${ParsedClassicsAppVars.concordanceContainerLeftPartInnerClass}`);
+            ParsedClassicsContentContainers.scrollToWordResourceLoading(concordanceContainerLeftPartInner, wordUrl, ParsedClassicsAppVars.concordanceWordHeadingClass, activeTabId, resourceShortname, lexiconUrl, lexiconEntryUrl);
           }
           break;
 
@@ -263,7 +264,8 @@ const ParsedClassicsContentContainers = {
           // delegate "click" event from <a> els to left part of splitted container
           commentaryRefsContainerLeftPart.delegate('a', 'click', (event) => ParsedClassicsRefLink.refLinkClick(event, commentaryRefsContainerRightPart, ParsedClassicsAppVars.commentaryBookAttr));
           // scroll to the selected line
-          ParsedClassicsContentContainers.scrollToLineResourceLoading(commentaryRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
+          const commentaryRefsContainerLeftPartInner = commentaryRefsContainerLeftPart.find(`.${ParsedClassicsAppVars.commentaryRefsContainerLeftPartInnerClass}`);
+          ParsedClassicsContentContainers.scrollToLineResourceLoading(commentaryRefsContainerLeftPartInner, lineIndicatorUrl, activeTabId);
           break;
 
         case 'grammar_refs':
@@ -274,7 +276,8 @@ const ParsedClassicsContentContainers = {
           // delegate "click" event from <a> els to left part of splitted container
           grammarRefsContainerLeftPart.delegate('a', 'click', (event) => ParsedClassicsRefLink.refLinkClick(event, grammarRefsContainerRightPart, ParsedClassicsAppVars.grammarBookAttr));
           // scroll to the selected line
-          ParsedClassicsContentContainers.scrollToLineResourceLoading(grammarRefsContainerLeftPart, lineIndicatorUrl, activeTabId);
+          const grammarRefsContainerLeftPartInner = grammarRefsContainerLeftPart.find(`.${ParsedClassicsAppVars.grammarRefsContainerLeftPartInnerClass}`);
+          ParsedClassicsContentContainers.scrollToLineResourceLoading(grammarRefsContainerLeftPartInner, lineIndicatorUrl, activeTabId);
           break;
 
         case 'diagram_set':
