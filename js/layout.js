@@ -729,6 +729,8 @@ const ParsedClassicsLayout = {
 
   treatZooms: function (dimensionsObj) {
     let zoomInPaneId = null;
+    let activeTabId;
+    let tabIdsArr;
     // get all section codes
     const sectionCodes = Object.keys(dimensionsObj);
     // loop through section codes
@@ -740,10 +742,14 @@ const ParsedClassicsLayout = {
       for (let j = 1; j < sectionData.length; j++) {
         // get pane data
         const paneData = sectionData[j];
+        // get arr of tab ids
+        tabIdsArr = paneData[2];
         // should pane be maximized?
         if (typeof paneData[4] !== "undefined" && paneData[4] === "max") {
           // get id of the pane to be maximized
           zoomInPaneId = paneData[0];
+          // get id of active tab
+          activeTabId = tabIdsArr[paneData[3]];
           break;
         }
       }
@@ -751,11 +757,32 @@ const ParsedClassicsLayout = {
         break;
       }
     }
-    // we have id of the pane to be maximized
+    // I. we have id of the pane to be maximized
     if (zoomInPaneId) {
       const paneToZoomIn = $(`#pane-${zoomInPaneId}`);
       // add class to the pane el
       paneToZoomIn.addClass(ParsedClassicsAppVars.paneMaximizedClass);
+      
+      for (let i = 0; i < tabIdsArr.length; i++) {
+        // get tab's content el
+        const tabContentEl = $(`#tab-content-inner-${tabIdsArr[i]}`);
+        // get "data-reloaded" attr
+        const reloaded = tabContentEl.attr('data-reloaded');
+        if (reloaded != 'yes' && tabIdsArr[i] == activeTabId) {
+          // get Bookreader's iframe el
+          const iframeEl = tabContentEl.find('iframe');
+          if (iframeEl.length == 1){
+            // get "data-src" where we saved value "src" attr of the frame
+            const iframeSrc = iframeEl.attr('data-src');
+            // restore src of the iframe of the maximized pane (for some reason after moving pane the iframe in it shows the first page of scanned book)
+            iframeEl[0].contentWindow.location.replace(iframeSrc);
+            // force iframe to reload
+            iframeEl[0].contentWindow.postMessage("refresh", '*');
+            // save in attr that tab content was reloaded after pane's maximization
+            tabContentEl.attr('data-reloaded', 'yes');
+          }
+        }
+      }
       // treat buttons
       paneToZoomIn
         .find(
@@ -766,19 +793,86 @@ const ParsedClassicsLayout = {
         .find(`.${ParsedClassicsAppVars.minimizePaneBtnClass}`)
         .removeClass(ParsedClassicsAppVars.layoutBtnHideClass);
     }
-    // we do not have the pane to be maximized, but perhaps we have the pane to be minimized?
+    // II. we do not have the pane to be maximized
     else {
       const paneToZoomOut = $(`.${ParsedClassicsAppVars.paneMaximizedClass}`);
-      paneToZoomOut.removeClass(ParsedClassicsAppVars.paneMaximizedClass);
-      // treat buttons
-      paneToZoomOut
-        .find(
-          `.${ParsedClassicsAppVars.addTopPaneBtnClass}, .${ParsedClassicsAppVars.addRightSectionBtnClass}, .${ParsedClassicsAppVars.addLeftSectionBtnClass}, .${ParsedClassicsAppVars.addBottomPaneBtnClass}, .${ParsedClassicsAppVars.closePaneBtnClass}, .${ParsedClassicsAppVars.maximizePaneBtnClass}`
-        )
-        .removeClass(ParsedClassicsAppVars.layoutBtnHideClass).css('display', 'flex');
-      paneToZoomOut
-        .find(`.${ParsedClassicsAppVars.minimizePaneBtnClass}`)
-        .addClass(ParsedClassicsAppVars.layoutBtnHideClass);
+      // (a) perhaps we have the pane to be minimized?
+      if (paneToZoomOut.length == 1) {
+        paneToZoomOut.removeClass(ParsedClassicsAppVars.paneMaximizedClass);
+        // get paneId
+        const paneId = paneToZoomOut.attr('id').substring(5);
+        // get section index and pane index
+        const {sectionIndex, paneIndex} = ParsedClassicsLayout.getSectionAndPaneIndexesFromUrl(paneId);
+        // get pane data
+        const paneData = dimensionsObj[sectionIndex][paneIndex + 1];
+        // get arr of tab ids
+        const tabIdsArr = paneData[2];
+        // get id of active tab
+        const activeTabId = paneData[2][paneData[3]];
+        
+        for (let i = 0; i < tabIdsArr.length; i++) {
+          // get tab's content el
+          const tabContentEl = $(`#tab-content-inner-${tabIdsArr[i]}`);
+          // set "data-reloaded" attr to 'no'
+          tabContentEl.attr('data-reloaded', 'no');
+          if (tabIdsArr[i] == activeTabId) {
+            // get Bookreader's iframe el
+            const iframeEl = tabContentEl.find('iframe');
+            if (iframeEl.length == 1) {
+              // get "data-src" where we saved value "src" attr of the frame
+              const iframeSrc = iframeEl.attr('data-src');
+              // restore src of the iframe of the maximized pane (for some reason after moving pane the iframe in it shows the first page of scanned book)
+              iframeEl[0].contentWindow.location.replace(iframeSrc);
+              // force iframe to reload
+              iframeEl[0].contentWindow.postMessage("refresh", '*');
+              // remove "data-reloaded" attr
+              tabContentEl.removeAttr('data-reloaded');
+            }
+          }
+        }
+        // treat buttons
+        paneToZoomOut
+          .find(
+            `.${ParsedClassicsAppVars.addTopPaneBtnClass}, .${ParsedClassicsAppVars.addRightSectionBtnClass}, .${ParsedClassicsAppVars.addLeftSectionBtnClass}, .${ParsedClassicsAppVars.addBottomPaneBtnClass}, .${ParsedClassicsAppVars.closePaneBtnClass}, .${ParsedClassicsAppVars.maximizePaneBtnClass}`
+          )
+          .removeClass(ParsedClassicsAppVars.layoutBtnHideClass).css('display', 'flex');
+        paneToZoomOut
+          .find(`.${ParsedClassicsAppVars.minimizePaneBtnClass}`)
+          .addClass(ParsedClassicsAppVars.layoutBtnHideClass);
+      }
+      // (b) we do not have pane to be minimized, but maybe there is tab to be reloaded after minimization?
+      else {
+        for (let i = 0; i < sectionCodes.length; i++) {
+          const sectionCode = sectionCodes[i];
+          // get section data
+          const sectionData = dimensionsObj[sectionCode];
+          // loop through section data
+          for (let j = 1; j < sectionData.length; j++) {
+            // get pane data
+            const paneData = sectionData[j];
+            // get id of active tab
+            activeTabId = paneData[2][paneData[3]];
+            // get tab content el
+            const tabContentEl = $(`#tab-content-inner-${activeTabId}`);
+            // get value of attr "data-reloaded"
+            const reloaded = tabContentEl.attr('data-reloaded');
+            if (reloaded == 'no') {
+              // get Bookreader's iframe el
+              const iframeEl = tabContentEl.find('iframe');
+              if (iframeEl.length == 1) {
+                // get "data-src" where we saved value "src" attr of the frame
+                const iframeSrc = iframeEl.attr('data-src');
+                // restore src of the iframe of the maximized pane (for some reason after moving pane the iframe in it shows the first page of scanned book)
+                iframeEl[0].contentWindow.location.replace(iframeSrc);
+                // force iframe to reload
+                iframeEl[0].contentWindow.postMessage("refresh", '*');
+                // remove "data-reloaded" attr
+                tabContentEl.removeAttr('data-reloaded');
+              }
+            }
+          }
+        }
+      }
     }
   },
 
