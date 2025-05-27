@@ -765,6 +765,7 @@ const ParsedClassicsLayout = {
       
       for (let i = 0; i < tabIdsArr.length; i++) {
         // get tab's content el
+        console.log('AAA');
         const tabContentEl = $(`#tab-content-inner-${tabIdsArr[i]}`);
         // get "data-reloaded" attr
         const reloaded = tabContentEl.attr('data-reloaded');
@@ -774,6 +775,7 @@ const ParsedClassicsLayout = {
           if (iframeEl.length == 1){
             // get "data-src" where we saved value "src" attr of the frame
             const iframeSrc = iframeEl.attr('data-src');
+            console.log('iframeSrc');
             // restore src of the iframe of the maximized pane (for some reason after moving pane the iframe in it shows the first page of scanned book)
             iframeEl[0].contentWindow.location.replace(iframeSrc);
             // force iframe to reload
