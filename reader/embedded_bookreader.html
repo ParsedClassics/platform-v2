@@ -12,6 +12,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 
+<meta http-Equiv="Cache-Control" Content="no-cache">
+<meta http-Equiv="Pragma" Content="no-cache">
+<meta http-Equiv="Expires" Content="0">
+
 <!-- JS dependencies -->
 <script src="BookReader/jquery-1.10.1.js"></script>
 <script src="BookReader/jquery-ui-1.12.0.min.js"></script>
@@ -33,6 +37,15 @@
 
 <!-- Catalogue of scanned books -->
 <script type="text/javascript" src="../data/_catalogues/_scanned_books.js"/></script>
+
+<script type="text/javascript">
+  addEventListener('message', function(event){
+    if (event.data == 'refresh') {
+      //alert(`Received message: ${event.data}`);
+      history.go(0);
+    }
+  });
+</script>
 
 </head>
 
