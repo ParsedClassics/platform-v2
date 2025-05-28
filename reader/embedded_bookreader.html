@@ -50,7 +50,8 @@
       const url_start = url_segments2[0];
       const url_to_go  = url_start + '/' + url_end;
       document.location.href = url_to_go;
-      history.go(0);
+      //history.go(0);
+      window.location.reload();
     }
   });
 </script>
