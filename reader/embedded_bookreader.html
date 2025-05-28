@@ -40,8 +40,16 @@
 
 <script type="text/javascript">
   addEventListener('message', function(event){
-    if (event.data == 'refresh') {
-      alert(`Received message: ${event.data}`);
+    if (event.data.substring(0, 10) == '{"refresh"') {
+      const json = JSON.parse(event.data);
+      const url = json['refresh'];
+      const url_segments = url.split('/');
+      const first_segment = url_segments[1];
+      const url_end = url_segments.splice(1).join('/');
+      const url_segments2 = location.href.split('/'+first_segment+'/');
+      const url_start = url_segments2[0];
+      const url_to_go  = url_start + '/' + url_end;
+      document.location.href = url_to_go;
       history.go(0);
     }
   });

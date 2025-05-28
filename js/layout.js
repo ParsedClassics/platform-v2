@@ -775,11 +775,10 @@ const ParsedClassicsLayout = {
           if (iframeEl.length == 1){
             // get "data-src" where we saved value "src" attr of the frame
             const iframeSrc = iframeEl.attr('data-src');
-            console.log('iframeSrc');
             // restore src of the iframe of the maximized pane (for some reason after moving pane the iframe in it shows the first page of scanned book)
             iframeEl[0].contentWindow.location.replace(iframeSrc);
             // force iframe to reload
-            iframeEl[0].contentWindow.postMessage("refresh", '*');
+            iframeEl[0].contentWindow.postMessage(`{"refresh":"${iframeSrc}"}`, '*');
             // save in attr that tab content was reloaded after pane's maximization
             tabContentEl.attr('data-reloaded', 'yes');
           }
@@ -826,7 +825,7 @@ const ParsedClassicsLayout = {
               // restore src of the iframe of the maximized pane (for some reason after moving pane the iframe in it shows the first page of scanned book)
               iframeEl[0].contentWindow.location.replace(iframeSrc);
               // force iframe to reload
-              iframeEl[0].contentWindow.postMessage("refresh", '*');
+              iframeEl[0].contentWindow.postMessage(`{"refresh":"${iframeSrc}"}`, '*');
               // remove "data-reloaded" attr
               tabContentEl.removeAttr('data-reloaded');
             }
@@ -867,7 +866,7 @@ const ParsedClassicsLayout = {
                 // restore src of the iframe of the maximized pane (for some reason after moving pane the iframe in it shows the first page of scanned book)
                 iframeEl[0].contentWindow.location.replace(iframeSrc);
                 // force iframe to reload
-                iframeEl[0].contentWindow.postMessage("refresh", '*');
+                iframeEl[0].contentWindow.postMessage(`{"refresh":"${iframeSrc}"}`, '*');
                 // remove "data-reloaded" attr
                 tabContentEl.removeAttr('data-reloaded');
               }
