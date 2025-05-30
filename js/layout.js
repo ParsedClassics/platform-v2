@@ -235,7 +235,7 @@ const ParsedClassicsLayout = {
       ParsedClassicsLayout.splitters[containerId].setSizes(newDimensions);
     }
     ParsedClassicsLayout.treatButtons();
-    ParsedClassicsLayout.treatZooms(dimensionsObj);
+    ParsedClassicsLayout.treatZoomsAndReloads(dimensionsObj);
   },
 
   removeSections: function (dimensionsObj, splitterObj) {
@@ -685,7 +685,11 @@ const ParsedClassicsLayout = {
 
     // VIII. treat active tab's contents container
     if (activeTabId) {
-      ParsedClassicsContentContainers.treatActiveTabContentContainer(pane, activeTabId);
+      const tabContentInnerEl = $(`#tab-content-inner-${activeTabId}`);
+      const reloaded = tabContentInnerEl.attr('data-reloaded');
+      if (reloaded != 'no') {
+        ParsedClassicsContentContainers.treatActiveTabContentContainer(pane, activeTabId);
+      }
     }
     
   },
@@ -727,7 +731,7 @@ const ParsedClassicsLayout = {
     }
   },
 
-  treatZooms: function (dimensionsObj) {
+  treatZoomsAndReloads: function (dimensionsObj) {
     let zoomInPaneId = null;
     let activeTabId;
     let tabIdsArr;
@@ -765,13 +769,13 @@ const ParsedClassicsLayout = {
       
       for (let i = 0; i < tabIdsArr.length; i++) {
         // get tab's content el
-        console.log('AAA');
         const tabContentEl = $(`#tab-content-inner-${tabIdsArr[i]}`);
         // get "data-reloaded" attr
         const reloaded = tabContentEl.attr('data-reloaded');
         if (reloaded != 'yes' && tabIdsArr[i] == activeTabId) {
           // get Bookreader's iframe el
           const iframeEl = tabContentEl.find('iframe');
+          // iframe found, so the resource is scanned
           if (iframeEl.length == 1){
             // get "data-src" where we saved value "src" attr of the frame
             const iframeSrc = iframeEl.attr('data-src');
@@ -779,9 +783,14 @@ const ParsedClassicsLayout = {
             iframeEl[0].contentWindow.location.replace(iframeSrc);
             // force iframe to reload
             iframeEl[0].contentWindow.postMessage(`{"refresh":"${iframeSrc}"}`, '*');
-            // save in attr that tab content was reloaded after pane's maximization
-            tabContentEl.attr('data-reloaded', 'yes');
+            
           }
+          // iframe not found, so the resource is transcribed
+          else {
+            ParsedClassicsContentContainers.treatActiveTabContentContainer(paneToZoomIn, activeTabId, true);
+          }
+          // save in attr that tab content was reloaded after pane's maximization
+          tabContentEl.attr('data-reloaded', 'yes');
         }
       }
       // treat buttons
@@ -819,6 +828,7 @@ const ParsedClassicsLayout = {
           if (tabIdsArr[i] == activeTabId) {
             // get Bookreader's iframe el
             const iframeEl = tabContentEl.find('iframe');
+            // iframe found, so the resource is scanned
             if (iframeEl.length == 1) {
               // get "data-src" where we saved value "src" attr of the frame
               const iframeSrc = iframeEl.attr('data-src');
@@ -826,9 +836,13 @@ const ParsedClassicsLayout = {
               iframeEl[0].contentWindow.location.replace(iframeSrc);
               // force iframe to reload
               iframeEl[0].contentWindow.postMessage(`{"refresh":"${iframeSrc}"}`, '*');
-              // remove "data-reloaded" attr
-              tabContentEl.removeAttr('data-reloaded');
             }
+            // iframe not found, so the resource is transcribed
+            else {
+              ParsedClassicsContentContainers.treatActiveTabContentContainer(paneToZoomOut, activeTabId, true);
+            }
+            // remove "data-reloaded" attr
+            tabContentEl.removeAttr('data-reloaded');
           }
         }
         // treat buttons
@@ -841,7 +855,7 @@ const ParsedClassicsLayout = {
           .find(`.${ParsedClassicsAppVars.minimizePaneBtnClass}`)
           .addClass(ParsedClassicsAppVars.layoutBtnHideClass);
       }
-      // (b) we do not have pane to be minimized, but maybe there is tab to be reloaded after minimization?
+      // (b) we do not have pane to be minimized, but maybe there is tab to be reloaded after minimization or after move from one pane to another?
       else {
         for (let i = 0; i < sectionCodes.length; i++) {
           const sectionCode = sectionCodes[i];
@@ -851,8 +865,10 @@ const ParsedClassicsLayout = {
           for (let j = 1; j < sectionData.length; j++) {
             // get pane data
             const paneData = sectionData[j];
+            // get pane id
+            const paneId = paneData[0];
             // get id of active tab
-            activeTabId = paneData[2][paneData[3]];
+            const activeTabId = paneData[2][paneData[3]];
             // get tab content el
             const tabContentEl = $(`#tab-content-inner-${activeTabId}`);
             // get value of attr "data-reloaded"
@@ -860,6 +876,7 @@ const ParsedClassicsLayout = {
             if (reloaded == 'no') {
               // get Bookreader's iframe el
               const iframeEl = tabContentEl.find('iframe');
+              // iframe found, so the resource is scanned
               if (iframeEl.length == 1) {
                 // get "data-src" where we saved value "src" attr of the frame
                 const iframeSrc = iframeEl.attr('data-src');
@@ -867,9 +884,17 @@ const ParsedClassicsLayout = {
                 iframeEl[0].contentWindow.location.replace(iframeSrc);
                 // force iframe to reload
                 iframeEl[0].contentWindow.postMessage(`{"refresh":"${iframeSrc}"}`, '*');
-                // remove "data-reloaded" attr
-                tabContentEl.removeAttr('data-reloaded');
+                
               }
+              // iframe not found, so the resource is transcribed
+              else {
+                const pane = $(`#pane-${paneId}`);
+                if (pane) {
+                  ParsedClassicsContentContainers.treatActiveTabContentContainer(pane, activeTabId, true);
+                }
+              }
+              // remove "data-reloaded" attr
+              tabContentEl.removeAttr('data-reloaded');
             }
           }
         }

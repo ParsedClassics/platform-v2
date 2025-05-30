@@ -61,8 +61,10 @@ const ParsedClassicsTabs = {
   moveTabBetweenPanes: function(tabId, tabbarTo, paneTopPartTo, paneBottomPartTo, tabIndexNew) {
     // get tab
     const tab = $(`#tab-${tabId}`);
-    // get tab content
+    // get tab content el
     const tabContent = $(`#tab-content-${tabId}`);
+    // get tab content inner el
+    const tabContentInner = $(`#tab-content-inner-${tabId}`);
     // get tab's selectboxes container
     const tabSlelectboxesContainer = $(`#tab-selects-container-${tabId}`);
     // get pane's id to which we are moving the tab
@@ -88,14 +90,26 @@ const ParsedClassicsTabs = {
     // move tab content to new pane
     paneBottomPartTo.find(`.${ParsedClassicsAppVars.tabContentClass}`).hide();
     paneBottomPartTo.append(tabContent).show();
-    // restore src of the iframe in tab content of the moved pane (for some reason after moving tab the iframe in it shows the first page of scanned book)
-    const iframeEl = tabContent.find('iframe');
-    if (iframeEl.length === 1) {
-      const iframeSrc = iframeEl.attr('data-src');
-      if (iframeSrc) {
-        iframeEl[0].contentWindow.location.replace(iframeSrc);
-      }
-    }
+    // // restore src of the iframe in tab content of the moved pane (for some reason after moving tab the iframe in it shows the first page of scanned book)
+    // const iframeEl = tabContent.find('iframe');
+    // // iframe found, so the resource is scanned
+    // if (iframeEl.length === 1) {
+    //   const iframeSrc = iframeEl.attr('data-src');
+    //   if (iframeSrc) {
+    //     iframeEl[0].contentWindow.location.replace(iframeSrc);
+    //   }
+    // }
+    // // iframe not found, so the resource is transcribed
+    // else {
+    //   const pane = $(`#pane-${paneToId}`);
+    //   if (pane) {
+    //     ParsedClassicsContentContainers.treatActiveTabContentContainer(pane, tabId, true);
+    //   }
+    // }
+
+    // set "data-reloaded" attr to 'no' in tab content inner el (it will be used by treatZoomsAndReloads function to reload tab contents)
+    tabContentInner.attr('data-reloaded', 'no');
+
     // move tab's selectboxes container to new pane's selectboxes container
     paneSelectsSontainerTo.find(`.${ParsedClassicsAppVars.tabSelectsContainerClass}`).hide();
     paneSelectsSontainerTo.append(tabSlelectboxesContainer).show();
