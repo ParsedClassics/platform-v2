@@ -774,7 +774,7 @@ const ParsedClassicsLayout = {
         const reloaded = tabContentEl.attr('data-reloaded');
         if (reloaded != 'yes' && tabIdsArr[i] == activeTabId) {
           // get Bookreader's iframe el
-          const iframeEl = tabContentEl.find('iframe');
+          const iframeEl = tabContentEl.children('iframe');
           // iframe found, so the resource is scanned
           if (iframeEl.length == 1){
             // get "data-src" where we saved value "src" attr of the frame
@@ -827,7 +827,7 @@ const ParsedClassicsLayout = {
           tabContentEl.attr('data-reloaded', 'no');
           if (tabIdsArr[i] == activeTabId) {
             // get Bookreader's iframe el
-            const iframeEl = tabContentEl.find('iframe');
+            const iframeEl = tabContentEl.children('iframe');
             // iframe found, so the resource is scanned
             if (iframeEl.length == 1) {
               // get "data-src" where we saved value "src" attr of the frame
@@ -875,7 +875,7 @@ const ParsedClassicsLayout = {
             const reloaded = tabContentEl.attr('data-reloaded');
             if (reloaded == 'no') {
               // get Bookreader's iframe el
-              const iframeEl = tabContentEl.find('iframe');
+              const iframeEl = tabContentEl.children('iframe');
               // iframe found, so the resource is scanned
               if (iframeEl.length == 1) {
                 // get "data-src" where we saved value "src" attr of the frame
