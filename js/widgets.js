@@ -903,18 +903,41 @@ ParsedClassicsScannedBookMode = {
           
       // is it really message from iframe containing scanned book?
       if (msgArr.length === 2) {
-      // get scanned book shortname and book mode
-              bookShortname = msgArr[0];
-              bookMode = msgArr[1];
-      }
-          
-      // put scanned book shortname and book mode into params object
-      ParsedClassicsScannedBookMode.params[bookShortname] = bookMode;
+        // get scanned book shortname and book mode
+        const bookShortname = msgArr[0];
+        const bookMode = msgArr[1];
 
-      // save book shortname and book mode in cookie
-      localStorage.setItem(bookShortname, bookMode);
+        // put scanned book shortname and book mode into params object
+        ParsedClassicsScannedBookMode.params[bookShortname] = bookMode;
+
+        // save book shortname and book mode in cookie
+        localStorage.setItem(bookShortname, bookMode);
+
+        // get iframe that sent message
+        const iframeThatSentMessage = $(ParsedClassicsScannedBookMode.getIframeThatSentMessage(event));
+
+        // get "data-src" attr of the iframe
+        let dataSrcAttr = iframeThatSentMessage.attr('data-src');
+
+        // get modes to be replaced array
+        const modesToReplace = ['/mode/1up', '/mode/2up', '/mode/thumb'].filter(mode => mode != bookMode);
+
+        // change all modes to be replaced with the mode from the message in "data-scr" attr value
+        for (let i = 0; i < modesToReplace.length; i++) {
+          dataSrcAttr = dataSrcAttr.replace(modesToReplace[i], bookMode);
+        }
+
+        // update "data-scr" attr
+        iframeThatSentMessage.attr('data-src', dataSrcAttr);
+      }
     }
-    
+  },
+
+  getIframeThatSentMessage: function(messageEvent) {
+    let allIFrames = Array.from(document.querySelectorAll("iframe"));
+    return allIFrames.find(
+        iframe => iframe.contentWindow == messageEvent.originalEvent.source
+    );
   }
 
 };
