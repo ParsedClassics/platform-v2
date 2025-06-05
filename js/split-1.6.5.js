@@ -531,6 +531,7 @@ const Split = (idsOption, options = {}) => {
             a.style['width'] =  a_width;                         // by ParsedClassics
             b.style['width'] =  b_width                          // by ParsedClassics
           }                                                      // by ParsedClassics
+          ParsedClassicsLayout.markTabsToReload([a.id, b.id]);
         }                                                        // by ParsedClassics
         else {                                                   // by ParsedClassics
           const a_height = a.getAttribute("data-height");        // by ParsedClassics
