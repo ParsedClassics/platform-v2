@@ -362,9 +362,8 @@ const ParsedClassicsLayout = {
     for (let i = 0; i < inactiveTabIdsAll.length; i++) {
       // check if resource is transcribed 
       const {collectionShortname, resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(inactiveTabIdsAll[i]);
-
       const resourceDef = ParsedClassicsCollDefs[collectionShortname]["resource_defs"][resourceShortname];
-      if (resourceDef['scanned_or_typed'] == 'typed') {
+      if (typeof resourceDef != 'undefined' && resourceDef['scanned_or_typed'] == 'typed') {
         inactiveTypedTabIds.push(inactiveTabIdsAll[i]);
       }
     }
