@@ -324,6 +324,59 @@ const ParsedClassicsLayout = {
     ParsedClassicsLayout.update(hashJson);
   },
 
+  markTabsToReload: function(sectionIdsArr) {
+    // get first and second section ids without "section-" part
+    const sectionIdsArrCleaned = [];
+    sectionIdsArr.forEach(function(sectionId) {
+      sectionIdsArrCleaned.push(sectionId.replace('section-', ''));
+    });
+
+    // get hash json, dimensions obj
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    const dimensionsObj = hashJson[ParsedClassicsAppVars.dimensionsMember];
+
+    // get panes data of all panes of adjacent sections
+    const panesData = [];
+    for (const [key, value] of Object.entries(dimensionsObj)) {
+      if (sectionIdsArrCleaned.includes(value[0][0])) {
+        if (typeof value[1] !== 'undefined') {
+          panesData.push(value[1]);
+        }
+        if (typeof value[2] !== 'undefined') {
+          panesData.push(value[2]);
+        }
+      }
+    }
+
+    // get inactive tab ids of all panes of sections from function argument
+    let inactiveTabIdsAll = [];
+    for (let i = 0; i < panesData.length; i++){
+      const tabIds = panesData[i][2];
+      const activeTabIndex = panesData[i][3];
+      const inactiveTabIds = tabIds.filter(function(v, index) { return index !== activeTabIndex });
+      inactiveTabIdsAll = [...inactiveTabIdsAll, ...inactiveTabIds];
+    }
+
+    // get ids of inactive tabs in which transcribed resources are loaded
+    const inactiveTypedTabIds = [];
+    for (let i = 0; i < inactiveTabIdsAll.length; i++) {
+      // check if resource is transcribed 
+      const {collectionShortname, resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(inactiveTabIdsAll[i]);
+
+      const resourceDef = ParsedClassicsCollDefs[collectionShortname]["resource_defs"][resourceShortname];
+      if (resourceDef['scanned_or_typed'] == 'typed') {
+        inactiveTypedTabIds.push(inactiveTabIdsAll[i]);
+      }
+    }
+
+    // mark inner content containers of inactive tabs containing transcribed resources with attr "data-reloaded" having value "no"
+    for (let i = 0; i < inactiveTypedTabIds.length; i++) {
+      const tabContentInnerEl = $(`#tab-content-inner-${inactiveTypedTabIds[i]}`);
+      tabContentInnerEl.attr('data-reloaded', 'no');
+    }
+
+  },
+
   treatSection: function (section, sectionData) {
     // get section's splitter obj
     const sectionId = `#section-${sectionData[0][0]}`;
