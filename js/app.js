@@ -48,6 +48,11 @@ const APP = {
   init: function() {
     //add listener for popstate
     window.addEventListener('popstate', APP.checkState);
+    // add listener to fire on window resize end
+    $(window).resize(function() {
+      clearTimeout(this.id);
+      this.id = setTimeout(ParsedClassicsLayout.windowResizeEnd, 500);
+    });
     // add listener for message from iframe event (IMPORTANT! window.addEventListener("message", ParsedClassicsScannedBookMode.updateMode) does not work here )
     $(window).on('message', ParsedClassicsScannedBookMode.updateMode);
     // create alert dialogue el

@@ -324,6 +324,22 @@ const ParsedClassicsLayout = {
     ParsedClassicsLayout.update(hashJson);
   },
 
+  windowResizeEnd: function() {
+    // get hash json, dimensions obj
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    const dimensionsObj = hashJson[ParsedClassicsAppVars.dimensionsMember];
+
+    // find all section ids
+    const sectionIdsArr = [];
+    for (const [key, value] of Object.entries(dimensionsObj)) {
+      const sectionId = value[0][0];
+      sectionIdsArr.push(sectionId);
+    }
+
+    // in all sections mark inner content containers of inactive tabs containing transcribed resources with attr "data-reloaded" having value "no"
+    ParsedClassicsLayout.markTabsToReload(sectionIdsArr);
+  },
+
   markTabsToReload: function(sectionIdsArr) {
     // get first and second section ids without "section-" part
     const sectionIdsArrCleaned = [];
