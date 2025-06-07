@@ -562,7 +562,7 @@ const ParsedClassicsContentContainers = {
 
   splitCommentaryRefsContainer: function(activeTabId, tabContentContainerInner) {
     const splitHtml = `
-      <div class="${ParsedClassicsAppVars.commentaryRefsContainerLeftPartClass}" id="commentary-refs-split-left-${activeTabId}"><div class="${ParsedClassicsAppVars.commentaryRefsContainerLeftPartInnerClass}"></div></div>
+      <div class="${ParsedClassicsAppVars.commentaryRefsContainerLeftPartClass}" id="commentary-refs-split-left-${activeTabId}"><div class="${ParsedClassicsAppVars.commentaryRefsContainerLeftPartInnerClass}" id="commentary-refs-split-left-inner-${activeTabId}"></div></div>
       <div class="${ParsedClassicsAppVars.commentaryRefsContainerRightPartClass}" id="commentary-refs-split-right-${activeTabId}"><iframe></iframe></div>
     `;
     tabContentContainerInner.html(splitHtml);
@@ -581,7 +581,7 @@ const ParsedClassicsContentContainers = {
 
   splitGrammarRefsContainer: function(activeTabId, tabContentContainerInner) {
     const splitHtml = `
-      <div class="${ParsedClassicsAppVars.grammarRefsContainerLeftPartClass}" id="grammar-refs-split-left-${activeTabId}"><div class="${ParsedClassicsAppVars.grammarRefsContainerLeftPartInnerClass}"></div></div>
+      <div class="${ParsedClassicsAppVars.grammarRefsContainerLeftPartClass}" id="grammar-refs-split-left-${activeTabId}"><div class="${ParsedClassicsAppVars.grammarRefsContainerLeftPartInnerClass}" id="grammar-refs-split-left-inner-${activeTabId}"></div></div>
       <div class="${ParsedClassicsAppVars.grammarRefsContainerRightPartClass}" id="grammar-refs-split-right-${activeTabId}"><iframe></iframe></div>
     `;
     tabContentContainerInner.html(splitHtml);
