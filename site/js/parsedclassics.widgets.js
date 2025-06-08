@@ -909,7 +909,7 @@ var ParsedClassicsInnerLink = {
 				parent = inner_link_el.parent();
 			
 				// get content panel inner
-				while ( ! parent.hasClass(ParsedClassicsVars.contentPanelInnerClass) ) {
+				while ( ! parent.hasClass(ParsedClassicsVars.contentPanelInnerClass) && parent.attr('id') !== 'pc-site-content') {
 					 parent = parent.parent();
 				}
 				content_panel_inner = parent;
@@ -934,7 +934,8 @@ var ParsedClassicsInnerLink = {
 				}
 
 				// scroll to top anchor el
-    content_panel_inner.scrollTo(anchor_el, ParsedClassicsVars.animationSpeed);	
+    //content_panel_inner.scrollTo(anchor_el, ParsedClassicsVars.animationSpeed);	// for unknown reason this does not work in Drills page, so let's use scrollIntoView()
+    anchor_el[0].scrollIntoView({behavior: "smooth"});
 
 		}
 	

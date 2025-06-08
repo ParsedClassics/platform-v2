@@ -24,15 +24,46 @@
 
 <script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
 
+<script type="text/javascript" src="./js/jquery.scrollTo-2.1.2.js"></script>
+
+<script type="text/javascript" src="./js/parsedclassics.vars.js"></script>
+
+<script type="text/javascript" src="./js/parsedclassics.widgets.js"></script>
+
+<script type="text/javascript">
+   /*
+  Initialization of inner links
+  */
+  
+  $(document).ready(function(){
+  
+    var siteContentEl;
+    siteContentEl = $("#pc-site-content");
+  
+    siteContentEl.delegate("." + ParsedClassicsVars.innerLinkClass, "click", ParsedClassicsInnerLink.innerLinkClick);
+  
+  });
+</script>
+
 </head>
 
 <body>
 
 <script type="text/javascript" src="./js/_navigation.js"></script>
 
-<div id="pc-site-content" class="pc-center-pane-maxwidth w3-border-right w3-padding pc-padding-top-0 pc-padding-bottom-0">
+<div id="pc-site-content" class="pc-center-pane-maxwidth w3-border-right w3-padding pc-padding-top-0">
 
 <h1>Morphology drills</h1>
+
+<p><a class="inner-link" data-anchor="introduction">Introduction</a></p>
+
+<p><a class="inner-link" data-anchor="attic-greek-tables">Attic Greek tables</a></p>
+
+<p><a class="inner-link" data-anchor="demotic-greek-tables">Demotic Greek tables</a></p>
+
+<p><a class="inner-link" data-anchor="latin-tables">Latin tables</a><br><a class="pc-anchor" id="introduction"></a></p>
+
+<h2>Introduction</h2>
 
 <p>"The problem about Latin is that you can study it for six years and still not be able to read a Latin sentence".</p>
 <p>Such begins Professor William C. Dowling’s webpage on his unorthodox technique for
@@ -50,31 +81,9 @@ in green or red to show which are correct and which are incorrect.</p>
 
 <p>As regards the third goal, we recommend using Robert J. Henle's <cite>Latin</cite>. This four part course together with <cite>Latin Grammar</cite> of the same author affords more thorough and more evenly paced introduction to reading Latin than widely acclaimed <cite>Lingua Latina</cite>.</p>
 
-<p>In these Morphology drills we added some additional tables for Latin and made an attempt to compile analogous morphological tables for Attic Greek (based on multiple grammars) and Demotic Greek (based mainly on Οδός γραμματικής by P. Makropoulos, M. Montzoli, N. Roubis, V. Tzovara).</p>
+<p>In these Morphology drills we added some additional tables for Latin and made an attempt to compile analogous morphological tables for Attic Greek (based on multiple grammars) and Demotic Greek (based mainly on Οδός γραμματικής by P. Makropoulos, M. Montzoli, N. Roubis, V. Tzovara).<br><a class="pc-anchor" id="attic-greek-tables"></a></p>
 
-<h2>Latin</h2>
-
-<p><a href="./drills/latin/nouns.html">Nouns</a></p>
-
-<p><a href="./drills/latin/adjectives.html">Adjectives</a></p>
-
-<p><a href="./drills/latin/pronouns.html">Pronouns</a></p>
-
-<p><a href="./drills/latin/verbs-sum.html">Verb sum</a></p>
-
-<p><a href="./drills/latin/verbs-indicative-active.html">Verbs, indicative active</a></p>
-
-<p><a href="./drills/latin/verbs-indicative-passive.html">Verbs, indicative passive</a></p>
-
-<p><a href="./drills/latin/verbs-subjunctive-active.html">Verbs, subjunctive active</a></p>
-
-<p><a href="./drills/latin/verbs-subjunctive-passive.html">Verbs, subjunctive passive</a></p>
-
-<p><a href="./drills/latin/verbs-imperative.html">Verbs, imperative</a></p>
-
-<p><a href="./drills/latin/verbs-nonfinite.html">Verbs, nonfinite</a></p>
-
-<h2>Attic Greek</h2>
+<h2>Attic Greek tables</h2>
 
 <p><a href="./drills/attic-greek/nouns-1-2-declension.html">Nouns, 1-st and 2-nd declension</a></p>
 
@@ -156,9 +165,9 @@ in green or red to show which are correct and which are incorrect.</p>
 
 <p><a href="./drills/attic-greek/mi-verbs-nonfinite-mid.html">Athematic verbs, nonfinite middle</a></p>
 
-<p><a href="./drills/attic-greek/mi-verbs-nonfinite-pass.html">Athematic verbs, nonfinite passive</a></p>
+<p><a href="./drills/attic-greek/mi-verbs-nonfinite-pass.html">Athematic verbs, nonfinite passive</a><br><a class="pc-anchor" id="demotic-greek-tables"></a></p>
 
-<h2>Demotic Greek</h2>
+<h2>Demotic Greek tables</h2>
 
 <p><a href="./drills/demotic-greek/nouns-masculine-1-part.html">Nouns, masculine, first part</a></p>
 
@@ -210,7 +219,29 @@ in green or red to show which are correct and which are incorrect.</p>
 
 <p><a href="./drills/demotic-greek/verbs-imperative.html">Verbs, imperative</a></p>
 
-<p><a href="./drills/demotic-greek/verbs-infinitive-participle.html">Verbs, infinitive and participle</a></p>
+<p><a href="./drills/demotic-greek/verbs-infinitive-participle.html">Verbs, infinitive and participle</a><a class="pc-anchor" id="latin-tables"></a></p>
+
+<h2>Latin tables</h2>
+
+<p><a href="./drills/latin/nouns.html">Nouns</a></p>
+
+<p><a href="./drills/latin/adjectives.html">Adjectives</a></p>
+
+<p><a href="./drills/latin/pronouns.html">Pronouns</a></p>
+
+<p><a href="./drills/latin/verbs-sum.html">Verb sum</a></p>
+
+<p><a href="./drills/latin/verbs-indicative-active.html">Verbs, indicative active</a></p>
+
+<p><a href="./drills/latin/verbs-indicative-passive.html">Verbs, indicative passive</a></p>
+
+<p><a href="./drills/latin/verbs-subjunctive-active.html">Verbs, subjunctive active</a></p>
+
+<p><a href="./drills/latin/verbs-subjunctive-passive.html">Verbs, subjunctive passive</a></p>
+
+<p><a href="./drills/latin/verbs-imperative.html">Verbs, imperative</a></p>
+
+<p><a href="./drills/latin/verbs-nonfinite.html">Verbs, nonfinite</a></p>
 
 </div>
 
