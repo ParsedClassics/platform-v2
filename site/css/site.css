@@ -48,6 +48,10 @@ Styles for ParsedClassics library application and website
   margin-bottom: 8px;
 }
 
+.pc-margin-bottom-0 {
+  margin-bottom: 0;
+}
+
 /* padding */
 
 .pc-padding-0 {
