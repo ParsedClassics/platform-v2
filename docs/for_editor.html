@@ -4970,7 +4970,7 @@ nt_titus_audio_by_karvounakis_contents = {
 
 <p><img class="w3-border w3-border-dark-gray" src="img2/compare_versions_of_text_3.jpg"></p>
 
-<h2 class="pc-anchor" id="h-url-scheme">Appendix. URL stucture</h2>
+<h2 class="pc-anchor" id="h-url-scheme">Appendix I. URL stucture</h2>
 
 <p>Almost everything you do in Library app will be reflected in URL. In other words, URL reflects the state of the Library app.</p>
 
@@ -5055,6 +5055,73 @@ https://www.parsedclassics.com/app.html#{"L":{"a":[["nt_titus|nt_titus_parsed_te
 <p>The second of them is ["xewahx",50,["vowggx","c8neaw"],1,"max"]. It represents the top pane of the section. "xewahx" is pane's unique id, 50 is pane's height in percents, ["vowggx","c8neaw"] is array of the unique ids of the pane's tabs, 1 is the index of the active tab, "max" signifies that the active tab is maximized.</p>
 
 <p>The third of them is ["1agxr3",50,["4ryhqx"],0]. It represents the bottom pane of the section. "1agxr3" is pane's unique id, 50 is pane's height in percents, ["4ryhqx"] is array of the unique ids of the pane's tabs, 0 is the index of the active tab.</p>
+
+<h2 class="pc-anchor" id="h-platform-architecture">Appendix II. Platform architecture</h2><!-- IMPORTANT! Using apostroph symbol in heading will result into selected heading not scrolling to view onload -->
+
+<h3 class="pc-anchor" id="h-technology-stack">Technology stack</h3>
+
+<p>Since classical texts and scholarship will be allways relevant, the design of the ParsedClassics website aimed at long term preservation of digital content. Long term preservation can be achieved by choosing widely used stack of technology compatible with broad range of both server and desktop environments. This led us to decision to choose HTML/CSS/Javascript stack, reject using any database software and server scripting languages and to use only relative URLs. As a result of this architectural decision ParsedClassics is static website which can be either simply uploaded to server or copied to desktop computer and used by pointing any modern browser without any change in behavior.</p>
+
+<h3 class="pc-anchor" id="h-sections-directories">Functions, sections, directories</h3>
+
+<p>ParsedClassics website is a platform performing these main functions:<br> (1) displaying digital editions of classical Greek and Latin texts;<br> (2) enabling creation of digital editions;<br> (3) documenting best practices of creating and using of digital editions;<br> (4) informing the lovers of classics about digital editions.</p>
+
+<p>While developing ParsedClassics platform it was found that each of the four main functions is best performed if it's software is organized as separated unit, having its own directories, HTML, CSS and Javascript files. This way the platform is naturaly split into four sections:<br> (1) Library app section;<br> (2) Tools section;<br> (3) Docs section;<br> (4) Site section.</p>
+  
+<p>Such organization has following advantages: (a) changes in one section do not break anything in other sections; (b) making changes in one section do not force to upgrade other sections.</p>
+
+<p>Relation of directories to sections is shown in the following table. As you see each directory and file below root belong to certain section, except fonts directory which is shared by all sections.</p>
+
+<table border="1" cellspacing="0" class="w3-table">
+    
+<tr>
+<th>
+Directory 
+</th>
+<th colspan="2">
+Section
+</th>
+</tr>
+
+<tr>
+
+<td>
+/_audio/<br>
+/_diagrams/<br>
+/_scans/<br>
+/data/<br>
+/docs/<br>
+/fonts/<br>
+/img/<br>
+/js/<br>
+/reader/<br>
+/site/<br>
+/tools/<br>
+.htaccess<br>
+app.html<br>
+index.html
+</td>
+
+<td>
+Library app<br>
+Library app<br>
+Library app<br>
+Library app<br>
+Docs<br>
+Library app, Tools, Docs, Site<br>
+Library app<br>
+Library app<br>
+Library app<br>
+Site<br>
+Tools<br>
+Library app<br>
+Library app<br>
+Site<br>
+</td>
+
+</tr>
+
+</table>
 
 </div><!-- End of .connav-auto-block  -->
 </div><!-- End of #docs_text  -->
