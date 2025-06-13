@@ -1415,15 +1415,13 @@ ParsedClassicsScannedBooks = {
 
 <p>So, if there could be a need to rotate the last page, add additional empty page as the last page of the scanned book and correct accordingly number of pages in book's JSON object in _scanned_books.js file.</p>
 
-<h2 id="h-edited-until-here" style="color: red;">Edited until here</h2>
-
 <h2 class="pc-anchor" id="h-creating-resources">Creating resources</h2>
 
 <p>Library app supports following types of resources: Parsed text, Original text, Concordance, Lexicon, Translation, Commentary, Commentary references, Grammar references, Diagram set, Audio recording. Parsed text, Commentary references, Grammar references, Diagram set, Audio recording resources can only be transcribed; Original text, Concordance, Lexicon, Translation, Commentary resources can be transcribed or scanned. Creating transcribed and scanned resources will be described separately because the process is very different.</p>
 
 <h3 class="pc-anchor" id="h-parsed-text-transcribed">Parsed text (transcribed)</h3>
 
-<p>Creating Parsed text resource involves creating two files: contents file and data file. The content file of the first listed Parsed text resource also serves as the content file for the whole collection.</p>
+<p>Creating Parsed text resource involves creating two files: contents file and data file. The contents file of the first listed Parsed text resource also serves as the contents file for the whole collection.</p>
 
 <h4 class="pc-anchor" id="h-parsed-text-typed-creating-content_file">Creating contents file</h4>
 
@@ -1437,7 +1435,7 @@ ParsedClassicsScannedBooks = {
 
 <p>The value of the form‘s field "Line number prefix" should be pipe delimited line prefixes, one for each chapter. Line number prefix usually indicates the chapter. The chapters of the New Testament are usually indicated by the number; colon usually used to separate chapter number from verse number. So, the value of this field should be 1:|2:|3:&nbsp;.</p>
 
-<p>The value of the form‘s field "Line index prefix" should be be pipe delimited line index prefixes, one for each chapter. Line index prefixes usually are the same line number prefixes. So, the value of this field eill be 1:|2:|3:&nbsp;.</p>
+<p>The value of the form‘s field "Line index prefix" should be be pipe delimited line index prefixes, one for each chapter. Line index prefixes usually are the same line number prefixes. So, the value of this field will be 1:|2:|3:&nbsp;.</p>
 
 <p>After filling the fields the form should have the following look:</p>
 
@@ -1551,7 +1549,7 @@ var nt_titus_parsed_text_contents = {
 };
 </pre>
 
-<p>This code should be saved in the file having the same name as the value of the key "contents_shortname" which was entered when we <a class="inner-link" data-anchor="h-parsed-text">listed resource</a> as part of collection. The value of the key "contents_shortname" is "nt_titus_parsed_text_contents", so the filename should be "nt_titus_parsed_text_contents.js". The file should be placed in directory which has the same name as resource shortname. The resource shortname is "nt_titus_parsed_text", so the direcrory to place contents file should be /data/parsed_text/nt_titus_parsed_text/&nbsp;.</p>
+<p>This code should be saved in the file having the same name as the value of the key "contents_shortname" which was entered when we <a class="inner-link" data-anchor="h-parsed-text">listed resource</a> as part of collection. The value of the key "contents_shortname" is "nt_titus_parsed_text_contents", so the filename should be "nt_titus_parsed_text_contents.js". The file should be placed in directory which has the same name as resource shortname. The resource shortname is "nt_titus_parsed_text", so the directory to place contents file should be /data/parsed_text/nt_titus_parsed_text/&nbsp;.</p>
 
 <h4 class="pc-anchor" id="h-parsed-text-typed-creating-data-file2">Creating data file</h4>
 
@@ -1642,11 +1640,17 @@ nt_titus_parsed_text =
 ` &lt;span class=&quot;word&quot; data-form=&quot;&delta;&epsilon;ή&theta;&eta;&tau;&epsilon;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist passive imperative 2nd person plural&quot; data-lemma=&quot;&delta;έ&omega;&quot; data-lexicon=&quot;greek_lexicon_to_nt_by_green&quot; data-lexicon-entry=&quot;2&quot;&gt;&delta;&epsilon;ή&theta;&eta;&tau;&epsilon;&lt;/span&gt;`
 </pre>
 
+<p>In case we added two or more lexicon resources in which two or more words have the lemma, we need use pipe symbol inside attributes "data-lexicon" and "data-lexicon-entry":</p>
+
+<pre id="adding_parsedtext_optional_attributes" class="prettyprint code_showarea">
+` &lt;span class=&quot;word&quot; data-form=&quot;&delta;&epsilon;ή&theta;&eta;&tau;&epsilon;&quot; data-part-of-speech=&quot;verb&quot; data-parsing=&quot;aorist passive imperative 2nd person plural&quot; data-lemma=&quot;&delta;έ&omega;&quot; data-lexicon=&quot;greek_lexicon_to_nt_by_green|greek_latin_lexicon_by_zorell&quot; data-lexicon-entry=&quot;2|2&quot;&gt;&delta;&epsilon;ή&theta;&eta;&tau;&epsilon;&lt;/span&gt;`
+</pre>
+
 <h4 class="pc-anchor" id="h-parsed-text-transcribed-parsing-scheme">Parsing scheme</h4>
 
 <p>"span" tag having class attribute "word" should wrap each word in the data file. This "span" tag also has the attributes "data-form", "data-part-of-speech", "data-parsing", "data-lemma which contain morphological data of the word.</p>
 
-<p>The attribute "data-form" contains as its value the same form of the word which "span" tag wraps.  Usually the word wrapped and the value of "data-form" are exactly the same. But in some cases, as word undergoing elision or word having movable consonant or word having several orthographic variants the word wrapped and the value of "data-form" will be slightly different.</p>
+<p>The attribute "data-form" contains as its value the same form of the word which "span" tag wraps.  Usually the word wrapped and the value of "data-form" are exactly the same. But in some cases, as word undergoing elision or word having movable consonant or word having several orthographic variants, the word wrapped and the value of "data-form" will be slightly different.</p>
 
 <p>The attribute "data-lemma" contains as its value the dictionary lemma of the wrapped word.</p>
 
@@ -2209,7 +2213,7 @@ particle
 
 <h5 class="pc-anchor" id="h-parsed-text-dealing-with-crasis">Dealing with crasis</h5>
 
-<p>Cases of crasis, such as κἀκεῖ, κἀκεῖθεν, κἀκεῖνος, κἄν, ταὐτά, τοὐναντίον, τοὔνομα, τουτέστι, although might be explained in certain dictionaries, should be treated as two words and those two words should be parsed separately. The "span" tag of the first word should contain that part of the crasis expression which is before vowel having breathing mark, and the "span" tag of the second word should contain part of the crasis expression strarting with vowel having breathing mark to the end of expression. E.g. in case of crasis expression κἀκεῖθεν the "span" tag of the first word will contain "κ" and the "span" tag of the second word will contain "ἀκεῖθεν". The code for crasis expression κἀκεῖθεν will be this:</p>
+<p>Cases of crasis, such as κἀκεῖ, κἀκεῖθεν, κἀκεῖνος, κἄν, ταὐτά, τοὐναντίον, τοὔνομα, τουτέστι, although might be explained in certain dictionaries, should be treated as two words and those two words should be parsed separately. The "span" tag of the first word should contain that part of the crasis expression which is before vowel having breathing mark, and the "span" tag of the second word should contain part of the crasis expression starting with vowel having breathing mark to the end of expression. E.g. in case of crasis expression κἀκεῖθεν the "span" tag of the first word will contain "κ" and the "span" tag of the second word will contain "ἀκεῖθεν". The code for crasis expression κἀκεῖθεν will be this:</p>
 
 <pre id="dealing-with-crasis" class="prettyprint code_showarea">
 `&lt;span class=&quot;word&quot; data-form=&quot;&kappa;&alpha;ί&quot; data-part-of-speech=&quot;conjunction&quot; data-parsing=&quot;&quot; data-lemma=&quot;&kappa;&alpha;ί&quot;&gt;&kappa;&lt;/span&gt;&lt;span class=&quot;word&quot; data-form=&quot;ἐ&kappa;&epsilon;ῖ&theta;&epsilon;&nu;&quot; data-part-of-speech=&quot;adverb&quot; data-parsing=&quot;&quot; data-lemma=&quot;ἐ&kappa;&epsilon;ῖ&theta;&epsilon;&nu;&quot;&gt;ἀ&kappa;&epsilon;ῖ&theta;&epsilon;&nu;&lt;/span&gt;`
@@ -2367,7 +2371,7 @@ nt_titus_ed_antoniadis_contents = {
   };
   </pre>
 
-<p>This code should be saved in the file having the same name as the value in "Contents shortname" field in the form, so it will be nt_titus_ed_antoniadis_contents.js&nbsp;. The file should be placed in directory whose name is the same ar resource shortname. Resource shortname is "nt_titus_text_ed_antoniadis" so the directory will be /data/original_text/nt_titus_text_ed_antoniadis/&nbsp;.</p>
+<p>This code should be saved in the file having the same name as the value in "Contents shortname" field in the form, so it will be nt_titus_ed_antoniadis_contents.js&nbsp;. The file should be placed in directory whose name is the same as resource shortname. Resource shortname is "nt_titus_text_ed_antoniadis" so the directory will be /data/original_text/nt_titus_text_ed_antoniadis/&nbsp;.</p>
 
 <p>After doing this critical edition resource should work in sync with parsed text resource.</p>
 
@@ -2403,7 +2407,7 @@ nt_titus_ed_antoniadis_contents = {
 
 <p><img src="img2/concordance_scanned_04.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
-<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
+<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text" heading.</p>
 
 <p>After loading text click the button "Generate list" and the pipe delimited alphabetical list of all words in the text will appear in "Word list" textarea.</p>
 
@@ -2413,7 +2417,7 @@ nt_titus_ed_antoniadis_contents = {
 ἀγαθός|ἀγάπη|ἅγιος|ἁγνός|ἀδιαφθορία|ἀδόκιμος|ἀεί|αἱρετικός|αἰσχροκερδής|αἰσχρός|αἰτία|αἰών|αἰώνιος|ἄκαρπος|ἀκατάγνωστος|ἀλήθεια|ἀληθής|ἀλλά|ἀλλήλων|ἁμαρτάνω|ἄμαχος|ἀμήν|ἀναγκαῖος|ἀνακαίνωσις|ἀνατρέπω|ἀνέγκλητος|ἀνήρ|ἄνθρωπος|ἀνόητος|ἀνομία|ἀντέχομαι|ἀντιλέγω|ἀνυπότακτος|ἀνωφελής|ἀπειθής|ἄπιστος|ἀπό|Ἀπολλῶς|ἀπόστολος|ἀποστρέφω|ἀποτόμως|ἀργός|ἀρνέομαι|Ἀρτεμᾶς|ἀρχή|ἀσέβεια|ἀσπάζομαι|ἀσωτία|αὐθάδης|αὐτοκατάκριτος|αὐτός|ἀφθαρσία|ἀψευδής|βδελυκτός|βλασφημέω|βούλομαι|γάρ|γαστήρ|γενεαλογία|γίνομαι|γνήσιος|γυνή|δέ|δεσπότης|δεύτερος|δέω|διά|διαβεβαιόομαι|διάβολος|διάγω|διατάσσω|διδασκαλία|διδάσκω|διδαχή|δίδωμι|δίκαιος|δικαιοσύνη|δικαιόω|δικαίως|δόξα|δουλεύω|δοῦλος|δουλόω|δυνατός|ἑαυτοῦ|ἐγκρατής|ἐγώ|εἰ|εἰμί|εἰρήνη|εἷς|εἰς|ἐκ|ἐκεῖ|ἐκεῖνος|ἐκλεκτός|ἐκστρέφομαι|ἐκχέω|ἐλέγχω|ἔλεος|ἐλπίς|ἐν|ἐναντίος|ἐνδείκνυμι|ἐντολή|ἐντρέπω|ἐξουσία|ἐπαγγέλλομαι|ἐπί|ἐπίγνωσις|ἐπιδιορθόω|ἐπιεικής|ἐπιθυμία|ἐπίσκοπος|ἐπιστομίζω|ἐπιταγή|ἐπιφαίνω|ἐπιφάνεια|ἔργον|ἔρις|ἔρχομαι|ἕτοιμος|εὐάρεστος|εὐσέβεια|εὐσεβῶς|ἔχω|ζάω|ζηλωτής|Ζηνᾶς|ζήτησις|ζωή|ἤ|ἡδονή|ἡμέτερος|θεός|θηρίον|ἴδιος|ἱεροπρεπής|Ἰησοῦς|ἵνα|Ἰουδαϊκός|καθαρίζω|καθαρός|καθίστημι|καί|καιρός|κακία|κακός|καλοδιδάσκαλος|καλός|κατά|καταλείπω|κατάστημα|κατηγορία|κέρδος|κήρυγμα|κληρονόμος|κοινός|κοσμέω|κοσμικός|Κρής|Κρήτη|κρίνω|κύριους|λαλέω|λαός|λέγω|λείπω|λόγος|λουτρόν|λυτρόομαι|μακάριος|μάλιστα|μανθάνω|μαρτυρία|ματαιολόγος|μάταιος|μάχη|μέγας|μέν|μετά|μή|μηδείς|μιαίνω|μισέω|μῦθος|μωρός|νέος|νηφάλιος|Νικόπολις|νομικός|νοσφίζομαι|νουθεσία|νοῦς|νῦν|ὁ|οἶδα|οἰκονόμος|οἶκος|οἰκουργός|οἶνος|ὅλος|ὁμολογέω|ὁράω|ὀργίλος|ὅς|ὅσιος|ὅστις|ὅταν|ὅτε|ὅτι|οὐ|οὐδείς|οὗτος|παιδεύω|παλιγγενεσία|παραιτέομαι|παρακαλέω|παραχειμάζω|παρέχω|πάροινος|πᾶς|πατήρ|Παῦλος|πειθαρχέω|πέμπω|περί|περιΐστημι|περιούσιος|περιτομή|περιφρονέω|πιστεύω|πίστις|πιστός|πλανάω|πλήκτης|πλουσίως|πνεῦμα|ποιέω|ποικίλος|πόλις|πολύς|ποτέ|πραΰτης|πρέπω|πρεσβύτερος|πρεσβύτης|πρεσβῦτις|πρό|προΐστημι|προπέμπω|πρός|προσδέχομαι|προσέχω|προφήτης|σεαυτοῦ|σεμνός|σεμνότης|σπουδάζω|σπουδαίως|στυγητός|σύ|συνείδησις|σῴζω|σωτήρ|σωτήριος|σωφρονέω|σωφρονίζω|σωφρόνως|σώφρων|τέκνον|τίς|τις|Τίτος|τοιοῦτος|τύπος|Τυχικός|ὑγιαίνω|ὑγιής|ὑπέρ|ὑπομιμνῄσκω|ὑπομονή|ὑποτάσσω|φανερόω|φαῦλος|φθόνος|φιλάγαθος|φίλανδρος|φιλανθρωπία|φιλέω|φιλόξενος|φιλότεκνος|φρεναπάτης|φροντίζω|χάριν|χάρις|χρεία|χρηστότης|χριστός|χρόνος|ψεύστης|ὡς|ὡσαύτως|ὠφέλιμος
 </pre>
 
-<p>Then click the button "Check for completeness". After this all words beneath the heading "Parsed text:" should be displayed on green backgound. If some words remain on white background, it means that the script was not able to generate complete list of words. Inform about it senior editor.</p>
+<p>Then click the button "Check for completeness". After this all words beneath the heading "Parsed text" should be displayed on green backgound. If some words remain on white background, it means that the script was not able to generate complete list of words. Inform about it senior editor.</p>
 
 <p>When you have pipe delimited alphabetical list of all words in the parsed text, go to <a href="../tools/lexicon_contents_generator.html" target="_blank">Lexicon contents generator</a> page and fill the form:</p>
 
@@ -2491,7 +2495,7 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 };
 </pre>
 
-<p>This code should be saved in the file having the same name as the value in "Contents shortname" field in the form. The file should be placed in directory whose name is the same ar resource shortname. Resource shortname is "concordance_by_moulton_geden" so the directory will be /data/concordance/concordance_by_moulton_geden/ </p>
+<p>This code should be saved in the file having the same name as the value in "Contents shortname" field in the form. The file should be placed in directory whose name is the same as resource shortname. Resource shortname is "concordance_by_moulton_geden" so the directory will be /data/concordance/concordance_by_moulton_geden/ </p>
 
 <p>After doing this Concordance resource should work in sync with parsed text resource.</p>
 
@@ -2509,13 +2513,13 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>The value of the form‘s field "List of words to be added" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in <a class="inner-link" data-anchor="h-concordance-scanned-creating-contents-file">previous section</a>. Here in this field we added list of words contained in parsed text resource from <em>Epistle to Philemon</em> collection.</p>
 
-<p>After filling fields with these values, click the button "Load contents" and the code of the concordance contents object will be displayed beneath "Initial contents object:" heading.</p>
+<p>After filling fields with these values, click the button "Load contents" and the code of the concordance contents object will be displayed beneath "Initial contents object" heading.</p>
 
-<p>Then click the button "Load words" and the list of words to be added to contents will be displayed beneath "Words to be added:" heading.</p>
+<p>Then click the button "Load words" and the list of words to be added to contents will be displayed beneath "Words to be added" heading.</p>
 
 <p>After that click the button "Add to contents" and the code of supplemented contents object will appear in "Supplemented contents code" textarea.</p>
 
-<p>Then click the button "Check for completeness" and all words beneath the headings "Words to be added:" and "Initial contents object:" should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
+<p>Then click the button "Check for completeness" and all words beneath the headings "Words to be added" and "Initial contents object" should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
 
 <p>The code generated will be as this:</p>
 
@@ -2651,7 +2655,7 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>The value of the field "Lexicon contents object to be imported" should be contents object with all page numbers intact which contains less comprehensive list of lemmas from single collection or couple of collections.</p>
 
-<p>After filling fields with such values click the button "Load contents" which is below the first textarea and the list of lemmas contained in the initial contents object will be displayed below the heading "Initial contents object:". Then click the button "Load contents" which is below the second textarea and the list of lemmas contained in contents object to be imported will be displayed below the heading "Contents object to be imported:". After that click the button "Import contents" and the resulting contents object will be outputted inside textarea "Resulting contents object code". Then click the button "Check for completeness". All lemmas below the headings "Contents object to be imported:" and "Initial contents object:" should be colored green. If certain lemmas remain not colored, inform about it senior editor.</p>
+<p>After filling fields with such values click the button "Load contents" which is below the first textarea and the list of lemmas contained in the initial contents object will be displayed below the heading "Initial contents object". Then click the button "Load contents" which is below the second textarea and the list of lemmas contained in contents object to be imported will be displayed below the heading "Contents object to be imported". After that click the button "Import contents" and the resulting contents object will be outputted inside textarea "Resulting contents object code". Then click the button "Check for completeness". All lemmas below the headings "Contents object to be imported" and "Initial contents object" should be colored green. If certain lemmas remain not colored, inform about it senior editor.</p>
 
 <p>Then save the resulting contents object using relevant object name and file name.<p>
 
@@ -2675,11 +2679,11 @@ concordance_to_greek_testament_by_moulton_geden_contents = {
 
 <p>The value of the form‘s field "Word list" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in the section on <a class="inner-link" data-anchor="h-concordance-scanned-creating-contents-file">Creating contents file</a> for scanned concordance resource.</p>
 
-<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
+<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text" heading.</p>
 
 <p>After loading text click the button "Generate concordance" and the concordance code will appear in "Concordance code" textarea.</p>
 
-<p>Then click the button "Check for completeness" and all words beneath the heading "Parsed text:"  should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
+<p>Then click the button "Check for completeness" and all words beneath the heading "Parsed text"  should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
 
 <p>The generated concordance code will be as this:</p>
 
@@ -2825,7 +2829,7 @@ nt_conc_by_parsedclassics =
 
 <p>The value of the form‘s field "Concordance to be supplemented" should be the code of the concordance of the Gospel according to Mark.</p>
 
-<p>Having filled form's fields with these values, we should load both concordances by clicking "Load concordance" buttons and then we should click the button "Supplement concordance". The code of resulting concordance will be outputted in "Concordance code" textarea and resulting concordance will be displayed under "Concordance supplemented:" heading. Now we can click "Check for completeness" button to see if everything which was included in concordance to be supplemented and in concordance to be added is also included in resulting concordance. All words and line numbers of the concordance to be supplemented and of the concordance to be added should become green. If any word or line number became red and is included in square brackets (symbols []), inform about it senior editor.</p>
+<p>Having filled form's fields with these values, we should load both concordances by clicking "Load concordance" buttons and then we should click the button "Supplement concordance". The code of resulting concordance will be outputted in "Concordance code" textarea and resulting concordance will be displayed under "Concordance supplemented" heading. Now we can click "Check for completeness" button to see if everything which was included in concordance to be supplemented and in concordance to be added is also included in resulting concordance. All words and line numbers of the concordance to be supplemented and of the concordance to be added should become green. If any word or line number became red and is included in square brackets (symbols []), inform about it senior editor.</p>
 
 <p>Now that we have grammatical concordance of the Gospels according to Matthew and Mark, let's copy its code and paste it in the field "Concordance to be supplemented", then let's paste the code of the concordance of the Gospel according to Luke in the field "Concordance to be added". After clicking button "Supplement concordance" we will have concordance which includes words of these three books. We can repeat this process until we compile concordance for all 27 books of the New Testament. The resulting concordance code should be converted to string and be made the value of the variable "nt_conc_by_parsedclassics" as has been described above.</p>
 
@@ -2833,7 +2837,7 @@ nt_conc_by_parsedclassics =
 
 <h4 class="pc-anchor" id="h-concordance-transcribed-creating-contents-file">Creating contents file</h4>
 
-<p>Concordance data file includes for each word form the list book abbreviations together with line numbers indicating places where the word form is present. Clicking the line number should open the original text in exact place. To enable this functionality we need to add contents file.</p>
+<p>Concordance data file includes for each word form the list of book abbreviations together with line numbers indicating places where the word form is present. Clicking the line number should open the original text in exact place. To enable this functionality we need to add contents file.</p>
 
 <p>Let's create contents file for concordance containing words of all 27 New Testament's books. The name of the contents file should be formed by adding "contents" to the end of the data file's name, and this way we get file name "nt_conc_by_parsedclassics_contents.js".</p>
 
@@ -3021,6 +3025,8 @@ nt_conc_by_parsedclassics_titus_parsed_text =
 // part of code has been cut out
 </pre>
 
+<h2 id="h-edited-until-here" style="color: red;">Edited until here</h2>
+
 <h3 class="pc-anchor" id="h-lexicon-scanned">Lexicon (scanned)</h3>
 
 <h4 class="pc-anchor" id="h-lexicon-scanned-creating-image-files">Creating image files</h4>
@@ -3053,7 +3059,7 @@ nt_conc_by_parsedclassics_titus_parsed_text =
 
 <p><img src="img2/concordance_scanned_04.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
-<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
+<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text" heading.</p>
 
 <p>After loading text click the button "Generate list" and the pipe delimited alphabetical list of all words in the text will appear in "Word list" textarea.</p>
 
@@ -3063,7 +3069,7 @@ nt_conc_by_parsedclassics_titus_parsed_text =
 ἀγαθός|ἀγάπη|ἅγιος|ἁγνός|ἀδιαφθορία|ἀδόκιμος|ἀεί|αἱρετικός|αἰσχροκερδής|αἰσχρός|αἰτία|αἰών|αἰώνιος|ἄκαρπος|ἀκατάγνωστος|ἀλήθεια|ἀληθής|ἀλλά|ἀλλήλων|ἁμαρτάνω|ἄμαχος|ἀμήν|ἀναγκαῖος|ἀνακαίνωσις|ἀνατρέπω|ἀνέγκλητος|ἀνήρ|ἄνθρωπος|ἀνόητος|ἀνομία|ἀντέχομαι|ἀντιλέγω|ἀνυπότακτος|ἀνωφελής|ἀπειθής|ἄπιστος|ἀπό|Ἀπολλῶς|ἀπόστολος|ἀποστρέφω|ἀποτόμως|ἀργός|ἀρνέομαι|Ἀρτεμᾶς|ἀρχή|ἀσέβεια|ἀσπάζομαι|ἀσωτία|αὐθάδης|αὐτοκατάκριτος|αὐτός|ἀφθαρσία|ἀψευδής|βδελυκτός|βλασφημέω|βούλομαι|γάρ|γαστήρ|γενεαλογία|γίνομαι|γνήσιος|γυνή|δέ|δεσπότης|δεύτερος|δέω|διά|διαβεβαιόομαι|διάβολος|διάγω|διατάσσω|διδασκαλία|διδάσκω|διδαχή|δίδωμι|δίκαιος|δικαιοσύνη|δικαιόω|δικαίως|δόξα|δουλεύω|δοῦλος|δουλόω|δυνατός|ἑαυτοῦ|ἐγκρατής|ἐγώ|εἰ|εἰμί|εἰρήνη|εἷς|εἰς|ἐκ|ἐκεῖ|ἐκεῖνος|ἐκλεκτός|ἐκστρέφομαι|ἐκχέω|ἐλέγχω|ἔλεος|ἐλπίς|ἐν|ἐναντίος|ἐνδείκνυμι|ἐντολή|ἐντρέπω|ἐξουσία|ἐπαγγέλλομαι|ἐπί|ἐπίγνωσις|ἐπιδιορθόω|ἐπιεικής|ἐπιθυμία|ἐπίσκοπος|ἐπιστομίζω|ἐπιταγή|ἐπιφαίνω|ἐπιφάνεια|ἔργον|ἔρις|ἔρχομαι|ἕτοιμος|εὐάρεστος|εὐσέβεια|εὐσεβῶς|ἔχω|ζάω|ζηλωτής|Ζηνᾶς|ζήτησις|ζωή|ἤ|ἡδονή|ἡμέτερος|θεός|θηρίον|ἴδιος|ἱεροπρεπής|Ἰησοῦς|ἵνα|Ἰουδαϊκός|καθαρίζω|καθαρός|καθίστημι|καί|καιρός|κακία|κακός|καλοδιδάσκαλος|καλός|κατά|καταλείπω|κατάστημα|κατηγορία|κέρδος|κήρυγμα|κληρονόμος|κοινός|κοσμέω|κοσμικός|Κρής|Κρήτη|κρίνω|κύριους|λαλέω|λαός|λέγω|λείπω|λόγος|λουτρόν|λυτρόομαι|μακάριος|μάλιστα|μανθάνω|μαρτυρία|ματαιολόγος|μάταιος|μάχη|μέγας|μέν|μετά|μή|μηδείς|μιαίνω|μισέω|μῦθος|μωρός|νέος|νηφάλιος|Νικόπολις|νομικός|νοσφίζομαι|νουθεσία|νοῦς|νῦν|ὁ|οἶδα|οἰκονόμος|οἶκος|οἰκουργός|οἶνος|ὅλος|ὁμολογέω|ὁράω|ὀργίλος|ὅς|ὅσιος|ὅστις|ὅταν|ὅτε|ὅτι|οὐ|οὐδείς|οὗτος|παιδεύω|παλιγγενεσία|παραιτέομαι|παρακαλέω|παραχειμάζω|παρέχω|πάροινος|πᾶς|πατήρ|Παῦλος|πειθαρχέω|πέμπω|περί|περιΐστημι|περιούσιος|περιτομή|περιφρονέω|πιστεύω|πίστις|πιστός|πλανάω|πλήκτης|πλουσίως|πνεῦμα|ποιέω|ποικίλος|πόλις|πολύς|ποτέ|πραΰτης|πρέπω|πρεσβύτερος|πρεσβύτης|πρεσβῦτις|πρό|προΐστημι|προπέμπω|πρός|προσδέχομαι|προσέχω|προφήτης|σεαυτοῦ|σεμνός|σεμνότης|σπουδάζω|σπουδαίως|στυγητός|σύ|συνείδησις|σῴζω|σωτήρ|σωτήριος|σωφρονέω|σωφρονίζω|σωφρόνως|σώφρων|τέκνον|τίς|τις|Τίτος|τοιοῦτος|τύπος|Τυχικός|ὑγιαίνω|ὑγιής|ὑπέρ|ὑπομιμνῄσκω|ὑπομονή|ὑποτάσσω|φανερόω|φαῦλος|φθόνος|φιλάγαθος|φίλανδρος|φιλανθρωπία|φιλέω|φιλόξενος|φιλότεκνος|φρεναπάτης|φροντίζω|χάριν|χάρις|χρεία|χρηστότης|χριστός|χρόνος|ψεύστης|ὡς|ὡσαύτως|ὠφέλιμος
 </pre>
 
-<p>Then click the button "Check for completeness". After this all words beneath the heading "Parsed text:" should be displayed on green backgound. If some words remain on white background, it means that the script was not able to generate complete list of words. Inform about it senior editor.</p>
+<p>Then click the button "Check for completeness". After this all words beneath the heading "Parsed text" should be displayed on green backgound. If some words remain on white background, it means that the script was not able to generate complete list of words. Inform about it senior editor.</p>
 
 <p>When you have pipe delimited alphabetical list of all words in the parsed text, go to <a href="../tools/lexicon_contents_generator.html" target="_blank">Lexicon contents generator</a> page and fill the form:</p>
 
@@ -3141,7 +3147,7 @@ greek_and_english_lexicon_of_nt_by_robinson_contents = {
 };
 </pre>
 
-<p>This code should be saved in the file having the same name as the value in "Contents shortname" field in the form. The file should be placed in directory whose name is the same ar resource shortname. Resource shortname is "greek_lexicon_of_nt_by_robinson" so the directory will be /data/lexicon/greek_lexicon_of_nt_by_robinson/&nbsp;.</p>
+<p>This code should be saved in the file having the same name as the value in "Contents shortname" field in the form. The file should be placed in directory whose name is the same as resource shortname. Resource shortname is "greek_lexicon_of_nt_by_robinson" so the directory will be /data/lexicon/greek_lexicon_of_nt_by_robinson/&nbsp;.</p>
 
 <p>After doing this lexicon resource should work in sync with parsed text resource.</p>
 
@@ -3159,13 +3165,13 @@ greek_and_english_lexicon_of_nt_by_robinson_contents = {
 
 <p>The value of the form‘s field "List of words to be added" should be pipe delimited alphabetical list of words contained in parsed text resource. How to create such word list has been described in <a class="inner-link" data-anchor="h-lexicon-scanned-creating-contents-file">previous section</a>. Here in this field we added list of words contained in parsed text resource from <em>Epistle to Philemon</em> collection.</p>
 
-<p>After filling fields with these values, click the button "Load contents" and the code of the concordance contents object will be displayed beneath "Initial contents object:" heading.</p>
+<p>After filling fields with these values, click the button "Load contents" and the code of the concordance contents object will be displayed beneath "Initial contents object" heading.</p>
 
-<p>Then click the button "Load words" and the list of words to be added to contents will be displayed beneath "Words to be added:" heading.</p>
+<p>Then click the button "Load words" and the list of words to be added to contents will be displayed beneath "Words to be added" heading.</p>
 
 <p>After that click the button "Add to contents" and the code of supplemented contents object will appear in "Supplemented contents code" textarea.</p>
 
-<p>Then click the button "Check for completeness" and all words beneath the headings "Words to be added:" and "Initial contents object:" should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
+<p>Then click the button "Check for completeness" and all words beneath the headings "Words to be added" and "Initial contents object" should be displayed in green background. If some words will not be displayed in green background, inform about it senior editor.</p>
 
 <p>The code generated will be as this:</p>
 
@@ -3301,7 +3307,7 @@ greek_and_english_lexicon_of_nt_by_robinson_contents = {
 
 <p>The value of the field "Lexicon contents object to be imported" should be contents object with all page numbers intact which contains less comprehensive list of lemmas from single collection or couple of collections.</p>
 
-<p>After filling fields with such values click the button "Load contents" which is below the first textarea and the list of lemmas contained in the initial contents object will be displayed below the heading "Initial contents object:". Then click the button "Load contents" which is below the second textarea and the list of lemmas contained in contents object to be imported will be displayed below the heading "Contents object to be imported:". After that click the button "Import contents" and the resulting contents object will be outputted inside textarea "Resulting contents object code". Then click the button "Check for completeness". All lemmas below the headings "Contents object to be imported:" and "Initial contents object:" should be colored green. If certain lemmas remain not colored, inform about it senior editor.</p>
+<p>After filling fields with such values click the button "Load contents" which is below the first textarea and the list of lemmas contained in the initial contents object will be displayed below the heading "Initial contents object". Then click the button "Load contents" which is below the second textarea and the list of lemmas contained in contents object to be imported will be displayed below the heading "Contents object to be imported". After that click the button "Import contents" and the resulting contents object will be outputted inside textarea "Resulting contents object code". Then click the button "Check for completeness". All lemmas below the headings "Contents object to be imported" and "Initial contents object" should be colored green. If certain lemmas remain not colored, inform about it senior editor.</p>
 
 <p>Then save the resulting contents object using relevant variable name and file name.</p>
 
@@ -3398,7 +3404,7 @@ greek_and_english_lexicon_of_nt_by_robinson_contents = {
 
 <p>The value of the field "Lexicon code" should be the HTML code containing lexicon articles in which the words explained are wrapped by "dt" tag and explanations are wrapped by "dd" tag</p>
 
-<p>Having pasted such code in the field "Lexicon code" click the button "Load code", and lexicon articles should be rendered below the heading "Lexicon:". Then click the button "Format code" and formatted code will be outputted in "Lexicon code output" textarea. The outputted code will be as this:</p>
+<p>Having pasted such code in the field "Lexicon code" click the button "Load code", and lexicon articles should be rendered below the heading "Lexicon". Then click the button "Format code" and formatted code will be outputted in "Lexicon code output" textarea. The outputted code will be as this:</p>
 
 <pre id="" class="prettyprint code_showarea">
 &lt;!-- part of code has been cut out --&gt;
@@ -3506,11 +3512,11 @@ greek_lexicon_to_nt_by_green =
 <p><img src="img2/lexicon_typed_06.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
 
-<p>After filling fields with these values, click the button "Load lexicon" and the lexicon text will be displayed beneath "Lexicon:" heading.</p>
+<p>After filling fields with these values, click the button "Load lexicon" and the lexicon text will be displayed beneath "Lexicon" heading.</p>
 
-<p>Then click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
+<p>Then click the button "Load text" and the text will be displayed beneath "Parsed text" heading.</p>
 
-<p>After loading lexicon and parsed text click the button "Check for completeness" and all words beneath the heading "Parsed text:" should be displayed in green background.</p>
+<p>After loading lexicon and parsed text click the button "Check for completeness" and all words beneath the heading "Parsed text" should be displayed in green background.</p>
 
 <p>If some words will not be displayed in green background, this may be for two reasons: (1) the word is not included in the lexicon (proper names are often not included in smaller lexicons); (2) the lemma of the same word in parsed text and in the lexicon are slightly different.</p>
 
@@ -4508,7 +4514,7 @@ nt_titus_audio_by_karvounakis = `
 
 <p>IMPORTANT! As explained above, on top and on bottom of the data file there should be strings "[00:00.00]" without ane text to the right. In order to get these strings generated, leave an empty line on the top of the text and an empty line on the bottom of the text inside "Recorded text" textarea.</p>
 
-<p>After filling the fields with these values click the button "Load text". The text will be displayed below the heading "Recorded text:". Then click the button "Generate code" and the data file code will appear in "Data file code" textarea.</p>
+<p>After filling the fields with these values click the button "Load text". The text will be displayed below the heading "Recorded text". Then click the button "Generate code" and the data file code will appear in "Data file code" textarea.</p>
 
 <p>Save the code in the file as described above and enter relevant numbers inside the strings "[00:00.00]" at the beginning of the each line of text.</p>
 
@@ -4526,7 +4532,7 @@ nt_titus_audio_by_karvounakis = `
 
 <p>The value of the form‘s field "Recorded text code" should be HTML code of the recorded text starting from the first "div" tag having class attribute value "line" and ending with the last "div" tag having the same attribute value. Use browser’s HTML inspector (available on right-click in every major browser) to copy this part of code from Library app’s page.</p>
 
-<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text:" heading.</p>
+<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text" heading.</p>
 
 <p>After loading text click the button "Generate contents" and contents code will appear in "Contents code" textarea.</p>
 
