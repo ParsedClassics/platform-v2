@@ -3882,21 +3882,19 @@ It is the duty of an apostle to propagate the faith, Romans 1:5.&mdash;&pi;ί&si
 
 <p>After doing this commentary resource should work in sync with parsed text resource.</p>
 
-<h2 id="h-edited-until-here" style="color: red;">Edited until here</h2>
-
 <h3 class="pc-anchor" id="h-commentary-references-transcribed">Commentary references (transcribed)</h3>
 
-<p>Creating resource of the type "commentary references" involves creating data file and image files of the commentary books. The data file contains links to image files of the scanned commentary books, so the latter should be created first.</p>
+<p>Creating resource of the type "Commentary references" involves creating data file and image files of the commentary books. The data file contains links to image files of the scanned commentary books, so the latter should be created first.</p>
 
 <h4 class="pc-anchor" id="h-commentary-references-transcribed-creating-image-files">Creating image files</h4>
 
-<p>To create resource of the type "commentary references" you first need to have one or more scanned commentary (collection of scholia) books. To create a scanned commentary book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
+<p>To create resource of the type "Commentary references" you first need to have one or more scanned commentary (collection of scholia) books. To create a scanned commentary book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
 
 <p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server.</p>
 
 <p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
 
-<p>For example, in the file _scanned_books.js the key of the entry for K. Staab's "Pauluskommentare aus der Griechischen Kirche"  is "staab_pauluskommentare_aus_griechishen_kirche". That means that image files of this book were uploaded to the directory /_scans/staab_pauluskommentare_aus_griechishen_kirche/ and can be browsed using the URL the URL parsedclassics.com/reader/embedded_bookreader.html?staab_pauluskommentare_aus_griechishen_kirche&nbsp;.</p>
+<p>For example, in the file _scanned_books.js the key of the entry for K. Staab's "Pauluskommentare aus der Griechischen Kirche"  is "staab_pauluskommentare_aus_griechishen_kirche". That means that image files of this book were uploaded to the directory /_scans/staab_pauluskommentare_aus_griechishen_kirche/ and can be browsed using the URL parsedclassics.com/reader/embedded_bookreader.html?staab_pauluskommentare_aus_griechishen_kirche&nbsp;.</p>
 
 <h4 class="pc-anchor" id="h-commentary-references-creating-data-file">Creating data file</h4>
 
@@ -4009,17 +4007,17 @@ nt_romans_commentary_refs_by_parsedclassics =
 
 <h3 class="pc-anchor" id="h-grammar-references-transcribed">Grammar references (transcribed)</h3>
 
-<p>Creating resource of the type "grammar references" involves creating data file and image files of the grammar books. The data file contains links to image files of the scanned grammar books, so the latter should be created first.</p>
+<p>Creating resource of the type "Grammar references" involves creating data file and image files of the grammar books. The data file contains links to image files of the scanned grammar books, so the latter should be created first.</p>
 
 <h4 class="pc-anchor" id="h-grammar-references-transcribed-creating-image-files">Creating image files</h4>
 
-<p>To create resource of the type "grammar references" you first need to have one or more scanned grammar books. To create a scanned grammar book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
+<p>To create resource of the type "Grammar references" you first need to have one or more scanned grammar books. To create a scanned grammar book you need a series of JPG images, each image picturing one page of the book. Scanned book includes all pages, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
 
 <p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server.</p>
 
 <p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books">Listing scanned books</a>.</p>
 
-<p>For example, in the file _scanned_books.js the key of the entry for A. T. Robertson's "Grammar of the New Testament in the light of historical research"  is "grammar_of_greek_nt_in_light_of_hist_research_robertson". That means that image files of this book were uploaded to the directory /_scans/grammar_of_greek_nt_in_light_of_hist_research_robertson/ and can be browsed using the URL the URL parsedclassics.com/reader/embedded_bookreader.html?grammar_of_greek_nt_in_light_of_hist_research_robertson&nbsp;.</p>
+<p>For example, in the file _scanned_books.js the key of the entry for A. T. Robertson's "Grammar of the New Testament in the light of historical research"  is "grammar_of_greek_nt_in_light_of_hist_research_robertson". That means that image files of this book were uploaded to the directory /_scans/grammar_of_greek_nt_in_light_of_hist_research_robertson/ and can be browsed using the URL parsedclassics.com/reader/embedded_bookreader.html?grammar_of_greek_nt_in_light_of_hist_research_robertson&nbsp;.</p>
 
 <h4 class="pc-anchor" id="h-grammar-references-creating-data-file">Creating data file</h4>
 
@@ -4121,6 +4119,8 @@ nt_titus_grammar_refs_by_parsedclassics =
 <p>Now the button "Check for completeness" should be clicked. It will result in references which are included into combined code being highlighted green and references which are not included being highlighted red.</p>
 
 <p>It remains to analyze the code from "References not added code" textarea and include it manually piece by piece into combined code. Then combined code should be made the value of of the variable "nt_titus_grammar_refs_by_parsedclassics" and saved in the file of the same name as described in previous section.</p>
+
+<h2 id="h-edited-until-here" style="color: red;">Edited until here</h2>
 
 <h3 class="pc-anchor" id="h-diagram-set-transcribed">Diagram set (transcribed)</h3>
 
