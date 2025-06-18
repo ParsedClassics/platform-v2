@@ -1431,7 +1431,7 @@ ParsedClassicsScannedBooks = {
 
 <p>The value of the form‘s field "Contents shortname" should be the same as the value of the key "contents_shortname" we entered when we <a class="inner-link" data-anchor="h-parsed-text">listed resource</a>. We entered for this key the value "nt_titus_parsed_text_contents", so we now should enter it as the value of the field.</p>
 
-<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In Epistle to Titus there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15&nbsp;.</p>
+<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In <em>Epistle to Titus</em> there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15&nbsp;.</p>
 
 <p>The value of the form‘s field "Line number prefix" should be pipe delimited line prefixes, one for each chapter. Line number prefix usually indicates the chapter. The chapters of the New Testament are usually indicated by the number; colon usually used to separate chapter number from verse number. So, the value of this field should be 1:|2:|3:&nbsp;.</p>
 
@@ -2283,7 +2283,7 @@ particle
 
 <p><img src="img2/original_text_scanned_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
-<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In Epistle to Titus there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15&nbsp;.</p>
+<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In <em>Epistle to Titus</em> there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15&nbsp;.</p>
 
 <p>The value of the form‘s field "Prefix" should be be pipe delimited  line prefixes, one for each chapter. The chapters of the New Testament are usually indicated by the number written to the left from verse number; colon usually used to separate chapter number from verse number.  So, the value for this field is 1:|2:|3:&nbsp;.</p>
 
@@ -3025,8 +3025,6 @@ nt_conc_by_parsedclassics_titus_parsed_text =
 // part of code has been cut out
 </pre>
 
-<h2 id="h-edited-until-here" style="color: red;">Edited until here</h2>
-
 <h3 class="pc-anchor" id="h-lexicon-scanned">Lexicon (scanned)</h3>
 
 <h4 class="pc-anchor" id="h-lexicon-scanned-creating-image-files">Creating image files</h4>
@@ -3398,7 +3396,7 @@ greek_and_english_lexicon_of_nt_by_robinson_contents = {
 
 <p>Using these conventions lexicon articles should be formatted. There are no definite conventions how to format introduction, table of contents, various indexes, etc. Ask about it senior editor.</p>
 
-<p>If we have lexicon articles in which the words explained are wrapped by "dt" tag and explanations are wrapped by "dd" tag, for further formatting <a href="../tools/lexicon_code_formatter.html" target="_blank">Lexicon code formatter</a> can be used. This tool wraps the words explained by "span" tags having "class" attribute value "lexicon-heading" and "data-lemma" attribute having as value the lemma of the word:</p>
+<p>If we have lexicon articles in which the words explained are wrapped by "dt" tag and explanations are wrapped by "dd" tag, for further formatting <a href="../tools/lexicon_code_formatter.html" target="_blank">Lexicon code formatter</a> can be used. This tool wraps the words explained with "span" tags whose "class" attribute has value "lexicon-heading" and "data-lemma" attribute has as value the lemma of the word:</p>
 
 <p><img src="img2/lexicon_typed_07.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
@@ -3483,7 +3481,7 @@ greek_lexicon_to_nt_by_green =
 &lt;!-- part of code has been cut out --&gt;`;
 </pre>
 
-<p> The code should be saved in the file whose name is the same as resorce shortname, i.e. "greek_lexicon_to_nt_by_green.js"&nbsp;. Data file should be placed in following directory: /data/lexicon/greek_lexicon_to_nt_by_green/&nbsp;.</p>
+<p> The code should be saved in the file whose name is the same as resource shortname, i.e. "greek_lexicon_to_nt_by_green.js"&nbsp;. Data file should be placed in directory having the same name as resource shortname: /data/lexicon/greek_lexicon_to_nt_by_green/&nbsp;.</p>
 
 <p>After doing this transcribed lexicon resource should work in sync with parsed text resource.</p>
 
@@ -3734,7 +3732,7 @@ nt_titus_tr_EN_green =
 
 <p>To create scanned resource of the type "Commentary" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
 
-<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when commentary resource was listed as part of collection. For example, in the Epistle to Titus collection the commentary edited by W. R. Nicoll <a class="inner-link" data-anchor="h-commentary">has been listed</a> and the value of the key "scanned_source_shortname" is "expositors_greek_testament_ed_nicoll_vol_4". It means that the pictures of the pages must be uploaded to the directory /_scans/expositors_greek_testament_ed_nicoll_vol_4/&nbsp;.</p>
+<p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when commentary resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the commentary edited by W. R. Nicoll <a class="inner-link" data-anchor="h-commentary">has been listed</a> and the value of the key "scanned_source_shortname" is "expositors_greek_testament_ed_nicoll_vol_4". It means that the pictures of the pages must be uploaded to the directory /_scans/expositors_greek_testament_ed_nicoll_vol_4/&nbsp;.</p>
 
 <p>Having uploaded the images of the pages to the server, senior editor should list the scanned book as described in section <a class="inner-link" data-anchor="h-listing-scanned-books" target="_blank">Listing scanned books</a>.</p>
 
@@ -3746,7 +3744,7 @@ nt_titus_tr_EN_green =
 
 <p><img src="img2/commentary_scanned_01.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
-<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In Epistle to Titus there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15&nbsp;.</p>
+<p>The value of the form‘s field "Line range" should be pipe delimited line ranges. In <em>Epistle to Titus</em> there are three chapters, the first having 16 verses, the second – 15 verses and the third – 15 verses. So, the value of this field should be 1-16|1-15|1-15&nbsp;.</p>
 
 <p>The value of the form‘s field "Prefix" should be be pipe delimited line prefixes, one for each chapter. The chapters of the New Testament are usually indicated by the number written to the left from verse number; colon usually used to separate chapter number from verse number. So, the value for this field is 1:|2:|3:&nbsp;.</p>
 
@@ -3861,28 +3859,30 @@ nt_titus_commentary_by_nicoll_contents = {
 <pre id="creating_commentary_datafile" class="prettyprint code_showarea">
 nt_titus_commentary_by_bengel =
 
-`&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-1&quot;&gt;1:1&lt;/span&gt; &Pi;&alpha;&upsilon;&lambda;&omicron;&sigmaf;, &lt;em&gt;Paul&lt;em/&gt;) A title suitable to the character of Paul, and to the office of Titus.&mdash;&kappa;&alpha;&tau;ὰ, &lt;em&gt;according to&lt;em/&gt;) Comp. &kappa;&alpha;&tau;ὰ, Titus 1:4; Titus 1:9; 2 Timothy 1:1, note. &lt;/span&gt;
+`&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number&quot; data-line-number=&quot;1:1&quot;&gt;1:1&lt;/span&gt; &Pi;&alpha;&upsilon;&lambda;&omicron;&sigmaf;, &lt;em&gt;Paul&lt;em/&gt;) A title suitable to the character of Paul, and to the office of Titus.&mdash;&kappa;&alpha;&tau;ὰ, &lt;em&gt;according to&lt;em/&gt;) Comp. &kappa;&alpha;&tau;ὰ, Titus 1:4; Titus 1:9; 2 Timothy 1:1, note. &lt;/span&gt;
 
 &lt;span class=&quot;para&quot;&gt;&lt;/span&gt;
 
 It is the duty of an apostle to propagate the faith, Romans 1:5.&mdash;&pi;ί&sigma;&tau;&iota;&nu;, &lt;em&gt;faith&lt;em/&gt;) &lt;em&gt;faith&mdash;hope&lt;em/&gt; are the sum of Christianity; and these things Titus ought to regard in all his teaching, and avoid everything else; comp. 1 Timothy 1:5; 1 Timothy 3:15-16; 1 Timothy 4:1; 1 Timothy 4:3; 1 Timothy 4:10.&mdash;ἐ&kappa;&lambda;&epsilon;&kappa;&tau;ῶ&nu; &Theta;&epsilon;&omicron;ῦ, &lt;em&gt;the elect of God&lt;em/&gt;) for whose sake we ought to do and endure all things, 2 Timothy 2:10. &lt;em&gt;The elect&lt;em/&gt; were from among Jews and Gentiles; and their faith was &lt;em&gt;common&lt;em/&gt;, Titus 1:4; 2 Peter 1:1 : of the former was Paul; of the latter, Titus. &lt;/span&gt;
 
-&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-2&quot;&gt;1:2&lt;/span&gt; Ἐ&lambda;&pi;ί&delta;&iota; &zeta;&omega;ῆ&sigmaf; &alpha;ἰ&omega;&nu;ί&omicron;&upsilon;, in &lt;em&gt;the hope of eternal life&lt;em/&gt;) ch. Titus 3:7. Hope has reference to &lt;em&gt;the promise&lt;em/&gt;.&mdash;ἣ&nu;, &lt;em&gt;which&lt;em/&gt;) &lt;em&gt;life&lt;em/&gt;.&mdash;ἀ&psi;&epsilon;&upsilon;&delta;ὴ&sigmaf;, &lt;em&gt;who cannot lie&lt;em/&gt;) The foundation of our confidence.&mdash;&pi;&rho;ὸ &chi;&rho;ό&nu;&omega;&nu; &alpha;ἰ&omega;&nu;ί&omega;&nu;, &lt;em&gt;before eternal ages, before the world began&lt;em/&gt;) &lt;em&gt;The promise&lt;em/&gt; of eternal life is already contained in the appellation, &lt;em&gt;the God of Abraham&lt;em/&gt;, etc.[Luke 20:37]. There is here implied an explicit promise to men. See Genesis 3, etc. The &chi;&rho;ό&nu;&omicron;&iota; &alpha;ἰ&omega;&nu;&iota;&omicron;&iota; &lt;em&gt;followed&lt;em/&gt; the creation and the fall. &lt;/span&gt;
+&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number&quot; data-line-number=&quot;1:2&quot;&gt;1:2&lt;/span&gt; Ἐ&lambda;&pi;ί&delta;&iota; &zeta;&omega;ῆ&sigmaf; &alpha;ἰ&omega;&nu;ί&omicron;&upsilon;, in &lt;em&gt;the hope of eternal life&lt;em/&gt;) ch. Titus 3:7. Hope has reference to &lt;em&gt;the promise&lt;em/&gt;.&mdash;ἣ&nu;, &lt;em&gt;which&lt;em/&gt;) &lt;em&gt;life&lt;em/&gt;.&mdash;ἀ&psi;&epsilon;&upsilon;&delta;ὴ&sigmaf;, &lt;em&gt;who cannot lie&lt;em/&gt;) The foundation of our confidence.&mdash;&pi;&rho;ὸ &chi;&rho;ό&nu;&omega;&nu; &alpha;ἰ&omega;&nu;ί&omega;&nu;, &lt;em&gt;before eternal ages, before the world began&lt;em/&gt;) &lt;em&gt;The promise&lt;em/&gt; of eternal life is already contained in the appellation, &lt;em&gt;the God of Abraham&lt;em/&gt;, etc.[Luke 20:37]. There is here implied an explicit promise to men. See Genesis 3, etc. The &chi;&rho;ό&nu;&omicron;&iota; &alpha;ἰ&omega;&nu;&iota;&omicron;&iota; &lt;em&gt;followed&lt;em/&gt; the creation and the fall. &lt;/span&gt;
 
-&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v1-3&quot;&gt;1:3&lt;/span&gt; &Kappa;&alpha;&iota;&rho;&omicron;ῖ&sigmaf;) &chi;&rho;ό&nu;&omicron;&iota; were longer than these. &lt;/span&gt;
+&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number&quot; data-line-number=&quot;1:3&quot;&gt;1:3&lt;/span&gt; &Kappa;&alpha;&iota;&rho;&omicron;ῖ&sigmaf;) &chi;&rho;ό&nu;&omicron;&iota; were longer than these. &lt;/span&gt;
 
 // part of code has been cut out
 
-&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v3-12&quot;&gt;3:12&lt;/span&gt; Ἀ&rho;&tau;&epsilon;&mu;ᾶ&nu; ἢ &Tau;&upsilon;&chi;&iota;&chi;ὸ&nu;, &lt;em&gt;Artemas or Tychicus&lt;em/&gt;) into whose hands Titus might deliver the lamp of the Gospel.&mdash;ἐ&lambda;&theta;&epsilon;ῖ&nu; &pi;&rho;ό&sigmaf; &mu;&epsilon;, &lt;em&gt;to come to me&lt;em/&gt;) when affairs in Crete shall have been more fully set in order.&mdash;ἐ&kappa;&epsilon;ῖ, &lt;em&gt;there&lt;em/&gt;) He does not say &lt;em&gt;here&lt;em/&gt;. Paul was not yet at Nicopolis. &lt;/span&gt;
+&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number&quot; data-line-number=&quot;3:12&quot;&gt;3:12&lt;/span&gt; Ἀ&rho;&tau;&epsilon;&mu;ᾶ&nu; ἢ &Tau;&upsilon;&chi;&iota;&chi;ὸ&nu;, &lt;em&gt;Artemas or Tychicus&lt;em/&gt;) into whose hands Titus might deliver the lamp of the Gospel.&mdash;ἐ&lambda;&theta;&epsilon;ῖ&nu; &pi;&rho;ό&sigmaf; &mu;&epsilon;, &lt;em&gt;to come to me&lt;em/&gt;) when affairs in Crete shall have been more fully set in order.&mdash;ἐ&kappa;&epsilon;ῖ, &lt;em&gt;there&lt;em/&gt;) He does not say &lt;em&gt;here&lt;em/&gt;. Paul was not yet at Nicopolis. &lt;/span&gt;
  
-&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v3-13&quot;&gt;3:13&lt;/span&gt; Ἵ&nu;&alpha; &mu;&eta;&delta;ὲ&nu;, &lt;em&gt;that nothing&lt;em/&gt;) Titus therefore had the means. They did not go empty. &lt;/span&gt;
+&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number&quot; data-line-number=&quot;3:13&quot;&gt;3:13&lt;/span&gt; Ἵ&nu;&alpha; &mu;&eta;&delta;ὲ&nu;, &lt;em&gt;that nothing&lt;em/&gt;) Titus therefore had the means. They did not go empty. &lt;/span&gt;
 
-&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number v3-14&quot;&gt;3:14&lt;/span&gt; &Mu;&alpha;&nu;&theta;&alpha;&nu;έ&tau;&omega;&sigma;&alpha;&nu;, &lt;em&gt;let them learn&lt;em/&gt;) by thy admonition and example.&mdash;&kappa;&alpha;ὶ &omicron;ἱ ἡ&mu;έ&tau;&epsilon;&rho;&omicron;&iota;, &lt;em&gt;ours also&lt;em/&gt;) not only we, but also ours, whom we have gained at Crete. These seem not to have given sufficient assistance to Zenas and Apollos, when they ought to have done so. [&lt;em&gt;It is not proper that some should ever and anon devolve the business in hand from themselves upon others.&lt;em/&gt;&mdash;V. g.] Zenas and Apollos were already in Crete with Titus; for this is the reason why he distinguishes them from Artemas and Tychicus, who were not until afterwards to be sent.&mdash;&epsilon;ἰ&sigmaf; &tau;ὰ&sigmaf; ἀ&nu;&alpha;&gamma;&kappa;&epsilon;ί&alpha;&sigmaf; &chi;&rho;&epsilon;ί&alpha;&sigmaf;, &lt;em&gt;for necessary uses&lt;em/&gt;) even as spiritual &lt;em&gt;necessity&lt;em/&gt; [&lt;em&gt;i.e.&lt;em/&gt; the &lt;em&gt;tie&lt;em/&gt; which &lt;em&gt;necessarily&lt;em/&gt; binds saints to help one another] requires; so &chi;&rho;&epsilon;ί&alpha;, Acts 6:3. &lt;em&gt;Spiritual necessity&lt;em/&gt; [&lsquo;necessitudo,&rsquo; tie of necessary obligation or relationship] lays the foundation of obligations, so that one cannot withdraw from another [so as not to help him]. &lt;/span&gt;`
+&lt;span class=&quot;verse&quot;&gt;&lt;span class=&quot;verse-number&quot; data-line-number=&quot;3:14&quot;&gt;3:14&lt;/span&gt; &Mu;&alpha;&nu;&theta;&alpha;&nu;έ&tau;&omega;&sigma;&alpha;&nu;, &lt;em&gt;let them learn&lt;em/&gt;) by thy admonition and example.&mdash;&kappa;&alpha;ὶ &omicron;ἱ ἡ&mu;έ&tau;&epsilon;&rho;&omicron;&iota;, &lt;em&gt;ours also&lt;em/&gt;) not only we, but also ours, whom we have gained at Crete. These seem not to have given sufficient assistance to Zenas and Apollos, when they ought to have done so. [&lt;em&gt;It is not proper that some should ever and anon devolve the business in hand from themselves upon others.&lt;em/&gt;&mdash;V. g.] Zenas and Apollos were already in Crete with Titus; for this is the reason why he distinguishes them from Artemas and Tychicus, who were not until afterwards to be sent.&mdash;&epsilon;ἰ&sigmaf; &tau;ὰ&sigmaf; ἀ&nu;&alpha;&gamma;&kappa;&epsilon;ί&alpha;&sigmaf; &chi;&rho;&epsilon;ί&alpha;&sigmaf;, &lt;em&gt;for necessary uses&lt;em/&gt;) even as spiritual &lt;em&gt;necessity&lt;em/&gt; [&lt;em&gt;i.e.&lt;em/&gt; the &lt;em&gt;tie&lt;em/&gt; which &lt;em&gt;necessarily&lt;em/&gt; binds saints to help one another] requires; so &chi;&rho;&epsilon;ί&alpha;, Acts 6:3. &lt;em&gt;Spiritual necessity&lt;em/&gt; [&lsquo;necessitudo,&rsquo; tie of necessary obligation or relationship] lays the foundation of obligations, so that one cannot withdraw from another [so as not to help him]. &lt;/span&gt;`
 </pre>
 
 <p>Data file‘s name should be the same as resource shortname. The resource shortname is "nt_titus_commentary_by_bengel", so data file‘s name should be "nt_titus_commentary_by_bengel.js". Data file should be placed in directory having the same name: /data/commentary/nt_titus_commentary_by_bengel/&nbsp;.</p>
 
 <p>After doing this commentary resource should work in sync with parsed text resource.</p>
+
+<h2 id="h-edited-until-here" style="color: red;">Edited until here</h2>
 
 <h3 class="pc-anchor" id="h-commentary-references-transcribed">Commentary references (transcribed)</h3>
 
@@ -4541,29 +4541,29 @@ nt_titus_audio_by_karvounakis = `
 <pre id="creating_audio_contentsfile" class="prettyprint code_showarea">
 nt_titus_audio_by_karvounakis_contents = {
 
-"v-title": 0
+"title": 0
 
-, "v1-1": 8.1
+, "1:1": 8.1
 
-, "v1-2": 23
+, "1:2": 23
 
-, "v1-3": 33.8
+, "1:3": 33.8
 
-, "v1-4": 49.5
+, "1:4": 49.5
 
-, "v1-5": 65.8
+, "1:5": 65.8
 
 // part of code has been cut out
 
-, "v3-11": 580.3
+, "3:11": 580.3
 
-, "v3-12": 590.8
+, "3:12": 590.8
 
-, "v3-13": 606.8
+, "3:13": 606.8
 
-, "v3-14": 616.6
+, "3:14": 616.6
 
-, "v3-15": 630.9
+, "3:15": 630.9
 
 };
 </pre>
