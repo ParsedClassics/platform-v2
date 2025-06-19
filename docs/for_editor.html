@@ -4120,8 +4120,6 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>It remains to analyze the code from "References not added code" textarea and include it manually piece by piece into combined code. Then combined code should be made the value of of the variable "nt_titus_grammar_refs_by_parsedclassics" and saved in the file of the same name as described in previous section.</p>
 
-<h2 id="h-edited-until-here" style="color: red;">Edited until here</h2>
-
 <h3 class="pc-anchor" id="h-diagram-set-transcribed">Diagram set (transcribed)</h3>
 
 <p>Creating resource of the type "diagram set" involves creating diagram images and data file.</p>
@@ -4167,7 +4165,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p><img src="img2/diagram_set_typed_03.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-140"></p>
 
-<p>In the left inputs block which describes syntax relation itself we entered "Complementation" as the value of the field "Relation name", the phrase "(ὑμεῖς) ἐνδύσασθε τὴν πανοπλίαν" as the value of the field "Resulting phrase", the string "root_relation" as the value of the field "Internal index". The latter field cannot be empty and should have as the value any unique string, but usually the string "root_relation" is used for root relation and "phr" with padded number for other relations. As the value for the field "External index" the character "a" was entered, because in diagrams all clauses (syntactic relations expressing predication) are indexed by small Latin characters. As the value for the field "Clause type" the string "imperatival hortatory clause" was entered (it will be displayed onmouseover on the letter of external index). The checkbox "Root relation" was checked, because clause (ὑμεῖς) ἐνδύσασθε τὴν πανοπλίαν" is complementation (predication) relation of the simple sentence.  The checkbox "Root relation" should be checked in one and only one of the relation inputs blocks.</p>
+<p>In the left inputs block which describes syntax relation itself we entered "Complementation" as the value of the field "Relation name", the phrase "(ὑμεῖς) ἐνδύσασθε τὴν πανοπλίαν" as the value of the field "Resulting phrase", the string "root_relation" as the value of the field "Internal index". The latter field cannot be empty and should have as the value any unique string, but usually the string "root_relation" is used for root relation and "phr" with padded number for other relations. As the value for the field "External index" the character "a" was entered, because in diagrams all clauses (syntactic relations expressing predication) are indexed by small Latin characters. As the value for the field "Clause type" the string "imperatival hortatory clause" was entered (it will be displayed onmouseover on the letter of external index). The checkbox "Root relation" was checked, because complementation symbol of "(ὑμεῖς) ἐνδύσασθε τὴν πανοπλίαν" should be the leftmost syntactic relation symbol in diagram.  The checkbox "Root relation" should be checked in one and only one of the relation inputs blocks.</p>
 
 <p>The next three inputs blocks describe the words. First two fields of word inputs block are used to enter word form. Word form can be entered by selecting it from dropdown. It was done with the word "ἐνδύσασθε". The word "ὑμεῖς" is implicit, so it is not present in the dropdown and it was needed to enter it by hand. The word "ὑμεῖς" is in parenthesis thus indicating that the word is implicit. The word "τὴν πανοπλίαν" was also entered by hand because it is preceded by article. The words preceded by articles are really phrases formed by syntactic relation of specification, but since it would be very tedious to display this in diagrams, application of article to single word is displayed as if it were not phrase, but single word. Word form must be entered for each word inputs block using dropdown or manually.</p>
 
@@ -4191,7 +4189,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>To the right are two word inputs blocks. We entered "τὴν πανοπλίαν" and "τοῦ θεοῦ" as the values of the fields "Word form", and the values "wa01" and "wa02" as the values of the fields "Internal index". Notice, that internal index "wa01" is the same as in previous line of inputs blocks &ndash; internal indexes allow the script to identify words and phrases entered in different inputs blocks as identical.</p>
 
-<p>The fields "Syntactic role" are left empty, because in diagrams the difference of role between words/phrases participating in relation of modification is expressed by the sign of modification &dash; arrow pointing from word which modifies to the word being modified.</p>
+<p>The fields "Syntactic role" are left empty, because in diagrams the difference of role between words/phrases participating in relation of modification is expressed by the sign of modification &dash; arrow pointing from word/phrase which modifies to the word being modified.</p>
 
 <p>After filling fields of inputs blocks with these values let's click the button "Generate JSON", and then the button "Generate diagram". The diagram generated will be this:</p>
 
@@ -4211,7 +4209,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>If we now will click the buttons "Generate JSON" and "Generate diagram", the new JSON will be gererated, but the diagram will remain the same, because as yet we have not entered some relation which relates the clause "(ὑμεῖς) ἐνδύσασθε τὴν πανοπλίαν" with the clause "δύνασθαι ὑμᾶς στῆναι".</p>
 
-<p>The clause "δύνασθαι ὑμᾶς στῆναι" modifies the word "ἐνδύσασθε", but but not directly, because at first it is specified by the article "τό" and then the result of specification is made "object" of preposition "πρός", or in terms of the diagramming system, introductory word "πρός" is applied.</p>
+<p>The clause "δύνασθαι ὑμᾶς στῆναι" modifies the word "ἐνδύσασθε", but not directly, because at first it is specified by the article "τό" and then the result of specification is made "object" of preposition "πρός", or in terms of the diagramming system, introductory word "πρός" is applied.</p>
 
 <p>Let's enter the values of the fields in two lines of inputs blocks which describe these two syntactic relations of specification and introduction:</p>
 
@@ -4253,7 +4251,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>In the left inputs block which describes syntax relation itself we entered "Modification" as the value of the field "Relation name", the phrase "στῆναι πρὸς τὰς μεθοδείας" as the value of the field "Resulting phrase", the string "phr07" as the value of the field "Internal index". The checkbox "Root relation" is left unchecked.</p>
 
-<p>To the right are word inputs block and phrase inputs block. In the word inputs block the word form "στῆναι" was entered by using dropdown; the value "w010" of the field "Imnternal index" was entered automatically after selecting word form by using dropdown. In the phrase inputs block the string "πρὸς τὰς μεθοδείας" was entered as the value of the field "Phrase", and the string "phr06" was entered as the value of the field "Internal index" &ndash; this value is the same as was entered for the same phrase in prevous line of inputs blocks.</p>
+<p>To the right are word inputs block and phrase inputs block. In the word inputs block the word form "στῆναι" was entered by using dropdown; the value "w010" of the field "Internal index" was entered automatically after selecting word form by using dropdown. In the phrase inputs block the string "πρὸς τὰς μεθοδείας" was entered as the value of the field "Phrase", and the string "phr06" was entered as the value of the field "Internal index" &ndash; this value is the same as was entered for the same phrase in prevous line of inputs blocks.</p>
 
 <p>After filling fields of inputs blocks with these values let's click the button "Generate JSON", and then the button "Generate diagram". The diagram generated will be this:</p>
 
@@ -4267,7 +4265,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>To the right are two word inputs blocks. We entered "τὰς μεθοδείας" and "τοῦ διαβόλου" as the values of the fields "Word form", and the values "wa03" and "wa04" as the values of the fields "Internal index". Notice, that internal index "wa03" is the same as in  one of previous lines of inputs blocks &dash; internal indexes allow the script to identify words and phrases entered in different inputs blocks as identical.</p>
 
-<p>The fields "Syntactic role" are left empty, because in diagrams the difference of role between words/phrases participating in relation of modification is expressed by the sign of modification &dash; arrow pointing from word which modifies to the word being modified.</p>
+<p>The fields "Syntactic role" are left empty, because in diagrams the difference of role between words/phrases participating in relation of modification is expressed by the sign of modification &dash; arrow pointing from word/phrase which modifies to the word being modified.</p>
 
 <p>After filling fields of inputs blocks with these values let's click the button "Generate JSON", and then the button "Generate diagram". The diagram generated will be this:</p>
 
@@ -4285,7 +4283,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>The phrases which are result of relations of modification, apposition and relativization are called "Non-block building phrases" and are listed in the third column. In the third column also are listed technical "phrases" i.e. those technical objects which are result of the technical "relations" called "Front fork", "Back fork", "Hook" and "Cable".</p>
 
-<p>In the fourth column pronouns with their subscript numbers and clauses with their external indexes are listed. Notice, that clauses are listed not only in the third column, but also in the second column &ndash; as phrases with inner indexes. That was done by design &ndash; sometimes we search for inner index, sometimes for external index and it is useful to have all inner indexes of phrases in one place and all external indexes of clauses in another place.</p>
+<p>In the fourth column pronouns with their subscript numbers and clauses with their external indexes are listed. Notice, that clauses are listed not only in the fourth column, but also in the second column &ndash; as phrases with inner indexes. That was done by design &ndash; sometimes we search for inner index, sometimes for external index and it is useful to have all inner indexes of phrases in one place and all external indexes of clauses in another place.</p>
 
 <p>Between each index and its word or phrase there is a link represented by ∞ symbol. Click the link to scroll the page to the relevant input.</p>
 
@@ -4297,7 +4295,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p><img src="img2/diagram_set_typed_16_b.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-160"></p>
 
-<p>Quite often happens, that there is a need to correct a diagram &ndash; we may have forgotten to add some subscript or external index or whatever else migtht be wrong in a diagram; or the sentence may be so complex that there is a need to make a break and return to work on it after some time. In some cases we will load saved JSON code back into the form. To do it we need to paste JSON code into "JSON" textarea and click the button "Load form values":</p>
+<p>Quite often happens, that there is a need to correct a diagram &ndash; we may have forgotten to add some subscript or external index or whatever else migtht be wrong in a diagram; or the sentence may be so complex that there is a need to make a break and return to work on it after some time. In such cases we will load saved JSON code back into the form. To do it we need to paste JSON code into "JSON" textarea and click the button "Load form values":</p>
 
 <p><img src="img2/diagram_set_typed_17.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-120"></p>
 
@@ -4309,7 +4307,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p><img src="img2/diagram_set_typed_19.png" class="w3-border w3-border-dark-gray pc-height-auto max-width-100"></p>
 
-<p>Options panel allows to set the value of "column_left_distance" whose default value is 75 (pixels) and cannot be less than 50.</p>
+<p>Options panel allows to set the value of "column_left_distance" variable whose default value is 75 (pixels) and cannot be less than 50.</p>
 
 <p>The meaning of this parameter is as follows: it is distance/gap in pixels which separates the column of block-building phrases on the right from the column of block-building phrases on the left; between colums can be only non-block-building relations such as modification, relativization, apposition, or some technical "relation". In the diagram we just generated there are four columns and three distances/gaps 125px wide:</p>
 
@@ -4335,7 +4333,7 @@ nt_titus_grammar_refs_by_parsedclassics =
 
 <p>"span" tag having class attribute "line-number" should wrap verse number in each line. The same "span" element should also have line number as the value of its "data-line-number" attribute.</p>
 
-<p>After one or several "span" tag having class attribute "line" should be the code representing the diagram. This is the code outputted into "Syntax diagram code output" textarea when the button "Genenerate diagram" is being clicked.</p>
+<p>After one or several "span" tags having class attribute "line" should be the code representing the diagram. This is the code outputted into "Syntax diagram code" textarea when the button "Genenerate diagram" is being clicked.</p>
 
 <p>HTML formatted lines of text and diagram code should be converted to a string and made the value of javascript global variable whose name is the same as resource shortname. We <a class="inner-link" data-anchor="h-diagram-set">listed</a> diagram set resource whose resource shortname is "nt_ephesians_diagrams_by_parsedclassics", so this will be variable's name.</p>
 
@@ -4361,6 +4359,8 @@ nt_ephesians_diagrams_by_parsedclassics = `
 <p>Data file‘s name should be the same as the value of the key "resource_shortname" from collection catalogue. We <a class="inner-link" data-anchor="h-diagram-set">listed</a>  diagram set resource whose resource shortname is "nt_ephesians_diagrams_by_parsedclassics", so this will be file's name. Data file should be placed in the directory of the same name: /data/diagram_set/nt_ephesians_diagrams_by_parsedclassics/nt_ephesians_diagrams_by_parsedclassics.js</p>
 
 <p>After doing this diagram set resource should work in sync with parsed text resource.</p>
+
+<h2 id="h-edited-until-here" style="color: red;">Edited until here</h2>
 
 <h3 class="pc-anchor" id="h-audio-recording-transcribed">Audio recording (transcribed)</h3>
 
