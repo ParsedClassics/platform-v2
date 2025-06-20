@@ -4360,8 +4360,6 @@ nt_ephesians_diagrams_by_parsedclassics = `
 
 <p>After doing this diagram set resource should work in sync with parsed text resource.</p>
 
-<h2 id="h-edited-until-here" style="color: red;">Edited until here</h2>
-
 <h3 class="pc-anchor" id="h-audio-recording-transcribed">Audio recording (transcribed)</h3>
 
 <p>Creating resource of the type "audio recording" involves creating three files: MP3 sound file, data file and contents file.</p>
@@ -4532,7 +4530,7 @@ nt_titus_audio_by_karvounakis = `
 
 <p>The value of the form‘s field "Recorded text code" should be HTML code of the recorded text starting from the first "div" tag having class attribute value "line" and ending with the last "div" tag having the same attribute value. Use browser’s HTML inspector (available on right-click in every major browser) to copy this part of code from Library app’s page.</p>
 
-<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Parsed text" heading.</p>
+<p>After filling fields with these values, click the button "Load text" and the text will be displayed beneath "Recorded text" heading.</p>
 
 <p>After loading text click the button "Generate contents" and contents code will appear in "Contents code" textarea.</p>
 
@@ -4670,7 +4668,7 @@ nt_titus_audio_by_karvounakis_contents = {
 
 <p>The value of the field "URL template" should be URL of the scanned image with the number changed into "{index}" variable.</p>
 
-<p>After you click the button "Generate URL list" the list of URLs will be outputted into Output textarea. Now you can copy this list and use it with some software providing bulk download functionality, e.g. with the program Free Download Manager (Win, free).</p>
+<p>After you click the button "Generate URL list" the generated URLs will be outputted into "URL list" textarea. Now you can copy this list and use it with some software providing bulk download functionality, e.g. with the program Free Download Manager (Win, free).</p>
 
 <p>Using Free Download Manager at first you should copy generated URL list, then click hamburger menu, and inside dropdown click the option "Paste URLs from Clipboard":</p>
 
@@ -4842,7 +4840,7 @@ nt_titus_audio_by_karvounakis_contents = {
 
 <p>While editing code of the file of the transcribed resource, there is often the need to remove or replace certain parts of the HTML code. For example, you may need to remove "id" or "href" attributes, to remove opening or closing part of certain tags, to reverse order of tags, to extract certain numbers and put them in another place. The most efficient way to do this is using regular expressions (regex).</p>
 
-<p>Regular can be used with such code editors as Notepad++ (Win, free), ActiveState Komodo Edit (Win/Mac, free) and many others.</p>
+<p>Regular expressions can be used with such code editors as Notepad++ (Win, free), ActiveState Komodo Edit (Win/Mac, free) and many others.</p>
 
 <p>For using regular expressions with Notepad++ code editor go Search > Replace and inside the dialogue check "Regular expression", enter regex in the "Find" field, enter another expression in the field "Replace" or leave it blank if you need to delete and click "Replace All". Or click "Replace All in All Opened Documents" if you need to make replacements in several files. All strings which match the regular expression will be replaced:</p>
 
@@ -5022,7 +5020,7 @@ https://www.parsedclassics.com/app.html#{"L":{"a":[["nt_titus|nt_titus_parsed_te
 
 <p>The key "P" means "position". JSON object which is the value of the key "P" represents at which position are opened resources of certain collection or collections.</p>
 
-<p>Resources can be line-indexed (resources of the types Parsed text, Parsed text, Translation, Commentary, Commentary references, Grammar references, Diagram set, Audio recording) or word-indexed (resources of the types Concordance, Lexicon). Position of the line-indexed resources is represented by the value of the key "line"; position of the word-indexed resources is represented by the value of the key "word".</p>
+<p>Resources can be line-indexed (resources of the types Parsed text, Original text, Translation, Commentary, Commentary references, Grammar references, Diagram set, Audio recording) or word-indexed (resources of the types Concordance, Lexicon). Position of the line-indexed resources is represented by the value of the key "line"; position of the word-indexed resources is represented by the value of the key "word".</p>
 
 <p>The meaning of JSON object in our example is as follows: inside the collection whose shortname is "nt_titus" line-indexed resources are opened at the line "2:8" and word-indexed resources are opened at the word "ἐντρέπω".</p>
 
@@ -5044,7 +5042,7 @@ https://www.parsedclassics.com/app.html#{"L":{"a":[["nt_titus|nt_titus_parsed_te
 "D":{"a":[["zwdfzv",50],["kke9uh",100,["i4yoe6","o1sscd"],0]],"b":[["z11wu3",50],["xewahx",50,["vowggx","c8neaw"],1,"max"],["1agxr3",50,["4ryhqx"],0]]}
 </pre>
 
-<p>The key "D" means "dimension". JSON object which is the value of the key "D" represents width of sections, height of panes, which tabs are active, which tab is maximized.</p>
+<p>The key "D" means "dimensions". JSON object which is the value of the key "D" represents width of sections, height of panes, which tabs are active, which tab is maximized.</p>
 
 <p>The lower Latin keys "a" and "b" are indexes for the first and second section. These are exactly the same keys as in part "L" of the URL.</p>
 
@@ -5068,7 +5066,7 @@ https://www.parsedclassics.com/app.html#{"L":{"a":[["nt_titus|nt_titus_parsed_te
 
 <h3 class="pc-anchor" id="h-technology-stack">Technology stack</h3>
 
-<p>Since classical texts and scholarship will be allways relevant, the design of the ParsedClassics website aimed at long term preservation of digital content. Long term preservation can be achieved by choosing widely used stack of technology compatible with broad range of both server and desktop environments. This led us to decision to choose HTML/CSS/Javascript stack, reject using any database software and server scripting languages and to use only relative URLs. As a result of this architectural decision ParsedClassics is static website which can be either simply uploaded to server or copied to desktop computer and used by pointing any modern browser without any change in behavior.</p>
+<p>Since classical texts and scholarship will be allways relevant, the design of the ParsedClassics website aimed at long term preservation of digital content. Long term preservation can be achieved by choosing widely used stack of technology compatible with broad range of both server and desktop environments. This led us to decision to choose HTML/CSS/Javascript stack, reject using any database software and server scripting languages and to use only relative URLs. As a result of this architectural decision ParsedClassics is static website which simply by copying can be "installed" on server or on desktop computer without any difference in behavior and used by pointing any modern browser.</p>
 
 <h3 class="pc-anchor" id="h-sections-directories">Functions, sections, directories</h3>
 
