@@ -2244,6 +2244,53 @@ ParsedClassicsSelectedContentsItem = {
       itemClicked.addClass(ParsedClassicsVars.selectedLineClass);
     } 
   }
+
+  , hashChanged: function() {
+    var centerPaneContainer, westPaneContainer, jsonURL, section_id, section, section_header_text, nav_header, currentSelectedItem;
+
+    // get centerPaneContainer
+    centerPaneContainer = $("#" + ParsedClassicsVars.centerPaneContentId);
+    // get westPaneContainer
+    westPaneContainer = $("#" + ParsedClassicsVars.westPaneContainerId);
+
+    // find currently selected contents item
+    currentSelectedItem = westPaneContainer.find("." + ParsedClassicsVars.contentsItemClass + "." + ParsedClassicsVars.selectedLineClass);
+
+    // get JSON from URL
+    jsonURL = ParsedClassicsHelpers._getUrlJSON(ParsedClassicsVars.hashStringStartDocs);
+
+    // scroll item to view if it is indicated in JSON in URL
+    // first, get section to be scrolled HTML id attribute from JSON in URL
+    section_id = "";
+    if (typeof jsonURL[ParsedClassicsVars.sectionUrlAndCookieName] != "undefined") {
+      section_id = jsonURL[ParsedClassicsVars.sectionUrlAndCookieName];
+      // get section to be scrolled into view
+      section = centerPaneContainer.find("#" + section_id);
+      // get section header text
+      section_header_text = section.text();
+      // get navigation header having the same text
+      nav_header = westPaneContainer.find("div.connav-table-item-title:contains('" + section_header_text + "')").find("." + ParsedClassicsVars.contentsItemClass);
+      // remove styling from currently selected item
+      currentSelectedItem.removeClass(ParsedClassicsVars.selectedLineClass);
+      // add styling to newly selected item
+      nav_header.addClass(ParsedClassicsVars.selectedLineClass);
+      // scroll navigation header into view
+      westPaneContainer.scrollTo(nav_header, ParsedClassicsVars.animationSpeed);
+      // scroll section into view
+      centerPaneContainer.scrollTo(section, ParsedClassicsVars.animationSpeed);
+    }
+    // no item to scroll to view in hash, so scroll to docs heading
+    else {
+      // remove styling from currently selected item
+      currentSelectedItem.removeClass(ParsedClassicsVars.selectedLineClass);
+      // get nav header
+      nav_header = $("#" + ParsedClassicsVars.docsHeadingLinkId);
+      // scroll navigation header into view
+      westPaneContainer.scrollTo(nav_header, ParsedClassicsVars.animationSpeed);
+      // scroll docs heading to view
+      centerPaneContainer.scrollTo($("#" + ParsedClassicsVars.docsHeadingId), ParsedClassicsVars.animationSpeed);
+    }
+  }
   
   , init: function() {
       var westPaneContainer, centerPaneContainer, jsonURL, docs_heading_link, section_id, section, section_header_text, nav_header, nav_header_text_el;
@@ -2256,7 +2303,8 @@ ParsedClassicsSelectedContentsItem = {
       docs_heading_link.bind("click", function(){
          centerPaneContainer.scrollTo($("#" + ParsedClassicsVars.docsHeadingId), ParsedClassicsVars.animationSpeed);
          if (window.location.hash) {
-           window.location.hash = "";
+           //window.location.hash = "";
+           history.pushState("", document.title, window.location.pathname + window.location.search);
          }
       });
       
@@ -2266,6 +2314,9 @@ ParsedClassicsSelectedContentsItem = {
       westPaneContainer.bind("click", function(event) {
         ParsedClassicsSelectedContentsItem.itemClicked(event);
       });
+
+      // bind hash_change function to window
+      $(window).bind('hashchange', ParsedClassicsSelectedContentsItem.hashChanged);
 
       // get JSON from URL
       jsonURL = ParsedClassicsHelpers._getUrlJSON(ParsedClassicsVars.hashStringStartDocs);
