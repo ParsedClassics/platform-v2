@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+ This file is part of ParsedClassics app
+=====================================================
+ Copyright (c) Eleutherius Joannides
+=====================================================
+-->
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<link rel="shortcut icon" href="../site/img/favicon.ico" type="image/x-icon" />
+
+<title>Introduction to MRK diagrams | ParsedClassics</title>
+
+<link type="text/css" rel="stylesheet" href="./css/w3.css" />
+
+<link type="text/css" rel="stylesheet" href="./css/jquery.layout-1.4.4.css" />
+
+<link type="text/css" rel="stylesheet" href="./css/jquery.connav.css" />
+
+<link type="text/css" rel="stylesheet" href="./css/nojquery.prettify.css" />
+
+<link type="text/css" rel="stylesheet" href="./css/pc.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
+
+<script type="text/javascript" src="./js/jquery-ui-1.9.2.js"></script>
+
+<script type="text/javascript" src="./js/jquery.layout-1.4.4.js"></script>
+
+<script type="text/javascript" src="./js/jquery.scrollTo-2.1.2.js"></script>
+
+<script type="text/javascript" src="./js/parsedclassics.vars.js"></script>
+
+<script type="text/javascript" src="./js/parsedclassics.helpers.js"></script>
+
+<script type="text/javascript" src="./js/jquery.connav.js"></script>
+
+<script type="text/javascript" src="./js/nojquery.prettify.js"></script>
+
+<script type="text/javascript" src="./js/parsedclassics.widgets.js"></script>
+
+<script type="text/javascript">
+    
+/*
+Initialization of Layout panes
+*/ 
+
+
+var ParsedClassicsLayout;
+
+$(document).ready( function() {
+
+		ParsedClassicsLayout = $("body").layout({
+			 initClosed:					false
+  		,	west__size:					'33%'
+    ,	west__minSize:				300
+    , west__closable:  true
+    ,	west__togglerLength_open:		48	 
+  		,	west__fxSpeed:				400
+    , west__slidable: false
+    ,	center__minWidth:			300
+  		,	livePaneResizing:			false
+  		,	animatePaneSizing:			true // changes in pane-sizes when resetting state will be animated
+  		,	stateManagement__enabled:	true // enable stateManagement - automatic cookie load & save enabled by default
+
+
+		});
+  
+});
+
+
+/*
+Initialization of Navigation generator
+*/ 
+
+
+
+            $(document).ready(function(){
+                $('#docs_contents').contentNavigator({
+                    wrapper : '#docs_text',
+                    collapsable : true,
+                    autocollapse : false,
+                    updateURL : false,
+                    indexOnContent : true
+                });
+                
+
+            })
+            
+
+/*
+Initialization of Plain Code Buttons
+*/ 
+
+$(document).ready(function(){
+
+  ParsedClassicsPlainCodeButton.init(); 
+   
+});
+
+/*
+Initialization of Selected contents item
+*/
+
+$(document).ready(function(){
+
+  ParsedClassicsSelectedContentsItem.init(); 
+   
+});
+
+/*
+Initialization of inner links
+*/
+
+$(document).ready(function(){
+
+  var contentPanelInner;
+  contentPanelInner = $("." + ParsedClassicsVars.contentPanelInnerClass);
+
+  contentPanelInner.delegate("." + ParsedClassicsVars.innerLinkClass, "click", ParsedClassicsInnerLink.innerLinkClick);
+
+});
+
+/*
+Closing of Loading... dialogue
+*/	
+
+$(document).ready(function() {
+
+setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.onloadDialogueTimeOut);
+
+});
+            
+</script>
+
+</head>
+
+<body id="docs">
+
+<!-- Loading... dialogue code  -->
+<div id="pc-loading-dialogue" class="w3-modal pc-onload-modal">
+	<div class="w3-modal-content w3-card-4 w3-animate-zoom">
+	
+	 <header class="w3-container w3-dark-grey"> 
+	  <h2>Loading&nbsp;documentation</h2>
+	 </header>
+	 
+	 <div class="w3-padding-16 pc-text-center">
+	 <!--<img src="../reader/BookReader/images/progressbar.gif">-->
+	 <div class="loader8"></div>
+	 </div>
+	
+	</div>  <!-- End of .w3-modal-content -->
+</div> <!-- End of #pc-loading-dialogue --> 
+
+<div class="ui-layout-west">
+    
+<div id="pc-west-pane-content" class="ui-layout-content pc-overflow-x-hidden pc-float-right pc-height-100 pc-width-100 pc-west-pane-maxwidth pc-show-verses">
+    
+<div class="w3-bar-block"><a id="logo" class="w3-hover-dark-grey w3-bar-item w3-padding w3-buttonx" href="../site/index.html">PARSED<span class="pc-interverb-symbol">·</span>CLASSICS</a></div>
+
+<div class="w3-bar-block connav-table-item-text" id="docs_heading_link"><span class='w3-bar-item w3-padding'>Introduction to MRK diagrams</span></div>
+    
+<div id="docs_contents" class="nav"></div>
+
+</div> <!-- End of id="pc-west-pane-content" -->
+
+</div><!-- End of .ui-layout-west -->
+
+
+<div class="ui-layout-center"><!-- center pane --> 
+
+<div id="pc-center-pane-content" class="pc-content-panel-inner ui-layout-content pc-height-100">
+
+<div id="pc-center-pane-content-inner" class="pc-center-pane-maxwidth  w3-border-right w3-padding pc-padding-top-0">
+<span class="pc-color-white">.</span><!-- hack needed to prevent margins of <h1> and <p> els to go beyond borders of <div> tag-->
+
+<div id="docs_text">
+<div class="pc-position-relative connav-auto-block container">
+
+<h1 class="pc-anchor" id="docs_heading">Introduction to MRK diagrams</h1>
+
+<p>Lorem ipsum dolor sit amet consectetur adipiscing elit cubilia felis tincidunt varius vestibulum congue himenaeos, erat non convallis commodo nascetur in lobortis augue nullam pharetra sapien egestas. Ultrices mus donec tempor phasellus hendrerit hac sociis ad, rhoncus viverra commodo curabitur lectus sed. Eros elementum aliquam dui nullam nibh dictum dapibus facilisis, nulla tempus eleifend felis penatibus mus aenean vivamus sagittis, eu cursus auctor quis ut justo feugiat. Senectus ultricies auctor ridiculus natoque augue proin ullamcorper duis habitant condimentum ac diam sociis, quam non fringilla in mus nostra accumsan facilisi elementum hendrerit semper metus.</p>
+
+<h2 class="pc-anchor" id="h-potenti-enim">Potenti metus enim</h2>
+
+<p>Potenti metus enim tempus litora semper sodales facilisis, sapien auctor arcu cras sociis orci ligula erat, hendrerit tristique at fringilla ad dignissim nisl, ultricies pulvinar quisque eros donec sed. Maecenas cubilia platea pharetra vel justo dignissim accumsan parturient auctor, blandit molestie id imperdiet phasellus habitant class in vitae luctus, senectus vehicula natoque tempus sem velit primis erat. Lectus suscipit turpis habitasse inceptos mi dapibus est proin magna class rutrum cubilia pellentesque quis, sapien eget nibh urna tortor ornare vulputate taciti tempor netus nam tincidunt justo. Velit habitasse facilisi mattis senectus dui ullamcorper, ridiculus leo per nisl auctor ligula, vehicula proin egestas ad blandit.</p>
+
+<h3 class="pc-anchor" id="h-conubia-laoreet">Conubia laoreet</h3>
+
+<p>Conubia laoreet facilisis venenatis quis rutrum luctus tempus aliquam ultricies, diam himenaeos purus orci tellus sagittis netus massa, mattis vestibulum arcu suscipit curabitur porta tincidunt ornare. Donec orci lacus tristique et ullamcorper placerat conubia posuere phasellus, ultricies fermentum potenti fames proin lobortis nisl id, dui ligula scelerisque rutrum aenean purus per est. Diam magnis neque nisi enim dui torquent gravida tellus iaculis, sollicitudin convallis eget fermentum sed cras posuere mauris, penatibus et fames metus quisque per venenatis lectus. Mattis tristique eget potenti neque bibendum nec eu semper himenaeos nascetur condimentum, gravida senectus ad aliquam faucibus lacus class id primis consequat.</p>
+
+</div><!-- End of .connav-auto-block  -->
+</div><!-- End of #docs_text  -->
+
+</div> <!-- End of div id="pc-center-pane-content-inner" element which is below top widgets bar -->
+
+</div><!-- End of .ui-layout-content --> 
+
+</div><!-- End of .ui-layout-center -->
+
+
+</body>
+</html>
