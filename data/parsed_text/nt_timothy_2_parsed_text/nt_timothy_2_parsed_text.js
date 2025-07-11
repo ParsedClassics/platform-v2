@@ -10,7 +10,8 @@
  Morphology based on: Github project by J. Tauber at
  https://github.com/morphgnt/sblgnt
 =====================================================
- Copyright: public domain
+ Copyright: CC-BY-SA License
+ https://creativecommons.org/licenses/by-sa/3.0/
 =====================================================
 */
 
