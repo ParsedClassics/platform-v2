@@ -6,7 +6,7 @@
 
 =====================================================
 
- Copyright (c) Eleutherius Joannides
+ Copyright (c) Éleuthère Ioannidis
 
 =====================================================
 

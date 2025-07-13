@@ -2,7 +2,7 @@
 =====================================================
  This file is part of ParsedClassics app
 =====================================================
- Copyright (c) Eleutherius Joannides
+ Copyright (c) Éleuthère Ioannidis
 =====================================================
 Vars for helper, data and widgets scripts
 =====================================================
