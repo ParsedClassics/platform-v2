@@ -2,7 +2,7 @@
 =====================================================
  This file is part of ParsedClassics app
 =====================================================
- Copyright (c) Eleutherius Joannides
+ Copyright (c) Éleuthère Ioannidis
 =====================================================
 */
 nt_philippians_ed_westcott_hort_contents = {

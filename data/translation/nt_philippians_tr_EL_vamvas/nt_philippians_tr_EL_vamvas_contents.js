@@ -2,7 +2,7 @@
 =====================================================
  This file is part of ParsedClassics app
 =====================================================
- Copyright (c) Eleutherius Joannides
+ Copyright (c) Éleuthère Ioannidis
 =====================================================
 */
 nt_philippians_tr_EL_vamvas_contents = {
