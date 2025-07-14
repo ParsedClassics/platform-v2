@@ -765,7 +765,7 @@
             .attr("aria-expanded", "false");
           $sub.attr({
             "aria-expanded": "false",
-            "aria-hidden": "true",
+          //  "aria-hidden": "true", // Commented out by ParsedClassics because of JS error "Blocked aria-hidden on an element" (Bug #496)
           });
           var level = $sub.dataSM("level");
           this.activatedItems.splice(level - 1, 1);
