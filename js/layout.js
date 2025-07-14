@@ -328,6 +328,9 @@ const ParsedClassicsLayout = {
     // get hash json, dimensions obj
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const dimensionsObj = hashJson[ParsedClassicsAppVars.dimensionsMember];
+    if (!dimensionsObj) {
+      return;
+    }
 
     // find all section ids
     const sectionIdsArr = [];
