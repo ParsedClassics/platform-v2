@@ -919,6 +919,11 @@ ParsedClassicsScannedBookMode = {
         // get "data-src" attr of the iframe
         let dataSrcAttr = iframeThatSentMessage.attr('data-src');
 
+        // iframe just loaded will not have "data-src" attr
+        if (!dataSrcAttr) {
+          dataSrcAttr = iframeThatSentMessage.attr('src');
+        }
+
         // get modes to be replaced array
         const modesToReplace = ['/mode/1up', '/mode/2up', '/mode/thumb'].filter(mode => mode != bookMode);
 
