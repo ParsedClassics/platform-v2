@@ -245,7 +245,8 @@ const ParsedClassicsNavSelects = {
       collectionPointers[ParsedClassicsAppVars.lineMember] = 'title';
     }
 
-    
+    // treat color tags in pointers obj
+    ParsedClassicsLayout.hashCollectionsTags(pointersObj);
 
     // stringify hash json
     const hashJsonString = JSON.stringify(hashJson);

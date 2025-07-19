@@ -26,7 +26,7 @@ div.scrollmenu::-webkit-scrollbar-track {
   display: flex;
   box-sizing: border-box;
   color: var(--black);
-  padding: 8px 0 8px 0;
+  padding: 8px 0 8px 2px;
   text-decoration: none;
   cursor: pointer;
   max-width: 150px;
@@ -57,11 +57,78 @@ div.scrollmenu::-webkit-scrollbar-track {
   justify-content: center;
   box-sizing: border-box;
   width: 100%;
-  padding: 0 8px 0 8px;
+  padding: 0 8px 0 0;
   vertical-align: bottom;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.tab__mark {
+  width: 8px; 
+  margin-top: -6px;
+}
+.tab__mark-red {
+  background: url("../img/circle-red.svg") no-repeat top left;
+}
+.tab__mark-green {
+  background: url("../img/circle-green.svg") no-repeat top left;
+}
+.tab__mark-yellow {
+  background: url("../img/circle-yellow.svg") no-repeat top left;
+}
+.tab__mark-blue {
+  background: url("../img/circle-blue.svg") no-repeat top left;
+}
+.tab__mark-blue {
+  background: url("../img/circle-blue.svg") no-repeat top left;
+}
+.tab__mark-orange {
+  background: url("../img/circle-orange.svg") no-repeat top left;
+}
+.tab__mark-purple {
+  background: url("../img/circle-purple.svg") no-repeat top left;
+}
+.tab__mark-cyan {
+  background: url("../img/circle-cyan.svg") no-repeat top left;
+}
+.tab__mark-magenta {
+  background: url("../img/circle-magenta.svg") no-repeat top left;
+}
+.tab__mark-lime {
+  background: url("../img/circle-lime.svg") no-repeat top left;
+}
+.tab__mark-pink {
+  background: url("../img/circle-pink.svg") no-repeat top left;
+}
+.tab__mark-teal {
+  background: url("../img/circle-teal.svg") no-repeat top left;
+}
+.tab__mark-lavender {
+  background: url("../img/circle-lavender.svg") no-repeat top left;
+}
+.tab__mark-brown {
+  background: url("../img/circle-brown.svg") no-repeat top left;
+}
+.tab__mark-beige {
+  background: url("../img/circle-beige.svg") no-repeat top left;
+}
+.tab__mark-maroon {
+  background: url("../img/circle-maroon.svg") no-repeat top left;
+}
+.tab__mark-mint {
+  background: url("../img/circle-mint.svg") no-repeat top left;
+}
+.tab__mark-olive {
+  background: url("../img/circle-olive.svg") no-repeat top left;
+}
+.tab__mark-apricot {
+  background: url("../img/circle-apricot.svg") no-repeat top left;
+}
+.tab__mark-navy {
+  background: url("../img/circle-navy.svg") no-repeat top left;
+}
+.tab__mark-black {
+  background: url("../img/circle-black.svg") no-repeat top left;
 }
 .tab__text {
   white-space: nowrap;

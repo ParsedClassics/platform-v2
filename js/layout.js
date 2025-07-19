@@ -694,7 +694,7 @@ const ParsedClassicsLayout = {
       for (let i = 0; i < tabIdsFromURL_NotInDom.length; i++) {
         const paneTo = pane;
         const tabIdToCreate = tabIdsFromURL_NotInDom[i];
-        const {collectionShortname, resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabIdToCreate);
+        const {collectionShortname, resourceShortname, tag} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabIdToCreate);
         // get title of the resource to be used in the tab
         let tabTitle;
         const collectionDef = ParsedClassicsCollDefs[collectionShortname];
@@ -709,7 +709,7 @@ const ParsedClassicsLayout = {
         }
         // get index of the tab to be created
         const tabIndexToCreate = ParsedClassicsLayout.getTabIndexFromUrl(tabIdToCreate);
-        ParsedClassicsTabs.addTab(paneTo, tabIdToCreate, tabTitle, tabIndexToCreate);
+        ParsedClassicsTabs.addTab(paneTo, tabIdToCreate, tabTitle, tabIndexToCreate, tag);
       }
     }
     
@@ -760,6 +760,20 @@ const ParsedClassicsLayout = {
       const reloaded = tabContentInnerEl.attr('data-reloaded');
       if (reloaded != 'no') {
         ParsedClassicsContentContainers.treatActiveTabContentContainer(pane, activeTabId);
+      }
+    }
+
+    // IX. add or remove color tags
+    for (let i = 0; i < tabIdsArrUrl.length; i++) {
+      const {tag} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabIdsArrUrl[i]);
+      const tabEl = $(`#tab-${tabIdsArrUrl[i]}`);
+      // add color tag or remove if needed
+      if (tag) {
+        tabEl.find('.tab__mark').addClass('tab__mark-' + tag);
+      }
+      else {
+        const tagClasses = ParsedClassicsTabs.getTagClassesArr(ParsedClassicsTabs.getColorTagArr()).join(' ');
+        tabEl.find('.tab__mark').removeClass(tagClasses);
       }
     }
     
@@ -1203,6 +1217,9 @@ const ParsedClassicsLayout = {
         // remove unneeded collections from pointers obj
         collsToBeRemovedFromPointersObj.forEach(collectionShortname => delete newPointersObj[collectionShortname]);
 
+        // treat color tags in pointers obj
+        ParsedClassicsLayout.hashCollectionsTags(newPointersObj);
+
         // update hash json
         hashJson[ParsedClassicsAppVars.dimensionsMember] = newDimensionsObj;
         hashJson[ParsedClassicsAppVars.layoutMember] = newLayoutObj;
@@ -1384,6 +1401,10 @@ const ParsedClassicsLayout = {
     dimensionsObj[sectionCode] = sectionDataNew;
     // update layout obj 
     layoutObj[sectionCode] = sectionLayoutDataNew;
+
+    // treat color tags in pointers obj
+    ParsedClassicsLayout.hashCollectionsTags(newPointersObj);
+
     // update hash json
     hashJson[ParsedClassicsAppVars.dimensionsMember] = dimensionsObj;
     hashJson[ParsedClassicsAppVars.layoutMember] = layoutObj;
@@ -1596,6 +1617,41 @@ const ParsedClassicsLayout = {
     history.pushState(null, "", `#${hashJsonString}`);
     // update layout
     ParsedClassicsLayout.update(hashJson);
+  },
+
+  hashCollectionsTags: function(pointersObj) {
+    const coll_shortname_arr = Object.keys(pointersObj);
+
+    // I. the case there is only one collection, so let's remove color tag which might be present
+    if (coll_shortname_arr.length === 1) {
+      delete pointersObj[coll_shortname_arr[0]]['tag'];
+    }
+    // II. he case there are several collections
+    else if (coll_shortname_arr.length > 1) {
+      // II.(a) loop though collections and find (1) used color tags; (2) unused color tags; (3) collections which have no color tags
+      const usedTagsArr = [];
+      const unusedTagsArr = ParsedClassicsTabs.getColorTagArr();
+      const collsWithoutTagsArr = [];
+      let tag;
+      for (let i = 0; i < coll_shortname_arr.length; i++) {
+        if (typeof pointersObj[coll_shortname_arr[i]]['tag'] != 'undefined') {
+          tag = pointersObj[coll_shortname_arr[i]]['tag'];
+          usedTagsArr.push(tag);
+          unusedTagsArr.splice(unusedTagsArr.indexOf(tag), 1);
+        }
+        else {
+          collsWithoutTagsArr.push(coll_shortname_arr[i]);
+        }
+      }
+      // II.(b) add color tags to collections lacking color tags
+      let coll_shortname;
+      for (let i= 0; i < collsWithoutTagsArr.length; i++) {
+        if (i < unusedTagsArr.length) {
+          coll_shortname = collsWithoutTagsArr[i];
+          pointersObj[coll_shortname]['tag'] = unusedTagsArr[i];
+        }
+      }
+    }
   },
 
   /*
@@ -1911,9 +1967,11 @@ const ParsedClassicsLayout = {
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const dimensionsObj = hashJson[ParsedClassicsAppVars.dimensionsMember];
     const layoutObj = hashJson[ParsedClassicsAppVars.layoutMember];
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
     let tabIndexFound = false;
     let resourceShortname = null;
     let collectionShortname = null;
+    let tag = null;
     for (var sectionCode in dimensionsObj) {
       const sectionData = dimensionsObj[sectionCode];
       const sectionLayoutData = layoutObj[sectionCode];
@@ -1930,6 +1988,9 @@ const ParsedClassicsLayout = {
           tabIndexFound = true;
           collectionShortname = resourceData[tabIndex].split('|')[0];
           resourceShortname = resourceData[tabIndex].split('|')[1] ?? null;
+          if (collectionShortname && collectionShortname != 'new_tab' && typeof pointersObj[collectionShortname]['tag'] != 'undefined') {
+            tag = pointersObj[collectionShortname]['tag'];
+          }
           break;
         }
       }
@@ -1937,7 +1998,7 @@ const ParsedClassicsLayout = {
         break;
       }
     }
-    return {collectionShortname, resourceShortname};
+    return {collectionShortname, resourceShortname, tag};
   },
 
   findCollsToBeRemovedFromPointersObj: function(collResPairs, collResPairsRemoved) {
