@@ -159,8 +159,9 @@ const ParsedClassicsTabs = {
     });
   },
 
-  createTabHtml: function(id, tabTitle) {
-    const newTabHtml = `<div class="${ParsedClassicsAppVars.tabClass}" id="tab-${id}" data-tab-id="${id}" title="${tabTitle}"><div class="tab__inner"><div class="tab__text">${tabTitle}</div></div><div class="tab__close" title="Close tab"><div class="${ParsedClassicsAppVars.tabCloseBtnClass}"><img class="tab__close_img" src="img/close.svg" /></div></div></div>`;
+  createTabHtml: function(id, tabTitle, tag) {
+    const tabMarkClass = tag ? ' tab__mark-' + tag : '';
+    const newTabHtml = `<div class="${ParsedClassicsAppVars.tabClass}" id="tab-${id}" data-tab-id="${id}" title="${tabTitle}"><div class="tab__mark${tabMarkClass}"></div><div class="tab__inner"><div class="tab__text">${tabTitle}</div></div><div class="tab__close" title="Close tab"><div class="${ParsedClassicsAppVars.tabCloseBtnClass}"><img class="tab__close_img" src="img/close.svg" /></div></div></div>`;
     return newTabHtml;
   },
 
@@ -174,7 +175,7 @@ const ParsedClassicsTabs = {
     return tabContentHtml;
   },
 
-  addTab: function (paneIdOrEl, tabId, tabTitle, index) {
+  addTab: function (paneIdOrEl, tabId, tabTitle, index, tag) {
     // create tab id if not available as argument
     if (!tabId) {
       tabId = ParsedClassicsLayout.generateUID();
@@ -194,7 +195,7 @@ const ParsedClassicsTabs = {
     // get all tabs
     const tabs = tabbarEl.find(`.${ParsedClassicsAppVars.tabClass}`);
     // create new tab html
-    const newTabHtml = ParsedClassicsTabs.createTabHtml(tabId, tabTitle);
+    const newTabHtml = ParsedClassicsTabs.createTabHtml(tabId, tabTitle, tag);
     // create new tab el
     const newTab = $(newTabHtml);
     // onclick tab will be become active tab
@@ -251,12 +252,12 @@ const ParsedClassicsTabs = {
     // loop through tabbr ids
     for (let i = 0; i < tabIdsArr.length; i++) {
       // get resource shortname of the resource to be loaded into tab
-      const {collectionShortname, resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabIdsArr[i]);
+      const {collectionShortname, resourceShortname, tag} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabIdsArr[i]);
       // get title of the resource to be used in the tab
       const tabTitle =  ParsedClassicsTabs.createTabTitle(collectionShortname, resourceShortname)
       
       // add tab into tabbar
-      ParsedClassicsTabs.addTab(paneEl, tabIdsArr[i], tabTitle, i);
+      ParsedClassicsTabs.addTab(paneEl, tabIdsArr[i], tabTitle, i, tag);
     }
     // initiate tabbar
     ParsedClassicsTabs.initTabbar(tabbarEl, activeTabIndex);
@@ -277,6 +278,38 @@ const ParsedClassicsTabs = {
       tabTitle = collectionTitle;
     }
     return tabTitle;
+  },
+
+  // based on List of 20 Simple, Distinct Colors by Sasha Trubetskoy https://sashamaps.net/docs/resources/20-colors/
+  getColorTagArr: function() {
+    return [
+      'red', // #e6194B
+      'green', // #3cb44b
+      'blue', // #4363d8
+      'orange', // #f58231
+      'purple', // #911eb4
+      'cyan', // #42d4f4
+      'magenta', // #f032e6
+      'olive', // #808000
+      'maroon', // #800000
+      'brown', // #9A6324
+      'yellow', // #ffe119
+      'lime', // #bfef45
+      'pink', // #fabed4
+      'teal', // #469990
+      'lavender', // #dcbeff
+      'beige', // #fffac8
+      'mint', // #aaffc3
+      'apricot', // #ffd8b1
+      'navy', // #000075
+      'black', // #000000
+    ];
+  },
+
+  getTagClassesArr: function(colorTagArr) {
+    const tagClassesArr = [];
+    colorTagArr.forEach((el) => tagClassesArr.push('tab__mark-' + el));
+    return tagClassesArr;
   },
 
 }; // End of ParsedClassicsTabs script
