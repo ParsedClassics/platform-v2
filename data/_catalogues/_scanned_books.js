@@ -2190,24 +2190,52 @@ ParsedClassicsScannedBooks = {
  
 		bookTitle: "Pauluskommentare aus der griechishen Kirche."
 	 
-				 , bookUrlText: "Aus Katenenhandschriften gesammelt und herausgegeben. Von Dr. Karl Staab. 1933. Münster i. W.: Verlag der Aschendorfschen Verlagsbuchhandlung."
-	 
-				 , numLeafs: "726"
-	 
-				 , thumbnail: "page0005.jpg"
-	 
-				 , metadata: [
-	 
-							 {
-	 
-								label: 'Title'
-	 
-								 , value: "Pauluskommentare aus der griechishen Kirche. Aus Katenenhandschriften gesammelt und herausgegeben. Von Dr. Karl Staab. 1933. Münster i. W.: Verlag der Aschendorfschen Verlagsbuchhandlung."
-	 
-							 }
-	 
-				 ] 
+		, bookUrlText: "Aus Katenenhandschriften gesammelt und herausgegeben. Von Dr. Karl Staab. 1933. Münster i. W.: Verlag der Aschendorfschen Verlagsbuchhandlung."
+
+		, numLeafs: "726"
+
+		, thumbnail: "page0005.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Pauluskommentare aus der griechishen Kirche. Aus Katenenhandschriften gesammelt und herausgegeben. Von Dr. Karl Staab. 1933. Münster i. W.: Verlag der Aschendorfschen Verlagsbuchhandlung."
+
+					}
+
+		] 
 		
-		}
+	}
+
+	, trempelas_ypomnhma_eis_kata_matthaion: {
+ 
+		bookTitle: "Π. Ν. Τρεμπέλας. Ὑπόμνημα εἰς τὸ κατὰ Ματθαῖον εὐαγγέλιον."
+	 
+		, bookUrlText: "1951. Ἀθῆναι: Έκδοσις αδελφότητος θεολόγων ἡ “Ζωή„."
+
+		, numLeafs: "531"
+
+		, leafWidth: 2569
+
+		, leafHeight: 3780
+
+		, thumbnail: "page0001.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Π. Ν. Τρεμπέλας. Ὑπόμνημα εἰς τὸ κατὰ Ματθαῖον εὐαγγέλιον. 1951. Ἀθῆναι: Έκδοσις αδελφότητος θεολόγων ἡ “Ζωή„."
+
+					}
+
+		] 
+		
+	}
 
 };
