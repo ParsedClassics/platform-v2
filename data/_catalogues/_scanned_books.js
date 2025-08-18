@@ -2294,4 +2294,32 @@ ParsedClassicsScannedBooks = {
 		
 	}
 
+	, mhtropoulos_ermhneia_eis_pros_timotheon_kai_titon: {
+ 
+		bookTitle: "Ἱ. Μητρόπουλος. Ἑρμηνεία εἰς τὰς πρὸς Τιμόθεον καὶ Τίτον ἐπιστολὰς τοῦ ἀποστόλου Παύλου."
+	 
+		, bookUrlText: "1882. Ἀθῆναι: Ἐκ τοῦ τυπογραφείου ἡ «Βιβλος»."
+
+		, numLeafs: "248"
+
+		, leafWidth: 2049
+
+		, leafHeight: 3284
+
+		, thumbnail: "page0001.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Ἱ. Μητρόπουλος. Ἑρμηνεία εἰς τὰς πρὸς Τιμόθεον καὶ Τίτον ἐπιστολὰς τοῦ ἀποστόλου Παύλου. 1882. Ἀθῆναι: Ἐκ τοῦ τυπογραφείου ἡ «Βιβλος»."
+
+					}
+
+		] 
+		
+	}
+
 };
