@@ -800,6 +800,7 @@ var ParsedClassicsInnerLink = {
 
 		innerLinkClick: function(event) {
 				var inner_link_el
+        , inner_link_id
 				, anchor_attr
 				, anchor_el
 				, parent
@@ -838,6 +839,9 @@ var ParsedClassicsInnerLink = {
 
 				// get "data-anchor" attr, which contains "id" of the anchor el
 				anchor_attr = inner_link_el.attr(ParsedClassicsVars.anchorAttr);
+
+        // get "id" attr of inner link el 
+        inner_link_id = inner_link_el.attr("id");
 			
 				// get anchor el, make sure it's unique
 				anchor_el = $("#" + anchor_attr).first();
@@ -872,6 +876,11 @@ var ParsedClassicsInnerLink = {
       if (west_pane_content_el.length === 1 && connav_table_item_text.length === 1) {
         connav_container.find('span.' + ParsedClassicsVars.selectedLineClass).removeClass(ParsedClassicsVars.selectedLineClass);
         connav_table_item_text.addClass(ParsedClassicsVars.selectedLineClass);
+        if (inner_link_id) {
+          ParsedClassicsSelectedContentsItem.innerLinkClicked = inner_link_id;
+          hash_string = '#/{"inner_link":"' + inner_link_id + '"}';
+          window.location.href = hash_string;
+        }
         hash_string = '#/{"section":"' + anchor_attr + '"}';
         window.location.href = hash_string;
         west_pane_content_el.scrollTo(connav_table_item_text, ParsedClassicsVars.animationSpeed);
@@ -2213,7 +2222,9 @@ Selected contents item
 
 ParsedClassicsSelectedContentsItem = {
   
-  itemClicked: function(event) {
+  innerLinkClicked: null
+
+  , itemClicked: function(event) {
     var el, westPaneContainer, currentSelectedItem, itemClicked;
     
     // find contents container
@@ -2246,8 +2257,7 @@ ParsedClassicsSelectedContentsItem = {
   }
 
   , hashChanged: function() {
-    var centerPaneContainer, westPaneContainer, jsonURL, section_id, section, section_header_text, nav_header, currentSelectedItem;
-
+    var centerPaneContainer, westPaneContainer, jsonURL, section_id, section, section_header_text, nav_header, currentSelectedItem, inner_link_id, inner_link;
     // get centerPaneContainer
     centerPaneContainer = $("#" + ParsedClassicsVars.centerPaneContentId);
     // get westPaneContainer
@@ -2258,11 +2268,11 @@ ParsedClassicsSelectedContentsItem = {
 
     // get JSON from URL
     jsonURL = ParsedClassicsHelpers._getUrlJSON(ParsedClassicsVars.hashStringStartDocs);
-
     // scroll item to view if it is indicated in JSON in URL
-    // first, get section to be scrolled HTML id attribute from JSON in URL
-    section_id = "";
-    if (typeof jsonURL[ParsedClassicsVars.sectionUrlAndCookieName] != "undefined") {
+    
+    // I. section id is in hash and inner link not clicked, so let's scroll to the section
+    if (typeof jsonURL[ParsedClassicsVars.sectionUrlAndCookieName] != "undefined" & !ParsedClassicsSelectedContentsItem.innerLinkClicked) {
+      // get section to be scrolled HTML id attribute from JSON in URL
       section_id = jsonURL[ParsedClassicsVars.sectionUrlAndCookieName];
       // get section to be scrolled into view
       section = centerPaneContainer.find("#" + section_id);
@@ -2279,7 +2289,22 @@ ParsedClassicsSelectedContentsItem = {
       // scroll section into view
       centerPaneContainer.scrollTo(section, ParsedClassicsVars.animationSpeed);
     }
-    // no item to scroll to view in hash, so scroll to docs heading
+    // II. inner link id is in hask and inner link was NOT clicked, so let's scroll to inner link
+    else if (typeof jsonURL[ParsedClassicsVars.innerLinkUrlName] != "undefined" & !ParsedClassicsSelectedContentsItem.innerLinkClicked) {
+      // get inner link id
+      inner_link_id = jsonURL[ParsedClassicsVars.innerLinkUrlName];
+      // get inner link
+      inner_link = centerPaneContainer.find("#" + inner_link_id);
+      // remove styling from currently selected item
+      currentSelectedItem.removeClass(ParsedClassicsVars.selectedLineClass);
+      // scroll inner link into view
+      centerPaneContainer.scrollTo(inner_link, ParsedClassicsVars.animationSpeed);
+    }
+    // III. innerlink was clicked, so the scrolling will be done by inner links script
+    else if (ParsedClassicsSelectedContentsItem.innerLinkClicked) {
+      ParsedClassicsSelectedContentsItem.innerLinkClicked = null;
+    }
+    // IV. no id of the item to scroll to view is in hash, so scroll to docs heading
     else {
       // remove styling from currently selected item
       currentSelectedItem.removeClass(ParsedClassicsVars.selectedLineClass);
@@ -2291,9 +2316,27 @@ ParsedClassicsSelectedContentsItem = {
       centerPaneContainer.scrollTo($("#" + ParsedClassicsVars.docsHeadingId), ParsedClassicsVars.animationSpeed);
     }
   }
+
+  , add_id_attr_to_inner_links: function() {
+    var centerPaneContainer, inner_links_all;
+
+    // get centerPaneContainer
+    centerPaneContainer = $("#" + ParsedClassicsVars.centerPaneContentId);
+
+    // get all inner links
+    inner_links_all = $(`.${ParsedClassicsVars.innerLinkClass}`);
+
+    // add "id" attr to each inner link el
+    inner_links_all.each(function(index) {
+      var inner_link_el, data_anchor_str;
+      inner_link_el = $(this);
+      data_anchor_str = inner_link_el.attr(ParsedClassicsVars.anchorAttr);
+      inner_link_el.attr('id', 'to_' + data_anchor_str + '_' + index);
+    });
+  }
   
   , init: function() {
-      var westPaneContainer, centerPaneContainer, jsonURL, docs_heading_link, section_id, section, section_header_text, nav_header, nav_header_text_el;
+      var westPaneContainer, centerPaneContainer, jsonURL, docs_heading_link, section_id, inner_link_id, section, section_header_text, nav_header, nav_header_text_el;
       
       // get centerPaneContainer
       centerPaneContainer = $("#" + ParsedClassicsVars.centerPaneContentId);
@@ -2318,12 +2361,14 @@ ParsedClassicsSelectedContentsItem = {
       // bind hash_change function to window
       $(window).bind('hashchange', ParsedClassicsSelectedContentsItem.hashChanged);
 
+      // add "id" attributes to inner link els
+      ParsedClassicsSelectedContentsItem.add_id_attr_to_inner_links();
+
       // get JSON from URL
       jsonURL = ParsedClassicsHelpers._getUrlJSON(ParsedClassicsVars.hashStringStartDocs);
       
       // onload scroll item to view if it is indicated in JSON in URL
       // first, get section to be scrolled HTML id attribute from JSON in URL
-      section_id = "";
       if (typeof jsonURL[ParsedClassicsVars.sectionUrlAndCookieName] != "undefined") {
         section_id = jsonURL[ParsedClassicsVars.sectionUrlAndCookieName];
         // get section to be scrolled into view
@@ -2337,6 +2382,14 @@ ParsedClassicsSelectedContentsItem = {
         // trigger click in nav header item
         nav_header_text_el = nav_header.find(".connav-table-item-text");
         setTimeout(function(){ nav_header_text_el.trigger("click"); }, 2000);
+      }
+      else if (typeof jsonURL[ParsedClassicsVars.innerLinkUrlName] != "undefined") {
+        // get inner link id
+        inner_link_id = jsonURL[ParsedClassicsVars.innerLinkUrlName];
+        // get inner link
+        inner_link = centerPaneContainer.find("#" + inner_link_id);
+        // scroll inner link into view
+        centerPaneContainer.scrollTo(inner_link, ParsedClassicsVars.animationSpeed);
       }
   }
   
