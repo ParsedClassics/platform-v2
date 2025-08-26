@@ -83,6 +83,7 @@ var ParsedClassicsVars = {
   , lexiconEntryAttr: "data-lexicon-entry"
   // inner link
   , innerLinkClass: "inner-link"
+  , innerLinkUrlName: "inner_link"
   , anchorAttr: "data-anchor"
   // grammar refs
   , grammarBookAttr: "data-grammar"
