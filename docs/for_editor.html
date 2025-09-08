@@ -5034,6 +5034,14 @@ https://www.parsedclassics.com/app.html#{"L":{"a":[["nt_titus|nt_titus_parsed_te
 
 <p>The meaning of JSON object in example is as follows: inside the collection whose shortname is "nt_matthew" line-indexed resources are opened at the line "2:8" and word-indexed resources are opened at the word "δέω"; the word-indexed resource whose shortname is "greek_lexicon_to_nt_by_green" should be opened at the second entry indexed by the word "δέω".</p>
 
+<p>In case there are two or more collections selected in different tabs, the tabs in which the one collection is selected will be marked by circle colored in one color, the tabs in which the other collection is selected will be marked by circle colored in another color, etc. The color of the circle mark is indicated in URL by the value of the key "tag". Let's inspect as an example such "P" part of the URL:</p>
+
+<pre id="url-example_p_part_tag_key" class="prettyprint code_showarea">
+"P":{"nt_luke":{"line":"1:15","tag":"green"},"nt_mark":{"line":"3:18","tag":"red"}}
+</pre>
+
+<p>The meaning of JSON object in example is as follows: inside the collection whose shortname is "nt_luke" line-indexed resources are opened at the line "1:15" and all tabs displaying resources belonging to this collection are marked by green circle mark; inside the collection whose shortname is "nt_mark" line-indexed resources are opened at the line "3:18" and all tabs displaying resources belonging to this collection are marked by red circle mark.</p>
+
 <h3 class="pc-anchor" id="h-url-D-part">"D" part of URL</h3>
 
 <p>Let's repeat "D" part of the URL:</p>
