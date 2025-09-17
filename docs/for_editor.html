@@ -222,7 +222,7 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
 
 <p>All editing work is being done on the localhost. The main tools are coding editor to create and edit files and web browser to view the result.</p>
 
-<p>In order to start to work on ParsedClassics project, the editor should place the copy of ParsedClassics app into some directory on localhost, open /app.html file in web browser and fire the coding editor program. The editing work consists in making edits in the code editor, saving and previewing results in the web browser.</p>
+<p>In order to start to work on ParsedClassics project, the editor should place the copy of ParsedClassics app into some directory on localhost, open /classics.html file in web browser and fire the coding editor program. The editing work consists in making edits in the code editor, saving and previewing results in the web browser.</p>
 
 <h3 class="pc-anchor" id="h-coding-editor-software">Coding editor software</h3>
 
@@ -263,7 +263,7 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
 
 <p>The value  of the key "title_orig" should be a string in original language. It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used in <a href="../site/catalogue.html" target="_blank">Catalogue</a> page.</p>
 
-<p>The value  of the key "title_orig_short" should be a string in original language. This value usually is shorter than the value of the key "title_orig". Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used inside Collections selectbox at <a href="../app.html">Library app</a> page.</p>
+<p>The value  of the key "title_orig_short" should be a string in original language. This value usually is shorter than the value of the key "title_orig". Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used inside Collections selectbox at <a href="../classics.html">Library app</a> page.</p>
 
 <p>The value  of the key "title_eng" should be a string in English. It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used in <a href="../site/catalogue.html" target="_blank">Catalogue</a> page.</p>
 
@@ -4987,10 +4987,10 @@ nt_titus_audio_by_karvounakis_contents = {
 <p>To see how the state of the Library app is reflected in the URL let's analyze this example URL:</p>
 
 <pre id="url-example" class="prettyprint code_showarea">
-https://www.parsedclassics.com/app.html#{"L":{"a":[["nt_titus|nt_titus_parsed_text","nt_titus|nt_titus_text_ed_robinson_pierpont"]],"b":[["nt_titus|nt_titus_tr_LA_s_hieronymus","nt_titus|nt_titus_tr_EN_young"],["nt_titus|greek_lexicon_to_nt_by_green"]]},"P":{"nt_titus":{"line":"2:8","word":"ἐντρέπω"}},"D":{"a":[["zwdfzv",50],["kke9uh",100,["i4yoe6","o1sscd"],0]],"b":[["z11wu3",50],["xewahx",50,["vowggx","c8neaw"],1,"max"],["1agxr3",50,["4ryhqx"],0]]}}
+https://www.parsedclassics.com/classics.html#{"L":{"a":[["nt_titus|nt_titus_parsed_text","nt_titus|nt_titus_text_ed_robinson_pierpont"]],"b":[["nt_titus|nt_titus_tr_LA_s_hieronymus","nt_titus|nt_titus_tr_EN_young"],["nt_titus|greek_lexicon_to_nt_by_green"]]},"P":{"nt_titus":{"line":"2:8","word":"ἐντρέπω"}},"D":{"a":[["zwdfzv",50],["kke9uh",100,["i4yoe6","o1sscd"],0]],"b":[["z11wu3",50],["xewahx",50,["vowggx","c8neaw"],1,"max"],["1agxr3",50,["4ryhqx"],0]]}}
 </pre>
 
-<p>In this URL app.html is the page of Library app, and the part after # is JSON object representing the state of the Library app. This JSON object has 3 keys &ndash; "L", "P" and "D", whose values are JSON objects.</p>
+<p>In this URL classics.html is the page of Library app, and the part after # is JSON object representing the state of the Library app. This JSON object has 3 keys &ndash; "L", "P" and "D", whose values are JSON objects.</p>
 
 <h3 class="pc-anchor" id="h-url-L-part">"L" part of URL</h3>
 
@@ -5112,7 +5112,7 @@ Section
 /site/<br>
 /tools/<br>
 .htaccess<br>
-app.html<br>
+classics.html<br>
 index.html
 </td>
 

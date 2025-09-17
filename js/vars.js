@@ -145,5 +145,5 @@ const ParsedClassicsAppVars = {
   // animation
   animationSpeed: 400,
   // application root filename
-  rootFileName: "app.html",
+  rootFileName: "classics.html",
 };
