@@ -2322,4 +2322,32 @@ ParsedClassicsScannedBooks = {
 		
 	}
 
+	, maxey_fay_new_latin_primer: {
+ 
+		bookTitle: "Maxey M., Fay M. J. A new Latin primer."
+	 
+		, bookUrlText: "1933. Boston etc.: D. C. Heath and company."
+
+		, numLeafs: "150"
+
+		, leafWidth: 3206
+
+		, leafHeight: 4608
+
+		, thumbnail: "page0003.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Maxey M., Fay M. J. A new Latin primer. 1933. Boston etc.: D. C. Heath and company."
+
+					}
+
+		] 
+		
+	}
+
 };
