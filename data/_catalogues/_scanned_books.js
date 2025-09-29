@@ -2350,4 +2350,60 @@ ParsedClassicsScannedBooks = {
 		
 	}
 
+	, appleton_ludi_persici: {
+ 
+		bookTitle: "R. B. Appleton. Ludi Persici."
+	 
+		, bookUrlText: "1921. Oxford: Oxford University Press; London: Humphrey Milford."
+
+		, numLeafs: "68"
+
+		, leafWidth: 2737
+
+		, leafHeight: 4102
+
+		, thumbnail: "page0003.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "R. B. Appleton. Ludi Persici. 1921. Oxford: Oxford University Press; London: Humphrey Milford."
+
+					}
+
+		] 
+		
+	}
+
+	, collar_new_gradatim: {
+ 
+		bookTitle: "W. C. Collar. The new gradatim."
+	 
+		, bookUrlText: "1895. Boston etc.: Ginn and company."
+
+		, numLeafs: "197"
+
+		, leafWidth: 1465
+
+		, leafHeight: 2267
+
+		, thumbnail: "page0001.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "W. C. Collar. The new gradatim. 1895. Boston etc.: Ginn and company."
+
+					}
+
+		] 
+		
+	}
+
 };
