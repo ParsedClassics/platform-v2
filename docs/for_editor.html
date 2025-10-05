@@ -222,7 +222,7 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
 
 <p>All editing work is being done on the localhost. The main tools are coding editor to create and edit files and web browser to view the result.</p>
 
-<p>In order to start to work on ParsedClassics project, the editor should place the copy of ParsedClassics app into some directory on localhost, open /app.html file in web browser and fire the coding editor program. The editing work consists in making edits in the code editor, saving and previewing results in the web browser.</p>
+<p>In order to start to work on ParsedClassics project, the editor should place the copy of ParsedClassics app into some directory on localhost, open /classics.html file in web browser and fire the coding editor program. The editing work consists in making edits in the code editor, saving and previewing results in the web browser.</p>
 
 <h3 class="pc-anchor" id="h-coding-editor-software">Coding editor software</h3>
 
@@ -248,7 +248,7 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
 
 <h2 class="pc-anchor" id="h-defining-edition">Defining edition</h2>
 
-<p>To define a new edition senior editor should add JSON object into the file /data/_catalogues/_sets.js&nbsp;. The order of JSON objects in this file is important because <a href="../site/catalogue.html" target="_blank">Catalogue</a> page displays the list of editions in the same order.</p>
+<p>To define a new edition senior editor should add JSON object into the file /data/_catalogues/_sets_classics.js&nbsp;. The order of JSON objects in this file is important because <a href="../site/catalogue.html" target="_blank">Catalogue</a> page displays the list of editions in the same order.</p>
 
 <p>For example, to define the edition "Ἡ Καινὴ Διαθήκη. Πράξεις, Ἐπιστολαί, Ἀποκάλυψις / The New Testament. Acts, Epistles, Revelation" such JSON object has been added:</p>
 
@@ -263,13 +263,13 @@ setTimeout(ParsedClassicsModalDialogues.onloadDialogueClose, ParsedClassicsVars.
 
 <p>The value  of the key "title_orig" should be a string in original language. It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used in <a href="../site/catalogue.html" target="_blank">Catalogue</a> page.</p>
 
-<p>The value  of the key "title_orig_short" should be a string in original language. This value usually is shorter than the value of the key "title_orig". Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used inside Collections selectbox at <a href="../app.html">Library app</a> page.</p>
+<p>The value  of the key "title_orig_short" should be a string in original language. This value usually is shorter than the value of the key "title_orig". Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used inside Collections selectbox at <a href="../classics.html">Library app</a> page.</p>
 
 <p>The value  of the key "title_eng" should be a string in English. It should include author or scripture name and the title. Abbreviation or/and shortened title can be used in order to avoid very long value. This value will be used in <a href="../site/catalogue.html" target="_blank">Catalogue</a> page.</p>
 
 <p>The value of the key "collections" should be array of strings which are shortnames of collections. For now let's leave this array empty; we will add member to this array after defining certain collection.</p>
 
-<p>After editing /data/_catalogues/_sets.js file refresh <a href="../site/catalogue.html" target="_blank">Catalogue</a> page. A new value should appear in editions list.</p>
+<p>After editing /data/_catalogues/_sets_classics.js file refresh <a href="../site/catalogue.html" target="_blank">Catalogue</a> page. A new value should appear in editions list.</p>
 
 <h2 class="pc-anchor" id="h-defining-collection-and-its-resources">Defining collection and its resources</h2>
 
@@ -4668,7 +4668,7 @@ nt_titus_audio_by_karvounakis_contents = {
 
 <p>The value of the field "URL template" should be URL of the scanned image with the number changed into "{index}" variable.</p>
 
-<p>After you click the button "Generate URL list" the generated URLs will be outputted into "URL list" textarea. Now you can copy this list and use it with some software providing bulk download functionality, e.g. with the program Free Download Manager (Win, free).</p>
+<p>After you click the button "Generate URL list" the generated URLs will be outputted into "URL list" textarea. Now you can copy this list and use it with some software providing bulk download functionality, e.g. with the program Free Download Manager (Win/Mac, free).</p>
 
 <p>Using Free Download Manager at first you should copy generated URL list, then click hamburger menu, and inside dropdown click the option "Paste URLs from Clipboard":</p>
 
@@ -4987,10 +4987,10 @@ nt_titus_audio_by_karvounakis_contents = {
 <p>To see how the state of the Library app is reflected in the URL let's analyze this example URL:</p>
 
 <pre id="url-example" class="prettyprint code_showarea">
-https://www.parsedclassics.com/app.html#{"L":{"a":[["nt_titus|nt_titus_parsed_text","nt_titus|nt_titus_text_ed_robinson_pierpont"]],"b":[["nt_titus|nt_titus_tr_LA_s_hieronymus","nt_titus|nt_titus_tr_EN_young"],["nt_titus|greek_lexicon_to_nt_by_green"]]},"P":{"nt_titus":{"line":"2:8","word":"ἐντρέπω"}},"D":{"a":[["zwdfzv",50],["kke9uh",100,["i4yoe6","o1sscd"],0]],"b":[["z11wu3",50],["xewahx",50,["vowggx","c8neaw"],1,"max"],["1agxr3",50,["4ryhqx"],0]]}}
+https://www.parsedclassics.com/classics.html#{"L":{"a":[["nt_titus|nt_titus_parsed_text","nt_titus|nt_titus_text_ed_robinson_pierpont"]],"b":[["nt_titus|nt_titus_tr_LA_s_hieronymus","nt_titus|nt_titus_tr_EN_young"],["nt_titus|greek_lexicon_to_nt_by_green"]]},"P":{"nt_titus":{"line":"2:8","word":"ἐντρέπω"}},"D":{"a":[["zwdfzv",50],["kke9uh",100,["i4yoe6","o1sscd"],0]],"b":[["z11wu3",50],["xewahx",50,["vowggx","c8neaw"],1,"max"],["1agxr3",50,["4ryhqx"],0]]}}
 </pre>
 
-<p>In this URL app.html is the page of Library app, and the part after # is JSON object representing the state of the Library app. This JSON object has 3 keys &ndash; "L", "P" and "D", whose values are JSON objects.</p>
+<p>In this URL classics.html is the page of Library app, and the part after # is JSON object representing the state of the Library app. This JSON object has 3 keys &ndash; "L", "P" and "D", whose values are JSON objects.</p>
 
 <h3 class="pc-anchor" id="h-url-L-part">"L" part of URL</h3>
 
@@ -5112,7 +5112,7 @@ Section
 /site/<br>
 /tools/<br>
 .htaccess<br>
-app.html<br>
+classics.html<br>
 index.html
 </td>
 

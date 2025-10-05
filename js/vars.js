@@ -40,6 +40,7 @@ const ParsedClassicsAppVars = {
   selectedWordClass: "selected-word",
   innerLinkClass: "inner-link",
   anchorAttr: "data-anchor",
+  pageAttr: "data-page",
   lineNumberAttr: "data-line-number",
   lemmaAttr: "data-lemma",
   lexiconAttr: "data-lexicon",
@@ -114,6 +115,7 @@ const ParsedClassicsAppVars = {
   collectionMember: "coll",
   wordMember: "word",
   lineMember: "line",
+  pageMember: "page",
   lexiconMember: "lexicon",
   lexiconEntryMember: "lexentry",
   wordPositionMember: "wordpos",
@@ -128,6 +130,7 @@ const ParsedClassicsAppVars = {
   grammarRefsDir: "data/grammar_refs/",
   diagramSetDir: "data/diagram_set/",
   audioRecordingDir: "data/audio_recording/",
+  readerDir: "data/reader/",
   infoTextDir: "data/info_text/",
   // resource
   resourceTypeLabels: {
@@ -141,9 +144,16 @@ const ParsedClassicsAppVars = {
     grammar_refs: "Grammar references",
     diagram_set: "Diagrams",
     audio_recording: "Audio recording",
+    reader: "Reader",
   },
   // animation
   animationSpeed: 400,
   // application root filename
-  rootFileName: "app.html",
+  rootFileName: "classics.html",
 };
+if (window.location.pathname.indexOf('/lexicons.html') != -1) {
+  ParsedClassicsAppVars.rootFileName = 'lexicons.html';
+}
+else if (window.location.pathname.indexOf('/readers.html') != -1) {
+  ParsedClassicsAppVars.rootFileName = 'readers.html';
+}

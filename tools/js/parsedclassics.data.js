@@ -2889,7 +2889,6 @@ var ParsedClassicsData = {
     panel_html += '</table>';
 
 
-    console.log('panel_html', panel_html);
     return panel_html;
 
 
@@ -3471,7 +3470,6 @@ var ParsedClassicsData = {
           // append content to scrollable div inside content panel wrapper
 
           contentPanelInner.append(resourceCode);
-          console.log('contentPanelInner.html()', contentPanelInner.html());
 
 
 

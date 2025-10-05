@@ -120,6 +120,7 @@ ParsedClassicsData = {
       grammar_refs: ParsedClassicsAppVars.grammarRefsDir,
       diagram_set: ParsedClassicsAppVars.diagramSetDir,
       audio_recording: ParsedClassicsAppVars.audioRecordingDir,
+      reader: ParsedClassicsAppVars.readerDir,
       info_text: ParsedClassicsAppVars.infoTextDir,
     };
 
@@ -127,6 +128,15 @@ ParsedClassicsData = {
     const firstParsedTextResources = ParsedClassicsData.findFirstParsedTextResources(collectionsToLoad);
     // push such resources into resources to load array, if not already there
     firstParsedTextResources.forEach(collResPair => {
+      if (!resourcesToLoad.includes(collResPair)) {
+        resourcesToLoad.push(collResPair);
+      }
+    });
+
+    // get resources of the type "reader" which are the the firsts in their respective collections
+    const firstReaderResources = ParsedClassicsData.findFirstReaderResources(collectionsToLoad);
+    // push such resources into resources to load array, if not already there
+    firstReaderResources.forEach(collResPair => {
       if (!resourcesToLoad.includes(collResPair)) {
         resourcesToLoad.push(collResPair);
       }
@@ -183,6 +193,24 @@ ParsedClassicsData = {
     return firstParsedTextResources;
   },
 
+  findFirstReaderResources: function(collectionsToLoad) {
+    const firstReaderResources = [];
+    collectionsToLoad.forEach(collectionShortname => {
+      // get collection's definition
+      const collectionDef = ParsedClassicsCollDefs[collectionShortname];
+      // get definitions of the resources of current collection
+      const resourceDefsAll = collectionDef['resource_defs'];
+      for (let resourceShortname in resourceDefsAll) {
+        const resourceDef = resourceDefsAll[resourceShortname];
+        if (resourceDef['resource_type'] === 'reader') {
+          firstReaderResources.push(`${collectionShortname}|${resourceShortname}`);
+          break;
+        }
+      }
+    });
+    return firstReaderResources;
+  },
+  
   appendLoadedResourceData: function(resourcesToLoad, collectionsToLoad) {
     resourcesToLoad.forEach(collResPair => {
       // get collection shortname
@@ -232,6 +260,26 @@ ParsedClassicsData = {
     const firstParsedTextResources = ParsedClassicsData.findFirstParsedTextResources(collectionsToLoad);
     // append contents of each of such resource to the definition of relevant collection
     firstParsedTextResources.forEach(collResPair => {
+      // get collection shortname
+      const collectionShortname = collResPair.split('|')[0];
+      // get resource shortname
+      const resourceShortname = collResPair.split('|')[1];
+      // get loaded resources data for current collection
+      const loadedResDataOfCollection = APP.loadedResourcesData[collectionShortname];
+      // get loaded data of current resouce
+      const loadedDataOfResource = loadedResDataOfCollection[resourceShortname];
+      // get contents of the resource
+      const resourceContents = loadedDataOfResource['contents'];
+      // get collection's definition
+      const collectionDef = ParsedClassicsCollDefs[collectionShortname];
+      // append contents to collection's definition
+      collectionDef['contents'] = resourceContents;
+    });
+    
+    // get resources of the type "reader" which are the the firsts in their respective collections
+    const firstReaderResources = ParsedClassicsData.findFirstReaderResources(collectionsToLoad);
+    // append contents of each of such resource to the definition of relevant collection
+    firstReaderResources.forEach(collResPair => {
       // get collection shortname
       const collectionShortname = collResPair.split('|')[0];
       // get resource shortname

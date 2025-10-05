@@ -23,28 +23,6 @@ const ParsedClassicsContentContainers = {
     const tabContentContainerInner = tabContentContainer.find(`.${ParsedClassicsAppVars.tabContentInnerClass}`);
     // get collection shortname and resource shortname from URL
     const {collectionShortname, resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(activeTabId);
-    
-    // generate collectionShortname|resourceShortname pair
-    const collResPairUrl = collectionShortname && resourceShortname ? `${collectionShortname}|${resourceShortname}` : collectionShortname;
-    // get collectionShortname|resourceShortname pair saved as container's attr
-    const collResPairDom = tabContentContainer.attr(ParsedClassicsAppVars.collResPairAttr) ?? '';
-
-    // get line indicator from url
-    const lineIndicatorUrl = ParsedClassicsLayout.getLineIndicatorFromUrl(collectionShortname);
-    // get line indicator saved as dom attr
-    const lineIndicatorDom = tabContentContainer.attr(ParsedClassicsAppVars.lineNumberAttr) ?? '';
-
-    // get lemma from URL
-    const wordUrl = ParsedClassicsLayout.getWordFromUrl(collectionShortname) ?? '';
-    // get lemma from DOM
-    const wordDom = tabContentContainer.attr(ParsedClassicsAppVars.lemmaAttr) ?? '';
-
-    // get lexicon info and lexicon entry info info from URL 
-    const {lexicon: lexiconUrl, lexiconEntry: lexiconEntryUrl} = ParsedClassicsLayout.getLexiconAndEntryFromUrl(collectionShortname);
-    // get lexicon info from DOM 
-    const lexiconDom = tabContentContainer.attr(ParsedClassicsAppVars.lexiconAttr) ?? '';
-    // get lexicon entry info info from DOM 
-    const lexiconEntryDom = tabContentContainer.attr(ParsedClassicsAppVars.lexiconEntryAttr) ?? '';
 
     // get collection's definition
     const collectionDef = ParsedClassicsCollDefs[collectionShortname];
@@ -63,12 +41,39 @@ const ParsedClassicsContentContainers = {
     const resourceData = resourceDataOfCollection && resourceShortname ? resourceDataOfCollection[resourceShortname].data : '';
     // get resource contents
     const resourceContents = resourceDataOfCollection && resourceShortname ? resourceDataOfCollection[resourceShortname].contents : '';
+    
+    // generate collectionShortname|resourceShortname pair
+    const collResPairUrl = collectionShortname && resourceShortname ? `${collectionShortname}|${resourceShortname}` : collectionShortname;
+    // get collectionShortname|resourceShortname pair saved as container's attr
+    const collResPairDom = tabContentContainer.attr(ParsedClassicsAppVars.collResPairAttr) ?? '';
+
+    // get page indicator from url
+    let pageUrl = ParsedClassicsLayout.getPageIndicatorFromUrl(collectionShortname, activeTabId);
+    // get page indicator saved as dom attr
+    let pageDom = tabContentContainer.attr(ParsedClassicsAppVars.pageAttr) ?? '';
+
+    // get line indicator from url
+    const lineIndicatorUrl = ParsedClassicsLayout.getLineIndicatorFromUrl(collectionShortname);
+    // get line indicator saved as dom attr
+    const lineIndicatorDom = tabContentContainer.attr(ParsedClassicsAppVars.lineNumberAttr) ?? '';
+
+    // get lemma from URL
+    const wordUrl = ParsedClassicsLayout.getWordFromUrl(collectionShortname) ?? '';
+    // get lemma from DOM
+    const wordDom = tabContentContainer.attr(ParsedClassicsAppVars.lemmaAttr) ?? '';
+
+    // get lexicon info and lexicon entry info info from URL 
+    const {lexicon: lexiconUrl, lexiconEntry: lexiconEntryUrl} = ParsedClassicsLayout.getLexiconAndEntryFromUrl(collectionShortname);
+    // get lexicon info from DOM 
+    const lexiconDom = tabContentContainer.attr(ParsedClassicsAppVars.lexiconAttr) ?? '';
+    // get lexicon entry info info from DOM 
+    const lexiconEntryDom = tabContentContainer.attr(ParsedClassicsAppVars.lexiconEntryAttr) ?? '';
 
     // Case I. there is no resource shortname, so we need to display list of resources contained in collection
 
     if (!resourceShortname  &&  collResPairUrl !== collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed');
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed', pageUrl);
       // create html of available resources
       const resourcesListHtml = ParsedClassicsContentContainers.createAvailableResourcesListHtml(collectionDef, resourceDefsAll);
       // update container's html
@@ -85,7 +90,7 @@ const ParsedClassicsContentContainers = {
 
     else if (scannedOrTyped === 'typed' &&  collResPairUrl === collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl);
 
       switch(resourceType) {
         
@@ -154,11 +159,12 @@ const ParsedClassicsContentContainers = {
 
     // Case III. resource is "scanned" and collectionShortname|resourceShortname pair from URL and that from DOM are identical
     // so we need to scroll to selected line which is in certain SCANNED PAGE if line indicator from URL and that from DOM are different 
-    // or o scroll to selected word which is in certain SCANNED PAGE if word from URL and that from DOM are different
+    // or to scroll to selected word which is in certain SCANNED PAGE if word from URL and that from DOM are different
+    // or to scroll to selected page which is in certain SCANNED PAGE if page from URL and that from DOM are different
 
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl === collResPairDom) {
       // update container's attrs 
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl);
       // selected line was changed?
       if (lineIndicatorUrl !== lineIndicatorDom) { 
         const iframeEl = tabContentContainerInner.find('.pc-bookreader');
@@ -175,18 +181,14 @@ const ParsedClassicsContentContainers = {
           ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
         }
       }
-
-
-
-
-
-
-
-
-
-
-
-
+      // selected page was changed? 
+      if (pageUrl !== pageDom) {
+        const iframeEl = tabContentContainerInner.find('.pc-bookreader');
+        if (resourceType === 'reader') {
+          // browse scanned resource in the iframe to selected page
+          ParsedClassicsContentContainers.browseToSelectedPage(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, pageUrl);
+        }
+      }
 
       return;
     }
@@ -195,7 +197,7 @@ const ParsedClassicsContentContainers = {
 
     else if (scannedOrTyped === 'typed' &&  collResPairUrl !== collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl);
       
       switch(resourceType) {
 
@@ -311,11 +313,11 @@ const ParsedClassicsContentContainers = {
       return;
     }
 
-    // Case V. resource is "scanned" , but collectionShortname|resourceShortname pair from URL and that from DOM are different ++++++++++++++++++++++++
+    // Case V. resource is "scanned" , but collectionShortname|resourceShortname pair from URL and that from DOM are different 
     
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl !== collResPairDom) {
       // update container's attrs 
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl);
       // restore scanned book mode from storage
       ParsedClassicsScannedBookMode.restoreFromStorage(resourceDef['scanned_source_shortname']);
       // generate html of resource
@@ -328,12 +330,16 @@ const ParsedClassicsContentContainers = {
         // browse scanned resource in the iframe to selected word
         ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
       }
+      if (resourceType === 'reader') {
+        // browse scanned resource in the iframe to selected page
+        ParsedClassicsContentContainers.browseToSelectedPage(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, pageUrl);
+      }
       return;
     }
     
   },
 
-  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType, scannedOrTyped) {
+  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType, scannedOrTyped, page) {
     // save collectionShortname|resourceShortname pair as DOM attr
     container.attr(ParsedClassicsAppVars.collResPairAttr, collResPair);
     // save line indicator as DOM attr
@@ -348,6 +354,8 @@ const ParsedClassicsContentContainers = {
     container.attr(ParsedClassicsAppVars.resourceTypeAttr, resourceType);
     // save scanned or typed value as DOM attr in order to apply relevant styles 
     container.attr(ParsedClassicsAppVars.scannedOrTypedAttr, scannedOrTyped);
+    // save page as DOM attr
+    container.attr(ParsedClassicsAppVars.pageAttr, page);
   },
 
   createAvailableResourcesListHtml: function(collectionDef, resourceDefs) { 
@@ -912,6 +920,54 @@ const ParsedClassicsContentContainers = {
       ParsedClassicsAlertDialogue.openDialogue(paneId, {
         heading: 'Not found',
         message: `The line ${lineIndicatorUrl} was not found.`,
+      }); 
+    }
+  },
+
+  browseToSelectedPage: function(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, pageUrl)  {
+    // get pane id
+    const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
+    // close alert dialogue if such exists
+    ParsedClassicsAlertDialogue.closeDialogueWithoutClick(paneId);
+    // get resource contents
+    const collectionResourcesData = APP.loadedResourcesData[collectionShortname];
+    const resourceData = collectionResourcesData[resourceShortname];
+    const resourceContents = resourceData['contents'];
+    // get scanned source shortname
+    const scannedSourceShortname = resourceDef['scanned_source_shortname'];
+
+    // form main part of iframe src
+    let iframeSrcNew = "./reader/embedded_bookreader.html?" + scannedSourceShortname;
+
+    // display two or one page of scanned book?
+    let pageDisplayMode = "/mode/2up";
+    if (typeof ParsedClassicsScannedBookMode.params[scannedSourceShortname] != "undefined" && ParsedClassicsScannedBookMode.params[scannedSourceShortname]) {
+      pageDisplayMode = ParsedClassicsScannedBookMode.params[scannedSourceShortname];
+    }
+
+    // is page in contents Map?
+    if (typeof resourceContents.get(pageUrl) != "undefined" && resourceContents.get(pageUrl)[0] != "") {
+      // get page number of scanned book
+      let scannedPageNum;
+      if (pageUrl === 'title') {
+        pageUrl = resourceContents.get('title');
+        scannedPageNum = resourceContents.get(pageUrl)[0];
+      }
+      else {
+        scannedPageNum = resourceContents.get(pageUrl)[0];
+      }
+      // form new "src" attr of the iframe
+      iframeSrcNew += "#page/" + scannedPageNum + pageDisplayMode;
+      // set new "src" attr of the iframe (IMPORTANT! this cannot be done by iframeEl.attr("src", iframeSrcNew) because it would add new entry in browser's history)
+      iframeEl[0].contentWindow.location.replace(iframeSrcNew);
+      // save iframeSrcNew as value of attribute
+      iframeEl.attr("data-src", iframeSrcNew);
+    }
+    // selected page was not found
+    else {
+      ParsedClassicsAlertDialogue.openDialogue(paneId, {
+        heading: 'Not found',
+        message: `The page ${pageUrl} was not found.`,
       }); 
     }
   },
