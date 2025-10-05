@@ -992,11 +992,12 @@ const ParsedClassicsLayout = {
   */
 
   hashInsertSection: function (sectionId, position) {
-    
+
     // define vars
     let sectionData;
     const newDimensionsObj = {};
     const newLayoutObj = {};
+    let newPointersObj = {};
 
     // alias for func to generate unique ids
     const id = ParsedClassicsLayout.generateUID;
@@ -1038,9 +1039,10 @@ const ParsedClassicsLayout = {
       sectionData[0][1] = sectionData[0][1] * proportion;
     });
     // put data about new section among data of other sections
+    const newTabId = id();
     dimensionsObjVals.splice(insertIndex, 0, [
       [id(), newSectionPcWidth],
-      [id(), 100, [id()], 0],
+      [id(), 100, [newTabId], 0],
     ]);
     if (loadedCollections.length === 0 || loadedCollections.length > 1) {
       layoutObjVals.splice(insertIndex, 0, [[`${ParsedClassicsAppVars.newTabCollectionShortname}|${ParsedClassicsAppVars.newTabResourceShortname}`]]);
@@ -1049,19 +1051,29 @@ const ParsedClassicsLayout = {
       layoutObjVals.splice(insertIndex, 0, [[loadedCollections[0]]]);
     }
     
-    // put updated info about sections into new dimensions obj
+    // 1. put updated info about sections into new dimensions obj
     dimensionsObjVals.forEach((sectionData, i) => {
       const sectionCode = sectionCodesArr[i];
       newDimensionsObj[sectionCode] = sectionData;
     });
-    // put updated info about sections into new layout obj
+    // 2. put updated info about sections into new layout obj
     layoutObjVals.forEach((sectionData, i) => {
       const sectionCode = sectionCodesArr[i];
       newLayoutObj[sectionCode] = sectionData;
     });
+    // 3. put updated info about sections into new pointers obj
+    if (loadedCollections.length === 1) {
+      // is collection's content page based? 
+      const contentsType = ParsedClassicsCollDefs[loadedCollections[0]]['contents_type'];
+      if (contentsType === 'page') {
+        newPointersObj = ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, loadedCollections[0], newTabId, 'title');
+      }
+    }
+
     // update hash json
     hashJson[ParsedClassicsAppVars.dimensionsMember] = newDimensionsObj;
     hashJson[ParsedClassicsAppVars.layoutMember] = newLayoutObj;
+    hashJson[ParsedClassicsAppVars.pointersMember] = newPointersObj;
     // stringify hash json
     const hashJsonString = JSON.stringify(hashJson);
     // push state
@@ -1098,8 +1110,9 @@ const ParsedClassicsLayout = {
 
     // is only one pane in section?
     if (sectionData.length === 2) {
-      // generare new id
+      // generate new id
       const newPaneId = id();
+      const newTabId = id();
       // get insertion index for dimensions obj
       const index = position === "top" ? 1 : 2;
       // get insertion index for layout obj
@@ -1107,7 +1120,7 @@ const ParsedClassicsLayout = {
       // height og new pane will be 50%
       sectionData[1][1] = 50;
       // update section data
-      sectionData.splice(index, 0, [newPaneId, 50, [id()], 0]);
+      sectionData.splice(index, 0, [newPaneId, 50, [newTabId], 0]);
       // update layout data
       if (loadedCollections.length === 0 || loadedCollections.length > 1) {
         layoutData.splice(index2, 0, [`${ParsedClassicsAppVars.newTabCollectionShortname}|${ParsedClassicsAppVars.newTabResourceShortname}`]);
@@ -1120,9 +1133,18 @@ const ParsedClassicsLayout = {
       dimensionsObj[sectionCode] = sectionData;
       // update layout obj
       layoutObj[sectionCode] = layoutData;
+      // update pointers obj
+      if (loadedCollections.length === 1) {
+        // is collection's content page based? 
+        const contentsType = ParsedClassicsCollDefs[loadedCollections[0]]['contents_type'];
+        if (contentsType === 'page') {
+          ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, loadedCollections[0], newTabId, 'title');
+        }
+      }
       // update hash json
       hashJson[ParsedClassicsAppVars.dimensionsMember] = dimensionsObj;
       hashJson[ParsedClassicsAppVars.layoutMember] = layoutObj;
+      hashJson[ParsedClassicsAppVars.pointersMember] = pointersObj;
       // stringify hash json
       const hashJsonString = JSON.stringify(hashJson);
       // push state
@@ -1133,7 +1155,7 @@ const ParsedClassicsLayout = {
   },
 
   hashRemovePane: function (sectionId, paneId) {
-    
+
     // get hash json, dimensions obj and layout obj
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const dimensionsObj = hashJson[ParsedClassicsAppVars.dimensionsMember];
@@ -1162,7 +1184,8 @@ const ParsedClassicsLayout = {
       }
 
       if (paneIndex) {
-        
+        // get arr of tab ids from pane to be removed
+        const tabIdsArr = sectionDimentions[paneIndex][2];
         // get array of collection|resource shortname pairs from URL
         let collResShortnamePairs = Object.values(layoutObj);
         // flatten array of collection|resource shortname pairs
@@ -1219,6 +1242,16 @@ const ParsedClassicsLayout = {
 
         // treat color tags in pointers obj
         ParsedClassicsLayout.hashCollectionsTags(newPointersObj);
+
+        // remove from pointersObj page numbers relevant to tabs from removed pane
+        for (const collectionShortname in newPointersObj) {
+          const contentsType = ParsedClassicsCollDefs[collectionShortname]['contents_type'];
+          if (contentsType === 'page') {
+            for (let i = 0; i < tabIdsArr.length; i++) {
+              ParsedClassicsLayout.deletePageNumInPointersObj(newPointersObj, collectionShortname, tabIdsArr[i]);
+            }
+          }
+        }
 
         // update hash json
         hashJson[ParsedClassicsAppVars.dimensionsMember] = newDimensionsObj;
@@ -1337,6 +1370,9 @@ const ParsedClassicsLayout = {
     const layoutObj = hashJson[ParsedClassicsAppVars.layoutMember];
     const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
 
+    // get collection shortname
+    const {collectionShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabId);
+
     // loop through dimensions obj and get pane data of needed pane
     let paneDataFound = false;
     let sectionDataNew, 
@@ -1405,6 +1441,9 @@ const ParsedClassicsLayout = {
     // treat color tags in pointers obj
     ParsedClassicsLayout.hashCollectionsTags(newPointersObj);
 
+    // remove from pointersObj page number relevant to removed tab
+    ParsedClassicsLayout.deletePageNumInPointersObj(newPointersObj, collectionShortname, tabId);
+
     // update hash json
     hashJson[ParsedClassicsAppVars.dimensionsMember] = dimensionsObj;
     hashJson[ParsedClassicsAppVars.layoutMember] = layoutObj;
@@ -1419,7 +1458,7 @@ const ParsedClassicsLayout = {
 
   hashAddTab: function(sectionId, paneId) {
     // define vars
-    let sectionData, sectionLayoutData, sectionDataFound, paneData, tabIdsArr, resourceIdsArr;
+    let sectionData, sectionLayoutData, sectionDataFound, paneData, tabIdsArr, newTabId, resourceIdsArr;
 
     // get hash json, dimensions obj and layout obj and pointers obj
     const hashJson = ParsedClassicsLayout.getHashJson("url");
@@ -1455,7 +1494,7 @@ const ParsedClassicsLayout = {
           // get array of tab ids
           tabIdsArr = paneData[2];
           // update pane data
-          const newTabId = ParsedClassicsLayout.generateUID();
+          newTabId = ParsedClassicsLayout.generateUID();
           // and new tab id
           tabIdsArr.push(newTabId);
           // change activated tab's index
@@ -1475,9 +1514,18 @@ const ParsedClassicsLayout = {
       dimensionsObj[sectionCode] = sectionDataNew;
       // update layout obj 
       layoutObj[sectionCode] = sectionLayoutDataNew;
+      // update pointers obj
+      if (loadedCollections.length === 1) {
+        // is collection's content page based? 
+        const contentsType = ParsedClassicsCollDefs[loadedCollections[0]]['contents_type'];
+        if (contentsType === 'page') {
+          ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, loadedCollections[0], newTabId, 'title');
+        }
+      }
       // update hash json
       hashJson[ParsedClassicsAppVars.dimensionsMember] = dimensionsObj;
       hashJson[ParsedClassicsAppVars.layoutMember] = layoutObj;
+      hashJson[ParsedClassicsAppVars.pointersMember] = pointersObj;
       // stringify hash json
       const hashJsonString = JSON.stringify(hashJson);
       // push state
@@ -1946,6 +1994,14 @@ const ParsedClassicsLayout = {
     return lineIndicator;
   },
 
+  getPageIndicatorFromUrl(collectionShortname, tabId) {
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
+    const collectionPointers = pointersObj[collectionShortname] ?? {};
+    const pageIndicator = typeof collectionPointers[ParsedClassicsAppVars.pageMember] !== 'undefined' && typeof collectionPointers[ParsedClassicsAppVars.pageMember][tabId] !== 'undefined' && collectionPointers[ParsedClassicsAppVars.pageMember][tabId] ? collectionPointers[ParsedClassicsAppVars.pageMember][tabId] : 'title';
+    return pageIndicator;
+  },
+
   getWordFromUrl: function(collectionShortname) {
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
@@ -2030,6 +2086,30 @@ const ParsedClassicsLayout = {
       }
     });
     return collsToBeRemovedFromPointersObj;
+  },
+
+  updatePageNumInPointersObj: function(pointersObj, collectionShortname, tabId, pageNum) {
+    const collectionPointers = pointersObj[collectionShortname];
+    // get collection's definition
+    const collDef = ParsedClassicsCollDefs[collectionShortname];
+    // get collection's contents
+    const collContents = collDef['contents'] ?? new Map();
+    if (collContents.get('title') && collContents.get('title') === pageNum) {
+      pageNum = 'title';
+    }
+    if (typeof collectionPointers[ParsedClassicsAppVars.pageMember] == 'undefined') {
+      collectionPointers[ParsedClassicsAppVars.pageMember] = {};
+    }
+    collectionPointers[ParsedClassicsAppVars.pageMember][tabId] = pageNum;
+    return pointersObj;
+  },
+
+  deletePageNumInPointersObj: function(pointersObj, collectionShortname, tabId) {
+    const collectionPointers = pointersObj[collectionShortname];
+    delete collectionPointers[ParsedClassicsAppVars.pageMember][tabId];
+    if (Object.keys(collectionPointers[ParsedClassicsAppVars.pageMember]).length === 0) {
+      delete collectionPointers[ParsedClassicsAppVars.pageMember];
+    }
   },
 
   // outputs hash json string which encodes default layout, i.e. container containing certain section(s)

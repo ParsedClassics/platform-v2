@@ -20,7 +20,9 @@ $(document).ready(function(){
 
     '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="../docs/for_reader.html">Docs</a>' +
 
-    '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="../app.html">Classics</a>' +
+    '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="../readers.html">Readers</a>' +
+
+    '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="../classics.html">Classics</a>' +
 
     '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="../site/copyright.html">Copyright</a>' + 
 

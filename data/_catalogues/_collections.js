@@ -22,6 +22,7 @@ const ParsedClassicsCollProtos = {
   nt_book: {
     author_orig: 'Ἡ Καινὴ Διαθήκη',   
     author_eng: 'The New Testament',
+		contents_type: "line",
   },
 
 };
@@ -224,6 +225,24 @@ const ParsedClassicsCollDefs = {
 		collection_selectboxname: 'Κ.Δ. Ἀποκάλυψις Ἰωάννου',
 		collections_page_title_orig: 'Ἀποκάλυψις Ἰωάννου τοῦ θεολόγου',
 		collections_page_title_eng: 'Revelation of John the theologian', 
+	},
+
+	appleton_initium: {
+		author_orig: 'R. B. Appleton',   
+    author_eng: 'R. B. Appleton',
+    collection_selectboxname: 'Appleton R. B. Initium',
+    collections_page_title_orig: 'Initium',
+    collections_page_title_eng: 'Appleton R. B. Initium',
+		contents_type: "page",
+	},
+
+	maxey_fay_new_latin_primer: {
+		author_orig: 'Mima Maxey, Marjorie J. Fay',   
+    author_eng: 'Mima Maxey, Marjorie J. Fay',
+    collection_selectboxname: '1* Maxey M., Fay M. J. A new Latin primer',
+    collections_page_title_orig: 'A new Latin primer',
+    collections_page_title_eng: 'Maxey M., Fay M. J. A new Latin primer',
+		contents_type: "page",
 	},
 
 };

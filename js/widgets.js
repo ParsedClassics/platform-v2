@@ -19,8 +19,7 @@ const ParsedClassicsNavSelects = {
           <select class="sm-menu-selectbox" id="resources-selectbox-${tabId}">
             <option disabled selected>Resource</option>
           </select>
-          <select class="sm-menu-selectbox" id="lines-selectbox-${tabId}">
-            <option disabled selected>Line</option>
+          <select class="sm-menu-selectbox" id="lines-or-pages-selectbox-${tabId}">
           </select>
         </div>
       </div>
@@ -46,13 +45,13 @@ const ParsedClassicsNavSelects = {
       ParsedClassicsNavSelects.hashSelectResource(collResPair, tabId);
     });
 
-    // attach function to lines selectbox
-    const linesSelectbox = container.find(`#lines-selectbox-${tabId}`);
-    linesSelectbox.bind('change', function() {
-      const collLinePair = this.value;
+    // attach function to lines or pages selectbox
+    const linesOrPagesSelectbox = container.find(`#lines-or-pages-selectbox-${tabId}`);
+    linesOrPagesSelectbox.bind('change', function() {
+      const selectboxValue = this.value;
       const paneId = ParsedClassicsLayout.getPaneIdFromUrl(tabId);
       $(`#main-menu-${paneId}`).smartmenus('menuHideAll');
-      ParsedClassicsNavSelects.hashSelectLine(collLinePair, tabId);
+      ParsedClassicsNavSelects.hashSelectLineOrPage(selectboxValue, tabId);
     });
     
     // get selectded collection shortname and selected resource shortname
@@ -69,11 +68,12 @@ const ParsedClassicsNavSelects = {
     // add data attr to selectbox to indicate collection whose resource shortnames selectbox contains
     resourcesSelectbox.append(resSelectboxOptionsEls).attr('data-collection', collectionShortname);
 
-    // create lines selectbox options els
-    const linesSelectboxOptionsEls = ParsedClassicsNavSelects.linesSelectboxOptions(collectionShortname);
-    // append lines selectbox options els to lines selectbox
+    // create or pages lines selectbox options els
+    const linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.linesOrPagesSelectboxOptions(collectionShortname, tabId);
+
+    // add  selectbox options els to lines or pages selectbox
     // add data attr to selectbox to indicate collection whose line indicators selectbox contains
-    linesSelectbox.append(linesSelectboxOptionsEls).attr('data-collection', collectionShortname);
+    linesOrPagesSelectbox.html('').append(linesOrPagesSelectboxOptionsEls).attr('data-collection', collectionShortname);
     return container;
   },
 
@@ -170,8 +170,35 @@ const ParsedClassicsNavSelects = {
     return selectboxOptionsEls;
   },
 
+  linesOrPagesSelectboxOptions: function(collectionShortname, tabId) {
+    // get collection's definition
+    const collDef = ParsedClassicsCollDefs[collectionShortname];
+
+    // get type of collection contents ("empty", "lines", "pages" or "none") 
+    const collContentsType = collDef['contents_type'];
+
+    let linesOrPagesSelectboxOptionsEls;
+    if (typeof collContentsType === "undefined") { 
+      // create selectbox option el "Lines or Pages"
+      linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.emptySelectboxOptions();
+    }
+    else if (collContentsType === "line") {
+      // create lines selectbox options els
+      linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.linesSelectboxOptions(collectionShortname);
+    }
+    else if (collContentsType === "page") { 
+      // create pages selectbox options els
+      linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.pagesSelectboxOptions(collectionShortname, tabId);
+    }
+    else if (collContentsType === "word") {
+      // lines or options selectbox should be hidden
+      linesOrPagesSelectboxOptionsEls = null;
+    }
+    return linesOrPagesSelectboxOptionsEls;
+  },
+
   linesSelectboxOptions: function(collectionShortname) {
-    let selectboxOptionsHtml = '';
+    let selectboxOptionsHtml = '<option disabled>Line</option>';
     // get collection's definition
     const collDef = ParsedClassicsCollDefs[collectionShortname];
     // get collection's contents
@@ -193,6 +220,39 @@ const ParsedClassicsNavSelects = {
         selectboxOptionsHtml += `<option value="${collectionShortname}|${key}" ${selected}>${collContents[key]}</option>\n`;     
       }
     }
+    // create selectbox options els
+    const selectboxOptionsEls = $(selectboxOptionsHtml);
+    return selectboxOptionsEls;
+  },
+
+  pagesSelectboxOptions: function(collectionShortname, tabId) {
+    let selectboxOptionsHtml = '<option disabled>Page</option>';
+    // get collection's definition
+    const collDef = ParsedClassicsCollDefs[collectionShortname];
+    // get collection's contents
+    const collContents = collDef['contents'] ?? {};
+
+    // get selected line's number
+    let selectedPageIndicator = ParsedClassicsLayout.getPageIndicatorFromUrl(collectionShortname, tabId); 
+
+    if (selectedPageIndicator === 'title') {
+      selectedPageIndicator = collContents.get('title');
+    }
+
+    for (let key of collContents.keys()) {
+      // is page selected?
+      if (key !== "title") {
+        const selected = selectedPageIndicator === key ? ' selected="selected"' : '';
+        selectboxOptionsHtml += `<option value="${key}"${selected}>${key} ${collContents.get(key)[1]}</option>\n`;
+      }
+    }
+    // create selectbox options els
+    const selectboxOptionsEls = $(selectboxOptionsHtml);
+    return selectboxOptionsEls;
+  },
+
+  emptySelectboxOptions: function() {
+    let selectboxOptionsHtml = '<option disabled selected>Line or Page</option>';
     // create selectbox options els
     const selectboxOptionsEls = $(selectboxOptionsHtml);
     return selectboxOptionsEls;
@@ -241,8 +301,18 @@ const ParsedClassicsNavSelects = {
       pointersObj[collectionShortname] = {};
       // save reference in variable
       const collectionPointers = pointersObj[collectionShortname];
-      // selected line of just selected collection is "title"
-      collectionPointers[ParsedClassicsAppVars.lineMember] = 'title';
+      // get collection's definition
+      const collDef = ParsedClassicsCollDefs[collectionShortname];
+      // get type of collection contents ("lines" or "pages")
+      const collContentsType = collDef['contents_type'];
+      if (collContentsType === "line") {
+        // selected line of just selected collection is "title"
+        collectionPointers[ParsedClassicsAppVars.lineMember] = 'title';
+      }
+      // selected page of just selected collection is "title"
+      else if (collContentsType === "page") {
+        ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, collectionShortname, tabId, 'title');
+      }
     }
 
     // treat color tags in pointers obj
@@ -283,6 +353,24 @@ const ParsedClassicsNavSelects = {
     ParsedClassicsLayout.update(hashJson);
   },
 
+  hashSelectLineOrPage: function(selectboxValue, tabId) {
+    // get selectded collection shortname and selected resource shortname
+    const {collectionShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabId);
+
+    // get collection's definition
+    const collDef = ParsedClassicsCollDefs[collectionShortname];
+
+    // get type of collection contents ("lines" or "pages")
+    const collContentsType = collDef['contents_type'];
+
+    if (collContentsType === "line") {
+      ParsedClassicsNavSelects.hashSelectLine(selectboxValue);
+    }
+    else if (collContentsType === "page") {
+      ParsedClassicsNavSelects.hashSelectPage(selectboxValue, tabId, collectionShortname);
+    }
+  },
+
   hashSelectLine: function(collLinePair) {
     // get hash json
     const hashJson = ParsedClassicsLayout.getHashJson("url");
@@ -304,6 +392,22 @@ const ParsedClassicsNavSelects = {
     delete collectionPointers[ParsedClassicsAppVars.lexiconMember];
     // delete key "lexpos" from pointers obj
     delete collectionPointers[ParsedClassicsAppVars.lexiconEntryMember];
+
+    // stringify hash json
+    const hashJsonString = JSON.stringify(hashJson);
+    // push state
+    history.pushState(null, "", `#${hashJsonString}`);
+    // update layout
+    ParsedClassicsLayout.update(hashJson);
+  },
+
+  hashSelectPage: function(selectboxValue, tabId, collectionShortname) {
+    // get hash json
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    // get pointers obj
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
+    // update page number in pointers obj
+    ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, collectionShortname, tabId, selectboxValue);
 
     // stringify hash json
     const hashJsonString = JSON.stringify(hashJson);
@@ -380,36 +484,34 @@ const ParsedClassicsNavSelects = {
       resSelectbox[0].selectedIndex = 0;
     }
 
-    // III. treat lines' selectbox
+    // III. treat lines or pages selectbox
     
-    // get lines' selectbox
-    const linesSelectbox = tabSelectboxesContainer.find(`#lines-selectbox-${activeTabId}`);
+    // get lines or pages selectbox
+    const linesOrPagesSelectbox = tabSelectboxesContainer.find(`#lines-or-pages-selectbox-${activeTabId}`);
     // get value of data-collection attr
-    const collShortnameFromDom2 = linesSelectbox.attr('data-collection');
+    const collShortnameFromDom2 = linesOrPagesSelectbox.attr('data-collection');
     // do we need to create new options els for lines selectbox?
     if (collectionShortname !== collShortnameFromDom2) {
-      // create create new options els for lines selectbox
-      const linesSelectboxOptionsEls = ParsedClassicsNavSelects.linesSelectboxOptions(collectionShortname);
-      // remove old options els 
-      const firstOption = linesSelectbox.find('option').first().clone(true);
-      linesSelectbox.html('').append(firstOption);
+      // create create new options els for lines or pages selectbox
+      // create or pages lines selectbox options els
+      const linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.linesOrPagesSelectboxOptions(collectionShortname, activeTabId);
       // append new options els and 
       // add data attr to selectbox to indicate collection whose line indicators selectbox contains
-      linesSelectbox.append(linesSelectboxOptionsEls).attr('data-collection', collectionShortname)
+      linesOrPagesSelectbox.html('').append(linesOrPagesSelectboxOptionsEls).attr('data-collection', collectionShortname)
     }
-    // get value from lines' selectbox
-    const linesSelectboxValue = linesSelectbox.val();
+    // get value from lines or pages selectbox
+    const selectboxValue = linesOrPagesSelectbox.val();
     if (collLinePair) {
-      const optionToBeSelected = linesSelectbox.find(`option[value="${collLinePair}"]`);
+      const optionToBeSelected = linesOrPagesSelectbox.find(`option[value="${selectboxValue}"]`);
       if (optionToBeSelected.length === 1) {
-        linesSelectbox.val(collLinePair);
+        linesOrPagesSelectbox.val(selectboxValue);
       }
       else {
-        linesSelectbox[0].selectedIndex = 0;
+        linesOrPagesSelectbox[0].selectedIndex = 0;
       }
     }
     else {
-      linesSelectbox[0].selectedIndex = 0;
+      linesOrPagesSelectbox[0].selectedIndex = 0;
     }
     
   },

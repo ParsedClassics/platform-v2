@@ -69,7 +69,7 @@ ParsedClassicsCatalogue = {
           const collectionDef = ParsedClassicsCollDefs[collectionShortnamesArray[i]];
           const resourceDefs = collectionDef['resource_defs'];
           const parsedTextResShortname = Object.keys(resourceDefs)[0];
-          const url = baseUrl + `app.html#{"L":{"a":[["${collectionShortnamesArray[i]}|${parsedTextResShortname}"]],"b":[["${collectionShortnamesArray[i]}"]]},"P":{"${collectionShortnamesArray[i]}":{"line":"title"}},"D":{"a":[["${id()}",50],["${id()}",100,["${id()}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
+          const url = baseUrl + `classics.html#{"L":{"a":[["${collectionShortnamesArray[i]}|${parsedTextResShortname}"]],"b":[["${collectionShortnamesArray[i]}"]]},"P":{"${collectionShortnamesArray[i]}":{"line":"title"}},"D":{"a":[["${id()}",50],["${id()}",100,["${id()}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
           
           collectionsTableHTML += '<tr>';
 
