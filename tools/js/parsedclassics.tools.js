@@ -1696,6 +1696,168 @@ var ParsedClassicsBookContentsGenerator = {
 
 /*
 
+Contents for resouces of the type "Reader"
+
+*/
+
+var ParsedClassicsReaderContentsGenerator = {
+
+	generateReaderContents: function() {
+		console.log('generateReaderContents');
+
+		var reader_contents,
+		contents_name,
+		range_roman,
+		range_arab,
+		output_textarea,
+		msg_el,
+		range_roman_arr,
+		range_arab_arr,
+		start_num,
+		end_num,
+		roman_num;
+
+		// define var
+		reader_contents = "";
+
+		// get contents name 
+		contents_name = $("#" + ParsedClassicsVars.inputTextarea3Id).val();
+		// get range of Roman numerals
+		range_roman = $("#" + ParsedClassicsVars.inputTextarea2Id).val();
+		// get range of Arab numerals
+		range_arab = $("#" + ParsedClassicsVars.inputTextareaId).val();
+
+		// get output textarea
+		output_textarea = $("#" + ParsedClassicsVars.outputTextareaId);
+
+		// trim contents name
+		contents_name = $.trim(contents_name);
+		console.log('contents_name', contents_name);
+		// trim prefixes string
+		range_roman = $.trim(range_roman);
+		range_roman = range_roman.replace(" ", "");
+		console.log('range_roman', range_roman);
+		// trim ranges string
+		range_arab = $.trim(range_arab);
+		range_arab = range_arab.replace(" ", "");
+		console.log('range_arab', range_arab);
+
+		// no contents name? - then nothing to do, exept to display error msg
+		if (contents_name == "") {
+			// find message el
+			msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+			// put message text inside message el
+			msg_el.html("No contents shortname defined inside Contents shortname input!");
+			// display modal dialogue
+			ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+			return;
+		}
+
+		// no range for Arab numerals? - then nothing to do, exept to display error msg
+		if (range_arab == "") {
+			// find message el
+			msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+			// put message text inside message el
+			msg_el.html("No range defined inside Page range input for Arab numerals!");
+			// display modal dialogue
+			ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+			return;
+		}
+
+		// generate reader's contents
+
+		// split into start and end numbers the range for Roman numerals
+		range_roman_arr = range_roman.split("-");
+		// split into start and end numbers the range for Roman numerals
+		range_arab_arr = range_arab.split("-");
+
+		// no start or end numbers? - then nothing to do, exept to display error msg
+		if ((range_roman && (range_roman_arr.length != 2 || !range_roman_arr[0] || !range_roman_arr[1])) || (range_arab_arr.length != 2 || (!range_arab_arr[0] || !range_arab_arr[1]))) {
+			// find message el
+			msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+			// put message text inside message el
+			msg_el.html("Each range must contain start and end number separated by dash!");
+			// display modal dialogue
+			ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+			return;
+		}
+
+		// get start number of the range of Roman numerals
+		start_num = Number(range_roman_arr[0]);
+		// get end number of the range
+		end_num = Number(range_roman_arr[1]);
+
+		// increase end number by 1
+		end_num++;
+
+		// generate contents from Roman numerals range
+		for (var j = start_num; j < end_num; j++) {
+			roman_num = ParsedClassicsReaderContentsGenerator.numberToRoman(j).toLowerCase();
+			reader_contents += `["${roman_num}", ["", ""]],\n\n`;
+		}
+
+		// get start number of the range of Arab numerals
+		start_num = Number(range_arab_arr[0]);
+		// get end number of the range
+		end_num = Number(range_arab_arr[1]);
+
+		// generate contents from Arab numerals range
+		for (var j = start_num; j < end_num; j++) {
+			reader_contents += `["${j}", ["", ""]],\n\n`;
+		}
+
+		// add title page
+		reader_contents = `["title", ""],\n\n` + reader_contents;
+
+		// add brackets and parentheses
+		reader_contents = "([\n\n" + reader_contents + "]);"
+
+		// add contents shortname
+		reader_contents = contents_name + " =  new Map" + reader_contents;
+
+		// output book contents
+		output_textarea.val(reader_contents);
+
+	}
+
+	// from https://codingartistweb.com/2025/01/building-a-roman-numeral-converter-with-javascript
+	, numberToRoman: function (num) {
+		const romanNumerals = [
+			{ value: 1000, numeral: "M" },
+			{ value: 900, numeral: "CM" },
+			{ value: 500, numeral: "D" },
+			{ value: 400, numeral: "CD" },
+			{ value: 100, numeral: "C" },
+			{ value: 90, numeral: "XC" },
+			{ value: 50, numeral: "L" },
+			{ value: 40, numeral: "XL" },
+			{ value: 10, numeral: "X" },
+			{ value: 9, numeral: "IX" },
+			{ value: 5, numeral: "V" },
+			{ value: 4, numeral: "IV" },
+			{ value: 1, numeral: "I" },
+		];
+		let result = "";
+		for (const { value, numeral } of romanNumerals) {
+			while (num >= value) {
+				result += numeral;
+				num -= value;
+			}
+		}
+		return result;
+	}
+
+	, init: function() {
+		var generate_readercontents_button;
+
+		generate_readercontents_button = $("#" + ParsedClassicsVars.generateButtonId);
+		generate_readercontents_button.bind("click", ParsedClassicsReaderContentsGenerator.generateReaderContents);
+	}
+
+};
+
+/*
+
 Lexicon contents (for scanned lexicons and Concordances) supplementer script
 
 */
