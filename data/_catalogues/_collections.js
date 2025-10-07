@@ -245,4 +245,22 @@ const ParsedClassicsCollDefs = {
 		contents_type: "page",
 	},
 
+	appleton_ludi_persici: {
+		author_orig: 'Reginald B. Appleton',   
+    author_eng: 'Reginald B. Appleton',
+    collection_selectboxname: '3* R. B. Appleton. Ludi Persici',
+    collections_page_title_orig: 'Ludi Persici',
+    collections_page_title_eng: 'R. B. Appleton. Ludi Persici',
+		contents_type: "page",
+	},
+
+	collar_new_gradatim: {
+		author_orig: 'William C. Collar',   
+    author_eng: 'William C. Collar',
+    collection_selectboxname: '2* W. C. Collar. The new gradatim',
+    collections_page_title_orig: 'The new gradatim',
+    collections_page_title_eng: 'W. C. Collar. The new gradatim',
+		contents_type: "page",
+	},
+
 };
