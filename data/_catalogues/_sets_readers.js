@@ -22,6 +22,8 @@ const ParsedClassicsCollectionSets = {
 		collections: [
       //'appleton_initium',
       'maxey_fay_new_latin_primer',
+      'collar_new_gradatim',
+      'appleton_ludi_persici',
 		],
   }
 
