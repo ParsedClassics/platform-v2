@@ -1065,6 +1065,7 @@ const ParsedClassicsLayout = {
     if (loadedCollections.length === 1) {
       // is collection's content page based? 
       const contentsType = ParsedClassicsCollDefs[loadedCollections[0]]['contents_type'];
+      newPointersObj = pointersObj;
       if (contentsType === 'page') {
         newPointersObj = ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, loadedCollections[0], newTabId, 'title');
       }
@@ -2044,7 +2045,7 @@ const ParsedClassicsLayout = {
           tabIndexFound = true;
           collectionShortname = resourceData[tabIndex].split('|')[0];
           resourceShortname = resourceData[tabIndex].split('|')[1] ?? null;
-          if (collectionShortname && collectionShortname != 'new_tab' && typeof pointersObj[collectionShortname]['tag'] != 'undefined') {
+          if (collectionShortname && collectionShortname != 'new_tab' && typeof pointersObj[collectionShortname] != 'undefined' && typeof pointersObj[collectionShortname]['tag'] != 'undefined') {
             tag = pointersObj[collectionShortname]['tag'];
           }
           break;
