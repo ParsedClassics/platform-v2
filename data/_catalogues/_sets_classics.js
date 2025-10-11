@@ -6,7 +6,7 @@
 =====================================================
 */
 
-const ParsedClassicsCollectionSets = {
+ParsedClassicsCollectionSets = {
 
 	nt_gospels: {
 		title_orig: 'Ἡ Καινὴ Διαθήκη. Τὰ Εὐαγγέλια',

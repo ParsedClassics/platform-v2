@@ -176,7 +176,7 @@ var ParsedClassicsData = {
 
       // compile catalogue links
       for (var key in ParsedClassicsCollectionSets) {
-        catalogueContent += "<p><a target='_blank' href='../site/collections.html#catalogue/{\"" + ParsedClassicsVars.collSetUrlName + "\":\"" + key + "\"}'>" + ParsedClassicsCollectionSets[key].orig + ' / ' + ParsedClassicsCollectionSets[key].eng + '</a></p>';
+        catalogueContent += "<p><a target='_blank' href='../site/collections-classics.html#catalogue/{\"" + ParsedClassicsVars.collSetUrlName + "\":\"" + key + "\"}'>" + ParsedClassicsCollectionSets[key].orig + ' / ' + ParsedClassicsCollectionSets[key].eng + '</a></p>';
       }
 
       $("#" + ParsedClassicsVars.siteContentId).append(catalogueContent);
