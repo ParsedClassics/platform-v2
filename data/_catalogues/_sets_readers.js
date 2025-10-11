@@ -6,7 +6,7 @@
 =====================================================
 */
 
-const ParsedClassicsCollectionSets = {
+ParsedClassicsCollectionSets = {
 
   greek_readers: {
     title_orig: 'Greek readers',

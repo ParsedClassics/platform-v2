@@ -35,8 +35,8 @@ ParsedClassicsCollDefs.appleton_ludi_persici["resource_defs"] = {
   // Reader
 
   appleton_ludi_persici_reader: {
-    collections_page_resource_desc: "Appleton R. B. Ludi Persici", 
-    library_app_selectbox_title: "Appleton R. B. Ludi Persici",
+    collections_page_resource_desc: "Appleton R. B. Ludi Persici (1921)", 
+    library_app_selectbox_title: "Appleton R. B. Ludi Persici (1921)",
     library_app_panel_title: "Appleton R. B. Ludi Persici",
     library_app_panel_subtitle: "",
     library_app_panel_text_from: "R. B. Appleton. Ludi Persici. 1921. Oxford: Oxford University Press; London: Humphrey Milford.",

@@ -35,8 +35,8 @@ ParsedClassicsCollDefs.maxey_fay_new_latin_primer["resource_defs"] = {
   // Reader
 
   maxey_fay_new_latin_primer_reader: {
-    collections_page_resource_desc: "Maxey M., Fay M. J. A new Latin primer", 
-    library_app_selectbox_title: "Maxey M., Fay M. J. A new Latin primer",
+    collections_page_resource_desc: "Maxey M., Fay M. J. A new Latin primer (1933)", 
+    library_app_selectbox_title: "Maxey M., Fay M. J. A new Latin primer (1933)",
     library_app_panel_title: "Maxey M., Fay M. J. A new Latin primer",
     library_app_panel_subtitle: "",
     library_app_panel_text_from: "Maxey M., Fay M. J. A new Latin primer. 1933. Boston etc.: D. C. Heath and company.",

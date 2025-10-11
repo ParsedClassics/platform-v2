@@ -16,11 +16,21 @@
 
 <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 
-<title>Editions | Catalogue | ParsedClassics</title>
+<title>Collections | Catalogue | ParsedClassics</title>
+
+<link type="text/css" rel="stylesheet" href="./css/vars.css" />
 
 <link type="text/css" rel="stylesheet" href="./css/w3.css" />
 
 <link type="text/css" rel="stylesheet" href="./css/site.css" />
+
+<link type="text/css" rel="stylesheet" href="./css/sortable-light.css" />
+
+<script type="text/javascript" src="../data/_catalogues/_sets_readers.js"></script>
+
+<script type="text/javascript" src="../data/_catalogues/_collections.js"></script>
+
+<script type="text/javascript" src="../data/_catalogues/_res_protos.js"></script>
 
 <script type="text/javascript" src="../js/vars.js"></script>
 
@@ -28,15 +38,14 @@
 
 <script type="text/javascript" src="./js/helpers.js"></script>
 
+<script type="text/javascript" src="./js/sortable.js"></script>
+
 <script type="text/javascript" src="./js/catalogue.js"></script>
 
-<script>
-$(document).ready(
-  function() {
-    ParsedClassicsReadersCatalogue.editionsList();
-    ParsedClassicsCatalogue.editionsList();
-  }
-);
+<script type="text/javascript">
+
+  $(document).ready(ParsedClassicsReadersCatalogue.collectionsList);
+
 </script>
 
 </head>
@@ -47,10 +56,6 @@ $(document).ready(
 
 <div id="pc-site-content" class="pc-center-pane-maxwidth w3-border-right w3-padding pc-padding-top-0">
 
-<h1>Catalogue</h1>
-
-<p>Here you can quickly review available editions, collections and resources.</p>
-  
 </div>
 
 </body>
