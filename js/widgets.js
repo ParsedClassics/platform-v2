@@ -227,25 +227,34 @@ const ParsedClassicsNavSelects = {
 
   pagesSelectboxOptions: function(collectionShortname, tabId) {
     let selectboxOptionsHtml = '<option disabled>Page</option>';
-    // get collection's definition
-    const collDef = ParsedClassicsCollDefs[collectionShortname];
-    // get collection's contents
-    const collContents = collDef['contents'] ?? {};
 
-    // get selected line's number
-    let selectedPageIndicator = ParsedClassicsLayout.getPageIndicatorFromUrl(collectionShortname, tabId); 
+    // is resource selected in this tab?
+    const {resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabId);
 
-    if (selectedPageIndicator === 'title') {
-      selectedPageIndicator = collContents.get('title');
-    }
+    // selectbox options should be generated only if resource is selected
+    if (resourceShortname) {
+      // get loaded resources data for current collection
+      const loadedResDataOfCollection = APP.loadedResourcesData[collectionShortname];
+      // get loaded data of current resouce
+      const loadedDataOfResource = loadedResDataOfCollection[resourceShortname];
+      // get contents of the resource
+      const resourceContents = loadedDataOfResource['contents'];
+      // get selected line's number
+      let selectedPageIndicator = ParsedClassicsLayout.getPageIndicatorFromUrl(collectionShortname, tabId); 
 
-    for (let key of collContents.keys()) {
-      // is page selected?
-      if (key !== "title") {
-        const selected = selectedPageIndicator === key ? ' selected="selected"' : '';
-        selectboxOptionsHtml += `<option value="${key}"${selected}>${key} ${collContents.get(key)[1]}</option>\n`;
+      if (selectedPageIndicator === 'title') {
+        selectedPageIndicator = resourceContents.get('title');
+      }
+
+      for (let key of resourceContents.keys()) {
+        // is page selected?
+        if (key !== "title") {
+          const selected = selectedPageIndicator === key ? ' selected="selected"' : '';
+          selectboxOptionsHtml += `<option value="${key}"${selected}>${key} ${resourceContents.get(key)[1]}</option>\n`;
+        }
       }
     }
+
     // create selectbox options els
     const selectboxOptionsEls = $(selectboxOptionsHtml);
     return selectboxOptionsEls;
@@ -309,10 +318,7 @@ const ParsedClassicsNavSelects = {
         // selected line of just selected collection is "title"
         collectionPointers[ParsedClassicsAppVars.lineMember] = 'title';
       }
-      // selected page of just selected collection is "title"
-      else if (collContentsType === "page") {
-        ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, collectionShortname, tabId, 'title');
-      }
+
     }
 
     // treat color tags in pointers obj
@@ -329,8 +335,9 @@ const ParsedClassicsNavSelects = {
   hashSelectResource: function(collResPair, tabId) {
     // get hash json
     const hashJson = ParsedClassicsLayout.getHashJson("url");
-    // get layout obj
+    // get layout obj and pointers obj
     const layoutObj = hashJson[ParsedClassicsAppVars.layoutMember];
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
 
     // get numerical index of tab
     const tabIndex = ParsedClassicsLayout.getTabIndexFromUrl(tabId);
@@ -344,6 +351,17 @@ const ParsedClassicsNavSelects = {
     const paneLayout = sectionLayout[paneIndex];
     // change relevant collectionShortname|resourceShortname pair with collection shortname which was selected
     paneLayout.splice(tabIndex, 1, collResPair);
+
+    // get collection shortname
+    const collectionShortname = collResPair.split('|')[0];
+    // get collection's definition
+    const collDef = ParsedClassicsCollDefs[collectionShortname];
+    // get type of collection contents ("lines" or "pages")
+    const collContentsType = collDef['contents_type'];
+    // selected page of just selected resource is "title"
+    if (collContentsType === "page") {
+      ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, collectionShortname, tabId, 'title');
+    }
 
     // stringify hash json
     const hashJsonString = JSON.stringify(hashJson);
@@ -490,14 +508,22 @@ const ParsedClassicsNavSelects = {
     const linesOrPagesSelectbox = tabSelectboxesContainer.find(`#lines-or-pages-selectbox-${activeTabId}`);
     // get value of data-collection attr
     const collShortnameFromDom2 = linesOrPagesSelectbox.attr('data-collection');
+    // get value of data-resource attr
+    const resShortnameFromDom2 = linesOrPagesSelectbox.attr('data-resource');
+    // get collection's definition
+    const collDef = ParsedClassicsCollDefs[collectionShortname];
+    // get type of collection contents ("lines" or "pages")
+    const collContentsType = collDef['contents_type'];
     // do we need to create new options els for lines selectbox?
-    if (collectionShortname !== collShortnameFromDom2) {
+    if (collectionShortname !== collShortnameFromDom2 || (collContentsType == 'page' && resourceShortname != resShortnameFromDom2)) {
       // create create new options els for lines or pages selectbox
       // create or pages lines selectbox options els
       const linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.linesOrPagesSelectboxOptions(collectionShortname, activeTabId);
-      // append new options els and 
-      // add data attr to selectbox to indicate collection whose line indicators selectbox contains
-      linesOrPagesSelectbox.html('').append(linesOrPagesSelectboxOptionsEls).attr('data-collection', collectionShortname)
+      // append new options els 
+      linesOrPagesSelectbox.html('').append(linesOrPagesSelectboxOptionsEls);
+      // add data attr to selectbox to indicate collection whose contents selectbox contains
+      // add data attr to selectbox to indicate resource whose contents selectbox contains
+      linesOrPagesSelectbox.attr('data-collection', collectionShortname).attr('data-resource', collectionShortname);
     }
     // get value from lines or pages selectbox
     const selectboxValue = linesOrPagesSelectbox.val();
