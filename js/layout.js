@@ -2210,9 +2210,9 @@ const ParsedClassicsLayout = {
   getHashJson: function (from) {
     // get hash json from local storage
     if (from === "localStorage") {
-      const storageJsonString = localStorage.getItem(
-        ParsedClassicsAppVars.urlHashStorageName
-      );
+      const path = window.location.pathname;
+      const fileName = path.substring(path.lastIndexOf('/') + 1);
+      const storageJsonString = localStorage.getItem(ParsedClassicsAppVars.urlHashStorageName + '__' + fileName);
       return ParsedClassicsLayout.stringToJson(storageJsonString);
     }
     // get hash json from URL
@@ -2308,7 +2308,9 @@ const ParsedClassicsLayout = {
     const urlJsonValidation = ParsedClassicsLayout.layoutJsonValidate(urlJson);
     if (urlJsonValidation) {
       const hashJsonStr = JSON.stringify(urlJson);
-      localStorage.setItem(ParsedClassicsAppVars.urlHashStorageName, window.location.hash.replace("#", ""));
+      const path = window.location.pathname;
+      const fileName = path.substring(path.lastIndexOf('/') + 1);
+      localStorage.setItem(ParsedClassicsAppVars.urlHashStorageName + '__' + fileName, window.location.hash.replace("#", ""));
     }
   }
 };
