@@ -228,31 +228,52 @@ const ParsedClassicsNavSelects = {
   pagesSelectboxOptions: function(collectionShortname, tabId) {
     let selectboxOptionsHtml = '<option disabled>Page</option>';
 
+    // get collection's definition
+    const collDef = ParsedClassicsCollDefs[collectionShortname];
+    console.log('collDef', collDef);
+
     // is resource selected in this tab?
     const {resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabId);
 
     // selectbox options should be generated only if resource is selected
     if (resourceShortname) {
+      // get resource definition
+      const resDef = collDef['resource_defs'][resourceShortname];
+      console.log('resDef', resDef);
+      // get resource type
+      const resourceType = resDef['resource_type'];
+      console.log('resourceType', resourceType);
       // get loaded resources data for current collection
       const loadedResDataOfCollection = APP.loadedResourcesData[collectionShortname];
       // get loaded data of current resouce
       const loadedDataOfResource = loadedResDataOfCollection[resourceShortname];
+      console.log('loadedDataOfResource', loadedDataOfResource);
       // get contents of the resource
       const resourceContents = loadedDataOfResource['contents'];
       // get selected line's number
       let selectedPageIndicator = ParsedClassicsLayout.getPageIndicatorFromUrl(collectionShortname, tabId); 
 
-      if (selectedPageIndicator === 'title') {
-        selectedPageIndicator = resourceContents.get('title');
-      }
-
-      for (let key of resourceContents.keys()) {
-        // is page selected?
-        if (key !== "title") {
-          const selected = selectedPageIndicator === key ? ' selected="selected"' : '';
-          selectboxOptionsHtml += `<option value="${key}"${selected}>${key} ${resourceContents.get(key)[1]}</option>\n`;
+      // create selectboxes <option> tags in case resource belongs to type "Reader"
+      if (resourceType === 'reader') {
+        if (selectedPageIndicator === 'title') {
+          selectedPageIndicator = resourceContents.get('title');
         }
+
+        for (let key of resourceContents.keys()) {
+          // is page selected?
+          if (key !== "title") {
+            const selected = selectedPageIndicator === key ? ' selected="selected"' : '';
+            selectboxOptionsHtml += `<option value="${key}"${selected}>${key} ${resourceContents.get(key)[1]}</option>\n`;
+          }
+        }
+        // pages selectbox might be previously hidden, so make it visible
+        $(`#lines-or-pages-selectbox-${tabId}`).css('display', 'inline');
       }
+      else {
+        // hide pages selectbox
+        $(`#lines-or-pages-selectbox-${tabId}`).css('display', 'none');
+      }
+      
     }
 
     // create selectbox options els
