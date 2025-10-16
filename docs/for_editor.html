@@ -4948,13 +4948,42 @@ nt_titus_audio_by_karvounakis_contents = {
 </tr>
 
 <tr>
-<td class="w3-border pc-whitespace-nowrap">"v(\d+)-(\d+)"</td>
-<td class="w3-border pc-whitespace-nowrap">"\1:\2"</td>
+<td class="w3-border pc-whitespace-nowrap">v(\d+)-(\d+)</td>
+<td class="w3-border pc-whitespace-nowrap">\1:\2</td>
 <td class="w3-border">E.g. from:<br>
-  "v1-1"<br>
-  To:<br>
-  "1:1"</td>
+v1-1<br>
+To:<br>
+1:1</td>
 <td class="w3-border">Notepad++</td>
+</tr>
+
+<tr>
+<td class="w3-border pc-whitespace-nowrap">\n</td>
+<td class="w3-border pc-whitespace-nowrap">|</td>
+<td class="w3-border">Used to form pipe delimited word list. E.g. from:<br>
+abbreviatio<br>
+abbrevio<br>
+abcido<br>
+To:<br>
+abbreviatio|abbrevio|abcido</td>
+<td class="w3-border">BBEdit</td>
+</tr>
+
+<tr>
+<td class="w3-border pc-whitespace-nowrap">.*(?=#)#</td>
+<td class="w3-border pc-whitespace-nowrap">empty</td>
+<td class="w3-border">Used to clean lines until certain char that char included. E.g. from:<br>
+n38#abbreviatio<br>
+n39#abbrevio<br>
+n40#abcido<br>
+To:<br>
+abbreviatio<br>
+abbrevio<br>
+abcido<br>
+</td>
+<td class="w3-border">BBEdit</td>
+</tr>
+
 </tr>
 
 </tbody>
