@@ -2406,4 +2406,60 @@ ParsedClassicsScannedBooks = {
 		
 	}
 
+	, lewis_elementary_latin_dictionary: {
+ 
+		bookTitle: "Ch. T. Lewis. An elementary Latin dictionary."
+	 
+		, bookUrlText: "1918. New York etc.: American Book company."
+
+		, numLeafs: "1033"
+
+		, leafWidth: 2661
+
+		, leafHeight: 3572
+
+		, thumbnail: "page0001.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Ch. T. Lewis. An elementary Latin dictionary. 1918. New York etc.: American Book company."
+
+					}
+
+		] 
+		
+	}
+
+	, white_latin_english_dictionary: {
+ 
+		bookTitle: "J. T. White. A Latin-English dictionary for the use of junior students"
+	 
+		, bookUrlText: "1915. Boston: Ginn and company."
+
+		, numLeafs: "662"
+
+		, leafWidth: 1726
+
+		, leafHeight: 2442
+
+		, thumbnail: "page0001.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Ch. T. Lewis. An elementary Latin dictionary. 1918. New York etc.: American Book company."
+
+					}
+
+		] 
+		
+	}
+
 };
