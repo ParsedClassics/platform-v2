@@ -121,6 +121,7 @@ ParsedClassicsData = {
       diagram_set: ParsedClassicsAppVars.diagramSetDir,
       audio_recording: ParsedClassicsAppVars.audioRecordingDir,
       reader: ParsedClassicsAppVars.readerDir,
+      lexicon_standalone: ParsedClassicsAppVars.lexiconStandaloneDir,
       info_text: ParsedClassicsAppVars.infoTextDir,
     };
 

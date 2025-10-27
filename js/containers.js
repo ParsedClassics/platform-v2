@@ -176,9 +176,14 @@ const ParsedClassicsContentContainers = {
       // selected word was changed?
       if (wordUrl !== wordDom) {
         const iframeEl = tabContentContainerInner.find('.pc-bookreader');
-        if (resourceType === 'concordance' || resourceType === 'lexicon') {
+        if (resourceType === 'concordance' || resourceType === 'lexicon' || resourceType === 'lexicon_standalone') {
           // browse scanned resource in the iframe to selected word
           ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
+        }
+        if (resourceType === 'lexicon_standalone') {
+          const lexiconStandaloneContainerLeftPartInner = tabContentContainerInner.find(`.${ParsedClassicsAppVars.lexiconStandaloneContainerLeftPartInnerClass}`);
+          // find selected lemma ans scroll it into view
+          ParsedClassicsSelectedLemma.treatSelectedLemma(lexiconStandaloneContainerLeftPartInner, collectionShortname);
         }
       }
       // selected page was changed? 
@@ -321,7 +326,10 @@ const ParsedClassicsContentContainers = {
       // restore scanned book mode from storage
       ParsedClassicsScannedBookMode.restoreFromStorage(resourceDef['scanned_source_shortname']);
       // generate html of resource
-      const iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(tabContentContainerInner, resourceDef);
+      let iframeEl;
+      if (resourceType !== 'lexicon_standalone') {
+        iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(tabContentContainerInner, resourceDef);
+      }
       if (resourceType === 'original_text' || resourceType === 'translation' || resourceType === 'commentary') {
         // browse scanned resource in the iframe to selected line
         ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
@@ -333,6 +341,20 @@ const ParsedClassicsContentContainers = {
       if (resourceType === 'reader') {
         // browse scanned resource in the iframe to selected page
         ParsedClassicsContentContainers.browseToSelectedPage(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, pageUrl);
+      }
+      if (resourceType == 'lexicon_standalone') {
+        // split container into left part for list of lemmas and right part for displaying scanned book
+        const {lexiconStandaloneContainerLeftPart, lexiconStandaloneContainerRightPart} = ParsedClassicsContentContainers.splitLexiconStandaloneContainer(activeTabId, tabContentContainerInner, resourceDef);
+        // add scanned book into right subpane
+        const iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(lexiconStandaloneContainerRightPart, resourceDef);
+        // create html of the left subpane
+        const lexiconStandaloneContainerLeftPartInner = ParsedClassicsContentContainers.createLexiconStandaloneResourceHtml(lexiconStandaloneContainerLeftPart, resourceContents, resourceDef);
+        // delegate "click" event from <div> els of lemma buttons to left part of splitted container
+        lexiconStandaloneContainerLeftPartInner.delegate('div', 'click', (event) => ParsedClassicsSelectedLemma.hashSelectLemma(event, collectionShortname));
+        // browse scanned resource in the iframe to selected word
+        ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
+        // find selected lemma ans scroll it into view
+        ParsedClassicsSelectedLemma.treatSelectedLemma(lexiconStandaloneContainerLeftPartInner, collectionShortname);
       }
       return;
     }
@@ -536,6 +558,25 @@ const ParsedClassicsContentContainers = {
     return {audioEl, headerEl, audioContainerBottomEl};
   },
 
+  createLexiconStandaloneResourceHtml: function(lexiconStandaloneContainerLeftPart, resourceContents, resourceDef) {
+    const lexiconStandaloneContainerLeftPartInner = lexiconStandaloneContainerLeftPart.find(`.${ParsedClassicsAppVars.lexiconStandaloneContainerLeftPartInnerClass}`);
+    const lemmaKeys = Object.keys(resourceContents);
+    let html = '';
+    for (let i = 1; i < lemmaKeys.length; i++) {
+      const charCodesStr = lemmaKeys[i].slice(2);
+      const charCodesArr = charCodesStr.split('-');
+      let lemma = '';
+      charCodesArr.forEach(charCode => lemma += String.fromCodePoint(charCode));
+      let lemmaLowercase = lemma.toLowerCase();
+      // normalize Greek lemma, i.e. remove diacritics; from https://stackoverflow.com/questions/23346506/javascript-normalize-accented-greek-characters and https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript
+      //lemmaLowercase = lemmaLowercase.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+      lemmaLowercase = lemmaLowercase.normalize('NFD').replace(/\p{Diacritic}/gu, "");
+      html += `<div class="lemma-button" ${ParsedClassicsAppVars.lemmaAttr}="${lemma}" ${ParsedClassicsAppVars.lemmaLowercaseAttr}="${lemmaLowercase}">${lemma}</div>`;
+    }
+    lexiconStandaloneContainerLeftPartInner.append(html);
+    return lexiconStandaloneContainerLeftPartInner;
+  },
+
   splitConcordanceContainer: function(activeTabId, tabContentContainerInner) {
     const splitHtml = `
       <div class="${ParsedClassicsAppVars.concordanceContainerLeftPartClass}" id="concordance-split-left-${activeTabId}"><div class="${ParsedClassicsAppVars.concordanceContainerLeftPartInnerClass}"></div></div>
@@ -606,6 +647,64 @@ const ParsedClassicsContentContainers = {
     return {grammarRefsContainerLeftPart, grammarRefsContainerRightPart};
   },
 
+  splitLexiconStandaloneContainer: function(activeTabId, tabContentContainerInner, resourceDef) {
+    // is this Greek lexicon?
+    const isGreek = typeof resourceDef['extra'] !== 'undefined' && typeof resourceDef['extra']['language'] !== 'undefined' && resourceDef['extra']['language'] === 'EL' ? true : false;
+    // if it is Greek lexicon, add additional class to wrapper and additional class to search input
+    const greekLangClassWrapper = isGreek ? 'greek-lang' : '';
+    // form html of splitted container
+    let splitHtml = `
+      <div class="${ParsedClassicsAppVars.lexiconStandaloneContainerLeftPartClass}" id="lexicon-standalone-split-left-${activeTabId}">
+        <div class="lexicon-standalone-search-wrapper ${greekLangClassWrapper}" id="lexicon-standalone-search-wrapper-${activeTabId}">
+          <input type="text" class="lexicon-standalone-search-input" id="lexicon-standalone-search-input-${activeTabId}"><div class="lexicon-standalone-info"><div class="lexicon-standalone-info-btn" title="Click to read how to type polytonic Greek in this inbox" onclick="window.open('./tools/keyboard_greek_polytonic.html', '_blank')"><img class="lexicon-standalone-info-btn-img" src="./img/info.svg"></div></div>
+        </div>  
+        <div class="${ParsedClassicsAppVars.lexiconStandaloneContainerLeftPartInnerClass}" id="lexicon-standalone-split-left-inner-${activeTabId}">
+        </div>
+      </div>
+      <div class="${ParsedClassicsAppVars.lexiconStandaloneContainerRightPartClass}" id="grammar-refs-split-right-${activeTabId}"></div>
+    `;
+    splitHtml = $(splitHtml);
+
+    // get search input el
+    const lemmaSearchInput = splitHtml.find(`#lexicon-standalone-search-input-${activeTabId}`);
+
+    // attach event handlers: (1) in case it is Greek lexicon, activate Greek keyboard mapping
+    if (isGreek) {
+      ParsedClassicsContentContainers.keyboardMapping(lemmaSearchInput[0]); 
+    }
+    
+    // attach event handlers: (2) filtering by typing in seach box
+    lemmaSearchInput.on('keyup', function(){
+      var lemmaInput = $(this);
+      ParsedClassicsSelectedLemma.filterByTyping(lemmaInput, activeTabId)
+    });
+
+    // attach event handlers: (3) filtering by pasting in seach box
+    // paste event gets fired before text is in textbox; the fix is to use setTimeout: https://stackoverflow.com/questions/9690097/paste-event-gets-fired-before-text-is-in-textbox
+    lemmaSearchInput.on('paste', function () {
+      var lemmaInput = $(this)
+      setTimeout(function () {
+          ParsedClassicsSelectedLemma.filterByTyping(lemmaInput, activeTabId)
+      }, 0);
+    });
+    
+    // put generated html into tab's inner container
+    tabContentContainerInner.html(splitHtml);
+
+    // split tab's inner container
+    const lexiconStandaloneContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.lexiconStandaloneContainerLeftPartClass}`);
+    const lexiconStandaloneContainerRightPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.lexiconStandaloneContainerRightPartClass}`);
+    Split([lexiconStandaloneContainerLeftPart[0], lexiconStandaloneContainerRightPart[0]], {
+      sizes: [20, 80],
+      direction: 'horizontal',
+      gutterSize: 4,
+      minSize: [70, 70],
+      snapOffset: ParsedClassicsAppVars.splitterSnapOffset,
+      cursor: ParsedClassicsAppVars.horizontalSplitterCursor,
+    });
+    return {lexiconStandaloneContainerLeftPart, lexiconStandaloneContainerRightPart};
+  },
+
   createScannedResourceHtml: function(tabContentContainerInner, resourceDef) {
     // get scanned source shortname
     const scannedSourceShortname = resourceDef['scanned_source_shortname'];
@@ -622,6 +721,13 @@ const ParsedClassicsContentContainers = {
     tabContentContainerInner.html(html);
     const iframeEl = tabContentContainerInner.find('.pc-bookreader');
     return iframeEl;
+  },
+
+  keyboardMapping: function(inputEl) {
+    // attach keyboard mapping functionality to input
+    keyman.attachToControl(inputEl);
+    // remove class which was added by Keymanweb script
+    inputEl.classList.remove('keymanweb-font');
   },
 
   scrollToLineResourceLoading: function(container, lineIndicatorFromUrl, activeTabId) {
@@ -1012,12 +1118,26 @@ const ParsedClassicsContentContainers = {
         // save iframeSrcNew as value of attribute
         iframeEl.attr("data-src", iframeSrcNew);
       }
-      // page with selected line not found
+      // page with selected word not found
       else {
         ParsedClassicsAlertDialogue.openDialogue(paneId, {
           heading: 'Not found',
           message: `The word ${wordUrl} was not found.`,
         }); 
+      }
+    }
+    // lemma not in url so lets browse to title page
+    else {
+      // is title in contents JSON?
+      if (typeof resourceContents['title'] != "undefined" && resourceContents['title'] != "") {
+        // get page number of scanned book
+        const scannedPageNum = resourceContents['title'];
+        // form new "src" attr of the iframe
+        iframeSrcNew += "#page/" + scannedPageNum + pageDisplayMode;
+        // set new "src" attr of the iframe (IMPORTANT! this cannot be done by iframeEl.attr("src", iframeSrcNew) because it would add new entry in browser's history)
+        iframeEl[0].contentWindow.location.replace(iframeSrcNew);
+        // save iframeSrcNew as value of attribute
+        iframeEl.attr("data-src", iframeSrcNew);
       }
     }
   },

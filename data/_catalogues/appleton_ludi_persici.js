@@ -45,9 +45,13 @@ ParsedClassicsCollDefs.appleton_ludi_persici["resource_defs"] = {
     resource_type: "reader",
     scanned_source_shortname: "appleton_ludi_persici",
     contents_shortname: "appleton_ludi_persici_contents"
-  } 
+  }, 
   
   // Lexicons
 
+  elementary_latin_dictionary_by_lewis: {
+    ...ParsedClassicsResProtos.elementary_latin_dictionary_by_lewis,
+    resource_type: "lexicon_standalone",
+  },
   
 }

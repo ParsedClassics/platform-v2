@@ -3591,6 +3591,7 @@ BookReader.prototype.bindNavigationHandlers = function() {
     jIcons.filter('.onepg').bind('click', function(e) {
 							var search_str, msg; // added by ParsedClassics
 							search_str = window.location.search; // added by ParsedClassics
+                            //console.log('window.location.search', window.location.search);
 							search_str = search_str.slice(1); // added by ParsedClassics
 							msg = search_str + "|" + "/mode/1up"; // added by ParsedClassics
 							window.parent.postMessage(msg, '*'); // added by ParsedClassics

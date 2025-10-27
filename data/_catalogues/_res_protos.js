@@ -210,6 +210,17 @@ const ParsedClassicsResProtos = {
     contents_shortname: "griechisch_deutsches_handwoerterbuch_preuschen_contents",
   },
 
+  elementary_latin_dictionary_by_lewis: {
+    collections_page_resource_desc: "Elementary Latin dictionary by Ch. T. Lewis (1890)", 
+    library_app_selectbox_title: "Elementary Latin dictionary by Ch. T. Lewis (1890)",
+    library_app_panel_title: "A Greek and English lexicon of the New Testament by E. Robinson (1850)",
+    library_app_panel_text_from: "Ch. T. Lewis. An elementary Latin dictionary. 1918. New York etc.: American Book company.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    scanned_source_shortname: "lewis_elementary_latin_dictionary", 
+    contents_shortname: "elementary_latin_dictionary_by_lewis_contents",
+  },
+
   // Translations
 
   nt_tr_EL_vamvas: {
@@ -979,6 +990,6 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "typed",
     resource_type: "audio_recording",
 		scanned_source_shortname: "kaine_diatheke_ed_antoniadis",
-	}
+	},
 
 };

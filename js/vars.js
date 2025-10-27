@@ -38,11 +38,13 @@ const ParsedClassicsAppVars = {
   lineNumberClass: "line-number",
   wordClass: "word",
   selectedWordClass: "selected-word",
+  selectedLemmaClass: "selected-lemma",
   innerLinkClass: "inner-link",
   anchorAttr: "data-anchor",
   pageAttr: "data-page",
   lineNumberAttr: "data-line-number",
   lemmaAttr: "data-lemma",
+  lemmaLowercaseAttr: "data-lemma-lowercase",
   lexiconAttr: "data-lexicon",
   lexiconEntryAttr: "data-lexicon-entry",
   formAttr: "data-form",
@@ -76,13 +78,16 @@ const ParsedClassicsAppVars = {
   grammarRefsContainerLeftPartInnerClass: "grammar-refs-split-left-inner",
   grammarRefsContainerRightPartClass: "grammar-refs-split-right",
   grammarBookAttr: "data-grammar",
-  commentaryBookAttr: "data-commentary",
   grammarPageAttr: "data-page",
   // commentary refs container
   commentaryRefsContainerLeftPartClass: "commentary-refs-split-left",
   commentaryRefsContainerLeftPartInnerClass: "commentary-refs-split-left-inner",
   commentaryRefsContainerRightPartClass: "commentary-refs-split-right",
   commentaryBookAttr: "data-commentary",
+  // lexicon standalone container
+  lexiconStandaloneContainerLeftPartClass: "lexicon-standalone-split-left",
+  lexiconStandaloneContainerLeftPartInnerClass: "lexicon-standalone-split-left-inner",
+  lexiconStandaloneContainerRightPartClass: "lexicon-standalone-split-right",
   // menu
   layoutBtnsContainer: "sm__layout-buttons",
   addRightSectionBtnClass: "create-right-section",
@@ -131,6 +136,7 @@ const ParsedClassicsAppVars = {
   diagramSetDir: "data/diagram_set/",
   audioRecordingDir: "data/audio_recording/",
   readerDir: "data/reader/",
+  lexiconStandaloneDir: "data/lexicon_standalone/",
   infoTextDir: "data/info_text/",
   // resource
   resourceTypeLabels: {
@@ -145,6 +151,7 @@ const ParsedClassicsAppVars = {
     diagram_set: "Diagrams",
     audio_recording: "Audio recording",
     reader: "Reader",
+    lexicon_standalone: "Lexicon",
   },
   // animation
   animationSpeed: 400,

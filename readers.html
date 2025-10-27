@@ -48,6 +48,14 @@
     <script type="text/javascript" src="js/containers.js"></script>
     <script type="text/javascript" src="js/widgets.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="./js/keyboard/keymanweb.js"></script>
+    <script type="text/javascript" src="./js/keyboard/greekclassical-1.1.js" charset="UTF-8" ></script>
+    <script type="text/javascript">
+      keyman.init({attachType: 'manual'}).then(function(){
+      keyman.addKeyboards('greekclassical');
+      keyman.osk.hide();
+    });
+    </script>
     <script type="text/javascript" src="js/app.js" defer></script>
   </head>
   <body>

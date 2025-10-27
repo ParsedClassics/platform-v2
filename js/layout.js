@@ -997,7 +997,6 @@ const ParsedClassicsLayout = {
     let sectionData;
     const newDimensionsObj = {};
     const newLayoutObj = {};
-    let newPointersObj = {};
 
     // alias for func to generate unique ids
     const id = ParsedClassicsLayout.generateUID;
@@ -1051,30 +1050,21 @@ const ParsedClassicsLayout = {
       layoutObjVals.splice(insertIndex, 0, [[loadedCollections[0]]]);
     }
     
-    // 1. put updated info about sections into new dimensions obj
+    // put updated info about sections into new dimensions obj
     dimensionsObjVals.forEach((sectionData, i) => {
       const sectionCode = sectionCodesArr[i];
       newDimensionsObj[sectionCode] = sectionData;
     });
-    // 2. put updated info about sections into new layout obj
+    // put updated info about sections into new layout obj
     layoutObjVals.forEach((sectionData, i) => {
       const sectionCode = sectionCodesArr[i];
       newLayoutObj[sectionCode] = sectionData;
     });
-    // 3. put updated info about sections into new pointers obj
-    if (loadedCollections.length === 1) {
-      // is collection's content page based? 
-      const contentsType = ParsedClassicsCollDefs[loadedCollections[0]]['contents_type'];
-      newPointersObj = pointersObj;
-      if (contentsType === 'page') {
-        newPointersObj = ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, loadedCollections[0], newTabId, 'title');
-      }
-    }
 
     // update hash json
     hashJson[ParsedClassicsAppVars.dimensionsMember] = newDimensionsObj;
     hashJson[ParsedClassicsAppVars.layoutMember] = newLayoutObj;
-    hashJson[ParsedClassicsAppVars.pointersMember] = newPointersObj;
+
     // stringify hash json
     const hashJsonString = JSON.stringify(hashJson);
     // push state
@@ -1134,18 +1124,11 @@ const ParsedClassicsLayout = {
       dimensionsObj[sectionCode] = sectionData;
       // update layout obj
       layoutObj[sectionCode] = layoutData;
-      // update pointers obj
-      if (loadedCollections.length === 1) {
-        // is collection's content page based? 
-        const contentsType = ParsedClassicsCollDefs[loadedCollections[0]]['contents_type'];
-        if (contentsType === 'page') {
-          ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, loadedCollections[0], newTabId, 'title');
-        }
-      }
+
       // update hash json
       hashJson[ParsedClassicsAppVars.dimensionsMember] = dimensionsObj;
       hashJson[ParsedClassicsAppVars.layoutMember] = layoutObj;
-      hashJson[ParsedClassicsAppVars.pointersMember] = pointersObj;
+
       // stringify hash json
       const hashJsonString = JSON.stringify(hashJson);
       // push state
@@ -1515,14 +1498,7 @@ const ParsedClassicsLayout = {
       dimensionsObj[sectionCode] = sectionDataNew;
       // update layout obj 
       layoutObj[sectionCode] = sectionLayoutDataNew;
-      // update pointers obj
-      if (loadedCollections.length === 1) {
-        // is collection's content page based? 
-        const contentsType = ParsedClassicsCollDefs[loadedCollections[0]]['contents_type'];
-        if (contentsType === 'page') {
-          ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, loadedCollections[0], newTabId, 'title');
-        }
-      }
+
       // update hash json
       hashJson[ParsedClassicsAppVars.dimensionsMember] = dimensionsObj;
       hashJson[ParsedClassicsAppVars.layoutMember] = layoutObj;
@@ -2091,13 +2067,7 @@ const ParsedClassicsLayout = {
 
   updatePageNumInPointersObj: function(pointersObj, collectionShortname, tabId, pageNum) {
     const collectionPointers = pointersObj[collectionShortname];
-    // get collection's definition
-    const collDef = ParsedClassicsCollDefs[collectionShortname];
-    // get collection's contents
-    const collContents = collDef['contents'] ?? new Map();
-    if (collContents.get('title') && collContents.get('title') === pageNum) {
-      pageNum = 'title';
-    }
+
     if (typeof collectionPointers[ParsedClassicsAppVars.pageMember] == 'undefined') {
       collectionPointers[ParsedClassicsAppVars.pageMember] = {};
     }
@@ -2107,9 +2077,11 @@ const ParsedClassicsLayout = {
 
   deletePageNumInPointersObj: function(pointersObj, collectionShortname, tabId) {
     const collectionPointers = pointersObj[collectionShortname];
-    delete collectionPointers[ParsedClassicsAppVars.pageMember][tabId];
-    if (Object.keys(collectionPointers[ParsedClassicsAppVars.pageMember]).length === 0) {
-      delete collectionPointers[ParsedClassicsAppVars.pageMember];
+    if (typeof pointersObj[collectionShortname] != 'undefined' && typeof collectionPointers[ParsedClassicsAppVars.pageMember] != 'undefined' && typeof collectionPointers[ParsedClassicsAppVars.pageMember][tabId] != 'undefined') {
+      delete collectionPointers[ParsedClassicsAppVars.pageMember][tabId];
+      if (Object.keys(collectionPointers[ParsedClassicsAppVars.pageMember]).length === 0) {
+        delete collectionPointers[ParsedClassicsAppVars.pageMember];
+      }
     }
   },
 
