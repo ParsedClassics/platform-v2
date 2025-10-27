@@ -26,7 +26,7 @@ Order of resources by resource type
   
   // Reader
 
-  // Lexicons
+  // Lexicon standalone
 
 */
 
@@ -45,9 +45,27 @@ ParsedClassicsCollDefs.collar_new_gradatim["resource_defs"] = {
     resource_type: "reader",
     scanned_source_shortname: "collar_new_gradatim",
     contents_shortname: "collar_new_gradatim_contents"
-  } 
+  }, 
   
-  // Lexicons
+  // Lexicon standalone
+
+  elementary_latin_dictionary_by_lewis: {
+    ...ParsedClassicsResProtos.elementary_latin_dictionary_by_lewis,
+    resource_type: "lexicon_standalone",
+  },
+
+  /*lexicon_graeco_latinum_by_zorell: {
+    collections_page_resource_desc: "Greek-Latin lexicon of the NT by F. Zorell (1931)", 
+    library_app_selectbox_title: "Greek-Latin lexicon of the NT by F. Zorell (1931)",
+    library_app_panel_title: "Lexicon Graecum Novi Testamenti by F. Zorell (1931)",
+    library_app_panel_text_from: "Lexicon Graecum Novi Testamenti auctore Francisco Zorell, S.I. Editio altera novis curis retractata.  1931. Parisiis: P. Lethielleux.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "lexicon_standalone",
+    scanned_source_shortname: "lexicon_graecum_novi_testamenti_zorell",
+    contents_shortname: "lexicon_graecum_novi_testamenti_zorell_contents",
+    extra: {language: "EL"}
+  },*/
 
   
 }

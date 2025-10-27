@@ -32,7 +32,7 @@ Order of resources by resource type
 
 ParsedClassicsCollDefs.maxey_fay_new_latin_primer["resource_defs"] = {
     
-  // Reader
+  // Reader standalone
 
   maxey_fay_new_latin_primer_reader: {
     collections_page_resource_desc: "Maxey M., Fay M. J. A new Latin primer (1933)", 
@@ -45,9 +45,14 @@ ParsedClassicsCollDefs.maxey_fay_new_latin_primer["resource_defs"] = {
     resource_type: "reader",
     scanned_source_shortname: "maxey_fay_new_latin_primer",
     contents_shortname: "maxey_fay_new_latin_primer_contents"
-  } 
+  }, 
   
-  // Lexicons
+  // Lexicon standalone
+
+  elementary_latin_dictionary_by_lewis: {
+    ...ParsedClassicsResProtos.elementary_latin_dictionary_by_lewis,
+    resource_type: "lexicon_standalone",
+  },
 
   
 }

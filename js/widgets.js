@@ -230,7 +230,6 @@ const ParsedClassicsNavSelects = {
 
     // get collection's definition
     const collDef = ParsedClassicsCollDefs[collectionShortname];
-    console.log('collDef', collDef);
 
     // is resource selected in this tab?
     const {resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabId);
@@ -239,15 +238,12 @@ const ParsedClassicsNavSelects = {
     if (resourceShortname) {
       // get resource definition
       const resDef = collDef['resource_defs'][resourceShortname];
-      console.log('resDef', resDef);
       // get resource type
       const resourceType = resDef['resource_type'];
-      console.log('resourceType', resourceType);
       // get loaded resources data for current collection
       const loadedResDataOfCollection = APP.loadedResourcesData[collectionShortname];
       // get loaded data of current resouce
       const loadedDataOfResource = loadedResDataOfCollection[resourceShortname];
-      console.log('loadedDataOfResource', loadedDataOfResource);
       // get contents of the resource
       const resourceContents = loadedDataOfResource['contents'];
       // get selected line's number
@@ -375,12 +371,18 @@ const ParsedClassicsNavSelects = {
 
     // get collection shortname
     const collectionShortname = collResPair.split('|')[0];
+    // get resource shortname
+    const resourceShortname = collResPair.split('|')[1];
     // get collection's definition
     const collDef = ParsedClassicsCollDefs[collectionShortname];
+    // get resource definition
+    const resDef = collDef['resource_defs'][resourceShortname];
     // get type of collection contents ("lines" or "pages")
     const collContentsType = collDef['contents_type'];
+    // get resource type
+    const resType = resDef['resource_type'];
     // selected page of just selected resource is "title"
-    if (collContentsType === "page") {
+    if (collContentsType === "page" && resType === 'reader') {
       ParsedClassicsLayout.updatePageNumInPointersObj(pointersObj, collectionShortname, tabId, 'title');
     }
 
@@ -1131,6 +1133,102 @@ ParsedClassicsRefLink = {
 
       // set new "src" attr of the iframe (IMPORTANT! this cannot be done by iframeEl.attr("src", src) because it would add new entry in browser's history)
       iframeEl[0].contentWindow.location.replace(src);
+    }
+  },
+
+}
+
+ParsedClassicsSelectedLemma = {
+
+  hashSelectLemma: function(event, collectionShortname) {
+    // get hash json
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    // get pointers obj
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
+    // get pointers of current collection
+    const collectionPointers = pointersObj[collectionShortname] ?? {};
+    // get lemma from URL
+    const lemmaFromUrl = typeof collectionPointers[ParsedClassicsAppVars.wordMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.wordMember] : null;
+
+    // get clicked el
+    const clickedEl = $(event.target);
+
+    // get lemma button el 
+    let lemmaButtonEl = clickedEl;
+    while (!lemmaButtonEl.hasClass('lemma-button')) {
+      lemmaButtonEl = lemmaButtonEl.parent();
+    }
+
+    // get lemma from DOM
+    const lemmaFromDom = lemmaButtonEl.attr(ParsedClassicsAppVars.lemmaAttr);
+
+    if (lemmaFromDom && lemmaFromUrl !== lemmaFromDom) {
+      // put new lemma into pointers obj
+      collectionPointers[ParsedClassicsAppVars.wordMember] = lemmaFromDom;
+    }
+
+    // stringify hash json
+    const hashJsonString = JSON.stringify(hashJson);
+    // push state
+    history.pushState(null, "", `#${hashJsonString}`);
+    // update layout
+    ParsedClassicsLayout.update(hashJson);
+  },
+
+  treatSelectedLemma: function(container, collectionShortname) {
+    // get hash json
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    // get pointers obj
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
+    // get pointers of current collection
+    const collectionPointers = pointersObj[collectionShortname];
+    // get lemma from URL
+    const lemmaFromUrl = collectionPointers[ParsedClassicsAppVars.wordMember] ?? null;
+
+    // find previous selected lemma button
+    const selectedLemmaButton = container.find(`div.${ParsedClassicsAppVars.selectedLemmaClass}`);
+    // remove class "selected-lemma" from previously selected lemma button
+    selectedLemmaButton.removeClass(ParsedClassicsAppVars.selectedLemmaClass);
+
+    // find currently selected lemma button 
+    let currLemmaButton = container.find(`div[${ParsedClassicsAppVars.lemmaAttr}="${lemmaFromUrl}"]`);
+    // make sure found lemma button is unique
+    currLemmaButton = currLemmaButton.first();
+    // add class "selected-lemma"
+    currLemmaButton.addClass(ParsedClassicsAppVars.selectedLemmaClass);
+    // scrool into view in case lemma button is out of the sight
+    if (!currLemmaButton.is(':in-viewport')) {
+      container.scrollTo(currLemmaButton, ParsedClassicsAppVars.animationSpeed)
+    }
+  },
+
+  filterByTyping: function(lemmaInput, tabId) {
+    // remove red background search input might have
+    lemmaInput.css('background', '');
+    // get lemma, trim and put to lowercase
+    let lemma = lemmaInput.val().trim().toLowerCase();
+    // remove all non-letter chars 
+    lemma = lemma.replace(/[^\p{Letter}]/igu, '');
+    // normalize lemma, i.e. remove diacritics; from https://stackoverflow.com/questions/23346506/javascript-normalize-accented-greek-characters and https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript
+    lemma = lemma.normalize('NFD').replace(/\p{Diacritic}/gu, "");
+
+    // get lexicon standalone split left inner el
+    const lexiconStandaloneSplitLeftInner = $(`#lexicon-standalone-split-left-inner-${tabId}`);
+
+    // search for strings formed from inputted values, starting from longest string 
+    // and reducing string by one char from the end
+    for (let i = 0; i < lemma.length; i++) {
+      const str_to_search = i == 0 ? lemma : lemma.slice(0, i*-1);
+      // get first lemma button whose 'data-lemma' attr value matches string entered in search box
+      const lemmaButton = $(`div[${ParsedClassicsAppVars.lemmaLowercaseAttr}^="${lemma}"]`).first();
+      if (lemmaButton.length === 1) {
+        lexiconStandaloneSplitLeftInner.scrollTo(lemmaButton, 50);
+        break;
+      }
+      // string entered does not match the start of any lemma, so let's show it by turning search input red
+      else {
+        lemmaInput.css('background', '#ffdddd');
+      }
     }
   },
 
