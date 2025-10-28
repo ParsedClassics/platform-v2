@@ -1746,6 +1746,7 @@ const ParsedClassicsLayout = {
     // create menu html
     const menuHtml = `
       <div>
+        <a title="New tab" class="sm-menu-button ${ParsedClassicsAppVars.addTabBtnClass}"><img class="sm-menu-button-img" src="img/plus.svg" /></a>
         <a title="Add pane to the left" class="sm-menu-button ${ParsedClassicsAppVars.addLeftSectionBtnClass}"><img class="sm-menu-button-img" src="img/chevron-left.svg" /></a>
         <a title="Add pane to the right" class="sm-menu-button ${ParsedClassicsAppVars.addRightSectionBtnClass}"><img class="sm-menu-button-img" src="img/chevron-right.svg" /></a>
         <a title="Add pane on top" class="sm-menu-button ${ParsedClassicsAppVars.addTopPaneBtnClass}"><img class="sm-menu-button-img" src="img/chevron-up.svg" /></a>
@@ -1753,7 +1754,6 @@ const ParsedClassicsLayout = {
         <a title="Close pane" class="sm-menu-button ${ParsedClassicsAppVars.closePaneBtnClass}"><img class="sm-menu-button-img" src="img/x.svg" /></a>
         <a title="Maximize pane" class="sm-menu-button ${ParsedClassicsAppVars.maximizePaneBtnClass}"><img class="sm-menu-button-img" src="img/screen-full.svg" /></a>
         <a title="Minimize pane" class="sm-menu-button ${ParsedClassicsAppVars.minimizePaneBtnClass} ${ParsedClassicsAppVars.layoutBtnHideClass}"><img class="sm-menu-button-img" src="img/screen-normal.svg" /></a>
-        <a title="New tab" class="sm-menu-button ${ParsedClassicsAppVars.addTabBtnClass}"><img class="sm-menu-button-img" src="img/plus.svg" /></a>
       </div>
     `;
     // creta menu el
