@@ -11,7 +11,7 @@ Scripts supporting ParsedClassics tools functionality
 
 /*
 
-Word list generator script
+Word list generator from parsed text HTML script
 
 */
 
@@ -243,6 +243,96 @@ var ParsedClassicsWordList = {
 	}
 	
 };
+
+/*
+
+Word list generator from precompiled new line delimited list script
+
+*/
+
+var ParsedClassicsPrecompiledWordList = {
+
+	loadWordList: function(radioEl) {
+		// get language radio value
+		const lang = radioEl.val();
+		// get precompiled word list input
+		const textareaEl = $("#" + ParsedClassicsVars.inputTextareaId);
+		// load relevant word list
+		lemmas_latin = lemmas_latin.trim();
+		lemmas_greek = lemmas_greek.trim();
+		lang == ParsedClassicsVars.languageLatin ? textareaEl.val(lemmas_latin) : textareaEl.val(lemmas_greek);
+	},
+
+	generatePipeDelimitedWordList: function() {
+		console.log('generatePipeDelimitedWordList');
+		// get precompiled word list input
+		const textareaEl = $("#" + ParsedClassicsVars.inputTextareaId);
+		// get precompiled words list
+		const wordsList = textareaEl.val().trim();
+
+		// no string found? - nothing to do, exept to display error msg
+		if (!wordsList) {
+			// find message el
+			msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+			// put message text inside message el
+			msg_el.html("No words list has been found!");
+			// display modal dialogue
+			ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");	
+		
+			return;
+		}
+
+		// find language form and radio els
+		const	language_form_el = document.forms[ParsedClassicsVars.languageFormName];
+		const	language_radio_el = language_form_el[ParsedClassicsVars.languageRadioName];
+		// find language of the precompiled list
+		const lang = language_radio_el.value;
+
+		if (lang == ParsedClassicsVars.languageGreek) {
+			ParsedClassicsVars.locale = "el";
+		}
+		else if (lang == ParsedClassicsVars.languageLatin) {
+			ParsedClassicsVars.locale = "la";
+		}
+
+		// get all words in precompiled list
+		const words_all = wordsList.split('\n');
+		console.log('words_all.length', words_all.length);
+		console.log('words_all[10]', words_all[10]);
+
+		// sort words aphabetically
+		words_all.sort(function(a, b) {return a.localeCompare(b, ParsedClassicsVars.locale, {sensitivity: 'base'}) });
+
+		// convert sorted words list into pipe delimited string
+		const words_list_ordered = words_all.join("|");
+
+		// find output textarea
+		const	output_textarea = $("#" + ParsedClassicsVars.outputTextareaId);
+		
+		// put list string into output textarea
+		output_textarea.val(words_list_ordered);
+	},
+
+	init: function() {
+		// find language form and language radio els
+		const	language_form_el = document.forms[ParsedClassicsVars.languageFormName];
+		const	language_radio_el = language_form_el[ParsedClassicsVars.languageRadioName];
+		// get language radio els
+		const radioEl = $(language_radio_el);
+		// get "Generate" btn
+		const generateBtn = $("#" + ParsedClassicsVars.generateButtonId);
+		// load relevant word list
+		ParsedClassicsPrecompiledWordList.loadWordList(radioEl);
+		// attach func to radio els
+		radioEl.on('change', function() {
+			const radioEl = $(this);
+			ParsedClassicsPrecompiledWordList.loadWordList(radioEl);
+		});
+		// attach func to "Generate" btn
+		generateBtn.on('click', ParsedClassicsPrecompiledWordList.generatePipeDelimitedWordList);
+	},
+
+}
 
 /*
 
