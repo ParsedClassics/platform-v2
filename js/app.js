@@ -53,8 +53,6 @@ const APP = {
       clearTimeout(this.id);
       this.id = setTimeout(ParsedClassicsLayout.windowResizeEnd, 500);
     });
-    // add listener for message from iframe event (IMPORTANT! window.addEventListener("message", ParsedClassicsScannedBookMode.updateMode) does not work here )
-    $(window).on('message', ParsedClassicsScannedBookMode.updateMode);
     // create alert dialogue el
     alertDialogue = ParsedClassicsAlertDialogue.createDialogue('container');
     $('body').append(alertDialogue);

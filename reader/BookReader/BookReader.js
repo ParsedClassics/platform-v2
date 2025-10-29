@@ -3591,12 +3591,11 @@ BookReader.prototype.bindNavigationHandlers = function() {
     jIcons.filter('.onepg').bind('click', function(e) {
 							var search_str, msg; // added by ParsedClassics
 							search_str = window.location.search; // added by ParsedClassics
-                            //console.log('window.location.search', window.location.search);
 							search_str = search_str.slice(1); // added by ParsedClassics
-							msg = search_str + "|" + "/mode/1up"; // added by ParsedClassics
-							window.parent.postMessage(msg, '*'); // added by ParsedClassics
-       var cookiedate = new Date(); // added by ParsedClassics
-       cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
+							//msg = search_str + "|" + "/mode/1up"; // added by ParsedClassics
+							//window.parent.postMessage(msg, '*'); // added by ParsedClassics
+       //var cookiedate = new Date(); // added by ParsedClassics
+       //cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
        //document.cookie = search_str + "=" + "/mode/1up" + "; expires="+cookiedate.toGMTString() + "; samesite=lax; path=/"; // added and removed by ParsedClassics
        localStorage.setItem(search_str, "/mode/1up"); // added by ParsedClassics
 							self.switchMode(self.constMode1up);
@@ -3606,10 +3605,10 @@ BookReader.prototype.bindNavigationHandlers = function() {
        var search_str, msg; // added by ParsedClassics
 							search_str = window.location.search; // added by ParsedClassics
 							search_str = search_str.slice(1); // added by ParsedClassics
-							msg = search_str + "|" + "/mode/2up"; // added by ParsedClassics
-							window.parent.postMessage(msg, '*'); // added by ParsedClassics
-       var cookiedate = new Date(); // added by ParsedClassics
-       cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
+							//msg = search_str + "|" + "/mode/2up"; // added by ParsedClassics
+							//window.parent.postMessage(msg, '*'); // added by ParsedClassics
+       //var cookiedate = new Date(); // added by ParsedClassics
+       //cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
        //document.cookie = search_str + "=" + "/mode/2up" + "; expires="+cookiedate.toGMTString() + "; samesite=lax; path=/"; // added and removed by ParsedClassics
        localStorage.setItem(search_str, "/mode/2up"); // added by ParsedClassics
 							self.switchMode(self.constMode2up);
@@ -3619,10 +3618,10 @@ BookReader.prototype.bindNavigationHandlers = function() {
        var search_str, msg; // added by ParsedClassics
 							search_str = window.location.search; // added by ParsedClassics
 							search_str = search_str.slice(1); // added by ParsedClassics
-							msg = search_str + "|" + "/mode/thumb"; // added by ParsedClassics
-							window.parent.postMessage(msg, '*'); // added by ParsedClassics
-       var cookiedate = new Date(); // added by ParsedClassics
-       cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
+							//msg = search_str + "|" + "/mode/thumb"; // added by ParsedClassics
+							//window.parent.postMessage(msg, '*'); // added by ParsedClassics
+       //var cookiedate = new Date(); // added by ParsedClassics
+       //cookiedate.setTime(cookiedate.getTime()+(365*24*60*60*1000)); // added by ParsedClassics
        //document.cookie = search_str + "=" + "/mode/thumb" + "; expires="+cookiedate.toGMTString() + "; samesite=lax; path=/"; // added and removed by ParsedClassics
        localStorage.setItem(search_str, "/mode/thumb"); // added by ParsedClassics
 							self.switchMode(self.constModeThumb);
