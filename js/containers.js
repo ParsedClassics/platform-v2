@@ -323,8 +323,6 @@ const ParsedClassicsContentContainers = {
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl !== collResPairDom) {
       // update container's attrs 
       ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl);
-      // restore scanned book mode from storage
-      ParsedClassicsScannedBookMode.restoreFromStorage(resourceDef['scanned_source_shortname']);
       // generate html of resource
       let iframeEl;
       if (resourceType !== 'lexicon_standalone') {
@@ -711,10 +709,8 @@ const ParsedClassicsContentContainers = {
     // page number of scanned book
     const scannedPageNum = "#page/1";
     // display two or one page of scanned book?
-    let pageDisplayMode = "/mode/2up";
-    if (typeof ParsedClassicsScannedBookMode.params[scannedSourceShortname] != "undefined" && ParsedClassicsScannedBookMode.params[scannedSourceShortname]) {
-      pageDisplayMode = ParsedClassicsScannedBookMode.params[scannedSourceShortname];
-    }
+    const pageDisplayMode = localStorage.getItem(scannedSourceShortname) ?? "/mode/2up";
+    
     const html = `
       <iframe class="pc-bookreader" src="./reader/embedded_bookreader.html?${scannedSourceShortname}${scannedPageNum}${pageDisplayMode}"></iframe>
     `;
@@ -1005,10 +1001,7 @@ const ParsedClassicsContentContainers = {
     let iframeSrcNew = "./reader/embedded_bookreader.html?" + scannedSourceShortname;
   
     // display two or one page of scanned book?
-    let pageDisplayMode = "/mode/2up";
-    if (typeof ParsedClassicsScannedBookMode.params[scannedSourceShortname] != "undefined" && ParsedClassicsScannedBookMode.params[scannedSourceShortname]) {
-      pageDisplayMode = ParsedClassicsScannedBookMode.params[scannedSourceShortname];
-    }
+    const pageDisplayMode = localStorage.getItem(scannedSourceShortname) ?? "/mode/2up";
 
     // is page in contents JSON?
     if (typeof resourceContents[lineIndicatorUrl] != "undefined" && resourceContents[lineIndicatorUrl] != "") {
@@ -1046,10 +1039,7 @@ const ParsedClassicsContentContainers = {
     let iframeSrcNew = "./reader/embedded_bookreader.html?" + scannedSourceShortname;
 
     // display two or one page of scanned book?
-    let pageDisplayMode = "/mode/2up";
-    if (typeof ParsedClassicsScannedBookMode.params[scannedSourceShortname] != "undefined" && ParsedClassicsScannedBookMode.params[scannedSourceShortname]) {
-      pageDisplayMode = ParsedClassicsScannedBookMode.params[scannedSourceShortname];
-    }
+    const pageDisplayMode = localStorage.getItem(scannedSourceShortname) ?? "/mode/2up";
 
     // is page in contents Map?
     if (typeof resourceContents.get(pageUrl) != "undefined" && resourceContents.get(pageUrl)[0] != "") {
@@ -1095,10 +1085,7 @@ const ParsedClassicsContentContainers = {
     let iframeSrcNew = "./reader/embedded_bookreader.html?" + scannedSourceShortname;
   
     // display two or one page of scanned book?
-    let pageDisplayMode = "/mode/2up";
-    if (typeof ParsedClassicsScannedBookMode.params[scannedSourceShortname] != "undefined" && ParsedClassicsScannedBookMode.params[scannedSourceShortname]) {
-      pageDisplayMode = ParsedClassicsScannedBookMode.params[scannedSourceShortname];
-    }
+    const pageDisplayMode = localStorage.getItem(scannedSourceShortname) ?? "/mode/2up";
 
     // is lemma in url?
     if (wordUrl) {

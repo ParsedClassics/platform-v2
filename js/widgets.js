@@ -1030,75 +1030,6 @@ ParsedClassicsConcordanceLineRefButton = {
 
 };
 
-ParsedClassicsScannedBookMode = {
-
-  params: {},
-
-  restoreFromStorage: function(bookShortname) {
-    // get scanned book mode from storage
-    const bookMode = localStorage.getItem(bookShortname);
-    if (bookMode) {
-        // put scanned book shortname and book mode into params object
-        ParsedClassicsScannedBookMode.params[bookShortname] = bookMode;
-    }
-  },
-
-  updateMode: function(event) {
-    // get mesage sent from iframe containing scanned book
-    const msg = event.originalEvent.data;
-
-    // is it really message from iframe containing scanned book?
-    if (typeof msg === "string" && msg.indexOf("|") !== -1) {
-
-      // split message into parts
-      const msgArr = msg.split("|");
-          
-      // is it really message from iframe containing scanned book?
-      if (msgArr.length === 2) {
-        // get scanned book shortname and book mode
-        const bookShortname = msgArr[0];
-        const bookMode = msgArr[1];
-
-        // put scanned book shortname and book mode into params object
-        ParsedClassicsScannedBookMode.params[bookShortname] = bookMode;
-
-        // save book shortname and book mode in cookie
-        localStorage.setItem(bookShortname, bookMode);
-
-        // get iframe that sent message
-        const iframeThatSentMessage = $(ParsedClassicsScannedBookMode.getIframeThatSentMessage(event));
-
-        // get "data-src" attr of the iframe
-        let dataSrcAttr = iframeThatSentMessage.attr('data-src');
-
-        // iframe just loaded will not have "data-src" attr
-        if (!dataSrcAttr) {
-          dataSrcAttr = iframeThatSentMessage.attr('src');
-        }
-
-        // get modes to be replaced array
-        const modesToReplace = ['/mode/1up', '/mode/2up', '/mode/thumb'].filter(mode => mode != bookMode);
-
-        // change all modes to be replaced with the mode from the message in "data-scr" attr value
-        for (let i = 0; i < modesToReplace.length; i++) {
-          dataSrcAttr = dataSrcAttr.replace(modesToReplace[i], bookMode);
-        }
-
-        // update "data-scr" attr
-        iframeThatSentMessage.attr('data-src', dataSrcAttr);
-      }
-    }
-  },
-
-  getIframeThatSentMessage: function(messageEvent) {
-    let allIFrames = Array.from(document.querySelectorAll("iframe"));
-    return allIFrames.find(
-        iframe => iframe.contentWindow == messageEvent.originalEvent.source
-    );
-  }
-
-};
-
 ParsedClassicsRefLink = {
 
   refLinkClick: function(event, refsContainerRightPart, bookAttrName) {
@@ -1113,17 +1044,11 @@ ParsedClassicsRefLink = {
     const bookPage = clickedLink.attr(ParsedClassicsAppVars.grammarPageAttr);
 
     if (scannedBook && bookPage) {
-      // restore scanned book mode from storage
-      ParsedClassicsScannedBookMode.restoreFromStorage(scannedBook);
-
       // page number of scanned book
       const scannedPageNum = `#page/${bookPage}`;
 
       // display two or one page of scanned book?
-      let pageDisplayMode = "/mode/2up";
-      if (typeof ParsedClassicsScannedBookMode.params[scannedBook] != "undefined" && ParsedClassicsScannedBookMode.params[scannedBook]) {
-        pageDisplayMode = ParsedClassicsScannedBookMode.params[scannedBook];
-      }
+      const pageDisplayMode = localStorage.getItem(scannedBook) ?? "/mode/2up";
 
       // form new scr for iframe
       const src = `./reader/embedded_bookreader.html?${scannedBook}${scannedPageNum}${pageDisplayMode}`;
