@@ -55,6 +55,11 @@ ParsedClassicsCollDefs.nt_peter_2["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Πέτρου τοῦ ἀποστόλου ἐπιστολὴ καθολικὴ δευτέρα",
     contents_shortname: "nt_peter_2_parsed_text_contents",
+    extra: {
+      options: [
+        "text_display_modes", 
+      ],
+    },
 	},
 
   // Original texts

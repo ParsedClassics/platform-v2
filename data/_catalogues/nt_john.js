@@ -55,6 +55,11 @@ ParsedClassicsCollDefs.nt_john["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Τὸ κατὰ Ἰωάννην εὐαγγέλιον",
     contents_shortname: "nt_john_parsed_text_contents",
+    extra: {
+      options: [
+        "text_display_modes", 
+      ],
+    },
 	},
 
   // Original texts

@@ -55,6 +55,11 @@ ParsedClassicsCollDefs.nt_philippians["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Παύλου τοῦ ἀποστόλου ἡ πρὸς Φιλιππησίους ἐπιστολή",
     contents_shortname: "nt_philippians_parsed_text_contents",
+    extra: {
+      options: [
+        "text_display_modes", 
+      ],
+    },
 	},
 
   // Original texts

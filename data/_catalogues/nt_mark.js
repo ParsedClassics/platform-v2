@@ -55,6 +55,11 @@ ParsedClassicsCollDefs.nt_mark["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Τὸ κατὰ Μάρκον εὐαγγέλιον",
     contents_shortname: "nt_mark_parsed_text_contents",
+    extra: {
+      options: [
+        "text_display_modes", 
+      ],
+    },
 	},
 
   // Original texts

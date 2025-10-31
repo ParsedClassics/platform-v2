@@ -55,6 +55,11 @@ ParsedClassicsCollDefs.nt_galatians["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Παύλου τοῦ ἀποστόλου ἡ πρὸς Γαλάτας ἐπιστολή",
     contents_shortname: "nt_galatians_parsed_text_contents",
+    extra: {
+      options: [
+        "text_display_modes", 
+      ],
+    },
 	},
 
   // Original texts

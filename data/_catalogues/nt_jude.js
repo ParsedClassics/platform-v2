@@ -55,6 +55,11 @@ ParsedClassicsCollDefs.nt_jude["resource_defs"] =  {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Ἰούδα τοῦ ἀποστόλου ἐπιστολὴ καθολική",
     contents_shortname: "nt_jude_parsed_text_contents",
+    extra: {
+      options: [
+        "text_display_modes", 
+      ],
+    },
 	},
 
   // Original texts

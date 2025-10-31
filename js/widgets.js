@@ -571,15 +571,15 @@ const ParsedClassicsOptionsSelects = {
   treatActiveTabOptionsContainer: function(activeTabId) {
     // get collection shortname and resource shortname from URL
     const {collectionShortname, resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(activeTabId);
+    // get pane id
+    const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
+    // get pane options container
+    let paneOptionsContainer = $(`#pane-options-container-${paneId}`);
     if (collectionShortname && resourceShortname) {
       // get collection's definition
       const collDef = ParsedClassicsCollDefs[collectionShortname];
       // get resource definition
       const resDef = collDef['resource_defs'][resourceShortname];
-      // get pane id
-      const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
-      // get pane options container
-      let paneOptionsContainer = $(`#pane-options-container-${paneId}`);
       // does resource have options?
       if (typeof resDef != 'undefined' && typeof resDef['extra'] != 'undefined' && typeof resDef['extra']['options'] != 'undefined') {
         // get tab options container
@@ -598,6 +598,9 @@ const ParsedClassicsOptionsSelects = {
       else {
         paneOptionsContainer.hide();
       }
+    }
+    else {
+      paneOptionsContainer.hide();
     }
   },
 };
