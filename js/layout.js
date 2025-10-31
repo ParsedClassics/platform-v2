@@ -747,10 +747,12 @@ const ParsedClassicsLayout = {
       }
     }
 
-    // VII. treat active tab's selecboxes container
+    // VII. treat active tab's selecboxes container and options container
     const activeTabId = activeTabIndex > 0 || activeTabIndex === 0 ? tabIdsArr[activeTabIndex] : null;
     if (activeTabId) {
       ParsedClassicsNavSelects.treatActiveTabSelectboxesContainer(pane, activeTabId);
+      ParsedClassicsOptionsSelects.treatActiveTabOptionsContainer(activeTabId);
+
     }
     
 
