@@ -55,6 +55,11 @@ ParsedClassicsCollDefs.nt_john_3["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Ἰωάννου τοῦ ἀποστόλου ἐπιστολὴ καθολικὴ τρίτη",
     contents_shortname: "nt_john_3_parsed_text_contents",
+    extra: {
+      options: [
+        "text_display_modes", 
+      ],
+    },
 	},
 
   // Original texts

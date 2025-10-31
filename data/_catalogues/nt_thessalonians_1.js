@@ -55,6 +55,11 @@ ParsedClassicsCollDefs.nt_thessalonians_1["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Παύλου τοῦ ἀποστόλου ἡ πρὸς Θεσσαλονικεῖς ἐπιστολὴ πρώτη",
     contents_shortname: "nt_thessalonians_1_parsed_text_contents",
+    extra: {
+      options: [
+        "text_display_modes", 
+      ],
+    },
 	},
 
   // Original texts
