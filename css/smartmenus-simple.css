@@ -110,14 +110,26 @@ nav {
   border-top: solid 1px var(--grey300);
 }
 
+.sm .sm__pane-options-container {
+  display: none;
+}
+
+.sm__tab-options-container {
+  background: var(--grey100);
+}
+
 /* added by ParsedClassics 
 .sm__tab-selects-container select:last-of-type {
   margin-bottom: 8px;
 }*/
 
-.sm__tab-selects-container-inner {
+.sm__tab-selects-container-inner, .sm__tab-options-container-inner {
   margin-left: 8px;
   margin-right: 8px;
+}
+
+.sm__tab-options-container-inner select:last-of-type {
+  margin-bottom: 8px
 }
 
 /* added by ParsedClassics */

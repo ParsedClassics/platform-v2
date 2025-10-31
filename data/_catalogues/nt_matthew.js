@@ -55,6 +55,12 @@ ParsedClassicsCollDefs.nt_matthew["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Τὸ κατὰ Ματθαῖον εὐαγγέλιον",
     contents_shortname: "nt_matthew_parsed_text_contents",
+    extra: {
+      options: [
+        "text_display_modes", 
+        //"show_hide_prosody",
+      ],
+    },
 	},
 
   // Original texts

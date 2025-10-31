@@ -168,7 +168,7 @@ const ParsedClassicsTabs = {
   createTabContentHtml: function(id) {
     const tabContentHtml = `
       <div class="${ParsedClassicsAppVars.tabContentClass}" id="tab-content-${id}" data-tab-content-id="${id}">
-        <div class="${ParsedClassicsAppVars.tabContentInnerClass}" id="tab-content-inner-${id}">
+        <div class="${ParsedClassicsAppVars.tabContentInnerClass} show-lines" id="tab-content-inner-${id}">
           <h1>${id}</h1>
         </div>
       </div>`;
@@ -223,7 +223,7 @@ const ParsedClassicsTabs = {
     paneBottomPart.append(tabContent);
     // create tab selects container
     const tabSelectsContainer = ParsedClassicsNavSelects.createTabSelectsContainer(tabId);
-    // add tab selectbox containe into pane selectbox container
+    // add tab selectbox container into pane selectbox container
     paneTopPart.find(`#pane-selects-container-${paneId}`).append(tabSelectsContainer);
   },
 

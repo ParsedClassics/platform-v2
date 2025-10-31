@@ -98,8 +98,13 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .text-from 
   padding-bottom: 16px;
 }
 
-div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .line {
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .show-lines .line {
   display: block;
+}
+
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .show-paragraphs .para {
+    display: block;
+    height: 1.3rem;
 }
 
 div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .line-number:hover {

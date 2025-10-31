@@ -562,9 +562,44 @@ const ParsedClassicsNavSelects = {
     else {
       linesOrPagesSelectbox[0].selectedIndex = 0;
     }
-    
   },
   
+};
+
+const ParsedClassicsOptionsSelects = {
+  
+  treatActiveTabOptionsContainer: function(activeTabId) {
+    // get collection shortname and resource shortname from URL
+    const {collectionShortname, resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(activeTabId);
+    if (collectionShortname && resourceShortname) {
+      // get collection's definition
+      const collDef = ParsedClassicsCollDefs[collectionShortname];
+      // get resource definition
+      const resDef = collDef['resource_defs'][resourceShortname];
+      // get pane id
+      const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
+      // get pane options container
+      let paneOptionsContainer = $(`#pane-options-container-${paneId}`);
+      // does resource have options?
+      if (typeof resDef != 'undefined' && typeof resDef['extra'] != 'undefined' && typeof resDef['extra']['options'] != 'undefined') {
+        // get tab options container
+        let tabOptionsContainer = paneOptionsContainer.find(`div.sm__tab-options-container`);
+        // create options container inner el
+        let tabOptionsContainerInner = $(`<div class="sm__tab-options-container-inner" id="sm__tab-options-container-inner-${activeTabId}"></div>`);
+        // append options widgets
+        for (let i = 0; i < resDef['extra']['options'].length; i++) {
+          let option_shortname = resDef['extra']['options'][i];
+          let widget = ParsedClassicsResourceOptions[option_shortname].widgetHtml(resourceShortname, activeTabId);
+          tabOptionsContainerInner.append(widget);
+        }
+        tabOptionsContainer.html(tabOptionsContainerInner);
+        paneOptionsContainer.show();
+      }
+      else {
+        paneOptionsContainer.hide();
+      }
+    }
+  },
 };
 
 const ParsedClassicsMorphology = {
@@ -1155,6 +1190,79 @@ ParsedClassicsSelectedLemma = {
         lemmaInput.css('background', '#ffdddd');
       }
     }
+  },
+
+}
+
+
+ParsedClassicsResourceOptions = {
+
+  text_display_modes: {
+
+    widgetHtml: function(resourceShortname, tabId) {
+      const local_storage_key = `${resourceShortname}__text_display_modes`;
+      let text_mode = localStorage.getItem(local_storage_key);
+      text_mode = text_mode ?? 'lines';
+      const tabContentInner = $(`#tab-content-inner-${tabId}`);
+      if (text_mode === 'lines') {
+        tabContentInner.addClass('show-lines');
+        tabContentInner.removeClass('show-paragraphs');
+      }
+      else if (text_mode === 'paragraphs') {
+        tabContentInner.addClass('show-paragraphs');
+        tabContentInner.removeClass('show-lines');
+      }
+      let widget = `
+        <select class="sm-menu-selectbox" title="Page display options">
+          <option disabled>Text display mode</option>
+          <option value="lines"${text_mode == 'lines' ? ' selected' : ''}>Lines</option>
+          <option value="paragraphs"${text_mode == 'paragraphs' ? ' selected' : ''}>Paragraphs</option>
+        </select>
+      `;
+      widget = $(widget);
+      widget.on('change', function() {
+        const widgetEl = this;
+        ParsedClassicsResourceOptions['text_display_modes'].onchange(resourceShortname, tabId, widgetEl);
+      });
+      return widget;
+    },
+
+    onchange: function(resourceShortname, tabId, widgetEl) {
+      const selected_mode = $(widgetEl).val();
+      const local_storage_key = `${resourceShortname}__text_display_modes`;
+      localStorage.setItem(local_storage_key, selected_mode);
+      const tabContentInner = $(`#tab-content-inner-${tabId}`);
+      if (selected_mode === 'lines') {
+        tabContentInner.addClass('show-lines');
+        tabContentInner.removeClass('show-paragraphs');
+      }
+      else if (selected_mode === 'paragraphs') {
+        tabContentInner.addClass('show-paragraphs');
+        tabContentInner.removeClass('show-lines');
+      }
+    },
+
+  },
+
+  show_hide_prosody: {
+    
+    widgetHtml: function(resourceShortname, tabId) {
+      let widget = `
+        <select class="sm-menu-selectbox" title="Prosody display options">
+          <option disabled>Prosody</option>
+          <option>Show prosody</option>
+          <option>Hide prosody</option>
+        </select>
+      `;
+      widget = $(widget);
+      widget.on('change', function() {
+        ParsedClassicsResourceOptions['show_hide_prosody'].onchange(tabId);
+      });
+      return widget;
+    },
+
+    onchange: function(resourceShortname, tabId, widgetEl) {
+    },
   },
 
 }
