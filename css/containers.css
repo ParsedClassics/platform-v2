@@ -144,6 +144,10 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .parsed-tex
   overflow-y: hidden;
 }
 
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .parsed-text-split-bottom strong {
+  font-weight: 600;
+}
+
 div[data-resource-type="lexicon"][data-scanned-or-typed="typed"] > .tab__content-inner {
   overflow-y: auto;
   padding: 8px;
