@@ -11,15 +11,15 @@ const ParsedClassicsNavSelects = {
   createTabSelectsContainer: function(tabId) {
     // create tab selectboxes container html
     const containerHtml = `
-      <div class="sm__tab-selects-container" id="tab-selects-container-${tabId}"">
+      <div class="sm__tab-selects-container" id="tab-selects-container-${tabId}">
         <div class="sm__tab-selects-container-inner">
-          <select class="sm-menu-selectbox" id="collections-selectbox-${tabId}">
+          <select class="sm-menu-selectbox" id="collections-selectbox-${tabId}" title="Select collection">
             <option disabled selected>Collection</option>
           </select>
-          <select class="sm-menu-selectbox" id="resources-selectbox-${tabId}">
+          <select class="sm-menu-selectbox" id="resources-selectbox-${tabId}" title="Select resource">
             <option disabled selected>Resource</option>
           </select>
-          <select class="sm-menu-selectbox" id="lines-or-pages-selectbox-${tabId}">
+          <select class="sm-menu-selectbox" id="lines-or-pages-selectbox-${tabId}" title="Select line or page">
           </select>
         </div>
       </div>
@@ -69,11 +69,14 @@ const ParsedClassicsNavSelects = {
     resourcesSelectbox.append(resSelectboxOptionsEls).attr('data-collection', collectionShortname);
 
     // create or pages lines selectbox options els
-    const linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.linesOrPagesSelectboxOptions(collectionShortname, tabId);
+    const {linesOrPagesSelectboxOptionsEls, titleAttrVal} = ParsedClassicsNavSelects.linesOrPagesSelectboxOptions(collectionShortname, tabId);
 
     // add  selectbox options els to lines or pages selectbox
     // add data attr to selectbox to indicate collection whose line indicators selectbox contains
     linesOrPagesSelectbox.html('').append(linesOrPagesSelectboxOptionsEls).attr('data-collection', collectionShortname);
+    if (titleAttrVal) {
+      linesOrPagesSelectbox.attr('title', titleAttrVal);
+    }
     return container;
   },
 
@@ -178,23 +181,28 @@ const ParsedClassicsNavSelects = {
     const collContentsType = collDef['contents_type'];
 
     let linesOrPagesSelectboxOptionsEls;
+    let titleAttrVal;
     if (typeof collContentsType === "undefined") { 
       // create selectbox option el "Lines or Pages"
       linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.emptySelectboxOptions();
+      titleAttrVal = "Select line or page";
     }
     else if (collContentsType === "line") {
       // create lines selectbox options els
       linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.linesSelectboxOptions(collectionShortname);
+      titleAttrVal = "Select line";
     }
     else if (collContentsType === "page") { 
       // create pages selectbox options els
       linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.pagesSelectboxOptions(collectionShortname, tabId);
+      titleAttrVal = "Select page";
     }
     else if (collContentsType === "word") {
       // lines or options selectbox should be hidden
       linesOrPagesSelectboxOptionsEls = null;
+      titleAttrVal = null;
     }
-    return linesOrPagesSelectboxOptionsEls;
+    return {linesOrPagesSelectboxOptionsEls, titleAttrVal};
   },
 
   linesSelectboxOptions: function(collectionShortname) {
@@ -278,7 +286,7 @@ const ParsedClassicsNavSelects = {
   },
 
   emptySelectboxOptions: function() {
-    let selectboxOptionsHtml = '<option disabled selected>Line or Page</option>';
+    let selectboxOptionsHtml = '<option disabled selected>Line or page</option>';
     // create selectbox options els
     const selectboxOptionsEls = $(selectboxOptionsHtml);
     return selectboxOptionsEls;
@@ -541,12 +549,15 @@ const ParsedClassicsNavSelects = {
     if (collectionShortname !== collShortnameFromDom2 || (collContentsType == 'page' && resourceShortname != resShortnameFromDom2)) {
       // create create new options els for lines or pages selectbox
       // create or pages lines selectbox options els
-      const linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.linesOrPagesSelectboxOptions(collectionShortname, activeTabId);
+      const {linesOrPagesSelectboxOptionsEls, titleAttrVal} = ParsedClassicsNavSelects.linesOrPagesSelectboxOptions(collectionShortname, activeTabId);
       // append new options els 
       linesOrPagesSelectbox.html('').append(linesOrPagesSelectboxOptionsEls);
       // add data attr to selectbox to indicate collection whose contents selectbox contains
       // add data attr to selectbox to indicate resource whose contents selectbox contains
       linesOrPagesSelectbox.attr('data-collection', collectionShortname).attr('data-resource', collectionShortname);
+      if (titleAttrVal) {
+        linesOrPagesSelectbox.attr('title', titleAttrVal);
+      }
     }
     // get value from lines or pages selectbox
     const selectboxValue = linesOrPagesSelectbox.val();
