@@ -177,7 +177,7 @@ const ParsedClassicsNavSelects = {
     // get collection's definition
     const collDef = ParsedClassicsCollDefs[collectionShortname];
 
-    // get type of collection contents ("empty", "lines", "pages" or "none") 
+    // get type of collection contents ("line", "page" or "word" or undefined) 
     const collContentsType = collDef['contents_type'];
 
     let linesOrPagesSelectboxOptionsEls;
@@ -476,9 +476,34 @@ const ParsedClassicsNavSelects = {
     // get collection shortname and resource shortname from URL
     const {collectionShortname, resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(activeTabId);
     const collResPair = collectionShortname && resourceShortname ? `${collectionShortname}|${resourceShortname}`: '';
-    // get selected line's indicator from URL
-    const lineIndicator = ParsedClassicsLayout.getLineIndicatorFromUrl(collectionShortname);
-    const collLinePair = collectionShortname && lineIndicator ? `${collectionShortname}|${lineIndicator}` : '';
+    // get collection's definition
+    const collDef = ParsedClassicsCollDefs[collectionShortname];
+    // get type of collection contents ("line", "page" or "word" or undefined)
+    const collContentsType = collDef['contents_type'];
+
+    let resourceContents;
+    if (collectionShortname && resourceShortname) {
+      // get loaded resources data for current collection
+      const loadedResDataOfCollection = APP.loadedResourcesData[collectionShortname];
+      // get loaded data of current resouce
+      const loadedDataOfResource = loadedResDataOfCollection[resourceShortname];
+      // get contents of the resource
+      resourceContents = loadedDataOfResource['contents'];
+    }
+    
+    let lineIndicator;
+    let pageIndicator;
+    let collLinePair;
+    if (collContentsType == 'line') {
+      // get selected line's indicator from URL
+      lineIndicator = ParsedClassicsLayout.getLineIndicatorFromUrl(collectionShortname);
+      // form collection and line indicator pipe delimted str
+      collLinePair = collectionShortname && lineIndicator ? `${collectionShortname}|${lineIndicator}` : '';
+    }
+    else if (collContentsType == 'page') {
+      // get selected page's indicator from URL
+      pageIndicator = ParsedClassicsLayout.getPageIndicatorFromUrl(collectionShortname, activeTabId);
+    }
 
     // I. treat collections' selectbox
 
@@ -541,10 +566,7 @@ const ParsedClassicsNavSelects = {
     const collShortnameFromDom2 = linesOrPagesSelectbox.attr('data-collection');
     // get value of data-resource attr
     const resShortnameFromDom2 = linesOrPagesSelectbox.attr('data-resource');
-    // get collection's definition
-    const collDef = ParsedClassicsCollDefs[collectionShortname];
-    // get type of collection contents ("lines" or "pages")
-    const collContentsType = collDef['contents_type'];
+    
     // do we need to create new options els for lines selectbox?
     if (collectionShortname !== collShortnameFromDom2 || (collContentsType == 'page' && resourceShortname != resShortnameFromDom2)) {
       // create create new options els for lines or pages selectbox
@@ -555,13 +577,24 @@ const ParsedClassicsNavSelects = {
       // add data attr to selectbox to indicate collection whose contents selectbox contains
       // add data attr to selectbox to indicate resource whose contents selectbox contains
       linesOrPagesSelectbox.attr('data-collection', collectionShortname).attr('data-resource', collectionShortname);
+      // add tooltip to selectbox
       if (titleAttrVal) {
         linesOrPagesSelectbox.attr('title', titleAttrVal);
       }
     }
-    // get value from lines or pages selectbox
-    const selectboxValue = linesOrPagesSelectbox.val();
-    if (collLinePair) {
+    // get selectbox value to be scrolled to
+    let selectboxValue;
+    if (collContentsType == 'line') {
+      selectboxValue = collLinePair;
+    }
+    else if (collContentsType == 'page') {
+      selectboxValue = pageIndicator;
+      if (typeof resourceContents != 'undefined' && pageIndicator === 'title') {
+        selectboxValue = resourceContents.get('title');
+      }
+    }
+    // make selected the option el having selectbox value 
+    if (selectboxValue) {
       const optionToBeSelected = linesOrPagesSelectbox.find(`option[value="${selectboxValue}"]`);
       if (optionToBeSelected.length === 1) {
         linesOrPagesSelectbox.val(selectboxValue);

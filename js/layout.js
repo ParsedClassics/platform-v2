@@ -1973,7 +1973,7 @@ const ParsedClassicsLayout = {
     return lineIndicator;
   },
 
-  getPageIndicatorFromUrl(collectionShortname, tabId) {
+  getPageIndicatorFromUrl: function(collectionShortname, tabId) {
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
     const collectionPointers = pointersObj[collectionShortname] ?? {};
