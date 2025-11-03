@@ -482,7 +482,13 @@ const ParsedClassicsNavSelects = {
     const collContentsType = collDef['contents_type'];
 
     let resourceContents;
+    let resDef;
+    let resource_type;
     if (collectionShortname && resourceShortname) {
+      // get resource definition
+      resDef = collDef['resource_defs'][resourceShortname];
+      // get resource type
+      resource_type = resDef['resource_type'];
       // get loaded resources data for current collection
       const loadedResDataOfCollection = APP.loadedResourcesData[collectionShortname];
       // get loaded data of current resouce
@@ -587,7 +593,7 @@ const ParsedClassicsNavSelects = {
     if (collContentsType == 'line') {
       selectboxValue = collLinePair;
     }
-    else if (collContentsType == 'page') {
+    else if (collContentsType == 'page' && resource_type == 'reader') {
       selectboxValue = pageIndicator;
       if (typeof resourceContents != 'undefined' && pageIndicator === 'title') {
         selectboxValue = resourceContents.get('title');
