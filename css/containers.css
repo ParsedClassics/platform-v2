@@ -123,7 +123,8 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .selected-l
 }
 
 div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .line:not(:last-child) {
-  padding-bottom: 16px;
+  margin-bottom: 16px;
+  padding: 6px 0 6px 0;
 }
 
 div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .word:not(.selected-word):hover {
