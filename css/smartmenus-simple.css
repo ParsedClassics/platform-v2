@@ -138,6 +138,13 @@ nav {
   margin-top: 8px;
 }
 
+/* added by ParsedClassics */
+.sm-menu-content span.menu-heading {
+display: block; 
+padding-top: 8px; 
+text-align: center;
+}
+
 .sm-simple .sm__layout-link:hover {
   padding:8px 8px;
   font-size: 16px;

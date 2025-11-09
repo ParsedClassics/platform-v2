@@ -12,6 +12,7 @@ const ParsedClassicsNavSelects = {
     // create tab selectboxes container html
     const containerHtml = `
       <div class="sm__tab-selects-container" id="tab-selects-container-${tabId}">
+        <span class="menu-heading">Contents</span>
         <div class="sm__tab-selects-container-inner">
           <select class="sm-menu-selectbox" id="collections-selectbox-${tabId}" title="Select collection">
             <option disabled selected>Collection</option>
@@ -635,7 +636,7 @@ const ParsedClassicsOptionsSelects = {
         // get tab options container
         let tabOptionsContainer = paneOptionsContainer.find(`div.sm__tab-options-container`);
         // create options container inner el
-        let tabOptionsContainerInner = $(`<div class="sm__tab-options-container-inner" id="sm__tab-options-container-inner-${activeTabId}"></div>`);
+        let tabOptionsContainerInner = $(`<div class="sm__tab-options-container-inner" id="sm__tab-options-container-inner-${activeTabId}"><span class="menu-heading">Options</span></div>`);
         // append options widgets
         for (let i = 0; i < resDef['extra']['options'].length; i++) {
           let option_shortname = resDef['extra']['options'][i];
@@ -1268,8 +1269,8 @@ ParsedClassicsResourceOptions = {
       let widget = `
         <select class="sm-menu-selectbox" title="Page display options">
           <option disabled>Text display mode</option>
-          <option value="lines"${text_mode == 'lines' ? ' selected' : ''}>Lines</option>
-          <option value="paragraphs"${text_mode == 'paragraphs' ? ' selected' : ''}>Paragraphs</option>
+          <option value="lines"${text_mode == 'lines' ? ' selected' : ''}>Text as lines</option>
+          <option value="paragraphs"${text_mode == 'paragraphs' ? ' selected' : ''}>Text as paragraphs</option>
         </select>
       `;
       widget = $(widget);
