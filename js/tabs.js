@@ -240,6 +240,10 @@ const ParsedClassicsTabs = {
     const tabSelectboxContainer = $(`#tab-selects-container-${tabId}`);
     // remove tab selectbox container
     tabSelectboxContainer.remove();
+    // get pane id
+    const paneId = ParsedClassicsLayout.getPaneIdFromUrl(tabId);
+    // close navigation menu which might be open at the time tab is being closed
+    $(`#main-menu-${paneId}`).smartmenus('menuHideAll');
   },
 
   createTabbar: function (paneTopPartEl, paneEl, tabIdsArr, activeTabIndex) {
