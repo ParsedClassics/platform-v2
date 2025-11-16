@@ -70,7 +70,7 @@ const ParsedClassicsNavSelects = {
     resourcesSelectbox.append(resSelectboxOptionsEls).attr('data-collection', collectionShortname);
 
     // create or pages lines selectbox options els
-    const {linesOrPagesSelectboxOptionsEls, titleAttrVal} = ParsedClassicsNavSelects.linesOrPagesSelectboxOptions(collectionShortname, tabId);
+    const {linesOrPagesSelectboxOptionsEls, titleAttrVal} = ParsedClassicsNavSelects.linesOrPagesSelectboxOptions(collectionShortname, tabId, linesOrPagesSelectbox);
 
     // add  selectbox options els to lines or pages selectbox
     // add data attr to selectbox to indicate collection whose line indicators selectbox contains
@@ -174,7 +174,7 @@ const ParsedClassicsNavSelects = {
     return selectboxOptionsEls;
   },
 
-  linesOrPagesSelectboxOptions: function(collectionShortname, tabId) {
+  linesOrPagesSelectboxOptions: function(collectionShortname, tabId, linesOrPagesSelectbox) {
     // get collection's definition
     const collDef = ParsedClassicsCollDefs[collectionShortname];
 
@@ -195,13 +195,15 @@ const ParsedClassicsNavSelects = {
     }
     else if (collContentsType === "page") { 
       // create pages selectbox options els
-      linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.pagesSelectboxOptions(collectionShortname, tabId);
+      linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.pagesSelectboxOptions(collectionShortname, tabId, linesOrPagesSelectbox);
       titleAttrVal = "Select page";
     }
     else if (collContentsType === "word") {
       // lines or options selectbox should be hidden
       linesOrPagesSelectboxOptionsEls = null;
       titleAttrVal = null;
+      // hide lines/pages selectbox
+      linesOrPagesSelectbox.css('display', 'none');
     }
     return {linesOrPagesSelectboxOptionsEls, titleAttrVal};
   },
@@ -234,7 +236,7 @@ const ParsedClassicsNavSelects = {
     return selectboxOptionsEls;
   },
 
-  pagesSelectboxOptions: function(collectionShortname, tabId) {
+  pagesSelectboxOptions: function(collectionShortname, tabId, linesOrPagesSelectbox) {
     let selectboxOptionsHtml = '<option disabled>Page</option>';
 
     // get collection's definition
@@ -272,11 +274,11 @@ const ParsedClassicsNavSelects = {
           }
         }
         // pages selectbox might be previously hidden, so make it visible
-        $(`#lines-or-pages-selectbox-${tabId}`).css('display', 'inline');
+        linesOrPagesSelectbox.css('display', 'inline');
       }
       else {
         // hide pages selectbox
-        $(`#lines-or-pages-selectbox-${tabId}`).css('display', 'none');
+        linesOrPagesSelectbox.css('display', 'none');
       }
       
     }
@@ -578,7 +580,7 @@ const ParsedClassicsNavSelects = {
     if (collectionShortname !== collShortnameFromDom2 || (collContentsType == 'page' && resourceShortname != resShortnameFromDom2)) {
       // create create new options els for lines or pages selectbox
       // create or pages lines selectbox options els
-      const {linesOrPagesSelectboxOptionsEls, titleAttrVal} = ParsedClassicsNavSelects.linesOrPagesSelectboxOptions(collectionShortname, activeTabId);
+      const {linesOrPagesSelectboxOptionsEls, titleAttrVal} = ParsedClassicsNavSelects.linesOrPagesSelectboxOptions(collectionShortname, activeTabId, linesOrPagesSelectbox);
       // append new options els 
       linesOrPagesSelectbox.html('').append(linesOrPagesSelectboxOptionsEls);
       // add data attr to selectbox to indicate collection whose contents selectbox contains

@@ -309,4 +309,28 @@ const ParsedClassicsCollDefs = {
 		central_resource: 'collar_new_gradatim_reader',
 	},
 
+	greek_lexicons: {
+		author_orig: '',   
+    author_eng: '',
+		author_orig_short: '',
+		author_eng_short: '',
+    collection_selectboxname: 'Greek lexicons',
+    collections_page_title_orig: 'Greek lexicons',
+    collections_page_title_eng: 'Greek lexicons',
+		contents_type: 'word',
+		central_resource: '',
+	},
+
+	latin_lexicons: {
+		author_orig: '',   
+    author_eng: '',
+		author_orig_short: '',
+		author_eng_short: '',
+    collection_selectboxname: 'Latin lexicons',
+    collections_page_title_orig: 'Latin lexicons',
+    collections_page_title_eng: 'Latin lexicons',
+		contents_type: 'word',
+		central_resource: '',
+	},
+
 };

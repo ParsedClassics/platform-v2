@@ -224,7 +224,7 @@ ParsedClassicsReadersCatalogue = {
       // definitions of editions successfully
       .then((values) => {
         let catalogueContent = "<h2>Readers</h2>";
-        catalogueContent += "<h3>Editions</h3>";
+        //catalogueContent += "<h3>Editions</h3>";
 
         // compile catalogue links
         for (var key in ParsedClassicsCollectionSets) {
@@ -269,7 +269,7 @@ ParsedClassicsReadersCatalogue = {
 
   createCollectionsTable: function(collectionShortnamesArray, collSetEngTitle) {
     let titleHTML = '<h1>' + collSetEngTitle + '</h1>';
-    titleHTML += '<h2>Collections</h2>';
+    //titleHTML += '<h2>Collections</h2>';
 
     const id = ParsedClassicsSiteHelpers.generateUID;
     const baseUrl = window.location.href.split('site/')[0];
@@ -330,7 +330,7 @@ ParsedClassicsReadersCatalogue = {
 
       collectionsTableHTML += '<td colspan="4" style="padding-left: 32px;">';
       collectionsTableHTML += '<p style="text-align: center;"><img src="./img/ajax-loader.gif"></p>';
-      collectionsTableHTML += difficultyLevel;
+      //collectionsTableHTML += difficultyLevel;
       collectionsTableHTML += '</td>';
 
       collectionsTableHTML += '</tr>';
@@ -366,5 +366,167 @@ ParsedClassicsReadersCatalogue = {
         });
     }
   }
+
+}
+
+ParsedClassicsLexiconsCatalogue = {
+  
+  collectionsList: function() {
+
+    // file containing definitions of editions
+    const fileName = '_sets_lexicons.js';
+
+    const baseUrl = window.location.href.split('site/')[0];
+    // url of the file containing definitions of editions
+    const url = baseUrl + ParsedClassicsAppVars.cataloguesDir + fileName;
+
+    // load definitions of editions
+    const editionsPromises = [ParsedClassicsSiteHelpers.loadJs(url)];
+    Promise.allSettled(editionsPromises)
+      // definitions of editions successfully
+      .then((values) => {
+        let catalogueContent = "<h2>Lexicons</h2>";
+        //catalogueContent += "<h3>Editions</h3>";
+
+        // compile catalogue links
+        for (const set_shortname in ParsedClassicsCollectionSets) {
+          for (const i in ParsedClassicsCollectionSets[set_shortname]['collections']) {
+            const coll_shortname = ParsedClassicsCollectionSets[set_shortname]['collections'][i]; 
+            const collDef = ParsedClassicsCollDefs[coll_shortname];
+            const title = collDef['collection_selectboxname'];
+            catalogueContent += "<p><a target='_blank' href='resources-lexicons.html#{\"" + ParsedClassicsAppVars.collectionMember + "\":\"" + coll_shortname + "\"}'>" + title + '</a></p>';
+          }
+        }
+
+        $('#pc-site-content').append(catalogueContent);
+
+      })
+      // definitions of editions loaded unsuccessfully, so display error
+      .catch((error) => {
+        // This catch block will not be executed
+        console.error(error);
+      });
+  },
+
+  resourcesList: function() {
+    const hashJsonString = window.location.hash.replace("#", "");
+    const hashJson = ParsedClassicsCatalogue.stringToJson(hashJsonString);
+
+    //find shortname of collection
+    const coll_shortname = (typeof hashJson[ParsedClassicsAppVars.collectionMember] != "undefined" && hashJson[ParsedClassicsAppVars.collectionMember] != "") ? hashJson[ParsedClassicsAppVars.collectionMember] : "";
+
+    // if there is no shortname of collection in URL or shortname of collection is invalid
+    // then redirect to catalogue page
+    if (coll_shortname == "" || typeof ParsedClassicsCollDefs[coll_shortname] == "undefined") {
+      window.location = "catalogue.html";
+    }
+
+    // find English title of the collection
+    const collEngTitle = coll_shortname ? ParsedClassicsCollDefs[coll_shortname].collections_page_title_eng : "";
+
+    // create HTML table into which info about resources will be placed
+    ParsedClassicsLexiconsCatalogue.createResourcesTable(coll_shortname, collEngTitle);
+
+  },
+
+  createResourcesTable: function(coll_shortname, collEngTitle) {
+    let titleHTML = '<h1>' + collEngTitle + '</h1>';
+    //titleHTML += '<h2>Resources</h2>';
+
+    const id = ParsedClassicsSiteHelpers.generateUID;
+    const baseUrl = window.location.href.split('site/')[0];
+
+    // get collection's definition
+    const collDataPromise = ParsedClassicsCatalogue.loadCollectionsDefs([coll_shortname]);
+    Promise.allSettled(collDataPromise)
+      // collection's data loaded successfully
+      .then((values) => {
+        const resDefs = ParsedClassicsCollDefs[coll_shortname].resource_defs;
+
+        const tableId = `collections-table-${id()}`;
+        let collectionsTableHTML = `<table id="${tableId}" class="sortable-theme-light w3-table" data-sortable>`;
+        
+        collectionsTableHTML += '<thead>';
+        collectionsTableHTML += '<tr>'; 
+        collectionsTableHTML += '<th>Author</th>'; 
+        collectionsTableHTML += '<th>Title</th>'; 
+        collectionsTableHTML += '<th data-sorted="true" data-sorted-direction="ascending" style="width: 7rem;">Level</th>'; 
+        collectionsTableHTML += '<th data-sortable="false" style="width: 1%;">&nbsp;</th>'; 
+        collectionsTableHTML += '</tr>'; 
+        collectionsTableHTML += '</thead>'; 
+        collectionsTableHTML += '<tbody>';
+
+        const res_shortnames_arr = Object.keys(resDefs);
+        for (let i = 0; i < res_shortnames_arr.length; i++) {
+          const res_shortname = res_shortnames_arr[i];
+          const resource = resDefs[res_shortname];
+
+          const rowPairId = `pair-${id()}`;
+
+          const author = typeof resource['collections_page_resource_author'] != 'undefined' ? resource['collections_page_resource_author'] : '';
+
+          const title = resource['collections_page_resource_desc'];
+          
+          const tabId = id();
+          const url = baseUrl + `lexicons.html#{"L":{"a":[["${coll_shortname}|${res_shortname}"]],"b":[["${coll_shortname}"]]},"P":{"${coll_shortname}":{}},"D":{"a":[["${id()}",50],["${id()}",100,["${tabId}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
+
+          const link = `<a href='${url}' target='_blank'>${title}</a>`;
+
+          let difficultyLevel = parseInt(resource['library_app_selectbox_title']);
+          difficultyLevel = !Number.isNaN(difficultyLevel) ? difficultyLevel : '';
+
+          const button = `<button class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsLexiconsCatalogue.toggleSecondaryRow('${tableId}', '${rowPairId}', '${coll_shortname}', '${res_shortname}')">Details</button>`;
+
+          collectionsTableHTML += `<tr class="primary_tr" data-row-pair="${rowPairId}">`;
+
+          collectionsTableHTML += '<td>';
+          collectionsTableHTML += author;
+          collectionsTableHTML += '</td>';
+
+          collectionsTableHTML += '<td>';
+          collectionsTableHTML += link;
+          collectionsTableHTML += '</td>';
+
+          collectionsTableHTML += '<td>';
+          collectionsTableHTML += difficultyLevel;
+          collectionsTableHTML += '</td>';
+
+          collectionsTableHTML += '<td>';
+          collectionsTableHTML += button;
+          collectionsTableHTML += '</td>';
+
+          collectionsTableHTML += '</tr>';
+
+          collectionsTableHTML += `<tr class="secondary_tr pc-hide" data-row-pair="${rowPairId}">`;
+
+          collectionsTableHTML += '<td colspan="4" style="padding-left: 32px;">';
+          collectionsTableHTML += '<p style="text-align: center;"><img src="./img/ajax-loader.gif"></p>';
+          //collectionsTableHTML += difficultyLevel;
+          collectionsTableHTML += '</td>';
+
+          collectionsTableHTML += '</tr>';
+        }
+
+        collectionsTableHTML += '</tbody>';
+        collectionsTableHTML += '</table>';
+        $('#pc-site-content').append(titleHTML + collectionsTableHTML);
+
+        // initialize sortable tables
+        sortableTable.init();
+      })
+      // collection's data loaded unsuccessfully, so display error
+      .catch((error) => {
+        // This catch block will not be executed
+        console.error(error);
+      });
+  },
+
+  toggleSecondaryRow: function(tableId, rowPairAttr, coll_shortname, res_shortname) {
+    let secondaryRow = $(`#${tableId}`).find(`.secondary_tr[data-row-pair="${rowPairAttr}"]`);
+    secondaryRow.toggle(ParsedClassicsAppVars.animationSpeed);
+    const resDef = ParsedClassicsCollDefs[coll_shortname].resource_defs[res_shortname];
+    const text_from = resDef['library_app_panel_text_from'];
+    secondaryRow.find('td').html(text_from);
+  },
 
 }
