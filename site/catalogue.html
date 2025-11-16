@@ -24,6 +24,8 @@
 
 <script type="text/javascript" src="../js/vars.js"></script>
 
+<script type="text/javascript" src="../data/_catalogues/_collections.js"></script>
+
 <script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
 
 <script type="text/javascript" src="./js/helpers.js"></script>
@@ -33,6 +35,7 @@
 <script>
 $(document).ready(
   function() {
+    ParsedClassicsLexiconsCatalogue.collectionsList();
     ParsedClassicsReadersCatalogue.editionsList();
     ParsedClassicsCatalogue.editionsList();
   }

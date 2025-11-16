@@ -211,9 +211,10 @@ const ParsedClassicsResProtos = {
   },
 
   elementary_latin_dictionary_by_lewis: {
-    collections_page_resource_desc: "Elementary Latin dictionary by Ch. T. Lewis (1890)", 
-    library_app_selectbox_title: "Elementary Latin dictionary by Ch. T. Lewis (1890)",
-    library_app_panel_title: "A Greek and English lexicon of the New Testament by E. Robinson (1850)",
+    collections_page_resource_author: "Lewis Ch. T.",
+    collections_page_resource_desc: "Elementary Latin dictionary", 
+    library_app_selectbox_title: "1* Elementary Latin dictionary by Ch. T. Lewis (1890)",
+    library_app_panel_title: "Elementary Latin dictionary by Ch. T. Lewis (1890)",
     library_app_panel_text_from: "Ch. T. Lewis. An elementary Latin dictionary. 1918. New York etc.: American Book company.",
     library_app_panel_note: "",
     scanned_or_typed: "scanned",

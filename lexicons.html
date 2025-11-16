@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+ This file is part of ParsedClassics app
+=====================================================
+ Copyright (c) Éleuthère Ioannidis
+=====================================================
+-->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ParsedClassics App</title>
+
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="css/vars.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/smartmenus-core.css" />
+    <link rel="stylesheet" type="text/css" href="css/smartmenus-simple.css" />
+    <link rel="stylesheet" type="text/css" href="css/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="css/containers.css" />
+    <link rel="stylesheet" type="text/css" href="css/widgets.css" />
+
+    <script type="text/javascript" src="data/_catalogues/_scanned_books.js"></script>
+    <script type="text/javascript" src="data/_catalogues/_sets_lexicons.js"></script>
+    <script type="text/javascript" src="data/_catalogues/_collections.js"></script>
+    <script type="text/javascript" src="data/_catalogues/_res_protos.js"></script>
+    
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/split-1.6.5.js"></script>
+    <script type="text/javascript" src="js/sortable-1.15.0.js"></script>
+    <script type="text/javascript" src="js/audioTextSync-1.0.0.js"></script>
+    <script type="text/javascript" src="js/jquery.smartmenus-1.2.1.js"></script>
+    <script type="text/javascript" src="js/jquery.hScroll.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo-2.1.2.js"></script>
+    <script type="text/javascript" src="js/jquery.isInViewport-3.0.3.js"></script>
+
+    <script type="text/javascript" src="js/vars.js"></script>
+    <script type="text/javascript" src="js/layout.js"></script>
+    <script type="text/javascript" src="js/navigation.js"></script>
+    <script type="text/javascript" src="js/tabs.js"></script>
+    <script type="text/javascript" src="js/containers.js"></script>
+    <script type="text/javascript" src="js/widgets.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="./js/keyboard/keymanweb.js"></script>
+    <script type="text/javascript" src="./js/keyboard/greekclassical-1.1.js" charset="UTF-8" ></script>
+    <script type="text/javascript">
+      keyman.init({attachType: 'manual'}).then(function(){
+      keyman.addKeyboards('greekclassical');
+      keyman.osk.hide();
+    });
+    </script>
+    <script type="text/javascript" src="js/app.js" defer></script>
+  </head>
+  <body>
+    <div id="container" class="container">
+    </div>
+  </body>
+</html>
