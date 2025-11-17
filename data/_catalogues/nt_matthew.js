@@ -9,6 +9,7 @@
 /* 
 Template of resource description:
 
+collections_page_resource_author: "",
 collections_page_resource_desc: "", 
 library_app_selectbox_title: "",
 library_app_panel_title: "",
