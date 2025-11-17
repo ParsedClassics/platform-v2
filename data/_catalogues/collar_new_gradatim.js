@@ -19,7 +19,8 @@
 	scanned_or_typed: "",
   resource_type: "",
 	scanned_source_shortname: "",
-	contents_shortname: ""
+	contents_shortname: "",
+  extra: {},
 */
 
 /* 
@@ -46,7 +47,8 @@ ParsedClassicsCollDefs.collar_new_gradatim["resource_defs"] = {
     scanned_or_typed: "scanned",
     resource_type: "reader",
     scanned_source_shortname: "collar_new_gradatim",
-    contents_shortname: "collar_new_gradatim_contents"
+    contents_shortname: "collar_new_gradatim_contents",
+    extra: {},
   }, 
   
   // Lexicon standalone

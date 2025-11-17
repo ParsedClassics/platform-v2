@@ -19,7 +19,8 @@
 	scanned_or_typed: "",
   resource_type: "",
 	scanned_source_shortname: "",
-	contents_shortname: ""
+	contents_shortname: "",
+  extra: {},
 */
 
 /* 
@@ -46,7 +47,8 @@ ParsedClassicsCollDefs.appleton_initium["resource_defs"] = {
     scanned_or_typed: "scanned",
     resource_type: "reader",
     scanned_source_shortname: "???",
-    contents_shortname: "???"
+    contents_shortname: "???",
+    extra: {},
   } 
   
   // Lexicon standalone

@@ -19,7 +19,8 @@
 	scanned_or_typed: "",
   resource_type: "",
 	scanned_source_shortname: "",
-	contents_shortname: ""
+	contents_shortname: "",
+  extra: {},
 */
 
 /* 
@@ -46,7 +47,8 @@ ParsedClassicsCollDefs.appleton_ludi_persici["resource_defs"] = {
     scanned_or_typed: "scanned",
     resource_type: "reader",
     scanned_source_shortname: "appleton_ludi_persici",
-    contents_shortname: "appleton_ludi_persici_contents"
+    contents_shortname: "appleton_ludi_persici_contents",
+    extra: {},
   }, 
   
   // Lexicons

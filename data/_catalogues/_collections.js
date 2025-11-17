@@ -15,9 +15,11 @@
 	author_eng_short: "",
   collection_selectboxname: "",
   collections_page_title_orig: "",
-  collections_page_title_eng: "", 
+  collections_page_title_eng: "",
+	contents_type: "", 
 	central_resource: "",
 	resource_defs: {}, // defined in separate files
+	extra: {},
 */
 
 const ParsedClassicsCollProtos = {
@@ -28,6 +30,7 @@ const ParsedClassicsCollProtos = {
 		author_orig_short: 'Κ. Δ.',
 		author_eng_short: 'N. T.',
 		contents_type: "line",
+		extra: {},
   },
 
 };
@@ -42,7 +45,9 @@ const ParsedClassicsCollDefs = {
 		collection_selectboxname: '',
 		collections_page_title_orig: '',
 		collections_page_title_eng: '',
+		contents_type: '',
 		central_resource: '',
+		extra: {},
 	},
 	
 	nt_matthew: {
@@ -271,6 +276,9 @@ const ParsedClassicsCollDefs = {
     collections_page_title_eng: 'Appleton R. B. Initium',
 		contents_type: 'page',
 		central_resource: 'appleton_initium_reader',
+		extra: {
+			difficulty_level: 1,
+		},
 	},
 
 	maxey_fay_new_latin_primer: {
@@ -278,11 +286,14 @@ const ParsedClassicsCollDefs = {
     author_eng: 'Mima Maxey, Marjorie J. Fay',
 		author_orig_short: 'Maxey M., Fay M. J.',
 		author_eng_short: 'Maxey M., Fay M. J.',
-    collection_selectboxname: '1* Maxey M., Fay M. J. A new Latin primer',
+    collection_selectboxname: 'Maxey M., Fay M. J. A new Latin primer',
     collections_page_title_orig: 'A new Latin primer',
     collections_page_title_eng: 'A new Latin primer',
 		contents_type: 'page',
 		central_resource: 'maxey_fay_new_latin_primer_reader',
+		extra: {
+			difficulty_level: 1,
+		},
 	},
 
 	appleton_ludi_persici: {
@@ -290,11 +301,14 @@ const ParsedClassicsCollDefs = {
     author_eng: 'Reginald B. Appleton',
 		author_orig_short: 'Appleton R. B.',
 		author_eng_short: 'Appleton R. B.',
-    collection_selectboxname: '3* Appleton R. B. Ludi Persici',
+    collection_selectboxname: 'Appleton R. B. Ludi Persici',
     collections_page_title_orig: 'Ludi Persici',
     collections_page_title_eng: 'Ludi Persici',
 		contents_type: 'page',
 		central_resource: 'appleton_ludi_persici_reader',
+		extra: {
+			difficulty_level: 3,
+		},
 	},
 
 	collar_new_gradatim: {
@@ -302,11 +316,14 @@ const ParsedClassicsCollDefs = {
     author_eng: 'William C. Collar',
 		author_orig_short: 'Collar W. C.',
 		author_eng_short: 'Collar W. C.',
-    collection_selectboxname: '2* Collar W. C. The new gradatim',
+    collection_selectboxname: 'Collar W. C. The new gradatim',
     collections_page_title_orig: 'The new gradatim',
     collections_page_title_eng: 'The new gradatim',
 		contents_type: 'page',
 		central_resource: 'collar_new_gradatim_reader',
+		extra: {
+			difficulty_level: 2,
+		},
 	},
 
 	greek_lexicons: {
@@ -319,6 +336,7 @@ const ParsedClassicsCollDefs = {
     collections_page_title_eng: 'Greek lexicons',
 		contents_type: 'word',
 		central_resource: '',
+		extra: {},
 	},
 
 	latin_lexicons: {
@@ -331,6 +349,7 @@ const ParsedClassicsCollDefs = {
     collections_page_title_eng: 'Latin lexicons',
 		contents_type: 'word',
 		central_resource: '',
+		extra: {},
 	},
 
 };
