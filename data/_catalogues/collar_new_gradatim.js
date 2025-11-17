@@ -9,6 +9,7 @@
 /* 
 	Template of resource description:
 
+  collections_page_resource_author: "",
 	collections_page_resource_desc: "", 
 	library_app_selectbox_title: "",
 	library_app_panel_title: "",
@@ -35,6 +36,7 @@ ParsedClassicsCollDefs.collar_new_gradatim["resource_defs"] = {
   // Reader
 
   collar_new_gradatim_reader: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "Collar W. C. The new gradatim (1895)", 
     library_app_selectbox_title: "Collar W. C. The new gradatim (1895)",
     library_app_panel_title: "Collar W. C. The new gradatim",
@@ -55,7 +57,8 @@ ParsedClassicsCollDefs.collar_new_gradatim["resource_defs"] = {
   },
 
   /*lexicon_graeco_latinum_by_zorell: {
-    collections_page_resource_desc: "Greek-Latin lexicon of the NT by F. Zorell (1931)", 
+  collections_page_resource_author: "",  
+  collections_page_resource_desc: "Greek-Latin lexicon of the NT by F. Zorell (1931)", 
     library_app_selectbox_title: "Greek-Latin lexicon of the NT by F. Zorell (1931)",
     library_app_panel_title: "Lexicon Graecum Novi Testamenti by F. Zorell (1931)",
     library_app_panel_text_from: "Lexicon Graecum Novi Testamenti auctore Francisco Zorell, S.I. Editio altera novis curis retractata.  1931. Parisiis: P. Lethielleux.",

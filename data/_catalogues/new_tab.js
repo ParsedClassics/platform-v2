@@ -9,6 +9,7 @@
 /* 
 Template of resource description:
 
+collections_page_resource_author: "",
 collections_page_resource_desc: "", 
 library_app_selectbox_title: "",
 library_app_panel_title: "",
@@ -48,6 +49,7 @@ Order of resources by resource type
 ParsedClassicsCollDefs.new_tab["resource_defs"] = {
   
   new_tab_info: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "", 
     library_app_selectbox_title: "New tab",
     library_app_panel_title: "",

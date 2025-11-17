@@ -26,7 +26,8 @@ const ParsedClassicsResProtos = {
   // Parsed texts
 
 	nt_parsed_text_byzantine: {
-		collections_page_resource_desc: "ed. by ParsedClassics (2018)",
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "ed. by ParsedClassics (2018)",
 		library_app_selectbox_title: "Byzantine textform", 
 		library_app_panel_subtitle: "",
     library_app_panel_text_from: "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing.",
@@ -39,6 +40,7 @@ const ParsedClassicsResProtos = {
   // Original texts
 
   nt_text_ed_robinson_pierpont: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "Byzantine textform ed. by M. A. Robinson, W. G. Pierpont (2005)", 
     library_app_selectbox_title: "Edition by M. A. Robinson, W. G. Pierpont (2005)",
     library_app_panel_title: "Text ed. by M. A. Robinson, W. G. Pierpont (2005)",
@@ -51,7 +53,8 @@ const ParsedClassicsResProtos = {
   },
 
 	nt_text_ed_antoniadis: {
-		collections_page_resource_desc: "ed. by V. Antoniadis (1904)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "ed. by V. Antoniadis (1904)", 
 		library_app_selectbox_title: "Edition by V. Antoniadis (1904)",
 		library_app_panel_title: "Text ed. by V. Antoniadis (1904)",
     library_app_panel_subtitle: "",
@@ -63,7 +66,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_text_ed_scrivener: {
-		collections_page_resource_desc: "ed. by F. H. A. Scrivener (1887)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "ed. by F. H. A. Scrivener (1887)", 
     library_app_selectbox_title: "Edition by F. H. A. Scrivener (1887)",
     library_app_panel_subtitle: "",
     library_app_panel_title: "Text ed. by F. H. A. Scrivener (1887)",
@@ -75,6 +79,7 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_text_ed_westcott_hort: { 
+    collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by B. F. Westcott, F. J. A. Hort (1882)", 
     library_app_selectbox_title: "Edition by B. F. Westcott, F. J. A. Hort (1882)",
     library_app_panel_subtitle: "",
@@ -87,6 +92,7 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_text_ed_nestle_nestle: { 
+    collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by Eberhard Nestle, Erwin Nestle (1936)", 
     library_app_selectbox_title: "Edition by Eberhard Nestle, Erwin Nestle (1936)",
     library_app_panel_title: "Text ed. by Eberhard Nestle, Erwin Nestle (1936)",
@@ -101,6 +107,7 @@ const ParsedClassicsResProtos = {
   // Concordances
 
   concordance_by_moulton_geden: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by W. F. Moulton and A. S. Geden (1899)", 
     library_app_selectbox_title: "Concordance ed. by W. F. Moulton and A. S. Geden (1899)",
     library_app_panel_title: "A concordance to the Greek Testament ed. by W. F. Moulton and A. S. Geden (1899)",
@@ -113,6 +120,7 @@ const ParsedClassicsResProtos = {
   },
 
   concordance_by_hudson_abbot: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by Ch. F. Hudson and E. Abbot (1892)", 
     library_app_selectbox_title: "Concordance ed. by Ch. F. Hudson and E. Abbot (1892)",
     library_app_panel_title: "A critical Greek and English concordance of the New Testament by Ch. F. Hudson and E. Abbot (1892)",
@@ -125,6 +133,7 @@ const ParsedClassicsResProtos = {
   },
 
   concordance_by_bagster: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by S. Bagster (1870)", 
     library_app_selectbox_title: "Concordance ed. by S. Bagster (1870)",
     library_app_panel_title: "Bagster's analytical Greek lexicon (1870)",
@@ -137,6 +146,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_conc_by_parsedclassics: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "compiled by ParsedClassics (2018)", 
     library_app_selectbox_title: "Concordance compiled by ParsedClassics (2018)",
     library_app_panel_title: "New Testament concordance",
@@ -151,6 +161,7 @@ const ParsedClassicsResProtos = {
   // Lexicons
 
   lexicon_graeco_latinum_by_grimm: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "Greek-Latin lexicon of the NT by W. Grimm (1903)", 
     library_app_selectbox_title: "Greek-Latin lexicon of the NT by W. Grimm (1903)",
     library_app_panel_title: "Lexicon Graeco-Latinum in libros Novi Testamenti by W. Grimm (1903)",
@@ -163,6 +174,7 @@ const ParsedClassicsResProtos = {
   },
 
   lexicon_graeco_latinum_by_zorell: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "Greek-Latin lexicon of the NT by F. Zorell (1931)", 
     library_app_selectbox_title: "Greek-Latin lexicon of the NT by F. Zorell (1931)",
     library_app_panel_title: "Lexicon Graecum Novi Testamenti by F. Zorell (1931)",
@@ -175,6 +187,7 @@ const ParsedClassicsResProtos = {
   },
 
   greek_lexicon_of_nt_by_robinson: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "Greek-English lexicon of the NT by E. Robinson (1850)", 
     library_app_selectbox_title: "Greek-English lexicon of the NT by E. Robinson (1850)",
     library_app_panel_title: "A Greek and English lexicon of the New Testament by E. Robinson (1850)",
@@ -187,6 +200,7 @@ const ParsedClassicsResProtos = {
   },
 
   greek_lexicon_to_nt_by_green: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "Greek-English lexicon of the NT by Th. S. Green (1896)", 
     library_app_selectbox_title: "Greek-English lexicon of the NT by Th. S. Green (1896)",
     library_app_panel_title: "A Greek-English lexicon to the New Testament by Th. S. Green (1896)",
@@ -199,6 +213,7 @@ const ParsedClassicsResProtos = {
   },
 
   griechisch_deutsches_handwoerterbuch_zu_nt_preuschen: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "Vollständiges Griechisch-Deutsches Handwörterbuch zu den Schriften des Neuen Testaments by E. Preuschen (1910)", 
     library_app_selectbox_title: "Greek-German lexicon of the NT by E. Preuschen (1910)",
     library_app_panel_title: "Griechisch-Deutsches Handwörterbuch by E. Preuschen (1910)",
@@ -225,6 +240,7 @@ const ParsedClassicsResProtos = {
   // Translations
 
   nt_tr_EL_vamvas: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "to modern Greek (Katharevousa) by N. Vamvas (1844)", 
     library_app_selectbox_title: "Translation to modern Greek (Katharevousa) by N. Vamvas (1844)",
     library_app_panel_title: "Modern Greek (Katharevousa) translation by N. Vamvas (1844)",
@@ -237,6 +253,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_tr_LA_s_hieronymus_vol_1: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "to Latin by Saint Jerome (382-405)", 
     library_app_selectbox_title: "Translation to Latin by Saint Jerome (382-405)",
     library_app_panel_title: "Latin translation by Saint Jerome (382-405)",
@@ -249,6 +266,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_tr_LA_s_hieronymus_vol_2: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "to Latin by Saint Jerome (382-405)", 
     library_app_selectbox_title: "Translation to Latin by Saint Jerome (382-405)",
     library_app_panel_title: "Latin translation by Saint Jerome (382-405)",
@@ -261,7 +279,8 @@ const ParsedClassicsResProtos = {
   },
 
 	nt_tr_LA_beza: {
-		collections_page_resource_desc: "to Latin by Th. Beza (1565)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "to Latin by Th. Beza (1565)", 
 		library_app_selectbox_title: "Translation to Latin by Th. Beza (1565)",
 		library_app_panel_title: "Latin translation by Th. Beza (1565)",
     library_app_panel_subtitle: "",
@@ -273,7 +292,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_tr_IT_diodati: {
-		collections_page_resource_desc: "to Italian by G. Diodati (1603)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "to Italian by G. Diodati (1603)", 
 		library_app_selectbox_title: "Translation to Italian by G. Diodati (1603)",
 		library_app_panel_title: "Italian translation by G. Diodati (1603)",
     library_app_panel_subtitle: "",
@@ -285,7 +305,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_tr_IT_martini: {
-		collections_page_resource_desc: "to Italian by A. Martini (1771)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "to Italian by A. Martini (1771)", 
     library_app_selectbox_title: "Translation to Italian by A. Martini (1771)",
 		library_app_panel_title: "Italian translation by A. Martini (1771)",
     library_app_panel_subtitle: "",
@@ -297,7 +318,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_tr_FR_ostervald: {
-		collections_page_resource_desc: "to French by J. F. Ostervald (1744)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "to French by J. F. Ostervald (1744)", 
 		library_app_selectbox_title: "Translation to French by J. F. Ostervald (1744)",
 		library_app_panel_title: "French translation by J. F. Ostervald (1744)",
     library_app_panel_subtitle: "",
@@ -309,7 +331,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_tr_FR_segond: {
-		collections_page_resource_desc: "to French by L. Segond (1880)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "to French by L. Segond (1880)", 
 		library_app_selectbox_title: "Translation to French by L. Segond (1880)",
 		library_app_panel_title: "French translation by L. Segond (1880)",
     library_app_panel_subtitle: "",
@@ -321,7 +344,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_tr_EN_authorised_revised: {
-		collections_page_resource_desc: "to English, Authorized (1611) and Revised (1881) versions", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "to English, Authorized (1611) and Revised (1881) versions", 
 		library_app_selectbox_title: "Translation to English, Authorized (1611) and Revised (1881) versions",
 		library_app_panel_title: "English translation, Authorized (1611) and Revised (1881) versions",
     library_app_panel_subtitle: "",
@@ -333,7 +357,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_tr_EN_young: {
-		collections_page_resource_desc: "to English by R. Young (1898)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "to English by R. Young (1898)", 
 		library_app_selectbox_title: "Translation to English by  R. Young (1898)",
 		library_app_panel_title: "English translation by R. Young (1898)",
     library_app_panel_subtitle: "",
@@ -345,7 +370,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_tr_DE_luther: {
-		collections_page_resource_desc: "to German by M. Luther (1522)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "to German by M. Luther (1522)", 
 		library_app_selectbox_title: "Translation to German by  M. Luther (1522)",
 		library_app_panel_title: "German translation by M. Luther (1522)",
     library_app_panel_subtitle: "",
@@ -357,7 +383,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_tr_DE_menge: {
-		collections_page_resource_desc: "to German by H. Menge (1909)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "to German by H. Menge (1909)", 
 		library_app_selectbox_title: "Translation to German by  H. Menge (1909)",
 		library_app_panel_title: "German translation by H. Menge (1909)",
     library_app_panel_subtitle: "",
@@ -371,7 +398,8 @@ const ParsedClassicsResProtos = {
 	// Commentaries
 
 	nt_commentary_by_zigabenus: {
-		collections_page_resource_desc: "by Euthymius Zigabenus (ca. 1100)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by Euthymius Zigabenus (ca. 1100)", 
 		library_app_selectbox_title: "Commentary by Euthymius Zigabenus (ca. 1100)",
 		library_app_panel_title: "Commentary by Euthymius Zigabenus (ca. 1100)",
     library_app_panel_subtitle: "",
@@ -383,7 +411,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_commentary_by_theophylactus: {
-		collections_page_resource_desc: "by Theophylactus of Achrida (ca. 1100)",
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by Theophylactus of Achrida (ca. 1100)",
 		library_app_selectbox_title: "Commentary by Theophylactus of Achrida (ca. 1100)",
 		library_app_panel_title: "Commentary by Theophylactus of Achrida (ca. 1100)",
     library_app_panel_subtitle: "",
@@ -395,6 +424,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_oecumenius_vol_1: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by Oecumenius (ca. 990)", 
     library_app_selectbox_title: "Commentary by Oecumenius (ca. 990)",
     library_app_panel_title: "Commentary by Oecumenius (ca. 990)",
@@ -407,6 +437,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_oecumenius_vol_2: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by Oecumenius (ca. 990)", 
     library_app_selectbox_title: "Commentary by Oecumenius (ca. 990)",
     library_app_panel_title: "Commentary by Oecumenius (ca. 990)",
@@ -419,7 +450,8 @@ const ParsedClassicsResProtos = {
   },
 
 	nt_commentary_by_bengel: {
-		collections_page_resource_desc: "by J. A. Bengel (1742)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by J. A. Bengel (1742)", 
 		library_app_selectbox_title: "Commentary by J. A. Bengel (1742)",
 		library_app_panel_title: "Commentary by J. A. Bengel (1742)",
     library_app_panel_subtitle: "",
@@ -431,7 +463,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_commentary_by_rosenmueller_vol_1: {
-		collections_page_resource_desc: "by J. G. Rosenmüller (1777)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by J. G. Rosenmüller (1777)", 
     library_app_selectbox_title: "Commentary by J. G. Rosenmüller (1777)",
     library_app_panel_title: "Commentary by J. G. Rosenmüller (1777)",
     library_app_panel_subtitle: "",
@@ -443,7 +476,8 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_rosenmueller_vol_2: {
-		collections_page_resource_desc: "by J. G. Rosenmüller (1777)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by J. G. Rosenmüller (1777)", 
     library_app_selectbox_title: "Commentary by J. G. Rosenmüller (1777)",
     library_app_panel_title: "Commentary by J. G. Rosenmüller (1777)",
     library_app_panel_subtitle: "",
@@ -455,7 +489,8 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_rosenmueller_vol_3: {
-		collections_page_resource_desc: "by J. G. Rosenmüller (1777)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by J. G. Rosenmüller (1777)", 
     library_app_selectbox_title: "Commentary by J. G. Rosenmüller (1777)",
     library_app_panel_title: "Commentary by J. G. Rosenmüller (1777)",
     library_app_panel_subtitle: "",
@@ -467,7 +502,8 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_rosenmueller_vol_4: {
-		collections_page_resource_desc: "by J. G. Rosenmüller (1777)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by J. G. Rosenmüller (1777)", 
     library_app_selectbox_title: "Commentary by J. G. Rosenmüller (1777)",
     library_app_panel_title: "Commentary by J. G. Rosenmüller (1777)",
     library_app_panel_subtitle: "",
@@ -479,7 +515,8 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_rosenmueller_vol_5: {
-		collections_page_resource_desc: "by J. G. Rosenmüller (1777)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by J. G. Rosenmüller (1777)", 
     library_app_selectbox_title: "Commentary by J. G. Rosenmüller (1777)",
     library_app_panel_title: "Commentary by J. G. Rosenmüller (1777)",
     library_app_panel_subtitle: "",
@@ -491,7 +528,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_commentary_by_sales_vol_1: {
-		collections_page_resource_desc: "by M. Sales (1925)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by M. Sales (1925)", 
     library_app_selectbox_title: "Commentary by M. Sales (1925)",
     library_app_panel_title: "Commentary by M. Sales (1925)",
     library_app_panel_subtitle: "",
@@ -503,7 +541,8 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_sales_vol_2: {
-		collections_page_resource_desc: "by M. Sales (1925)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by M. Sales (1925)", 
     library_app_selectbox_title: "Commentary by M. Sales (1925)",
     library_app_panel_title: "Commentary by M. Sales (1925)",
     library_app_panel_subtitle: "",
@@ -515,6 +554,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_1: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by L. Cl. Fillion (1898)", 
     library_app_selectbox_title: "Commentary by L. Cl. Fillion (1898)",
     library_app_panel_title: "Commentary by L. Cl. Fillion (1898)",
@@ -527,6 +567,7 @@ const ParsedClassicsResProtos = {
   },
 
 	nt_commentary_by_fillion_crellier_drach_vol_2: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by L. Cl. Fillion (1895)", 
     library_app_selectbox_title: "Commentary by L. Cl. Fillion (1895)",
     library_app_panel_title: "Commentary by L. Cl. Fillion (1895)",
@@ -539,6 +580,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_3: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by L. Cl. Fillion (1897)", 
     library_app_selectbox_title: "Commentary by L. Cl. Fillion (1897)",
     library_app_panel_title: "Commentary by L. Cl. Fillion (1897)",
@@ -551,6 +593,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_4: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by L. Cl. Fillion (1895)",
     library_app_selectbox_title: "Commentary by L. Cl. Fillion (1895)",
     library_app_panel_title: "Commentary by L. Cl. Fillion (1895)",
@@ -563,6 +606,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_5: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H.-J. Crellier (1898)", 
     library_app_selectbox_title: "Commentary by H.-J. Crellier (1898)",
     library_app_panel_title: "Commentary by H.-J. Crellier (1898)",
@@ -575,6 +619,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_6: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by P. A. Drach (1896)", 
     library_app_selectbox_title: "Commentary by P. A. Drach (1896)",
     library_app_panel_title: "Commentary by P. A. Drach (1896)",
@@ -587,6 +632,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_7: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by P. A. Drach (1893)", 
     library_app_selectbox_title: "Commentary by P. A. Drach (1893)",
     library_app_panel_title: "Commentary by P. A. Drach (1893)",
@@ -599,6 +645,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_8: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by P. A. Drach (1898)", 
     library_app_selectbox_title: "Commentary by P. A. Drach (1898)",
     library_app_panel_title: "Commentary by P. A. Drach (1898)",
@@ -611,6 +658,7 @@ const ParsedClassicsResProtos = {
   },
 
 	nt_commentary_by_nicoll_vol_1: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by W. R. Nicoll (1910)",
     library_app_selectbox_title: "Commentary ed. by W. R. Nicoll (1910)",
     library_app_panel_title: "Commentary ed. by W. R. Nicoll (1910)",
@@ -623,6 +671,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_nicoll_vol_2: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by W. R. Nicoll (1897)", 
     library_app_selectbox_title: "Commentary ed. by W. R. Nicoll (1897)",
     library_app_panel_title: "Commentary ed. by W. R. Nicoll (1897)",
@@ -635,6 +684,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_nicoll_vol_3: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by W. R. Nicoll (1897)", 
     library_app_selectbox_title: "Commentary ed. by W. R. Nicoll (1897)",
     library_app_panel_title: "Commentary ed. by W. R. Nicoll (1897)",
@@ -647,6 +697,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_nicoll_vol_4: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by W. R. Nicoll (1897)", 
     library_app_selectbox_title: "Commentary ed. by W. R. Nicoll (1897)",
     library_app_panel_title: "Commentary ed. by W. R. Nicoll (1897)",
@@ -659,6 +710,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_nicoll_vol_5: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by W. R. Nicoll (1910)", 
     library_app_selectbox_title: "Commentary ed. by W. R. Nicoll (1910)",
     library_app_panel_title: "Commentary ed. by W. R. Nicoll (1910)",
@@ -671,6 +723,7 @@ const ParsedClassicsResProtos = {
 	},
 
   nt_commentary_by_vincent_vol_1: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by M. R. Vincent (1887)", 
     library_app_selectbox_title: "Commentary by M. R. Vincent (1887)",
     library_app_panel_title: "Commentary by M. R. Vincent (1887)",
@@ -683,6 +736,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_vincent_vol_2: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by M. R. Vincent (1889)", 
     library_app_selectbox_title: "Commentary by M. R. Vincent (1889)",
     library_app_panel_title: "Commentary by M. R. Vincent (1889)",
@@ -695,6 +749,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_vincent_vol_3: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by M. R. Vincent (1889)", 
     library_app_selectbox_title: "Commentary by M. R. Vincent (1889)",
     library_app_panel_title: "Commentary by M. R. Vincent (1889)",
@@ -707,6 +762,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_vincent_vol_4: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by M. R. Vincent (1900)", 
     library_app_selectbox_title: "Commentary by M. R. Vincent (1900)",
     library_app_panel_title: "Commentary by M. R. Vincent (1900)",
@@ -719,6 +775,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_1_1: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -731,6 +788,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_1_2: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -743,6 +801,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_2: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -755,6 +814,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_3: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -767,6 +827,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_4: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -779,6 +840,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_5: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -791,6 +853,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_6: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -802,6 +865,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_7: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -814,6 +878,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_8: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -826,6 +891,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_9: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -838,6 +904,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_10: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -850,6 +917,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_11: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -862,6 +930,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_12: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -874,6 +943,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_13: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -886,6 +956,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_14: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -898,6 +969,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_15: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -910,6 +982,7 @@ const ParsedClassicsResProtos = {
   },
 
   nt_commentary_by_meyer_vol_16: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by H. A. W. Meyer (1859)", 
     library_app_selectbox_title: "Commentary by H. A. W. Meyer (1859)",
     library_app_panel_title: "Commentary by H. A. W. Meyer (1859)",
@@ -924,7 +997,8 @@ const ParsedClassicsResProtos = {
 	// Grammar refs
 
 	nt_grammar_refs_by_parsedclassics: {
-		collections_page_resource_desc: "compiled by ParsedClassics (2022)",
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "compiled by ParsedClassics (2022)",
     library_app_selectbox_title: "Grammar references by ParsedClassics (2022)",
     library_app_panel_title: "Grammar references",
     library_app_panel_subtitle: "",
@@ -939,7 +1013,8 @@ const ParsedClassicsResProtos = {
   // Commentary refs
 
   nt_commentary_refs_by_parsedclassics: {
-		collections_page_resource_desc: "compiled by ParsedClassics (2023)",
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "compiled by ParsedClassics (2023)",
     library_app_selectbox_title: "Commentary references by ParsedClassics (2023)",
     library_app_panel_title: "Commentary references",
     library_app_panel_subtitle: "",
@@ -954,6 +1029,7 @@ const ParsedClassicsResProtos = {
 	// Diagrams
 
   nt_diagrams_by_parsedclassics: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "by ParsedClassics (2018)", 
     library_app_selectbox_title: "Diagrams by ParsedClassics (2018)",
     library_app_panel_title: "Modernized Reed-Kellogg syntax diagrams by ParsedClassics",
@@ -970,7 +1046,8 @@ const ParsedClassicsResProtos = {
 	// Audio
 
 	nt_audio_by_karvounakis: {
-		collections_page_resource_desc: "by Th. Karvounakis (2012)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by Th. Karvounakis (2012)", 
 		library_app_selectbox_title: "Audio recording by Th. Karvounakis (2012)",
 		library_app_panel_title: "Audio recording by Th. Karvounakis",
     library_app_panel_subtitle: "",
@@ -982,7 +1059,8 @@ const ParsedClassicsResProtos = {
 	},
 
 	nt_audio_by_vavylis: {
-		collections_page_resource_desc: "by fr. Raphael (A. Vavylis) (2011)", 
+		collections_page_resource_author: "",
+    collections_page_resource_desc: "by fr. Raphael (A. Vavylis) (2011)", 
     library_app_selectbox_title: "Audio recording by fr. Raphael (A. Vavylis) (2011)",
 		library_app_panel_title: "Audio recording by fr. Raphael (A. Vavylis)",
     library_app_panel_subtitle: "",

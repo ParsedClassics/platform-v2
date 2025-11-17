@@ -9,6 +9,7 @@
 /* 
 	Template of resource description:
 
+  collections_page_resource_author: "",
 	collections_page_resource_desc: "", 
 	library_app_selectbox_title: "",
 	library_app_panel_title: "",
@@ -35,6 +36,7 @@ ParsedClassicsCollDefs.maxey_fay_new_latin_primer["resource_defs"] = {
   // Reader standalone
 
   maxey_fay_new_latin_primer_reader: {
+    collections_page_resource_author: "",
     collections_page_resource_desc: "Maxey M., Fay M. J. A new Latin primer (1933)", 
     library_app_selectbox_title: "Maxey M., Fay M. J. A new Latin primer (1933)",
     library_app_panel_title: "Maxey M., Fay M. J. A new Latin primer",
