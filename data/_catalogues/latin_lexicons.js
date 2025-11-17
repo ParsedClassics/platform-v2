@@ -19,7 +19,8 @@
 	scanned_or_typed: "",
   resource_type: "",
 	scanned_source_shortname: "",
-	contents_shortname: ""
+	contents_shortname: "",
+  extra: {},
 */
 
 /* 
@@ -49,7 +50,10 @@ ParsedClassicsCollDefs.latin_lexicons["resource_defs"] = {
   //   resource_type: "lexicon_standalone",
   //   scanned_source_shortname: "lexicon_graecum_novi_testamenti_zorell",
   //   contents_shortname: "lexicon_graecum_novi_testamenti_zorell_contents",
-  //   extra: {language: "EL"}
+  //   extra: {
+  //    language: "EL",
+  //    difficulty_level: 2,
+  //   },
   // },
 
 }

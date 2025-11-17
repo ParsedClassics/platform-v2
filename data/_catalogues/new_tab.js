@@ -20,6 +20,7 @@ scanned_or_typed: "",
 resource_type: "",
 scanned_source_shortname: "",
 contents_shortname: "",
+extra: {},
 */
 
 /* 
@@ -60,6 +61,7 @@ ParsedClassicsCollDefs.new_tab["resource_defs"] = {
     resource_type: "info_text",
     scanned_source_shortname: "",
     contents_shortname: "",
+    extra: {},
   },
 
 };

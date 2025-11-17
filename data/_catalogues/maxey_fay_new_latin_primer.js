@@ -19,7 +19,8 @@
 	scanned_or_typed: "",
   resource_type: "",
 	scanned_source_shortname: "",
-	contents_shortname: ""
+	contents_shortname: "",
+  extra: {},
 */
 
 /* 
@@ -46,7 +47,8 @@ ParsedClassicsCollDefs.maxey_fay_new_latin_primer["resource_defs"] = {
     scanned_or_typed: "scanned",
     resource_type: "reader",
     scanned_source_shortname: "maxey_fay_new_latin_primer",
-    contents_shortname: "maxey_fay_new_latin_primer_contents"
+    contents_shortname: "maxey_fay_new_latin_primer_contents",
+    extra: {},
   }, 
   
   // Lexicon standalone

@@ -19,7 +19,8 @@
 	scanned_or_typed: "",
   resource_type: "",
 	scanned_source_shortname: ""
-	contents_shortname: ""
+	contents_shortname: "",
+  extra: {},
 */
 
 /* 

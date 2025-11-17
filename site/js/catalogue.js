@@ -301,7 +301,7 @@ ParsedClassicsReadersCatalogue = {
 
       const link = `<a href='${url}' target='_blank'>${title}</a>`;
 
-      let difficultyLevel = parseInt(collectionDef['collection_selectboxname']);
+      let difficultyLevel = typeof collectionDef['extra'] != 'undefined' && typeof collectionDef['extra']['difficulty_level'] != 'undefined' ? collectionDef['extra']['difficulty_level'] : '';
       difficultyLevel = !Number.isNaN(difficultyLevel) ? difficultyLevel : '';
 
       const button = `<button class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsReadersCatalogue.toggleSecondaryRow('${tableId}', '${rowPairId}', '${collectionShortnamesArray[i]}')">Details</button>`;
@@ -472,7 +472,7 @@ ParsedClassicsLexiconsCatalogue = {
 
           const link = `<a href='${url}' target='_blank'>${title}</a>`;
 
-          let difficultyLevel = parseInt(resource['library_app_selectbox_title']);
+          let difficultyLevel = typeof resource['extra'] != 'undefined' && typeof resource['extra']['difficulty_level'] != 'undefined' ? resource['extra']['difficulty_level'] : '';
           difficultyLevel = !Number.isNaN(difficultyLevel) ? difficultyLevel : '';
 
           const button = `<button class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsLexiconsCatalogue.toggleSecondaryRow('${tableId}', '${rowPairId}', '${coll_shortname}', '${res_shortname}')">Details</button>`;

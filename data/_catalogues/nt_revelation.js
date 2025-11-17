@@ -18,8 +18,9 @@
 	library_app_panel_note: "",
 	scanned_or_typed: "",
   resource_type: "",
-	scanned_source_shortname: ""
-	contents_shortname: ""
+	scanned_source_shortname: "",
+	contents_shortname: "",
+  extra: {},
 */
 
 /* 
@@ -201,6 +202,7 @@ ParsedClassicsCollDefs.nt_revelation["resource_defs"] = {
     resource_type: "commentary",
     scanned_source_shortname: "andreas_et_arethas_opera",
     contents_shortname: "nt_revelation_commentary_by_andreas_of_caesarea_contents",
+    extra: {},
   },
 
   nt_revelation_commentary_by_arethas_of_caesarea: {
@@ -215,6 +217,7 @@ ParsedClassicsCollDefs.nt_revelation["resource_defs"] = {
     resource_type: "commentary",
     scanned_source_shortname: "andreas_et_arethas_opera",
     contents_shortname: "nt_revelation_commentary_by_arethas_of_caesarea_contents",
+    extra: {},
   },
 
   nt_revelation_commentary_by_bengel: {

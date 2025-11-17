@@ -19,6 +19,7 @@
   resource_type: "",
 	scanned_source_shortname: "",
 	contents_shortname: "",
+  extra: {},
 */
 
 const ParsedClassicsResProtos = {
@@ -50,6 +51,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "original_text",
     scanned_source_shortname: "new_testament_in_original_greek_ed_robinson_pierpont",
+    extra: {},
   },
 
 	nt_text_ed_antoniadis: {
@@ -63,6 +65,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "original_text",
 		scanned_source_shortname: "kaine_diatheke_ed_antoniadis",
+    extra: {},
 	},
 
 	nt_text_ed_scrivener: {
@@ -75,7 +78,8 @@ const ParsedClassicsResProtos = {
     library_app_panel_note: "",
     scanned_or_typed: "scanned",
     resource_type: "original_text",
-    scanned_source_shortname: "novum_testamentum_textus_stephanici_ed_scrivener", 
+    scanned_source_shortname: "novum_testamentum_textus_stephanici_ed_scrivener",
+    extra: {}, 
 	},
 
 	nt_text_ed_westcott_hort: { 
@@ -89,6 +93,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "original_text",
     scanned_source_shortname: "new_testament_in_original_greek_ed_westcott_hort",
+    extra: {},
 	},
 
 	nt_text_ed_nestle_nestle: { 
@@ -102,6 +107,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "original_text",
     scanned_source_shortname: "novum_testamentum_graece_ed_nestle_nestle",
+    extra: {},
 	},
 
   // Concordances
@@ -117,6 +123,7 @@ const ParsedClassicsResProtos = {
     resource_type: "concordance",
     scanned_source_shortname: "concordance_to_greek_testament_by_moulton_geden",
     contents_shortname: "concordance_to_greek_testament_by_moulton_geden_contents",
+    extra: {},
   },
 
   concordance_by_hudson_abbot: {
@@ -130,6 +137,7 @@ const ParsedClassicsResProtos = {
     resource_type: "concordance",
     scanned_source_shortname: "critical_greek_and_english_concordance_by_hudson_abbot",
     contents_shortname: "critical_greek_and_english_concordance_by_hudson_abbot_contents",
+    extra: {},
   },
 
   concordance_by_bagster: {
@@ -143,6 +151,7 @@ const ParsedClassicsResProtos = {
     resource_type: "concordance",
     scanned_source_shortname: "analytical_greek_lexicon_by_bagster", 
     contents_shortname: "analytical_greek_lexicon_by_bagster_contents",
+    extra: {},
   },
 
   nt_conc_by_parsedclassics: {
@@ -156,6 +165,7 @@ const ParsedClassicsResProtos = {
     resource_type: "concordance",
     scanned_source_shortname: "",
     contents_shortname: "nt_conc_by_parsedclassics_contents",
+    extra: {},
   },
 
   // Lexicons
@@ -170,7 +180,8 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "lexicon",
     scanned_source_shortname: "lexicon_graeco_latinum_in_libros_novi_testamenti_grimm" ,
-    contents_shortname: "lexicon_graeco_latinum_in_libros_novi_testamenti_grimm_contents"
+    contents_shortname: "lexicon_graeco_latinum_in_libros_novi_testamenti_grimm_contents",
+    extra: {},
   },
 
   lexicon_graeco_latinum_by_zorell: {
@@ -184,6 +195,7 @@ const ParsedClassicsResProtos = {
     resource_type: "lexicon",
     scanned_source_shortname: "lexicon_graecum_novi_testamenti_zorell",
     contents_shortname: "lexicon_graecum_novi_testamenti_zorell_contents",
+    extra: {},
   },
 
   greek_lexicon_of_nt_by_robinson: {
@@ -197,6 +209,7 @@ const ParsedClassicsResProtos = {
     resource_type: "lexicon",
     scanned_source_shortname: "greek_and_english_lexicon_of_nt_by_robinson", 
     contents_shortname: "greek_and_english_lexicon_of_nt_by_robinson_contents",
+    extra: {},
   },
 
   greek_lexicon_to_nt_by_green: {
@@ -210,6 +223,7 @@ const ParsedClassicsResProtos = {
     resource_type: "lexicon",
     scanned_source_shortname: "greek_english_lexicon_to_nt_by_green", 
     contents_shortname: "",
+    extra: {},
   },
 
   griechisch_deutsches_handwoerterbuch_zu_nt_preuschen: {
@@ -223,18 +237,22 @@ const ParsedClassicsResProtos = {
     resource_type: "lexicon",
     scanned_source_shortname: "griechisch_deutsches_handwoerterbuch_preuschen",
     contents_shortname: "griechisch_deutsches_handwoerterbuch_preuschen_contents",
+    extra: {},
   },
 
   elementary_latin_dictionary_by_lewis: {
     collections_page_resource_author: "Lewis Ch. T.",
     collections_page_resource_desc: "Elementary Latin dictionary", 
-    library_app_selectbox_title: "1* Elementary Latin dictionary by Ch. T. Lewis (1890)",
+    library_app_selectbox_title: "Elementary Latin dictionary by Ch. T. Lewis (1890)",
     library_app_panel_title: "Elementary Latin dictionary by Ch. T. Lewis (1890)",
     library_app_panel_text_from: "Ch. T. Lewis. An elementary Latin dictionary. 1918. New York etc.: American Book company.",
     library_app_panel_note: "",
     scanned_or_typed: "scanned",
     scanned_source_shortname: "lewis_elementary_latin_dictionary", 
     contents_shortname: "elementary_latin_dictionary_by_lewis_contents",
+    extra: {
+			difficulty_level: 1,
+		},
   },
 
   // Translations
@@ -250,6 +268,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "translation",
     scanned_source_shortname: "kaine_diatheke_kyriou_kai_soteros_tr_EL_by_vamvas",
+    extra: {},
   },
 
   nt_tr_LA_s_hieronymus_vol_1: {
@@ -263,6 +282,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "translation",
     scanned_source_shortname: "novum_testamentum_graece_et_latine_ed_brandscheid_vol_1",
+    extra: {},
   },
 
   nt_tr_LA_s_hieronymus_vol_2: {
@@ -276,6 +296,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "translation",
     scanned_source_shortname: "novum_testamentum_graece_et_latine_ed_brandscheid_vol_2",
+    extra: {},
   },
 
 	nt_tr_LA_beza: {
@@ -289,6 +310,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "translation",
 		scanned_source_shortname: "novum_testamentum_tr_beza",
+    extra: {},
 	},
 
 	nt_tr_IT_diodati: {
@@ -302,6 +324,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "translation",
 		scanned_source_shortname: "sacra_bibbia_tr_diodati",
+    extra: {},
 	},
 
 	nt_tr_IT_martini: {
@@ -315,6 +338,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "translation",
 		scanned_source_shortname: "nuovo_testamento_tr_martini",
+    extra: {},
 	},
 
 	nt_tr_FR_ostervald: {
@@ -328,6 +352,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "translation",
 		scanned_source_shortname: "nouveau_testament_tr_ostervald",
+    extra: {},
 	},
 
 	nt_tr_FR_segond: {
@@ -341,6 +366,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "translation",
 		scanned_source_shortname: "saint_bible_tr_segond",
+    extra: {},
 	},
 
 	nt_tr_EN_authorised_revised: {
@@ -354,6 +380,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "translation",
 		scanned_source_shortname: "new_testament_authorised_revised",
+    extra: {},
 	},
 
 	nt_tr_EN_young: {
@@ -367,6 +394,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "translation",
 		scanned_source_shortname: "holy_bible_tr_young",
+    extra: {},
 	},
 
 	nt_tr_DE_luther: {
@@ -380,6 +408,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "translation",
 		scanned_source_shortname: "novum_testamentum_graece_et_germanice_luther",
+    extra: {},
 	},
 
 	nt_tr_DE_menge: {
@@ -393,6 +422,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "translation",
 		scanned_source_shortname: "neues_testament_tr_menge",
+    extra: {},
 	},
 
 	// Commentaries
@@ -408,6 +438,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "commentary",
 		scanned_source_shortname: "euthymius_zigabenus_opera_vol_2",
+    extra: {},
 	},
 
 	nt_commentary_by_theophylactus: {
@@ -421,6 +452,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "commentary",
 		scanned_source_shortname: "theophylactus_bulgariae_opera",
+    extra: {},
 	},
 
   nt_commentary_by_oecumenius_vol_1: {
@@ -434,6 +466,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "oecumenius_opera_vol_1",
+    extra: {},
   },
 
   nt_commentary_by_oecumenius_vol_2: {
@@ -447,6 +480,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "oecumenius_opera_vol_2",
+    extra: {},
   },
 
 	nt_commentary_by_bengel: {
@@ -460,6 +494,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "scanned",
     resource_type: "commentary",
 		scanned_source_shortname: "gnomon_novi_testamenti_bengel",
+    extra: {},
 	},
 
 	nt_commentary_by_rosenmueller_vol_1: {
@@ -473,6 +508,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "scholia_in_novum_testamentum_rosenmueller_vol_1",
+    extra: {},
 	},
 
   nt_commentary_by_rosenmueller_vol_2: {
@@ -486,6 +522,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "scholia_in_novum_testamentum_rosenmueller_vol_2",
+    extra: {},
 	},
 
   nt_commentary_by_rosenmueller_vol_3: {
@@ -499,6 +536,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "scholia_in_novum_testamentum_rosenmueller_vol_3",
+    extra: {},
 	},
 
   nt_commentary_by_rosenmueller_vol_4: {
@@ -512,6 +550,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "scholia_in_novum_testamentum_rosenmueller_vol_4",
+    extra: {},
 	},
 
   nt_commentary_by_rosenmueller_vol_5: {
@@ -525,6 +564,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "scholia_in_novum_testamentum_rosenmueller_vol_5",
+    extra: {},
 	},
 
 	nt_commentary_by_sales_vol_1: {
@@ -538,6 +578,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "nuovo_testamento_commentato_sales_vol_1",
+    extra: {},
 	},
 
   nt_commentary_by_sales_vol_2: {
@@ -551,6 +592,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "nuovo_testamento_commentato_sales_vol_2",
+    extra: {},
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_1: {
@@ -564,6 +606,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary", 
     scanned_source_shortname: "saint_bible_avec_commentaires_vol_1_fillion",
+    extra: {},
   },
 
 	nt_commentary_by_fillion_crellier_drach_vol_2: {
@@ -577,6 +620,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "saint_bible_avec_commentaires_vol_2_fillion",
+    extra: {},
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_3: {
@@ -590,6 +634,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "saint_bible_avec_commentaires_vol_3_fillion", 
+    extra: {},
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_4: {
@@ -603,6 +648,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "saint_bible_avec_commentaires_vol_4_fillion",
+    extra: {},
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_5: {
@@ -616,6 +662,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "saint_bible_avec_commentaires_vol_5_crellier",
+    extra: {},
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_6: {
@@ -629,6 +676,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "saint_bible_avec_commentaires_vol_6_drach",
+    extra: {},
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_7: {
@@ -642,6 +690,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "saint_bible_avec_commentaires_vol_7_drach",
+    extra: {},
 	},
 
   nt_commentary_by_fillion_crellier_drach_vol_8: {
@@ -655,6 +704,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "saint_bible_avec_commentaires_vol_8_drach",
+    extra: {},
   },
 
 	nt_commentary_by_nicoll_vol_1: {
@@ -668,6 +718,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "expositors_greek_testament_ed_nicoll_vol_1",
+    extra: {},
 	},
 
   nt_commentary_by_nicoll_vol_2: {
@@ -681,6 +732,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "expositors_greek_testament_ed_nicoll_vol_2",
+    extra: {},
 	},
 
   nt_commentary_by_nicoll_vol_3: {
@@ -694,6 +746,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "expositors_greek_testament_ed_nicoll_vol_3",
+    extra: {},
 	},
 
   nt_commentary_by_nicoll_vol_4: {
@@ -707,6 +760,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "expositors_greek_testament_ed_nicoll_vol_4",
+    extra: {},
 	},
 
   nt_commentary_by_nicoll_vol_5: {
@@ -720,6 +774,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "expositors_greek_testament_ed_nicoll_vol_5",
+    extra: {},
 	},
 
   nt_commentary_by_vincent_vol_1: {
@@ -733,6 +788,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "word_studies_in_nt_by_vincent_vol_1",
+    extra: {},
   },
 
   nt_commentary_by_vincent_vol_2: {
@@ -746,6 +802,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "word_studies_in_nt_by_vincent_vol_2",
+    extra: {},
   },
 
   nt_commentary_by_vincent_vol_3: {
@@ -759,6 +816,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "word_studies_in_nt_by_vincent_vol_3",
+    extra: {},
   },
 
   nt_commentary_by_vincent_vol_4: {
@@ -772,6 +830,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "word_studies_in_nt_by_vincent_vol_4",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_1_1: {
@@ -785,6 +844,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_1_1",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_1_2: {
@@ -798,6 +858,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_1_2",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_2: {
@@ -811,6 +872,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_2",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_3: {
@@ -824,6 +886,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_3",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_4: {
@@ -837,6 +900,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_4",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_5: {
@@ -850,6 +914,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_5",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_6: {
@@ -862,6 +927,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_6",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_7: {
@@ -875,6 +941,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_7",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_8: {
@@ -888,6 +955,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_8",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_9: {
@@ -901,6 +969,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_9",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_10: {
@@ -914,6 +983,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_10",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_11: {
@@ -926,7 +996,8 @@ const ParsedClassicsResProtos = {
     library_app_panel_note: "",
     scanned_or_typed: "scanned",
     resource_type: "commentary",
-    scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_11", 
+    scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_11",
+    extra: {}, 
   },
 
   nt_commentary_by_meyer_vol_12: {
@@ -940,6 +1011,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_12",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_13: {
@@ -953,6 +1025,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_13",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_14: {
@@ -966,6 +1039,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_14",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_15: {
@@ -979,6 +1053,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_15",
+    extra: {},
   },
 
   nt_commentary_by_meyer_vol_16: {
@@ -992,6 +1067,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "commentary",
     scanned_source_shortname: "kommentar_ueber_das_nt_meyer_vol_16",
+    extra: {},
   },
 
 	// Grammar refs
@@ -1008,6 +1084,7 @@ const ParsedClassicsResProtos = {
     resource_type: "grammar_refs",
     scanned_source_shortname: "",
     contents_shortname: "",
+    extra: {},
 	},
 
   // Commentary refs
@@ -1024,6 +1101,7 @@ const ParsedClassicsResProtos = {
     resource_type: "commentary_refs",
     scanned_source_shortname: "",
     contents_shortname: "",
+    extra: {},
 	},
 
 	// Diagrams
@@ -1040,6 +1118,7 @@ const ParsedClassicsResProtos = {
     resource_type: "diagram_set",
     scanned_source_shortname: "new_testament_in_original_greek_ed_robinson_pierpont", 
     contents_shortname: "",
+    extra: {},
   },
 	
 
@@ -1056,6 +1135,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "typed",
     resource_type: "audio_recording",
 		scanned_source_shortname: "novum_testamentum_textus_stephanici_ed_scrivener",
+    extra: {},
 	},
 
 	nt_audio_by_vavylis: {
@@ -1069,6 +1149,7 @@ const ParsedClassicsResProtos = {
 		scanned_or_typed: "typed",
     resource_type: "audio_recording",
 		scanned_source_shortname: "kaine_diatheke_ed_antoniadis",
+    extra: {},
 	},
 
 };
