@@ -119,6 +119,7 @@ const ParsedClassicsAppVars = {
   collectionSetMember: "edition",
   collectionMember: "coll",
   wordMember: "word",
+  formMember: "form",
   lineMember: "line",
   pageMember: "page",
   lexiconMember: "lexicon",
@@ -137,6 +138,7 @@ const ParsedClassicsAppVars = {
   audioRecordingDir: "data/audio_recording/",
   readerDir: "data/reader/",
   lexiconStandaloneDir: "data/lexicon_standalone/",
+  externalServiceDir: "data/external_service/",
   infoTextDir: "data/info_text/",
   // resource
   resourceTypeLabels: {
@@ -152,6 +154,7 @@ const ParsedClassicsAppVars = {
     audio_recording: "Audio recording",
     reader: "Reader",
     lexicon_standalone: "Lexicon",
+    external_service: "External service",
   },
   // animation
   animationSpeed: 400,

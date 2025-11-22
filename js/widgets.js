@@ -691,7 +691,7 @@ const ParsedClassicsSelectedLine = {
     const lemmaFromUrl = typeof collectionPointers[ParsedClassicsAppVars.wordMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.wordMember] : null;
     // get lexicon resource shortname from URL
     const lexiconInfoFromUrl = typeof collectionPointers[ParsedClassicsAppVars.lexiconMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.lexiconMember] : null;
-    // get lexicon entru number from URL
+    // get lexicon entry number from URL
     const lexiconEntryInfoFromUrl = typeof collectionPointers[ParsedClassicsAppVars.lexiconEntryMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.lexiconEntryMember] : null;
     // get word position from URL
     const wordPositionFromUrl = typeof collectionPointers[ParsedClassicsAppVars.wordPositionMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.wordPositionMember] : null;
@@ -727,6 +727,8 @@ const ParsedClassicsSelectedLine = {
 
     // get lemma from DOM
     const lemmaFromDom = wordEl ? wordEl.attr(ParsedClassicsAppVars.lemmaAttr) : null;
+    // get word form from DOM
+    const formFromDom = wordEl ? wordEl.attr(ParsedClassicsAppVars.formAttr) : null;
     // get lexicon info from DOM
     const lexiconInfoFromDom = wordEl && typeof wordEl.attr(ParsedClassicsAppVars.lexiconAttr) !== 'undefined' ? wordEl.attr(ParsedClassicsAppVars.lexiconAttr) : null;
     // get lexicon entry info from DOM
@@ -749,6 +751,13 @@ const ParsedClassicsSelectedLine = {
       }
       else {
         delete collectionPointers[ParsedClassicsAppVars.wordMember];
+      }
+      // put new word form into pointers obj
+      if (formFromDom) {
+        collectionPointers[ParsedClassicsAppVars.formMember] = formFromDom;
+      }
+      else {
+        delete collectionPointers[ParsedClassicsAppVars.formMember];
       }
       // put new lexicon info into pinters obj
       if (lexiconInfoFromDom) {

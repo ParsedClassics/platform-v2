@@ -62,6 +62,11 @@ const ParsedClassicsContentContainers = {
     // get lemma from DOM
     const wordDom = tabContentContainer.attr(ParsedClassicsAppVars.lemmaAttr) ?? '';
 
+    // get word form from URL
+    const formUrl = ParsedClassicsLayout.getFormFromUrl(collectionShortname) ?? '';
+    // get word form from DOM
+    const formDom = tabContentContainer.attr(ParsedClassicsAppVars.formAttr) ?? '';
+
     // get lexicon info and lexicon entry info info from URL 
     const {lexicon: lexiconUrl, lexiconEntry: lexiconEntryUrl} = ParsedClassicsLayout.getLexiconAndEntryFromUrl(collectionShortname);
     // get lexicon info from DOM 
@@ -73,7 +78,7 @@ const ParsedClassicsContentContainers = {
 
     if (!resourceShortname  &&  collResPairUrl !== collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed', pageUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed', pageUrl, formUrl);
       // create html of available resources
       const resourcesListHtml = ParsedClassicsContentContainers.createAvailableResourcesListHtml(collectionDef, resourceDefsAll);
       // update container's html
@@ -89,8 +94,9 @@ const ParsedClassicsContentContainers = {
     // so we need to scroll to selected line or word
 
     else if (scannedOrTyped === 'typed' &&  collResPairUrl === collResPairDom) {
+
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl, formUrl);
 
       switch(resourceType) {
         
@@ -143,15 +149,24 @@ const ParsedClassicsContentContainers = {
           break;
 
         case 'audio_recording':
-        // jump to audio time of selected line  
-        if (lineIndicatorUrl !== lineIndicatorDom || refresh) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
-          const audioEl = tabContentContainerInner.find('audio').first()[0];
-          const activeAudioLine = tabContentContainerInner.find('div.active');
-          // we need to remove class 'active' from audio text in order to scroll this line to the view, because after moving tab to other pane, audio ta's content is being scrolled to the top
-          activeAudioLine.removeClass('active');
-          ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl, activeTabId);
-        }
-        break;
+          // jump to audio time of selected line  
+          if (lineIndicatorUrl !== lineIndicatorDom || refresh) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
+            const audioEl = tabContentContainerInner.find('audio').first()[0];
+            const activeAudioLine = tabContentContainerInner.find('div.active');
+            // we need to remove class 'active' from audio text in order to scroll this line to the view, because after moving tab to other pane, audio ta's content is being scrolled to the top
+            activeAudioLine.removeClass('active');
+            ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl, activeTabId);
+          }
+          break;
+
+        case 'external_service':
+          if (formUrl && formUrl !== formDom || refresh) {
+            // get service's update function
+            const updateFunction = resourceContents.update_func;
+            // run update function
+            updateFunction(activeTabId);
+          }
+          break;
       }
 
       return;
@@ -164,7 +179,7 @@ const ParsedClassicsContentContainers = {
 
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl === collResPairDom) {
       // update container's attrs 
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl, formUrl);
       // selected line was changed?
       if (lineIndicatorUrl !== lineIndicatorDom) { 
         const iframeEl = tabContentContainerInner.find('.pc-bookreader');
@@ -201,8 +216,9 @@ const ParsedClassicsContentContainers = {
     // Case IV. resource is "typed", but collectionShortname|resourceShortname pair from URL and that from DOM are different
 
     else if (scannedOrTyped === 'typed' &&  collResPairUrl !== collResPairDom) {
+
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl, formUrl);
       
       switch(resourceType) {
 
@@ -313,7 +329,20 @@ const ParsedClassicsContentContainers = {
           // jump to audio time of selected line
           ParsedClassicsContentContainers.jumpToAudioTime(lineIndicatorUrl, collectionShortname, resourceShortname, audioEl, activeTabId);
           break;
-
+        
+        case 'external_service':
+          // generate html of external service resource  
+          ParsedClassicsContentContainers.createExternalServiceResourceHtml(tabContentContainerInner, resourceData);
+          // run service's init function
+          const initFunction = resourceContents.init_func;
+          initFunction(activeTabId);
+          if (formUrl) {
+            // get service's update function
+            const updateFunction = resourceContents.update_func;
+            // run update function
+            updateFunction(activeTabId);
+          }
+          break;
       }
       return;
     }
@@ -322,7 +351,7 @@ const ParsedClassicsContentContainers = {
     
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl !== collResPairDom) {
       // update container's attrs 
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl, formUrl);
       // generate html of resource
       let iframeEl;
       if (resourceType !== 'lexicon_standalone') {
@@ -359,7 +388,7 @@ const ParsedClassicsContentContainers = {
     
   },
 
-  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType, scannedOrTyped, page) {
+  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType, scannedOrTyped, page, wordForm) {
     // save collectionShortname|resourceShortname pair as DOM attr
     container.attr(ParsedClassicsAppVars.collResPairAttr, collResPair);
     // save line indicator as DOM attr
@@ -376,6 +405,8 @@ const ParsedClassicsContentContainers = {
     container.attr(ParsedClassicsAppVars.scannedOrTypedAttr, scannedOrTyped);
     // save page as DOM attr
     container.attr(ParsedClassicsAppVars.pageAttr, page);
+    // save word form as DOM attr
+    container.attr(ParsedClassicsAppVars.formAttr, wordForm);
   },
 
   createAvailableResourcesListHtml: function(collectionDef, resourceDefs) { 
@@ -573,6 +604,11 @@ const ParsedClassicsContentContainers = {
     }
     lexiconStandaloneContainerLeftPartInner.append(html);
     return lexiconStandaloneContainerLeftPartInner;
+  },
+
+  createExternalServiceResourceHtml: function(tabContentContainerInner, resourceData) {
+    let html = resourceData;
+    tabContentContainerInner.html(html);
   },
 
   splitConcordanceContainer: function(activeTabId, tabContentContainerInner) {
