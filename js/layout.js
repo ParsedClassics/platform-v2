@@ -1989,6 +1989,14 @@ const ParsedClassicsLayout = {
     return word;
   },
 
+  getFormFromUrl: function(collectionShortname) {
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
+    const collectionPointers = pointersObj[collectionShortname] ?? {};
+    const form = typeof collectionPointers[ParsedClassicsAppVars.formMember] !== 'undefined' && collectionPointers[ParsedClassicsAppVars.formMember] ? collectionPointers[ParsedClassicsAppVars.formMember] : '';
+    return form;
+  },
+
   getLexiconAndEntryFromUrl: function(collectionShortname) {
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];

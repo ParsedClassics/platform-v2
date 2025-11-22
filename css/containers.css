@@ -644,3 +644,32 @@ div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] di
 div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper.greek-lang div.lexicon-standalone-info-btn:hover img.lexicon-standalone-info-btn-img {
   filter: brightness(0) invert(1);
 }
+
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer h1 {
+  text-align: left;
+}
+
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer h2 {
+  text-align: left;
+}
+
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer {
+  overflow-y: auto;
+  padding: 8px;
+  max-width: var(--text-max-width);
+  height: 100%;
+}
+
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer .loader-img-container {
+  display: none;
+}
+
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer strong {
+  font-weight: 600;
+}
+
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer span[data-lemma]:hover {
+  background-color: var(--grey700);
+  color: var(--white);
+  cursor: default;
+}

@@ -29,6 +29,8 @@ Order of resources by resource type
   // Parsed text
   // IMPORTANT!
   // The contents of the first resource of the type "Parsed text" serves as contents of the whole collection
+
+  // External services
   
   // Original texts
 
@@ -63,6 +65,12 @@ ParsedClassicsCollDefs.nt_john["resource_defs"] = {
       ],
     },
 	},
+
+  // External services
+
+  morpheus_greek_lemmatizer: {
+    ...ParsedClassicsResProtos.morpheus_greek_lemmatizer,
+  },
 
   // Original texts
 

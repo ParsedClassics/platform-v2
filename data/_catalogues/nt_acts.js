@@ -29,6 +29,8 @@ Order of resources by resource type
   // Parsed text
   // IMPORTANT!
   // The contents of the first resource of the type "Parsed text" serves as contents of the whole collection
+
+  // External services
   
   // Original texts
 
@@ -57,7 +59,18 @@ ParsedClassicsCollDefs.nt_acts["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Πράξεις τῶν ἁγίων ἀποστόλων",
     contents_shortname: "nt_acts_parsed_text_contents",
+    extra: {
+      options: [
+        "text_display_modes", 
+      ],
+    },
 	},
+
+  // External services
+  
+  morpheus_greek_lemmatizer: {
+    ...ParsedClassicsResProtos.morpheus_greek_lemmatizer,
+  },
 
   // Original texts
 

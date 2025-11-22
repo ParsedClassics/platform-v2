@@ -9,6 +9,7 @@
 /* 
 	Template of resource description:
 
+  collections_page_resource_author: "",
 	collections_page_resource_desc: "", 
 	library_app_selectbox_title: "",
 	library_app_panel_title: "",
@@ -37,6 +38,23 @@ const ParsedClassicsResProtos = {
     resource_type: "parsed_text",
 		scanned_source_shortname: "new_testament_in_original_greek_ed_robinson_pierpont", 
 	},
+
+  // External services
+  
+  morpheus_greek_lemmatizer: {
+    collections_page_resource_author: "",
+    collections_page_resource_desc: "Morpheus Greek lemmatizer", 
+    library_app_selectbox_title: "Morpheus Greek lemmatizer",
+    library_app_panel_title: "",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "external_service",
+    scanned_source_shortname: "",
+    contents_shortname: "morpheus_greek_lemmatizer_contents",
+    extra: {},
+  },
 
   // Original texts
 

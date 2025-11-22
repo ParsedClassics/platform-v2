@@ -122,6 +122,7 @@ ParsedClassicsData = {
       audio_recording: ParsedClassicsAppVars.audioRecordingDir,
       reader: ParsedClassicsAppVars.readerDir,
       lexicon_standalone: ParsedClassicsAppVars.lexiconStandaloneDir,
+      external_service: ParsedClassicsAppVars.externalServiceDir,
       info_text: ParsedClassicsAppVars.infoTextDir,
     };
 
