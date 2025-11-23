@@ -2462,4 +2462,32 @@ ParsedClassicsScannedBooks = {
 		
 	}
 
+	, arnold_cloelia: {
+ 
+		bookTitle: "E. Arnold. Cloelia puella Romana."
+	 
+		, bookUrlText: "2016. Independently published."
+
+		, numLeafs: "63"
+
+		, leafWidth: 1800
+
+		, leafHeight: 2700
+
+		, thumbnail: "page0001.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "E. Arnold. Cloelia puella Romana. 2016. Independently published."
+
+					}
+
+		] 
+		
+	}
+
 };
