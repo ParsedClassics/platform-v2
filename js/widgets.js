@@ -183,7 +183,7 @@ const ParsedClassicsNavSelects = {
 
     let linesOrPagesSelectboxOptionsEls;
     let titleAttrVal;
-    if (typeof collContentsType === "undefined") { 
+    if (typeof collContentsType === "undefined" || !collContentsType) { 
       // create selectbox option el "Lines or Pages"
       linesOrPagesSelectboxOptionsEls = ParsedClassicsNavSelects.emptySelectboxOptions();
       titleAttrVal = "Select line or page";
