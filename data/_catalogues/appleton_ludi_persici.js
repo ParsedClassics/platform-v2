@@ -55,7 +55,6 @@ ParsedClassicsCollDefs.appleton_ludi_persici["resource_defs"] = {
 
   elementary_latin_dictionary_by_lewis: {
     ...ParsedClassicsResProtos.elementary_latin_dictionary_by_lewis,
-    resource_type: "lexicon_standalone",
   },
   
 }

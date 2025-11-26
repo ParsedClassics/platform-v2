@@ -751,8 +751,6 @@ const ParsedClassicsLayout = {
     const activeTabId = activeTabIndex > 0 || activeTabIndex === 0 ? tabIdsArr[activeTabIndex] : null;
     if (activeTabId) {
       ParsedClassicsNavSelects.treatActiveTabSelectboxesContainer(pane, activeTabId);
-      ParsedClassicsOptionsSelects.treatActiveTabOptionsContainer(activeTabId);
-
     }
     
 
@@ -763,6 +761,8 @@ const ParsedClassicsLayout = {
       if (reloaded != 'no') {
         ParsedClassicsContentContainers.treatActiveTabContentContainer(pane, activeTabId);
       }
+      // let's treat options here because for options to be treated contents container should be already present
+      ParsedClassicsOptionsSelects.treatActiveTabOptionsContainer(activeTabId);
     }
 
     // IX. add or remove color tags

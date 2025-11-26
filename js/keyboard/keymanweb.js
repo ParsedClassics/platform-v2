@@ -14132,6 +14132,7 @@ var Util = com.keyman.Util;
                 d.src = b + a + h;
 
                 d.type = "text/javascript";
+                console.log('d', d); // Added by ParsedClassics
 
                 try {
 

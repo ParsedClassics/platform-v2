@@ -59,11 +59,6 @@ ParsedClassicsCollDefs.nt_james["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Ἰακώβου τοῦ ἀποστόλου ἐπιστολὴ καθολική",
     contents_shortname: "nt_james_parsed_text_contents",
-    extra: {
-      options: [
-        "text_display_modes", 
-      ],
-    },
 	},
 
   // External services

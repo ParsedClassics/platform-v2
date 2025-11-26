@@ -191,14 +191,14 @@ const ParsedClassicsContentContainers = {
       // selected word was changed?
       if (wordUrl !== wordDom) {
         const iframeEl = tabContentContainerInner.find('.pc-bookreader');
-        if (resourceType === 'concordance' || resourceType === 'lexicon' || resourceType === 'lexicon_standalone') {
+        if (resourceType === 'concordance' || resourceType === 'lexicon') {
           // browse scanned resource in the iframe to selected word
           ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
         }
-        if (resourceType === 'lexicon_standalone') {
-          const lexiconStandaloneContainerLeftPartInner = tabContentContainerInner.find(`.${ParsedClassicsAppVars.lexiconStandaloneContainerLeftPartInnerClass}`);
+        if (resourceType === 'lexicon') {
+          const lexiconContainerLeftPartInner = tabContentContainerInner.find(`.${ParsedClassicsAppVars.lexiconContainerLeftPartInnerClass}`);
           // find selected lemma ans scroll it into view
-          ParsedClassicsSelectedLemma.treatSelectedLemma(lexiconStandaloneContainerLeftPartInner, collectionShortname);
+          ParsedClassicsSelectedLemma.treatSelectedLemma(lexiconContainerLeftPartInner, collectionShortname);
         }
       }
       // selected page was changed? 
@@ -247,7 +247,7 @@ const ParsedClassicsContentContainers = {
           break;
 
         case 'lexicon':
-          ParsedClassicsContentContainers.createLexiconResourceHtml(tabContentContainerInner, resourceDef, resourceData);
+          ParsedClassicsContentContainers.createLexiconTypedResourceHtml(tabContentContainerInner, resourceDef, resourceData);
           // delegate "click" event from els having class "inner-link" to tab's inner content container
           tabContentContainerInner.undelegate("click");
           tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.innerLinkClass}`, "click", (event) => ParsedClassicsInnerLink.innerLinkClick(event, tabContentContainerInner, activeTabId));
@@ -354,14 +354,14 @@ const ParsedClassicsContentContainers = {
       ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl, formUrl);
       // generate html of resource
       let iframeEl;
-      if (resourceType !== 'lexicon_standalone') {
+      if (resourceType !== 'lexicon') {
         iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(tabContentContainerInner, resourceDef);
       }
       if (resourceType === 'original_text' || resourceType === 'translation' || resourceType === 'commentary') {
         // browse scanned resource in the iframe to selected line
         ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
       }
-      if (resourceType === 'concordance' || resourceType === 'lexicon') {
+      if (resourceType === 'concordance') {
         // browse scanned resource in the iframe to selected word
         ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
       }
@@ -369,19 +369,24 @@ const ParsedClassicsContentContainers = {
         // browse scanned resource in the iframe to selected page
         ParsedClassicsContentContainers.browseToSelectedPage(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, pageUrl);
       }
-      if (resourceType == 'lexicon_standalone') {
+      if (resourceType == 'lexicon') {
+        
         // split container into left part for list of lemmas and right part for displaying scanned book
-        const {lexiconStandaloneContainerLeftPart, lexiconStandaloneContainerRightPart} = ParsedClassicsContentContainers.splitLexiconStandaloneContainer(activeTabId, tabContentContainerInner, resourceDef);
+        const {lexiconContainerLeftPart, lexiconContainerRightPart} = ParsedClassicsContentContainers.splitLexiconContainer(activeTabId, tabContentContainerInner, resourceDef);
+
         // add scanned book into right subpane
-        const iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(lexiconStandaloneContainerRightPart, resourceDef);
+        const iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(lexiconContainerRightPart, resourceDef);
+        iframeEl.css('position', 'absolute').css('left', 0);
+        
         // create html of the left subpane
-        const lexiconStandaloneContainerLeftPartInner = ParsedClassicsContentContainers.createLexiconStandaloneResourceHtml(lexiconStandaloneContainerLeftPart, resourceContents, resourceDef);
+        const lexiconContainerLeftPartInner = ParsedClassicsContentContainers.createLexiconScannedResourceHtml(lexiconContainerLeftPart, resourceContents, resourceDef);
+        
         // delegate "click" event from <div> els of lemma buttons to left part of splitted container
-        lexiconStandaloneContainerLeftPartInner.delegate('div', 'click', (event) => ParsedClassicsSelectedLemma.hashSelectLemma(event, collectionShortname));
+        lexiconContainerLeftPartInner.delegate('div', 'click', (event) => ParsedClassicsSelectedLemma.hashSelectLemma(event, collectionShortname));
         // browse scanned resource in the iframe to selected word
         ParsedClassicsContentContainers.browseToSelectedWord(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, wordUrl);
-        // find selected lemma ans scroll it into view
-        ParsedClassicsSelectedLemma.treatSelectedLemma(lexiconStandaloneContainerLeftPartInner, collectionShortname);
+        // find selected lemma and scroll it into view
+        ParsedClassicsSelectedLemma.treatSelectedLemma(lexiconContainerLeftPartInner, collectionShortname);
       }
       return;
     }
@@ -496,7 +501,7 @@ const ParsedClassicsContentContainers = {
     parsedTextContainerTopPart.html(html + resourceData);
   },
 
-  createLexiconResourceHtml: function(tabContentContainerInner, resourceDef, resourceData) {
+  createLexiconTypedResourceHtml: function(tabContentContainerInner, resourceDef, resourceData) {
     let html = `
       <span class="text-from title">Source: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></span>
     `;
@@ -587,8 +592,8 @@ const ParsedClassicsContentContainers = {
     return {audioEl, headerEl, audioContainerBottomEl};
   },
 
-  createLexiconStandaloneResourceHtml: function(lexiconStandaloneContainerLeftPart, resourceContents, resourceDef) {
-    const lexiconStandaloneContainerLeftPartInner = lexiconStandaloneContainerLeftPart.find(`.${ParsedClassicsAppVars.lexiconStandaloneContainerLeftPartInnerClass}`);
+  createLexiconScannedResourceHtml: function(lexiconContainerLeftPart, resourceContents, resourceDef) {
+    const lexiconContainerLeftPartInner = lexiconContainerLeftPart.find(`.${ParsedClassicsAppVars.lexiconContainerLeftPartInnerClass}`);
     const lemmaKeys = Object.keys(resourceContents);
     let html = '';
     for (let i = 1; i < lemmaKeys.length; i++) {
@@ -602,8 +607,8 @@ const ParsedClassicsContentContainers = {
       lemmaLowercase = lemmaLowercase.normalize('NFD').replace(/\p{Diacritic}/gu, "");
       html += `<div class="lemma-button" ${ParsedClassicsAppVars.lemmaAttr}="${lemma}" ${ParsedClassicsAppVars.lemmaLowercaseAttr}="${lemmaLowercase}">${lemma}</div>`;
     }
-    lexiconStandaloneContainerLeftPartInner.append(html);
-    return lexiconStandaloneContainerLeftPartInner;
+    lexiconContainerLeftPartInner.append(html);
+    return lexiconContainerLeftPartInner;
   },
 
   createExternalServiceResourceHtml: function(tabContentContainerInner, resourceData) {
@@ -681,26 +686,26 @@ const ParsedClassicsContentContainers = {
     return {grammarRefsContainerLeftPart, grammarRefsContainerRightPart};
   },
 
-  splitLexiconStandaloneContainer: function(activeTabId, tabContentContainerInner, resourceDef) {
+  splitLexiconContainer: function(activeTabId, tabContentContainerInner, resourceDef) {
     // is this Greek lexicon?
     const isGreek = typeof resourceDef['extra'] !== 'undefined' && typeof resourceDef['extra']['language'] !== 'undefined' && resourceDef['extra']['language'] === 'EL' ? true : false;
     // if it is Greek lexicon, add additional class to wrapper and additional class to search input
     const greekLangClassWrapper = isGreek ? 'greek-lang' : '';
     // form html of splitted container
     let splitHtml = `
-      <div class="${ParsedClassicsAppVars.lexiconStandaloneContainerLeftPartClass}" id="lexicon-standalone-split-left-${activeTabId}">
-        <div class="lexicon-standalone-search-wrapper ${greekLangClassWrapper}" id="lexicon-standalone-search-wrapper-${activeTabId}">
-          <input type="text" class="lexicon-standalone-search-input" id="lexicon-standalone-search-input-${activeTabId}"><div class="lexicon-standalone-info"><div class="lexicon-standalone-info-btn" title="Click to read how to type polytonic Greek in this inbox" onclick="window.open('./tools/keyboard_greek_polytonic.html', '_blank')"><img class="lexicon-standalone-info-btn-img" src="./img/info.svg"></div></div>
+      <div class="${ParsedClassicsAppVars.lexiconContainerLeftPartClass}" id="lexicon-split-left-${activeTabId}" style="visibility: hidden;">
+        <div class="lexicon-search-wrapper ${greekLangClassWrapper}" id="lexicon-search-wrapper-${activeTabId}">
+          <input type="text" class="lexicon-search-input" id="lexicon-search-input-${activeTabId}"><div class="lexicon-info"><div class="lexicon-info-btn" title="Click to read how to type polytonic Greek in this inbox" onclick="window.open('./tools/keyboard_greek_polytonic.html', '_blank')"><img class="lexicon-info-btn-img" src="./img/info.svg"></div></div>
         </div>  
-        <div class="${ParsedClassicsAppVars.lexiconStandaloneContainerLeftPartInnerClass}" id="lexicon-standalone-split-left-inner-${activeTabId}">
+        <div class="${ParsedClassicsAppVars.lexiconContainerLeftPartInnerClass}" id="lexicon-split-left-inner-${activeTabId}">
         </div>
       </div>
-      <div class="${ParsedClassicsAppVars.lexiconStandaloneContainerRightPartClass}" id="grammar-refs-split-right-${activeTabId}"></div>
+      <div class="${ParsedClassicsAppVars.lexiconContainerRightPartClass}" id="lexicon-split-right-${activeTabId}"></div>
     `;
     splitHtml = $(splitHtml);
 
     // get search input el
-    const lemmaSearchInput = splitHtml.find(`#lexicon-standalone-search-input-${activeTabId}`);
+    const lemmaSearchInput = splitHtml.find(`#lexicon-search-input-${activeTabId}`);
 
     // attach event handlers: (1) in case it is Greek lexicon, activate Greek keyboard mapping
     if (isGreek) {
@@ -726,9 +731,9 @@ const ParsedClassicsContentContainers = {
     tabContentContainerInner.html(splitHtml);
 
     // split tab's inner container
-    const lexiconStandaloneContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.lexiconStandaloneContainerLeftPartClass}`);
-    const lexiconStandaloneContainerRightPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.lexiconStandaloneContainerRightPartClass}`);
-    Split([lexiconStandaloneContainerLeftPart[0], lexiconStandaloneContainerRightPart[0]], {
+    const lexiconContainerLeftPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.lexiconContainerLeftPartClass}`);
+    const lexiconContainerRightPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.lexiconContainerRightPartClass}`);
+    Split([lexiconContainerLeftPart[0], lexiconContainerRightPart[0]], {
       sizes: [20, 80],
       direction: 'horizontal',
       gutterSize: 4,
@@ -736,7 +741,11 @@ const ParsedClassicsContentContainers = {
       snapOffset: ParsedClassicsAppVars.splitterSnapOffset,
       cursor: ParsedClassicsAppVars.horizontalSplitterCursor,
     });
-    return {lexiconStandaloneContainerLeftPart, lexiconStandaloneContainerRightPart};
+
+    // hide splitter in order to avoid flash of unstyled content (.lexicon-split-left-part is already hidden by css)
+    tabContentContainerInner.find(`div.gutter-horizontal`).css('visibility', 'hidden');
+
+    return {lexiconContainerLeftPart, lexiconContainerRightPart};
   },
 
   createScannedResourceHtml: function(tabContentContainerInner, resourceDef) {

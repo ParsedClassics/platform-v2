@@ -36,7 +36,12 @@ const ParsedClassicsResProtos = {
     library_app_panel_note: "",
     scanned_or_typed: "typed",
     resource_type: "parsed_text",
-		scanned_source_shortname: "new_testament_in_original_greek_ed_robinson_pierpont", 
+		scanned_source_shortname: "new_testament_in_original_greek_ed_robinson_pierpont",
+    extra: {
+      options: {
+        "text_display_modes": {"defaults": {"display_text_as": "lines"}},
+      },
+    }, 
 	},
 
   // External services
@@ -199,7 +204,12 @@ const ParsedClassicsResProtos = {
     resource_type: "lexicon",
     scanned_source_shortname: "lexicon_graeco_latinum_in_libros_novi_testamenti_grimm" ,
     contents_shortname: "lexicon_graeco_latinum_in_libros_novi_testamenti_grimm_contents",
-    extra: {},
+    extra: {
+      language: "EL",
+      options: {
+        show_hide_lemmas_list: {defaults: {show_lemmas_list: "no"}},
+      },
+    },
   },
 
   lexicon_graeco_latinum_by_zorell: {
@@ -213,7 +223,12 @@ const ParsedClassicsResProtos = {
     resource_type: "lexicon",
     scanned_source_shortname: "lexicon_graecum_novi_testamenti_zorell",
     contents_shortname: "lexicon_graecum_novi_testamenti_zorell_contents",
-    extra: {},
+    extra: {
+      language: "EL",
+      options: {
+        show_hide_lemmas_list: {defaults: {show_lemmas_list: "no"}},
+      },
+    },
   },
 
   greek_lexicon_of_nt_by_robinson: {
@@ -227,7 +242,12 @@ const ParsedClassicsResProtos = {
     resource_type: "lexicon",
     scanned_source_shortname: "greek_and_english_lexicon_of_nt_by_robinson", 
     contents_shortname: "greek_and_english_lexicon_of_nt_by_robinson_contents",
-    extra: {},
+    extra: {
+      language: "EL",
+      options: {
+        show_hide_lemmas_list: {defaults: {show_lemmas_list: "no"}},
+      },
+    },
   },
 
   greek_lexicon_to_nt_by_green: {
@@ -255,7 +275,12 @@ const ParsedClassicsResProtos = {
     resource_type: "lexicon",
     scanned_source_shortname: "griechisch_deutsches_handwoerterbuch_preuschen",
     contents_shortname: "griechisch_deutsches_handwoerterbuch_preuschen_contents",
-    extra: {},
+    extra: {
+      language: "EL",
+      options: {
+        show_hide_lemmas_list: {defaults: {show_lemmas_list: "no"}},
+      },
+    },
   },
 
   elementary_latin_dictionary_by_lewis: {
@@ -266,10 +291,14 @@ const ParsedClassicsResProtos = {
     library_app_panel_text_from: "Ch. T. Lewis. An elementary Latin dictionary. 1918. New York etc.: American Book company.",
     library_app_panel_note: "",
     scanned_or_typed: "scanned",
+    resource_type: "lexicon",
     scanned_source_shortname: "lewis_elementary_latin_dictionary", 
     contents_shortname: "elementary_latin_dictionary_by_lewis_contents",
     extra: {
 			difficulty_level: 1,
+      options: {
+        show_hide_lemmas_list: {defaults: {show_lemmas_list: "yes"}},
+      },
 		},
   },
 
