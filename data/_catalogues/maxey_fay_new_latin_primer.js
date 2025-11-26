@@ -34,7 +34,7 @@ Order of resources by resource type
 
 ParsedClassicsCollDefs.maxey_fay_new_latin_primer["resource_defs"] = {
     
-  // Reader standalone
+  // Reader
 
   maxey_fay_new_latin_primer_reader: {
     collections_page_resource_author: "",
@@ -51,11 +51,10 @@ ParsedClassicsCollDefs.maxey_fay_new_latin_primer["resource_defs"] = {
     extra: {},
   }, 
   
-  // Lexicon standalone
+  // Lexicon
 
   elementary_latin_dictionary_by_lewis: {
     ...ParsedClassicsResProtos.elementary_latin_dictionary_by_lewis,
-    resource_type: "lexicon_standalone",
   },
 
   

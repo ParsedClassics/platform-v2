@@ -59,11 +59,6 @@ ParsedClassicsCollDefs.nt_timothy_2["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Παύλου τοῦ ἀποστόλου ἡ πρὸς Τιμόθεον ἐπιστολὴ δευτέρα",
     contents_shortname: "nt_timothy_2_parsed_text_contents",
-    extra: {
-      options: [
-        "text_display_modes", 
-      ],
-    },
 	},
 
   // External services

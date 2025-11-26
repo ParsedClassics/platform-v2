@@ -26,13 +26,13 @@
 /* 
 Order of resources by resource type
 
-  // Lexicon standalone
+  // Lexicon
 
 */
 
 ParsedClassicsCollDefs.greek_lexicons["resource_defs"] = {
 
-  // Lexicon standalone
+  // Lexicon
 
   // lexicon_graeco_latinum_by_zorell: {
   //   collections_page_resource_author: "Zorell F.",
@@ -42,7 +42,7 @@ ParsedClassicsCollDefs.greek_lexicons["resource_defs"] = {
   //   library_app_panel_text_from: "Lexicon Graecum Novi Testamenti auctore Francisco Zorell, S.I. Editio altera novis curis retractata.  1931. Parisiis: P. Lethielleux.",
   //   library_app_panel_note: "",
   //   scanned_or_typed: "scanned",
-  //   resource_type: "lexicon_standalone",
+  //   resource_type: "lexicon",
   //   scanned_source_shortname: "lexicon_graecum_novi_testamenti_zorell",
   //   contents_shortname: "lexicon_graecum_novi_testamenti_zorell_contents",
   //   extra: {
@@ -53,7 +53,6 @@ ParsedClassicsCollDefs.greek_lexicons["resource_defs"] = {
 
   // elementary_latin_dictionary_by_lewis: {
   //   ...ParsedClassicsResProtos.elementary_latin_dictionary_by_lewis,
-  //   resource_type: "lexicon_standalone",
   // },
 
 }

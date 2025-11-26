@@ -525,7 +525,7 @@ div[data-resource-type="audio_recording"][data-scanned-or-typed="typed"] .rabbit
 
 /* Scanned resources*/
 
-div[data-scanned-or-typed="scanned"]:not([data-resource-type="lexicon_standalone"]) iframe.pc-bookreader {
+div[data-scanned-or-typed="scanned"]:not([data-resource-type="lexicon"]) iframe.pc-bookreader {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -535,7 +535,7 @@ div[data-scanned-or-typed="scanned"]:not([data-resource-type="lexicon_standalone
   border: 0;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] > .tab__content-inner {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] > .tab__content-inner {
   display: flex; 
   flex-direction: row; 
   position: absolute; 
@@ -545,13 +545,13 @@ div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] > 
   height: 100%;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] .lexicon-standalone-split-left {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] .lexicon-split-left {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] .lexicon-standalone-split-left-inner {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] .lexicon-split-left-inner {
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -559,64 +559,64 @@ div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] .l
   max-width: var(--text-max-width);
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] .lexicon-standalone-split-left-inner div.lemma-button {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] .lexicon-split-left-inner div.lemma-button {
   padding: 0px 8px 0px 8px;
   cursor: default;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] .lexicon-standalone-split-left-inner div.lemma-button:hover {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] .lexicon-split-left-inner div.lemma-button:hover {
   background-color: var(--grey700);
   color: var(--white);
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] .lexicon-standalone-split-left-inner div.lemma-button.selected-lemma,
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] .lexicon-standalone-split-left-inner div.lemma-button.selected-lemma:hover {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] .lexicon-split-left-inner div.lemma-button.selected-lemma,
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] .lexicon-split-left-inner div.lemma-button.selected-lemma:hover {
   background-color: var(--grey300);
   color: var(--red);
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] .pc-padding-top-8 {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] .pc-padding-top-8 {
   padding-top: 8px;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] iframe {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] iframe {
   width: 100%;
   height: 100%;
   border: 0;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] div.lexicon-search-wrapper {
   padding: 8px 16px 8px 8px;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper.greek-lang {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] div.lexicon-search-wrapper.greek-lang {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper > input.lexicon-standalone-search-input {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] div.lexicon-search-wrapper > input.lexicon-search-input {
   width: 100%;
   font-family: var(--font-main);
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper.greek-lang input.lexicon-standalone-search-input {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] div.lexicon-search-wrapper.greek-lang input.lexicon-search-input {
   width: calc(100% - 13px);
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper div.lexicon-standalone-info {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] div.lexicon-search-wrapper div.lexicon-info {
   display: none;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper.greek-lang div.lexicon-standalone-info {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] div.lexicon-search-wrapper.greek-lang div.lexicon-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper.greek-lang div.lexicon-standalone-info-btn {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] div.lexicon-search-wrapper.greek-lang div.lexicon-info-btn {
   /*display: flex;
   width: 16px;
   height: 16px;
@@ -628,20 +628,20 @@ div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] di
   user-select: none;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper.greek-lang div.lexicon-standalone-info-btn:active {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] div.lexicon-search-wrapper.greek-lang div.lexicon-info-btn:active {
   opacity: 0.5;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper.greek-lang div.lexicon-standalone-info-btn:hover {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] div.lexicon-search-wrapper.greek-lang div.lexicon-info-btn:hover {
   background-color: var(--grey700);
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper.greek-lang div.lexicon-standalone-info-btn > img.lexicon-standalone-info-btn-img {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] div.lexicon-search-wrapper.greek-lang div.lexicon-info-btn > img.lexicon-info-btn-img {
   width: 12px;
   height: 12px;
 }
 
-div[data-resource-type="lexicon_standalone"][data-scanned-or-typed="scanned"] div.lexicon-standalone-search-wrapper.greek-lang div.lexicon-standalone-info-btn:hover img.lexicon-standalone-info-btn-img {
+div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] div.lexicon-search-wrapper.greek-lang div.lexicon-info-btn:hover img.lexicon-info-btn-img {
   filter: brightness(0) invert(1);
 }
 

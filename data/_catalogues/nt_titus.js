@@ -61,11 +61,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Παύλου τοῦ ἀποστόλου ἡ πρὸς Τίτον ἐπιστολή",
     contents_shortname: "nt_titus_parsed_text_contents",
-    extra: {
-      options: [
-        "text_display_modes", 
-      ],
-    },
 	},
 
   // External services

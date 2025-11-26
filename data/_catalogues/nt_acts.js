@@ -59,11 +59,6 @@ ParsedClassicsCollDefs.nt_acts["resource_defs"] = {
 		...ParsedClassicsResProtos.nt_parsed_text_byzantine,
 		library_app_panel_title: "Πράξεις τῶν ἁγίων ἀποστόλων",
     contents_shortname: "nt_acts_parsed_text_contents",
-    extra: {
-      options: [
-        "text_display_modes", 
-      ],
-    },
 	},
 
   // External services

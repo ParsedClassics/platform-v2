@@ -28,7 +28,7 @@ Order of resources by resource type
   
   // Reader
 
-  // Lexicon standalone
+  // Lexicon
 
 */
 
@@ -51,7 +51,7 @@ ParsedClassicsCollDefs.appleton_initium["resource_defs"] = {
     extra: {},
   } 
   
-  // Lexicon standalone
+  // Lexicon
 
   
 }

@@ -640,9 +640,12 @@ const ParsedClassicsOptionsSelects = {
         // create options container inner el
         let tabOptionsContainerInner = $(`<div class="sm__tab-options-container-inner" id="sm__tab-options-container-inner-${activeTabId}"><span class="menu-heading">Options</span></div>`);
         // append options widgets
-        for (let i = 0; i < resDef['extra']['options'].length; i++) {
-          let option_shortname = resDef['extra']['options'][i];
-          let widget = ParsedClassicsResourceOptions[option_shortname].widgetHtml(resourceShortname, activeTabId);
+        const options = resDef['extra']['options'];
+        const optionsShortnamesArr = Object.keys(options);
+        for (let i = 0; i < optionsShortnamesArr.length; i++) {
+          let option_shortname = optionsShortnamesArr[i];
+          const defaults = options[option_shortname]['defaults'];
+          let widget = ParsedClassicsResourceOptions[option_shortname].widgetHtml(resourceShortname, activeTabId, defaults);
           tabOptionsContainerInner.append(widget);
         }
         tabOptionsContainer.html(tabOptionsContainerInner);
@@ -1237,8 +1240,8 @@ ParsedClassicsSelectedLemma = {
     // normalize lemma, i.e. remove diacritics; from https://stackoverflow.com/questions/23346506/javascript-normalize-accented-greek-characters and https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript
     lemma = lemma.normalize('NFD').replace(/\p{Diacritic}/gu, "");
 
-    // get lexicon standalone split left inner el
-    const lexiconStandaloneSplitLeftInner = $(`#lexicon-standalone-split-left-inner-${tabId}`);
+    // get lexicon split left inner el
+    const lexiconSplitLeftInner = $(`#lexicon-split-left-inner-${tabId}`);
 
     // search for strings formed from inputted values, starting from longest string 
     // and reducing string by one char from the end
@@ -1247,7 +1250,7 @@ ParsedClassicsSelectedLemma = {
       // get first lemma button whose 'data-lemma' attr value matches string entered in search box
       const lemmaButton = $(`div[${ParsedClassicsAppVars.lemmaLowercaseAttr}^="${lemma}"]`).first();
       if (lemmaButton.length === 1) {
-        lexiconStandaloneSplitLeftInner.scrollTo(lemmaButton, 50);
+        lexiconSplitLeftInner.scrollTo(lemmaButton, 50);
         break;
       }
       // string entered does not match the start of any lemma, so let's show it by turning search input red
@@ -1264,10 +1267,11 @@ ParsedClassicsResourceOptions = {
 
   text_display_modes: {
 
-    widgetHtml: function(resourceShortname, tabId) {
+    widgetHtml: function(resourceShortname, tabId, defaults) {
       const local_storage_key = `${resourceShortname}__text_display_modes`;
+      const default_text_mode = defaults['display_text_as'];
       let text_mode = localStorage.getItem(local_storage_key);
-      text_mode = text_mode ?? 'lines';
+      text_mode = text_mode ?? default_text_mode;
       const tabContentInner = $(`#tab-content-inner-${tabId}`);
       if (text_mode === 'lines') {
         tabContentInner.addClass('show-lines');
@@ -1309,9 +1313,60 @@ ParsedClassicsResourceOptions = {
 
   },
 
+  show_hide_lemmas_list: {
+
+    widgetHtml: function(resourceShortname, tabId, defaults) {
+      const local_storage_key = `${resourceShortname}__show_hide_lemmas_list`;
+      const default_show_lemmas_list = defaults['show_lemmas_list'];
+      let show_lemmas_list = localStorage.getItem(local_storage_key) ?? default_show_lemmas_list;
+      const tabContentInner = $(`#tab-content-inner-${tabId}`);
+      const iframe = tabContentInner.find('iframe.pc-bookreader'); 
+      if (show_lemmas_list === 'yes') {
+        iframe.css('position', '').css('left', 0);
+        // display els which were hidden in order to avois flash of unstyled content
+        tabContentInner.find(`div.gutter-horizontal`).css('visibility', 'visible');
+        tabContentInner.find(`div.${ParsedClassicsAppVars.lexiconContainerLeftPartClass}`).css('visibility', 'visible');
+      }
+      else {
+        iframe.css('position', 'absolute').css('left', 0);
+      }
+      let widget = `
+        <select class="sm-menu-selectbox" title="Display or hide words list">
+          <option disabled>Display or hide words list</option>
+          <option value="yes"${show_lemmas_list === 'yes' ? ' selected' : ''}>Display words list</option>
+          <option value="no"${show_lemmas_list === 'no' ? ' selected' : ''}>Hide words list</option>
+        </select>
+      `;
+      widget = $(widget);
+      widget.on('change', function() {
+        const widgetEl = this;
+        ParsedClassicsResourceOptions['show_hide_lemmas_list'].onchange(resourceShortname, tabId, widgetEl);
+      });
+      return widget;
+    },
+
+    onchange: function(resourceShortname, tabId, widgetEl) {
+      const selected_val = $(widgetEl).val();
+      const local_storage_key = `${resourceShortname}__show_hide_lemmas_list`;
+      localStorage.setItem(local_storage_key, selected_val);
+      const tabContentInner = $(`#tab-content-inner-${tabId}`);
+      const iframe = tabContentInner.find('iframe.pc-bookreader');
+      if (selected_val === 'yes') {
+        iframe.css('position', '').css('left', 0);
+        // display els which were hidden in order to avois flash of unstyled content
+        tabContentInner.find(`div.gutter-horizontal`).css('visibility', 'visible');
+        tabContentInner.find(`div.${ParsedClassicsAppVars.lexiconContainerLeftPartClass}`).css('visibility', 'visible');
+      }
+      else {
+        iframe.css('position', 'absolute').css('left', 0);
+      }
+    },
+
+  },
+
   show_hide_prosody: {
     
-    widgetHtml: function(resourceShortname, tabId) {
+    widgetHtml: function(resourceShortname, tabId, defaults) {
       let widget = `
         <select class="sm-menu-selectbox" title="Prosody display options">
           <option disabled>Prosody</option>

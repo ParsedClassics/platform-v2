@@ -58,6 +58,9 @@ const ParsedClassicsAppVars = {
   parsedTextContainerBottomPartClass: "parsed-text-split-bottom",
   // lexicon container
   lexiconWordHeadingClass: "lexicon-heading",
+  lexiconContainerLeftPartClass: "lexicon-split-left",
+  lexiconContainerLeftPartInnerClass: "lexicon-split-left-inner",
+  lexiconContainerRightPartClass: "lexicon-split-right",
   // concordance container
   concordanceLinesBtnClass: "concordance-lines-button",
   concordanceLinesBtnCollapsedClass: "collapsed",
@@ -84,10 +87,6 @@ const ParsedClassicsAppVars = {
   commentaryRefsContainerLeftPartInnerClass: "commentary-refs-split-left-inner",
   commentaryRefsContainerRightPartClass: "commentary-refs-split-right",
   commentaryBookAttr: "data-commentary",
-  // lexicon standalone container
-  lexiconStandaloneContainerLeftPartClass: "lexicon-standalone-split-left",
-  lexiconStandaloneContainerLeftPartInnerClass: "lexicon-standalone-split-left-inner",
-  lexiconStandaloneContainerRightPartClass: "lexicon-standalone-split-right",
   // menu
   layoutBtnsContainer: "sm__layout-buttons",
   addRightSectionBtnClass: "create-right-section",
@@ -137,7 +136,6 @@ const ParsedClassicsAppVars = {
   diagramSetDir: "data/diagram_set/",
   audioRecordingDir: "data/audio_recording/",
   readerDir: "data/reader/",
-  lexiconStandaloneDir: "data/lexicon_standalone/",
   externalServiceDir: "data/external_service/",
   infoTextDir: "data/info_text/",
   // resource
@@ -153,7 +151,6 @@ const ParsedClassicsAppVars = {
     diagram_set: "Diagrams",
     audio_recording: "Audio recording",
     reader: "Reader",
-    lexicon_standalone: "Lexicon",
     external_service: "External service",
   },
   // animation
