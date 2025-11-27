@@ -1301,6 +1301,8 @@ ParsedClassicsResourceOptions = {
       const local_storage_key = `${resourceShortname}__text_display_modes`;
       localStorage.setItem(local_storage_key, selected_mode);
       const tabContentInner = $(`#tab-content-inner-${tabId}`);
+      const paneId = ParsedClassicsLayout.getPaneIdFromUrl(tabId);
+      $(`#main-menu-${paneId}`).smartmenus('menuHideAll');
       if (selected_mode === 'lines') {
         tabContentInner.addClass('show-lines');
         tabContentInner.removeClass('show-paragraphs');
@@ -1351,6 +1353,8 @@ ParsedClassicsResourceOptions = {
       localStorage.setItem(local_storage_key, selected_val);
       const tabContentInner = $(`#tab-content-inner-${tabId}`);
       const iframe = tabContentInner.find('iframe.pc-bookreader');
+      const paneId = ParsedClassicsLayout.getPaneIdFromUrl(tabId);
+      $(`#main-menu-${paneId}`).smartmenus('menuHideAll');
       if (selected_val === 'yes') {
         iframe.css('position', '').css('left', 0);
         // display els which were hidden in order to avois flash of unstyled content
