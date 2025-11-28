@@ -39990,7 +39990,7 @@ elementary_latin_dictionary_by_lewis_contents = {
 
 , /*glaucopis*/ "w-103-108-97-117-99-111-112-105-115": ""
 
-, /*glaucus*/ "glaucus": "356"
+, /*glaucus*/ "w-103-108-97-117-99-117-115": "356"
 
 , /*glaux*/ "w-103-108-97-117-120": ""
 
