@@ -600,7 +600,7 @@ const ParsedClassicsContentContainers = {
       const charCodesStr = lemmaKeys[i].slice(2);
       const charCodesArr = charCodesStr.split('-');
       let lemma = '';
-      charCodesArr.forEach(charCode => lemma += String.fromCodePoint(charCode));
+      charCodesArr.forEach(charCode => {lemma += String.fromCodePoint(charCode);});
       let lemmaLowercase = lemma.toLowerCase();
       // normalize Greek lemma, i.e. remove diacritics; from https://stackoverflow.com/questions/23346506/javascript-normalize-accented-greek-characters and https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript
       //lemmaLowercase = lemmaLowercase.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
