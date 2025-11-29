@@ -68,7 +68,12 @@ ParsedClassicsCollDefs.collar_new_gradatim["resource_defs"] = {
     resource_type: "lexicon",
     scanned_source_shortname: "lexicon_graecum_novi_testamenti_zorell",
     contents_shortname: "lexicon_graecum_novi_testamenti_zorell_contents",
-    extra: {language: "EL"}
+    extra: {
+      language: "EL",
+      options: {
+        show_hide_lemmas_list: {defaults: {show_lemmas_list: "yes"}},
+      },
+    },
   },*/
 
   
