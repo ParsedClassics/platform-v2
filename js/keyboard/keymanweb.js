@@ -14132,11 +14132,59 @@ var Util = com.keyman.Util;
                 d.src = b + a + h;
 
                 d.type = "text/javascript";
-                console.log('d', d); // Added by ParsedClassics
 
                 try {
 
                     document.body.appendChild(d)
+
+                    // // Added by ParsedClassics start
+                    // The command keyman.register was added by ParsedClassics in case there would be need to avoid querying external server
+                    // keyman.register({
+                    //     "options": {
+                    //         "context": "keyboard",
+                    //         "dateFormat": "standard",
+                    //         "device": "any",
+                    //         "keyboardBaseUri": "/js/keyboard/",
+                    //         "fontBaseUri": "./js/keyboard/",
+                    //         "keyboardid": "greekclassical",
+                    //         "keyboardVersion": "current"
+                    //     },
+                    //     "keyboard": [
+                    //         {
+                    //         "id": "greekclassical",
+                    //         "name": "Greek Classical",
+                    //         "filename": "greekclassical/1.3/greekclassical-1.3.js",
+                    //         "version": "1.3",
+                    //         "source": "https://github.com/keymanapp/keyboards/tree/master/release/g/greekclassical",
+                    //         "devices": {
+                    //             "phone": 2,
+                    //             "tablet": 2,
+                    //             "desktop": 2
+                    //         },
+                    //         "languages": [
+                    //             {
+                    //             "id": "grc-grek",
+                    //             "name": "Greek, Ancient",
+                    //             "region": 4,
+                    //             "font": {
+                    //                 "family": "Galatia SIL",
+                    //                 "source": [
+                    //                 "GalSILB.ttf"
+                    //                 ]
+                    //             },
+                    //             "oskFont": {
+                    //                 "family": "Galatia SIL",
+                    //                 "source": [
+                    //                 "GalSILR.ttf"
+                    //                 ]
+                    //             }
+                    //             },
+                    //         ]
+                    //         }
+                    //     ],
+                    //     "timerid": "13"
+                    // });
+                    // Added by ParsedClassics end
 
                 } catch (m) {
 
