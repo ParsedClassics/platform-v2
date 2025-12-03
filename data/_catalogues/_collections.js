@@ -326,6 +326,21 @@ const ParsedClassicsCollDefs = {
 		},
 	},
 
+	arnold_cloelia: {
+		author_orig: 'Eleanor Arnold',   
+    author_eng: 'Eleanor Arnold',
+		author_orig_short: 'Arnold E.',
+		author_eng_short: 'Arnold E.',
+    collection_selectboxname: 'Arnold E. Cloelia, puella Rōmāna',
+    collections_page_title_orig: 'Cloelia, puella Rōmāna',
+    collections_page_title_eng: 'Cloelia, puella Rōmāna',
+		contents_type: 'paragraph',
+		central_resource: 'arnold_cloelia_parsed_text',
+		extra: {
+			difficulty_level: 2,
+		},
+	},
+
 	greek_lexicons: {
 		author_orig: '',   
     author_eng: '',

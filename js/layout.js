@@ -1973,6 +1973,14 @@ const ParsedClassicsLayout = {
     return lineIndicator;
   },
 
+  getParagraphIndicatorFromUrl: function(collectionShortname) {
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
+    const collectionPointers = pointersObj[collectionShortname] ?? {};
+    const paragraphIndicator = typeof collectionPointers[ParsedClassicsAppVars.paragraphMember] !== 'undefined' && collectionPointers[ParsedClassicsAppVars.paragraphMember] ? collectionPointers[ParsedClassicsAppVars.paragraphMember] : 'title';
+    return paragraphIndicator;
+  },
+
   getPageIndicatorFromUrl: function(collectionShortname, tabId) {
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];

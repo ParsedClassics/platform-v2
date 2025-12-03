@@ -26,6 +26,13 @@
   margin: 0.4em 0;
 }
 
+.tab__content h3 {
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: normal;
+  margin: 0.2em 0;
+}
+
 .tab__content .text-from a {
   color: #3176c4;
   text-decoration: none;
@@ -80,6 +87,7 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] > .tab__con
   overflow-y: auto;
   padding: 0 8px 8px 8px;
   max-width: var(--text-max-width);
+  max-height: 100%;
 }
 
 div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .pc-padding-bottom-16:not(:last-child) {
@@ -147,6 +155,14 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .parsed-tex
 
 div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .parsed-text-split-bottom strong {
   font-weight: 600;
+}
+
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] p:last-child {
+  margin-bottom: 0px;
+}
+
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .pc-text-center {
+  text-align: center;
 }
 
 div[data-resource-type="lexicon"][data-scanned-or-typed="typed"] > .tab__content-inner {
