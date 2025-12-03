@@ -57,6 +57,11 @@ const ParsedClassicsContentContainers = {
     // get line indicator saved as dom attr
     const lineIndicatorDom = tabContentContainer.attr(ParsedClassicsAppVars.lineNumberAttr) ?? '';
 
+    // get paragraph indicator from url
+    const paragraphIndicatorUrl = ParsedClassicsLayout.getParagraphIndicatorFromUrl(collectionShortname);
+    // get paragraph indicator saved as dom attr
+    const paragraphIndicatorDom = tabContentContainer.attr(ParsedClassicsAppVars.paragraphAttr) ?? '';
+
     // get lemma from URL
     const wordUrl = ParsedClassicsLayout.getWordFromUrl(collectionShortname) ?? '';
     // get lemma from DOM
@@ -228,8 +233,10 @@ const ParsedClassicsContentContainers = {
           break;
 
         case 'parsed_text':
-          // split container into top part for text and bottom part for morphology  
-          const {parsedTextContainerTopPart, parsedTextContainerBottomPart} = ParsedClassicsContentContainers.splitParsedTextContainer(activeTabId, tabContentContainerInner);
+          // is parsing done via external services?
+          const parsing_external = typeof resourceDef['extra']['parsing_via_ext_services'] !== 'undefined' ? resourceDef['extra']['parsing_via_ext_services'] : '';
+          // split container if needed into top part for text and bottom part for morphology  
+          var {parsedTextContainerTopPart, parsedTextContainerBottomPart} = ParsedClassicsContentContainers.splitParsedTextContainer(activeTabId, tabContentContainerInner, parsing_external);
           // generate html of parsed text resource and put it into top part of splitted container
           ParsedClassicsContentContainers.createParsedTextResourceHtml(parsedTextContainerTopPart, collectionDef, resourceDef, resourceData);
           // delegate "mouseenter" and "mouseleave" events from els having class "word" to tab's inner content container
@@ -393,7 +400,7 @@ const ParsedClassicsContentContainers = {
     
   },
 
-  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType, scannedOrTyped, page, wordForm) {
+  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType, scannedOrTyped, paragraph, page, wordForm) {
     // save collectionShortname|resourceShortname pair as DOM attr
     container.attr(ParsedClassicsAppVars.collResPairAttr, collResPair);
     // save line indicator as DOM attr
@@ -408,7 +415,9 @@ const ParsedClassicsContentContainers = {
     container.attr(ParsedClassicsAppVars.resourceTypeAttr, resourceType);
     // save scanned or typed value as DOM attr in order to apply relevant styles 
     container.attr(ParsedClassicsAppVars.scannedOrTypedAttr, scannedOrTyped);
-    // save page as DOM attr
+    // save paragraph num as DOM attr
+    container.attr(ParsedClassicsAppVars.paragraphAttr, paragraph);
+    // save page num as DOM attr
     container.attr(ParsedClassicsAppVars.pageAttr, page);
     // save word form as DOM attr
     container.attr(ParsedClassicsAppVars.formAttr, wordForm);
@@ -472,7 +481,7 @@ const ParsedClassicsContentContainers = {
     return html;
   },
 
-  splitParsedTextContainer: function(activeTabId, tabContentContainerInner) {
+  splitParsedTextContainer: function(activeTabId, tabContentContainerInner, parsing_external) {
     const splitHtml = `
       <div class="${ParsedClassicsAppVars.parsedTextContainerTopPartClass}" id="parsed-text-split-top-${activeTabId}"></div>
       <div class="${ParsedClassicsAppVars.parsedTextContainerBottomPartClass}" id="parsed-text-split-bottom-${activeTabId}"></div>
@@ -480,14 +489,16 @@ const ParsedClassicsContentContainers = {
     tabContentContainerInner.html(splitHtml);
     const parsedTextContainerTopPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.parsedTextContainerTopPartClass}`);
     const parsedTextContainerBottomPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.parsedTextContainerBottomPartClass}`);
-    Split([parsedTextContainerTopPart[0], parsedTextContainerBottomPart[0]], {
-      sizes: [95, 5],
-      direction: 'vertical',
-      gutterSize: 4,
-      minSize: ParsedClassicsAppVars.parsedTextSplitMinSizes,
-      snapOffset: ParsedClassicsAppVars.splitterSnapOffset,
-      cursor: ParsedClassicsAppVars.verticalSplitterCursor,
-    });
+    if (parsing_external !== 'yes') {
+      Split([parsedTextContainerTopPart[0], parsedTextContainerBottomPart[0]], {
+        sizes: [95, 5],
+        direction: 'vertical',
+        gutterSize: 4,
+        minSize: ParsedClassicsAppVars.parsedTextSplitMinSizes,
+        snapOffset: ParsedClassicsAppVars.splitterSnapOffset,
+        cursor: ParsedClassicsAppVars.verticalSplitterCursor,
+      });
+    }
     return {parsedTextContainerTopPart, parsedTextContainerBottomPart};
   },
   
