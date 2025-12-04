@@ -244,6 +244,8 @@ const ParsedClassicsTabs = {
     const paneId = ParsedClassicsLayout.getPaneIdFromUrl(tabId);
     // close navigation menu which might be open at the time tab is being closed
     $(`#main-menu-${paneId}`).smartmenus('menuHideAll');
+    // hide options container in Tools and menus dropdown
+    $(`#pane-options-container-${paneId}`).hide();
   },
 
   createTabbar: function (paneTopPartEl, paneEl, tabIdsArr, activeTabIndex) {
