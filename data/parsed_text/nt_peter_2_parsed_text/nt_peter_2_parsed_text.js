@@ -20,8 +20,11 @@
 nt_peter_2_parsed_text =
 
 
+'<h2><span class="chapter-number">I</span></h2>' +
 
-' <span class="line"><span data-line-number="1:1" class="line-number">1:1</span>' +
+'<p>' +
+
+' <span class="line"><span data-line-number="1:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="Συμεών" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Συμεών">Συμεὼν</span>' +
 
@@ -69,7 +72,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:2" class="line-number">1:2</span>' +
+' <span class="line"><span data-line-number="1:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="χάρις" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="χάρις">χάρις</span>' +
 
@@ -103,7 +106,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:3" class="line-number">1:3</span>' +
+' <span class="line"><span data-line-number="1:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="ὡς" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὡς">Ὡς</span>' +
 
@@ -155,7 +158,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:4" class="line-number">1:4</span>' +
+' <span class="line"><span data-line-number="1:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="διά" data-part-of-speech="preposition" data-parsing="" data-lemma="διά">δι’</span>' +
 
@@ -207,7 +210,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:5" class="line-number">1:5</span>' +
+' <span class="line"><span data-line-number="1:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="adverb" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -253,7 +256,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:6" class="line-number">1:6</span>' +
+' <span class="line"><span data-line-number="1:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -295,7 +298,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:7" class="line-number">1:7</span>' +
+' <span class="line"><span data-line-number="1:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -325,7 +328,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:8" class="line-number">1:8</span>' +
+' <span class="line"><span data-line-number="1:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="ταῦτα" data-part-of-speech="demonstrative pronoun" data-parsing="nominative plural neuter" data-lemma="οὗτος">Ταῦτα</span>' +
 
@@ -369,7 +372,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:9" class="line-number">1:9</span>' +
+' <span class="line"><span data-line-number="1:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="ᾧ" data-part-of-speech="relative pronoun" data-parsing="dative singular masculine" data-lemma="ὅς">ᾯ</span>' +
 
@@ -407,7 +410,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:10" class="line-number">1:10</span>' +
+' <span class="line"><span data-line-number="1:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διὸ</span>' +
 
@@ -449,7 +452,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:11" class="line-number">1:11</span>' +
+' <span class="line"><span data-line-number="1:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="οὕτω(ς)" data-part-of-speech="adverb" data-parsing="" data-lemma="οὕτω(ς)">οὕτως</span>' +
 
@@ -491,11 +494,11 @@ nt_peter_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="1:12" class="line-number">1:12</span>' +
+' <span class="line"><span data-line-number="1:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διὸ</span>' +
 
@@ -533,7 +536,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:13" class="line-number">1:13</span>' +
+' <span class="line"><span data-line-number="1:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="δίκαιον" data-part-of-speech="adjective" data-parsing="accusative singular neuter" data-lemma="δίκαιος">Δίκαιον</span>' +
 
@@ -567,7 +570,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:14" class="line-number">1:14</span>' +
+' <span class="line"><span data-line-number="1:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="εἰδώς" data-part-of-speech="verb" data-parsing="perfect active participle nominative singular masculine" data-lemma="ὁράω">εἰδὼς</span>' +
 
@@ -609,7 +612,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:15" class="line-number">1:15</span>' +
+' <span class="line"><span data-line-number="1:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="σπουδάσω" data-part-of-speech="verb" data-parsing="future active indicative 1st person singular" data-lemma="σπουδάζω">Σπουδάσω</span>' +
 
@@ -643,7 +646,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:16" class="line-number">1:16</span>' +
+' <span class="line"><span data-line-number="1:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">Οὐ</span>' +
 
@@ -693,7 +696,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:17" class="line-number">1:17</span>' +
+' <span class="line"><span data-line-number="1:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="λαβών" data-part-of-speech="verb" data-parsing="aorist active participle nominative singular masculine" data-lemma="λαμβάνω">Λαβὼν</span>' +
 
@@ -753,7 +756,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:18" class="line-number">1:18</span>' +
+' <span class="line"><span data-line-number="1:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -793,7 +796,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:19" class="line-number">1:19</span>' +
+' <span class="line"><span data-line-number="1:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -853,7 +856,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:20" class="line-number">1:20</span>' +
+' <span class="line"><span data-line-number="1:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="τοῦτο" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular neuter" data-lemma="οὗτος">τοῦτο</span>' +
 
@@ -881,7 +884,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:21" class="line-number">1:21</span>' +
+' <span class="line"><span data-line-number="1:21" class="line-number">21</span>' +
 
 ' <span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">Οὐ</span>' +
 
@@ -919,11 +922,17 @@ nt_peter_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">II</span></h2>' +
+
+
+'<p>' +
 
 
 
-' <span class="line"><span data-line-number="2:1" class="line-number">2:1</span>' +
+' <span class="line"><span data-line-number="2:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="ἐγένοντο" data-part-of-speech="verb" data-parsing="aorist middle indicative 3rd person plural" data-lemma="γίνομαι">Ἐγένοντο</span>' +
 
@@ -983,7 +992,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:2" class="line-number">2:2</span>' +
+' <span class="line"><span data-line-number="2:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -1015,7 +1024,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:3" class="line-number">2:3</span>' +
+' <span class="line"><span data-line-number="2:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -1059,7 +1068,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:4" class="line-number">2:4</span>' +
+' <span class="line"><span data-line-number="2:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="εἰ" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἰ">Εἰ</span>' +
 
@@ -1097,7 +1106,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:5" class="line-number">2:5</span>' +
+' <span class="line"><span data-line-number="2:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -1133,7 +1142,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:6" class="line-number">2:6</span>' +
+' <span class="line"><span data-line-number="2:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -1163,7 +1172,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:7" class="line-number">2:7</span>' +
+' <span class="line"><span data-line-number="2:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -1193,7 +1202,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:8" class="line-number">2:8</span>' +
+' <span class="line"><span data-line-number="2:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="βλέμματι" data-part-of-speech="noun" data-parsing="dative singular neuter" data-lemma="βλέμμα">βλέμματι</span>' +
 
@@ -1233,7 +1242,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:9" class="line-number">2:9</span>' +
+' <span class="line"><span data-line-number="2:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="οἶδε(ν)" data-part-of-speech="verb" data-parsing="perfect active indicative 3rd person singular" data-lemma="οἶδα">οἶδεν</span>' +
 
@@ -1265,7 +1274,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:10" class="line-number">2:10</span>' +
+' <span class="line"><span data-line-number="2:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="μάλιστα" data-part-of-speech="adverb" data-parsing="" data-lemma="μάλιστα">μάλιστα</span>' +
 
@@ -1307,7 +1316,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:11" class="line-number">2:11</span>' +
+' <span class="line"><span data-line-number="2:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="ὅπου" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅπου">ὅπου</span>' +
 
@@ -1343,7 +1352,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:12" class="line-number">2:12</span>' +
+' <span class="line"><span data-line-number="2:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="οὗτοι" data-part-of-speech="demonstrative pronoun" data-parsing="nominative plural masculine" data-lemma="οὗτος">	Οὗτοι</span>' +
 
@@ -1389,7 +1398,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:13" class="line-number">2:13</span>' +
+' <span class="line"><span data-line-number="2:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="κομιούμενοι" data-part-of-speech="verb" data-parsing="future middle participle nominative plural masculine" data-lemma="ἀδικέω">κομιούμενοι</span>' +
 
@@ -1433,7 +1442,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:14" class="line-number">2:14</span>' +
+' <span class="line"><span data-line-number="2:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="ὀφθαλμούς" data-part-of-speech="noun" data-parsing="accusative plural masculine" data-lemma="ὀφθαλμός">ὀφθαλμοὺς</span>' +
 
@@ -1471,7 +1480,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:15" class="line-number">2:15</span>' +
+' <span class="line"><span data-line-number="2:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="καταλιπόντες" data-part-of-speech="verb" data-parsing="aorist active participle nominative plural masculine" data-lemma="καταλείπω">καταλιπόντες</span>' +
 
@@ -1507,7 +1516,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:16" class="line-number">2:16</span>' +
+' <span class="line"><span data-line-number="2:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="ἔλεγξιν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="ἔλεγξις">ἔλεγξιν</span>' +
 
@@ -1545,7 +1554,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:17" class="line-number">2:17</span>' +
+' <span class="line"><span data-line-number="2:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="οὗτοι" data-part-of-speech="demonstrative pronoun" data-parsing="nominative plural masculine" data-lemma="οὗτος">Οὗτοί</span>' +
 
@@ -1583,7 +1592,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:18" class="line-number">2:18</span>' +
+' <span class="line"><span data-line-number="2:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="ὑπέρογκα" data-part-of-speech="adjective" data-parsing="accusative plural neuter" data-lemma="ὑπέρογκος">Ὑπέρογκα</span>' +
 
@@ -1621,7 +1630,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:19" class="line-number">2:19</span>' +
+' <span class="line"><span data-line-number="2:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="ἐλευθερίαν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="ἐλευθερία">ἐλευθερίαν</span>' +
 
@@ -1657,7 +1666,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:20" class="line-number">2:20</span>' +
+' <span class="line"><span data-line-number="2:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="εἰ" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἰ">Εἰ</span>' +
 
@@ -1717,7 +1726,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:21" class="line-number">2:21</span>' +
+' <span class="line"><span data-line-number="2:21" class="line-number">21</span>' +
 
 ' <span class="word" data-form="κρεῖττον" data-part-of-speech="adjective" data-parsing="nominative singular neuter comparative" data-lemma="κρείττων">Κρεῖττον</span>' +
 
@@ -1761,7 +1770,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:22" class="line-number">2:22</span>' +
+' <span class="line"><span data-line-number="2:22" class="line-number">22</span>' +
 
 ' <span class="word" data-form="συμβέβηκε(ν)" data-part-of-speech="verb" data-parsing="perfect active indicative 3rd person singular" data-lemma="συμβαίνω">Συμβέβηκεν</span>' +
 
@@ -1805,11 +1814,17 @@ nt_peter_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">III</span></h2>' +
+
+
+'<p>' +
 
 
 
-' <span class="line"><span data-line-number="3:1" class="line-number">3:1</span>' +
+' <span class="line"><span data-line-number="3:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="ταύτην" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular feminine" data-lemma="οὗτος">Ταύτην</span>' +
 
@@ -1847,7 +1862,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:2" class="line-number">3:2</span>' +
+' <span class="line"><span data-line-number="3:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="μνησθῆναι" data-part-of-speech="verb" data-parsing="aorist passive infinitive" data-lemma="μιμνήσκομαι">μνησθῆναι</span>' +
 
@@ -1889,7 +1904,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:3" class="line-number">3:3</span>' +
+' <span class="line"><span data-line-number="3:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="τοῦτο" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular neuter" data-lemma="οὗτος">τοῦτο</span>' +
 
@@ -1927,7 +1942,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:4" class="line-number">3:4</span>' +
+' <span class="line"><span data-line-number="3:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -1975,7 +1990,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:5" class="line-number">3:5</span>' +
+' <span class="line"><span data-line-number="3:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="λανθάνει" data-part-of-speech="verb" data-parsing="present active indicative 3rd person singular" data-lemma="λανθάνω">Λανθάνει</span>' +
 
@@ -2023,7 +2038,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:6" class="line-number">3:6</span>' +
+' <span class="line"><span data-line-number="3:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="διά" data-part-of-speech="preposition" data-parsing="" data-lemma="διά">δι’</span>' +
 
@@ -2045,7 +2060,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:7" class="line-number">3:7</span>' +
+' <span class="line"><span data-line-number="3:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="οἱ" data-part-of-speech="article" data-parsing="nominative plural masculine" data-lemma="ὁ">οἱ</span>' +
 
@@ -2095,11 +2110,11 @@ nt_peter_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="3:8" class="line-number">3:8</span>' +
+' <span class="line"><span data-line-number="3:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="ἕν" data-part-of-speech="adjective" data-parsing="nominative singular neuter" data-lemma="εἷς">Ἓν</span>' +
 
@@ -2147,7 +2162,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:9" class="line-number">3:9</span>' +
+' <span class="line"><span data-line-number="3:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">Οὐ</span>' +
 
@@ -2199,7 +2214,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:10" class="line-number">3:10</span>' +
+' <span class="line"><span data-line-number="3:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="ἥξει" data-part-of-speech="verb" data-parsing="future active indicative 3rd person singular" data-lemma="ἥκω">Ἥξει</span>' +
 
@@ -2259,7 +2274,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:11" class="line-number">3:11</span>' +
+' <span class="line"><span data-line-number="3:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="τούτων" data-part-of-speech="demonstrative pronoun" data-parsing="genitive plural neuter" data-lemma="οὗτος">Τούτων</span>' +
 
@@ -2291,7 +2306,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:12" class="line-number">3:12</span>' +
+' <span class="line"><span data-line-number="3:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="προσδοκῶντας" data-part-of-speech="verb" data-parsing="present active participle accusative plural masculine" data-lemma="προσδοκάω">προσδοκῶντας</span>' +
 
@@ -2333,7 +2348,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:13" class="line-number">3:13</span>' +
+' <span class="line"><span data-line-number="3:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="καινούς" data-part-of-speech="adjective" data-parsing="accusative plural masculine" data-lemma="καινός">Καινοὺς</span>' +
 
@@ -2369,11 +2384,11 @@ nt_peter_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="3:14" class="line-number">3:14</span>' +
+' <span class="line"><span data-line-number="3:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διό</span>,' +
 
@@ -2403,7 +2418,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:15" class="line-number">3:15</span>' +
+' <span class="line"><span data-line-number="3:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -2453,7 +2468,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:16" class="line-number">3:16</span>' +
+' <span class="line"><span data-line-number="3:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="ὡς" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὡς">ὡς</span>' +
 
@@ -2523,7 +2538,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:17" class="line-number">3:17</span>' +
+' <span class="line"><span data-line-number="3:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="ὑμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="σύ">Ὑμεῖς</span>' +
 
@@ -2561,7 +2576,7 @@ nt_peter_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:18" class="line-number">3:18</span>' +
+' <span class="line"><span data-line-number="3:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="αὐξάνετε" data-part-of-speech="verb" data-parsing="present active imperative 2nd person plural" data-lemma="αὐξάνω">Αὐξάνετε</span>' +
 
@@ -2610,6 +2625,8 @@ nt_peter_2_parsed_text =
 ' <span class="word" data-form="ἀμήν" data-part-of-speech="particle" data-parsing="" data-lemma="ἀμήν">Ἀμήν</span>.' +
 
 ' </span>' +
+
+'</p>' +
 
 
 

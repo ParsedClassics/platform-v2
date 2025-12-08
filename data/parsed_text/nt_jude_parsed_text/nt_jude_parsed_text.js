@@ -20,8 +20,9 @@
 nt_jude_parsed_text =
 
 
+'<p>' +
 
-' <span class="line"><span data-line-number="1:1" class="line-number">1:1</span>' +
+' <span class="line"><span data-line-number="1:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="Ἰούδας" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Ἰούδας">Ἰούδας</span>' +
 
@@ -61,7 +62,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:2" class="line-number">1:2</span>' +
+' <span class="line"><span data-line-number="1:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="ἔλεος" data-part-of-speech="noun" data-parsing="nominative singular neuter" data-lemma="ἔλεος">ἔλεος</span>' +
 
@@ -81,11 +82,11 @@ nt_jude_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="1:3" class="line-number">1:3</span>' +
+' <span class="line"><span data-line-number="1:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="ἀγαπητοί" data-part-of-speech="adjective" data-parsing="vocative plural masculine" data-lemma="ἀγαπητός">Ἀγαπητοί</span>,' +
 
@@ -135,7 +136,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:4" class="line-number">1:4</span>' +
+' <span class="line"><span data-line-number="1:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="παρεισέδυσαν" data-part-of-speech="verb" data-parsing="aorist active indicative 3rd person plural" data-lemma="παρεισδύω">Παρεισέδυσαν</span>' +
 
@@ -203,11 +204,11 @@ nt_jude_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="1:5" class="line-number">1:5</span>' +
+' <span class="line"><span data-line-number="1:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="ὑπομνῆσαι" data-part-of-speech="verb" data-parsing="aorist active infinitive" data-lemma="ὑπομιμνήσκω">Ὑπομνῆσαι</span>' +
 
@@ -257,7 +258,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:6" class="line-number">1:6</span>' +
+' <span class="line"><span data-line-number="1:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="ἀγγέλους" data-part-of-speech="noun" data-parsing="accusative plural masculine" data-lemma="ἄγγελος">Ἀγγέλους</span>' +
 
@@ -307,7 +308,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:7" class="line-number">1:7</span>' +
+' <span class="line"><span data-line-number="1:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="ὡς" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὡς">Ὡς</span>' +
 
@@ -363,7 +364,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:8" class="line-number">1:8</span>' +
+' <span class="line"><span data-line-number="1:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="ὁμοίως" data-part-of-speech="adverb" data-parsing="" data-lemma="ὁμοίως">Ὁμοίως</span>' +
 
@@ -397,7 +398,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:9" class="line-number">1:9</span>' +
+' <span class="line"><span data-line-number="1:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="ὁ" data-part-of-speech="article" data-parsing="nominative singular masculine" data-lemma="ὁ">Ὁ</span>' +
 
@@ -451,7 +452,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:10" class="line-number">1:10</span>' +
+' <span class="line"><span data-line-number="1:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="οὗτοι" data-part-of-speech="demonstrative pronoun" data-parsing="nominative plural masculine" data-lemma="οὗτος">Οὗτοι</span>' +
 
@@ -493,7 +494,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:11" class="line-number">1:11</span>' +
+' <span class="line"><span data-line-number="1:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="οὐαί" data-part-of-speech="particle" data-parsing="" data-lemma="οὐαί">Οὐαὶ</span>' +
 
@@ -541,7 +542,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:12" class="line-number">1:12</span>' +
+' <span class="line"><span data-line-number="1:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="οὗτοι" data-part-of-speech="demonstrative pronoun" data-parsing="nominative plural masculine" data-lemma="οὗτος">Οὗτοί</span>' +
 
@@ -591,7 +592,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:13" class="line-number">1:13</span>' +
+' <span class="line"><span data-line-number="1:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="κύματα" data-part-of-speech="noun" data-parsing="nominative plural neuter" data-lemma="κῦμα">κύματα</span>' +
 
@@ -631,7 +632,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:14" class="line-number">1:14</span>' +
+' <span class="line"><span data-line-number="1:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="προεφήτευσε(ν)" data-part-of-speech="verb" data-parsing="aorist active indicative 3rd person singular" data-lemma="προφητεύω">Προεφήτευσεν</span>' +
 
@@ -669,7 +670,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:15" class="line-number">1:15</span>' +
+' <span class="line"><span data-line-number="1:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="ποιῆσαι" data-part-of-speech="verb" data-parsing="aorist active infinitive" data-lemma="ποιέω">ποιῆσαι</span>' +
 
@@ -733,7 +734,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:16" class="line-number">1:16</span>' +
+' <span class="line"><span data-line-number="1:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="οὗτοι" data-part-of-speech="demonstrative pronoun" data-parsing="nominative plural masculine" data-lemma="οὗτος">Οὗτοί</span>' +
 
@@ -777,11 +778,11 @@ nt_jude_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="1:17" class="line-number">1:17</span>' +
+' <span class="line"><span data-line-number="1:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="ὑμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="σύ">Ὑμεῖς</span>' +
 
@@ -819,7 +820,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:18" class="line-number">1:18</span>' +
+' <span class="line"><span data-line-number="1:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
@@ -857,7 +858,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:19" class="line-number">1:19</span>' +
+' <span class="line"><span data-line-number="1:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="οὗτοι" data-part-of-speech="demonstrative pronoun" data-parsing="nominative plural masculine" data-lemma="οὗτος">Οὗτοί</span>' +
 
@@ -879,7 +880,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:20" class="line-number">1:20</span>' +
+' <span class="line"><span data-line-number="1:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="ὑμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="σύ">Ὑμεῖς</span>' +
 
@@ -911,7 +912,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:21" class="line-number">1:21</span>' +
+' <span class="line"><span data-line-number="1:21" class="line-number">21</span>' +
 
 ' <span class="word" data-form="ἑαυτούς" data-part-of-speech="reflexive pronoun" data-parsing="accusative plural masculine" data-lemma="ἑαυτοῦ">ἑαυτοὺς</span>' +
 
@@ -949,7 +950,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:22" class="line-number">1:22</span>' +
+' <span class="line"><span data-line-number="1:22" class="line-number">22</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -965,7 +966,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:23" class="line-number">1:23</span>' +
+' <span class="line"><span data-line-number="1:23" class="line-number">23</span>' +
 
 ' <span class="word" data-form="οὕς" data-part-of-speech="relative pronoun" data-parsing="accusative plural masculine" data-lemma="ὅς">οὓς</span>' +
 
@@ -1003,11 +1004,11 @@ nt_jude_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="1:24" class="line-number">1:24</span>' +
+' <span class="line"><span data-line-number="1:24" class="line-number">24</span>' +
 
 ' <span class="word" data-form="τῷ" data-part-of-speech="article" data-parsing="dative singular masculine" data-lemma="ὁ">Τῷ</span>' +
 
@@ -1043,7 +1044,7 @@ nt_jude_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:25" class="line-number">1:25</span>' +
+' <span class="line"><span data-line-number="1:25" class="line-number">25</span>' +
 
 ' <span class="word" data-form="μόνῳ" data-part-of-speech="adjective" data-parsing="dative singular masculine" data-lemma="μόνος">μόνῳ</span>' +
 
@@ -1085,6 +1086,7 @@ nt_jude_parsed_text =
 
 ' </span>' +
 
+'</p>' +
 
 
 // Insert more text above this line

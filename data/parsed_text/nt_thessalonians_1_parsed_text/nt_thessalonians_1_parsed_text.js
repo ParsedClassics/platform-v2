@@ -20,8 +20,11 @@
 nt_thessalonians_1_parsed_text =
 
 
+'<h2><span class="chapter-number">I</span></h2>' +
 
-' <span class="line"><span data-line-number="1:1" class="line-number">1:1</span>' +
+'<p>' +
+
+' <span class="line"><span data-line-number="1:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="Παῦλος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Παῦλος">Παῦλος</span>' +
 
@@ -81,13 +84,13 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="1:2" class="line-number">1:2</span>' +
+' <span class="line"><span data-line-number="1:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="εὐχαριστοῦμεν" data-part-of-speech="verb" data-parsing="present active indicative 1st person plural" data-lemma="εὐχαριστέω">Εὐχαριστοῦμεν</span>' +
 
@@ -121,7 +124,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:3" class="line-number">1:3</span>' +
+' <span class="line"><span data-line-number="1:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="ἀδιαλείπτως" data-part-of-speech="adverb" data-parsing="" data-lemma="ἀδιαλείπτως">ἀδιαλείπτως</span>' +
 
@@ -183,7 +186,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:4" class="line-number">1:4</span>' +
+' <span class="line"><span data-line-number="1:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="εἰδότες" data-part-of-speech="verb" data-parsing="perfect active participle nominative plural masculine" data-lemma="οἶδα">εἰδότες</span>,' +
 
@@ -205,7 +208,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:5" class="line-number">1:5</span>' +
+' <span class="line"><span data-line-number="1:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
@@ -273,7 +276,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:6" class="line-number">1:6</span>' +
+' <span class="line"><span data-line-number="1:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -315,7 +318,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:7" class="line-number">1:7</span>' +
+' <span class="line"><span data-line-number="1:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="ὥστε" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὥστε">ὥστε</span>' +
 
@@ -347,7 +350,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:8" class="line-number">1:8</span>' +
+' <span class="line"><span data-line-number="1:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="ἀπό" data-part-of-speech="preposition" data-parsing="" data-lemma="ἀπό">	Ἀφ’</span>' +
 
@@ -427,7 +430,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:9" class="line-number">1:9</span>' +
+' <span class="line"><span data-line-number="1:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="αὐτοί" data-part-of-speech="personal pronoun" data-parsing="nominative plural masculine" data-lemma="αὐτός">αὐτοὶ</span>' +
 
@@ -481,7 +484,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:10" class="line-number">1:10</span>' +
+' <span class="line"><span data-line-number="1:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -531,13 +534,21 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+
+'<h2><span class="chapter-number">II</span></h2>' +
+
+
+
+'<p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="2:1" class="line-number">2:1</span>' +
+' <span class="line"><span data-line-number="2:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="αὐτοί" data-part-of-speech="personal pronoun" data-parsing="nominative plural masculine" data-lemma="αὐτός">Αὐτοὶ</span>' +
 
@@ -571,7 +582,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:2" class="line-number">2:2</span>' +
+' <span class="line"><span data-line-number="2:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">ἀλλὰ</span>' +
 
@@ -623,7 +634,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:3" class="line-number">2:3</span>' +
+' <span class="line"><span data-line-number="2:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">Ἡ</span>' +
 
@@ -655,7 +666,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:4" class="line-number">2:4</span>' +
+' <span class="line"><span data-line-number="2:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">ἀλλὰ</span>' +
 
@@ -707,7 +718,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:5" class="line-number">2:5</span>' +
+' <span class="line"><span data-line-number="2:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="οὔτε" data-part-of-speech="conjunction" data-parsing="" data-lemma="οὔτε">Οὔτε</span>' +
 
@@ -743,7 +754,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:6" class="line-number">2:6</span>' +
+' <span class="line"><span data-line-number="2:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="οὔτε" data-part-of-speech="conjunction" data-parsing="" data-lemma="οὔτε">οὔτε</span>' +
 
@@ -787,7 +798,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:7" class="line-number">2:7</span>' +
+' <span class="line"><span data-line-number="2:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">ἀλλ’</span>' +
 
@@ -819,7 +830,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:8" class="line-number">2:8</span>' +
+' <span class="line"><span data-line-number="2:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="οὕτω(ς)" data-part-of-speech="adverb" data-parsing="" data-lemma="οὕτω(ς)">οὕτως</span>,' +
 
@@ -867,7 +878,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:9" class="line-number">2:9</span>' +
+' <span class="line"><span data-line-number="2:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="μνημονεύετε" data-part-of-speech="verb" data-parsing="present active indicative 2nd person plural" data-lemma="μνημονεύω">Μνημονεύετε</span>' +
 
@@ -927,7 +938,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:10" class="line-number">2:10</span>' +
+' <span class="line"><span data-line-number="2:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="ὑμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="σύ">Ὑμεῖς</span>' +
 
@@ -963,7 +974,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:11" class="line-number">2:11</span>' +
+' <span class="line"><span data-line-number="2:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="καθάπερ" data-part-of-speech="conjunction" data-parsing="" data-lemma="καθάπερ">καθάπερ</span>' +
 
@@ -997,7 +1008,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:12" class="line-number">2:12</span>' +
+' <span class="line"><span data-line-number="2:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -1039,13 +1050,13 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="2:13" class="line-number">2:13</span>' +
+' <span class="line"><span data-line-number="2:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="διά" data-part-of-speech="preposition" data-parsing="" data-lemma="διά">Διὰ</span>' +
 
@@ -1117,7 +1128,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:14" class="line-number">2:14</span>' +
+' <span class="line"><span data-line-number="2:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="ὑμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="σύ">Ὑμεῖς</span>' +
 
@@ -1189,7 +1200,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:15" class="line-number">2:15</span>' +
+' <span class="line"><span data-line-number="2:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="τῶν" data-part-of-speech="article" data-parsing="genitive plural masculine" data-lemma="ὁ">τῶν</span>' +
 
@@ -1237,7 +1248,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:16" class="line-number">2:16</span>' +
+' <span class="line"><span data-line-number="2:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="κωλυόντων" data-part-of-speech="verb" data-parsing="present active participle genitive plural masculine" data-lemma="κωλύω">κωλυόντων</span>' +
 
@@ -1287,13 +1298,13 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="2:17" class="line-number">2:17</span>' +
+' <span class="line"><span data-line-number="2:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="ἡμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="ἐγώ">Ἡμεῖς</span>' +
 
@@ -1341,7 +1352,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:18" class="line-number">2:18</span>' +
+' <span class="line"><span data-line-number="2:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">διὸ</span>' +
 
@@ -1381,7 +1392,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:19" class="line-number">2:19</span>' +
+' <span class="line"><span data-line-number="2:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="τίς" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative singular feminine" data-lemma="τίς">Τίς</span>' +
 
@@ -1431,7 +1442,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:20" class="line-number">2:20</span>' +
+' <span class="line"><span data-line-number="2:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="ὑμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="σύ">Ὑμεῖς</span>' +
 
@@ -1455,13 +1466,21 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+
+'<h2><span class="chapter-number">III</span></h2>' +
+
+
+
+'<p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="3:1" class="line-number">3:1</span>' +
+' <span class="line"><span data-line-number="3:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διὸ</span>' +
 
@@ -1483,7 +1502,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:2" class="line-number">3:2</span>' +
+' <span class="line"><span data-line-number="3:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -1547,7 +1566,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:3" class="line-number">3:3</span>' +
+' <span class="line"><span data-line-number="3:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular neuter" data-lemma="ὁ">τὸ</span>' +
 
@@ -1581,7 +1600,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:4" class="line-number">3:4</span>' +
+' <span class="line"><span data-line-number="3:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="adverb" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -1619,7 +1638,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:5" class="line-number">3:5</span>' +
+' <span class="line"><span data-line-number="3:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="διά" data-part-of-speech="preposition" data-parsing="" data-lemma="διά">Διὰ</span>' +
 
@@ -1673,7 +1692,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:6" class="line-number">3:6</span>' +
+' <span class="line"><span data-line-number="3:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="ἄρτι" data-part-of-speech="adverb" data-parsing="" data-lemma="ἄρτι">Ἄρτι</span>' +
 
@@ -1741,7 +1760,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:7" class="line-number">3:7</span>' +
+' <span class="line"><span data-line-number="3:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="διά" data-part-of-speech="preposition" data-parsing="" data-lemma="διά">διὰ</span>' +
 
@@ -1781,7 +1800,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:8" class="line-number">3:8</span>' +
+' <span class="line"><span data-line-number="3:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
@@ -1803,7 +1822,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:9" class="line-number">3:9</span>' +
+' <span class="line"><span data-line-number="3:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="τίνα" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="accusative singular feminine" data-lemma="τίς">Τίνα</span>' +
 
@@ -1851,7 +1870,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:10" class="line-number">3:10</span>' +
+' <span class="line"><span data-line-number="3:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="νυκτός" data-part-of-speech="noun" data-parsing="genitive singular feminine" data-lemma="νύξ">νυκτὸς</span>' +
 
@@ -1895,11 +1914,11 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="3:11" class="line-number">3:11</span>' +
+' <span class="line"><span data-line-number="3:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="αὐτός" data-part-of-speech="personal pronoun" data-parsing="nominative singular masculine" data-lemma="αὐτός">Αὐτὸς</span>' +
 
@@ -1943,7 +1962,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:12" class="line-number">3:12</span>' +
+' <span class="line"><span data-line-number="3:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="ὑμᾶς" data-part-of-speech="personal pronoun" data-parsing="accusative plural" data-lemma="σύ">ὑμᾶς</span>' +
 
@@ -1987,7 +2006,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:13" class="line-number">3:13</span>' +
+' <span class="line"><span data-line-number="3:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="εἰς" data-part-of-speech="preposition" data-parsing="" data-lemma="εἰς">εἰς</span>' +
 
@@ -2049,13 +2068,21 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+
+'<h2><span class="chapter-number">IV</span></h2>' +
+
+
+
+'<p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="4:1" class="line-number">4:1</span>' +
+' <span class="line"><span data-line-number="4:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="λοιπόν" data-part-of-speech="adjective" data-parsing="accusative singular neuter" data-lemma="λοιπός">Λοιπὸν</span>' +
 
@@ -2111,7 +2138,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:2" class="line-number">4:2</span>' +
+' <span class="line"><span data-line-number="4:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="οἴδατε" data-part-of-speech="verb" data-parsing="perfect active indicative 2nd person plural" data-lemma="οἶδα">Οἴδατε</span>' +
 
@@ -2137,7 +2164,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:3" class="line-number">4:3</span>' +
+' <span class="line"><span data-line-number="4:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="τοῦτο" data-part-of-speech="demonstrative pronoun" data-parsing="nominative singular neuter" data-lemma="οὗτος">Τοῦτο</span>' +
 
@@ -2171,7 +2198,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:4" class="line-number">4:4</span>' +
+' <span class="line"><span data-line-number="4:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="εἰδέναι" data-part-of-speech="verb" data-parsing="perfect active infinitive" data-lemma="οἶδα">εἰδέναι</span>' +
 
@@ -2199,7 +2226,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:5" class="line-number">4:5</span>' +
+' <span class="line"><span data-line-number="4:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="μή" data-part-of-speech="adverb" data-parsing="" data-lemma="μή">μὴ</span>' +
 
@@ -2231,7 +2258,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:6" class="line-number">4:6</span>' +
+' <span class="line"><span data-line-number="4:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular neuter" data-lemma="ὁ">τὸ</span>' +
 
@@ -2285,7 +2312,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:7" class="line-number">4:7</span>' +
+' <span class="line"><span data-line-number="4:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">Οὐ</span>' +
 
@@ -2313,7 +2340,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:8" class="line-number">4:8</span>' +
+' <span class="line"><span data-line-number="4:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="τοιγαροῦν" data-part-of-speech="conjunction" data-parsing="" data-lemma="τοιγαροῦν">Τοιγαροῦν</span>' +
 
@@ -2357,13 +2384,13 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="4:9" class="line-number">4:9</span>' +
+' <span class="line"><span data-line-number="4:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="περί" data-part-of-speech="preposition" data-parsing="" data-lemma="περί">Περὶ</span>' +
 
@@ -2405,7 +2432,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:10" class="line-number">4:10</span>' +
+' <span class="line"><span data-line-number="4:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="adverb" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -2449,7 +2476,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:11" class="line-number">4:11</span>' +
+' <span class="line"><span data-line-number="4:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -2487,7 +2514,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:12" class="line-number">4:12</span>' +
+' <span class="line"><span data-line-number="4:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
@@ -2513,13 +2540,13 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="4:13" class="line-number">4:13</span>' +
+' <span class="line"><span data-line-number="4:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">Οὐ</span>' +
 
@@ -2565,7 +2592,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:14" class="line-number">4:14</span>' +
+' <span class="line"><span data-line-number="4:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="εἰ" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἰ">Εἰ</span>' +
 
@@ -2611,7 +2638,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:15" class="line-number">4:15</span>' +
+' <span class="line"><span data-line-number="4:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="τοῦτο" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular neuter" data-lemma="οὗτος">	Τοῦτο</span>' +
 
@@ -2663,7 +2690,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:16" class="line-number">4:16</span>' +
+' <span class="line"><span data-line-number="4:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">Ὅτι</span>' +
 
@@ -2715,7 +2742,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:17" class="line-number">4:17</span>' +
+' <span class="line"><span data-line-number="4:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="ἔπειτα" data-part-of-speech="adverb" data-parsing="" data-lemma="ἔπειτα">ἔπειτα</span>' +
 
@@ -2769,7 +2796,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:18" class="line-number">4:18</span>' +
+' <span class="line"><span data-line-number="4:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="ὥστε" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὥστε">Ὥστε</span>' +
 
@@ -2789,13 +2816,23 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' + 
+
+
+
+
+'<h2><span class="chapter-number">V</span></h2>' +
+
+
+
+
+'<p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="5:1" class="line-number">5:1</span>' +
+' <span class="line"><span data-line-number="5:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="περί" data-part-of-speech="preposition" data-parsing="" data-lemma="περί">Περὶ</span>' +
 
@@ -2827,7 +2864,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:2" class="line-number">5:2</span>' +
+' <span class="line"><span data-line-number="5:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="αὐτοί" data-part-of-speech="personal pronoun" data-parsing="nominative plural masculine" data-lemma="αὐτός">Αὐτοὶ</span>' +
 
@@ -2861,7 +2898,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:3" class="line-number">5:3</span>' +
+' <span class="line"><span data-line-number="5:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="ὅταν" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅταν">ὅταν</span>' +
 
@@ -2911,7 +2948,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:4" class="line-number">5:4</span>' +
+' <span class="line"><span data-line-number="5:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="ὑμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="σύ">Ὑμεῖς</span>' +
 
@@ -2945,7 +2982,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:5" class="line-number">5:5</span>' +
+' <span class="line"><span data-line-number="5:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="πάντες" data-part-of-speech="adjective" data-parsing="nominative plural masculine" data-lemma="πᾶς">πάντες</span>' +
 
@@ -2977,7 +3014,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:6" class="line-number">5:6</span>' +
+' <span class="line"><span data-line-number="5:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="ἄρα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἄρα">ἄρα</span>' +
 
@@ -3007,7 +3044,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:7" class="line-number">5:7</span>' +
+' <span class="line"><span data-line-number="5:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="οἱ" data-part-of-speech="article" data-parsing="nominative plural masculine" data-lemma="ὁ">Οἱ</span>' +
 
@@ -3033,7 +3070,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:8" class="line-number">5:8</span>' +
+' <span class="line"><span data-line-number="5:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="ἡμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="ἐγώ">Ἡμεῖς</span>' +
 
@@ -3067,7 +3104,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:9" class="line-number">5:9</span>' +
+' <span class="line"><span data-line-number="5:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">Ὅτι</span>' +
 
@@ -3109,7 +3146,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:10" class="line-number">5:10</span>' +
+' <span class="line"><span data-line-number="5:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="τοῦ" data-part-of-speech="article" data-parsing="genitive singular masculine" data-lemma="ὁ">τοῦ</span>' +
 
@@ -3141,7 +3178,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:11" class="line-number">5:11</span>' +
+' <span class="line"><span data-line-number="5:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">	Διὸ</span>' +
 
@@ -3169,13 +3206,13 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="5:12" class="line-number">5:12</span>' +
+' <span class="line"><span data-line-number="5:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="ἐρωτῶμεν" data-part-of-speech="verb" data-parsing="present active indicative 1st person plural" data-lemma="ἐρωτάω">Ἐρωτῶμεν</span>' +
 
@@ -3215,7 +3252,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:13" class="line-number">5:13</span>' +
+' <span class="line"><span data-line-number="5:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -3249,7 +3286,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:14" class="line-number">5:14</span>' +
+' <span class="line"><span data-line-number="5:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="παρακαλοῦμεν" data-part-of-speech="verb" data-parsing="present active indicative 1st person plural" data-lemma="παρακαλέω">Παρακαλοῦμεν</span>' +
 
@@ -3287,7 +3324,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:15" class="line-number">5:15</span>' +
+' <span class="line"><span data-line-number="5:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="ὁρᾶτε" data-part-of-speech="verb" data-parsing="present active imperative 2nd person plural" data-lemma="ὁράω">Ὁρᾶτε</span>' +
 
@@ -3331,7 +3368,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:16" class="line-number">5:16</span>' +
+' <span class="line"><span data-line-number="5:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="πάντοτε" data-part-of-speech="adverb" data-parsing="" data-lemma="πάντοτε">Πάντοτε</span>' +
 
@@ -3341,7 +3378,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:17" class="line-number">5:17</span>' +
+' <span class="line"><span data-line-number="5:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="ἀδιαλείπτως" data-part-of-speech="adverb" data-parsing="" data-lemma="ἀδιαλείπτως">ἀδιαλείπτως</span>' +
 
@@ -3351,7 +3388,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:18" class="line-number">5:18</span>' +
+' <span class="line"><span data-line-number="5:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -3381,7 +3418,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:19" class="line-number">5:19</span>' +
+' <span class="line"><span data-line-number="5:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular neuter" data-lemma="ὁ">Τὸ</span>' +
 
@@ -3395,7 +3432,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:20" class="line-number">5:20</span>' +
+' <span class="line"><span data-line-number="5:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="προφητείας" data-part-of-speech="noun" data-parsing="accusative plural feminine" data-lemma="προφητεία">προφητείας</span>' +
 
@@ -3407,7 +3444,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:21" class="line-number">5:21</span>' +
+' <span class="line"><span data-line-number="5:21" class="line-number">21</span>' +
 
 ' <span class="word" data-form="πάντα" data-part-of-speech="adjective" data-parsing="accusative plural neuter" data-lemma="πᾶς">πάντα</span>' +
 
@@ -3425,7 +3462,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:22" class="line-number">5:22</span>' +
+' <span class="line"><span data-line-number="5:22" class="line-number">22</span>' +
 
 ' <span class="word" data-form="ἀπό" data-part-of-speech="preposition" data-parsing="" data-lemma="ἀπό">ἀπὸ</span>' +
 
@@ -3441,13 +3478,13 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="5:23" class="line-number">5:23</span>' +
+' <span class="line"><span data-line-number="5:23" class="line-number">23</span>' +
 
 ' <span class="word" data-form="αὐτός" data-part-of-speech="personal pronoun" data-parsing="nominative singular masculine" data-lemma="αὐτός">Αὐτὸς</span>' +
 
@@ -3513,7 +3550,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:24" class="line-number">5:24</span>' +
+' <span class="line"><span data-line-number="5:24" class="line-number">24</span>' +
 
 ' <span class="word" data-form="πιστός" data-part-of-speech="adjective" data-parsing="nominative singular masculine" data-lemma="πιστός">Πιστὸς</span>' +
 
@@ -3533,13 +3570,13 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="5:25" class="line-number">5:25</span>' +
+' <span class="line"><span data-line-number="5:25" class="line-number">25</span>' +
 
 ' <span class="word" data-form="ἀδελφοί" data-part-of-speech="noun" data-parsing="vocative plural masculine" data-lemma="ἀδελφός">Ἀδελφοί</span>,' +
 
@@ -3553,13 +3590,13 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="5:26" class="line-number">5:26</span>' +
+' <span class="line"><span data-line-number="5:26" class="line-number">26</span>' +
 
 ' <span class="word" data-form="ἀσπάσασθε" data-part-of-speech="verb" data-parsing="aorist middle imperative 2nd person plural" data-lemma="ἀσπάζομαι">Ἀσπάσασθε</span>' +
 
@@ -3579,7 +3616,7 @@ nt_thessalonians_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:27" class="line-number">5:27</span>' +
+' <span class="line"><span data-line-number="5:27" class="line-number">27</span>' +
 
 ' <span class="word" data-form="ὁρκίζω" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="ὁρκίζω">Ὁρκίζω</span>' +
 
@@ -3607,13 +3644,13 @@ nt_thessalonians_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
 
-' <span class="line"><span data-line-number="5:28" class="line-number">5:28</span>' +
+' <span class="line"><span data-line-number="5:28" class="line-number">28</span>' +
 
 ' <span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">	Ἡ</span>' +
 
@@ -3634,6 +3671,8 @@ nt_thessalonians_1_parsed_text =
 ' <span class="word" data-form="ὑμῶν" data-part-of-speech="personal pronoun" data-parsing="genitive plural" data-lemma="σύ">ὑμῶν</span>.' +
 
 ' <span class="word" data-form="ἀμήν" data-part-of-speech="particle" data-parsing="" data-lemma="ἀμήν">Ἀμήν</span>. </span>' +
+
+'</p>' +
 
 
 

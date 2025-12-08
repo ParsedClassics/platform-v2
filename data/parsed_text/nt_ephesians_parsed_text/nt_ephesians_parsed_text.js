@@ -20,8 +20,11 @@
 nt_ephesians_parsed_text =
 
 
+'<h2><span class="chapter-number">I</span></h2>' +
 
-' <span class="line"><span data-line-number="1:1" class="line-number">1:1</span>' +
+'<p>' +
+
+' <span class="line"><span data-line-number="1:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="Παῦλος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Παῦλος">Παῦλος</span>,' +
 
@@ -63,7 +66,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:2" class="line-number">1:2</span>' +
+' <span class="line"><span data-line-number="1:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="χάρις" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="χάρις">χάρις</span>' +
 
@@ -93,11 +96,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="1:3" class="line-number">1:3</span>' +
+' <span class="line"><span data-line-number="1:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="εὐλογητός" data-part-of-speech="adjective" data-parsing="nominative singular masculine" data-lemma="εὐλογητός">Εὐλογητὸς</span>' +
 
@@ -147,7 +150,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:4" class="line-number">1:4</span>' +
+' <span class="line"><span data-line-number="1:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="καθώς" data-part-of-speech="conjunction" data-parsing="" data-lemma="καθώς">καθὼς</span>' +
 
@@ -187,7 +190,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:5" class="line-number">1:5</span>' +
+' <span class="line"><span data-line-number="1:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="προορίσας" data-part-of-speech="verb" data-parsing="aorist active participle nominative singular masculine" data-lemma="προορίζω">προορίσας</span>' +
 
@@ -223,7 +226,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:6" class="line-number">1:6</span>' +
+' <span class="line"><span data-line-number="1:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="εἰς" data-part-of-speech="preposition" data-parsing="" data-lemma="εἰς">εἰς</span>' +
 
@@ -255,7 +258,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:7" class="line-number">1:7</span>' +
+' <span class="line"><span data-line-number="1:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -299,7 +302,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:8" class="line-number">1:8</span>' +
+' <span class="line"><span data-line-number="1:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="ἧς" data-part-of-speech="relative pronoun" data-parsing="genitive singular feminine" data-lemma="ὅς">ἧς</span>' +
 
@@ -323,7 +326,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:9" class="line-number">1:9</span>' +
+' <span class="line"><span data-line-number="1:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="γνωρίσας" data-part-of-speech="verb" data-parsing="aorist active participle nominative singular masculine" data-lemma="γνωρίζω">γνωρίσας</span>' +
 
@@ -359,7 +362,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:10" class="line-number">1:10</span>' +
+' <span class="line"><span data-line-number="1:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="εἰς" data-part-of-speech="preposition" data-parsing="" data-lemma="εἰς">εἰς</span>' +
 
@@ -407,7 +410,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:11" class="line-number">1:11</span>' +
+' <span class="line"><span data-line-number="1:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -451,7 +454,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:12" class="line-number">1:12</span>' +
+' <span class="line"><span data-line-number="1:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="εἰς" data-part-of-speech="preposition" data-parsing="" data-lemma="εἰς">εἰς</span>' +
 
@@ -483,7 +486,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:13" class="line-number">1:13</span>' +
+' <span class="line"><span data-line-number="1:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -539,7 +542,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:14" class="line-number">1:14</span>' +
+' <span class="line"><span data-line-number="1:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="ὅς" data-part-of-speech="relative pronoun" data-parsing="nominative singular masculine" data-lemma="ὅς">ὅς</span>' +
 
@@ -575,11 +578,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="1:15" class="line-number">1:15</span>' +
+' <span class="line"><span data-line-number="1:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="διά" data-part-of-speech="preposition" data-parsing="" data-lemma="διά">Διὰ</span>' +
 
@@ -625,7 +628,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:16" class="line-number">1:16</span>' +
+' <span class="line"><span data-line-number="1:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">οὐ</span>' +
 
@@ -655,7 +658,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:17" class="line-number">1:17</span>' +
+' <span class="line"><span data-line-number="1:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
@@ -703,7 +706,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:18" class="line-number">1:18</span>' +
+' <span class="line"><span data-line-number="1:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="πεφωτισμένους" data-part-of-speech="verb" data-parsing="perfect passive participle accusative plural masculine" data-lemma="φωτίζω">πεφωτισμένους</span>' +
 
@@ -767,7 +770,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:19" class="line-number">1:19</span>' +
+' <span class="line"><span data-line-number="1:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -813,7 +816,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:20" class="line-number">1:20</span>' +
+' <span class="line"><span data-line-number="1:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="ἥν" data-part-of-speech="relative pronoun" data-parsing="accusative singular feminine" data-lemma="ὅς">ἣν</span>' +
 
@@ -855,7 +858,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:21" class="line-number">1:21</span>' +
+' <span class="line"><span data-line-number="1:21" class="line-number">21</span>' +
 
 ' <span class="word" data-form="ὑπεράνω" data-part-of-speech="preposition" data-parsing="" data-lemma="ὑπεράνω">ὑπεράνω</span>' +
 
@@ -909,7 +912,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:22" class="line-number">1:22</span>' +
+' <span class="line"><span data-line-number="1:22" class="line-number">22</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -945,7 +948,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:23" class="line-number">1:23</span>' +
+' <span class="line"><span data-line-number="1:23" class="line-number">23</span>' +
 
 ' <span class="word" data-form="ἥτις" data-part-of-speech="relative pronoun" data-parsing="nominative singular feminine" data-lemma="ὅστις">ἥτις</span>' +
 
@@ -977,11 +980,17 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">II</span></h2>' +
+
+
+'<p>' +
 
 
 
-' <span class="line"><span data-line-number="2:1" class="line-number">2:1</span>' +
+' <span class="line"><span data-line-number="2:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -1005,7 +1014,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:2" class="line-number">2:2</span>' +
+' <span class="line"><span data-line-number="2:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -1065,7 +1074,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:3" class="line-number">2:3</span>' +
+' <span class="line"><span data-line-number="2:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -1131,7 +1140,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:4" class="line-number">2:4</span>' +
+' <span class="line"><span data-line-number="2:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="ὁ" data-part-of-speech="article" data-parsing="nominative singular masculine" data-lemma="ὁ">ὁ</span>' +
 
@@ -1167,7 +1176,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:5" class="line-number">2:5</span>' +
+' <span class="line"><span data-line-number="2:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="adverb" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -1197,7 +1206,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:6" class="line-number">2:6</span>' +
+' <span class="line"><span data-line-number="2:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -1223,7 +1232,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:7" class="line-number">2:7</span>' +
+' <span class="line"><span data-line-number="2:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
@@ -1269,7 +1278,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:8" class="line-number">2:8</span>' +
+' <span class="line"><span data-line-number="2:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="τῇ" data-part-of-speech="article" data-parsing="dative singular feminine" data-lemma="ὁ">τῇ</span>' +
 
@@ -1307,7 +1316,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:9" class="line-number">2:9</span>' +
+' <span class="line"><span data-line-number="2:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">οὐκ</span>' +
 
@@ -1327,7 +1336,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:10" class="line-number">2:10</span>' +
+' <span class="line"><span data-line-number="2:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="αὐτοῦ" data-part-of-speech="personal pronoun" data-parsing="genitive singular masculine" data-lemma="αὐτός">Αὐτοῦ</span>' +
 
@@ -1371,11 +1380,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="2:11" class="line-number">2:11</span>' +
+' <span class="line"><span data-line-number="2:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διὸ</span>' +
 
@@ -1419,7 +1428,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:12" class="line-number">2:12</span>' +
+' <span class="line"><span data-line-number="2:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
@@ -1479,7 +1488,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:13" class="line-number">2:13</span>' +
+' <span class="line"><span data-line-number="2:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="νυνί" data-part-of-speech="adverb" data-parsing="" data-lemma="νυνί">Νυνὶ</span>' +
 
@@ -1519,7 +1528,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:14" class="line-number">2:14</span>' +
+' <span class="line"><span data-line-number="2:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="αὐτός" data-part-of-speech="personal pronoun" data-parsing="nominative singular masculine" data-lemma="αὐτός">Αὐτὸς</span>' +
 
@@ -1559,7 +1568,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:15" class="line-number">2:15</span>' +
+' <span class="line"><span data-line-number="2:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="τήν" data-part-of-speech="article" data-parsing="accusative singular feminine" data-lemma="ὁ">τὴν</span>' +
 
@@ -1615,7 +1624,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:16" class="line-number">2:16</span>' +
+' <span class="line"><span data-line-number="2:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -1655,7 +1664,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:17" class="line-number">2:17</span>' +
+' <span class="line"><span data-line-number="2:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -1681,7 +1690,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:18" class="line-number">2:18</span>' +
+' <span class="line"><span data-line-number="2:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
@@ -1715,7 +1724,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:19" class="line-number">2:19</span>' +
+' <span class="line"><span data-line-number="2:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="ἄρα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἄρα">Ἄρα</span>' +
 
@@ -1751,7 +1760,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:20" class="line-number">2:20</span>' +
+' <span class="line"><span data-line-number="2:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="ἐποικοδομηθέντες" data-part-of-speech="verb" data-parsing="aorist passive participle nominative plural masculine" data-lemma="ἐποικοδομέω">ἐποικοδομηθέντες</span>' +
 
@@ -1783,7 +1792,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:21" class="line-number">2:21</span>' +
+' <span class="line"><span data-line-number="2:21" class="line-number">21</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -1811,7 +1820,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:22" class="line-number">2:22</span>' +
+' <span class="line"><span data-line-number="2:22" class="line-number">22</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -1839,11 +1848,17 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">III</span></h2>' +
+
+
+'<p>' +
 
 
 
-' <span class="line"><span data-line-number="3:1" class="line-number">3:1</span>' +
+' <span class="line"><span data-line-number="3:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="τούτου" data-part-of-speech="demonstrative pronoun" data-parsing="genitive singular neuter" data-lemma="οὗτος">Τούτου</span>' +
 
@@ -1875,7 +1890,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:2" class="line-number">3:2</span>' +
+' <span class="line"><span data-line-number="3:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="εἴγε" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἴγε">εἴγε</span>' +
 
@@ -1907,7 +1922,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:3" class="line-number">3:3</span>' +
+' <span class="line"><span data-line-number="3:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
@@ -1935,7 +1950,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:4" class="line-number">3:4</span>' +
+' <span class="line"><span data-line-number="3:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="πρός" data-part-of-speech="preposition" data-parsing="" data-lemma="πρός">πρὸς</span>' +
 
@@ -1967,7 +1982,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:5" class="line-number">3:5</span>' +
+' <span class="line"><span data-line-number="3:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="ὅ" data-part-of-speech="relative pronoun" data-parsing="nominative singular neuter" data-lemma="ὅς">ὃ</span>' +
 
@@ -2013,7 +2028,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:6" class="line-number">3:6</span>' +
+' <span class="line"><span data-line-number="3:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="εἶναι" data-part-of-speech="verb" data-parsing="present active infinitive" data-lemma="εἰμί">εἶναι</span>' +
 
@@ -2053,7 +2068,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:7" class="line-number">3:7</span>' +
+' <span class="line"><span data-line-number="3:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="οὗ" data-part-of-speech="relative pronoun" data-parsing="genitive singular neuter" data-lemma="ὅς">οὗ</span>' +
 
@@ -2097,7 +2112,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:8" class="line-number">3:8</span>' +
+' <span class="line"><span data-line-number="3:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="ἐμοί" data-part-of-speech="personal pronoun" data-parsing="dative singular" data-lemma="ἐγώ">Ἐμοὶ</span>' +
 
@@ -2139,7 +2154,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:9" class="line-number">3:9</span>' +
+' <span class="line"><span data-line-number="3:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -2191,7 +2206,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:10" class="line-number">3:10</span>' +
+' <span class="line"><span data-line-number="3:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
@@ -2235,7 +2250,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:11" class="line-number">3:11</span>' +
+' <span class="line"><span data-line-number="3:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατὰ</span>' +
 
@@ -2265,7 +2280,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:12" class="line-number">3:12</span>' +
+' <span class="line"><span data-line-number="3:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -2299,7 +2314,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:13" class="line-number">3:13</span>' +
+' <span class="line"><span data-line-number="3:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διὸ</span>' +
 
@@ -2333,11 +2348,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="3:14" class="line-number">3:14</span>' +
+' <span class="line"><span data-line-number="3:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="τούτου" data-part-of-speech="demonstrative pronoun" data-parsing="genitive singular neuter" data-lemma="οὗτος">Τούτου</span>' +
 
@@ -2371,7 +2386,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:15" class="line-number">3:15</span>' +
+' <span class="line"><span data-line-number="3:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="ἐκ" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐκ">ἐξ</span>' +
 
@@ -2397,7 +2412,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:16" class="line-number">3:16</span>' +
+' <span class="line"><span data-line-number="3:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
@@ -2441,7 +2456,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:17" class="line-number">3:17</span>' +
+' <span class="line"><span data-line-number="3:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="κατοικῆσαι" data-part-of-speech="verb" data-parsing="aorist active infinitive" data-lemma="κατοικέω">κατοικῆσαι</span>' +
 
@@ -2469,7 +2484,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:18" class="line-number">3:18</span>' +
+' <span class="line"><span data-line-number="3:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -2517,7 +2532,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:19" class="line-number">3:19</span>' +
+' <span class="line"><span data-line-number="3:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="γνῶναι" data-part-of-speech="verb" data-parsing="aorist active infinitive" data-lemma="γινώσκω">γνῶναί</span>' +
 
@@ -2557,11 +2572,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="3:20" class="line-number">3:20</span>' +
+' <span class="line"><span data-line-number="3:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="τῷ" data-part-of-speech="article" data-parsing="dative singular masculine" data-lemma="ὁ">Τῷ</span>' +
 
@@ -2605,7 +2620,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:21" class="line-number">3:21</span>' +
+' <span class="line"><span data-line-number="3:21" class="line-number">21</span>' +
 
 ' <span class="word" data-form="αὐτῷ" data-part-of-speech="personal pronoun" data-parsing="dative singular masculine" data-lemma="αὐτός">αὐτῷ</span>' +
 
@@ -2647,11 +2662,17 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">IV</span></h2>' +
+
+
+'<p>' +
 
 
 
-' <span class="line"><span data-line-number="4:1" class="line-number">4:1</span>' +
+' <span class="line"><span data-line-number="4:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="παρακαλῶ" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="παρακαλέω">Παρακαλῶ</span>' +
 
@@ -2685,7 +2706,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:2" class="line-number">4:2</span>' +
+' <span class="line"><span data-line-number="4:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="μετά" data-part-of-speech="preposition" data-parsing="" data-lemma="μετά">μετὰ</span>' +
 
@@ -2713,7 +2734,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:3" class="line-number">4:3</span>' +
+' <span class="line"><span data-line-number="4:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="σπουδάζοντες" data-part-of-speech="verb" data-parsing="present active participle nominative plural masculine" data-lemma="σπουδάζω">σπουδάζοντες</span>' +
 
@@ -2741,7 +2762,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:4" class="line-number">4:4</span>' +
+' <span class="line"><span data-line-number="4:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="ἕν" data-part-of-speech="adjective" data-parsing="nominative singular neuter" data-lemma="εἷς">Ἓν</span>' +
 
@@ -2775,7 +2796,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:5" class="line-number">4:5</span>' +
+' <span class="line"><span data-line-number="4:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="εἷς" data-part-of-speech="adjective" data-parsing="nominative singular masculine" data-lemma="εἷς">εἷς</span>' +
 
@@ -2793,7 +2814,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:6" class="line-number">4:6</span>' +
+' <span class="line"><span data-line-number="4:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="εἷς" data-part-of-speech="adjective" data-parsing="nominative singular masculine" data-lemma="εἷς">εἷς</span>' +
 
@@ -2829,7 +2850,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:7" class="line-number">4:7</span>' +
+' <span class="line"><span data-line-number="4:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="ἑνί" data-part-of-speech="adjective" data-parsing="dative singular masculine" data-lemma="εἷς">Ἑνὶ</span>' +
 
@@ -2863,7 +2884,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:8" class="line-number">4:8</span>' +
+' <span class="line"><span data-line-number="4:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διὸ</span>' +
 
@@ -2893,7 +2914,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:9" class="line-number">4:9</span>' +
+' <span class="line"><span data-line-number="4:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="nominative singular neuter" data-lemma="ὁ">Τὸ</span>' +
 
@@ -2933,7 +2954,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:10" class="line-number">4:10</span>' +
+' <span class="line"><span data-line-number="4:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="ὁ" data-part-of-speech="article" data-parsing="nominative singular masculine" data-lemma="ὁ">	Ὁ</span>' +
 
@@ -2969,7 +2990,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:11" class="line-number">4:11</span>' +
+' <span class="line"><span data-line-number="4:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -3009,7 +3030,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:12" class="line-number">4:12</span>' +
+' <span class="line"><span data-line-number="4:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="πρός" data-part-of-speech="preposition" data-parsing="" data-lemma="πρός">πρὸς</span>' +
 
@@ -3043,7 +3064,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:13" class="line-number">4:13</span>' +
+' <span class="line"><span data-line-number="4:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="μέχρι(ς)" data-part-of-speech="conjunction" data-parsing="" data-lemma="μέχρι(ς)">μέχρι</span>' +
 
@@ -3101,7 +3122,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:14" class="line-number">4:14</span>' +
+' <span class="line"><span data-line-number="4:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
@@ -3153,7 +3174,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:15" class="line-number">4:15</span>' +
+' <span class="line"><span data-line-number="4:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="ἀληθεύοντες" data-part-of-speech="verb" data-parsing="present active participle nominative plural masculine" data-lemma="ἀληθεύω">ἀληθεύοντες</span>' +
 
@@ -3189,7 +3210,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:16" class="line-number">4:16</span>' +
+' <span class="line"><span data-line-number="4:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="ἐκ" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐκ">ἐξ</span>' +
 
@@ -3255,11 +3276,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="4:17" class="line-number">4:17</span>' +
+' <span class="line"><span data-line-number="4:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="τοῦτο" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular neuter" data-lemma="οὗτος">Τοῦτο</span>' +
 
@@ -3307,7 +3328,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:18" class="line-number">4:18</span>' +
+' <span class="line"><span data-line-number="4:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="ἐσκοτισμένοι" data-part-of-speech="verb" data-parsing="perfect passive participle nominative plural masculine" data-lemma="σκοτίζω">ἐσκοτισμένοι</span>' +
 
@@ -3357,7 +3378,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:19" class="line-number">4:19</span>' +
+' <span class="line"><span data-line-number="4:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="οἵτινες" data-part-of-speech="relative pronoun" data-parsing="nominative plural masculine" data-lemma="ὅστις">οἵτινες</span>' +
 
@@ -3387,7 +3408,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:20" class="line-number">4:20</span>' +
+' <span class="line"><span data-line-number="4:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="ὑμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="σύ">Ὑμεῖς</span>' +
 
@@ -3407,7 +3428,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:21" class="line-number">4:21</span>' +
+' <span class="line"><span data-line-number="4:21" class="line-number">21</span>' +
 
 ' <span class="word" data-form="εἴγε" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἴγε">εἴγε</span>' +
 
@@ -3439,7 +3460,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:22" class="line-number">4:22</span>' +
+' <span class="line"><span data-line-number="4:22" class="line-number">22</span>' +
 
 ' <span class="word" data-form="ἀποθέσθαι" data-part-of-speech="verb" data-parsing="aorist middle infinitive" data-lemma="ἀποτίθημι">ἀποθέσθαι</span>' +
 
@@ -3477,7 +3498,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:23" class="line-number">4:23</span>' +
+' <span class="line"><span data-line-number="4:23" class="line-number">23</span>' +
 
 ' <span class="word" data-form="ἀνανεοῦσθαι" data-part-of-speech="verb" data-parsing="present passive infinitive" data-lemma="ἀνανεόω">ἀνανεοῦσθαι</span>' +
 
@@ -3497,7 +3518,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:24" class="line-number">4:24</span>' +
+' <span class="line"><span data-line-number="4:24" class="line-number">24</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -3533,11 +3554,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="4:25" class="line-number">4:25</span>' +
+' <span class="line"><span data-line-number="4:25" class="line-number">25</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διὸ</span>' +
 
@@ -3573,7 +3594,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:26" class="line-number">4:26</span>' +
+' <span class="line"><span data-line-number="4:26" class="line-number">26</span>' +
 
 ' <span class="word" data-form="ὀργίζεσθε" data-part-of-speech="verb" data-parsing="present middle imperative 2nd person plural" data-lemma="ὀργίζω">Ὀργίζεσθε</span>' +
 
@@ -3603,7 +3624,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:27" class="line-number">4:27</span>' +
+' <span class="line"><span data-line-number="4:27" class="line-number">27</span>' +
 
 ' <span class="word" data-form="μηδέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="μηδέ">μηδὲ</span>' +
 
@@ -3619,7 +3640,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:28" class="line-number">4:28</span>' +
+' <span class="line"><span data-line-number="4:28" class="line-number">28</span>' +
 
 ' <span class="word" data-form="ὁ" data-part-of-speech="article" data-parsing="nominative singular masculine" data-lemma="ὁ">Ὁ</span>' +
 
@@ -3661,7 +3682,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:29" class="line-number">4:29</span>' +
+' <span class="line"><span data-line-number="4:29" class="line-number">29</span>' +
 
 ' <span class="word" data-form="πᾶς" data-part-of-speech="adjective" data-parsing="nominative singular masculine" data-lemma="πᾶς">Πᾶς</span>' +
 
@@ -3711,7 +3732,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:30" class="line-number">4:30</span>' +
+' <span class="line"><span data-line-number="4:30" class="line-number">30</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -3747,7 +3768,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:31" class="line-number">4:31</span>' +
+' <span class="line"><span data-line-number="4:31" class="line-number">31</span>' +
 
 ' <span class="word" data-form="πᾶσα" data-part-of-speech="adjective" data-parsing="nominative singular feminine" data-lemma="πᾶς">Πᾶσα</span>' +
 
@@ -3785,7 +3806,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:32" class="line-number">4:32</span>' +
+' <span class="line"><span data-line-number="4:32" class="line-number">32</span>' +
 
 ' <span class="word" data-form="γίνεσθε" data-part-of-speech="verb" data-parsing="present middle imperative 2nd person plural" data-lemma="γίνομαι">γίνεσθε</span>' +
 
@@ -3823,11 +3844,17 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">V</span></h2>' +
+
+
+'<p>' +
 
 
 
-' <span class="line"><span data-line-number="5:1" class="line-number">5:1</span>' +
+' <span class="line"><span data-line-number="5:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="γίνεσθε" data-part-of-speech="verb" data-parsing="present middle imperative 2nd person plural" data-lemma="γίνομαι">Γίνεσθε</span>' +
 
@@ -3849,7 +3876,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:2" class="line-number">5:2</span>' +
+' <span class="line"><span data-line-number="5:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -3901,7 +3928,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:3" class="line-number">5:3</span>' +
+' <span class="line"><span data-line-number="5:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="πορνεία" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="πορνεία">Πορνεία</span>' +
 
@@ -3935,7 +3962,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:4" class="line-number">5:4</span>' +
+' <span class="line"><span data-line-number="5:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -3965,7 +3992,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:5" class="line-number">5:5</span>' +
+' <span class="line"><span data-line-number="5:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="τοῦτο" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular neuter" data-lemma="οὗτος">Τοῦτο</span>' +
 
@@ -4019,7 +4046,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:6" class="line-number">5:6</span>' +
+' <span class="line"><span data-line-number="5:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="μηδείς" data-part-of-speech="adjective" data-parsing="nominative singular masculine" data-lemma="μηδείς">Μηδεὶς</span>' +
 
@@ -4061,7 +4088,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:7" class="line-number">5:7</span>' +
+' <span class="line"><span data-line-number="5:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="μή" data-part-of-speech="adverb" data-parsing="" data-lemma="μή">Μὴ</span>' +
 
@@ -4077,7 +4104,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:8" class="line-number">5:8</span>' +
+' <span class="line"><span data-line-number="5:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="ἦτε" data-part-of-speech="verb" data-parsing="imperfect active indicative 2nd person plural" data-lemma="εἰμί">ἦτε</span>' +
 
@@ -4109,7 +4136,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:9" class="line-number">5:9</span>' +
+' <span class="line"><span data-line-number="5:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="ὁ" data-part-of-speech="article" data-parsing="nominative singular masculine" data-lemma="ὁ">ὁ</span>' +
 
@@ -4139,7 +4166,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:10" class="line-number">5:10</span>' +
+' <span class="line"><span data-line-number="5:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="δοκιμάζοντες" data-part-of-speech="verb" data-parsing="present active participle nominative plural masculine" data-lemma="δοκιμάζω">δοκιμάζοντες</span>' +
 
@@ -4157,7 +4184,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:11" class="line-number">5:11</span>' +
+' <span class="line"><span data-line-number="5:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -4189,7 +4216,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:12" class="line-number">5:12</span>' +
+' <span class="line"><span data-line-number="5:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="τά" data-part-of-speech="article" data-parsing="accusative plural neuter" data-lemma="ὁ">τὰ</span>' +
 
@@ -4215,7 +4242,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:13" class="line-number">5:13</span>' +
+' <span class="line"><span data-line-number="5:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="τά" data-part-of-speech="article" data-parsing="nominative plural neuter" data-lemma="ὁ">Τὰ</span>' +
 
@@ -4249,7 +4276,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:14" class="line-number">5:14</span>' +
+' <span class="line"><span data-line-number="5:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διὸ</span>' +
 
@@ -4285,11 +4312,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="5:15" class="line-number">5:15</span>' +
+' <span class="line"><span data-line-number="5:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="βλέπετε" data-part-of-speech="verb" data-parsing="present active imperative 2nd person plural" data-lemma="βλέπω">Βλέπετε</span>' +
 
@@ -4317,7 +4344,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:16" class="line-number">5:16</span>' +
+' <span class="line"><span data-line-number="5:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="ἐξαγοραζόμενοι" data-part-of-speech="verb" data-parsing="present middle participle nominative plural masculine" data-lemma="ἐξαγοράζω">ἐξαγοραζόμενοι</span>' +
 
@@ -4339,7 +4366,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:17" class="line-number">5:17</span>' +
+' <span class="line"><span data-line-number="5:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="διά" data-part-of-speech="preposition" data-parsing="" data-lemma="διά">Διὰ</span>' +
 
@@ -4369,7 +4396,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:18" class="line-number">5:18</span>' +
+' <span class="line"><span data-line-number="5:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -4399,7 +4426,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:19" class="line-number">5:19</span>' +
+' <span class="line"><span data-line-number="5:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="λαλοῦντες" data-part-of-speech="verb" data-parsing="present active participle nominative plural masculine" data-lemma="λαλέω">λαλοῦντες</span>' +
 
@@ -4439,7 +4466,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:20" class="line-number">5:20</span>' +
+' <span class="line"><span data-line-number="5:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="εὐχαριστοῦντες" data-part-of-speech="verb" data-parsing="present active participle nominative plural masculine" data-lemma="εὐχαριστέω">εὐχαριστοῦντες</span>' +
 
@@ -4475,7 +4502,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:21" class="line-number">5:21</span>' +
+' <span class="line"><span data-line-number="5:21" class="line-number">21</span>' +
 
 ' <span class="word" data-form="ὑποτασσόμενοι" data-part-of-speech="verb" data-parsing="present passive participle nominative plural masculine" data-lemma="ὑποτάσσω">ὑποτασσόμενοι</span>' +
 
@@ -4491,11 +4518,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="5:22" class="line-number">5:22</span>' +
+' <span class="line"><span data-line-number="5:22" class="line-number">22</span>' +
 
 ' <span class="word" data-form="αἱ" data-part-of-speech="article" data-parsing="vocative plural feminine" data-lemma="ὁ">Αἱ</span>' +
 
@@ -4519,7 +4546,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:23" class="line-number">5:23</span>' +
+' <span class="line"><span data-line-number="5:23" class="line-number">23</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
@@ -4563,7 +4590,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:24" class="line-number">5:24</span>' +
+' <span class="line"><span data-line-number="5:24" class="line-number">24</span>' +
 
 ' <span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">Ἀλλ’</span>' +
 
@@ -4601,7 +4628,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:25" class="line-number">5:25</span>' +
+' <span class="line"><span data-line-number="5:25" class="line-number">25</span>' +
 
 ' <span class="word" data-form="οἱ" data-part-of-speech="article" data-parsing="vocative plural masculine" data-lemma="ὁ">Οἱ</span>' +
 
@@ -4643,7 +4670,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:26" class="line-number">5:26</span>' +
+' <span class="line"><span data-line-number="5:26" class="line-number">26</span>' +
 
 ' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
@@ -4669,7 +4696,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:27" class="line-number">5:27</span>' +
+' <span class="line"><span data-line-number="5:27" class="line-number">27</span>' +
 
 ' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
@@ -4719,7 +4746,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:28" class="line-number">5:28</span>' +
+' <span class="line"><span data-line-number="5:28" class="line-number">28</span>' +
 
 ' <span class="word" data-form="οὕτω(ς)" data-part-of-speech="adverb" data-parsing="" data-lemma="οὕτω(ς)">Οὕτως</span>' +
 
@@ -4763,7 +4790,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:29" class="line-number">5:29</span>' +
+' <span class="line"><span data-line-number="5:29" class="line-number">29</span>' +
 
 ' <span class="word" data-form="οὐδείς" data-part-of-speech="adjective" data-parsing="nominative singular masculine" data-lemma="οὐδείς">οὐδεὶς</span>' +
 
@@ -4805,7 +4832,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:30" class="line-number">5:30</span>' +
+' <span class="line"><span data-line-number="5:30" class="line-number">30</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
@@ -4841,7 +4868,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:31" class="line-number">5:31</span>' +
+' <span class="line"><span data-line-number="5:31" class="line-number">31</span>' +
 
 ' <span class="word" data-form="ἀντί" data-part-of-speech="preposition" data-parsing="" data-lemma="ἀντί">Ἀντὶ</span>' +
 
@@ -4893,7 +4920,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:32" class="line-number">5:32</span>' +
+' <span class="line"><span data-line-number="5:32" class="line-number">32</span>' +
 
 ' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="nominative singular neuter" data-lemma="ὁ">Τὸ</span>' +
 
@@ -4927,7 +4954,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:33" class="line-number">5:33</span>' +
+' <span class="line"><span data-line-number="5:33" class="line-number">33</span>' +
 
 ' <span class="word" data-form="πλήν" data-part-of-speech="conjunction" data-parsing="" data-lemma="πλήν">Πλὴν</span>' +
 
@@ -4975,11 +5002,17 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">VI</span></h2>' +
+
+
+'<p>' +
 
 
 
-' <span class="line"><span data-line-number="6:1" class="line-number">6:1</span>' +
+' <span class="line"><span data-line-number="6:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="τά" data-part-of-speech="article" data-parsing="vocative plural neuter" data-lemma="ὁ">Τὰ</span>' +
 
@@ -5009,7 +5042,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:2" class="line-number">6:2</span>' +
+' <span class="line"><span data-line-number="6:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="τίμα" data-part-of-speech="verb" data-parsing="present active imperative 2nd person singular" data-lemma="τιμάω">Τίμα</span>' +
 
@@ -5041,7 +5074,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:3" class="line-number">6:3</span>' +
+' <span class="line"><span data-line-number="6:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
@@ -5067,7 +5100,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:4" class="line-number">6:4</span>' +
+' <span class="line"><span data-line-number="6:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -5105,11 +5138,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="6:5" class="line-number">6:5</span>' +
+' <span class="line"><span data-line-number="6:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="οἱ" data-part-of-speech="article" data-parsing="vocative plural masculine" data-lemma="ὁ">Οἱ</span>' +
 
@@ -5153,7 +5186,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:6" class="line-number">6:6</span>' +
+' <span class="line"><span data-line-number="6:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="μή" data-part-of-speech="adverb" data-parsing="" data-lemma="μή">μὴ</span>' +
 
@@ -5193,7 +5226,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:7" class="line-number">6:7</span>' +
+' <span class="line"><span data-line-number="6:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="μετά" data-part-of-speech="preposition" data-parsing="" data-lemma="μετά">μετ’</span>' +
 
@@ -5217,7 +5250,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:8" class="line-number">6:8</span>' +
+' <span class="line"><span data-line-number="6:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="εἰδότες" data-part-of-speech="verb" data-parsing="perfect active participle nominative plural masculine" data-lemma="οἶδα">εἰδότες</span>' +
 
@@ -5257,7 +5290,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:9" class="line-number">6:9</span>' +
+' <span class="line"><span data-line-number="6:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -5317,11 +5350,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="6:10" class="line-number">6:10</span>' +
+' <span class="line"><span data-line-number="6:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular neuter" data-lemma="ὁ">Τὸ</span>' +
 
@@ -5355,7 +5388,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:11" class="line-number">6:11</span>' +
+' <span class="line"><span data-line-number="6:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="ἐνδύσασθε" data-part-of-speech="verb" data-parsing="aorist middle imperative 2nd person plural" data-lemma="ἐνδύω">Ἐνδύσασθε</span>' +
 
@@ -5391,7 +5424,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:12" class="line-number">6:12</span>' +
+' <span class="line"><span data-line-number="6:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">Ὅτι</span>' +
 
@@ -5463,7 +5496,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:13" class="line-number">6:13</span>' +
+' <span class="line"><span data-line-number="6:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="διά" data-part-of-speech="preposition" data-parsing="" data-lemma="διά">Διὰ</span>' +
 
@@ -5507,7 +5540,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:14" class="line-number">6:14</span>' +
+' <span class="line"><span data-line-number="6:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="στῆτε" data-part-of-speech="verb" data-parsing="aorist active imperative 2nd person plural" data-lemma="ἵστημι">Στῆτε</span>' +
 
@@ -5541,7 +5574,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:15" class="line-number">6:15</span>' +
+' <span class="line"><span data-line-number="6:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -5567,7 +5600,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:16" class="line-number">6:16</span>' +
+' <span class="line"><span data-line-number="6:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="ἐπί" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐπί">ἐπὶ</span>' +
 
@@ -5609,7 +5642,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:17" class="line-number">6:17</span>' +
+' <span class="line"><span data-line-number="6:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -5645,7 +5678,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:18" class="line-number">6:18</span>' +
+' <span class="line"><span data-line-number="6:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="διά" data-part-of-speech="preposition" data-parsing="" data-lemma="διά">διὰ</span>' +
 
@@ -5701,7 +5734,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:19" class="line-number">6:19</span>' +
+' <span class="line"><span data-line-number="6:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -5745,7 +5778,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:20" class="line-number">6:20</span>' +
+' <span class="line"><span data-line-number="6:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="ὑπέρ" data-part-of-speech="preposition" data-parsing="" data-lemma="ὑπέρ">ὑπὲρ</span>' +
 
@@ -5777,11 +5810,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="6:21" class="line-number">6:21</span>' +
+' <span class="line"><span data-line-number="6:21" class="line-number">21</span>' +
 
 ' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">Ἵνα</span>' +
 
@@ -5831,7 +5864,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:22" class="line-number">6:22</span>' +
+' <span class="line"><span data-line-number="6:22" class="line-number">22</span>' +
 
 ' <span class="word" data-form="ὅν" data-part-of-speech="relative pronoun" data-parsing="accusative singular masculine" data-lemma="ὅς">ὃν</span>' +
 
@@ -5871,11 +5904,11 @@ nt_ephesians_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="6:23" class="line-number">6:23</span>' +
+' <span class="line"><span data-line-number="6:23" class="line-number">23</span>' +
 
 ' <span class="word" data-form="εἰρήνη" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="εἰρήνη">Εἰρήνη</span>' +
 
@@ -5909,7 +5942,7 @@ nt_ephesians_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:24" class="line-number">6:24</span>' +
+' <span class="line"><span data-line-number="6:24" class="line-number">24</span>' +
 
 ' <span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">Ἡ</span>' +
 
@@ -5941,6 +5974,7 @@ nt_ephesians_parsed_text =
 
 ' </span>' +
 
+'</p>' +
 
 
 // Insert more text above this line

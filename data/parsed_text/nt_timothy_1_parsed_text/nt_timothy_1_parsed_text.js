@@ -21,11 +21,12 @@ nt_timothy_1_parsed_text =
 
 
 
+'<h2><span class="chapter-number">I</h2>' + 
+
+'<p>' +
 
 
-
-
-' <span class="line"><span data-line-number="1:1" class="line-number">1:1</span>' +
+' <span class="line"><span data-line-number="1:1" class="line-number">01</span>' +
 
 
 
@@ -97,7 +98,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:2" class="line-number">1:2</span>' +
+' <span class="line"><span data-line-number="1:2" class="line-number">02</span>' +
 
 
 
@@ -177,7 +178,7 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -185,7 +186,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:3" class="line-number">1:3</span>' +
+' <span class="line"><span data-line-number="1:3" class="line-number">03</span>' +
 
 
 
@@ -249,7 +250,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:4" class="line-number">1:4</span>' +
+' <span class="line"><span data-line-number="1:4" class="line-number">04</span>' +
 
 
 
@@ -321,7 +322,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:5" class="line-number">1:5</span>' +
+' <span class="line"><span data-line-number="1:5" class="line-number">05</span>' +
 
 
 
@@ -393,7 +394,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:6" class="line-number">1:6</span>' +
+' <span class="line"><span data-line-number="1:6" class="line-number">06</span>' +
 
 
 
@@ -425,7 +426,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:7" class="line-number">1:7</span>' +
+' <span class="line"><span data-line-number="1:7" class="line-number">07</span>' +
 
 
 
@@ -481,7 +482,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:8" class="line-number">1:8</span>' +
+' <span class="line"><span data-line-number="1:8" class="line-number">08</span>' +
 
 
 
@@ -533,7 +534,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:9" class="line-number">1:9</span>' +
+' <span class="line"><span data-line-number="1:9" class="line-number">09</span>' +
 
 
 
@@ -625,7 +626,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:10" class="line-number">1:10</span>' +
+' <span class="line"><span data-line-number="1:10" class="line-number">10</span>' +
 
 
 
@@ -685,7 +686,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:11" class="line-number">1:11</span>' +
+' <span class="line"><span data-line-number="1:11" class="line-number">11</span>' +
 
 
 
@@ -737,7 +738,7 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -745,7 +746,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:12" class="line-number">1:12</span>' +
+' <span class="line"><span data-line-number="1:12" class="line-number">12</span>' +
 
 
 
@@ -825,7 +826,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:13" class="line-number">1:13</span>' +
+' <span class="line"><span data-line-number="1:13" class="line-number">13</span>' +
 
 
 
@@ -893,7 +894,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:14" class="line-number">1:14</span>' +
+' <span class="line"><span data-line-number="1:14" class="line-number">14</span>' +
 
 
 
@@ -961,7 +962,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:15" class="line-number">1:15</span>' +
+' <span class="line"><span data-line-number="1:15" class="line-number">15</span>' +
 
 
 
@@ -1049,7 +1050,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:16" class="line-number">1:16</span>' +
+' <span class="line"><span data-line-number="1:16" class="line-number">16</span>' +
 
 
 
@@ -1153,7 +1154,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:17" class="line-number">1:17</span>' +
+' <span class="line"><span data-line-number="1:17" class="line-number">17</span>' +
 
 
 
@@ -1237,7 +1238,7 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -1245,7 +1246,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:18" class="line-number">1:18</span>' +
+' <span class="line"><span data-line-number="1:18" class="line-number">18</span>' +
 
 
 
@@ -1333,7 +1334,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:19" class="line-number">1:19</span>' +
+' <span class="line"><span data-line-number="1:19" class="line-number">19</span>' +
 
 
 
@@ -1389,7 +1390,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:20" class="line-number">1:20</span>' +
+' <span class="line"><span data-line-number="1:20" class="line-number">20</span>' +
 
 
 
@@ -1449,7 +1450,13 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">II</h2>' + 
+
+
+'<p>' +
 
 
 
@@ -1457,7 +1464,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:1" class="line-number">2:1</span>' +
+' <span class="line"><span data-line-number="2:1" class="line-number">01</span>' +
 
 
 
@@ -1513,7 +1520,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:2" class="line-number">2:2</span>' +
+' <span class="line"><span data-line-number="2:2" class="line-number">02</span>' +
 
 
 
@@ -1597,7 +1604,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:3" class="line-number">2:3</span>' +
+' <span class="line"><span data-line-number="2:3" class="line-number">03</span>' +
 
 
 
@@ -1645,7 +1652,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:4" class="line-number">2:4</span>' +
+' <span class="line"><span data-line-number="2:4" class="line-number">04</span>' +
 
 
 
@@ -1693,7 +1700,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:5" class="line-number">2:5</span>' +
+' <span class="line"><span data-line-number="2:5" class="line-number">05</span>' +
 
 
 
@@ -1749,7 +1756,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:6" class="line-number">2:6</span>' +
+' <span class="line"><span data-line-number="2:6" class="line-number">06</span>' +
 
 
 
@@ -1797,7 +1804,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:7" class="line-number">2:7</span>' +
+' <span class="line"><span data-line-number="2:7" class="line-number">07</span>' +
 
 
 
@@ -1881,7 +1888,7 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -1889,7 +1896,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:8" class="line-number">2:8</span>' +
+' <span class="line"><span data-line-number="2:8" class="line-number">08</span>' +
 
 
 
@@ -1957,7 +1964,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:9" class="line-number">2:9</span>' +
+' <span class="line"><span data-line-number="2:9" class="line-number">09</span>' +
 
 
 
@@ -2057,7 +2064,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:10" class="line-number">2:10</span>' +
+' <span class="line"><span data-line-number="2:10" class="line-number">10</span>' +
 
 
 
@@ -2101,7 +2108,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:11" class="line-number">2:11</span>' +
+' <span class="line"><span data-line-number="2:11" class="line-number">11</span>' +
 
 
 
@@ -2137,7 +2144,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:12" class="line-number">2:12</span>' +
+' <span class="line"><span data-line-number="2:12" class="line-number">12</span>' +
 
 
 
@@ -2193,7 +2200,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:13" class="line-number">2:13</span>' +
+' <span class="line"><span data-line-number="2:13" class="line-number">13</span>' +
 
 
 
@@ -2225,7 +2232,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:14" class="line-number">2:14</span>' +
+' <span class="line"><span data-line-number="2:14" class="line-number">14</span>' +
 
 
 
@@ -2277,7 +2284,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:15" class="line-number">2:15</span>' +
+' <span class="line"><span data-line-number="2:15" class="line-number">15</span>' +
 
 
 
@@ -2345,7 +2352,14 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">III</h2>' + 
+
+
+
+'<p>' +
 
 
 
@@ -2353,7 +2367,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:1" class="line-number">3:1</span>' +
+' <span class="line"><span data-line-number="3:1" class="line-number">01</span>' +
 
 
 
@@ -2401,7 +2415,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:2" class="line-number">3:2</span>' +
+' <span class="line"><span data-line-number="3:2" class="line-number">02</span>' +
 
 
 
@@ -2465,7 +2479,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:3" class="line-number">3:3</span>' +
+' <span class="line"><span data-line-number="3:3" class="line-number">03</span>' +
 
 
 
@@ -2513,7 +2527,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:4" class="line-number">3:4</span>' +
+' <span class="line"><span data-line-number="3:4" class="line-number">04</span>' +
 
 
 
@@ -2569,7 +2583,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:5" class="line-number">3:5</span>' +
+' <span class="line"><span data-line-number="3:5" class="line-number">05</span>' +
 
 
 
@@ -2629,7 +2643,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:6" class="line-number">3:6</span>' +
+' <span class="line"><span data-line-number="3:6" class="line-number">06</span>' +
 
 
 
@@ -2677,7 +2691,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:7" class="line-number">3:7</span>' +
+' <span class="line"><span data-line-number="3:7" class="line-number">07</span>' +
 
 
 
@@ -2761,7 +2775,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:8" class="line-number">3:8</span>' +
+' <span class="line"><span data-line-number="3:8" class="line-number">08</span>' +
 
 
 
@@ -2813,7 +2827,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:9" class="line-number">3:9</span>' +
+' <span class="line"><span data-line-number="3:9" class="line-number">09</span>' +
 
 
 
@@ -2853,7 +2867,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:10" class="line-number">3:10</span>' +
+' <span class="line"><span data-line-number="3:10" class="line-number">10</span>' +
 
 
 
@@ -2897,7 +2911,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:11" class="line-number">3:11</span>' +
+' <span class="line"><span data-line-number="3:11" class="line-number">11</span>' +
 
 
 
@@ -2941,7 +2955,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:12" class="line-number">3:12</span>' +
+' <span class="line"><span data-line-number="3:12" class="line-number">12</span>' +
 
 
 
@@ -2997,7 +3011,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:13" class="line-number">3:13</span>' +
+' <span class="line"><span data-line-number="3:13" class="line-number">13</span>' +
 
 
 
@@ -3073,7 +3087,7 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -3081,7 +3095,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:14" class="line-number">3:14</span>' +
+' <span class="line"><span data-line-number="3:14" class="line-number">14</span>' +
 
 
 
@@ -3121,7 +3135,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:15" class="line-number">3:15</span>' +
+' <span class="line"><span data-line-number="3:15" class="line-number">15</span>' +
 
 
 
@@ -3213,7 +3227,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:16" class="line-number">3:16</span>' +
+' <span class="line"><span data-line-number="3:16" class="line-number">16</span>' +
 
 
 
@@ -3325,7 +3339,14 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">IV</h2>' + 
+
+
+
+'<p>' +
 
 
 
@@ -3333,7 +3354,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:1" class="line-number">4:1</span>' +
+' <span class="line"><span data-line-number="4:1" class="line-number">01</span>' +
 
 
 
@@ -3417,7 +3438,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:2" class="line-number">4:2</span>' +
+' <span class="line"><span data-line-number="4:2" class="line-number">02</span>' +
 
 
 
@@ -3453,7 +3474,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:3" class="line-number">4:3</span>' +
+' <span class="line"><span data-line-number="4:3" class="line-number">03</span>' +
 
 
 
@@ -3533,7 +3554,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:4" class="line-number">4:4</span>' +
+' <span class="line"><span data-line-number="4:4" class="line-number">04</span>' +
 
 
 
@@ -3585,7 +3606,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:5" class="line-number">4:5</span>' +
+' <span class="line"><span data-line-number="4:5" class="line-number">05</span>' +
 
 
 
@@ -3621,7 +3642,7 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -3629,7 +3650,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:6" class="line-number">4:6</span>' +
+' <span class="line"><span data-line-number="4:6" class="line-number">06</span>' +
 
 
 
@@ -3717,7 +3738,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:7" class="line-number">4:7</span>' +
+' <span class="line"><span data-line-number="4:7" class="line-number">07</span>' +
 
 
 
@@ -3773,7 +3794,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:8" class="line-number">4:8</span>' +
+' <span class="line"><span data-line-number="4:8" class="line-number">08</span>' +
 
 
 
@@ -3873,7 +3894,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:9" class="line-number">4:9</span>' +
+' <span class="line"><span data-line-number="4:9" class="line-number">09</span>' +
 
 
 
@@ -3909,7 +3930,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:10" class="line-number">4:10</span>' +
+' <span class="line"><span data-line-number="4:10" class="line-number">10</span>' +
 
 
 
@@ -3993,7 +4014,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:11" class="line-number">4:11</span>' +
+' <span class="line"><span data-line-number="4:11" class="line-number">11</span>' +
 
 
 
@@ -4017,7 +4038,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:12" class="line-number">4:12</span>' +
+' <span class="line"><span data-line-number="4:12" class="line-number">12</span>' +
 
 
 
@@ -4113,7 +4134,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:13" class="line-number">4:13</span>' +
+' <span class="line"><span data-line-number="4:13" class="line-number">13</span>' +
 
 
 
@@ -4157,7 +4178,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:14" class="line-number">4:14</span>' +
+' <span class="line"><span data-line-number="4:14" class="line-number">14</span>' +
 
 
 
@@ -4233,7 +4254,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:15" class="line-number">4:15</span>' +
+' <span class="line"><span data-line-number="4:15" class="line-number">15</span>' +
 
 
 
@@ -4293,7 +4314,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:16" class="line-number">4:16</span>' +
+' <span class="line"><span data-line-number="4:16" class="line-number">16</span>' +
 
 
 
@@ -4369,7 +4390,16 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+
+'<h2><span class="chapter-number">V</h2>' + 
+
+
+
+
+'<p>' +
 
 
 
@@ -4377,7 +4407,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:1" class="line-number">5:1</span>' +
+' <span class="line"><span data-line-number="5:1" class="line-number">01</span>' +
 
 
 
@@ -4425,7 +4455,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:2" class="line-number">5:2</span>' +
+' <span class="line"><span data-line-number="5:2" class="line-number">02</span>' +
 
 
 
@@ -4469,7 +4499,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:3" class="line-number">5:3</span>' +
+' <span class="line"><span data-line-number="5:3" class="line-number">03</span>' +
 
 
 
@@ -4497,7 +4527,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:4" class="line-number">5:4</span>' +
+' <span class="line"><span data-line-number="5:4" class="line-number">04</span>' +
 
 
 
@@ -4609,7 +4639,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:5" class="line-number">5:5</span>' +
+' <span class="line"><span data-line-number="5:5" class="line-number">05</span>' +
 
 
 
@@ -4697,7 +4727,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:6" class="line-number">5:6</span>' +
+' <span class="line"><span data-line-number="5:6" class="line-number">06</span>' +
 
 
 
@@ -4725,7 +4755,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:7" class="line-number">5:7</span>' +
+' <span class="line"><span data-line-number="5:7" class="line-number">07</span>' +
 
 
 
@@ -4757,7 +4787,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:8" class="line-number">5:8</span>' +
+' <span class="line"><span data-line-number="5:8" class="line-number">08</span>' +
 
 
 
@@ -4837,7 +4867,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:9" class="line-number">5:9</span>' +
+' <span class="line"><span data-line-number="5:9" class="line-number">09</span>' +
 
 
 
@@ -4885,7 +4915,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:10" class="line-number">5:10</span>' +
+' <span class="line"><span data-line-number="5:10" class="line-number">10</span>' +
 
 
 
@@ -4973,7 +5003,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:11" class="line-number">5:11</span>' +
+' <span class="line"><span data-line-number="5:11" class="line-number">11</span>' +
 
 
 
@@ -5025,7 +5055,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:12" class="line-number">5:12</span>' +
+' <span class="line"><span data-line-number="5:12" class="line-number">12</span>' +
 
 
 
@@ -5061,7 +5091,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:13" class="line-number">5:13</span>' +
+' <span class="line"><span data-line-number="5:13" class="line-number">13</span>' +
 
 
 
@@ -5153,7 +5183,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:14" class="line-number">5:14</span>' +
+' <span class="line"><span data-line-number="5:14" class="line-number">14</span>' +
 
 
 
@@ -5213,7 +5243,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:15" class="line-number">5:15</span>' +
+' <span class="line"><span data-line-number="5:15" class="line-number">15</span>' +
 
 
 
@@ -5249,7 +5279,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:16" class="line-number">5:16</span>' +
+' <span class="line"><span data-line-number="5:16" class="line-number">16</span>' +
 
 
 
@@ -5333,7 +5363,7 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -5341,7 +5371,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:17" class="line-number">5:17</span>' +
+' <span class="line"><span data-line-number="5:17" class="line-number">17</span>' +
 
 
 
@@ -5405,7 +5435,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:18" class="line-number">5:18</span>' +
+' <span class="line"><span data-line-number="5:18" class="line-number">18</span>' +
 
 
 
@@ -5473,7 +5503,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:19" class="line-number">5:19</span>' +
+' <span class="line"><span data-line-number="5:19" class="line-number">19</span>' +
 
 
 
@@ -5533,7 +5563,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:20" class="line-number">5:20</span>' +
+' <span class="line"><span data-line-number="5:20" class="line-number">20</span>' +
 
 
 
@@ -5585,7 +5615,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:21" class="line-number">5:21</span>' +
+' <span class="line"><span data-line-number="5:21" class="line-number">21</span>' +
 
 
 
@@ -5677,7 +5707,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:22" class="line-number">5:22</span>' +
+' <span class="line"><span data-line-number="5:22" class="line-number">22</span>' +
 
 
 
@@ -5729,7 +5759,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:23" class="line-number">5:23</span>' +
+' <span class="line"><span data-line-number="5:23" class="line-number">23</span>' +
 
 
 
@@ -5797,7 +5827,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:24" class="line-number">5:24</span>' +
+' <span class="line"><span data-line-number="5:24" class="line-number">24</span>' +
 
 
 
@@ -5857,7 +5887,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:25" class="line-number">5:25</span>' +
+' <span class="line"><span data-line-number="5:25" class="line-number">25</span>' +
 
 
 
@@ -5921,7 +5951,17 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+
+
+'<h2><span class="chapter-number">VI</h2>' + 
+
+
+
+
+'<p>' +
 
 
 
@@ -5929,7 +5969,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:1" class="line-number">6:1</span>' +
+' <span class="line"><span data-line-number="6:1" class="line-number">01</span>' +
 
 
 
@@ -6025,7 +6065,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:2" class="line-number">6:2</span>' +
+' <span class="line"><span data-line-number="6:2" class="line-number">02</span>' +
 
 
 
@@ -6137,7 +6177,7 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -6145,7 +6185,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:3" class="line-number">6:3</span>' +
+' <span class="line"><span data-line-number="6:3" class="line-number">03</span>' +
 
 
 
@@ -6229,7 +6269,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:4" class="line-number">6:4</span>' +
+' <span class="line"><span data-line-number="6:4" class="line-number">04</span>' +
 
 
 
@@ -6305,7 +6345,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:5" class="line-number">6:5</span>' +
+' <span class="line"><span data-line-number="6:5" class="line-number">05</span>' +
 
 
 
@@ -6385,7 +6425,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:6" class="line-number">6:6</span>' +
+' <span class="line"><span data-line-number="6:6" class="line-number">06</span>' +
 
 
 
@@ -6425,7 +6465,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:7" class="line-number">6:7</span>' +
+' <span class="line"><span data-line-number="6:7" class="line-number">07</span>' +
 
 
 
@@ -6481,7 +6521,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:8" class="line-number">6:8</span>' +
+' <span class="line"><span data-line-number="6:8" class="line-number">08</span>' +
 
 
 
@@ -6517,7 +6557,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:9" class="line-number">6:9</span>' +
+' <span class="line"><span data-line-number="6:9" class="line-number">09</span>' +
 
 
 
@@ -6617,7 +6657,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:10" class="line-number">6:10</span>' +
+' <span class="line"><span data-line-number="6:10" class="line-number">10</span>' +
 
 
 
@@ -6705,7 +6745,7 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -6713,7 +6753,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:11" class="line-number">6:11</span>' +
+' <span class="line"><span data-line-number="6:11" class="line-number">11</span>' +
 
 
 
@@ -6785,7 +6825,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:12" class="line-number">6:12</span>' +
+' <span class="line"><span data-line-number="6:12" class="line-number">12</span>' +
 
 
 
@@ -6877,7 +6917,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:13" class="line-number">6:13</span>' +
+' <span class="line"><span data-line-number="6:13" class="line-number">13</span>' +
 
 
 
@@ -6965,7 +7005,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:14" class="line-number">6:14</span>' +
+' <span class="line"><span data-line-number="6:14" class="line-number">14</span>' +
 
 
 
@@ -7029,7 +7069,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:15" class="line-number">6:15</span>' +
+' <span class="line"><span data-line-number="6:15" class="line-number">15</span>' +
 
 
 
@@ -7105,7 +7145,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:16" class="line-number">6:16</span>' +
+' <span class="line"><span data-line-number="6:16" class="line-number">16</span>' +
 
 
 
@@ -7193,7 +7233,7 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -7201,7 +7241,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:17" class="line-number">6:17</span>' +
+' <span class="line"><span data-line-number="6:17" class="line-number">17</span>' +
 
 
 
@@ -7317,7 +7357,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:18" class="line-number">6:18</span>' +
+' <span class="line"><span data-line-number="6:18" class="line-number">18</span>' +
 
 
 
@@ -7357,7 +7397,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:19" class="line-number">6:19</span>' +
+' <span class="line"><span data-line-number="6:19" class="line-number">19</span>' +
 
 
 
@@ -7413,7 +7453,7 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -7421,7 +7461,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:20" class="line-number">6:20</span>' +
+' <span class="line"><span data-line-number="6:20" class="line-number">20</span>' +
 
 
 
@@ -7485,7 +7525,7 @@ nt_timothy_1_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:21" class="line-number">6:21</span>' +
+' <span class="line"><span data-line-number="6:21" class="line-number">21</span>' +
 
 
 
@@ -7521,11 +7561,11 @@ nt_timothy_1_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-
+' <span class="line"><span data-line-number="6:21" class="line-number"></span>' +
 
 
 
@@ -7546,6 +7586,9 @@ nt_timothy_1_parsed_text =
 
 
 ' <span class="word" data-form="ἀμήν" data-part-of-speech="particle" data-parsing="" data-lemma="ἀμήν">Ἀμήν</span>. </span>' +
+
+
+'</p>' +
 
 
 

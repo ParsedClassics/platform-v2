@@ -19,9 +19,9 @@
 
 nt_philemon_parsed_text =
 
+'<p>' +
 
-
-'<span class="line"><span data-line-number="1:1" class="line-number">1:1</span>' +
+'<span class="line"><span data-line-number="1:1" class="line-number">01</span>' +
 
 ' <span class="word" data-form="Παῦλος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Παῦλος">Παῦλος</span>' +
 
@@ -53,7 +53,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:2" class="line-number">1:2</span>' +
+'<span class="line"><span data-line-number="1:2" class="line-number">02</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -87,7 +87,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:3" class="line-number">1:3</span>' +
+'<span class="line"><span data-line-number="1:3" class="line-number">03</span>' +
 
 ' <span class="word" data-form="χάρις" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="χάρις">χάρις</span>' +
 
@@ -115,11 +115,11 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'<p></p' +
 
 
 
-'<span class="line"><span data-line-number="1:4" class="line-number">1:4</span>' +
+'<span class="line"><span data-line-number="1:4" class="line-number">04</span>' +
 
 ' <span class="word" data-form="εὐχαριστῶ" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="εὐχαριστέω">Εὐχαριστῶ</span>' +
 
@@ -147,7 +147,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:5" class="line-number">1:5</span>' +
+'<span class="line"><span data-line-number="1:5" class="line-number">05</span>' +
 
 ' <span class="word" data-form="ἀκούων" data-part-of-speech="verb" data-parsing="present active participle nominative singular masculine" data-lemma="ἀκούω">ἀκούων</span>' +
 
@@ -187,7 +187,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:6" class="line-number">1:6</span>' +
+'<span class="line"><span data-line-number="1:6" class="line-number">06</span>' +
 
 ' <span class="word" data-form="ὅπως" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅπως">ὅπως</span>' +
 
@@ -227,7 +227,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:7" class="line-number">1:7</span>' +
+'<span class="line"><span data-line-number="1:7" class="line-number">07</span>' +
 
 ' <span class="word" data-form="χάριν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="χάρις">Χάριν</span>' +
 
@@ -269,11 +269,11 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'<p></p>' +
 
 
 
-'<span class="line"><span data-line-number="1:8" class="line-number">1:8</span>' +
+'<span class="line"><span data-line-number="1:8" class="line-number">08</span>' +
 
 ' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διό</span>' +
 
@@ -297,7 +297,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:9" class="line-number">1:9</span>' +
+'<span class="line"><span data-line-number="1:9" class="line-number">09</span>' +
 
 ' <span class="word" data-form="διά" data-part-of-speech="preposition" data-parsing="" data-lemma="διά">διὰ</span>' +
 
@@ -333,7 +333,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:10" class="line-number">1:10</span>' +
+'<span class="line"><span data-line-number="1:10" class="line-number">10</span>' +
 
 ' <span class="word" data-form="παρακαλῶ" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="παρακαλέω">Παρακαλῶ</span>' +
 
@@ -363,7 +363,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:11" class="line-number">1:11</span>' +
+'<span class="line"><span data-line-number="1:11" class="line-number">11</span>' +
 
 ' <span class="word" data-form="τόν" data-part-of-speech="article" data-parsing="accusative singular masculine" data-lemma="ὁ">τόν</span>' +
 
@@ -387,7 +387,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:12" class="line-number">1:12</span>' +
+'<span class="line"><span data-line-number="1:12" class="line-number">12</span>' +
 
 ' <span class="word" data-form="ὅν" data-part-of-speech="relative pronoun" data-parsing="accusative singular masculine" data-lemma="ὅς">ὃν</span>' +
 
@@ -413,7 +413,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:13" class="line-number">1:13</span>' +
+'<span class="line"><span data-line-number="1:13" class="line-number">13</span>' +
 
 ' <span class="word" data-form="ὅν" data-part-of-speech="relative pronoun" data-parsing="accusative singular masculine" data-lemma="ὅς">ὃν</span>' +
 
@@ -449,7 +449,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:14" class="line-number">1:14</span>' +
+'<span class="line"><span data-line-number="1:14" class="line-number">14</span>' +
 
 ' <span class="word" data-form="χωρίς" data-part-of-speech="preposition" data-parsing="" data-lemma="χωρίς">χωρὶς</span>' +
 
@@ -493,7 +493,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:15" class="line-number">1:15</span>' +
+'<span class="line"><span data-line-number="1:15" class="line-number">15</span>' +
 
 ' <span class="word" data-form="τάχα" data-part-of-speech="adverb" data-parsing="" data-lemma="τάχα">Τάχα</span>' +
 
@@ -519,7 +519,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:16" class="line-number">1:16</span>' +
+'<span class="line"><span data-line-number="1:16" class="line-number">16</span>' +
 
 ' <span class="word" data-form="οὐκέτι" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐκέτι">οὐκέτι</span>' +
 
@@ -563,7 +563,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:17" class="line-number">1:17</span>' +
+'<span class="line"><span data-line-number="1:17" class="line-number">17</span>' +
 
 ' <span class="word" data-form="εἰ" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἰ">Εἰ</span>' +
 
@@ -585,7 +585,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:18" class="line-number">1:18</span>' +
+'<span class="line"><span data-line-number="1:18" class="line-number">18</span>' +
 
 ' <span class="word" data-form="εἰ" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἰ">Εἰ</span>' +
 
@@ -609,7 +609,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:19" class="line-number">1:19</span>' +
+'<span class="line"><span data-line-number="1:19" class="line-number">19</span>' +
 
 ' <span class="word" data-form="ἐγώ" data-part-of-speech="personal pronoun" data-parsing="nominative singular" data-lemma="ἐγώ">ἐγὼ</span>' +
 
@@ -647,7 +647,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:20" class="line-number">1:20</span>' +
+'<span class="line"><span data-line-number="1:20" class="line-number">20</span>' +
 
 ' <span class="word" data-form="ναί" data-part-of-speech="particle" data-parsing="" data-lemma="ναί">Ναί</span>,' +
 
@@ -677,7 +677,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:21" class="line-number">1:21</span>' +
+'<span class="line"><span data-line-number="1:21" class="line-number">21</span>' +
 
 ' <span class="word" data-form="πεποιθώς" data-part-of-speech="verb" data-parsing="perfect active participle nominative singular masculine" data-lemma="πείθω">Πεποιθὼς</span>' +
 
@@ -707,7 +707,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:22" class="line-number">1:22</span>' +
+'<span class="line"><span data-line-number="1:22" class="line-number">22</span>' +
 
 ' <span class="word" data-form="ἅμα" data-part-of-speech="adverb" data-parsing="" data-lemma="ἅμα">Ἅμα</span>' +
 
@@ -741,11 +741,11 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'<p></p>' +
 
 
 
-'<span class="line"><span data-line-number="1:23" class="line-number">1:23</span>' +
+'<span class="line"><span data-line-number="1:23" class="line-number">23</span>' +
 
 ' <span class="word" data-form="ἀσπάζεται" data-part-of-speech="verb" data-parsing="present middle indicative 3rd person plural" data-lemma="ἀσπάζομαι">Ἀσπάζονταί</span>' +
 
@@ -767,7 +767,7 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="line"><span data-line-number="1:24" class="line-number">1:24</span>' +
+'<span class="line"><span data-line-number="1:24" class="line-number">24</span>' +
 
 ' <span class="word" data-form="Μάρκος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Μάρκος">Μάρκος</span>,' +
 
@@ -785,11 +785,11 @@ nt_philemon_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'<p></p>' +
 
 
 
-'<span class="line"><span data-line-number="1:25" class="line-number">1:25</span>' +
+'<span class="line"><span data-line-number="1:25" class="line-number">25</span>' +
 
 ' <span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">Ἡ</span>' +
 
@@ -815,6 +815,9 @@ nt_philemon_parsed_text =
 
 ' <span class="word" data-form="ἀμήν" data-part-of-speech="particle" data-parsing="" data-lemma="ἀμήν">Ἀμήν</span>. </span>' +
 
+
+
+'</p>' +
 
 
 // Insert more text above this line
