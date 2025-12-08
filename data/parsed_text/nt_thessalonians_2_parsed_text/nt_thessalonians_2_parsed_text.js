@@ -22,8 +22,15 @@ nt_thessalonians_2_parsed_text =
 
 
 
+'<h2><span class="chapter-number">I</span></h2>' +
 
-' <span class="line"><span data-line-number="1:1" class="line-number">1:1</span>' +
+
+
+'<p>' +
+
+
+
+' <span class="line"><span data-line-number="1:1" class="line-number">01</span>' +
 
 
 
@@ -99,7 +106,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:2" class="line-number">1:2</span>' +
+' <span class="line"><span data-line-number="1:2" class="line-number">02</span>' +
 
 
 
@@ -155,11 +162,11 @@ nt_thessalonians_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="1:3" class="line-number">1:3</span>' +
+' <span class="line"><span data-line-number="1:3" class="line-number">03</span>' +
 
 
 
@@ -275,7 +282,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:4" class="line-number">1:4</span>' +
+' <span class="line"><span data-line-number="1:4" class="line-number">04</span>' +
 
 
 
@@ -395,7 +402,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:5" class="line-number">1:5</span>' +
+' <span class="line"><span data-line-number="1:5" class="line-number">05</span>' +
 
 
 
@@ -479,7 +486,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:6" class="line-number">1:6</span>' +
+' <span class="line"><span data-line-number="1:6" class="line-number">06</span>' +
 
 
 
@@ -527,7 +534,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:7" class="line-number">1:7</span>' +
+' <span class="line"><span data-line-number="1:7" class="line-number">07</span>' +
 
 
 
@@ -615,7 +622,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:8" class="line-number">1:8</span>' +
+' <span class="line"><span data-line-number="1:8" class="line-number">08</span>' +
 
 
 
@@ -703,7 +710,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:9" class="line-number">1:9</span>' +
+' <span class="line"><span data-line-number="1:9" class="line-number">09</span>' +
 
 
 
@@ -779,7 +786,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:10" class="line-number">1:10</span>' +
+' <span class="line"><span data-line-number="1:10" class="line-number">10</span>' +
 
 
 
@@ -887,7 +894,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:11" class="line-number">1:11</span>' +
+' <span class="line"><span data-line-number="1:11" class="line-number">11</span>' +
 
 
 
@@ -999,7 +1006,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:12" class="line-number">1:12</span>' +
+' <span class="line"><span data-line-number="1:12" class="line-number">12</span>' +
 
 
 
@@ -1103,11 +1110,19 @@ nt_thessalonians_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
 
 
 
-' <span class="line"><span data-line-number="2:1" class="line-number">2:1</span>' +
+'<h2><span class="chapter-number">II</span></h2>' +
+
+
+
+'<p>' +
+
+
+
+' <span class="line"><span data-line-number="2:1" class="line-number">01</span>' +
 
 
 
@@ -1187,7 +1202,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:2" class="line-number">2:2</span>' +
+' <span class="line"><span data-line-number="2:2" class="line-number">02</span>' +
 
 
 
@@ -1319,7 +1334,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:3" class="line-number">2:3</span>' +
+' <span class="line"><span data-line-number="2:3" class="line-number">03</span>' +
 
 
 
@@ -1427,7 +1442,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:4" class="line-number">2:4</span>' +
+' <span class="line"><span data-line-number="2:4" class="line-number">04</span>' +
 
 
 
@@ -1539,7 +1554,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:5" class="line-number">2:5</span>' +
+' <span class="line"><span data-line-number="2:5" class="line-number">05</span>' +
 
 
 
@@ -1591,7 +1606,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:6" class="line-number">2:6</span>' +
+' <span class="line"><span data-line-number="2:6" class="line-number">06</span>' +
 
 
 
@@ -1655,7 +1670,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:7" class="line-number">2:7</span>' +
+' <span class="line"><span data-line-number="2:7" class="line-number">07</span>' +
 
 
 
@@ -1727,7 +1742,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:8" class="line-number">2:8</span>' +
+' <span class="line"><span data-line-number="2:8" class="line-number">08</span>' +
 
 
 
@@ -1823,7 +1838,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:9" class="line-number">2:9</span>' +
+' <span class="line"><span data-line-number="2:9" class="line-number">09</span>' +
 
 
 
@@ -1899,7 +1914,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:10" class="line-number">2:10</span>' +
+' <span class="line"><span data-line-number="2:10" class="line-number">10</span>' +
 
 
 
@@ -1995,7 +2010,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:11" class="line-number">2:11</span>' +
+' <span class="line"><span data-line-number="2:11" class="line-number">11</span>' +
 
 
 
@@ -2067,7 +2082,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:12" class="line-number">2:12</span>' +
+' <span class="line"><span data-line-number="2:12" class="line-number">12</span>' +
 
 
 
@@ -2127,11 +2142,11 @@ nt_thessalonians_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="2:13" class="line-number">2:13</span>' +
+' <span class="line"><span data-line-number="2:13" class="line-number">13</span>' +
 
 
 
@@ -2255,7 +2270,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:14" class="line-number">2:14</span>' +
+' <span class="line"><span data-line-number="2:14" class="line-number">14</span>' +
 
 
 
@@ -2331,7 +2346,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:15" class="line-number">2:15</span>' +
+' <span class="line"><span data-line-number="2:15" class="line-number">15</span>' +
 
 
 
@@ -2407,11 +2422,11 @@ nt_thessalonians_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="2:16" class="line-number">2:16</span>' +
+' <span class="line"><span data-line-number="2:16" class="line-number">16</span>' +
 
 
 
@@ -2523,7 +2538,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:17" class="line-number">2:17</span>' +
+' <span class="line"><span data-line-number="2:17" class="line-number">17</span>' +
 
 
 
@@ -2583,11 +2598,21 @@ nt_thessalonians_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
 
 
 
-' <span class="line"><span data-line-number="3:1" class="line-number">3:1</span>' +
+
+'<h2><span class="chapter-number">III</span></h2>' +
+
+
+
+
+'<p>' +
+
+
+
+' <span class="line"><span data-line-number="3:1" class="line-number">01</span>' +
 
 
 
@@ -2671,7 +2696,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:2" class="line-number">3:2</span>' +
+' <span class="line"><span data-line-number="3:2" class="line-number">02</span>' +
 
 
 
@@ -2739,7 +2764,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:3" class="line-number">3:3</span>' +
+' <span class="line"><span data-line-number="3:3" class="line-number">03</span>' +
 
 
 
@@ -2803,7 +2828,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:4" class="line-number">3:4</span>' +
+' <span class="line"><span data-line-number="3:4" class="line-number">04</span>' +
 
 
 
@@ -2871,7 +2896,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:5" class="line-number">3:5</span>' +
+' <span class="line"><span data-line-number="3:5" class="line-number">05</span>' +
 
 
 
@@ -2951,11 +2976,11 @@ nt_thessalonians_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="3:6" class="line-number">3:6</span>' +
+' <span class="line"><span data-line-number="3:6" class="line-number">06</span>' +
 
 
 
@@ -3075,7 +3100,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:7" class="line-number">3:7</span>' +
+' <span class="line"><span data-line-number="3:7" class="line-number">07</span>' +
 
 
 
@@ -3135,7 +3160,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:8" class="line-number">3:8</span>' +
+' <span class="line"><span data-line-number="3:8" class="line-number">08</span>' +
 
 
 
@@ -3231,7 +3256,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:9" class="line-number">3:9</span>' +
+' <span class="line"><span data-line-number="3:9" class="line-number">09</span>' +
 
 
 
@@ -3303,7 +3328,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:10" class="line-number">3:10</span>' +
+' <span class="line"><span data-line-number="3:10" class="line-number">10</span>' +
 
 
 
@@ -3383,7 +3408,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:11" class="line-number">3:11</span>' +
+' <span class="line"><span data-line-number="3:11" class="line-number">11</span>' +
 
 
 
@@ -3439,7 +3464,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:12" class="line-number">3:12</span>' +
+' <span class="line"><span data-line-number="3:12" class="line-number">12</span>' +
 
 
 
@@ -3531,7 +3556,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:13" class="line-number">3:13</span>' +
+' <span class="line"><span data-line-number="3:13" class="line-number">13</span>' +
 
 
 
@@ -3567,7 +3592,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:14" class="line-number">3:14</span>' +
+' <span class="line"><span data-line-number="3:14" class="line-number">14</span>' +
 
 
 
@@ -3655,7 +3680,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:15" class="line-number">3:15</span>' +
+' <span class="line"><span data-line-number="3:15" class="line-number">15</span>' +
 
 
 
@@ -3699,11 +3724,11 @@ nt_thessalonians_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="3:16" class="line-number">3:16</span>' +
+' <span class="line"><span data-line-number="3:16" class="line-number">16</span>' +
 
 
 
@@ -3791,11 +3816,11 @@ nt_thessalonians_2_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-' <span class="line"><span data-line-number="3:17" class="line-number">3:17</span>' +
+' <span class="line"><span data-line-number="3:17" class="line-number">17</span>' +
 
 
 
@@ -3863,7 +3888,7 @@ nt_thessalonians_2_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:18" class="line-number">3:18</span>' +
+' <span class="line"><span data-line-number="3:18" class="line-number">18</span>' +
 
 
 
@@ -3914,7 +3939,7 @@ nt_thessalonians_2_parsed_text =
 ' </span>' +
 
 
-
+'</p>' +
 
 
 

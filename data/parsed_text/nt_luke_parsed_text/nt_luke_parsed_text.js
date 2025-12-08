@@ -21,7 +21,14 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:1"  class="line-number">1:1</span>' +
+'<h2><span class="chapter-number">I</span></h2>' +
+
+
+
+'<p>' +
+
+
+' <span class="line"><span data-line-number="1:1"  class="line-number">01</span>' +
 
 
 
@@ -77,7 +84,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:2"  class="line-number">1:2</span>' +
+' <span class="line"><span data-line-number="1:2"  class="line-number">02</span>' +
 
 
 
@@ -137,7 +144,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:3"  class="line-number">1:3</span>' +
+' <span class="line"><span data-line-number="1:3"  class="line-number">03</span>' +
 
 
 
@@ -193,7 +200,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:4"  class="line-number">1:4</span>' +
+' <span class="line"><span data-line-number="1:4"  class="line-number">04</span>' +
 
 
 
@@ -237,7 +244,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -245,7 +252,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:5"  class="line-number">1:5</span>' +
+' <span class="line"><span data-line-number="1:5"  class="line-number">05</span>' +
 
 
 
@@ -373,7 +380,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:6"  class="line-number">1:6</span>' +
+' <span class="line"><span data-line-number="1:6"  class="line-number">06</span>' +
 
 
 
@@ -453,7 +460,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:7"  class="line-number">1:7</span>' +
+' <span class="line"><span data-line-number="1:7"  class="line-number">07</span>' +
 
 
 
@@ -537,7 +544,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -545,7 +552,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:8"  class="line-number">1:8</span>' +
+' <span class="line"><span data-line-number="1:8"  class="line-number">08</span>' +
 
 
 
@@ -617,7 +624,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:9"  class="line-number">1:9</span>' +
+' <span class="line"><span data-line-number="1:9"  class="line-number">09</span>' +
 
 
 
@@ -685,7 +692,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:10"  class="line-number">1:10</span>' +
+' <span class="line"><span data-line-number="1:10"  class="line-number">10</span>' +
 
 
 
@@ -749,7 +756,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:11"  class="line-number">1:11</span>' +
+' <span class="line"><span data-line-number="1:11"  class="line-number">11</span>' +
 
 
 
@@ -809,7 +816,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:12"  class="line-number">1:12</span>' +
+' <span class="line"><span data-line-number="1:12"  class="line-number">12</span>' +
 
 
 
@@ -857,7 +864,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:13"  class="line-number">1:13</span>' +
+' <span class="line"><span data-line-number="1:13"  class="line-number">13</span>' +
 
 
 
@@ -981,7 +988,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:14"  class="line-number">1:14</span>' +
+' <span class="line"><span data-line-number="1:14"  class="line-number">14</span>' +
 
 
 
@@ -1045,7 +1052,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:15"  class="line-number">1:15</span>' +
+' <span class="line"><span data-line-number="1:15"  class="line-number">15</span>' +
 
 
 
@@ -1145,7 +1152,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:16"  class="line-number">1:16</span>' +
+' <span class="line"><span data-line-number="1:16"  class="line-number">16</span>' +
 
 
 
@@ -1201,7 +1208,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:17"  class="line-number">1:17</span>' +
+' <span class="line"><span data-line-number="1:17"  class="line-number">17</span>' +
 
 
 
@@ -1309,7 +1316,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:18"  class="line-number">1:18</span>' +
+' <span class="line"><span data-line-number="1:18"  class="line-number">18</span>' +
 
 
 
@@ -1413,7 +1420,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:19"  class="line-number">1:19</span>' +
+' <span class="line"><span data-line-number="1:19"  class="line-number">19</span>' +
 
 
 
@@ -1517,7 +1524,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:20"  class="line-number">1:20</span>' +
+' <span class="line"><span data-line-number="1:20"  class="line-number">20</span>' +
 
 
 
@@ -1633,7 +1640,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:21"  class="line-number">1:21</span>' +
+' <span class="line"><span data-line-number="1:21"  class="line-number">21</span>' +
 
 
 
@@ -1709,7 +1716,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:22"  class="line-number">1:22</span>' +
+' <span class="line"><span data-line-number="1:22"  class="line-number">22</span>' +
 
 
 
@@ -1809,7 +1816,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:23"  class="line-number">1:23</span>' +
+' <span class="line"><span data-line-number="1:23"  class="line-number">23</span>' +
 
 
 
@@ -1877,7 +1884,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -1885,7 +1892,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:24"  class="line-number">1:24</span>' +
+' <span class="line"><span data-line-number="1:24"  class="line-number">24</span>' +
 
 
 
@@ -1961,7 +1968,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:25"  class="line-number">1:25</span>' +
+' <span class="line"><span data-line-number="1:25"  class="line-number">25</span>' +
 
 
 
@@ -2037,7 +2044,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -2045,7 +2052,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:26"  class="line-number">1:26</span>' +
+' <span class="line"><span data-line-number="1:26"  class="line-number">26</span>' +
 
 
 
@@ -2137,7 +2144,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:27"  class="line-number">1:27</span>' +
+' <span class="line"><span data-line-number="1:27"  class="line-number">27</span>' +
 
 
 
@@ -2213,7 +2220,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:28"  class="line-number">1:28</span>' +
+' <span class="line"><span data-line-number="1:28"  class="line-number">28</span>' +
 
 
 
@@ -2293,7 +2300,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:29"  class="line-number">1:29</span>' +
+' <span class="line"><span data-line-number="1:29"  class="line-number">29</span>' +
 
 
 
@@ -2365,7 +2372,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:30"  class="line-number">1:30</span>' +
+' <span class="line"><span data-line-number="1:30"  class="line-number">30</span>' +
 
 
 
@@ -2433,7 +2440,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:31"  class="line-number">1:31</span>' +
+' <span class="line"><span data-line-number="1:31"  class="line-number">31</span>' +
 
 
 
@@ -2501,7 +2508,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:32"  class="line-number">1:32</span>' +
+' <span class="line"><span data-line-number="1:32"  class="line-number">32</span>' +
 
 
 
@@ -2589,7 +2596,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:33"  class="line-number">1:33</span>' +
+' <span class="line"><span data-line-number="1:33"  class="line-number">33</span>' +
 
 
 
@@ -2665,7 +2672,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:34"  class="line-number">1:34</span>' +
+' <span class="line"><span data-line-number="1:34"  class="line-number">34</span>' +
 
 
 
@@ -2729,7 +2736,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:35"  class="line-number">1:35</span>' +
+' <span class="line"><span data-line-number="1:35"  class="line-number">35</span>' +
 
 
 
@@ -2837,7 +2844,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:36"  class="line-number">1:36</span>' +
+' <span class="line"><span data-line-number="1:36"  class="line-number">36</span>' +
 
 
 
@@ -2937,7 +2944,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:37"  class="line-number">1:37</span>' +
+' <span class="line"><span data-line-number="1:37"  class="line-number">37</span>' +
 
 
 
@@ -2981,7 +2988,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:38"  class="line-number">1:38</span>' +
+' <span class="line"><span data-line-number="1:38"  class="line-number">38</span>' +
 
 
 
@@ -3069,7 +3076,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -3077,7 +3084,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:39"  class="line-number">1:39</span>' +
+' <span class="line"><span data-line-number="1:39"  class="line-number">39</span>' +
 
 
 
@@ -3153,7 +3160,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:40"  class="line-number">1:40</span>' +
+' <span class="line"><span data-line-number="1:40"  class="line-number">40</span>' +
 
 
 
@@ -3205,7 +3212,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:41"  class="line-number">1:41</span>' +
+' <span class="line"><span data-line-number="1:41"  class="line-number">41</span>' +
 
 
 
@@ -3309,7 +3316,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:42"  class="line-number">1:42</span>' +
+' <span class="line"><span data-line-number="1:42"  class="line-number">42</span>' +
 
 
 
@@ -3389,7 +3396,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:43"  class="line-number">1:43</span>' +
+' <span class="line"><span data-line-number="1:43"  class="line-number">43</span>' +
 
 
 
@@ -3453,7 +3460,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:44"  class="line-number">1:44</span>' +
+' <span class="line"><span data-line-number="1:44"  class="line-number">44</span>' +
 
 
 
@@ -3553,7 +3560,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:45"  class="line-number">1:45</span>' +
+' <span class="line"><span data-line-number="1:45"  class="line-number">45</span>' +
 
 
 
@@ -3613,7 +3620,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:46"  class="line-number">1:46</span>' +
+' <span class="line"><span data-line-number="1:46"  class="line-number">46</span>' +
 
 
 
@@ -3661,7 +3668,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:47"  class="line-number">1:47</span>' +
+' <span class="line"><span data-line-number="1:47"  class="line-number">47</span>' +
 
 
 
@@ -3717,7 +3724,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:48"  class="line-number">1:48</span>' +
+' <span class="line"><span data-line-number="1:48"  class="line-number">48</span>' +
 
 
 
@@ -3801,7 +3808,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:49"  class="line-number">1:49</span>' +
+' <span class="line"><span data-line-number="1:49"  class="line-number">49</span>' +
 
 
 
@@ -3857,7 +3864,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:50"  class="line-number">1:50</span>' +
+' <span class="line"><span data-line-number="1:50"  class="line-number">50</span>' +
 
 
 
@@ -3909,7 +3916,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:51"  class="line-number">1:51</span>' +
+' <span class="line"><span data-line-number="1:51"  class="line-number">51</span>' +
 
 
 
@@ -3961,7 +3968,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:52"  class="line-number">1:52</span>' +
+' <span class="line"><span data-line-number="1:52"  class="line-number">52</span>' +
 
 
 
@@ -4001,7 +4008,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:53"  class="line-number">1:53</span>' +
+' <span class="line"><span data-line-number="1:53"  class="line-number">53</span>' +
 
 
 
@@ -4041,7 +4048,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:54"  class="line-number">1:54</span>' +
+' <span class="line"><span data-line-number="1:54"  class="line-number">54</span>' +
 
 
 
@@ -4077,7 +4084,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:55"  class="line-number">1:55</span>' +
+' <span class="line"><span data-line-number="1:55"  class="line-number">55</span>' +
 
 
 
@@ -4149,7 +4156,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -4157,7 +4164,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:56"  class="line-number">1:56</span>' +
+' <span class="line"><span data-line-number="1:56"  class="line-number">56</span>' +
 
 
 
@@ -4225,7 +4232,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -4233,7 +4240,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:57"  class="line-number">1:57</span>' +
+' <span class="line"><span data-line-number="1:57"  class="line-number">57</span>' +
 
 
 
@@ -4293,7 +4300,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:58"  class="line-number">1:58</span>' +
+' <span class="line"><span data-line-number="1:58"  class="line-number">58</span>' +
 
 
 
@@ -4381,7 +4388,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:59"  class="line-number">1:59</span>' +
+' <span class="line"><span data-line-number="1:59"  class="line-number">59</span>' +
 
 
 
@@ -4473,7 +4480,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:60"  class="line-number">1:60</span>' +
+' <span class="line"><span data-line-number="1:60"  class="line-number">60</span>' +
 
 
 
@@ -4525,7 +4532,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:61"  class="line-number">1:61</span>' +
+' <span class="line"><span data-line-number="1:61"  class="line-number">61</span>' +
 
 
 
@@ -4601,7 +4608,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:62"  class="line-number">1:62</span>' +
+' <span class="line"><span data-line-number="1:62"  class="line-number">62</span>' +
 
 
 
@@ -4657,7 +4664,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:63"  class="line-number">1:63</span>' +
+' <span class="line"><span data-line-number="1:63"  class="line-number">63</span>' +
 
 
 
@@ -4721,7 +4728,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:64"  class="line-number">1:64</span>' +
+' <span class="line"><span data-line-number="1:64"  class="line-number">64</span>' +
 
 
 
@@ -4793,7 +4800,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:65"  class="line-number">1:65</span>' +
+' <span class="line"><span data-line-number="1:65"  class="line-number">65</span>' +
 
 
 
@@ -4885,7 +4892,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:66"  class="line-number">1:66</span>' +
+' <span class="line"><span data-line-number="1:66"  class="line-number">66</span>' +
 
 
 
@@ -4985,7 +4992,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -4993,7 +5000,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:67"  class="line-number">1:67</span>' +
+' <span class="line"><span data-line-number="1:67"  class="line-number">67</span>' +
 
 
 
@@ -5049,7 +5056,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:68"  class="line-number">1:68</span>' +
+' <span class="line"><span data-line-number="1:68"  class="line-number">68</span>' +
 
 
 
@@ -5117,7 +5124,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:69"  class="line-number">1:69</span>' +
+' <span class="line"><span data-line-number="1:69"  class="line-number">69</span>' +
 
 
 
@@ -5177,7 +5184,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:70"  class="line-number">1:70</span>' +
+' <span class="line"><span data-line-number="1:70"  class="line-number">70</span>' +
 
 
 
@@ -5233,7 +5240,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:71"  class="line-number">1:71</span>' +
+' <span class="line"><span data-line-number="1:71"  class="line-number">71</span>' +
 
 
 
@@ -5289,7 +5296,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:72"  class="line-number">1:72</span>' +
+' <span class="line"><span data-line-number="1:72"  class="line-number">72</span>' +
 
 
 
@@ -5345,7 +5352,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:73"  class="line-number">1:73</span>' +
+' <span class="line"><span data-line-number="1:73"  class="line-number">73</span>' +
 
 
 
@@ -5401,7 +5408,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:74"  class="line-number">1:74</span>' +
+' <span class="line"><span data-line-number="1:74"  class="line-number">74</span>' +
 
 
 
@@ -5449,7 +5456,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:75"  class="line-number">1:75</span>' +
+' <span class="line"><span data-line-number="1:75"  class="line-number">75</span>' +
 
 
 
@@ -5509,7 +5516,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:76"  class="line-number">1:76</span>' +
+' <span class="line"><span data-line-number="1:76"  class="line-number">76</span>' +
 
 
 
@@ -5577,7 +5584,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:77"  class="line-number">1:77</span>' +
+' <span class="line"><span data-line-number="1:77"  class="line-number">77</span>' +
 
 
 
@@ -5633,7 +5640,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:78"  class="line-number">1:78</span>' +
+' <span class="line"><span data-line-number="1:78"  class="line-number">78</span>' +
 
 
 
@@ -5693,7 +5700,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:79"  class="line-number">1:79</span>' +
+' <span class="line"><span data-line-number="1:79"  class="line-number">79</span>' +
 
 
 
@@ -5769,7 +5776,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -5777,7 +5784,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="1:80"  class="line-number">1:80</span>' +
+' <span class="line"><span data-line-number="1:80"  class="line-number">80</span>' +
 
 
 
@@ -5865,7 +5872,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">II</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -5873,7 +5886,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:1"  class="line-number">2:1</span>' +
+' <span class="line"><span data-line-number="2:1"  class="line-number">01</span>' +
 
 
 
@@ -5945,7 +5958,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:2"  class="line-number">2:2</span>' +
+' <span class="line"><span data-line-number="2:2"  class="line-number">02</span>' +
 
 
 
@@ -5993,7 +6006,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:3"  class="line-number">2:3</span>' +
+' <span class="line"><span data-line-number="2:3"  class="line-number">03</span>' +
 
 
 
@@ -6041,7 +6054,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:4"  class="line-number">2:4</span>' +
+' <span class="line"><span data-line-number="2:4"  class="line-number">04</span>' +
 
 
 
@@ -6165,7 +6178,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:5"  class="line-number">2:5</span>' +
+' <span class="line"><span data-line-number="2:5"  class="line-number">05</span>' +
 
 
 
@@ -6213,7 +6226,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:6"  class="line-number">2:6</span>' +
+' <span class="line"><span data-line-number="2:6"  class="line-number">06</span>' +
 
 
 
@@ -6277,7 +6290,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:7"  class="line-number">2:7</span>' +
+' <span class="line"><span data-line-number="2:7"  class="line-number">07</span>' +
 
 
 
@@ -6385,7 +6398,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -6393,7 +6406,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:8"  class="line-number">2:8</span>' +
+' <span class="line"><span data-line-number="2:8"  class="line-number">08</span>' +
 
 
 
@@ -6477,7 +6490,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:9"  class="line-number">2:9</span>' +
+' <span class="line"><span data-line-number="2:9"  class="line-number">09</span>' +
 
 
 
@@ -6549,7 +6562,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:10"  class="line-number">2:10</span>' +
+' <span class="line"><span data-line-number="2:10"  class="line-number">10</span>' +
 
 
 
@@ -6633,7 +6646,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:11"  class="line-number">2:11</span>' +
+' <span class="line"><span data-line-number="2:11"  class="line-number">11</span>' +
 
 
 
@@ -6693,7 +6706,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:12"  class="line-number">2:12</span>' +
+' <span class="line"><span data-line-number="2:12"  class="line-number">12</span>' +
 
 
 
@@ -6749,7 +6762,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:13"  class="line-number">2:13</span>' +
+' <span class="line"><span data-line-number="2:13"  class="line-number">13</span>' +
 
 
 
@@ -6817,7 +6830,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:14"  class="line-number">2:14</span>' +
+' <span class="line"><span data-line-number="2:14"  class="line-number">14</span>' +
 
 
 
@@ -6873,7 +6886,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -6881,7 +6894,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:15"  class="line-number">2:15</span>' +
+' <span class="line"><span data-line-number="2:15"  class="line-number">15</span>' +
 
 
 
@@ -7033,7 +7046,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:16"  class="line-number">2:16</span>' +
+' <span class="line"><span data-line-number="2:16"  class="line-number">16</span>' +
 
 
 
@@ -7117,7 +7130,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:17"  class="line-number">2:17</span>' +
+' <span class="line"><span data-line-number="2:17"  class="line-number">17</span>' +
 
 
 
@@ -7181,7 +7194,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:18"  class="line-number">2:18</span>' +
+' <span class="line"><span data-line-number="2:18"  class="line-number">18</span>' +
 
 
 
@@ -7245,7 +7258,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:19"  class="line-number">2:19</span>' +
+' <span class="line"><span data-line-number="2:19"  class="line-number">19</span>' +
 
 
 
@@ -7309,7 +7322,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:20"  class="line-number">2:20</span>' +
+' <span class="line"><span data-line-number="2:20"  class="line-number">20</span>' +
 
 
 
@@ -7397,7 +7410,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -7405,7 +7418,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:21"  class="line-number">2:21</span>' +
+' <span class="line"><span data-line-number="2:21"  class="line-number">21</span>' +
 
 
 
@@ -7521,7 +7534,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -7529,7 +7542,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:22"  class="line-number">2:22</span>' +
+' <span class="line"><span data-line-number="2:22"  class="line-number">22</span>' +
 
 
 
@@ -7617,7 +7630,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:23"  class="line-number">2:23</span>' +
+' <span class="line"><span data-line-number="2:23"  class="line-number">23</span>' +
 
 
 
@@ -7685,7 +7698,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:24"  class="line-number">2:24</span>' +
+' <span class="line"><span data-line-number="2:24"  class="line-number">24</span>' +
 
 
 
@@ -7761,7 +7774,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:25"  class="line-number">2:25</span>' +
+' <span class="line"><span data-line-number="2:25"  class="line-number">25</span>' +
 
 
 
@@ -7877,7 +7890,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:26"  class="line-number">2:26</span>' +
+' <span class="line"><span data-line-number="2:26"  class="line-number">26</span>' +
 
 
 
@@ -7961,7 +7974,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:27"  class="line-number">2:27</span>' +
+' <span class="line"><span data-line-number="2:27"  class="line-number">27</span>' +
 
 
 
@@ -8081,7 +8094,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:28"  class="line-number">2:28</span>' +
+' <span class="line"><span data-line-number="2:28"  class="line-number">28</span>' +
 
 
 
@@ -8149,7 +8162,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:29"  class="line-number">2:29</span>' +
+' <span class="line"><span data-line-number="2:29"  class="line-number">29</span>' +
 
 
 
@@ -8209,7 +8222,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:30"  class="line-number">2:30</span>' +
+' <span class="line"><span data-line-number="2:30"  class="line-number">30</span>' +
 
 
 
@@ -8253,7 +8266,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:31"  class="line-number">2:31</span>' +
+' <span class="line"><span data-line-number="2:31"  class="line-number">31</span>' +
 
 
 
@@ -8293,7 +8306,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:32"  class="line-number">2:32</span>' +
+' <span class="line"><span data-line-number="2:32"  class="line-number">32</span>' +
 
 
 
@@ -8341,7 +8354,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:33"  class="line-number">2:33</span>' +
+' <span class="line"><span data-line-number="2:33"  class="line-number">33</span>' +
 
 
 
@@ -8405,7 +8418,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:34"  class="line-number">2:34</span>' +
+' <span class="line"><span data-line-number="2:34"  class="line-number">34</span>' +
 
 
 
@@ -8521,7 +8534,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:35"  class="line-number">2:35</span>' +
+' <span class="line"><span data-line-number="2:35"  class="line-number">35</span>' +
 
 
 
@@ -8593,7 +8606,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:36"  class="line-number">2:36</span>' +
+' <span class="line"><span data-line-number="2:36"  class="line-number">36</span>' +
 
 
 
@@ -8697,7 +8710,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:37"  class="line-number">2:37</span>' +
+' <span class="line"><span data-line-number="2:37"  class="line-number">37</span>' +
 
 
 
@@ -8789,7 +8802,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:38"  class="line-number">2:38</span>' +
+' <span class="line"><span data-line-number="2:38"  class="line-number">38</span>' +
 
 
 
@@ -8877,7 +8890,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:39"  class="line-number">2:39</span>' +
+' <span class="line"><span data-line-number="2:39"  class="line-number">39</span>' +
 
 
 
@@ -8961,7 +8974,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -8969,7 +8982,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:40"  class="line-number">2:40</span>' +
+' <span class="line"><span data-line-number="2:40"  class="line-number">40</span>' +
 
 
 
@@ -9041,7 +9054,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -9049,7 +9062,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:41"  class="line-number">2:41</span>' +
+' <span class="line"><span data-line-number="2:41"  class="line-number">41</span>' +
 
 
 
@@ -9113,7 +9126,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:42"  class="line-number">2:42</span>' +
+' <span class="line"><span data-line-number="2:42"  class="line-number">42</span>' +
 
 
 
@@ -9181,7 +9194,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:43"  class="line-number">2:43</span>' +
+' <span class="line"><span data-line-number="2:43"  class="line-number">43</span>' +
 
 
 
@@ -9281,7 +9294,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:44"  class="line-number">2:44</span>' +
+' <span class="line"><span data-line-number="2:44"  class="line-number">44</span>' +
 
 
 
@@ -9373,7 +9386,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:45"  class="line-number">2:45</span>' +
+' <span class="line"><span data-line-number="2:45"  class="line-number">45</span>' +
 
 
 
@@ -9421,7 +9434,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:46"  class="line-number">2:46</span>' +
+' <span class="line"><span data-line-number="2:46"  class="line-number">46</span>' +
 
 
 
@@ -9517,7 +9530,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:47"  class="line-number">2:47</span>' +
+' <span class="line"><span data-line-number="2:47"  class="line-number">47</span>' +
 
 
 
@@ -9581,7 +9594,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:48"  class="line-number">2:48</span>' +
+' <span class="line"><span data-line-number="2:48"  class="line-number">48</span>' +
 
 
 
@@ -9689,7 +9702,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:49"  class="line-number">2:49</span>' +
+' <span class="line"><span data-line-number="2:49"  class="line-number">49</span>' +
 
 
 
@@ -9777,7 +9790,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:50"  class="line-number">2:50</span>' +
+' <span class="line"><span data-line-number="2:50"  class="line-number">50</span>' +
 
 
 
@@ -9825,7 +9838,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:51"  class="line-number">2:51</span>' +
+' <span class="line"><span data-line-number="2:51"  class="line-number">51</span>' +
 
 
 
@@ -9937,7 +9950,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -9945,7 +9958,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="2:52"  class="line-number">2:52</span>' +
+' <span class="line"><span data-line-number="2:52"  class="line-number">52</span>' +
 
 
 
@@ -10005,7 +10018,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">III</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -10013,7 +10032,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:1"  class="line-number">3:1</span>' +
+' <span class="line"><span data-line-number="3:1"  class="line-number">01</span>' +
 
 
 
@@ -10161,7 +10180,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:2"  class="line-number">3:2</span>' +
+' <span class="line"><span data-line-number="3:2"  class="line-number">02</span>' +
 
 
 
@@ -10237,7 +10256,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:3"  class="line-number">3:3</span>' +
+' <span class="line"><span data-line-number="3:3"  class="line-number">03</span>' +
 
 
 
@@ -10305,7 +10324,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:4"  class="line-number">3:4</span>' +
+' <span class="line"><span data-line-number="3:4"  class="line-number">04</span>' +
 
 
 
@@ -10409,7 +10428,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:5"  class="line-number">3:5</span>' +
+' <span class="line"><span data-line-number="3:5"  class="line-number">05</span>' +
 
 
 
@@ -10505,7 +10524,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:6"  class="line-number">3:6</span>' +
+' <span class="line"><span data-line-number="3:6"  class="line-number">06</span>' +
 
 
 
@@ -10549,7 +10568,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -10557,7 +10576,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:7"  class="line-number">3:7</span>' +
+' <span class="line"><span data-line-number="3:7"  class="line-number">07</span>' +
 
 
 
@@ -10641,7 +10660,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:8"  class="line-number">3:8</span>' +
+' <span class="line"><span data-line-number="3:8"  class="line-number">08</span>' +
 
 
 
@@ -10777,7 +10796,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:9"  class="line-number">3:9</span>' +
+' <span class="line"><span data-line-number="3:9"  class="line-number">09</span>' +
 
 
 
@@ -10881,7 +10900,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:10"  class="line-number">3:10</span>' +
+' <span class="line"><span data-line-number="3:10"  class="line-number">10</span>' +
 
 
 
@@ -10929,7 +10948,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:11"  class="line-number">3:11</span>' +
+' <span class="line"><span data-line-number="3:11"  class="line-number">11</span>' +
 
 
 
@@ -11013,7 +11032,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:12"  class="line-number">3:12</span>' +
+' <span class="line"><span data-line-number="3:12"  class="line-number">12</span>' +
 
 
 
@@ -11073,7 +11092,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:13"  class="line-number">3:13</span>' +
+' <span class="line"><span data-line-number="3:13"  class="line-number">13</span>' +
 
 
 
@@ -11133,7 +11152,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:14"  class="line-number">3:14</span>' +
+' <span class="line"><span data-line-number="3:14"  class="line-number">14</span>' +
 
 
 
@@ -11237,7 +11256,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -11245,7 +11264,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:15"  class="line-number">3:15</span>' +
+' <span class="line"><span data-line-number="3:15"  class="line-number">15</span>' +
 
 
 
@@ -11333,7 +11352,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:16"  class="line-number">3:16</span>' +
+' <span class="line"><span data-line-number="3:16"  class="line-number">16</span>' +
 
 
 
@@ -11477,7 +11496,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:17"  class="line-number">3:17</span>' +
+' <span class="line"><span data-line-number="3:17"  class="line-number">17</span>' +
 
 
 
@@ -11593,7 +11612,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -11601,7 +11620,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:18"  class="line-number">3:18</span>' +
+' <span class="line"><span data-line-number="3:18"  class="line-number">18</span>' +
 
 
 
@@ -11649,7 +11668,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:19"  class="line-number">3:19</span>' +
+' <span class="line"><span data-line-number="3:19"  class="line-number">19</span>' +
 
 
 
@@ -11753,7 +11772,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:20"  class="line-number">3:20</span>' +
+' <span class="line"><span data-line-number="3:20"  class="line-number">20</span>' +
 
 
 
@@ -11813,7 +11832,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -11821,7 +11840,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:21"  class="line-number">3:21</span>' +
+' <span class="line"><span data-line-number="3:21"  class="line-number">21</span>' +
 
 
 
@@ -11897,7 +11916,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:22"  class="line-number">3:22</span>' +
+' <span class="line"><span data-line-number="3:22"  class="line-number">22</span>' +
 
 
 
@@ -12021,7 +12040,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -12029,7 +12048,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:23"  class="line-number">3:23</span>' +
+' <span class="line"><span data-line-number="3:23"  class="line-number">23</span>' +
 
 
 
@@ -12105,7 +12124,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:24"  class="line-number">3:24</span>' +
+' <span class="line"><span data-line-number="3:24"  class="line-number">24</span>' +
 
 
 
@@ -12157,7 +12176,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:25"  class="line-number">3:25</span>' +
+' <span class="line"><span data-line-number="3:25"  class="line-number">25</span>' +
 
 
 
@@ -12209,7 +12228,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:26"  class="line-number">3:26</span>' +
+' <span class="line"><span data-line-number="3:26"  class="line-number">26</span>' +
 
 
 
@@ -12261,7 +12280,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:27"  class="line-number">3:27</span>' +
+' <span class="line"><span data-line-number="3:27"  class="line-number">27</span>' +
 
 
 
@@ -12313,7 +12332,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:28"  class="line-number">3:28</span>' +
+' <span class="line"><span data-line-number="3:28"  class="line-number">28</span>' +
 
 
 
@@ -12365,7 +12384,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:29"  class="line-number">3:29</span>' +
+' <span class="line"><span data-line-number="3:29"  class="line-number">29</span>' +
 
 
 
@@ -12417,7 +12436,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:30"  class="line-number">3:30</span>' +
+' <span class="line"><span data-line-number="3:30"  class="line-number">30</span>' +
 
 
 
@@ -12469,7 +12488,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:31"  class="line-number">3:31</span>' +
+' <span class="line"><span data-line-number="3:31"  class="line-number">31</span>' +
 
 
 
@@ -12521,7 +12540,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:32"  class="line-number">3:32</span>' +
+' <span class="line"><span data-line-number="3:32"  class="line-number">32</span>' +
 
 
 
@@ -12573,7 +12592,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:33"  class="line-number">3:33</span>' +
+' <span class="line"><span data-line-number="3:33"  class="line-number">33</span>' +
 
 
 
@@ -12625,7 +12644,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:34"  class="line-number">3:34</span>' +
+' <span class="line"><span data-line-number="3:34"  class="line-number">34</span>' +
 
 
 
@@ -12677,7 +12696,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:35"  class="line-number">3:35</span>' +
+' <span class="line"><span data-line-number="3:35"  class="line-number">35</span>' +
 
 
 
@@ -12729,7 +12748,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:36"  class="line-number">3:36</span>' +
+' <span class="line"><span data-line-number="3:36"  class="line-number">36</span>' +
 
 
 
@@ -12781,7 +12800,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:37"  class="line-number">3:37</span>' +
+' <span class="line"><span data-line-number="3:37"  class="line-number">37</span>' +
 
 
 
@@ -12833,7 +12852,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="3:38"  class="line-number">3:38</span>' +
+' <span class="line"><span data-line-number="3:38"  class="line-number">38</span>' +
 
 
 
@@ -12877,7 +12896,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">IV</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -12885,7 +12910,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:1"  class="line-number">4:1</span>' +
+' <span class="line"><span data-line-number="4:1"  class="line-number">01</span>' +
 
 
 
@@ -12965,7 +12990,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:2"  class="line-number">4:2</span>' +
+' <span class="line"><span data-line-number="4:2"  class="line-number">02</span>' +
 
 
 
@@ -13053,7 +13078,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:3"  class="line-number">4:3</span>' +
+' <span class="line"><span data-line-number="4:3"  class="line-number">03</span>' +
 
 
 
@@ -13133,7 +13158,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:4"  class="line-number">4:4</span>' +
+' <span class="line"><span data-line-number="4:4"  class="line-number">04</span>' +
 
 
 
@@ -13221,7 +13246,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:5"  class="line-number">4:5</span>' +
+' <span class="line"><span data-line-number="4:5"  class="line-number">05</span>' +
 
 
 
@@ -13305,7 +13330,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:6"  class="line-number">4:6</span>' +
+' <span class="line"><span data-line-number="4:6"  class="line-number">06</span>' +
 
 
 
@@ -13413,7 +13438,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:7"  class="line-number">4:7</span>' +
+' <span class="line"><span data-line-number="4:7"  class="line-number">07</span>' +
 
 
 
@@ -13461,7 +13486,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:8"  class="line-number">4:8</span>' +
+' <span class="line"><span data-line-number="4:8"  class="line-number">08</span>' +
 
 
 
@@ -13553,7 +13578,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:9"  class="line-number">4:9</span>' +
+' <span class="line"><span data-line-number="4:9"  class="line-number">09</span>' +
 
 
 
@@ -13665,7 +13690,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:10"  class="line-number">4:10</span>' +
+' <span class="line"><span data-line-number="4:10"  class="line-number">10</span>' +
 
 
 
@@ -13725,7 +13750,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:11"  class="line-number">4:11</span>' +
+' <span class="line"><span data-line-number="4:11"  class="line-number">11</span>' +
 
 
 
@@ -13785,7 +13810,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:12"  class="line-number">4:12</span>' +
+' <span class="line"><span data-line-number="4:12"  class="line-number">12</span>' +
 
 
 
@@ -13853,7 +13878,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:13"  class="line-number">4:13</span>' +
+' <span class="line"><span data-line-number="4:13"  class="line-number">13</span>' +
 
 
 
@@ -13909,7 +13934,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -13917,7 +13942,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:14"  class="line-number">4:14</span>' +
+' <span class="line"><span data-line-number="4:14"  class="line-number">14</span>' +
 
 
 
@@ -14013,7 +14038,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:15"  class="line-number">4:15</span>' +
+' <span class="line"><span data-line-number="4:15"  class="line-number">15</span>' +
 
 
 
@@ -14065,7 +14090,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -14073,7 +14098,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:16"  class="line-number">4:16</span>' +
+' <span class="line"><span data-line-number="4:16"  class="line-number">16</span>' +
 
 
 
@@ -14185,7 +14210,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:17"  class="line-number">4:17</span>' +
+' <span class="line"><span data-line-number="4:17"  class="line-number">17</span>' +
 
 
 
@@ -14265,7 +14290,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:18"  class="line-number">4:18</span>' +
+' <span class="line"><span data-line-number="4:18"  class="line-number">18</span>' +
 
 
 
@@ -14385,7 +14410,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:19"  class="line-number">4:19</span>' +
+' <span class="line"><span data-line-number="4:19"  class="line-number">19</span>' +
 
 
 
@@ -14413,7 +14438,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:20"  class="line-number">4:20</span>' +
+' <span class="line"><span data-line-number="4:20"  class="line-number">20</span>' +
 
 
 
@@ -14497,7 +14522,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:21"  class="line-number">4:21</span>' +
+' <span class="line"><span data-line-number="4:21"  class="line-number">21</span>' +
 
 
 
@@ -14569,7 +14594,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:22"  class="line-number">4:22</span>' +
+' <span class="line"><span data-line-number="4:22"  class="line-number">22</span>' +
 
 
 
@@ -14685,7 +14710,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:23"  class="line-number">4:23</span>' +
+' <span class="line"><span data-line-number="4:23"  class="line-number">23</span>' +
 
 
 
@@ -14801,7 +14826,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:24"  class="line-number">4:24</span>' +
+' <span class="line"><span data-line-number="4:24"  class="line-number">24</span>' +
 
 
 
@@ -14869,7 +14894,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:25"  class="line-number">4:25</span>' +
+' <span class="line"><span data-line-number="4:25"  class="line-number">25</span>' +
 
 
 
@@ -15013,7 +15038,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:26"  class="line-number">4:26</span>' +
+' <span class="line"><span data-line-number="4:26"  class="line-number">26</span>' +
 
 
 
@@ -15085,7 +15110,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:27"  class="line-number">4:27</span>' +
+' <span class="line"><span data-line-number="4:27"  class="line-number">27</span>' +
 
 
 
@@ -15177,7 +15202,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:28"  class="line-number">4:28</span>' +
+' <span class="line"><span data-line-number="4:28"  class="line-number">28</span>' +
 
 
 
@@ -15225,7 +15250,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:29"  class="line-number">4:29</span>' +
+' <span class="line"><span data-line-number="4:29"  class="line-number">29</span>' +
 
 
 
@@ -15333,7 +15358,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:30"  class="line-number">4:30</span>' +
+' <span class="line"><span data-line-number="4:30"  class="line-number">30</span>' +
 
 
 
@@ -15373,7 +15398,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -15381,7 +15406,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:31"  class="line-number">4:31</span>' +
+' <span class="line"><span data-line-number="4:31"  class="line-number">31</span>' +
 
 
 
@@ -15449,7 +15474,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:32"  class="line-number">4:32</span>' +
+' <span class="line"><span data-line-number="4:32"  class="line-number">32</span>' +
 
 
 
@@ -15513,7 +15538,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:33"  class="line-number">4:33</span>' +
+' <span class="line"><span data-line-number="4:33"  class="line-number">33</span>' +
 
 
 
@@ -15581,7 +15606,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:34"  class="line-number">4:34</span>' +
+' <span class="line"><span data-line-number="4:34"  class="line-number">34</span>' +
 
 
 
@@ -15669,7 +15694,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:35"  class="line-number">4:35</span>' +
+' <span class="line"><span data-line-number="4:35"  class="line-number">35</span>' +
 
 
 
@@ -15777,7 +15802,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:36"  class="line-number">4:36</span>' +
+' <span class="line"><span data-line-number="4:36"  class="line-number">36</span>' +
 
 
 
@@ -15889,7 +15914,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:37"  class="line-number">4:37</span>' +
+' <span class="line"><span data-line-number="4:37"  class="line-number">37</span>' +
 
 
 
@@ -15941,7 +15966,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -15949,7 +15974,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:38"  class="line-number">4:38</span>' +
+' <span class="line"><span data-line-number="4:38"  class="line-number">38</span>' +
 
 
 
@@ -16053,7 +16078,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:39"  class="line-number">4:39</span>' +
+' <span class="line"><span data-line-number="4:39"  class="line-number">39</span>' +
 
 
 
@@ -16125,7 +16150,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -16133,7 +16158,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:40"  class="line-number">4:40</span>' +
+' <span class="line"><span data-line-number="4:40"  class="line-number">40</span>' +
 
 
 
@@ -16241,7 +16266,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:41"  class="line-number">4:41</span>' +
+' <span class="line"><span data-line-number="4:41"  class="line-number">41</span>' +
 
 
 
@@ -16373,7 +16398,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -16381,7 +16406,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:42"  class="line-number">4:42</span>' +
+' <span class="line"><span data-line-number="4:42"  class="line-number">42</span>' +
 
 
 
@@ -16493,7 +16518,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:43"  class="line-number">4:43</span>' +
+' <span class="line"><span data-line-number="4:43"  class="line-number">43</span>' +
 
 
 
@@ -16589,7 +16614,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -16597,7 +16622,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="4:44"  class="line-number">4:44</span>' +
+' <span class="line"><span data-line-number="4:44"  class="line-number">44</span>' +
 
 
 
@@ -16641,7 +16666,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">V</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -16649,7 +16680,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:1"  class="line-number">5:1</span>' +
+' <span class="line"><span data-line-number="5:1"  class="line-number">01</span>' +
 
 
 
@@ -16749,7 +16780,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:2"  class="line-number">5:2</span>' +
+' <span class="line"><span data-line-number="5:2"  class="line-number">02</span>' +
 
 
 
@@ -16829,7 +16860,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:3"  class="line-number">5:3</span>' +
+' <span class="line"><span data-line-number="5:3"  class="line-number">03</span>' +
 
 
 
@@ -16941,7 +16972,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:4"  class="line-number">5:4</span>' +
+' <span class="line"><span data-line-number="5:4"  class="line-number">04</span>' +
 
 
 
@@ -17029,7 +17060,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:5"  class="line-number">5:5</span>' +
+' <span class="line"><span data-line-number="5:5"  class="line-number">05</span>' +
 
 
 
@@ -17129,7 +17160,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:6"  class="line-number">5:6</span>' +
+' <span class="line"><span data-line-number="5:6"  class="line-number">06</span>' +
 
 
 
@@ -17189,7 +17220,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:7"  class="line-number">5:7</span>' +
+' <span class="line"><span data-line-number="5:7"  class="line-number">07</span>' +
 
 
 
@@ -17293,7 +17324,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:8"  class="line-number">5:8</span>' +
+' <span class="line"><span data-line-number="5:8"  class="line-number">08</span>' +
 
 
 
@@ -17373,7 +17404,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:9"  class="line-number">5:9</span>' +
+' <span class="line"><span data-line-number="5:9"  class="line-number">09</span>' +
 
 
 
@@ -17449,7 +17480,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:10"  class="line-number">5:10</span>' +
+' <span class="line"><span data-line-number="5:10"  class="line-number">10</span>' +
 
 
 
@@ -17573,7 +17604,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:11"  class="line-number">5:11</span>' +
+' <span class="line"><span data-line-number="5:11"  class="line-number">11</span>' +
 
 
 
@@ -17629,7 +17660,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -17637,7 +17668,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:12"  class="line-number">5:12</span>' +
+' <span class="line"><span data-line-number="5:12"  class="line-number">12</span>' +
 
 
 
@@ -17773,7 +17804,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:13"  class="line-number">5:13</span>' +
+' <span class="line"><span data-line-number="5:13"  class="line-number">13</span>' +
 
 
 
@@ -17849,7 +17880,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:14"  class="line-number">5:14</span>' +
+' <span class="line"><span data-line-number="5:14"  class="line-number">14</span>' +
 
 
 
@@ -17957,7 +17988,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:15"  class="line-number">5:15</span>' +
+' <span class="line"><span data-line-number="5:15"  class="line-number">15</span>' +
 
 
 
@@ -18049,7 +18080,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:16"  class="line-number">5:16</span>' +
+' <span class="line"><span data-line-number="5:16"  class="line-number">16</span>' +
 
 
 
@@ -18097,7 +18128,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -18105,7 +18136,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:17"  class="line-number">5:17</span>' +
+' <span class="line"><span data-line-number="5:17"  class="line-number">17</span>' +
 
 
 
@@ -18261,7 +18292,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:18"  class="line-number">5:18</span>' +
+' <span class="line"><span data-line-number="5:18"  class="line-number">18</span>' +
 
 
 
@@ -18345,7 +18376,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:19"  class="line-number">5:19</span>' +
+' <span class="line"><span data-line-number="5:19"  class="line-number">19</span>' +
 
 
 
@@ -18465,7 +18496,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:20"  class="line-number">5:20</span>' +
+' <span class="line"><span data-line-number="5:20"  class="line-number">20</span>' +
 
 
 
@@ -18529,7 +18560,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:21"  class="line-number">5:21</span>' +
+' <span class="line"><span data-line-number="5:21"  class="line-number">21</span>' +
 
 
 
@@ -18637,7 +18668,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:22"  class="line-number">5:22</span>' +
+' <span class="line"><span data-line-number="5:22"  class="line-number">22</span>' +
 
 
 
@@ -18717,7 +18748,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:23"  class="line-number">5:23</span>' +
+' <span class="line"><span data-line-number="5:23"  class="line-number">23</span>' +
 
 
 
@@ -18785,7 +18816,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:24"  class="line-number">5:24</span>' +
+' <span class="line"><span data-line-number="5:24"  class="line-number">24</span>' +
 
 
 
@@ -18921,7 +18952,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:25"  class="line-number">5:25</span>' +
+' <span class="line"><span data-line-number="5:25"  class="line-number">25</span>' +
 
 
 
@@ -19001,7 +19032,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:26"  class="line-number">5:26</span>' +
+' <span class="line"><span data-line-number="5:26"  class="line-number">26</span>' +
 
 
 
@@ -19077,7 +19108,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -19085,7 +19116,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:27"  class="line-number">5:27</span>' +
+' <span class="line"><span data-line-number="5:27"  class="line-number">27</span>' +
 
 
 
@@ -19169,7 +19200,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:28"  class="line-number">5:28</span>' +
+' <span class="line"><span data-line-number="5:28"  class="line-number">28</span>' +
 
 
 
@@ -19205,7 +19236,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:29"  class="line-number">5:29</span>' +
+' <span class="line"><span data-line-number="5:29"  class="line-number">29</span>' +
 
 
 
@@ -19305,7 +19336,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:30"  class="line-number">5:30</span>' +
+' <span class="line"><span data-line-number="5:30"  class="line-number">30</span>' +
 
 
 
@@ -19409,7 +19440,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:31"  class="line-number">5:31</span>' +
+' <span class="line"><span data-line-number="5:31"  class="line-number">31</span>' +
 
 
 
@@ -19489,7 +19520,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:32"  class="line-number">5:32</span>' +
+' <span class="line"><span data-line-number="5:32"  class="line-number">32</span>' +
 
 
 
@@ -19533,7 +19564,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:33"  class="line-number">5:33</span>' +
+' <span class="line"><span data-line-number="5:33"  class="line-number">33</span>' +
 
 
 
@@ -19649,7 +19680,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:34"  class="line-number">5:34</span>' +
+' <span class="line"><span data-line-number="5:34"  class="line-number">34</span>' +
 
 
 
@@ -19741,7 +19772,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:35"  class="line-number">5:35</span>' +
+' <span class="line"><span data-line-number="5:35"  class="line-number">35</span>' +
 
 
 
@@ -19817,7 +19848,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:36"  class="line-number">5:36</span>' +
+' <span class="line"><span data-line-number="5:36"  class="line-number">36</span>' +
 
 
 
@@ -19953,7 +19984,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:37"  class="line-number">5:37</span>' +
+' <span class="line"><span data-line-number="5:37"  class="line-number">37</span>' +
 
 
 
@@ -20061,7 +20092,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:38"  class="line-number">5:38</span>' +
+' <span class="line"><span data-line-number="5:38"  class="line-number">38</span>' +
 
 
 
@@ -20113,7 +20144,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="5:39"  class="line-number">5:39</span>' +
+' <span class="line"><span data-line-number="5:39"  class="line-number">39</span>' +
 
 
 
@@ -20177,7 +20208,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">VI</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -20185,7 +20222,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:1"  class="line-number">6:1</span>' +
+' <span class="line"><span data-line-number="6:1"  class="line-number">01</span>' +
 
 
 
@@ -20285,7 +20322,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:2"  class="line-number">6:2</span>' +
+' <span class="line"><span data-line-number="6:2"  class="line-number">02</span>' +
 
 
 
@@ -20357,7 +20394,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:3"  class="line-number">6:3</span>' +
+' <span class="line"><span data-line-number="6:3"  class="line-number">03</span>' +
 
 
 
@@ -20453,7 +20490,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:4"  class="line-number">6:4</span>' +
+' <span class="line"><span data-line-number="6:4"  class="line-number">04</span>' +
 
 
 
@@ -20585,7 +20622,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:5"  class="line-number">6:5</span>' +
+' <span class="line"><span data-line-number="6:5"  class="line-number">05</span>' +
 
 
 
@@ -20649,7 +20686,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -20657,7 +20694,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:6"  class="line-number">6:6</span>' +
+' <span class="line"><span data-line-number="6:6"  class="line-number">06</span>' +
 
 
 
@@ -20769,7 +20806,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:7"  class="line-number">6:7</span>' +
+' <span class="line"><span data-line-number="6:7"  class="line-number">07</span>' +
 
 
 
@@ -20845,7 +20882,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:8"  class="line-number">6:8</span>' +
+' <span class="line"><span data-line-number="6:8"  class="line-number">08</span>' +
 
 
 
@@ -20957,7 +20994,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:9"  class="line-number">6:9</span>' +
+' <span class="line"><span data-line-number="6:9"  class="line-number">09</span>' +
 
 
 
@@ -21045,7 +21082,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:10"  class="line-number">6:10</span>' +
+' <span class="line"><span data-line-number="6:10"  class="line-number">10</span>' +
 
 
 
@@ -21145,7 +21182,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:11"  class="line-number">6:11</span>' +
+' <span class="line"><span data-line-number="6:11"  class="line-number">11</span>' +
 
 
 
@@ -21209,7 +21246,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -21217,7 +21254,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:12"  class="line-number">6:12</span>' +
+' <span class="line"><span data-line-number="6:12"  class="line-number">12</span>' +
 
 
 
@@ -21305,7 +21342,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:13"  class="line-number">6:13</span>' +
+' <span class="line"><span data-line-number="6:13"  class="line-number">13</span>' +
 
 
 
@@ -21385,7 +21422,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:14"  class="line-number">6:14</span>' +
+' <span class="line"><span data-line-number="6:14"  class="line-number">14</span>' +
 
 
 
@@ -21461,7 +21498,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:15"  class="line-number">6:15</span>' +
+' <span class="line"><span data-line-number="6:15"  class="line-number">15</span>' +
 
 
 
@@ -21521,7 +21558,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:16"  class="line-number">6:16</span>' +
+' <span class="line"><span data-line-number="6:16"  class="line-number">16</span>' +
 
 
 
@@ -21569,7 +21606,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:17"  class="line-number">6:17</span>' +
+' <span class="line"><span data-line-number="6:17"  class="line-number">17</span>' +
 
 
 
@@ -21737,7 +21774,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:18"  class="line-number">6:18</span>' +
+' <span class="line"><span data-line-number="6:18"  class="line-number">18</span>' +
 
 
 
@@ -21781,7 +21818,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:19"  class="line-number">6:19</span>' +
+' <span class="line"><span data-line-number="6:19"  class="line-number">19</span>' +
 
 
 
@@ -21853,7 +21890,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -21861,7 +21898,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:20"  class="line-number">6:20</span>' +
+' <span class="line"><span data-line-number="6:20"  class="line-number">20</span>' +
 
 
 
@@ -21913,12 +21950,12 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
-
+' <span class="line"><span data-line-number="6:20"  class="line-number"></span>' +
 
 
 ' <span class="word" data-form="μακάριοι" data-part-of-speech="adjective" data-parsing="nominative plural masculine" data-lemma="μακάριος">Μακάριοι</span>' +
@@ -21969,7 +22006,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -21977,7 +22014,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:21"  class="line-number">6:21</span>' +
+' <span class="line"><span data-line-number="6:21"  class="line-number">21</span>' +
 
 
 
@@ -22009,12 +22046,12 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
-
+' <span class="line"><span data-line-number="6:21"  class="line-number"></span>' +
 
 
 ' <span class="word" data-form="μακάριοι" data-part-of-speech="adjective" data-parsing="nominative plural masculine" data-lemma="μακάριος">Μακάριοι</span>' +
@@ -22049,7 +22086,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -22057,7 +22094,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:22"  class="line-number">6:22</span>' +
+' <span class="line"><span data-line-number="6:22"  class="line-number">22</span>' +
 
 
 
@@ -22169,7 +22206,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:23"  class="line-number">6:23</span>' +
+' <span class="line"><span data-line-number="6:23"  class="line-number">23</span>' +
 
 
 
@@ -22281,7 +22318,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -22289,7 +22326,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:24"  class="line-number">6:24</span>' +
+' <span class="line"><span data-line-number="6:24"  class="line-number">24</span>' +
 
 
 
@@ -22341,7 +22378,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -22349,7 +22386,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:25"  class="line-number">6:25</span>' +
+' <span class="line"><span data-line-number="6:25"  class="line-number">25</span>' +
 
 
 
@@ -22381,12 +22418,12 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
 
-
+' <span class="line"><span data-line-number="6:25"  class="line-number"></span>' +
 
 
 ' <span class="word" data-form="οὐαί" data-part-of-speech="interjection" data-parsing="" data-lemma="οὐαί">Οὐαί</span>' +
@@ -22433,7 +22470,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -22441,7 +22478,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:26"  class="line-number">6:26</span>' +
+' <span class="line"><span data-line-number="6:26"  class="line-number">26</span>' +
 
 
 
@@ -22517,7 +22554,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -22525,7 +22562,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:27"  class="line-number">6:27</span>' +
+' <span class="line"><span data-line-number="6:27"  class="line-number">27</span>' +
 
 
 
@@ -22593,7 +22630,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:28"  class="line-number">6:28</span>' +
+' <span class="line"><span data-line-number="6:28"  class="line-number">28</span>' +
 
 
 
@@ -22641,7 +22678,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:29"  class="line-number">6:29</span>' +
+' <span class="line"><span data-line-number="6:29"  class="line-number">29</span>' +
 
 
 
@@ -22741,7 +22778,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:30"  class="line-number">6:30</span>' +
+' <span class="line"><span data-line-number="6:30"  class="line-number">30</span>' +
 
 
 
@@ -22809,7 +22846,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:31"  class="line-number">6:31</span>' +
+' <span class="line"><span data-line-number="6:31"  class="line-number">31</span>' +
 
 
 
@@ -22873,7 +22910,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:32"  class="line-number">6:32</span>' +
+' <span class="line"><span data-line-number="6:32"  class="line-number">32</span>' +
 
 
 
@@ -22957,7 +22994,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:33"  class="line-number">6:33</span>' +
+' <span class="line"><span data-line-number="6:33"  class="line-number">33</span>' +
 
 
 
@@ -23037,7 +23074,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:34"  class="line-number">6:34</span>' +
+' <span class="line"><span data-line-number="6:34"  class="line-number">34</span>' +
 
 
 
@@ -23129,7 +23166,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:35"  class="line-number">6:35</span>' +
+' <span class="line"><span data-line-number="6:35"  class="line-number">35</span>' +
 
 
 
@@ -23261,7 +23298,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:36"  class="line-number">6:36</span>' +
+' <span class="line"><span data-line-number="6:36"  class="line-number">36</span>' +
 
 
 
@@ -23313,7 +23350,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:37"  class="line-number">6:37</span>' +
+' <span class="line"><span data-line-number="6:37"  class="line-number">37</span>' +
 
 
 
@@ -23389,7 +23426,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:38"  class="line-number">6:38</span>' +
+' <span class="line"><span data-line-number="6:38"  class="line-number">38</span>' +
 
 
 
@@ -23497,7 +23534,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -23505,7 +23542,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:39"  class="line-number">6:39</span>' +
+' <span class="line"><span data-line-number="6:39"  class="line-number">39</span>' +
 
 
 
@@ -23573,7 +23610,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:40"  class="line-number">6:40</span>' +
+' <span class="line"><span data-line-number="6:40"  class="line-number">40</span>' +
 
 
 
@@ -23645,7 +23682,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:41"  class="line-number">6:41</span>' +
+' <span class="line"><span data-line-number="6:41"  class="line-number">41</span>' +
 
 
 
@@ -23745,7 +23782,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:42"  class="line-number">6:42</span>' +
+' <span class="line"><span data-line-number="6:42"  class="line-number">42</span>' +
 
 
 
@@ -23949,7 +23986,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:43"  class="line-number">6:43</span>' +
+' <span class="line"><span data-line-number="6:43"  class="line-number">43</span>' +
 
 
 
@@ -24017,7 +24054,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:44"  class="line-number">6:44</span>' +
+' <span class="line"><span data-line-number="6:44"  class="line-number">44</span>' +
 
 
 
@@ -24105,7 +24142,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:45"  class="line-number">6:45</span>' +
+' <span class="line"><span data-line-number="6:45"  class="line-number">45</span>' +
 
 
 
@@ -24265,7 +24302,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -24273,7 +24310,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:46"  class="line-number">6:46</span>' +
+' <span class="line"><span data-line-number="6:46"  class="line-number">46</span>' +
 
 
 
@@ -24329,7 +24366,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:47"  class="line-number">6:47</span>' +
+' <span class="line"><span data-line-number="6:47"  class="line-number">47</span>' +
 
 
 
@@ -24413,7 +24450,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:48"  class="line-number">6:48</span>' +
+' <span class="line"><span data-line-number="6:48"  class="line-number">48</span>' +
 
 
 
@@ -24561,7 +24598,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="6:49"  class="line-number">6:49</span>' +
+' <span class="line"><span data-line-number="6:49"  class="line-number">49</span>' +
 
 
 
@@ -24697,7 +24734,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">VII</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -24705,7 +24748,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:1"  class="line-number">7:1</span>' +
+' <span class="line"><span data-line-number="7:1"  class="line-number">01</span>' +
 
 
 
@@ -24777,7 +24820,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -24785,7 +24828,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:2"  class="line-number">7:2</span>' +
+' <span class="line"><span data-line-number="7:2"  class="line-number">02</span>' +
 
 
 
@@ -24845,7 +24888,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:3"  class="line-number">7:3</span>' +
+' <span class="line"><span data-line-number="7:3"  class="line-number">03</span>' +
 
 
 
@@ -24933,7 +24976,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:4"  class="line-number">7:4</span>' +
+' <span class="line"><span data-line-number="7:4"  class="line-number">04</span>' +
 
 
 
@@ -25009,7 +25052,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:5"  class="line-number">7:5</span>' +
+' <span class="line"><span data-line-number="7:5"  class="line-number">05</span>' +
 
 
 
@@ -25065,7 +25108,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:6"  class="line-number">7:6</span>' +
+' <span class="line"><span data-line-number="7:6"  class="line-number">06</span>' +
 
 
 
@@ -25221,7 +25264,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:7"  class="line-number">7:7</span>' +
+' <span class="line"><span data-line-number="7:7"  class="line-number">07</span>' +
 
 
 
@@ -25293,7 +25336,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:8"  class="line-number">7:8</span>' +
+' <span class="line"><span data-line-number="7:8"  class="line-number">08</span>' +
 
 
 
@@ -25429,7 +25472,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:9"  class="line-number">7:9</span>' +
+' <span class="line"><span data-line-number="7:9"  class="line-number">09</span>' +
 
 
 
@@ -25533,7 +25576,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:10"  class="line-number">7:10</span>' +
+' <span class="line"><span data-line-number="7:10"  class="line-number">10</span>' +
 
 
 
@@ -25593,7 +25636,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -25601,7 +25644,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:11"  class="line-number">7:11</span>' +
+' <span class="line"><span data-line-number="7:11"  class="line-number">11</span>' +
 
 
 
@@ -25693,7 +25736,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:12"  class="line-number">7:12</span>' +
+' <span class="line"><span data-line-number="7:12"  class="line-number">12</span>' +
 
 
 
@@ -25809,7 +25852,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:13"  class="line-number">7:13</span>' +
+' <span class="line"><span data-line-number="7:13"  class="line-number">13</span>' +
 
 
 
@@ -25873,7 +25916,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:14"  class="line-number">7:14</span>' +
+' <span class="line"><span data-line-number="7:14"  class="line-number">14</span>' +
 
 
 
@@ -25945,7 +25988,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:15"  class="line-number">7:15</span>' +
+' <span class="line"><span data-line-number="7:15"  class="line-number">15</span>' +
 
 
 
@@ -26009,7 +26052,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:16"  class="line-number">7:16</span>' +
+' <span class="line"><span data-line-number="7:16"  class="line-number">16</span>' +
 
 
 
@@ -26113,7 +26156,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:17"  class="line-number">7:17</span>' +
+' <span class="line"><span data-line-number="7:17"  class="line-number">17</span>' +
 
 
 
@@ -26189,7 +26232,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -26197,7 +26240,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:18"  class="line-number">7:18</span>' +
+' <span class="line"><span data-line-number="7:18"  class="line-number">18</span>' +
 
 
 
@@ -26245,7 +26288,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:19"  class="line-number">7:19</span>' +
+' <span class="line"><span data-line-number="7:19"  class="line-number">19</span>' +
 
 
 
@@ -26341,7 +26384,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:20"  class="line-number">7:20</span>' +
+' <span class="line"><span data-line-number="7:20"  class="line-number">20</span>' +
 
 
 
@@ -26441,7 +26484,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:21"  class="line-number">7:21</span>' +
+' <span class="line"><span data-line-number="7:21"  class="line-number">21</span>' +
 
 
 
@@ -26533,7 +26576,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:22"  class="line-number">7:22</span>' +
+' <span class="line"><span data-line-number="7:22"  class="line-number">22</span>' +
 
 
 
@@ -26649,7 +26692,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:23"  class="line-number">7:23</span>' +
+' <span class="line"><span data-line-number="7:23"  class="line-number">23</span>' +
 
 
 
@@ -26697,7 +26740,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -26705,7 +26748,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:24"  class="line-number">7:24</span>' +
+' <span class="line"><span data-line-number="7:24"  class="line-number">24</span>' +
 
 
 
@@ -26801,7 +26844,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:25"  class="line-number">7:25</span>' +
+' <span class="line"><span data-line-number="7:25"  class="line-number">25</span>' +
 
 
 
@@ -26897,7 +26940,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:26"  class="line-number">7:26</span>' +
+' <span class="line"><span data-line-number="7:26"  class="line-number">26</span>' +
 
 
 
@@ -26953,7 +26996,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:27"  class="line-number">7:27</span>' +
+' <span class="line"><span data-line-number="7:27"  class="line-number">27</span>' +
 
 
 
@@ -27049,7 +27092,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:28"  class="line-number">7:28</span>' +
+' <span class="line"><span data-line-number="7:28"  class="line-number">28</span>' +
 
 
 
@@ -27157,7 +27200,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:29"  class="line-number">7:29</span>' +
+' <span class="line"><span data-line-number="7:29"  class="line-number">29</span>' +
 
 
 
@@ -27229,7 +27272,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:30"  class="line-number">7:30</span>' +
+' <span class="line"><span data-line-number="7:30"  class="line-number">30</span>' +
 
 
 
@@ -27309,7 +27352,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:31"  class="line-number">7:31</span>' +
+' <span class="line"><span data-line-number="7:31"  class="line-number">31</span>' +
 
 
 
@@ -27369,7 +27412,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:32"  class="line-number">7:32</span>' +
+' <span class="line"><span data-line-number="7:32"  class="line-number">32</span>' +
 
 
 
@@ -27469,7 +27512,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:33"  class="line-number">7:33</span>' +
+' <span class="line"><span data-line-number="7:33"  class="line-number">33</span>' +
 
 
 
@@ -27541,7 +27584,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:34"  class="line-number">7:34</span>' +
+' <span class="line"><span data-line-number="7:34"  class="line-number">34</span>' +
 
 
 
@@ -27629,7 +27672,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:35"  class="line-number">7:35</span>' +
+' <span class="line"><span data-line-number="7:35"  class="line-number">35</span>' +
 
 
 
@@ -27677,7 +27720,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -27685,7 +27728,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:36"  class="line-number">7:36</span>' +
+' <span class="line"><span data-line-number="7:36"  class="line-number">36</span>' +
 
 
 
@@ -27769,7 +27812,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:37"  class="line-number">7:37</span>' +
+' <span class="line"><span data-line-number="7:37"  class="line-number">37</span>' +
 
 
 
@@ -27861,7 +27904,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:38"  class="line-number">7:38</span>' +
+' <span class="line"><span data-line-number="7:38"  class="line-number">38</span>' +
 
 
 
@@ -27997,7 +28040,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:39"  class="line-number">7:39</span>' +
+' <span class="line"><span data-line-number="7:39"  class="line-number">39</span>' +
 
 
 
@@ -28121,7 +28164,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:40"  class="line-number">7:40</span>' +
+' <span class="line"><span data-line-number="7:40"  class="line-number">40</span>' +
 
 
 
@@ -28201,7 +28244,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:41"  class="line-number">7:41</span>' +
+' <span class="line"><span data-line-number="7:41"  class="line-number">41</span>' +
 
 
 
@@ -28269,7 +28312,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:42"  class="line-number">7:42</span>' +
+' <span class="line"><span data-line-number="7:42"  class="line-number">42</span>' +
 
 
 
@@ -28341,7 +28384,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:43"  class="line-number">7:43</span>' +
+' <span class="line"><span data-line-number="7:43"  class="line-number">43</span>' +
 
 
 
@@ -28421,7 +28464,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:44"  class="line-number">7:44</span>' +
+' <span class="line"><span data-line-number="7:44"  class="line-number">44</span>' +
 
 
 
@@ -28589,7 +28632,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:45"  class="line-number">7:45</span>' +
+' <span class="line"><span data-line-number="7:45"  class="line-number">45</span>' +
 
 
 
@@ -28661,7 +28704,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:46"  class="line-number">7:46</span>' +
+' <span class="line"><span data-line-number="7:46"  class="line-number">46</span>' +
 
 
 
@@ -28725,7 +28768,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:47"  class="line-number">7:47</span>' +
+' <span class="line"><span data-line-number="7:47"  class="line-number">47</span>' +
 
 
 
@@ -28813,7 +28856,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:48"  class="line-number">7:48</span>' +
+' <span class="line"><span data-line-number="7:48"  class="line-number">48</span>' +
 
 
 
@@ -28853,7 +28896,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:49"  class="line-number">7:49</span>' +
+' <span class="line"><span data-line-number="7:49"  class="line-number">49</span>' +
 
 
 
@@ -28921,7 +28964,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="7:50"  class="line-number">7:50</span>' +
+' <span class="line"><span data-line-number="7:50"  class="line-number">50</span>' +
 
 
 
@@ -28985,7 +29028,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">VIII</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -28993,7 +29042,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:1"  class="line-number">8:1</span>' +
+' <span class="line"><span data-line-number="8:1"  class="line-number">01</span>' +
 
 
 
@@ -29101,7 +29150,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:2"  class="line-number">8:2</span>' +
+' <span class="line"><span data-line-number="8:2"  class="line-number">02</span>' +
 
 
 
@@ -29193,7 +29242,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:3"  class="line-number">8:3</span>' +
+' <span class="line"><span data-line-number="8:3"  class="line-number">03</span>' +
 
 
 
@@ -29277,7 +29326,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -29285,7 +29334,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:4"  class="line-number">8:4</span>' +
+' <span class="line"><span data-line-number="8:4"  class="line-number">04</span>' +
 
 
 
@@ -29353,7 +29402,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:5"  class="line-number">8:5</span>' +
+' <span class="line"><span data-line-number="8:5"  class="line-number">05</span>' +
 
 
 
@@ -29477,7 +29526,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:6"  class="line-number">8:6</span>' +
+' <span class="line"><span data-line-number="8:6"  class="line-number">06</span>' +
 
 
 
@@ -29545,7 +29594,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:7"  class="line-number">8:7</span>' +
+' <span class="line"><span data-line-number="8:7"  class="line-number">07</span>' +
 
 
 
@@ -29609,7 +29658,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:8"  class="line-number">8:8</span>' +
+' <span class="line"><span data-line-number="8:8"  class="line-number">08</span>' +
 
 
 
@@ -29705,7 +29754,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -29713,7 +29762,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:9"  class="line-number">8:9</span>' +
+' <span class="line"><span data-line-number="8:9"  class="line-number">09</span>' +
 
 
 
@@ -29773,7 +29822,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:10"  class="line-number">8:10</span>' +
+' <span class="line"><span data-line-number="8:10"  class="line-number">10</span>' +
 
 
 
@@ -29885,7 +29934,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:11"  class="line-number">8:11</span>' +
+' <span class="line"><span data-line-number="8:11"  class="line-number">11</span>' +
 
 
 
@@ -29945,7 +29994,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:12"  class="line-number">8:12</span>' +
+' <span class="line"><span data-line-number="8:12"  class="line-number">12</span>' +
 
 
 
@@ -30053,7 +30102,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:13"  class="line-number">8:13</span>' +
+' <span class="line"><span data-line-number="8:13"  class="line-number">13</span>' +
 
 
 
@@ -30173,7 +30222,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:14"  class="line-number">8:14</span>' +
+' <span class="line"><span data-line-number="8:14"  class="line-number">14</span>' +
 
 
 
@@ -30281,7 +30330,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:15"  class="line-number">8:15</span>' +
+' <span class="line"><span data-line-number="8:15"  class="line-number">15</span>' +
 
 
 
@@ -30381,7 +30430,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -30389,7 +30438,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:16"  class="line-number">8:16</span>' +
+' <span class="line"><span data-line-number="8:16"  class="line-number">16</span>' +
 
 
 
@@ -30485,7 +30534,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:17"  class="line-number">8:17</span>' +
+' <span class="line"><span data-line-number="8:17"  class="line-number">17</span>' +
 
 
 
@@ -30565,7 +30614,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:18"  class="line-number">8:18</span>' +
+' <span class="line"><span data-line-number="8:18"  class="line-number">18</span>' +
 
 
 
@@ -30665,7 +30714,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -30673,7 +30722,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:19"  class="line-number">8:19</span>' +
+' <span class="line"><span data-line-number="8:19"  class="line-number">19</span>' +
 
 
 
@@ -30757,7 +30806,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:20"  class="line-number">8:20</span>' +
+' <span class="line"><span data-line-number="8:20"  class="line-number">20</span>' +
 
 
 
@@ -30833,7 +30882,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:21"  class="line-number">8:21</span>' +
+' <span class="line"><span data-line-number="8:21"  class="line-number">21</span>' +
 
 
 
@@ -30933,7 +30982,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -30941,7 +30990,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:22"  class="line-number">8:22</span>' +
+' <span class="line"><span data-line-number="8:22"  class="line-number">22</span>' +
 
 
 
@@ -31061,7 +31110,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:23"  class="line-number">8:23</span>' +
+' <span class="line"><span data-line-number="8:23"  class="line-number">23</span>' +
 
 
 
@@ -31133,7 +31182,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:24"  class="line-number">8:24</span>' +
+' <span class="line"><span data-line-number="8:24"  class="line-number">24</span>' +
 
 
 
@@ -31241,7 +31290,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:25"  class="line-number">8:25</span>' +
+' <span class="line"><span data-line-number="8:25"  class="line-number">25</span>' +
 
 
 
@@ -31369,7 +31418,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -31377,7 +31426,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:26"  class="line-number">8:26</span>' +
+' <span class="line"><span data-line-number="8:26"  class="line-number">26</span>' +
 
 
 
@@ -31437,7 +31486,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:27"  class="line-number">8:27</span>' +
+' <span class="line"><span data-line-number="8:27"  class="line-number">27</span>' +
 
 
 
@@ -31577,7 +31626,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:28"  class="line-number">8:28</span>' +
+' <span class="line"><span data-line-number="8:28"  class="line-number">28</span>' +
 
 
 
@@ -31697,7 +31746,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:29"  class="line-number">8:29</span>' +
+' <span class="line"><span data-line-number="8:29"  class="line-number">29</span>' +
 
 
 
@@ -31837,7 +31886,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:30"  class="line-number">8:30</span>' +
+' <span class="line"><span data-line-number="8:30"  class="line-number">30</span>' +
 
 
 
@@ -31929,7 +31978,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:31"  class="line-number">8:31</span>' +
+' <span class="line"><span data-line-number="8:31"  class="line-number">31</span>' +
 
 
 
@@ -31985,7 +32034,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:32"  class="line-number">8:32</span>' +
+' <span class="line"><span data-line-number="8:32"  class="line-number">32</span>' +
 
 
 
@@ -32085,7 +32134,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:33"  class="line-number">8:33</span>' +
+' <span class="line"><span data-line-number="8:33"  class="line-number">33</span>' +
 
 
 
@@ -32189,7 +32238,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:34"  class="line-number">8:34</span>' +
+' <span class="line"><span data-line-number="8:34"  class="line-number">34</span>' +
 
 
 
@@ -32265,7 +32314,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:35"  class="line-number">8:35</span>' +
+' <span class="line"><span data-line-number="8:35"  class="line-number">35</span>' +
 
 
 
@@ -32397,7 +32446,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:36"  class="line-number">8:36</span>' +
+' <span class="line"><span data-line-number="8:36"  class="line-number">36</span>' +
 
 
 
@@ -32449,7 +32498,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:37"  class="line-number">8:37</span>' +
+' <span class="line"><span data-line-number="8:37"  class="line-number">37</span>' +
 
 
 
@@ -32557,7 +32606,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:38"  class="line-number">8:38</span>' +
+' <span class="line"><span data-line-number="8:38"  class="line-number">38</span>' +
 
 
 
@@ -32645,7 +32694,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:39"  class="line-number">8:39</span>' +
+' <span class="line"><span data-line-number="8:39"  class="line-number">39</span>' +
 
 
 
@@ -32753,7 +32802,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -32761,7 +32810,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:40"  class="line-number">8:40</span>' +
+' <span class="line"><span data-line-number="8:40"  class="line-number">40</span>' +
 
 
 
@@ -32837,7 +32886,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:41"  class="line-number">8:41</span>' +
+' <span class="line"><span data-line-number="8:41"  class="line-number">41</span>' +
 
 
 
@@ -32957,7 +33006,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:42"  class="line-number">8:42</span>' +
+' <span class="line"><span data-line-number="8:42"  class="line-number">42</span>' +
 
 
 
@@ -33049,7 +33098,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -33057,7 +33106,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:43"  class="line-number">8:43</span>' +
+' <span class="line"><span data-line-number="8:43"  class="line-number">43</span>' +
 
 
 
@@ -33149,7 +33198,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:44"  class="line-number">8:44</span>' +
+' <span class="line"><span data-line-number="8:44"  class="line-number">44</span>' +
 
 
 
@@ -33225,7 +33274,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:45"  class="line-number">8:45</span>' +
+' <span class="line"><span data-line-number="8:45"  class="line-number">45</span>' +
 
 
 
@@ -33361,7 +33410,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:46"  class="line-number">8:46</span>' +
+' <span class="line"><span data-line-number="8:46"  class="line-number">46</span>' +
 
 
 
@@ -33429,7 +33478,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:47"  class="line-number">8:47</span>' +
+' <span class="line"><span data-line-number="8:47"  class="line-number">47</span>' +
 
 
 
@@ -33549,7 +33598,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:48"  class="line-number">8:48</span>' +
+' <span class="line"><span data-line-number="8:48"  class="line-number">48</span>' +
 
 
 
@@ -33617,7 +33666,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -33625,7 +33674,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:49"  class="line-number">8:49</span>' +
+' <span class="line"><span data-line-number="8:49"  class="line-number">49</span>' +
 
 
 
@@ -33713,7 +33762,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:50"  class="line-number">8:50</span>' +
+' <span class="line"><span data-line-number="8:50"  class="line-number">50</span>' +
 
 
 
@@ -33777,7 +33826,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:51"  class="line-number">8:51</span>' +
+' <span class="line"><span data-line-number="8:51"  class="line-number">51</span>' +
 
 
 
@@ -33885,7 +33934,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:52"  class="line-number">8:52</span>' +
+' <span class="line"><span data-line-number="8:52"  class="line-number">52</span>' +
 
 
 
@@ -33957,7 +34006,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:53"  class="line-number">8:53</span>' +
+' <span class="line"><span data-line-number="8:53"  class="line-number">53</span>' +
 
 
 
@@ -33993,7 +34042,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:54"  class="line-number">8:54</span>' +
+' <span class="line"><span data-line-number="8:54"  class="line-number">54</span>' +
 
 
 
@@ -34065,7 +34114,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:55"  class="line-number">8:55</span>' +
+' <span class="line"><span data-line-number="8:55"  class="line-number">55</span>' +
 
 
 
@@ -34129,7 +34178,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="8:56"  class="line-number">8:56</span>' +
+' <span class="line"><span data-line-number="8:56"  class="line-number">56</span>' +
 
 
 
@@ -34193,7 +34242,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">IX</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -34201,7 +34256,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:1"  class="line-number">9:1</span>' +
+' <span class="line"><span data-line-number="9:1"  class="line-number">01</span>' +
 
 
 
@@ -34277,7 +34332,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:2"  class="line-number">9:2</span>' +
+' <span class="line"><span data-line-number="9:2"  class="line-number">02</span>' +
 
 
 
@@ -34337,7 +34392,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:3"  class="line-number">9:3</span>' +
+' <span class="line"><span data-line-number="9:3"  class="line-number">03</span>' +
 
 
 
@@ -34437,7 +34492,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:4"  class="line-number">9:4</span>' +
+' <span class="line"><span data-line-number="9:4"  class="line-number">04</span>' +
 
 
 
@@ -34493,7 +34548,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:5"  class="line-number">9:5</span>' +
+' <span class="line"><span data-line-number="9:5"  class="line-number">05</span>' +
 
 
 
@@ -34597,7 +34652,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:6"  class="line-number">9:6</span>' +
+' <span class="line"><span data-line-number="9:6"  class="line-number">06</span>' +
 
 
 
@@ -34649,7 +34704,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -34657,7 +34712,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:7"  class="line-number">9:7</span>' +
+' <span class="line"><span data-line-number="9:7"  class="line-number">07</span>' +
 
 
 
@@ -34757,7 +34812,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:8"  class="line-number">9:8</span>' +
+' <span class="line"><span data-line-number="9:8"  class="line-number">08</span>' +
 
 
 
@@ -34825,7 +34880,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:9"  class="line-number">9:9</span>' +
+' <span class="line"><span data-line-number="9:9"  class="line-number">09</span>' +
 
 
 
@@ -34913,7 +34968,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -34921,7 +34976,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:10"  class="line-number">9:10</span>' +
+' <span class="line"><span data-line-number="9:10"  class="line-number">10</span>' +
 
 
 
@@ -35013,7 +35068,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:11"  class="line-number">9:11</span>' +
+' <span class="line"><span data-line-number="9:11"  class="line-number">11</span>' +
 
 
 
@@ -35113,7 +35168,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:12"  class="line-number">9:12</span>' +
+' <span class="line"><span data-line-number="9:12"  class="line-number">12</span>' +
 
 
 
@@ -35257,7 +35312,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:13"  class="line-number">9:13</span>' +
+' <span class="line"><span data-line-number="9:13"  class="line-number">13</span>' +
 
 
 
@@ -35397,7 +35452,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:14"  class="line-number">9:14</span>' +
+' <span class="line"><span data-line-number="9:14"  class="line-number">14</span>' +
 
 
 
@@ -35473,7 +35528,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:15"  class="line-number">9:15</span>' +
+' <span class="line"><span data-line-number="9:15"  class="line-number">15</span>' +
 
 
 
@@ -35509,7 +35564,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:16"  class="line-number">9:16</span>' +
+' <span class="line"><span data-line-number="9:16"  class="line-number">16</span>' +
 
 
 
@@ -35617,7 +35672,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:17"  class="line-number">9:17</span>' +
+' <span class="line"><span data-line-number="9:17"  class="line-number">17</span>' +
 
 
 
@@ -35681,7 +35736,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -35689,7 +35744,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:18"  class="line-number">9:18</span>' +
+' <span class="line"><span data-line-number="9:18"  class="line-number">18</span>' +
 
 
 
@@ -35789,7 +35844,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:19"  class="line-number">9:19</span>' +
+' <span class="line"><span data-line-number="9:19"  class="line-number">19</span>' +
 
 
 
@@ -35873,7 +35928,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:20"  class="line-number">9:20</span>' +
+' <span class="line"><span data-line-number="9:20"  class="line-number">20</span>' +
 
 
 
@@ -35957,7 +36012,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:21"  class="line-number">9:21</span>' +
+' <span class="line"><span data-line-number="9:21"  class="line-number">21</span>' +
 
 
 
@@ -36001,7 +36056,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:22"  class="line-number">9:22</span>' +
+' <span class="line"><span data-line-number="9:22"  class="line-number">22</span>' +
 
 
 
@@ -36113,7 +36168,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:23"  class="line-number">9:23</span>' +
+' <span class="line"><span data-line-number="9:23"  class="line-number">23</span>' +
 
 
 
@@ -36205,7 +36260,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:24"  class="line-number">9:24</span>' +
+' <span class="line"><span data-line-number="9:24"  class="line-number">24</span>' +
 
 
 
@@ -36305,7 +36360,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:25"  class="line-number">9:25</span>' +
+' <span class="line"><span data-line-number="9:25"  class="line-number">25</span>' +
 
 
 
@@ -36369,7 +36424,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:26"  class="line-number">9:26</span>' +
+' <span class="line"><span data-line-number="9:26"  class="line-number">26</span>' +
 
 
 
@@ -36493,7 +36548,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:27"  class="line-number">9:27</span>' +
+' <span class="line"><span data-line-number="9:27"  class="line-number">27</span>' +
 
 
 
@@ -36589,7 +36644,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -36597,7 +36652,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:28"  class="line-number">9:28</span>' +
+' <span class="line"><span data-line-number="9:28"  class="line-number">28</span>' +
 
 
 
@@ -36693,7 +36748,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:29"  class="line-number">9:29</span>' +
+' <span class="line"><span data-line-number="9:29"  class="line-number">29</span>' +
 
 
 
@@ -36777,7 +36832,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:30"  class="line-number">9:30</span>' +
+' <span class="line"><span data-line-number="9:30"  class="line-number">30</span>' +
 
 
 
@@ -36833,7 +36888,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:31"  class="line-number">9:31</span>' +
+' <span class="line"><span data-line-number="9:31"  class="line-number">31</span>' +
 
 
 
@@ -36897,7 +36952,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:32"  class="line-number">9:32</span>' +
+' <span class="line"><span data-line-number="9:32"  class="line-number">32</span>' +
 
 
 
@@ -37001,7 +37056,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:33"  class="line-number">9:33</span>' +
+' <span class="line"><span data-line-number="9:33"  class="line-number">33</span>' +
 
 
 
@@ -37153,7 +37208,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:34"  class="line-number">9:34</span>' +
+' <span class="line"><span data-line-number="9:34"  class="line-number">34</span>' +
 
 
 
@@ -37237,7 +37292,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:35"  class="line-number">9:35</span>' +
+' <span class="line"><span data-line-number="9:35"  class="line-number">35</span>' +
 
 
 
@@ -37313,7 +37368,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:36"  class="line-number">9:36</span>' +
+' <span class="line"><span data-line-number="9:36"  class="line-number">36</span>' +
 
 
 
@@ -37417,7 +37472,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -37425,7 +37480,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:37"  class="line-number">9:37</span>' +
+' <span class="line"><span data-line-number="9:37"  class="line-number">37</span>' +
 
 
 
@@ -37497,7 +37552,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:38"  class="line-number">9:38</span>' +
+' <span class="line"><span data-line-number="9:38"  class="line-number">38</span>' +
 
 
 
@@ -37589,7 +37644,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:39"  class="line-number">9:39</span>' +
+' <span class="line"><span data-line-number="9:39"  class="line-number">39</span>' +
 
 
 
@@ -37681,7 +37736,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:40"  class="line-number">9:40</span>' +
+' <span class="line"><span data-line-number="9:40"  class="line-number">40</span>' +
 
 
 
@@ -37737,7 +37792,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:41"  class="line-number">9:41</span>' +
+' <span class="line"><span data-line-number="9:41"  class="line-number">41</span>' +
 
 
 
@@ -37841,7 +37896,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:42"  class="line-number">9:42</span>' +
+' <span class="line"><span data-line-number="9:42"  class="line-number">42</span>' +
 
 
 
@@ -37965,7 +38020,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:43"  class="line-number">9:43</span>' +
+' <span class="line"><span data-line-number="9:43"  class="line-number">43</span>' +
 
 
 
@@ -38005,7 +38060,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -38077,7 +38132,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:44"  class="line-number">9:44</span>' +
+' <span class="line"><span data-line-number="9:44"  class="line-number">44</span>' +
 
 
 
@@ -38165,7 +38220,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:45"  class="line-number">9:45</span>' +
+' <span class="line"><span data-line-number="9:45"  class="line-number">45</span>' +
 
 
 
@@ -38269,7 +38324,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -38277,7 +38332,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:46"  class="line-number">9:46</span>' +
+' <span class="line"><span data-line-number="9:46"  class="line-number">46</span>' +
 
 
 
@@ -38333,7 +38388,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:47"  class="line-number">9:47</span>' +
+' <span class="line"><span data-line-number="9:47"  class="line-number">47</span>' +
 
 
 
@@ -38405,7 +38460,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:48"  class="line-number">9:48</span>' +
+' <span class="line"><span data-line-number="9:48"  class="line-number">48</span>' +
 
 
 
@@ -38553,7 +38608,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -38561,7 +38616,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:49"  class="line-number">9:49</span>' +
+' <span class="line"><span data-line-number="9:49"  class="line-number">49</span>' +
 
 
 
@@ -38661,7 +38716,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:50"  class="line-number">9:50</span>' +
+' <span class="line"><span data-line-number="9:50"  class="line-number">50</span>' +
 
 
 
@@ -38741,7 +38796,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -38749,7 +38804,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:51"  class="line-number">9:51</span>' +
+' <span class="line"><span data-line-number="9:51"  class="line-number">51</span>' +
 
 
 
@@ -38841,7 +38896,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:52"  class="line-number">9:52</span>' +
+' <span class="line"><span data-line-number="9:52"  class="line-number">52</span>' +
 
 
 
@@ -38913,7 +38968,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:53"  class="line-number">9:53</span>' +
+' <span class="line"><span data-line-number="9:53"  class="line-number">53</span>' +
 
 
 
@@ -38973,7 +39028,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:54"  class="line-number">9:54</span>' +
+' <span class="line"><span data-line-number="9:54"  class="line-number">54</span>' +
 
 
 
@@ -39081,7 +39136,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:55"  class="line-number">9:55</span>' +
+' <span class="line"><span data-line-number="9:55"  class="line-number">55</span>' +
 
 
 
@@ -39141,7 +39196,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:56"  class="line-number">9:56</span>' +
+' <span class="line"><span data-line-number="9:56"  class="line-number">56</span>' +
 
 
 
@@ -39221,7 +39276,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -39229,7 +39284,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:57"  class="line-number">9:57</span>' +
+' <span class="line"><span data-line-number="9:57"  class="line-number">57</span>' +
 
 
 
@@ -39309,7 +39364,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:58"  class="line-number">9:58</span>' +
+' <span class="line"><span data-line-number="9:58"  class="line-number">58</span>' +
 
 
 
@@ -39425,7 +39480,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:59"  class="line-number">9:59</span>' +
+' <span class="line"><span data-line-number="9:59"  class="line-number">59</span>' +
 
 
 
@@ -39509,7 +39564,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:60"  class="line-number">9:60</span>' +
+' <span class="line"><span data-line-number="9:60"  class="line-number">60</span>' +
 
 
 
@@ -39601,7 +39656,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:61"  class="line-number">9:61</span>' +
+' <span class="line"><span data-line-number="9:61"  class="line-number">61</span>' +
 
 
 
@@ -39681,7 +39736,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="9:62"  class="line-number">9:62</span>' +
+' <span class="line"><span data-line-number="9:62"  class="line-number">62</span>' +
 
 
 
@@ -39793,7 +39848,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">X</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -39801,7 +39862,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:1"  class="line-number">10:1</span>' +
+' <span class="line"><span data-line-number="10:1"  class="line-number">01</span>' +
 
 
 
@@ -39917,7 +39978,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:2"  class="line-number">10:2</span>' +
+' <span class="line"><span data-line-number="10:2"  class="line-number">02</span>' +
 
 
 
@@ -40029,7 +40090,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:3"  class="line-number">10:3</span>' +
+' <span class="line"><span data-line-number="10:3"  class="line-number">03</span>' +
 
 
 
@@ -40081,7 +40142,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:4"  class="line-number">10:4</span>' +
+' <span class="line"><span data-line-number="10:4"  class="line-number">04</span>' +
 
 
 
@@ -40145,7 +40206,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:5"  class="line-number">10:5</span>' +
+' <span class="line"><span data-line-number="10:5"  class="line-number">05</span>' +
 
 
 
@@ -40205,7 +40266,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:6"  class="line-number">10:6</span>' +
+' <span class="line"><span data-line-number="10:6"  class="line-number">06</span>' +
 
 
 
@@ -40289,7 +40350,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:7"  class="line-number">10:7</span>' +
+' <span class="line"><span data-line-number="10:7"  class="line-number">07</span>' +
 
 
 
@@ -40405,7 +40466,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:8"  class="line-number">10:8</span>' +
+' <span class="line"><span data-line-number="10:8"  class="line-number">08</span>' +
 
 
 
@@ -40469,7 +40530,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:9"  class="line-number">10:9</span>' +
+' <span class="line"><span data-line-number="10:9"  class="line-number">09</span>' +
 
 
 
@@ -40545,7 +40606,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:10"  class="line-number">10:10</span>' +
+' <span class="line"><span data-line-number="10:10"  class="line-number">10</span>' +
 
 
 
@@ -40621,7 +40682,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:11"  class="line-number">10:11</span>' +
+' <span class="line"><span data-line-number="10:11"  class="line-number">11</span>' +
 
 
 
@@ -40725,7 +40786,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:12"  class="line-number">10:12</span>' +
+' <span class="line"><span data-line-number="10:12"  class="line-number">12</span>' +
 
 
 
@@ -40793,7 +40854,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:13"  class="line-number">10:13</span>' +
+' <span class="line"><span data-line-number="10:13"  class="line-number">13</span>' +
 
 
 
@@ -40913,7 +40974,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:14"  class="line-number">10:14</span>' +
+' <span class="line"><span data-line-number="10:14"  class="line-number">14</span>' +
 
 
 
@@ -40969,7 +41030,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:15"  class="line-number">10:15</span>' +
+' <span class="line"><span data-line-number="10:15"  class="line-number">15</span>' +
 
 
 
@@ -41025,7 +41086,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:16"  class="line-number">10:16</span>' +
+' <span class="line"><span data-line-number="10:16"  class="line-number">16</span>' +
 
 
 
@@ -41113,7 +41174,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -41121,7 +41182,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:17"  class="line-number">10:17</span>' +
+' <span class="line"><span data-line-number="10:17"  class="line-number">17</span>' +
 
 
 
@@ -41201,7 +41262,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:18"  class="line-number">10:18</span>' +
+' <span class="line"><span data-line-number="10:18"  class="line-number">18</span>' +
 
 
 
@@ -41261,7 +41322,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:19"  class="line-number">10:19</span>' +
+' <span class="line"><span data-line-number="10:19"  class="line-number">19</span>' +
 
 
 
@@ -41369,7 +41430,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:20"  class="line-number">10:20</span>' +
+' <span class="line"><span data-line-number="10:20"  class="line-number">20</span>' +
 
 
 
@@ -41461,7 +41522,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -41469,7 +41530,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:21"  class="line-number">10:21</span>' +
+' <span class="line"><span data-line-number="10:21"  class="line-number">21</span>' +
 
 
 
@@ -41641,7 +41702,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:22"  class="line-number">10:22</span>' +
+' <span class="line"><span data-line-number="10:22"  class="line-number">22</span>' +
 
 
 
@@ -41813,7 +41874,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:23"  class="line-number">10:23</span>' +
+' <span class="line"><span data-line-number="10:23"  class="line-number">23</span>' +
 
 
 
@@ -41885,7 +41946,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:24"  class="line-number">10:24</span>' +
+' <span class="line"><span data-line-number="10:24"  class="line-number">24</span>' +
 
 
 
@@ -41989,7 +42050,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -41997,7 +42058,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:25"  class="line-number">10:25</span>' +
+' <span class="line"><span data-line-number="10:25"  class="line-number">25</span>' +
 
 
 
@@ -42069,7 +42130,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:26"  class="line-number">10:26</span>' +
+' <span class="line"><span data-line-number="10:26"  class="line-number">26</span>' +
 
 
 
@@ -42129,7 +42190,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:27"  class="line-number">10:27</span>' +
+' <span class="line"><span data-line-number="10:27"  class="line-number">27</span>' +
 
 
 
@@ -42293,7 +42354,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:28"  class="line-number">10:28</span>' +
+' <span class="line"><span data-line-number="10:28"  class="line-number">28</span>' +
 
 
 
@@ -42341,7 +42402,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:29"  class="line-number">10:29</span>' +
+' <span class="line"><span data-line-number="10:29"  class="line-number">29</span>' +
 
 
 
@@ -42409,7 +42470,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:30"  class="line-number">10:30</span>' +
+' <span class="line"><span data-line-number="10:30"  class="line-number">30</span>' +
 
 
 
@@ -42525,7 +42586,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:31"  class="line-number">10:31</span>' +
+' <span class="line"><span data-line-number="10:31"  class="line-number">31</span>' +
 
 
 
@@ -42593,7 +42654,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:32"  class="line-number">10:32</span>' +
+' <span class="line"><span data-line-number="10:32"  class="line-number">32</span>' +
 
 
 
@@ -42653,7 +42714,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:33"  class="line-number">10:33</span>' +
+' <span class="line"><span data-line-number="10:33"  class="line-number">33</span>' +
 
 
 
@@ -42709,7 +42770,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:34"  class="line-number">10:34</span>' +
+' <span class="line"><span data-line-number="10:34"  class="line-number">34</span>' +
 
 
 
@@ -42817,7 +42878,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:35"  class="line-number">10:35</span>' +
+' <span class="line"><span data-line-number="10:35"  class="line-number">35</span>' +
 
 
 
@@ -42941,7 +43002,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:36"  class="line-number">10:36</span>' +
+' <span class="line"><span data-line-number="10:36"  class="line-number">36</span>' +
 
 
 
@@ -43009,7 +43070,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:37"  class="line-number">10:37</span>' +
+' <span class="line"><span data-line-number="10:37"  class="line-number">37</span>' +
 
 
 
@@ -43097,7 +43158,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -43105,7 +43166,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:38"  class="line-number">10:38</span>' +
+' <span class="line"><span data-line-number="10:38"  class="line-number">38</span>' +
 
 
 
@@ -43209,7 +43270,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:39"  class="line-number">10:39</span>' +
+' <span class="line"><span data-line-number="10:39"  class="line-number">39</span>' +
 
 
 
@@ -43293,7 +43354,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:40"  class="line-number">10:40</span>' +
+' <span class="line"><span data-line-number="10:40"  class="line-number">40</span>' +
 
 
 
@@ -43417,7 +43478,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:41"  class="line-number">10:41</span>' +
+' <span class="line"><span data-line-number="10:41"  class="line-number">41</span>' +
 
 
 
@@ -43481,7 +43542,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="10:42"  class="line-number">10:42</span>' +
+' <span class="line"><span data-line-number="10:42"  class="line-number">42</span>' +
 
 
 
@@ -43553,7 +43614,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XI</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -43561,7 +43628,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:1"  class="line-number">11:1</span>' +
+' <span class="line"><span data-line-number="11:1"  class="line-number">01</span>' +
 
 
 
@@ -43693,7 +43760,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:2"  class="line-number">11:2</span>' +
+' <span class="line"><span data-line-number="11:2"  class="line-number">02</span>' +
 
 
 
@@ -43829,7 +43896,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:3"  class="line-number">11:3</span>' +
+' <span class="line"><span data-line-number="11:3"  class="line-number">03</span>' +
 
 
 
@@ -43881,7 +43948,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:4"  class="line-number">11:4</span>' +
+' <span class="line"><span data-line-number="11:4"  class="line-number">04</span>' +
 
 
 
@@ -43993,7 +44060,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -44001,7 +44068,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:5"  class="line-number">11:5</span>' +
+' <span class="line"><span data-line-number="11:5"  class="line-number">05</span>' +
 
 
 
@@ -44101,7 +44168,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:6"  class="line-number">11:6</span>' +
+' <span class="line"><span data-line-number="11:6"  class="line-number">06</span>' +
 
 
 
@@ -44165,7 +44232,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:7"  class="line-number">11:7</span>' +
+' <span class="line"><span data-line-number="11:7"  class="line-number">07</span>' +
 
 
 
@@ -44285,7 +44352,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:8"  class="line-number">11:8</span>' +
+' <span class="line"><span data-line-number="11:8"  class="line-number">08</span>' +
 
 
 
@@ -44389,7 +44456,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:9"  class="line-number">11:9</span>' +
+' <span class="line"><span data-line-number="11:9"  class="line-number">09</span>' +
 
 
 
@@ -44457,7 +44524,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:10"  class="line-number">11:10</span>' +
+' <span class="line"><span data-line-number="11:10"  class="line-number">10</span>' +
 
 
 
@@ -44521,7 +44588,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:11"  class="line-number">11:11</span>' +
+' <span class="line"><span data-line-number="11:11"  class="line-number">11</span>' +
 
 
 
@@ -44621,7 +44688,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:12"  class="line-number">11:12</span>' +
+' <span class="line"><span data-line-number="11:12"  class="line-number">12</span>' +
 
 
 
@@ -44669,7 +44736,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:13"  class="line-number">11:13</span>' +
+' <span class="line"><span data-line-number="11:13"  class="line-number">13</span>' +
 
 
 
@@ -44781,7 +44848,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -44789,7 +44856,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:14"  class="line-number">11:14</span>' +
+' <span class="line"><span data-line-number="11:14"  class="line-number">14</span>' +
 
 
 
@@ -44881,7 +44948,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:15"  class="line-number">11:15</span>' +
+' <span class="line"><span data-line-number="11:15"  class="line-number">15</span>' +
 
 
 
@@ -44945,7 +45012,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:16"  class="line-number">11:16</span>' +
+' <span class="line"><span data-line-number="11:16"  class="line-number">16</span>' +
 
 
 
@@ -44993,7 +45060,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:17"  class="line-number">11:17</span>' +
+' <span class="line"><span data-line-number="11:17"  class="line-number">17</span>' +
 
 
 
@@ -45081,7 +45148,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:18"  class="line-number">11:18</span>' +
+' <span class="line"><span data-line-number="11:18"  class="line-number">18</span>' +
 
 
 
@@ -45177,7 +45244,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:19"  class="line-number">11:19</span>' +
+' <span class="line"><span data-line-number="11:19"  class="line-number">19</span>' +
 
 
 
@@ -45269,7 +45336,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:20"  class="line-number">11:20</span>' +
+' <span class="line"><span data-line-number="11:20"  class="line-number">20</span>' +
 
 
 
@@ -45345,7 +45412,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:21"  class="line-number">11:21</span>' +
+' <span class="line"><span data-line-number="11:21"  class="line-number">21</span>' +
 
 
 
@@ -45413,7 +45480,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:22"  class="line-number">11:22</span>' +
+' <span class="line"><span data-line-number="11:22"  class="line-number">22</span>' +
 
 
 
@@ -45505,7 +45572,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:23"  class="line-number">11:23</span>' +
+' <span class="line"><span data-line-number="11:23"  class="line-number">23</span>' +
 
 
 
@@ -45577,7 +45644,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:24"  class="line-number">11:24</span>' +
+' <span class="line"><span data-line-number="11:24"  class="line-number">24</span>' +
 
 
 
@@ -45689,7 +45756,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:25"  class="line-number">11:25</span>' +
+' <span class="line"><span data-line-number="11:25"  class="line-number">25</span>' +
 
 
 
@@ -45725,7 +45792,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:26"  class="line-number">11:26</span>' +
+' <span class="line"><span data-line-number="11:26"  class="line-number">26</span>' +
 
 
 
@@ -45829,7 +45896,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -45837,7 +45904,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:27"  class="line-number">11:27</span>' +
+' <span class="line"><span data-line-number="11:27"  class="line-number">27</span>' +
 
 
 
@@ -45953,7 +46020,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:28"  class="line-number">11:28</span>' +
+' <span class="line"><span data-line-number="11:28"  class="line-number">28</span>' +
 
 
 
@@ -46021,7 +46088,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -46029,7 +46096,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:29"  class="line-number">11:29</span>' +
+' <span class="line"><span data-line-number="11:29"  class="line-number">29</span>' +
 
 
 
@@ -46141,7 +46208,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:30"  class="line-number">11:30</span>' +
+' <span class="line"><span data-line-number="11:30"  class="line-number">30</span>' +
 
 
 
@@ -46221,7 +46288,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:31"  class="line-number">11:31</span>' +
+' <span class="line"><span data-line-number="11:31"  class="line-number">31</span>' +
 
 
 
@@ -46357,7 +46424,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:32"  class="line-number">11:32</span>' +
+' <span class="line"><span data-line-number="11:32"  class="line-number">32</span>' +
 
 
 
@@ -46465,7 +46532,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -46473,7 +46540,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:33"  class="line-number">11:33</span>' +
+' <span class="line"><span data-line-number="11:33"  class="line-number">33</span>' +
 
 
 
@@ -46569,7 +46636,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:34"  class="line-number">11:34</span>' +
+' <span class="line"><span data-line-number="11:34"  class="line-number">34</span>' +
 
 
 
@@ -46701,7 +46768,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:35"  class="line-number">11:35</span>' +
+' <span class="line"><span data-line-number="11:35"  class="line-number">35</span>' +
 
 
 
@@ -46753,7 +46820,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:36"  class="line-number">11:36</span>' +
+' <span class="line"><span data-line-number="11:36"  class="line-number">36</span>' +
 
 
 
@@ -46857,7 +46924,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -46865,7 +46932,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:37"  class="line-number">11:37</span>' +
+' <span class="line"><span data-line-number="11:37"  class="line-number">37</span>' +
 
 
 
@@ -46937,7 +47004,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:38"  class="line-number">11:38</span>' +
+' <span class="line"><span data-line-number="11:38"  class="line-number">38</span>' +
 
 
 
@@ -46997,7 +47064,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:39"  class="line-number">11:39</span>' +
+' <span class="line"><span data-line-number="11:39"  class="line-number">39</span>' +
 
 
 
@@ -47113,7 +47180,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:40"  class="line-number">11:40</span>' +
+' <span class="line"><span data-line-number="11:40"  class="line-number">40</span>' +
 
 
 
@@ -47165,7 +47232,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:41"  class="line-number">11:41</span>' +
+' <span class="line"><span data-line-number="11:41"  class="line-number">41</span>' +
 
 
 
@@ -47221,7 +47288,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -47229,7 +47296,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:42"  class="line-number">11:42</span>' +
+' <span class="line"><span data-line-number="11:42"  class="line-number">42</span>' +
 
 
 
@@ -47361,7 +47428,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:43"  class="line-number">11:43</span>' +
+' <span class="line"><span data-line-number="11:43"  class="line-number">43</span>' +
 
 
 
@@ -47441,7 +47508,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:44"  class="line-number">11:44</span>' +
+' <span class="line"><span data-line-number="11:44"  class="line-number">44</span>' +
 
 
 
@@ -47533,7 +47600,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -47541,7 +47608,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:45"  class="line-number">11:45</span>' +
+' <span class="line"><span data-line-number="11:45"  class="line-number">45</span>' +
 
 
 
@@ -47605,7 +47672,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:46"  class="line-number">11:46</span>' +
+' <span class="line"><span data-line-number="11:46"  class="line-number">46</span>' +
 
 
 
@@ -47713,7 +47780,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:47"  class="line-number">11:47</span>' +
+' <span class="line"><span data-line-number="11:47"  class="line-number">47</span>' +
 
 
 
@@ -47781,7 +47848,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:48"  class="line-number">11:48</span>' +
+' <span class="line"><span data-line-number="11:48"  class="line-number">48</span>' +
 
 
 
@@ -47873,7 +47940,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:49"  class="line-number">11:49</span>' +
+' <span class="line"><span data-line-number="11:49"  class="line-number">49</span>' +
 
 
 
@@ -47965,7 +48032,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:50"  class="line-number">11:50</span>' +
+' <span class="line"><span data-line-number="11:50"  class="line-number">50</span>' +
 
 
 
@@ -48041,7 +48108,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:51"  class="line-number">11:51</span>' +
+' <span class="line"><span data-line-number="11:51"  class="line-number">51</span>' +
 
 
 
@@ -48149,7 +48216,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:52"  class="line-number">11:52</span>' +
+' <span class="line"><span data-line-number="11:52"  class="line-number">52</span>' +
 
 
 
@@ -48229,7 +48296,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -48237,7 +48304,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:53"  class="line-number">11:53</span>' +
+' <span class="line"><span data-line-number="11:53"  class="line-number">53</span>' +
 
 
 
@@ -48325,7 +48392,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="11:54"  class="line-number">11:54</span>' +
+' <span class="line"><span data-line-number="11:54"  class="line-number">54</span>' +
 
 
 
@@ -48385,7 +48452,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XII</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -48393,7 +48466,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:1"  class="line-number">12:1</span>' +
+' <span class="line"><span data-line-number="12:1"  class="line-number">01</span>' +
 
 
 
@@ -48513,7 +48586,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:2"  class="line-number">12:2</span>' +
+' <span class="line"><span data-line-number="12:2"  class="line-number">02</span>' +
 
 
 
@@ -48573,7 +48646,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:3"  class="line-number">12:3</span>' +
+' <span class="line"><span data-line-number="12:3"  class="line-number">03</span>' +
 
 
 
@@ -48681,7 +48754,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:4"  class="line-number">12:4</span>' +
+' <span class="line"><span data-line-number="12:4"  class="line-number">04</span>' +
 
 
 
@@ -48777,7 +48850,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:5"  class="line-number">12:5</span>' +
+' <span class="line"><span data-line-number="12:5"  class="line-number">05</span>' +
 
 
 
@@ -48873,7 +48946,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:6"  class="line-number">12:6</span>' +
+' <span class="line"><span data-line-number="12:6"  class="line-number">06</span>' +
 
 
 
@@ -48949,7 +49022,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:7"  class="line-number">12:7</span>' +
+' <span class="line"><span data-line-number="12:7"  class="line-number">07</span>' +
 
 
 
@@ -49021,7 +49094,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:8"  class="line-number">12:8</span>' +
+' <span class="line"><span data-line-number="12:8"  class="line-number">08</span>' +
 
 
 
@@ -49133,7 +49206,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:9"  class="line-number">12:9</span>' +
+' <span class="line"><span data-line-number="12:9"  class="line-number">09</span>' +
 
 
 
@@ -49197,7 +49270,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:10"  class="line-number">12:10</span>' +
+' <span class="line"><span data-line-number="12:10"  class="line-number">10</span>' +
 
 
 
@@ -49293,7 +49366,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:11"  class="line-number">12:11</span>' +
+' <span class="line"><span data-line-number="12:11"  class="line-number">11</span>' +
 
 
 
@@ -49393,7 +49466,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:12"  class="line-number">12:12</span>' +
+' <span class="line"><span data-line-number="12:12"  class="line-number">12</span>' +
 
 
 
@@ -49457,7 +49530,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -49465,7 +49538,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:13"  class="line-number">12:13</span>' +
+' <span class="line"><span data-line-number="12:13"  class="line-number">13</span>' +
 
 
 
@@ -49545,7 +49618,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:14"  class="line-number">12:14</span>' +
+' <span class="line"><span data-line-number="12:14"  class="line-number">14</span>' +
 
 
 
@@ -49609,7 +49682,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:15"  class="line-number">12:15</span>' +
+' <span class="line"><span data-line-number="12:15"  class="line-number">15</span>' +
 
 
 
@@ -49717,7 +49790,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:16"  class="line-number">12:16</span>' +
+' <span class="line"><span data-line-number="12:16"  class="line-number">16</span>' +
 
 
 
@@ -49777,7 +49850,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:17"  class="line-number">12:17</span>' +
+' <span class="line"><span data-line-number="12:17"  class="line-number">17</span>' +
 
 
 
@@ -49849,7 +49922,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:18"  class="line-number">12:18</span>' +
+' <span class="line"><span data-line-number="12:18"  class="line-number">18</span>' +
 
 
 
@@ -49949,7 +50022,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:19"  class="line-number">12:19</span>' +
+' <span class="line"><span data-line-number="12:19"  class="line-number">19</span>' +
 
 
 
@@ -50029,7 +50102,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:20"  class="line-number">12:20</span>' +
+' <span class="line"><span data-line-number="12:20"  class="line-number">20</span>' +
 
 
 
@@ -50121,7 +50194,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:21"  class="line-number">12:21</span>' +
+' <span class="line"><span data-line-number="12:21"  class="line-number">21</span>' +
 
 
 
@@ -50169,7 +50242,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -50177,7 +50250,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:22"  class="line-number">12:22</span>' +
+' <span class="line"><span data-line-number="12:22"  class="line-number">22</span>' +
 
 
 
@@ -50277,7 +50350,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:23"  class="line-number">12:23</span>' +
+' <span class="line"><span data-line-number="12:23"  class="line-number">23</span>' +
 
 
 
@@ -50333,7 +50406,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:24"  class="line-number">12:24</span>' +
+' <span class="line"><span data-line-number="12:24"  class="line-number">24</span>' +
 
 
 
@@ -50445,7 +50518,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:25"  class="line-number">12:25</span>' +
+' <span class="line"><span data-line-number="12:25"  class="line-number">25</span>' +
 
 
 
@@ -50509,7 +50582,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:26"  class="line-number">12:26</span>' +
+' <span class="line"><span data-line-number="12:26"  class="line-number">26</span>' +
 
 
 
@@ -50561,7 +50634,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:27"  class="line-number">12:27</span>' +
+' <span class="line"><span data-line-number="12:27"  class="line-number">27</span>' +
 
 
 
@@ -50665,7 +50738,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:28"  class="line-number">12:28</span>' +
+' <span class="line"><span data-line-number="12:28"  class="line-number">28</span>' +
 
 
 
@@ -50765,7 +50838,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:29"  class="line-number">12:29</span>' +
+' <span class="line"><span data-line-number="12:29"  class="line-number">29</span>' +
 
 
 
@@ -50825,7 +50898,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:30"  class="line-number">12:30</span>' +
+' <span class="line"><span data-line-number="12:30"  class="line-number">30</span>' +
 
 
 
@@ -50901,7 +50974,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:31"  class="line-number">12:31</span>' +
+' <span class="line"><span data-line-number="12:31"  class="line-number">31</span>' +
 
 
 
@@ -50957,7 +51030,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:32"  class="line-number">12:32</span>' +
+' <span class="line"><span data-line-number="12:32"  class="line-number">32</span>' +
 
 
 
@@ -51025,7 +51098,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:33"  class="line-number">12:33</span>' +
+' <span class="line"><span data-line-number="12:33"  class="line-number">33</span>' +
 
 
 
@@ -51133,7 +51206,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:34"  class="line-number">12:34</span>' +
+' <span class="line"><span data-line-number="12:34"  class="line-number">34</span>' +
 
 
 
@@ -51193,7 +51266,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -51201,7 +51274,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:35"  class="line-number">12:35</span>' +
+' <span class="line"><span data-line-number="12:35"  class="line-number">35</span>' +
 
 
 
@@ -51249,7 +51322,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:36"  class="line-number">12:36</span>' +
+' <span class="line"><span data-line-number="12:36"  class="line-number">36</span>' +
 
 
 
@@ -51341,7 +51414,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:37"  class="line-number">12:37</span>' +
+' <span class="line"><span data-line-number="12:37"  class="line-number">37</span>' +
 
 
 
@@ -51441,7 +51514,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:38"  class="line-number">12:38</span>' +
+' <span class="line"><span data-line-number="12:38"  class="line-number">38</span>' +
 
 
 
@@ -51537,7 +51610,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:39"  class="line-number">12:39</span>' +
+' <span class="line"><span data-line-number="12:39"  class="line-number">39</span>' +
 
 
 
@@ -51641,7 +51714,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:40"  class="line-number">12:40</span>' +
+' <span class="line"><span data-line-number="12:40"  class="line-number">40</span>' +
 
 
 
@@ -51713,7 +51786,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -51721,7 +51794,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:41"  class="line-number">12:41</span>' +
+' <span class="line"><span data-line-number="12:41"  class="line-number">41</span>' +
 
 
 
@@ -51797,7 +51870,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:42"  class="line-number">12:42</span>' +
+' <span class="line"><span data-line-number="12:42"  class="line-number">42</span>' +
 
 
 
@@ -51913,7 +51986,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:43"  class="line-number">12:43</span>' +
+' <span class="line"><span data-line-number="12:43"  class="line-number">43</span>' +
 
 
 
@@ -51973,7 +52046,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:44"  class="line-number">12:44</span>' +
+' <span class="line"><span data-line-number="12:44"  class="line-number">44</span>' +
 
 
 
@@ -52029,7 +52102,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:45"  class="line-number">12:45</span>' +
+' <span class="line"><span data-line-number="12:45"  class="line-number">45</span>' +
 
 
 
@@ -52157,7 +52230,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:46"  class="line-number">12:46</span>' +
+' <span class="line"><span data-line-number="12:46"  class="line-number">46</span>' +
 
 
 
@@ -52281,7 +52354,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:47"  class="line-number">12:47</span>' +
+' <span class="line"><span data-line-number="12:47"  class="line-number">47</span>' +
 
 
 
@@ -52381,7 +52454,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:48"  class="line-number">12:48</span>' +
+' <span class="line"><span data-line-number="12:48"  class="line-number">48</span>' +
 
 
 
@@ -52497,7 +52570,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -52505,7 +52578,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:49"  class="line-number">12:49</span>' +
+' <span class="line"><span data-line-number="12:49"  class="line-number">49</span>' +
 
 
 
@@ -52565,7 +52638,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:50"  class="line-number">12:50</span>' +
+' <span class="line"><span data-line-number="12:50"  class="line-number">50</span>' +
 
 
 
@@ -52617,7 +52690,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:51"  class="line-number">12:51</span>' +
+' <span class="line"><span data-line-number="12:51"  class="line-number">51</span>' +
 
 
 
@@ -52685,7 +52758,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:52"  class="line-number">12:52</span>' +
+' <span class="line"><span data-line-number="12:52"  class="line-number">52</span>' +
 
 
 
@@ -52765,7 +52838,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:53"  class="line-number">12:53</span>' +
+' <span class="line"><span data-line-number="12:53"  class="line-number">53</span>' +
 
 
 
@@ -52881,7 +52954,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:54"  class="line-number">12:54</span>' +
+' <span class="line"><span data-line-number="12:54"  class="line-number">54</span>' +
 
 
 
@@ -52969,7 +53042,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:55"  class="line-number">12:55</span>' +
+' <span class="line"><span data-line-number="12:55"  class="line-number">55</span>' +
 
 
 
@@ -53021,7 +53094,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:56"  class="line-number">12:56</span>' +
+' <span class="line"><span data-line-number="12:56"  class="line-number">56</span>' +
 
 
 
@@ -53101,7 +53174,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:57"  class="line-number">12:57</span>' +
+' <span class="line"><span data-line-number="12:57"  class="line-number">57</span>' +
 
 
 
@@ -53149,7 +53222,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:58"  class="line-number">12:58</span>' +
+' <span class="line"><span data-line-number="12:58"  class="line-number">58</span>' +
 
 
 
@@ -53309,7 +53382,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="12:59"  class="line-number">12:59</span>' +
+' <span class="line"><span data-line-number="12:59"  class="line-number">59</span>' +
 
 
 
@@ -53373,7 +53446,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XIII</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -53381,7 +53460,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:1"  class="line-number">13:1</span>' +
+' <span class="line"><span data-line-number="13:1"  class="line-number">01</span>' +
 
 
 
@@ -53477,7 +53556,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:2"  class="line-number">13:2</span>' +
+' <span class="line"><span data-line-number="13:2"  class="line-number">02</span>' +
 
 
 
@@ -53569,7 +53648,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:3"  class="line-number">13:3</span>' +
+' <span class="line"><span data-line-number="13:3"  class="line-number">03</span>' +
 
 
 
@@ -53621,7 +53700,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:4"  class="line-number">13:4</span>' +
+' <span class="line"><span data-line-number="13:4"  class="line-number">04</span>' +
 
 
 
@@ -53749,7 +53828,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:5"  class="line-number">13:5</span>' +
+' <span class="line"><span data-line-number="13:5"  class="line-number">05</span>' +
 
 
 
@@ -53801,7 +53880,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:6"  class="line-number">13:6</span>' +
+' <span class="line"><span data-line-number="13:6"  class="line-number">06</span>' +
 
 
 
@@ -53901,7 +53980,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:7"  class="line-number">13:7</span>' +
+' <span class="line"><span data-line-number="13:7"  class="line-number">07</span>' +
 
 
 
@@ -54017,7 +54096,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:8"  class="line-number">13:8</span>' +
+' <span class="line"><span data-line-number="13:8"  class="line-number">08</span>' +
 
 
 
@@ -54109,7 +54188,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:9"  class="line-number">13:9</span>' +
+' <span class="line"><span data-line-number="13:9"  class="line-number">09</span>' +
 
 
 
@@ -54169,7 +54248,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -54177,7 +54256,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:10"  class="line-number">13:10</span>' +
+' <span class="line"><span data-line-number="13:10"  class="line-number">10</span>' +
 
 
 
@@ -54229,7 +54308,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:11"  class="line-number">13:11</span>' +
+' <span class="line"><span data-line-number="13:11"  class="line-number">11</span>' +
 
 
 
@@ -54325,7 +54404,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:12"  class="line-number">13:12</span>' +
+' <span class="line"><span data-line-number="13:12"  class="line-number">12</span>' +
 
 
 
@@ -54393,7 +54472,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:13"  class="line-number">13:13</span>' +
+' <span class="line"><span data-line-number="13:13"  class="line-number">13</span>' +
 
 
 
@@ -54453,7 +54532,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:14"  class="line-number">13:14</span>' +
+' <span class="line"><span data-line-number="13:14"  class="line-number">14</span>' +
 
 
 
@@ -54593,7 +54672,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:15"  class="line-number">13:15</span>' +
+' <span class="line"><span data-line-number="13:15"  class="line-number">15</span>' +
 
 
 
@@ -54709,7 +54788,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:16"  class="line-number">13:16</span>' +
+' <span class="line"><span data-line-number="13:16"  class="line-number">16</span>' +
 
 
 
@@ -54821,7 +54900,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:17"  class="line-number">13:17</span>' +
+' <span class="line"><span data-line-number="13:17"  class="line-number">17</span>' +
 
 
 
@@ -54921,7 +55000,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -54929,7 +55008,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:18"  class="line-number">13:18</span>' +
+' <span class="line"><span data-line-number="13:18"  class="line-number">18</span>' +
 
 
 
@@ -54993,7 +55072,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:19"  class="line-number">13:19</span>' +
+' <span class="line"><span data-line-number="13:19"  class="line-number">19</span>' +
 
 
 
@@ -55117,7 +55196,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:20"  class="line-number">13:20</span>' +
+' <span class="line"><span data-line-number="13:20"  class="line-number">20</span>' +
 
 
 
@@ -55161,7 +55240,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:21"  class="line-number">13:21</span>' +
+' <span class="line"><span data-line-number="13:21"  class="line-number">21</span>' +
 
 
 
@@ -55233,7 +55312,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:22"  class="line-number">13:22</span>' +
+' <span class="line"><span data-line-number="13:22"  class="line-number">22</span>' +
 
 
 
@@ -55293,7 +55372,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:23"  class="line-number">13:23</span>' +
+' <span class="line"><span data-line-number="13:23"  class="line-number">23</span>' +
 
 
 
@@ -55361,7 +55440,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:24"  class="line-number">13:24</span>' +
+' <span class="line"><span data-line-number="13:24"  class="line-number">24</span>' +
 
 
 
@@ -55433,7 +55512,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:25"  class="line-number">13:25</span>' +
+' <span class="line"><span data-line-number="13:25"  class="line-number">25</span>' +
 
 
 
@@ -55573,7 +55652,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:26"  class="line-number">13:26</span>' +
+' <span class="line"><span data-line-number="13:26"  class="line-number">26</span>' +
 
 
 
@@ -55641,7 +55720,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:27"  class="line-number">13:27</span>' +
+' <span class="line"><span data-line-number="13:27"  class="line-number">27</span>' +
 
 
 
@@ -55721,7 +55800,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:28"  class="line-number">13:28</span>' +
+' <span class="line"><span data-line-number="13:28"  class="line-number">28</span>' +
 
 
 
@@ -55849,7 +55928,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:29"  class="line-number">13:29</span>' +
+' <span class="line"><span data-line-number="13:29"  class="line-number">29</span>' +
 
 
 
@@ -55929,7 +56008,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:30"  class="line-number">13:30</span>' +
+' <span class="line"><span data-line-number="13:30"  class="line-number">30</span>' +
 
 
 
@@ -55993,7 +56072,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -56001,7 +56080,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:31"  class="line-number">13:31</span>' +
+' <span class="line"><span data-line-number="13:31"  class="line-number">31</span>' +
 
 
 
@@ -56085,7 +56164,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:32"  class="line-number">13:32</span>' +
+' <span class="line"><span data-line-number="13:32"  class="line-number">32</span>' +
 
 
 
@@ -56181,7 +56260,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:33"  class="line-number">13:33</span>' +
+' <span class="line"><span data-line-number="13:33"  class="line-number">33</span>' +
 
 
 
@@ -56261,7 +56340,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:34"  class="line-number">13:34</span>' +
+' <span class="line"><span data-line-number="13:34"  class="line-number">34</span>' +
 
 
 
@@ -56393,7 +56472,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="13:35"  class="line-number">13:35</span>' +
+' <span class="line"><span data-line-number="13:35"  class="line-number">35</span>' +
 
 
 
@@ -56509,7 +56588,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XIV</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -56517,7 +56602,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:1"  class="line-number">14:1</span>' +
+' <span class="line"><span data-line-number="14:1"  class="line-number">01</span>' +
 
 
 
@@ -56613,7 +56698,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:2"  class="line-number">14:2</span>' +
+' <span class="line"><span data-line-number="14:2"  class="line-number">02</span>' +
 
 
 
@@ -56657,7 +56742,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:3"  class="line-number">14:3</span>' +
+' <span class="line"><span data-line-number="14:3"  class="line-number">03</span>' +
 
 
 
@@ -56737,7 +56822,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:4"  class="line-number">14:4</span>' +
+' <span class="line"><span data-line-number="14:4"  class="line-number">04</span>' +
 
 
 
@@ -56785,7 +56870,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:5"  class="line-number">14:5</span>' +
+' <span class="line"><span data-line-number="14:5"  class="line-number">05</span>' +
 
 
 
@@ -56889,7 +56974,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:6"  class="line-number">14:6</span>' +
+' <span class="line"><span data-line-number="14:6"  class="line-number">06</span>' +
 
 
 
@@ -56929,7 +57014,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -56937,7 +57022,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:7"  class="line-number">14:7</span>' +
+' <span class="line"><span data-line-number="14:7"  class="line-number">07</span>' +
 
 
 
@@ -57005,7 +57090,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:8"  class="line-number">14:8</span>' +
+' <span class="line"><span data-line-number="14:8"  class="line-number">08</span>' +
 
 
 
@@ -57089,7 +57174,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:9"  class="line-number">14:9</span>' +
+' <span class="line"><span data-line-number="14:9"  class="line-number">09</span>' +
 
 
 
@@ -57185,7 +57270,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:10"  class="line-number">14:10</span>' +
+' <span class="line"><span data-line-number="14:10"  class="line-number">10</span>' +
 
 
 
@@ -57309,7 +57394,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:11"  class="line-number">14:11</span>' +
+' <span class="line"><span data-line-number="14:11"  class="line-number">11</span>' +
 
 
 
@@ -57365,7 +57450,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -57373,7 +57458,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:12"  class="line-number">14:12</span>' +
+' <span class="line"><span data-line-number="14:12"  class="line-number">12</span>' +
 
 
 
@@ -57529,7 +57614,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:13"  class="line-number">14:13</span>' +
+' <span class="line"><span data-line-number="14:13"  class="line-number">13</span>' +
 
 
 
@@ -57577,7 +57662,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:14"  class="line-number">14:14</span>' +
+' <span class="line"><span data-line-number="14:14"  class="line-number">14</span>' +
 
 
 
@@ -57653,7 +57738,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -57661,7 +57746,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:15"  class="line-number">14:15</span>' +
+' <span class="line"><span data-line-number="14:15"  class="line-number">15</span>' +
 
 
 
@@ -57741,7 +57826,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:16"  class="line-number">14:16</span>' +
+' <span class="line"><span data-line-number="14:16"  class="line-number">16</span>' +
 
 
 
@@ -57801,7 +57886,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:17"  class="line-number">14:17</span>' +
+' <span class="line"><span data-line-number="14:17"  class="line-number">17</span>' +
 
 
 
@@ -57885,7 +57970,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:18"  class="line-number">14:18</span>' +
+' <span class="line"><span data-line-number="14:18"  class="line-number">18</span>' +
 
 
 
@@ -57993,7 +58078,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:19"  class="line-number">14:19</span>' +
+' <span class="line"><span data-line-number="14:19"  class="line-number">19</span>' +
 
 
 
@@ -58069,7 +58154,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:20"  class="line-number">14:20</span>' +
+' <span class="line"><span data-line-number="14:20"  class="line-number">20</span>' +
 
 
 
@@ -58125,7 +58210,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:21"  class="line-number">14:21</span>' +
+' <span class="line"><span data-line-number="14:21"  class="line-number">21</span>' +
 
 
 
@@ -58289,7 +58374,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:22"  class="line-number">14:22</span>' +
+' <span class="line"><span data-line-number="14:22"  class="line-number">22</span>' +
 
 
 
@@ -58349,7 +58434,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:23"  class="line-number">14:23</span>' +
+' <span class="line"><span data-line-number="14:23"  class="line-number">23</span>' +
 
 
 
@@ -58445,7 +58530,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:24"  class="line-number">14:24</span>' +
+' <span class="line"><span data-line-number="14:24"  class="line-number">24</span>' +
 
 
 
@@ -58541,7 +58626,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -58549,7 +58634,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:25"  class="line-number">14:25</span>' +
+' <span class="line"><span data-line-number="14:25"  class="line-number">25</span>' +
 
 
 
@@ -58601,7 +58686,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:26"  class="line-number">14:26</span>' +
+' <span class="line"><span data-line-number="14:26"  class="line-number">26</span>' +
 
 
 
@@ -58761,7 +58846,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:27"  class="line-number">14:27</span>' +
+' <span class="line"><span data-line-number="14:27"  class="line-number">27</span>' +
 
 
 
@@ -58837,7 +58922,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:28"  class="line-number">14:28</span>' +
+' <span class="line"><span data-line-number="14:28"  class="line-number">28</span>' +
 
 
 
@@ -58925,7 +59010,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:29"  class="line-number">14:29</span>' +
+' <span class="line"><span data-line-number="14:29"  class="line-number">29</span>' +
 
 
 
@@ -58997,7 +59082,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:30"  class="line-number">14:30</span>' +
+' <span class="line"><span data-line-number="14:30"  class="line-number">30</span>' +
 
 
 
@@ -59053,7 +59138,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:31"  class="line-number">14:31</span>' +
+' <span class="line"><span data-line-number="14:31"  class="line-number">31</span>' +
 
 
 
@@ -59173,7 +59258,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:32"  class="line-number">14:32</span>' +
+' <span class="line"><span data-line-number="14:32"  class="line-number">32</span>' +
 
 
 
@@ -59237,7 +59322,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:33"  class="line-number">14:33</span>' +
+' <span class="line"><span data-line-number="14:33"  class="line-number">33</span>' +
 
 
 
@@ -59317,7 +59402,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:34"  class="line-number">14:34</span>' +
+' <span class="line"><span data-line-number="14:34"  class="line-number">34</span>' +
 
 
 
@@ -59373,7 +59458,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="14:35"  class="line-number">14:35</span>' +
+' <span class="line"><span data-line-number="14:35"  class="line-number">35</span>' +
 
 
 
@@ -59449,7 +59534,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XV</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -59457,7 +59548,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:1"  class="line-number">15:1</span>' +
+' <span class="line"><span data-line-number="15:1"  class="line-number">01</span>' +
 
 
 
@@ -59517,7 +59608,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:2"  class="line-number">15:2</span>' +
+' <span class="line"><span data-line-number="15:2"  class="line-number">02</span>' +
 
 
 
@@ -59589,7 +59680,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -59597,7 +59688,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:3"  class="line-number">15:3</span>' +
+' <span class="line"><span data-line-number="15:3"  class="line-number">03</span>' +
 
 
 
@@ -59641,7 +59732,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:4"  class="line-number">15:4</span>' +
+' <span class="line"><span data-line-number="15:4"  class="line-number">04</span>' +
 
 
 
@@ -59765,7 +59856,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:5"  class="line-number">15:5</span>' +
+' <span class="line"><span data-line-number="15:5"  class="line-number">05</span>' +
 
 
 
@@ -59809,7 +59900,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:6"  class="line-number">15:6</span>' +
+' <span class="line"><span data-line-number="15:6"  class="line-number">06</span>' +
 
 
 
@@ -59909,7 +60000,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:7"  class="line-number">15:7</span>' +
+' <span class="line"><span data-line-number="15:7"  class="line-number">07</span>' +
 
 
 
@@ -60013,7 +60104,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -60021,7 +60112,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:8"  class="line-number">15:8</span>' +
+' <span class="line"><span data-line-number="15:8"  class="line-number">08</span>' +
 
 
 
@@ -60125,7 +60216,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:9"  class="line-number">15:9</span>' +
+' <span class="line"><span data-line-number="15:9"  class="line-number">09</span>' +
 
 
 
@@ -60205,7 +60296,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:10"  class="line-number">15:10</span>' +
+' <span class="line"><span data-line-number="15:10"  class="line-number">10</span>' +
 
 
 
@@ -60273,7 +60364,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -60281,7 +60372,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:11"  class="line-number">15:11</span>' +
+' <span class="line"><span data-line-number="15:11"  class="line-number">11</span>' +
 
 
 
@@ -60321,7 +60412,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:12"  class="line-number">15:12</span>' +
+' <span class="line"><span data-line-number="15:12"  class="line-number">12</span>' +
 
 
 
@@ -60413,7 +60504,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:13"  class="line-number">15:13</span>' +
+' <span class="line"><span data-line-number="15:13"  class="line-number">13</span>' +
 
 
 
@@ -60513,7 +60604,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:14"  class="line-number">15:14</span>' +
+' <span class="line"><span data-line-number="15:14"  class="line-number">14</span>' +
 
 
 
@@ -60585,7 +60676,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:15"  class="line-number">15:15</span>' +
+' <span class="line"><span data-line-number="15:15"  class="line-number">15</span>' +
 
 
 
@@ -60669,7 +60760,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:16"  class="line-number">15:16</span>' +
+' <span class="line"><span data-line-number="15:16"  class="line-number">16</span>' +
 
 
 
@@ -60749,7 +60840,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:17"  class="line-number">15:17</span>' +
+' <span class="line"><span data-line-number="15:17"  class="line-number">17</span>' +
 
 
 
@@ -60825,7 +60916,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:18"  class="line-number">15:18</span>' +
+' <span class="line"><span data-line-number="15:18"  class="line-number">18</span>' +
 
 
 
@@ -60905,7 +60996,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:19"  class="line-number">15:19</span>' +
+' <span class="line"><span data-line-number="15:19"  class="line-number">19</span>' +
 
 
 
@@ -60973,7 +61064,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:20"  class="line-number">15:20</span>' +
+' <span class="line"><span data-line-number="15:20"  class="line-number">20</span>' +
 
 
 
@@ -61101,7 +61192,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:21"  class="line-number">15:21</span>' +
+' <span class="line"><span data-line-number="15:21"  class="line-number">21</span>' +
 
 
 
@@ -61193,7 +61284,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:22"  class="line-number">15:22</span>' +
+' <span class="line"><span data-line-number="15:22"  class="line-number">22</span>' +
 
 
 
@@ -61317,7 +61408,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:23"  class="line-number">15:23</span>' +
+' <span class="line"><span data-line-number="15:23"  class="line-number">23</span>' +
 
 
 
@@ -61369,7 +61460,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:24"  class="line-number">15:24</span>' +
+' <span class="line"><span data-line-number="15:24"  class="line-number">24</span>' +
 
 
 
@@ -61449,7 +61540,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:25"  class="line-number">15:25</span>' +
+' <span class="line"><span data-line-number="15:25"  class="line-number">25</span>' +
 
 
 
@@ -61537,7 +61628,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:26"  class="line-number">15:26</span>' +
+' <span class="line"><span data-line-number="15:26"  class="line-number">26</span>' +
 
 
 
@@ -61585,7 +61676,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:27"  class="line-number">15:27</span>' +
+' <span class="line"><span data-line-number="15:27"  class="line-number">27</span>' +
 
 
 
@@ -61685,7 +61776,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:28"  class="line-number">15:28</span>' +
+' <span class="line"><span data-line-number="15:28"  class="line-number">28</span>' +
 
 
 
@@ -61749,7 +61840,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:29"  class="line-number">15:29</span>' +
+' <span class="line"><span data-line-number="15:29"  class="line-number">29</span>' +
 
 
 
@@ -61869,7 +61960,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:30"  class="line-number">15:30</span>' +
+' <span class="line"><span data-line-number="15:30"  class="line-number">30</span>' +
 
 
 
@@ -61961,7 +62052,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:31"  class="line-number">15:31</span>' +
+' <span class="line"><span data-line-number="15:31"  class="line-number">31</span>' +
 
 
 
@@ -62037,7 +62128,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="15:32"  class="line-number">15:32</span>' +
+' <span class="line"><span data-line-number="15:32"  class="line-number">32</span>' +
 
 
 
@@ -62125,7 +62216,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XVI</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -62133,7 +62230,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:1"  class="line-number">16:1</span>' +
+' <span class="line"><span data-line-number="16:1"  class="line-number">01</span>' +
 
 
 
@@ -62237,7 +62334,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:2"  class="line-number">16:2</span>' +
+' <span class="line"><span data-line-number="16:2"  class="line-number">02</span>' +
 
 
 
@@ -62333,7 +62430,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:3"  class="line-number">16:3</span>' +
+' <span class="line"><span data-line-number="16:3"  class="line-number">03</span>' +
 
 
 
@@ -62433,7 +62530,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:4"  class="line-number">16:4</span>' +
+' <span class="line"><span data-line-number="16:4"  class="line-number">04</span>' +
 
 
 
@@ -62501,7 +62598,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:5"  class="line-number">16:5</span>' +
+' <span class="line"><span data-line-number="16:5"  class="line-number">05</span>' +
 
 
 
@@ -62581,7 +62678,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:6"  class="line-number">16:6</span>' +
+' <span class="line"><span data-line-number="16:6"  class="line-number">06</span>' +
 
 
 
@@ -62665,7 +62762,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:7"  class="line-number">16:7</span>' +
+' <span class="line"><span data-line-number="16:7"  class="line-number">07</span>' +
 
 
 
@@ -62769,7 +62866,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:8"  class="line-number">16:8</span>' +
+' <span class="line"><span data-line-number="16:8"  class="line-number">08</span>' +
 
 
 
@@ -62897,7 +62994,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:9"  class="line-number">16:9</span>' +
+' <span class="line"><span data-line-number="16:9"  class="line-number">09</span>' +
 
 
 
@@ -62989,7 +63086,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:10"  class="line-number">16:10</span>' +
+' <span class="line"><span data-line-number="16:10"  class="line-number">10</span>' +
 
 
 
@@ -63077,7 +63174,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:11"  class="line-number">16:11</span>' +
+' <span class="line"><span data-line-number="16:11"  class="line-number">11</span>' +
 
 
 
@@ -63145,7 +63242,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:12"  class="line-number">16:12</span>' +
+' <span class="line"><span data-line-number="16:12"  class="line-number">12</span>' +
 
 
 
@@ -63209,7 +63306,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:13"  class="line-number">16:13</span>' +
+' <span class="line"><span data-line-number="16:13"  class="line-number">13</span>' +
 
 
 
@@ -63333,7 +63430,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -63341,7 +63438,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:14"  class="line-number">16:14</span>' +
+' <span class="line"><span data-line-number="16:14"  class="line-number">14</span>' +
 
 
 
@@ -63401,7 +63498,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:15"  class="line-number">16:15</span>' +
+' <span class="line"><span data-line-number="16:15"  class="line-number">15</span>' +
 
 
 
@@ -63521,7 +63618,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:16"  class="line-number">16:16</span>' +
+' <span class="line"><span data-line-number="16:16"  class="line-number">16</span>' +
 
 
 
@@ -63609,7 +63706,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:17"  class="line-number">16:17</span>' +
+' <span class="line"><span data-line-number="16:17"  class="line-number">17</span>' +
 
 
 
@@ -63681,7 +63778,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:18"  class="line-number">16:18</span>' +
+' <span class="line"><span data-line-number="16:18"  class="line-number">18</span>' +
 
 
 
@@ -63765,7 +63862,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -63773,7 +63870,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:19"  class="line-number">16:19</span>' +
+' <span class="line"><span data-line-number="16:19"  class="line-number">19</span>' +
 
 
 
@@ -63841,7 +63938,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:20"  class="line-number">16:20</span>' +
+' <span class="line"><span data-line-number="16:20"  class="line-number">20</span>' +
 
 
 
@@ -63905,7 +64002,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:21"  class="line-number">16:21</span>' +
+' <span class="line"><span data-line-number="16:21"  class="line-number">21</span>' +
 
 
 
@@ -64005,7 +64102,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:22"  class="line-number">16:22</span>' +
+' <span class="line"><span data-line-number="16:22"  class="line-number">22</span>' +
 
 
 
@@ -64105,7 +64202,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:23"  class="line-number">16:23</span>' +
+' <span class="line"><span data-line-number="16:23"  class="line-number">23</span>' +
 
 
 
@@ -64205,7 +64302,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:24"  class="line-number">16:24</span>' +
+' <span class="line"><span data-line-number="16:24"  class="line-number">24</span>' +
 
 
 
@@ -64337,7 +64434,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:25"  class="line-number">16:25</span>' +
+' <span class="line"><span data-line-number="16:25"  class="line-number">25</span>' +
 
 
 
@@ -64457,7 +64554,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:26"  class="line-number">16:26</span>' +
+' <span class="line"><span data-line-number="16:26"  class="line-number">26</span>' +
 
 
 
@@ -64573,7 +64670,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:27"  class="line-number">16:27</span>' +
+' <span class="line"><span data-line-number="16:27"  class="line-number">27</span>' +
 
 
 
@@ -64645,7 +64742,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:28"  class="line-number">16:28</span>' +
+' <span class="line"><span data-line-number="16:28"  class="line-number">28</span>' +
 
 
 
@@ -64729,7 +64826,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:29"  class="line-number">16:29</span>' +
+' <span class="line"><span data-line-number="16:29"  class="line-number">29</span>' +
 
 
 
@@ -64781,7 +64878,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:30"  class="line-number">16:30</span>' +
+' <span class="line"><span data-line-number="16:30"  class="line-number">30</span>' +
 
 
 
@@ -64853,7 +64950,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="16:31"  class="line-number">16:31</span>' +
+' <span class="line"><span data-line-number="16:31"  class="line-number">31</span>' +
 
 
 
@@ -64933,7 +65030,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XVII</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -64941,7 +65044,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:1"  class="line-number">17:1</span>' +
+' <span class="line"><span data-line-number="17:1"  class="line-number">01</span>' +
 
 
 
@@ -65021,7 +65124,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:2"  class="line-number">17:2</span>' +
+' <span class="line"><span data-line-number="17:2"  class="line-number">02</span>' +
 
 
 
@@ -65121,7 +65224,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:3"  class="line-number">17:3</span>' +
+' <span class="line"><span data-line-number="17:3"  class="line-number">03</span>' +
 
 
 
@@ -65201,7 +65304,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:4"  class="line-number">17:4</span>' +
+' <span class="line"><span data-line-number="17:4"  class="line-number">04</span>' +
 
 
 
@@ -65281,7 +65384,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -65289,7 +65392,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:5"  class="line-number">17:5</span>' +
+' <span class="line"><span data-line-number="17:5"  class="line-number">05</span>' +
 
 
 
@@ -65337,7 +65440,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:6"  class="line-number">17:6</span>' +
+' <span class="line"><span data-line-number="17:6"  class="line-number">06</span>' +
 
 
 
@@ -65449,7 +65552,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:7"  class="line-number">17:7</span>' +
+' <span class="line"><span data-line-number="17:7"  class="line-number">07</span>' +
 
 
 
@@ -65533,7 +65636,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:8"  class="line-number">17:8</span>' +
+' <span class="line"><span data-line-number="17:8"  class="line-number">08</span>' +
 
 
 
@@ -65633,7 +65736,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:9"  class="line-number">17:9</span>' +
+' <span class="line"><span data-line-number="17:9"  class="line-number">09</span>' +
 
 
 
@@ -65693,7 +65796,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:10"  class="line-number">17:10</span>' +
+' <span class="line"><span data-line-number="17:10"  class="line-number">10</span>' +
 
 
 
@@ -65781,7 +65884,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -65789,7 +65892,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:11"  class="line-number">17:11</span>' +
+' <span class="line"><span data-line-number="17:11"  class="line-number">11</span>' +
 
 
 
@@ -65865,7 +65968,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:12"  class="line-number">17:12</span>' +
+' <span class="line"><span data-line-number="17:12"  class="line-number">12</span>' +
 
 
 
@@ -65933,7 +66036,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:13"  class="line-number">17:13</span>' +
+' <span class="line"><span data-line-number="17:13"  class="line-number">13</span>' +
 
 
 
@@ -65981,7 +66084,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:14"  class="line-number">17:14</span>' +
+' <span class="line"><span data-line-number="17:14"  class="line-number">14</span>' +
 
 
 
@@ -66057,7 +66160,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:15"  class="line-number">17:15</span>' +
+' <span class="line"><span data-line-number="17:15"  class="line-number">15</span>' +
 
 
 
@@ -66125,7 +66228,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:16"  class="line-number">17:16</span>' +
+' <span class="line"><span data-line-number="17:16"  class="line-number">16</span>' +
 
 
 
@@ -66193,7 +66296,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:17"  class="line-number">17:17</span>' +
+' <span class="line"><span data-line-number="17:17"  class="line-number">17</span>' +
 
 
 
@@ -66257,7 +66360,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:18"  class="line-number">17:18</span>' +
+' <span class="line"><span data-line-number="17:18"  class="line-number">18</span>' +
 
 
 
@@ -66317,7 +66420,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:19"  class="line-number">17:19</span>' +
+' <span class="line"><span data-line-number="17:19"  class="line-number">19</span>' +
 
 
 
@@ -66369,7 +66472,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -66377,7 +66480,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:20"  class="line-number">17:20</span>' +
+' <span class="line"><span data-line-number="17:20"  class="line-number">20</span>' +
 
 
 
@@ -66481,7 +66584,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:21"  class="line-number">17:21</span>' +
+' <span class="line"><span data-line-number="17:21"  class="line-number">21</span>' +
 
 
 
@@ -66557,7 +66660,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -66565,7 +66668,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:22"  class="line-number">17:22</span>' +
+' <span class="line"><span data-line-number="17:22"  class="line-number">22</span>' +
 
 
 
@@ -66657,7 +66760,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:23"  class="line-number">17:23</span>' +
+' <span class="line"><span data-line-number="17:23"  class="line-number">23</span>' +
 
 
 
@@ -66717,7 +66820,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:24"  class="line-number">17:24</span>' +
+' <span class="line"><span data-line-number="17:24"  class="line-number">24</span>' +
 
 
 
@@ -66829,7 +66932,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:25"  class="line-number">17:25</span>' +
+' <span class="line"><span data-line-number="17:25"  class="line-number">25</span>' +
 
 
 
@@ -66889,7 +66992,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:26"  class="line-number">17:26</span>' +
+' <span class="line"><span data-line-number="17:26"  class="line-number">26</span>' +
 
 
 
@@ -66969,7 +67072,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:27"  class="line-number">17:27</span>' +
+' <span class="line"><span data-line-number="17:27"  class="line-number">27</span>' +
 
 
 
@@ -67057,7 +67160,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:28"  class="line-number">17:28</span>' +
+' <span class="line"><span data-line-number="17:28"  class="line-number">28</span>' +
 
 
 
@@ -67125,7 +67228,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:29"  class="line-number">17:29</span>' +
+' <span class="line"><span data-line-number="17:29"  class="line-number">29</span>' +
 
 
 
@@ -67201,7 +67304,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:30"  class="line-number">17:30</span>' +
+' <span class="line"><span data-line-number="17:30"  class="line-number">30</span>' +
 
 
 
@@ -67253,7 +67356,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:31"  class="line-number">17:31</span>' +
+' <span class="line"><span data-line-number="17:31"  class="line-number">31</span>' +
 
 
 
@@ -67389,7 +67492,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:32"  class="line-number">17:32</span>' +
+' <span class="line"><span data-line-number="17:32"  class="line-number">32</span>' +
 
 
 
@@ -67417,7 +67520,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:33"  class="line-number">17:33</span>' +
+' <span class="line"><span data-line-number="17:33"  class="line-number">33</span>' +
 
 
 
@@ -67493,7 +67596,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:34"  class="line-number">17:34</span>' +
+' <span class="line"><span data-line-number="17:34"  class="line-number">34</span>' +
 
 
 
@@ -67569,7 +67672,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:35"  class="line-number">17:35</span>' +
+' <span class="line"><span data-line-number="17:35"  class="line-number">35</span>' +
 
 
 
@@ -67629,7 +67732,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:36"  class="line-number">17:36</span>' +
+' <span class="line"><span data-line-number="17:36"  class="line-number">36</span>' +
 
 
 
@@ -67641,7 +67744,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="17:37"  class="line-number">17:37</span>' +
+' <span class="line"><span data-line-number="17:37"  class="line-number">37</span>' +
 
 
 
@@ -67721,7 +67824,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XVIII</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -67729,7 +67838,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:1"  class="line-number">18:1</span>' +
+' <span class="line"><span data-line-number="18:1"  class="line-number">01</span>' +
 
 
 
@@ -67793,7 +67902,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:2"  class="line-number">18:2</span>' +
+' <span class="line"><span data-line-number="18:2"  class="line-number">02</span>' +
 
 
 
@@ -67865,7 +67974,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:3"  class="line-number">18:3</span>' +
+' <span class="line"><span data-line-number="18:3"  class="line-number">03</span>' +
 
 
 
@@ -67949,7 +68058,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:4"  class="line-number">18:4</span>' +
+' <span class="line"><span data-line-number="18:4"  class="line-number">04</span>' +
 
 
 
@@ -68045,7 +68154,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:5"  class="line-number">18:5</span>' +
+' <span class="line"><span data-line-number="18:5"  class="line-number">05</span>' +
 
 
 
@@ -68129,7 +68238,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:6"  class="line-number">18:6</span>' +
+' <span class="line"><span data-line-number="18:6"  class="line-number">06</span>' +
 
 
 
@@ -68185,7 +68294,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:7"  class="line-number">18:7</span>' +
+' <span class="line"><span data-line-number="18:7"  class="line-number">07</span>' +
 
 
 
@@ -68285,7 +68394,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:8"  class="line-number">18:8</span>' +
+' <span class="line"><span data-line-number="18:8"  class="line-number">08</span>' +
 
 
 
@@ -68385,7 +68494,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -68393,7 +68502,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:9"  class="line-number">18:9</span>' +
+' <span class="line"><span data-line-number="18:9"  class="line-number">09</span>' +
 
 
 
@@ -68477,7 +68586,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:10"  class="line-number">18:10</span>' +
+' <span class="line"><span data-line-number="18:10"  class="line-number">10</span>' +
 
 
 
@@ -68545,7 +68654,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:11"  class="line-number">18:11</span>' +
+' <span class="line"><span data-line-number="18:11"  class="line-number">11</span>' +
 
 
 
@@ -68669,7 +68778,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:12"  class="line-number">18:12</span>' +
+' <span class="line"><span data-line-number="18:12"  class="line-number">12</span>' +
 
 
 
@@ -68713,7 +68822,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:13"  class="line-number">18:13</span>' +
+' <span class="line"><span data-line-number="18:13"  class="line-number">13</span>' +
 
 
 
@@ -68833,7 +68942,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:14"  class="line-number">18:14</span>' +
+' <span class="line"><span data-line-number="18:14"  class="line-number">14</span>' +
 
 
 
@@ -68937,7 +69046,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -68945,7 +69054,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:15"  class="line-number">18:15</span>' +
+' <span class="line"><span data-line-number="18:15"  class="line-number">15</span>' +
 
 
 
@@ -69017,7 +69126,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:16"  class="line-number">18:16</span>' +
+' <span class="line"><span data-line-number="18:16"  class="line-number">16</span>' +
 
 
 
@@ -69125,7 +69234,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:17"  class="line-number">18:17</span>' +
+' <span class="line"><span data-line-number="18:17"  class="line-number">17</span>' +
 
 
 
@@ -69209,7 +69318,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -69217,7 +69326,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:18"  class="line-number">18:18</span>' +
+' <span class="line"><span data-line-number="18:18"  class="line-number">18</span>' +
 
 
 
@@ -69281,7 +69390,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:19"  class="line-number">18:19</span>' +
+' <span class="line"><span data-line-number="18:19"  class="line-number">19</span>' +
 
 
 
@@ -69357,7 +69466,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:20"  class="line-number">18:20</span>' +
+' <span class="line"><span data-line-number="18:20"  class="line-number">20</span>' +
 
 
 
@@ -69445,7 +69554,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:21"  class="line-number">18:21</span>' +
+' <span class="line"><span data-line-number="18:21"  class="line-number">21</span>' +
 
 
 
@@ -69493,7 +69602,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:22"  class="line-number">18:22</span>' +
+' <span class="line"><span data-line-number="18:22"  class="line-number">22</span>' +
 
 
 
@@ -69613,7 +69722,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:23"  class="line-number">18:23</span>' +
+' <span class="line"><span data-line-number="18:23"  class="line-number">23</span>' +
 
 
 
@@ -69665,7 +69774,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:24"  class="line-number">18:24</span>' +
+' <span class="line"><span data-line-number="18:24"  class="line-number">24</span>' +
 
 
 
@@ -69757,7 +69866,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:25"  class="line-number">18:25</span>' +
+' <span class="line"><span data-line-number="18:25"  class="line-number">25</span>' +
 
 
 
@@ -69833,7 +69942,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:26"  class="line-number">18:26</span>' +
+' <span class="line"><span data-line-number="18:26"  class="line-number">26</span>' +
 
 
 
@@ -69877,7 +69986,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:27"  class="line-number">18:27</span>' +
+' <span class="line"><span data-line-number="18:27"  class="line-number">27</span>' +
 
 
 
@@ -69937,7 +70046,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:28"  class="line-number">18:28</span>' +
+' <span class="line"><span data-line-number="18:28"  class="line-number">28</span>' +
 
 
 
@@ -69989,7 +70098,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:29"  class="line-number">18:29</span>' +
+' <span class="line"><span data-line-number="18:29"  class="line-number">29</span>' +
 
 
 
@@ -70105,7 +70214,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:30"  class="line-number">18:30</span>' +
+' <span class="line"><span data-line-number="18:30"  class="line-number">30</span>' +
 
 
 
@@ -70185,7 +70294,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -70193,7 +70302,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:31"  class="line-number">18:31</span>' +
+' <span class="line"><span data-line-number="18:31"  class="line-number">31</span>' +
 
 
 
@@ -70297,7 +70406,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:32"  class="line-number">18:32</span>' +
+' <span class="line"><span data-line-number="18:32"  class="line-number">32</span>' +
 
 
 
@@ -70349,7 +70458,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:33"  class="line-number">18:33</span>' +
+' <span class="line"><span data-line-number="18:33"  class="line-number">33</span>' +
 
 
 
@@ -70401,7 +70510,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:34"  class="line-number">18:34</span>' +
+' <span class="line"><span data-line-number="18:34"  class="line-number">34</span>' +
 
 
 
@@ -70485,7 +70594,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -70493,7 +70602,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:35"  class="line-number">18:35</span>' +
+' <span class="line"><span data-line-number="18:35"  class="line-number">35</span>' +
 
 
 
@@ -70565,7 +70674,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:36"  class="line-number">18:36</span>' +
+' <span class="line"><span data-line-number="18:36"  class="line-number">36</span>' +
 
 
 
@@ -70609,7 +70718,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:37"  class="line-number">18:37</span>' +
+' <span class="line"><span data-line-number="18:37"  class="line-number">37</span>' +
 
 
 
@@ -70653,7 +70762,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:38"  class="line-number">18:38</span>' +
+' <span class="line"><span data-line-number="18:38"  class="line-number">38</span>' +
 
 
 
@@ -70697,7 +70806,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:39"  class="line-number">18:39</span>' +
+' <span class="line"><span data-line-number="18:39"  class="line-number">39</span>' +
 
 
 
@@ -70773,7 +70882,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:40"  class="line-number">18:40</span>' +
+' <span class="line"><span data-line-number="18:40"  class="line-number">40</span>' +
 
 
 
@@ -70841,7 +70950,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:41"  class="line-number">18:41</span>' +
+' <span class="line"><span data-line-number="18:41"  class="line-number">41</span>' +
 
 
 
@@ -70897,7 +71006,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:42"  class="line-number">18:42</span>' +
+' <span class="line"><span data-line-number="18:42"  class="line-number">42</span>' +
 
 
 
@@ -70953,7 +71062,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="18:43"  class="line-number">18:43</span>' +
+' <span class="line"><span data-line-number="18:43"  class="line-number">43</span>' +
 
 
 
@@ -71037,7 +71146,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XIX</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -71045,7 +71160,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:1"  class="line-number">19:1</span>' +
+' <span class="line"><span data-line-number="19:1"  class="line-number">01</span>' +
 
 
 
@@ -71077,7 +71192,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:2"  class="line-number">19:2</span>' +
+' <span class="line"><span data-line-number="19:2"  class="line-number">02</span>' +
 
 
 
@@ -71145,7 +71260,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:3"  class="line-number">19:3</span>' +
+' <span class="line"><span data-line-number="19:3"  class="line-number">03</span>' +
 
 
 
@@ -71229,7 +71344,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:4"  class="line-number">19:4</span>' +
+' <span class="line"><span data-line-number="19:4"  class="line-number">04</span>' +
 
 
 
@@ -71293,7 +71408,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:5"  class="line-number">19:5</span>' +
+' <span class="line"><span data-line-number="19:5"  class="line-number">05</span>' +
 
 
 
@@ -71413,7 +71528,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:6"  class="line-number">19:6</span>' +
+' <span class="line"><span data-line-number="19:6"  class="line-number">06</span>' +
 
 
 
@@ -71453,7 +71568,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:7"  class="line-number">19:7</span>' +
+' <span class="line"><span data-line-number="19:7"  class="line-number">07</span>' +
 
 
 
@@ -71509,7 +71624,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:8"  class="line-number">19:8</span>' +
+' <span class="line"><span data-line-number="19:8"  class="line-number">08</span>' +
 
 
 
@@ -71617,7 +71732,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:9"  class="line-number">19:9</span>' +
+' <span class="line"><span data-line-number="19:9"  class="line-number">09</span>' +
 
 
 
@@ -71705,7 +71820,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:10"  class="line-number">19:10</span>' +
+' <span class="line"><span data-line-number="19:10"  class="line-number">10</span>' +
 
 
 
@@ -71761,7 +71876,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -71769,7 +71884,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:11"  class="line-number">19:11</span>' +
+' <span class="line"><span data-line-number="19:11"  class="line-number">11</span>' +
 
 
 
@@ -71877,7 +71992,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:12"  class="line-number">19:12</span>' +
+' <span class="line"><span data-line-number="19:12"  class="line-number">12</span>' +
 
 
 
@@ -71945,7 +72060,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:13"  class="line-number">19:13</span>' +
+' <span class="line"><span data-line-number="19:13"  class="line-number">13</span>' +
 
 
 
@@ -72021,7 +72136,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:14"  class="line-number">19:14</span>' +
+' <span class="line"><span data-line-number="19:14"  class="line-number">14</span>' +
 
 
 
@@ -72105,7 +72220,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:15"  class="line-number">19:15</span>' +
+' <span class="line"><span data-line-number="19:15"  class="line-number">15</span>' +
 
 
 
@@ -72217,7 +72332,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:16"  class="line-number">19:16</span>' +
+' <span class="line"><span data-line-number="19:16"  class="line-number">16</span>' +
 
 
 
@@ -72277,7 +72392,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:17"  class="line-number">19:17</span>' +
+' <span class="line"><span data-line-number="19:17"  class="line-number">17</span>' +
 
 
 
@@ -72357,7 +72472,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:18"  class="line-number">19:18</span>' +
+' <span class="line"><span data-line-number="19:18"  class="line-number">18</span>' +
 
 
 
@@ -72417,7 +72532,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:19"  class="line-number">19:19</span>' +
+' <span class="line"><span data-line-number="19:19"  class="line-number">19</span>' +
 
 
 
@@ -72469,7 +72584,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:20"  class="line-number">19:20</span>' +
+' <span class="line"><span data-line-number="19:20"  class="line-number">20</span>' +
 
 
 
@@ -72537,7 +72652,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:21"  class="line-number">19:21</span>' +
+' <span class="line"><span data-line-number="19:21"  class="line-number">21</span>' +
 
 
 
@@ -72613,7 +72728,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:22"  class="line-number">19:22</span>' +
+' <span class="line"><span data-line-number="19:22"  class="line-number">22</span>' +
 
 
 
@@ -72729,7 +72844,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:23"  class="line-number">19:23</span>' +
+' <span class="line"><span data-line-number="19:23"  class="line-number">23</span>' +
 
 
 
@@ -72813,7 +72928,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:24"  class="line-number">19:24</span>' +
+' <span class="line"><span data-line-number="19:24"  class="line-number">24</span>' +
 
 
 
@@ -72889,7 +73004,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:25"  class="line-number">19:25</span>' +
+' <span class="line"><span data-line-number="19:25"  class="line-number">25</span>' +
 
 
 
@@ -72929,7 +73044,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:26"  class="line-number">19:26</span>' +
+' <span class="line"><span data-line-number="19:26"  class="line-number">26</span>' +
 
 
 
@@ -73017,7 +73132,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:27"  class="line-number">19:27</span>' +
+' <span class="line"><span data-line-number="19:27"  class="line-number">27</span>' +
 
 
 
@@ -73101,7 +73216,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -73109,7 +73224,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:28"  class="line-number">19:28</span>' +
+' <span class="line"><span data-line-number="19:28"  class="line-number">28</span>' +
 
 
 
@@ -73153,7 +73268,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -73161,7 +73276,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:29"  class="line-number">19:29</span>' +
+' <span class="line"><span data-line-number="19:29"  class="line-number">29</span>' +
 
 
 
@@ -73249,7 +73364,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:30"  class="line-number">19:30</span>' +
+' <span class="line"><span data-line-number="19:30"  class="line-number">30</span>' +
 
 
 
@@ -73345,7 +73460,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:31"  class="line-number">19:31</span>' +
+' <span class="line"><span data-line-number="19:31"  class="line-number">31</span>' +
 
 
 
@@ -73425,7 +73540,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:32"  class="line-number">19:32</span>' +
+' <span class="line"><span data-line-number="19:32"  class="line-number">32</span>' +
 
 
 
@@ -73469,7 +73584,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:33"  class="line-number">19:33</span>' +
+' <span class="line"><span data-line-number="19:33"  class="line-number">33</span>' +
 
 
 
@@ -73541,7 +73656,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:34"  class="line-number">19:34</span>' +
+' <span class="line"><span data-line-number="19:34"  class="line-number">34</span>' +
 
 
 
@@ -73585,7 +73700,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:35"  class="line-number">19:35</span>' +
+' <span class="line"><span data-line-number="19:35"  class="line-number">35</span>' +
 
 
 
@@ -73665,7 +73780,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:36"  class="line-number">19:36</span>' +
+' <span class="line"><span data-line-number="19:36"  class="line-number">36</span>' +
 
 
 
@@ -73717,7 +73832,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:37"  class="line-number">19:37</span>' +
+' <span class="line"><span data-line-number="19:37"  class="line-number">37</span>' +
 
 
 
@@ -73841,7 +73956,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:38"  class="line-number">19:38</span>' +
+' <span class="line"><span data-line-number="19:38"  class="line-number">38</span>' +
 
 
 
@@ -73853,11 +73968,11 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
-
+' <span class="line"><span data-line-number="19:38"  class="line-number"></span>' +
 
 
 
@@ -73925,7 +74040,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -73933,7 +74048,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:39"  class="line-number">19:39</span>' +
+' <span class="line"><span data-line-number="19:39"  class="line-number">39</span>' +
 
 
 
@@ -74005,7 +74120,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:40"  class="line-number">19:40</span>' +
+' <span class="line"><span data-line-number="19:40"  class="line-number">40</span>' +
 
 
 
@@ -74069,7 +74184,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -74077,7 +74192,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:41"  class="line-number">19:41</span>' +
+' <span class="line"><span data-line-number="19:41"  class="line-number">41</span>' +
 
 
 
@@ -74125,7 +74240,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:42"  class="line-number">19:42</span>' +
+' <span class="line"><span data-line-number="19:42"  class="line-number">42</span>' +
 
 
 
@@ -74229,7 +74344,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:43"  class="line-number">19:43</span>' +
+' <span class="line"><span data-line-number="19:43"  class="line-number">43</span>' +
 
 
 
@@ -74317,7 +74432,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:44"  class="line-number">19:44</span>' +
+' <span class="line"><span data-line-number="19:44"  class="line-number">44</span>' +
 
 
 
@@ -74433,7 +74548,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -74441,7 +74556,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:45"  class="line-number">19:45</span>' +
+' <span class="line"><span data-line-number="19:45"  class="line-number">45</span>' +
 
 
 
@@ -74505,7 +74620,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:46"  class="line-number">19:46</span>' +
+' <span class="line"><span data-line-number="19:46"  class="line-number">46</span>' +
 
 
 
@@ -74577,7 +74692,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:47"  class="line-number">19:47</span>' +
+' <span class="line"><span data-line-number="19:47"  class="line-number">47</span>' +
 
 
 
@@ -74681,7 +74796,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="19:48"  class="line-number">19:48</span>' +
+' <span class="line"><span data-line-number="19:48"  class="line-number">48</span>' +
 
 
 
@@ -74745,7 +74860,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XX</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -74753,7 +74874,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:1"  class="line-number">20:1</span>' +
+' <span class="line"><span data-line-number="20:1"  class="line-number">01</span>' +
 
 
 
@@ -74865,7 +74986,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:2"  class="line-number">20:2</span>' +
+' <span class="line"><span data-line-number="20:2"  class="line-number">02</span>' +
 
 
 
@@ -74961,7 +75082,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:3"  class="line-number">20:3</span>' +
+' <span class="line"><span data-line-number="20:3"  class="line-number">03</span>' +
 
 
 
@@ -75025,7 +75146,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:4"  class="line-number">20:4</span>' +
+' <span class="line"><span data-line-number="20:4"  class="line-number">04</span>' +
 
 
 
@@ -75073,7 +75194,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:5"  class="line-number">20:5</span>' +
+' <span class="line"><span data-line-number="20:5"  class="line-number">05</span>' +
 
 
 
@@ -75153,7 +75274,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:6"  class="line-number">20:6</span>' +
+' <span class="line"><span data-line-number="20:6"  class="line-number">06</span>' +
 
 
 
@@ -75229,7 +75350,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:7"  class="line-number">20:7</span>' +
+' <span class="line"><span data-line-number="20:7"  class="line-number">07</span>' +
 
 
 
@@ -75261,7 +75382,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:8"  class="line-number">20:8</span>' +
+' <span class="line"><span data-line-number="20:8"  class="line-number">08</span>' +
 
 
 
@@ -75329,7 +75450,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -75337,7 +75458,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:9"  class="line-number">20:9</span>' +
+' <span class="line"><span data-line-number="20:9"  class="line-number">09</span>' +
 
 
 
@@ -75429,7 +75550,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:10"  class="line-number">20:10</span>' +
+' <span class="line"><span data-line-number="20:10"  class="line-number">10</span>' +
 
 
 
@@ -75533,7 +75654,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:11"  class="line-number">20:11</span>' +
+' <span class="line"><span data-line-number="20:11"  class="line-number">11</span>' +
 
 
 
@@ -75597,7 +75718,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:12"  class="line-number">20:12</span>' +
+' <span class="line"><span data-line-number="20:12"  class="line-number">12</span>' +
 
 
 
@@ -75649,7 +75770,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:13"  class="line-number">20:13</span>' +
+' <span class="line"><span data-line-number="20:13"  class="line-number">13</span>' +
 
 
 
@@ -75733,7 +75854,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:14"  class="line-number">20:14</span>' +
+' <span class="line"><span data-line-number="20:14"  class="line-number">14</span>' +
 
 
 
@@ -75829,7 +75950,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:15"  class="line-number">20:15</span>' +
+' <span class="line"><span data-line-number="20:15"  class="line-number">15</span>' +
 
 
 
@@ -75901,7 +76022,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:16"  class="line-number">20:16</span>' +
+' <span class="line"><span data-line-number="20:16"  class="line-number">16</span>' +
 
 
 
@@ -75977,7 +76098,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:17"  class="line-number">20:17</span>' +
+' <span class="line"><span data-line-number="20:17"  class="line-number">17</span>' +
 
 
 
@@ -76073,7 +76194,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:18"  class="line-number">20:18</span>' +
+' <span class="line"><span data-line-number="20:18"  class="line-number">18</span>' +
 
 
 
@@ -76145,7 +76266,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -76153,7 +76274,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:19"  class="line-number">20:19</span>' +
+' <span class="line"><span data-line-number="20:19"  class="line-number">19</span>' +
 
 
 
@@ -76273,7 +76394,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:20"  class="line-number">20:20</span>' +
+' <span class="line"><span data-line-number="20:20"  class="line-number">20</span>' +
 
 
 
@@ -76377,7 +76498,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:21"  class="line-number">20:21</span>' +
+' <span class="line"><span data-line-number="20:21"  class="line-number">21</span>' +
 
 
 
@@ -76481,7 +76602,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:22"  class="line-number">20:22</span>' +
+' <span class="line"><span data-line-number="20:22"  class="line-number">22</span>' +
 
 
 
@@ -76521,7 +76642,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:23"  class="line-number">20:23</span>' +
+' <span class="line"><span data-line-number="20:23"  class="line-number">23</span>' +
 
 
 
@@ -76577,7 +76698,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:24"  class="line-number">20:24</span>' +
+' <span class="line"><span data-line-number="20:24"  class="line-number">24</span>' +
 
 
 
@@ -76637,7 +76758,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:25"  class="line-number">20:25</span>' +
+' <span class="line"><span data-line-number="20:25"  class="line-number">25</span>' +
 
 
 
@@ -76709,7 +76830,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:26"  class="line-number">20:26</span>' +
+' <span class="line"><span data-line-number="20:26"  class="line-number">26</span>' +
 
 
 
@@ -76785,7 +76906,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -76793,7 +76914,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:27"  class="line-number">20:27</span>' +
+' <span class="line"><span data-line-number="20:27"  class="line-number">27</span>' +
 
 
 
@@ -76853,7 +76974,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:28"  class="line-number">20:28</span>' +
+' <span class="line"><span data-line-number="20:28"  class="line-number">28</span>' +
 
 
 
@@ -76977,7 +77098,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:29"  class="line-number">20:29</span>' +
+' <span class="line"><span data-line-number="20:29"  class="line-number">29</span>' +
 
 
 
@@ -77033,7 +77154,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:30"  class="line-number">20:30</span>' +
+' <span class="line"><span data-line-number="20:30"  class="line-number">30</span>' +
 
 
 
@@ -77085,7 +77206,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:31"  class="line-number">20:31</span>' +
+' <span class="line"><span data-line-number="20:31"  class="line-number">31</span>' +
 
 
 
@@ -77161,7 +77282,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:32"  class="line-number">20:32</span>' +
+' <span class="line"><span data-line-number="20:32"  class="line-number">32</span>' +
 
 
 
@@ -77205,7 +77326,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:33"  class="line-number">20:33</span>' +
+' <span class="line"><span data-line-number="20:33"  class="line-number">33</span>' +
 
 
 
@@ -77273,7 +77394,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:34"  class="line-number">20:34</span>' +
+' <span class="line"><span data-line-number="20:34"  class="line-number">34</span>' +
 
 
 
@@ -77341,7 +77462,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:35"  class="line-number">20:35</span>' +
+' <span class="line"><span data-line-number="20:35"  class="line-number">35</span>' +
 
 
 
@@ -77421,7 +77542,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:36"  class="line-number">20:36</span>' +
+' <span class="line"><span data-line-number="20:36"  class="line-number">36</span>' +
 
 
 
@@ -77501,7 +77622,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:37"  class="line-number">20:37</span>' +
+' <span class="line"><span data-line-number="20:37"  class="line-number">37</span>' +
 
 
 
@@ -77613,7 +77734,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:38"  class="line-number">20:38</span>' +
+' <span class="line"><span data-line-number="20:38"  class="line-number">38</span>' +
 
 
 
@@ -77669,7 +77790,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:39"  class="line-number">20:39</span>' +
+' <span class="line"><span data-line-number="20:39"  class="line-number">39</span>' +
 
 
 
@@ -77717,7 +77838,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:40"  class="line-number">20:40</span>' +
+' <span class="line"><span data-line-number="20:40"  class="line-number">40</span>' +
 
 
 
@@ -77753,7 +77874,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -77761,7 +77882,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:41"  class="line-number">20:41</span>' +
+' <span class="line"><span data-line-number="20:41"  class="line-number">41</span>' +
 
 
 
@@ -77817,7 +77938,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:42"  class="line-number">20:42</span>' +
+' <span class="line"><span data-line-number="20:42"  class="line-number">42</span>' +
 
 
 
@@ -77897,7 +78018,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:43"  class="line-number">20:43</span>' +
+' <span class="line"><span data-line-number="20:43"  class="line-number">43</span>' +
 
 
 
@@ -77949,7 +78070,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:44"  class="line-number">20:44</span>' +
+' <span class="line"><span data-line-number="20:44"  class="line-number">44</span>' +
 
 
 
@@ -78001,7 +78122,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -78009,7 +78130,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:45"  class="line-number">20:45</span>' +
+' <span class="line"><span data-line-number="20:45"  class="line-number">45</span>' +
 
 
 
@@ -78057,7 +78178,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:46"  class="line-number">20:46</span>' +
+' <span class="line"><span data-line-number="20:46"  class="line-number">46</span>' +
 
 
 
@@ -78169,7 +78290,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="20:47"  class="line-number">20:47</span>' +
+' <span class="line"><span data-line-number="20:47"  class="line-number">47</span>' +
 
 
 
@@ -78237,7 +78358,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XXI</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -78245,7 +78372,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:1"  class="line-number">21:1</span>' +
+' <span class="line"><span data-line-number="21:1"  class="line-number">01</span>' +
 
 
 
@@ -78305,7 +78432,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:2"  class="line-number">21:2</span>' +
+' <span class="line"><span data-line-number="21:2"  class="line-number">02</span>' +
 
 
 
@@ -78357,7 +78484,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:3"  class="line-number">21:3</span>' +
+' <span class="line"><span data-line-number="21:3"  class="line-number">03</span>' +
 
 
 
@@ -78425,7 +78552,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:4"  class="line-number">21:4</span>' +
+' <span class="line"><span data-line-number="21:4"  class="line-number">04</span>' +
 
 
 
@@ -78537,7 +78664,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -78545,7 +78672,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:5"  class="line-number">21:5</span>' +
+' <span class="line"><span data-line-number="21:5"  class="line-number">05</span>' +
 
 
 
@@ -78609,7 +78736,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:6"  class="line-number">21:6</span>' +
+' <span class="line"><span data-line-number="21:6"  class="line-number">06</span>' +
 
 
 
@@ -78681,7 +78808,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:7"  class="line-number">21:7</span>' +
+' <span class="line"><span data-line-number="21:7"  class="line-number">07</span>' +
 
 
 
@@ -78761,7 +78888,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:8"  class="line-number">21:8</span>' +
+' <span class="line"><span data-line-number="21:8"  class="line-number">08</span>' +
 
 
 
@@ -78877,7 +79004,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:9"  class="line-number">21:9</span>' +
+' <span class="line"><span data-line-number="21:9"  class="line-number">09</span>' +
 
 
 
@@ -78961,7 +79088,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -78969,7 +79096,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:10"  class="line-number">21:10</span>' +
+' <span class="line"><span data-line-number="21:10"  class="line-number">10</span>' +
 
 
 
@@ -79025,7 +79152,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:11"  class="line-number">21:11</span>' +
+' <span class="line"><span data-line-number="21:11"  class="line-number">11</span>' +
 
 
 
@@ -79109,7 +79236,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:12"  class="line-number">21:12</span>' +
+' <span class="line"><span data-line-number="21:12"  class="line-number">12</span>' +
 
 
 
@@ -79225,7 +79352,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:13"  class="line-number">21:13</span>' +
+' <span class="line"><span data-line-number="21:13"  class="line-number">13</span>' +
 
 
 
@@ -79257,7 +79384,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:14"  class="line-number">21:14</span>' +
+' <span class="line"><span data-line-number="21:14"  class="line-number">14</span>' +
 
 
 
@@ -79305,7 +79432,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:15"  class="line-number">21:15</span>' +
+' <span class="line"><span data-line-number="21:15"  class="line-number">15</span>' +
 
 
 
@@ -79385,7 +79512,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:16"  class="line-number">21:16</span>' +
+' <span class="line"><span data-line-number="21:16"  class="line-number">16</span>' +
 
 
 
@@ -79457,7 +79584,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:17"  class="line-number">21:17</span>' +
+' <span class="line"><span data-line-number="21:17"  class="line-number">17</span>' +
 
 
 
@@ -79505,7 +79632,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:18"  class="line-number">21:18</span>' +
+' <span class="line"><span data-line-number="21:18"  class="line-number">18</span>' +
 
 
 
@@ -79553,7 +79680,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:19"  class="line-number">21:19</span>' +
+' <span class="line"><span data-line-number="21:19"  class="line-number">19</span>' +
 
 
 
@@ -79597,7 +79724,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -79605,7 +79732,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:20"  class="line-number">21:20</span>' +
+' <span class="line"><span data-line-number="21:20"  class="line-number">20</span>' +
 
 
 
@@ -79677,7 +79804,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:21"  class="line-number">21:21</span>' +
+' <span class="line"><span data-line-number="21:21"  class="line-number">21</span>' +
 
 
 
@@ -79785,7 +79912,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:22"  class="line-number">21:22</span>' +
+' <span class="line"><span data-line-number="21:22"  class="line-number">22</span>' +
 
 
 
@@ -79837,7 +79964,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:23"  class="line-number">21:23</span>' +
+' <span class="line"><span data-line-number="21:23"  class="line-number">23</span>' +
 
 
 
@@ -79953,7 +80080,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:24"  class="line-number">21:24</span>' +
+' <span class="line"><span data-line-number="21:24"  class="line-number">24</span>' +
 
 
 
@@ -80045,7 +80172,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:25"  class="line-number">21:25</span>' +
+' <span class="line"><span data-line-number="21:25"  class="line-number">25</span>' +
 
 
 
@@ -80141,7 +80268,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:26"  class="line-number">21:26</span>' +
+' <span class="line"><span data-line-number="21:26"  class="line-number">26</span>' +
 
 
 
@@ -80217,7 +80344,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:27"  class="line-number">21:27</span>' +
+' <span class="line"><span data-line-number="21:27"  class="line-number">27</span>' +
 
 
 
@@ -80289,7 +80416,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:28"  class="line-number">21:28</span>' +
+' <span class="line"><span data-line-number="21:28"  class="line-number">28</span>' +
 
 
 
@@ -80361,7 +80488,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -80369,7 +80496,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:29"  class="line-number">21:29</span>' +
+' <span class="line"><span data-line-number="21:29"  class="line-number">29</span>' +
 
 
 
@@ -80425,7 +80552,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:30"  class="line-number">21:30</span>' +
+' <span class="line"><span data-line-number="21:30"  class="line-number">30</span>' +
 
 
 
@@ -80489,7 +80616,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:31"  class="line-number">21:31</span>' +
+' <span class="line"><span data-line-number="21:31"  class="line-number">31</span>' +
 
 
 
@@ -80561,7 +80688,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:32"  class="line-number">21:32</span>' +
+' <span class="line"><span data-line-number="21:32"  class="line-number">32</span>' +
 
 
 
@@ -80629,7 +80756,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:33"  class="line-number">21:33</span>' +
+' <span class="line"><span data-line-number="21:33"  class="line-number">33</span>' +
 
 
 
@@ -80693,7 +80820,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -80701,7 +80828,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:34"  class="line-number">21:34</span>' +
+' <span class="line"><span data-line-number="21:34"  class="line-number">34</span>' +
 
 
 
@@ -80805,7 +80932,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:35"  class="line-number">21:35</span>' +
+' <span class="line"><span data-line-number="21:35"  class="line-number">35</span>' +
 
 
 
@@ -80869,7 +80996,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:36"  class="line-number">21:36</span>' +
+' <span class="line"><span data-line-number="21:36"  class="line-number">36</span>' +
 
 
 
@@ -80961,7 +81088,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -80969,7 +81096,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:37"  class="line-number">21:37</span>' +
+' <span class="line"><span data-line-number="21:37"  class="line-number">37</span>' +
 
 
 
@@ -81057,7 +81184,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="21:38"  class="line-number">21:38</span>' +
+' <span class="line"><span data-line-number="21:38"  class="line-number">38</span>' +
 
 
 
@@ -81117,7 +81244,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XXII</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -81125,7 +81258,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:1"  class="line-number">22:1</span>' +
+' <span class="line"><span data-line-number="22:1"  class="line-number">01</span>' +
 
 
 
@@ -81173,7 +81306,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:2"  class="line-number">22:2</span>' +
+' <span class="line"><span data-line-number="22:2"  class="line-number">02</span>' +
 
 
 
@@ -81245,7 +81378,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -81253,7 +81386,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:3"  class="line-number">22:3</span>' +
+' <span class="line"><span data-line-number="22:3"  class="line-number">03</span>' +
 
 
 
@@ -81321,7 +81454,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:4"  class="line-number">22:4</span>' +
+' <span class="line"><span data-line-number="22:4"  class="line-number">04</span>' +
 
 
 
@@ -81385,7 +81518,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:5"  class="line-number">22:5</span>' +
+' <span class="line"><span data-line-number="22:5"  class="line-number">05</span>' +
 
 
 
@@ -81425,7 +81558,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:6"  class="line-number">22:6</span>' +
+' <span class="line"><span data-line-number="22:6"  class="line-number">06</span>' +
 
 
 
@@ -81481,7 +81614,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -81489,7 +81622,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:7"  class="line-number">22:7</span>' +
+' <span class="line"><span data-line-number="22:7"  class="line-number">07</span>' +
 
 
 
@@ -81549,7 +81682,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:8"  class="line-number">22:8</span>' +
+' <span class="line"><span data-line-number="22:8"  class="line-number">08</span>' +
 
 
 
@@ -81613,7 +81746,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:9"  class="line-number">22:9</span>' +
+' <span class="line"><span data-line-number="22:9"  class="line-number">09</span>' +
 
 
 
@@ -81653,7 +81786,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:10"  class="line-number">22:10</span>' +
+' <span class="line"><span data-line-number="22:10"  class="line-number">10</span>' +
 
 
 
@@ -81757,7 +81890,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:11"  class="line-number">22:11</span>' +
+' <span class="line"><span data-line-number="22:11"  class="line-number">11</span>' +
 
 
 
@@ -81857,7 +81990,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:12"  class="line-number">22:12</span>' +
+' <span class="line"><span data-line-number="22:12"  class="line-number">12</span>' +
 
 
 
@@ -81901,7 +82034,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:13"  class="line-number">22:13</span>' +
+' <span class="line"><span data-line-number="22:13"  class="line-number">13</span>' +
 
 
 
@@ -81953,7 +82086,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -81961,7 +82094,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:14"  class="line-number">22:14</span>' +
+' <span class="line"><span data-line-number="22:14"  class="line-number">14</span>' +
 
 
 
@@ -82021,7 +82154,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:15"  class="line-number">22:15</span>' +
+' <span class="line"><span data-line-number="22:15"  class="line-number">15</span>' +
 
 
 
@@ -82097,7 +82230,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:16"  class="line-number">22:16</span>' +
+' <span class="line"><span data-line-number="22:16"  class="line-number">16</span>' +
 
 
 
@@ -82181,7 +82314,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:17"  class="line-number">22:17</span>' +
+' <span class="line"><span data-line-number="22:17"  class="line-number">17</span>' +
 
 
 
@@ -82233,7 +82366,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:18"  class="line-number">22:18</span>' +
+' <span class="line"><span data-line-number="22:18"  class="line-number">18</span>' +
 
 
 
@@ -82321,7 +82454,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:19"  class="line-number">22:19</span>' +
+' <span class="line"><span data-line-number="22:19"  class="line-number">19</span>' +
 
 
 
@@ -82429,7 +82562,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:20"  class="line-number">22:20</span>' +
+' <span class="line"><span data-line-number="22:20"  class="line-number">20</span>' +
 
 
 
@@ -82529,7 +82662,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:21"  class="line-number">22:21</span>' +
+' <span class="line"><span data-line-number="22:21"  class="line-number">21</span>' +
 
 
 
@@ -82589,7 +82722,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:22"  class="line-number">22:22</span>' +
+' <span class="line"><span data-line-number="22:22"  class="line-number">22</span>' +
 
 
 
@@ -82673,7 +82806,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:23"  class="line-number">22:23</span>' +
+' <span class="line"><span data-line-number="22:23"  class="line-number">23</span>' +
 
 
 
@@ -82749,7 +82882,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -82757,7 +82890,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:24"  class="line-number">22:24</span>' +
+' <span class="line"><span data-line-number="22:24"  class="line-number">24</span>' +
 
 
 
@@ -82817,7 +82950,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:25"  class="line-number">22:25</span>' +
+' <span class="line"><span data-line-number="22:25"  class="line-number">25</span>' +
 
 
 
@@ -82893,7 +83026,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:26"  class="line-number">22:26</span>' +
+' <span class="line"><span data-line-number="22:26"  class="line-number">26</span>' +
 
 
 
@@ -82981,7 +83114,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:27"  class="line-number">22:27</span>' +
+' <span class="line"><span data-line-number="22:27"  class="line-number">27</span>' +
 
 
 
@@ -83073,7 +83206,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:28"  class="line-number">22:28</span>' +
+' <span class="line"><span data-line-number="22:28"  class="line-number">28</span>' +
 
 
 
@@ -83129,7 +83262,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:29"  class="line-number">22:29</span>' +
+' <span class="line"><span data-line-number="22:29"  class="line-number">29</span>' +
 
 
 
@@ -83181,7 +83314,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:30"  class="line-number">22:30</span>' +
+' <span class="line"><span data-line-number="22:30"  class="line-number">30</span>' +
 
 
 
@@ -83265,7 +83398,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:31"  class="line-number">22:31</span>' +
+' <span class="line"><span data-line-number="22:31"  class="line-number">31</span>' +
 
 
 
@@ -83341,7 +83474,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:32"  class="line-number">22:32</span>' +
+' <span class="line"><span data-line-number="22:32"  class="line-number">32</span>' +
 
 
 
@@ -83429,7 +83562,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:33"  class="line-number">22:33</span>' +
+' <span class="line"><span data-line-number="22:33"  class="line-number">33</span>' +
 
 
 
@@ -83505,7 +83638,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:34"  class="line-number">22:34</span>' +
+' <span class="line"><span data-line-number="22:34"  class="line-number">34</span>' +
 
 
 
@@ -83589,7 +83722,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -83597,7 +83730,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:35"  class="line-number">22:35</span>' +
+' <span class="line"><span data-line-number="22:35"  class="line-number">35</span>' +
 
 
 
@@ -83685,7 +83818,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:36"  class="line-number">22:36</span>' +
+' <span class="line"><span data-line-number="22:36"  class="line-number">36</span>' +
 
 
 
@@ -83789,7 +83922,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:37"  class="line-number">22:37</span>' +
+' <span class="line"><span data-line-number="22:37"  class="line-number">37</span>' +
 
 
 
@@ -83897,7 +84030,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:38"  class="line-number">22:38</span>' +
+' <span class="line"><span data-line-number="22:38"  class="line-number">38</span>' +
 
 
 
@@ -83965,7 +84098,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -83973,7 +84106,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:39"  class="line-number">22:39</span>' +
+' <span class="line"><span data-line-number="22:39"  class="line-number">39</span>' +
 
 
 
@@ -84057,7 +84190,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:40"  class="line-number">22:40</span>' +
+' <span class="line"><span data-line-number="22:40"  class="line-number">40</span>' +
 
 
 
@@ -84117,7 +84250,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:41"  class="line-number">22:41</span>' +
+' <span class="line"><span data-line-number="22:41"  class="line-number">41</span>' +
 
 
 
@@ -84181,7 +84314,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:42"  class="line-number">22:42</span>' +
+' <span class="line"><span data-line-number="22:42"  class="line-number">42</span>' +
 
 
 
@@ -84269,7 +84402,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:43"  class="line-number">22:43</span>' +
+' <span class="line"><span data-line-number="22:43"  class="line-number">43</span>' +
 
 
 
@@ -84313,7 +84446,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:44"  class="line-number">22:44</span>' +
+' <span class="line"><span data-line-number="22:44"  class="line-number">44</span>' +
 
 
 
@@ -84397,7 +84530,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:45"  class="line-number">22:45</span>' +
+' <span class="line"><span data-line-number="22:45"  class="line-number">45</span>' +
 
 
 
@@ -84469,7 +84602,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:46"  class="line-number">22:46</span>' +
+' <span class="line"><span data-line-number="22:46"  class="line-number">46</span>' +
 
 
 
@@ -84529,7 +84662,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -84537,7 +84670,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:47"  class="line-number">22:47</span>' +
+' <span class="line"><span data-line-number="22:47"  class="line-number">47</span>' +
 
 
 
@@ -84633,7 +84766,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:48"  class="line-number">22:48</span>' +
+' <span class="line"><span data-line-number="22:48"  class="line-number">48</span>' +
 
 
 
@@ -84693,7 +84826,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:49"  class="line-number">22:49</span>' +
+' <span class="line"><span data-line-number="22:49"  class="line-number">49</span>' +
 
 
 
@@ -84761,7 +84894,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:50"  class="line-number">22:50</span>' +
+' <span class="line"><span data-line-number="22:50"  class="line-number">50</span>' +
 
 
 
@@ -84841,7 +84974,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:51"  class="line-number">22:51</span>' +
+' <span class="line"><span data-line-number="22:51"  class="line-number">51</span>' +
 
 
 
@@ -84913,7 +85046,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:52"  class="line-number">22:52</span>' +
+' <span class="line"><span data-line-number="22:52"  class="line-number">52</span>' +
 
 
 
@@ -85021,7 +85154,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:53"  class="line-number">22:53</span>' +
+' <span class="line"><span data-line-number="22:53"  class="line-number">53</span>' +
 
 
 
@@ -85137,7 +85270,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -85145,7 +85278,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:54"  class="line-number">22:54</span>' +
+' <span class="line"><span data-line-number="22:54"  class="line-number">54</span>' +
 
 
 
@@ -85225,7 +85358,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:55"  class="line-number">22:55</span>' +
+' <span class="line"><span data-line-number="22:55"  class="line-number">55</span>' +
 
 
 
@@ -85301,7 +85434,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:56"  class="line-number">22:56</span>' +
+' <span class="line"><span data-line-number="22:56"  class="line-number">56</span>' +
 
 
 
@@ -85385,7 +85518,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:57"  class="line-number">22:57</span>' +
+' <span class="line"><span data-line-number="22:57"  class="line-number">57</span>' +
 
 
 
@@ -85433,7 +85566,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:58"  class="line-number">22:58</span>' +
+' <span class="line"><span data-line-number="22:58"  class="line-number">58</span>' +
 
 
 
@@ -85521,7 +85654,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:59"  class="line-number">22:59</span>' +
+' <span class="line"><span data-line-number="22:59"  class="line-number">59</span>' +
 
 
 
@@ -85613,7 +85746,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:60"  class="line-number">22:60</span>' +
+' <span class="line"><span data-line-number="22:60"  class="line-number">60</span>' +
 
 
 
@@ -85689,7 +85822,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:61"  class="line-number">22:61</span>' +
+' <span class="line"><span data-line-number="22:61"  class="line-number">61</span>' +
 
 
 
@@ -85801,7 +85934,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:62"  class="line-number">22:62</span>' +
+' <span class="line"><span data-line-number="22:62"  class="line-number">62</span>' +
 
 
 
@@ -85841,7 +85974,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -85849,7 +85982,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:63"  class="line-number">22:63</span>' +
+' <span class="line"><span data-line-number="22:63"  class="line-number">63</span>' +
 
 
 
@@ -85901,7 +86034,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:64"  class="line-number">22:64</span>' +
+' <span class="line"><span data-line-number="22:64"  class="line-number">64</span>' +
 
 
 
@@ -85981,7 +86114,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:65"  class="line-number">22:65</span>' +
+' <span class="line"><span data-line-number="22:65"  class="line-number">65</span>' +
 
 
 
@@ -86021,7 +86154,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -86029,7 +86162,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:66"  class="line-number">22:66</span>' +
+' <span class="line"><span data-line-number="22:66"  class="line-number">66</span>' +
 
 
 
@@ -86121,7 +86254,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:67"  class="line-number">22:67</span>' +
+' <span class="line"><span data-line-number="22:67"  class="line-number">67</span>' +
 
 
 
@@ -86197,7 +86330,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:68"  class="line-number">22:68</span>' +
+' <span class="line"><span data-line-number="22:68"  class="line-number">68</span>' +
 
 
 
@@ -86249,7 +86382,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:69"  class="line-number">22:69</span>' +
+' <span class="line"><span data-line-number="22:69"  class="line-number">69</span>' +
 
 
 
@@ -86321,7 +86454,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:70"  class="line-number">22:70</span>' +
+' <span class="line"><span data-line-number="22:70"  class="line-number">70</span>' +
 
 
 
@@ -86413,7 +86546,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="22:71"  class="line-number">22:71</span>' +
+' <span class="line"><span data-line-number="22:71"  class="line-number">71</span>' +
 
 
 
@@ -86485,7 +86618,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XXIII</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -86493,7 +86632,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:1"  class="line-number">23:1</span>' +
+' <span class="line"><span data-line-number="23:1"  class="line-number">01</span>' +
 
 
 
@@ -86549,7 +86688,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:2"  class="line-number">23:2</span>' +
+' <span class="line"><span data-line-number="23:2"  class="line-number">02</span>' +
 
 
 
@@ -86641,7 +86780,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:3"  class="line-number">23:3</span>' +
+' <span class="line"><span data-line-number="23:3"  class="line-number">03</span>' +
 
 
 
@@ -86729,7 +86868,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:4"  class="line-number">23:4</span>' +
+' <span class="line"><span data-line-number="23:4"  class="line-number">04</span>' +
 
 
 
@@ -86809,7 +86948,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:5"  class="line-number">23:5</span>' +
+' <span class="line"><span data-line-number="23:5"  class="line-number">05</span>' +
 
 
 
@@ -86897,7 +87036,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:6"  class="line-number">23:6</span>' +
+' <span class="line"><span data-line-number="23:6"  class="line-number">06</span>' +
 
 
 
@@ -86949,7 +87088,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:7"  class="line-number">23:7</span>' +
+' <span class="line"><span data-line-number="23:7"  class="line-number">07</span>' +
 
 
 
@@ -87045,7 +87184,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -87053,7 +87192,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:8"  class="line-number">23:8</span>' +
+' <span class="line"><span data-line-number="23:8"  class="line-number">08</span>' +
 
 
 
@@ -87181,7 +87320,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:9"  class="line-number">23:9</span>' +
+' <span class="line"><span data-line-number="23:9"  class="line-number">09</span>' +
 
 
 
@@ -87237,7 +87376,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:10"  class="line-number">23:10</span>' +
+' <span class="line"><span data-line-number="23:10"  class="line-number">10</span>' +
 
 
 
@@ -87289,7 +87428,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:11"  class="line-number">23:11</span>' +
+' <span class="line"><span data-line-number="23:11"  class="line-number">11</span>' +
 
 
 
@@ -87377,7 +87516,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:12"  class="line-number">23:12</span>' +
+' <span class="line"><span data-line-number="23:12"  class="line-number">12</span>' +
 
 
 
@@ -87477,7 +87616,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -87485,7 +87624,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:13"  class="line-number">23:13</span>' +
+' <span class="line"><span data-line-number="23:13"  class="line-number">13</span>' +
 
 
 
@@ -87541,7 +87680,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:14"  class="line-number">23:14</span>' +
+' <span class="line"><span data-line-number="23:14"  class="line-number">14</span>' +
 
 
 
@@ -87669,7 +87808,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:15"  class="line-number">23:15</span>' +
+' <span class="line"><span data-line-number="23:15"  class="line-number">15</span>' +
 
 
 
@@ -87745,7 +87884,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:16"  class="line-number">23:16</span>' +
+' <span class="line"><span data-line-number="23:16"  class="line-number">16</span>' +
 
 
 
@@ -87771,7 +87910,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:17"  class="line-number">23:17</span>' +
+' <span class="line"><span data-line-number="23:17"  class="line-number">17</span>' +
 
 ' <span class="word" data-form="ἀνάγκην" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="ἀνάγκη">Ἀνάγκην</span>' +
 
@@ -87795,7 +87934,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:18"  class="line-number">23:18</span>' +
+' <span class="line"><span data-line-number="23:18"  class="line-number">18</span>' +
 
 
 
@@ -87847,7 +87986,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:19"  class="line-number">23:19</span>' +
+' <span class="line"><span data-line-number="23:19"  class="line-number">19</span>' +
 
 
 
@@ -87915,7 +88054,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:20"  class="line-number">23:20</span>' +
+' <span class="line"><span data-line-number="23:20"  class="line-number">20</span>' +
 
 
 
@@ -87963,7 +88102,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:21"  class="line-number">23:21</span>' +
+' <span class="line"><span data-line-number="23:21"  class="line-number">21</span>' +
 
 
 
@@ -88003,7 +88142,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:22"  class="line-number">23:22</span>' +
+' <span class="line"><span data-line-number="23:22"  class="line-number">22</span>' +
 
 
 
@@ -88099,7 +88238,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:23"  class="line-number">23:23</span>' +
+' <span class="line"><span data-line-number="23:23"  class="line-number">23</span>' +
 
 
 
@@ -88175,7 +88314,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:24"  class="line-number">23:24</span>' +
+' <span class="line"><span data-line-number="23:24"  class="line-number">24</span>' +
 
 
 
@@ -88219,7 +88358,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:25"  class="line-number">23:25</span>' +
+' <span class="line"><span data-line-number="23:25"  class="line-number">25</span>' +
 
 
 
@@ -88311,7 +88450,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -88319,7 +88458,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:26"  class="line-number">23:26</span>' +
+' <span class="line"><span data-line-number="23:26"  class="line-number">26</span>' +
 
 
 
@@ -88407,7 +88546,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -88415,7 +88554,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:27"  class="line-number">23:27</span>' +
+' <span class="line"><span data-line-number="23:27"  class="line-number">27</span>' +
 
 
 
@@ -88487,7 +88626,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:28"  class="line-number">23:28</span>' +
+' <span class="line"><span data-line-number="23:28"  class="line-number">28</span>' +
 
 
 
@@ -88587,7 +88726,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:29"  class="line-number">23:29</span>' +
+' <span class="line"><span data-line-number="23:29"  class="line-number">29</span>' +
 
 
 
@@ -88679,7 +88818,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:30"  class="line-number">23:30</span>' +
+' <span class="line"><span data-line-number="23:30"  class="line-number">30</span>' +
 
 
 
@@ -88743,7 +88882,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:31"  class="line-number">23:31</span>' +
+' <span class="line"><span data-line-number="23:31"  class="line-number">31</span>' +
 
 
 
@@ -88807,7 +88946,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -88815,7 +88954,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:32"  class="line-number">23:32</span>' +
+' <span class="line"><span data-line-number="23:32"  class="line-number">32</span>' +
 
 
 
@@ -88863,7 +89002,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -88871,7 +89010,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:33"  class="line-number">23:33</span>' +
+' <span class="line"><span data-line-number="23:33"  class="line-number">33</span>' +
 
 
 
@@ -88975,7 +89114,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:34"  class="line-number">23:34</span>' +
+' <span class="line"><span data-line-number="23:34"  class="line-number">34</span>' +
 
 
 
@@ -89063,7 +89202,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:35"  class="line-number">23:35</span>' +
+' <span class="line"><span data-line-number="23:35"  class="line-number">35</span>' +
 
 
 
@@ -89179,7 +89318,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:36"  class="line-number">23:36</span>' +
+' <span class="line"><span data-line-number="23:36"  class="line-number">36</span>' +
 
 
 
@@ -89235,7 +89374,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:37"  class="line-number">23:37</span>' +
+' <span class="line"><span data-line-number="23:37"  class="line-number">37</span>' +
 
 
 
@@ -89291,7 +89430,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:38"  class="line-number">23:38</span>' +
+' <span class="line"><span data-line-number="23:38"  class="line-number">38</span>' +
 
 
 
@@ -89379,7 +89518,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -89387,7 +89526,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:39"  class="line-number">23:39</span>' +
+' <span class="line"><span data-line-number="23:39"  class="line-number">39</span>' +
 
 
 
@@ -89467,7 +89606,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:40"  class="line-number">23:40</span>' +
+' <span class="line"><span data-line-number="23:40"  class="line-number">40</span>' +
 
 
 
@@ -89551,7 +89690,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:41"  class="line-number">23:41</span>' +
+' <span class="line"><span data-line-number="23:41"  class="line-number">41</span>' +
 
 
 
@@ -89619,7 +89758,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:42"  class="line-number">23:42</span>' +
+' <span class="line"><span data-line-number="23:42"  class="line-number">42</span>' +
 
 
 
@@ -89683,7 +89822,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:43"  class="line-number">23:43</span>' +
+' <span class="line"><span data-line-number="23:43"  class="line-number">43</span>' +
 
 
 
@@ -89755,7 +89894,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -89763,7 +89902,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:44"  class="line-number">23:44</span>' +
+' <span class="line"><span data-line-number="23:44"  class="line-number">44</span>' +
 
 
 
@@ -89835,7 +89974,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:45"  class="line-number">23:45</span>' +
+' <span class="line"><span data-line-number="23:45"  class="line-number">45</span>' +
 
 
 
@@ -89891,7 +90030,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:46"  class="line-number">23:46</span>' +
+' <span class="line"><span data-line-number="23:46"  class="line-number">46</span>' +
 
 
 
@@ -89979,7 +90118,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:47"  class="line-number">23:47</span>' +
+' <span class="line"><span data-line-number="23:47"  class="line-number">47</span>' +
 
 
 
@@ -90055,7 +90194,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:48"  class="line-number">23:48</span>' +
+' <span class="line"><span data-line-number="23:48"  class="line-number">48</span>' +
 
 
 
@@ -90135,7 +90274,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:49"  class="line-number">23:49</span>' +
+' <span class="line"><span data-line-number="23:49"  class="line-number">49</span>' +
 
 
 
@@ -90215,7 +90354,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -90223,7 +90362,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:50"  class="line-number">23:50</span>' +
+' <span class="line"><span data-line-number="23:50"  class="line-number">50</span>' +
 
 
 
@@ -90279,7 +90418,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:51"  class="line-number">23:51</span>' +
+' <span class="line"><span data-line-number="23:51"  class="line-number">51</span>' +
 
 
 
@@ -90387,7 +90526,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:52"  class="line-number">23:52</span>' +
+' <span class="line"><span data-line-number="23:52"  class="line-number">52</span>' +
 
 
 
@@ -90435,7 +90574,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:53"  class="line-number">23:53</span>' +
+' <span class="line"><span data-line-number="23:53"  class="line-number">53</span>' +
 
 
 
@@ -90519,7 +90658,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:54"  class="line-number">23:54</span>' +
+' <span class="line"><span data-line-number="23:54"  class="line-number">54</span>' +
 
 
 
@@ -90555,7 +90694,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:55"  class="line-number">23:55</span>' +
+' <span class="line"><span data-line-number="23:55"  class="line-number">55</span>' +
 
 
 
@@ -90643,7 +90782,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="23:56"  class="line-number">23:56</span>' +
+' <span class="line"><span data-line-number="23:56"  class="line-number">56</span>' +
 
 
 
@@ -90711,7 +90850,13 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p>' +
+
+
+'<h2><span class="chapter-number">XXIV</span></h2>' +
+
+
+'<p>' +
 
 
 
@@ -90719,7 +90864,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:1"  class="line-number">24:1</span>' +
+' <span class="line"><span data-line-number="24:1"  class="line-number">01</span>' +
 
 
 
@@ -90807,7 +90952,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:2"  class="line-number">24:2</span>' +
+' <span class="line"><span data-line-number="24:2"  class="line-number">02</span>' +
 
 
 
@@ -90855,7 +91000,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:3"  class="line-number">24:3</span>' +
+' <span class="line"><span data-line-number="24:3"  class="line-number">03</span>' +
 
 
 
@@ -90903,7 +91048,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:4"  class="line-number">24:4</span>' +
+' <span class="line"><span data-line-number="24:4"  class="line-number">04</span>' +
 
 
 
@@ -90983,7 +91128,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:5"  class="line-number">24:5</span>' +
+' <span class="line"><span data-line-number="24:5"  class="line-number">05</span>' +
 
 
 
@@ -91079,7 +91224,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:6"  class="line-number">24:6</span>' +
+' <span class="line"><span data-line-number="24:6"  class="line-number">06</span>' +
 
 
 
@@ -91147,7 +91292,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:7"  class="line-number">24:7</span>' +
+' <span class="line"><span data-line-number="24:7"  class="line-number">07</span>' +
 
 
 
@@ -91235,7 +91380,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:8"  class="line-number">24:8</span>' +
+' <span class="line"><span data-line-number="24:8"  class="line-number">08</span>' +
 
 
 
@@ -91267,7 +91412,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:9"  class="line-number">24:9</span>' +
+' <span class="line"><span data-line-number="24:9"  class="line-number">09</span>' +
 
 
 
@@ -91335,7 +91480,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:10"  class="line-number">24:10</span>' +
+' <span class="line"><span data-line-number="24:10"  class="line-number">10</span>' +
 
 
 
@@ -91431,7 +91576,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:11"  class="line-number">24:11</span>' +
+' <span class="line"><span data-line-number="24:11"  class="line-number">11</span>' +
 
 
 
@@ -91491,7 +91636,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:12"  class="line-number">24:12</span>' +
+' <span class="line"><span data-line-number="24:12"  class="line-number">12</span>' +
 
 
 
@@ -91591,7 +91736,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -91599,7 +91744,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:13"  class="line-number">24:13</span>' +
+' <span class="line"><span data-line-number="24:13"  class="line-number">13</span>' +
 
 
 
@@ -91695,7 +91840,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:14"  class="line-number">24:14</span>' +
+' <span class="line"><span data-line-number="24:14"  class="line-number">14</span>' +
 
 
 
@@ -91747,7 +91892,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:15"  class="line-number">24:15</span>' +
+' <span class="line"><span data-line-number="24:15"  class="line-number">15</span>' +
 
 
 
@@ -91819,7 +91964,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:16"  class="line-number">24:16</span>' +
+' <span class="line"><span data-line-number="24:16"  class="line-number">16</span>' +
 
 
 
@@ -91867,7 +92012,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:17"  class="line-number">24:17</span>' +
+' <span class="line"><span data-line-number="24:17"  class="line-number">17</span>' +
 
 
 
@@ -91943,7 +92088,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:18"  class="line-number">24:18</span>' +
+' <span class="line"><span data-line-number="24:18"  class="line-number">18</span>' +
 
 
 
@@ -92055,7 +92200,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:19"  class="line-number">24:19</span>' +
+' <span class="line"><span data-line-number="24:19"  class="line-number">19</span>' +
 
 
 
@@ -92183,7 +92328,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:20"  class="line-number">24:20</span>' +
+' <span class="line"><span data-line-number="24:20"  class="line-number">20</span>' +
 
 
 
@@ -92259,7 +92404,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:21"  class="line-number">24:21</span>' +
+' <span class="line"><span data-line-number="24:21"  class="line-number">21</span>' +
 
 
 
@@ -92371,7 +92516,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:22"  class="line-number">24:22</span>' +
+' <span class="line"><span data-line-number="24:22"  class="line-number">22</span>' +
 
 
 
@@ -92435,7 +92580,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:23"  class="line-number">24:23</span>' +
+' <span class="line"><span data-line-number="24:23"  class="line-number">23</span>' +
 
 
 
@@ -92511,7 +92656,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:24"  class="line-number">24:24</span>' +
+' <span class="line"><span data-line-number="24:24"  class="line-number">24</span>' +
 
 
 
@@ -92607,7 +92752,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:25"  class="line-number">24:25</span>' +
+' <span class="line"><span data-line-number="24:25"  class="line-number">25</span>' +
 
 
 
@@ -92695,7 +92840,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:26"  class="line-number">24:26</span>' +
+' <span class="line"><span data-line-number="24:26"  class="line-number">26</span>' +
 
 
 
@@ -92755,7 +92900,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:27"  class="line-number">24:27</span>' +
+' <span class="line"><span data-line-number="24:27"  class="line-number">27</span>' +
 
 
 
@@ -92839,7 +92984,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:28"  class="line-number">24:28</span>' +
+' <span class="line"><span data-line-number="24:28"  class="line-number">28</span>' +
 
 
 
@@ -92899,7 +93044,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:29"  class="line-number">24:29</span>' +
+' <span class="line"><span data-line-number="24:29"  class="line-number">29</span>' +
 
 
 
@@ -92995,7 +93140,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:30"  class="line-number">24:30</span>' +
+' <span class="line"><span data-line-number="24:30"  class="line-number">30</span>' +
 
 
 
@@ -93071,7 +93216,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:31"  class="line-number">24:31</span>' +
+' <span class="line"><span data-line-number="24:31"  class="line-number">31</span>' +
 
 
 
@@ -93139,7 +93284,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:32"  class="line-number">24:32</span>' +
+' <span class="line"><span data-line-number="24:32"  class="line-number">32</span>' +
 
 
 
@@ -93247,7 +93392,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:33"  class="line-number">24:33</span>' +
+' <span class="line"><span data-line-number="24:33"  class="line-number">33</span>' +
 
 
 
@@ -93327,7 +93472,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:34"  class="line-number">24:34</span>' +
+' <span class="line"><span data-line-number="24:34"  class="line-number">34</span>' +
 
 
 
@@ -93375,7 +93520,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:35"  class="line-number">24:35</span>' +
+' <span class="line"><span data-line-number="24:35"  class="line-number">35</span>' +
 
 
 
@@ -93451,7 +93596,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -93459,7 +93604,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:36"  class="line-number">24:36</span>' +
+' <span class="line"><span data-line-number="24:36"  class="line-number">36</span>' +
 
 
 
@@ -93535,7 +93680,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:37"  class="line-number">24:37</span>' +
+' <span class="line"><span data-line-number="24:37"  class="line-number">37</span>' +
 
 
 
@@ -93579,7 +93724,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:38"  class="line-number">24:38</span>' +
+' <span class="line"><span data-line-number="24:38"  class="line-number">38</span>' +
 
 
 
@@ -93651,7 +93796,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:39"  class="line-number">24:39</span>' +
+' <span class="line"><span data-line-number="24:39"  class="line-number">39</span>' +
 
 
 
@@ -93771,7 +93916,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:40"  class="line-number">24:40</span>' +
+' <span class="line"><span data-line-number="24:40"  class="line-number">40</span>' +
 
 
 
@@ -93823,7 +93968,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:41"  class="line-number">24:41</span>' +
+' <span class="line"><span data-line-number="24:41"  class="line-number">41</span>' +
 
 
 
@@ -93895,7 +94040,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:42"  class="line-number">24:42</span>' +
+' <span class="line"><span data-line-number="24:42"  class="line-number">42</span>' +
 
 
 
@@ -93951,7 +94096,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:43"  class="line-number">24:43</span>' +
+' <span class="line"><span data-line-number="24:43"  class="line-number">43</span>' +
 
 
 
@@ -93983,7 +94128,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -93991,7 +94136,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:44"  class="line-number">24:44</span>' +
+' <span class="line"><span data-line-number="24:44"  class="line-number">44</span>' +
 
 
 
@@ -94123,7 +94268,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:45"  class="line-number">24:45</span>' +
+' <span class="line"><span data-line-number="24:45"  class="line-number">45</span>' +
 
 
 
@@ -94171,7 +94316,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:46"  class="line-number">24:46</span>' +
+' <span class="line"><span data-line-number="24:46"  class="line-number">46</span>' +
 
 
 
@@ -94259,7 +94404,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:47"  class="line-number">24:47</span>' +
+' <span class="line"><span data-line-number="24:47"  class="line-number">47</span>' +
 
 
 
@@ -94339,7 +94484,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:48"  class="line-number">24:48</span>' +
+' <span class="line"><span data-line-number="24:48"  class="line-number">48</span>' +
 
 
 
@@ -94371,7 +94516,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:49"  class="line-number">24:49</span>' +
+' <span class="line"><span data-line-number="24:49"  class="line-number">49</span>' +
 
 
 
@@ -94479,7 +94624,7 @@ nt_luke_parsed_text =
 
 
 
-'<span class="para"></span>' +
+'</p><p>' +
 
 
 
@@ -94487,7 +94632,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:50"  class="line-number">24:50</span>' +
+' <span class="line"><span data-line-number="24:50"  class="line-number">50</span>' +
 
 
 
@@ -94555,7 +94700,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:51"  class="line-number">24:51</span>' +
+' <span class="line"><span data-line-number="24:51"  class="line-number">51</span>' +
 
 
 
@@ -94627,7 +94772,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:52"  class="line-number">24:52</span>' +
+' <span class="line"><span data-line-number="24:52"  class="line-number">52</span>' +
 
 
 
@@ -94679,7 +94824,7 @@ nt_luke_parsed_text =
 
 
 
-' <span class="line"><span data-line-number="24:53"  class="line-number">24:53</span>' +
+' <span class="line"><span data-line-number="24:53"  class="line-number">53</span>' +
 
 
 
@@ -94737,6 +94882,9 @@ nt_luke_parsed_text =
 
 ' </span>' +
 
+
+
+'</p>' +
 
 
 // Insert more text above this line

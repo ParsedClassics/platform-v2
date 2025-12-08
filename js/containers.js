@@ -507,9 +507,12 @@ const ParsedClassicsContentContainers = {
       <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
       <h1>${collectionDef['author_orig']}</h1>
       <h1>${resourceDef['library_app_panel_title']}</h1>
-      <span class="text-from">Text based on: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></span>
+      <p class="text-from">Text based on: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></p>
     `;
-    parsedTextContainerTopPart.html(html + resourceData);
+    const display_paragraph_numbering_class = typeof resourceDef['extra']['display_paragraph_numbering'] !== 'undefined' && resourceDef['extra']['display_paragraph_numbering'] === 'yes' ? 'display_paragraph_numbering' : '';
+    const display_pagination_class = typeof resourceDef['extra']['display_pagination'] !== 'undefined' && resourceDef['extra']['display_pagination'] === 'yes' ? 'display_pagination' : '';
+    
+    parsedTextContainerTopPart.html(`<div class="${display_paragraph_numbering_class} ${display_pagination_class}">` + html + resourceData + '</div>');
   },
 
   createLexiconTypedResourceHtml: function(tabContentContainerInner, resourceDef, resourceData) {

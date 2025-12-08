@@ -37,11 +37,7 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "typed",
     resource_type: "parsed_text",
 		scanned_source_shortname: "new_testament_in_original_greek_ed_robinson_pierpont",
-    extra: {
-      options: {
-        "text_display_modes": {"defaults": {"display_text_as": "lines"}},
-      },
-    }, 
+    extra: {}, 
 	},
 
   // External services

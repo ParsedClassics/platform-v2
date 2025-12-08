@@ -54,6 +54,8 @@ ParsedClassicsCollDefs.arnold_cloelia["resource_defs"] = {
     contents_shortname: "arnold_cloelia_parsed_text_contents",
     extra: {
       parsing_via_ext_services: "yes",
+      display_paragraph_numbering: 'yes',
+      display_pagination: 'no',
     }, 
 	},
 
