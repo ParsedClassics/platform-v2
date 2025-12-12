@@ -22042,7 +22042,7 @@ nt_luke_parsed_text =
 
 
 
-
+' </span>' +
 
 
 
@@ -22414,7 +22414,7 @@ nt_luke_parsed_text =
 
 
 
-
+' </span>' +
 
 
 
@@ -38056,7 +38056,7 @@ nt_luke_parsed_text =
 
 
 
-
+' </span>' +
 
 
 
@@ -38065,6 +38065,8 @@ nt_luke_parsed_text =
 
 
 
+
+' <span class="line"><span data-line-number="9:43"  class="line-number"></span>' +
 
 
 
@@ -73964,7 +73966,7 @@ nt_luke_parsed_text =
 
 
 
-
+' </span>' +
 
 
 

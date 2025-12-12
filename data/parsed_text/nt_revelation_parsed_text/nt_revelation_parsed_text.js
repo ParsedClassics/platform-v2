@@ -1132,7 +1132,7 @@ nt_revelation_parsed_text =
 
 ' <span class="word" data-form="γράψον" data-part-of-speech="verb" data-parsing="aorist active imperative 2nd person singular" data-lemma="γράφω">γράψον</span>,' +
 
-
+' </span>' +
 
 '</p><p>' +
 
@@ -1489,7 +1489,7 @@ nt_revelation_parsed_text =
 
 ' <span class="word" data-form="γράψον" data-part-of-speech="verb" data-parsing="aorist active imperative 2nd person singular" data-lemma="γράφω">γράψον</span>,' +
 
-
+' </span>' +
 
 '</p><p>' +
 
@@ -1728,7 +1728,7 @@ nt_revelation_parsed_text =
 
 ' <span class="word" data-form="γράψον" data-part-of-speech="verb" data-parsing="aorist active imperative 2nd person singular" data-lemma="γράφω">γράψον</span>,' +
 
-
+' </span>' +
 
 '</p><p>' +
 
@@ -2081,6 +2081,7 @@ nt_revelation_parsed_text =
 
 ' <span class="word" data-form="γράψον" data-part-of-speech="verb" data-parsing="aorist active imperative 2nd person singular" data-lemma="γράφω">γράψον</span>,' +
 
+' </span>' +
 
 
 '</p><p>' +
@@ -2633,6 +2634,8 @@ nt_revelation_parsed_text =
 
 ' <span class="word" data-form="γράψον" data-part-of-speech="verb" data-parsing="aorist active imperative 2nd person singular" data-lemma="γράφω">γράψον</span>,' +
 
+' </span>' +
+
 
 
 '</p><p>' +
@@ -2971,7 +2974,7 @@ nt_revelation_parsed_text =
 
 ' <span class="word" data-form="γράψον" data-part-of-speech="verb" data-parsing="aorist active imperative 2nd person singular" data-lemma="γράφω">γράψον</span>,' +
 
-
+' </span>' +
 
 '</p><p>' +
 
@@ -3418,7 +3421,7 @@ nt_revelation_parsed_text =
 
 ' <span class="word" data-form="γράψον" data-part-of-speech="verb" data-parsing="aorist active imperative 2nd person singular" data-lemma="γράφω">γράψον</span>,' +
 
-
+' </span>' +
 
 '</p><p>' +
 

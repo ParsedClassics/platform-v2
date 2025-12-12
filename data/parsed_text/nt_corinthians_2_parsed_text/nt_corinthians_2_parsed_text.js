@@ -5444,11 +5444,11 @@ nt_corinthians_2_parsed_text =
 
 ' <span class="word" data-form="παρακεκλήμεθα" data-part-of-speech="verb" data-parsing="perfect passive indicative 1st person plural" data-lemma="παρακαλέω">παρακεκλήμεθα</span>.' +
 
-
+' </span>' +
 
 '</p><p>' +
 
-
+' <span class="line"><span data-line-number="7:13" class="line-number"></span>' +
 
 ' <span class="word" data-form="ἐπί" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐπί">Ἐπὶ</span>' +
 

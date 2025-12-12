@@ -17167,11 +17167,11 @@ nt_romans_parsed_text =
 
 ' <span class="word" data-form="τάχει" data-part-of-speech="noun" data-parsing="dative singular neuter" data-lemma="τάχος">τάχει</span>.' +
 
-
+' </span>' +
 
 '</p><p>' +
 
-
+' <span class="line"><span data-line-number="16:20" class="line-number"></span>' +
 
 ' <span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">Ἡ</span>' +
 
