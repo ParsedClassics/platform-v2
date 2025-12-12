@@ -4156,7 +4156,7 @@ nt_peter_1_parsed_text =
 
 ' <span class="word" data-form="ἀγάπης" data-part-of-speech="noun" data-parsing="genitive singular feminine" data-lemma="ἀγάπη">ἀγάπης</span>.' +
 
-
+' </span>' +
 
 '</p><p>' +
 

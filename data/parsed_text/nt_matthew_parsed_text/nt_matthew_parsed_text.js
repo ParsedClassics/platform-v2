@@ -240,7 +240,7 @@ nt_matthew_parsed_text =
 
 ' <span class="word" data-form="βασιλέα" data-part-of-speech="noun" data-parsing="accusative singular masculine" data-lemma="βασιλεύς">βασιλέα</span>.' +
 
-
+' </span>' +
 
 '</p><p>' +
 

@@ -1553,7 +1553,7 @@ nt_titus_parsed_text =
 
 ' <span class="word" data-form="πίστει" data-part-of-speech="noun" data-parsing="dative singular feminine" data-lemma="πίστις">πίστει</span>.</span>' +
 
-
+' </span>' +
 
 '</p><p>' +
 

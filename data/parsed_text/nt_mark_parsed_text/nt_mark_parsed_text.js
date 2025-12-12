@@ -3592,7 +3592,11 @@ nt_mark_parsed_text =
 
 ' <span class="word" data-form="αὐτόν" data-part-of-speech="personal pronoun" data-parsing="accusative singular masculine" data-lemma="αὐτός">αὐτόν</span>.' +
 
+' </span>' +
+
 '</p><p>' +
+
+' <span class="line"><span data-line-number="3:19" class="line-number"></span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -7603,6 +7607,8 @@ nt_mark_parsed_text =
 ' <span class="word" data-form="ἀπιστίαν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="ἀπιστία">ἀπιστίαν</span>' +
 
 ' <span class="word" data-form="αὐτῶν" data-part-of-speech="personal pronoun" data-parsing="genitive plural masculine" data-lemma="αὐτός">αὐτῶν</span>.' +
+
+' </span>' +
 
 '</p><p>' +
 
@@ -24582,7 +24588,11 @@ nt_mark_parsed_text =
 
 ' <span class="word" data-form="ἴδια" data-part-of-speech="adjective" data-parsing="accusative plural neuter" data-lemma="ἴδιος">ἴδια</span>.' +
 
+' </span>' +
+
 '</p><p>' +
+
+' <span class="line"><span data-line-number="15:20" class="line-number"></span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 

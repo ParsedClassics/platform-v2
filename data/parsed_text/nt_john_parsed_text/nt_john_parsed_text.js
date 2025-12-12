@@ -22513,7 +22513,11 @@ nt_john_parsed_text =
 
 ' <span class="word" data-form="γένησθε" data-part-of-speech="verb" data-parsing="aorist middle subjunctive 2nd person plural" data-lemma="γίνομαι">γένησθε</span>.' +
 
+' </span>' +
+
 '</p><p>' +
+
+' <span class="line"><span data-line-number="12:36" class="line-number"></span>' +
 
 ' <span class="word" data-form="ταῦτα" data-part-of-speech="demonstrative pronoun" data-parsing="accusative plural neuter" data-lemma="οὗτος">Ταῦτα</span>' +
 
@@ -31199,7 +31203,11 @@ nt_john_parsed_text =
 
 ' <span class="word" data-form="ἀλήθεια" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="ἀλήθεια">ἀλήθεια</span>;' +
 
+' </span>' +
+
 '</p><p>' +
+
+' <span class="line"><span data-line-number="18:38" class="line-number"></span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
@@ -31979,7 +31987,11 @@ nt_john_parsed_text =
 
 ' <span class="word" data-form="σταυρωθῇ" data-part-of-speech="verb" data-parsing="aorist passive subjunctive 3rd person singular" data-lemma="σταυρόω">σταυρωθῇ</span>.' +
 
+' </span>' +
+
 '</p><p>' +
+
+' <span class="line"><span data-line-number="19:16" class="line-number"></span>' +
 
 ' <span class="word" data-form="παρέλαβον" data-part-of-speech="verb" data-parsing="aorist active indicative 3rd person plural" data-lemma="παραλαμβάνω">Παρέλαβον</span>' +
 
