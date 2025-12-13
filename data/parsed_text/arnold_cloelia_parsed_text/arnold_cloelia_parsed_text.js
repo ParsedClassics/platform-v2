@@ -10,8 +10,6 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 arnold_cloelia_parsed_text = `
 
-
-
 <h2><span class="chapter-number">I.</span> In Perīculō</h2>
 
 <h3><em>Cloelia</em></h3>
@@ -21,8 +19,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="I:3" class="para-number">03</span> Timeō, sed tamen puella Rōmāna sum. Cīvis Rōmāna sum. Nōn lacrimō. Cīvēs Rōmānī fortēs sunt. Cīvēs Rōmānī in perīculō nōn timent, sed pugnant. Cīvēs Rōmānī audācēs sunt. Cīvēs Rōmānī in perīculō nōn lacrimant, sed rēs audacissimās gerunt. Ego quoque fortis sum. Ego quoque audāx sum. Nōn lacrimābō. Pugnābō.</p>
 <p><span data-para-number="I:4" class="para-number">04</span> In castrīs hostium sum. Pater et māter in castrīs nōn sunt. Pater et māter in urbe sunt. Nunc in urbe cum patre et mātre nōn sum, sed in castrīs cum hostibus.</p>
 <p><span data-para-number="I:5" class="para-number">05</span> Cūr in castrīs hostium sum? Rem tōtam tibi narrābō.</p>
-
-
 
 <h2><span class="chapter-number">II.</span> Domī</h2>
 
@@ -43,8 +39,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="II:10" class="para-number">10</span> <em>"Aqua in flūmine celerrima est." pater sēcum inquit. "Aqua celer īnfantibus perīculō est. Cum īnfante, trāns flūmen īre nōn possum!"</em></p>
 <p><span data-para-number="II:11" class="para-number">11</span> <em>Subitō pater cōnsilium cēpit. Pater tēlum habēbat. Ad tēlum Camillam ligāvit.</em></p>
 <p><span data-para-number="II:12" class="para-number">12</span> <em>Rēx hoc vōtum fēcit: "Diāna, dea virginum et silvārum, servā fīliam meam! Fīliam meam tibi dabō. Fīlia mea virgō semper erit et pudīcitiam servābit!" itaque pater tēlum cum īnfante trāns flūmen ēmīsit!</em></p>
-
-
 
 <h2><span class="chapter-number">III.</span> Camilla in Bellō</h2>
 
@@ -72,8 +66,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="III:11" class="para-number">11</span> "Cloelia," Lucrētia inquit, "Mulierēs vestīmenta, nōn bellum, facere dēbent. Vestīmenta splendida nōbīs magis placent quam mors et bellum. Mulierēs domī esse dēbent, et virī bellum gerere dēbent."</p>
 <p><span data-para-number="III:12" class="para-number">12</span> "Vestīmenta mihi nōn placent!" clāmāvī.</p>
 <p><span data-para-number="III:13" class="para-number">13</span> "Vīsne per urbem nūda īre?" inquit māter. "Vestīmenta tibi certē placent!" omnēs rīsimus. Sed posteā nōn rīdēbāmus, quia mors ad Lucrētiam et bellum ad urbem vēnērunt.</p>
-
-
 
 <h2><span class="chapter-number">IV.</span> Lucrētia</h2>
 
@@ -104,8 +96,6 @@ arnold_cloelia_parsed_text = `
 
 <p><span data-para-number="IV:18" class="para-number">18</span> Subitō pater mē vīdit, "Puella parva dē hōc scelere audīre nōn dēbet. Satis est dīcere Lucrētiam mortuam esse, et bellum venīre." inquit pater.</p>
 
-
-
 <h2><span class="chapter-number">V.</span> Mors Lucrētiae</h2>
 
 <h3><em>Cloelia</em></h3>
@@ -127,8 +117,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="V:9" class="para-number">09</span> "Lucrētia ipsa vōtum nōn rūpit! Sextus scelus fēcit. Lucrētia ipsa nūllum scelus fēcit."</p>
 <p><span data-para-number="V:10" class="para-number">10</span> "Haec quae dīxistī vēra sunt," inquit māter. "Sed tamen hominēs vōta rumpere nōn dēbent. Nefās est vōtum rumpere. Sī homō vōtum rumpit, deī īrātī sunt, et ille homō poenās semper dat.</p>
 
-
-
 <h2><span class="chapter-number">VI.</span> Kallistō</h2>
 
 <h3><em>Cloelia</em></h3>
@@ -149,8 +137,6 @@ arnold_cloelia_parsed_text = `
 
 <p><span data-para-number="VI:9" class="para-number">09</span> "Certē Lucrētia vōtum rumpere nōluit, neque Sextum cupīvit." inquit māter. "Sed nefās est vōtum rumpere, et quia Lucrētia vōtum rūpit, poenās dedit."</p>
 
-
-
 <h2><span class="chapter-number">VII.</span> Bellum</h2>
 
 <h3><em>Cloelia</em></h3>
@@ -162,8 +148,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="VII:5" class="para-number">05</span> Posteā nōs omnēs Rōmānī hoc vōtum fēcimus: "Rōma dehinc numquam rēgem habēbit." Rōmānī duōs magnōs virōs ducēs fēcērunt: Collātīnum, quī coniūnx Lucrētiae fuerat, et Brūtum.</p>
 <p><span data-para-number="VII:6" class="para-number">06</span> Tarquinius ad amīcum Porsennam fūgit. Porsenna rēx Etruscōrum erat. Porsenna et Tarquinius mīlitēs Etruscōs ad urbem dūxērunt. Bellum erat.</p>
 
-
-
 <h2><span class="chapter-number">VIII.</span> In Domō Ducis</h2>
 
 <h3><em>Cloelia</em></h3>
@@ -173,8 +157,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="VIII:3" class="para-number">03</span> Celeriter iimus ad patrem Iūniae, sed subitō Collātīnum et tertium virum vīdimus. Brūtus, pater Iūniae, et Collātīnus ducēs Rōmānī erant. Certē hic tertius vir quoque magnus erat. Tacitae erāmus, quia dē bellō audīre volēbāmus.</p>
 <p><span data-para-number="VIII:4" class="para-number">04</span> "Mūcī, nōnne tū in castra hostium sōlus iistī? Mortuus esse dēbēs!" inquit Collātīnus.</p>
 <p><span data-para-number="VIII:5" class="para-number">05</span> Nōmen tertiō virō Mūcius erat. "Hoc quod dīcis vērum est," inquit Mūcius. "Sed Porsenna ipse, rēx Etruscōrum, mē nōn interfēcit, sed ēmīsit." Mūcius tōtam rem narrāvit.</p>
-
-
 
 <h2><span class="chapter-number">IX.</span> Rēs Gesta Mūciī</h2>
 
@@ -189,8 +171,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="IX:7" class="para-number">07</span> <em>Ego nōn timēbam. "Prīmus sum et mortuus erō, sed tamen trecentī aliī virī Rōmānī quoque tē interficere volunt et venient. Tū mortuus eris, quia nōs Rōmānī fortēs et audācēs sumus. Rōmānī neque perīculum neque mortem timēmus. Virtūs est maior Rōmānīs quam vīta. Rēs magnās gerere nōbīs magis placet quam vīvere."</em></p>
 <p><span data-para-number="IX:8" class="para-number">08</span> <em>Subitō manum dextram in ignēs posuī. Cum ignēs manum cōnsūmerent, tacitus tamen eram. Nihil dīxī, sed rēgem spectāvī.</em></p>
 <p><span data-para-number="IX:9" class="para-number">09</span> <em>Porsenna vīdit ignēs manum meam cōnsūmentēs, et statim mē laudāvit. "Mūcī," inquit. "Vir maximae virtūtis es. Tam fortem virum interficere nōlō. Tē ēmittam. Ī ad urbem et vīve."</em></p>
-
-
 
 <h2><span class="chapter-number">X.</span> Nūntium Porsennae</h2>
 
@@ -211,8 +191,6 @@ arnold_cloelia_parsed_text = `
 
 <p><span data-para-number="X:8" class="para-number">08</span> Statim ego et Iūnia timēbāmus. Nōs fīliae maximōrum Rōmānōrum erāmus! Nōs ipsae certē erāmus duae ē captīvīs quī ad castra hostium īre dēbērent!</p>
 
-
-
 <h2><span class="chapter-number">XI.</span> In Castrīs Hostium</h2>
 
 <h3><em>Cloelia</em></h3>
@@ -222,8 +200,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="XI:3" class="para-number">03</span> "Cloelia," inquit Iūnia. "Puellae parvae sumus. Cum mātribus domī esse dēbēmus. In castrīs hostium esse nōn dēbēmus. In perīculō magnō sumus."</p>
 <p><span data-para-number="XI:4" class="para-number">04</span> "Haec quae dīxistī vēra sunt," inquam. "Puellae parvae sumus, et nōbīs magis placet domī esse quam in perīculō. Sed tamen nōs quoque Rōmānae sumus. Nōnne Rōmānī fortēs et audācēs sunt? Omnēs nōs audīvimus dē rēbus gestīs illius Mūciī. Virtūtem alterīus Rōmānī vōbīs narrābō. Neque est fābula, sed rēs vēra."</p>
 <p><span data-para-number="XI:5" class="para-number">05</span> Rem narrāre incipiō.</p>
-
-
 
 <h2><span class="chapter-number">XII.</span> Rēs Gesta Horātiī</h2>
 
@@ -235,8 +211,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="XII:4" class="para-number">04</span> <em>Ille in rīpā alterā trāns flūmen mānsit et sōlus cum hostibus pugnābat. Cum hostēs in eum multa tēla ēmitterent, Horātius tamen gladiō cum multīs hostibus pugnābat.</em></p>
 <p><span data-para-number="XII:5" class="para-number">05</span> <em>Cum Rōmānī pontem rūperant, Horātius in flūmine per aquam celerrimam ad rīpam iit. Hostēs adhūc tēla in eum ēmittēbant, sed tamen Horātius tūtus ad rīpam vēnit. Quia ille sōlus cum hostibus pugnāverat, mīlitēs Rōmānī pontem rumpere potuērunt et urbem servāvērunt.</em></p>
 
-
-
 <h2><span class="chapter-number">XIII.</span> Cōnsilium</h2>
 
 <h3><em>Cloelia</em></h3>
@@ -245,8 +219,6 @@ arnold_cloelia_parsed_text = `
 <p id="p2"><span data-para-number="XIII:2" class="para-number">02</span> "Haec quae dīxistī vēra sunt," iterum inquam. "Puellae sumus, sed tamen nōnne audīvistis dē illā Lucrētiā, quae mulier maximae pudīcitiae erat? Lucrētia illa nōn erat vir, sed tamen magnā cum virtūte prō pudīcitiā mortua est."</p>
 <p id="p3"><span data-para-number="XIII:3" class="para-number">03</span> "Haec quae Cloelia dīxit vēra sunt," inquit ūna ē puellīs. "Lucrētia fortis et audāx erat. Nōs quoque fortēs et audācēs esse possumus."</p>
 <p id="p4"><span data-para-number="XIII:4" class="para-number">04</span> Aliae puellae adhūc timent, sed tamen nunc sē ipsās servāre volunt. Tacitae cōnsilium capimus. Nunc diēs est. Cum nox vēnerit, fugiēmus.</p>
-
-
 
 <h2><span class="chapter-number">XIV.</span> Ē Castrīs Hostium</h2>
 
@@ -263,8 +235,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="XIV:9" class="para-number">09</span> "Sumusne tūtae? Hostēs nōs adhūc vident!" Iūnia inquit.</p>
 <p><span data-para-number="XIV:10" class="para-number">10</span> "Nōlī timēre, Iūnia. Hostēs nōs adhūc vident, sed tamen tēla trāns flūmen ēmittere nōn possunt. Tūtae sumus. Nunc īte ad urbem!" per noctem obscūram nōs ad urbem celeriter īmus.</p>
 
-
-
 <h2><span class="chapter-number">XV.</span> Iterum Domī</h2>
 
 <h3><em>Cloelia</em></h3>
@@ -278,8 +248,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="XV:7" class="para-number">07</span> "Captīvae sunt vōtum quod nōs Rōmānī fēcimus." inquit pater. "Porsenna dīxit dehinc sē nōbīscum pugnāturum nōn esse, sī sibi captīvōs darēmus. Pugnāre nōluimus, et eī captīvōs dedimus. Cum tū captīvās ē castrīs dūxistī, hoc vōtum rūpistī."</p>
 <p><span data-para-number="XV:8" class="para-number">08</span> Tacita sum. Nefās est vōtum rumpere. Hominēs vōta rumpere nōn dēbent. Timeō tamen! Timeō magis quam cum per castra hostium ībam, et timeō magis quam cum hostēs tēla in mē ēmittēbant. Captīva esse nōlō. Ad castra hostium iterum īre nōlō.</p>
 <p><span data-para-number="XV:9" class="para-number">09</span> Quid? Aliquid audiō. Quī veniunt? Cūr?</p>
-
-
 
 <h2><span class="chapter-number">XVI.</span> Ego et Ducēs</h2>
 
@@ -299,8 +267,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="XVI:12" class="para-number">12</span> "Dēbēs, fīlia mea," māter inquit. "Tū es vōtum quod Rōmam servāre potest."</p>
 <p><span data-para-number="XVI:13" class="para-number">13</span> Mātrī et patrī ōscula dō, et eōs relinquō. Nōn lacrimō. Cīvis Rōmāna sum, et fortis et audāx. Nōn lacrimābō.</p>
 
-
-
 <h2><span class="chapter-number">XVII.</span> In Castra Hostium</h2>
 
 <h3><em>Cloelia</em></h3>
@@ -314,8 +280,6 @@ arnold_cloelia_parsed_text = `
 <p id="p7"><span data-para-number="XVII:7" class="para-number">07</span> Rīdetne rēx mē? Certa nōn sum. Nihil dīcō. Rēgem spectō.</p>
 <p id="p8"><span data-para-number="XVII:8" class="para-number">08</span> "Itaque, puella, tibi haec est optiō. Sī tū mēcum ībis, puerī Rōmānī domum īre poterunt. Sī manēbis cum mātre, ut puellae parvae dēbent, puerī Rōmānī mēcum manēbunt. Servābisne tē ipsam an puerōs?"</p>
 
-
-
 <h2><span class="chapter-number">XVIII.</span> Vōtum Meum</h2>
 
 <h3><em>Cloelia</em></h3>
@@ -325,8 +289,6 @@ arnold_cloelia_parsed_text = `
 <p><span data-para-number="XVIII:3" class="para-number">03</span> "Puerī Rōmānī fortēs et audācēs sunt, et cum virī erunt, cum hostibus Rōmae pugnābunt. Tēcum ībō, et Rōma fīliōs suōs tenēre poterit."</p>
 <p><span data-para-number="XVIII:4" class="para-number">04</span> Itaque ego, Cloelia, quae decem annōrum sum, domum relinquam et ad urbem Etruscōrum ībō. Prō domō pugnābō, ut Camilla prō Italiā pugnāvit. Vōtum meum tenēbō, ut Lucrētia et Kallistō vōta sua tenēre volēbant.</p>
 <p><span data-para-number="XVIII:5" class="para-number">05</span> Cum hostibus habitābō, et fortasse mātrem patremque meum numquam dehinc vidēbō. Puella parva sum, sed tamen nōn lacrimābō. Fortis erō, et audāx, quia cīvis Rōmāna sum.</p>
-
-
 
 <h2><span class="chapter-number">XIX.</span> Postscriptum</h2>
 
