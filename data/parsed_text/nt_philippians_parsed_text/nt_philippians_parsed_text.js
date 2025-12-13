@@ -15,10 +15,7 @@
 =====================================================
 */
 
-
-
 nt_philippians_parsed_text =
-
 
 '<h2><span class="chapter-number">I</span></h2>' +
 
@@ -26,7 +23,7 @@ nt_philippians_parsed_text =
 
 ' <span class="line"><span data-line-number="1:1" class="line-number">01</span>' +
 
-' <span class="word" data-form="Παῦλος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Παῦλος">Παῦλος</span>' +
+'&nbsp;<span class="word" data-form="Παῦλος" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Παῦλος">Παῦλος</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -68,11 +65,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:2" class="line-number">02</span>' +
 
-' <span class="word" data-form="χάρις" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="χάρις">χάρις</span>' +
+'&nbsp;<span class="word" data-form="χάρις" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="χάρις">χάρις</span>' +
 
 ' <span class="word" data-form="ὑμῖν" data-part-of-speech="personal pronoun" data-parsing="dative plural" data-lemma="σύ">ὑμῖν</span>' +
 
@@ -98,15 +93,11 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p><p>' +
-
-
 
 ' <span class="line"><span data-line-number="1:3" class="line-number">03</span>' +
 
-' <span class="word" data-form="εὐχαριστῶ" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="εὐχαριστέω">Εὐχαριστῶ</span>' +
+'&nbsp;<span class="word" data-form="εὐχαριστῶ" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="εὐχαριστέω">Εὐχαριστῶ</span>' +
 
 ' <span class="word" data-form="τῷ" data-part-of-speech="article" data-parsing="dative singular masculine" data-lemma="ὁ">τῷ</span>' +
 
@@ -126,11 +117,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:4" class="line-number">04</span>' +
 
-' <span class="word" data-form="πάντοτε" data-part-of-speech="adverb" data-parsing="" data-lemma="πάντοτε">πάντοτε</span>' +
+'&nbsp;<span class="word" data-form="πάντοτε" data-part-of-speech="adverb" data-parsing="" data-lemma="πάντοτε">πάντοτε</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -158,11 +147,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:5" class="line-number">05</span>' +
 
-' <span class="word" data-form="ἐπί" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐπί">ἐπὶ</span>' +
+'&nbsp;<span class="word" data-form="ἐπί" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐπί">ἐπὶ</span>' +
 
 ' <span class="word" data-form="τῇ" data-part-of-speech="article" data-parsing="dative singular feminine" data-lemma="ὁ">τῇ</span>' +
 
@@ -190,11 +177,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:6" class="line-number">06</span>' +
 
-' <span class="word" data-form="πεποιθώς" data-part-of-speech="verb" data-parsing="perfect active participle nominative singular masculine" data-lemma="πείθω">πεποιθὼς</span>' +
+'&nbsp;<span class="word" data-form="πεποιθώς" data-part-of-speech="verb" data-parsing="perfect active participle nominative singular masculine" data-lemma="πείθω">πεποιθὼς</span>' +
 
 ' <span class="word" data-form="αὐτό" data-part-of-speech="adjective" data-parsing="accusative singular neuter" data-lemma="αὐτός">αὐτὸ</span>' +
 
@@ -226,11 +211,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:7" class="line-number">07</span>' +
 
-' <span class="word" data-form="καθώς" data-part-of-speech="conjunction" data-parsing="" data-lemma="καθώς">καθώς</span>' +
+'&nbsp;<span class="word" data-form="καθώς" data-part-of-speech="conjunction" data-parsing="" data-lemma="καθώς">καθώς</span>' +
 
 ' <span class="word" data-form="ἐστί(ν)" data-part-of-speech="verb" data-parsing="present active indicative 3rd person singular" data-lemma="εἰμί">ἐστιν</span>' +
 
@@ -306,11 +289,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:8" class="line-number">08</span>' +
 
-' <span class="word" data-form="μάρτυς" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="μάρτυς">Μάρτυς</span>' +
+'&nbsp;<span class="word" data-form="μάρτυς" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="μάρτυς">Μάρτυς</span>' +
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γάρ</span>' +
 
@@ -340,11 +321,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:9" class="line-number">09</span>' +
 
-' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
+'&nbsp;<span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
 ' <span class="word" data-form="τοῦτο" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular neuter" data-lemma="οὗτος">τοῦτο</span>' +
 
@@ -380,11 +359,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:10" class="line-number">10</span>' +
 
-' <span class="word" data-form="εἰς" data-part-of-speech="preposition" data-parsing="" data-lemma="εἰς">εἰς</span>' +
+'&nbsp;<span class="word" data-form="εἰς" data-part-of-speech="preposition" data-parsing="" data-lemma="εἰς">εἰς</span>' +
 
 ' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular neuter" data-lemma="ὁ">τὸ</span>' +
 
@@ -414,11 +391,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:11" class="line-number">11</span>' +
 
-' <span class="word" data-form="πεπληρωμένοι" data-part-of-speech="verb" data-parsing="perfect passive participle nominative plural masculine" data-lemma="πληρόω">πεπληρωμένοι</span>' +
+'&nbsp;<span class="word" data-form="πεπληρωμένοι" data-part-of-speech="verb" data-parsing="perfect passive participle nominative plural masculine" data-lemma="πληρόω">πεπληρωμένοι</span>' +
 
 ' <span class="word" data-form="καρπῶν" data-part-of-speech="noun" data-parsing="genitive plural masculine" data-lemma="καρπός">καρπῶν</span>' +
 
@@ -444,15 +419,11 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p><p>' +
-
-
 
 ' <span class="line"><span data-line-number="1:12" class="line-number">12</span>' +
 
-' <span class="word" data-form="γινώσκειν" data-part-of-speech="verb" data-parsing="present active infinitive" data-lemma="γινώσκω">Γινώσκειν</span>' +
+'&nbsp;<span class="word" data-form="γινώσκειν" data-part-of-speech="verb" data-parsing="present active infinitive" data-lemma="γινώσκω">Γινώσκειν</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -484,11 +455,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:13" class="line-number">13</span>' +
 
-' <span class="word" data-form="ὥστε" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὥστε">ὥστε</span>' +
+'&nbsp;<span class="word" data-form="ὥστε" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὥστε">ὥστε</span>' +
 
 ' <span class="word" data-form="τούς" data-part-of-speech="article" data-parsing="accusative plural masculine" data-lemma="ὁ">τοὺς</span>' +
 
@@ -522,11 +491,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:14" class="line-number">14</span>' +
 
-' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
+'&nbsp;<span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
 ' <span class="word" data-form="τούς" data-part-of-speech="article" data-parsing="accusative plural masculine" data-lemma="ὁ">τοὺς</span>' +
 
@@ -562,11 +529,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:15" class="line-number">15</span>' +
 
-' <span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
+'&nbsp;<span class="word" data-form="τινές" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative plural masculine" data-lemma="τις">Τινὲς</span>' +
 
 ' <span class="word" data-form="μέν" data-part-of-speech="conjunction" data-parsing="" data-lemma="μέν">μὲν</span>' +
 
@@ -598,11 +563,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:16" class="line-number">16</span>' +
 
-' <span class="word" data-form="οἱ" data-part-of-speech="article" data-parsing="nominative plural masculine" data-lemma="ὁ">οἱ</span>' +
+'&nbsp;<span class="word" data-form="οἱ" data-part-of-speech="article" data-parsing="nominative plural masculine" data-lemma="ὁ">οἱ</span>' +
 
 ' <span class="word" data-form="μέν" data-part-of-speech="conjunction" data-parsing="" data-lemma="μέν">μὲν</span>' +
 
@@ -632,15 +595,11 @@ nt_philippians_parsed_text =
 
 ' <span class="word" data-form="μου" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="ἐγώ">μου</span>·' +
 
-
-
-
-
 ' </span>' +
 
 ' <span class="line"><span data-line-number="1:17" class="line-number">17</span>' +
 
-' <span class="word" data-form="οἱ" data-part-of-speech="article" data-parsing="nominative plural masculine" data-lemma="ὁ">οἱ</span>' +
+'&nbsp;<span class="word" data-form="οἱ" data-part-of-speech="article" data-parsing="nominative plural masculine" data-lemma="ὁ">οἱ</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -664,11 +623,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:18" class="line-number">18</span>' +
 
-' <span class="word" data-form="τί" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative singular neuter" data-lemma="τίς">Τί</span>' +
+'&nbsp;<span class="word" data-form="τί" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative singular neuter" data-lemma="τίς">Τί</span>' +
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γάρ</span>;' +
 
@@ -706,11 +663,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:19" class="line-number">19</span>' +
 
-' <span class="word" data-form="οἶδα" data-part-of-speech="verb" data-parsing="perfect active indicative 1st person singular" data-lemma="οἶδα">Οἶδα</span>' +
+'&nbsp;<span class="word" data-form="οἶδα" data-part-of-speech="verb" data-parsing="perfect active indicative 1st person singular" data-lemma="οἶδα">Οἶδα</span>' +
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γὰρ</span>' +
 
@@ -748,11 +703,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:20" class="line-number">20</span>' +
 
-' <span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατὰ</span>' +
+'&nbsp;<span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατὰ</span>' +
 
 ' <span class="word" data-form="τήν" data-part-of-speech="article" data-parsing="accusative singular feminine" data-lemma="ὁ">τὴν</span>' +
 
@@ -814,11 +767,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:21" class="line-number">21</span>' +
 
-' <span class="word" data-form="ἐμοί" data-part-of-speech="personal pronoun" data-parsing="dative singular" data-lemma="ἐγώ">	Ἐμοὶ</span>' +
+'&nbsp;<span class="word" data-form="ἐμοί" data-part-of-speech="personal pronoun" data-parsing="dative singular" data-lemma="ἐγώ">	Ἐμοὶ</span>' +
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γὰρ</span>' +
 
@@ -838,11 +789,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:22" class="line-number">22</span>' +
 
-' <span class="word" data-form="εἰ" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἰ">Εἰ</span>' +
+'&nbsp;<span class="word" data-form="εἰ" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἰ">Εἰ</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -874,11 +823,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:23" class="line-number">23</span>' +
 
-' <span class="word" data-form="συνέχομαι" data-part-of-speech="verb" data-parsing="present passive indicative 1st person singular" data-lemma="συνέχω">Συνέχομαι</span>' +
+'&nbsp;<span class="word" data-form="συνέχομαι" data-part-of-speech="verb" data-parsing="present passive indicative 1st person singular" data-lemma="συνέχω">Συνέχομαι</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -916,11 +863,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:24" class="line-number">24</span>' +
 
-' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="nominative singular neuter" data-lemma="ὁ">τὸ</span>' +
+'&nbsp;<span class="word" data-form="τό" data-part-of-speech="article" data-parsing="nominative singular neuter" data-lemma="ὁ">τὸ</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -940,11 +885,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:25" class="line-number">25</span>' +
 
-' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
+'&nbsp;<span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
 ' <span class="word" data-form="τοῦτο" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular neuter" data-lemma="οὗτος">τοῦτο</span>' +
 
@@ -982,11 +925,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:26" class="line-number">26</span>' +
 
-' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
+'&nbsp;<span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
 ' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="nominative singular neuter" data-lemma="ὁ">τὸ</span>' +
 
@@ -1022,11 +963,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:27" class="line-number">27</span>' +
 
-' <span class="word" data-form="μόνον" data-part-of-speech="adjective" data-parsing="accusative singular neuter" data-lemma="μόνος">Μόνον</span>' +
+'&nbsp;<span class="word" data-form="μόνον" data-part-of-speech="adjective" data-parsing="accusative singular neuter" data-lemma="μόνος">Μόνον</span>' +
 
 ' <span class="word" data-form="ἀξίως" data-part-of-speech="adverb" data-parsing="" data-lemma="ἀξίως">ἀξίως</span>' +
 
@@ -1090,11 +1029,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:28" class="line-number">28</span>' +
 
-' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
+'&nbsp;<span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
 ' <span class="word" data-form="μή" data-part-of-speech="adverb" data-parsing="" data-lemma="μή">μὴ</span>' +
 
@@ -1138,11 +1075,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:29" class="line-number">29</span>' +
 
-' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
+'&nbsp;<span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
 ' <span class="word" data-form="ὑμῖν" data-part-of-speech="personal pronoun" data-parsing="dative plural" data-lemma="σύ">ὑμῖν</span>' +
 
@@ -1180,11 +1115,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="1:30" class="line-number">30</span>' +
 
-' <span class="word" data-form="τόν" data-part-of-speech="article" data-parsing="accusative singular masculine" data-lemma="ὁ">τὸν</span>' +
+'&nbsp;<span class="word" data-form="τόν" data-part-of-speech="article" data-parsing="accusative singular masculine" data-lemma="ὁ">τὸν</span>' +
 
 ' <span class="word" data-form="αὐτόν" data-part-of-speech="adjective" data-parsing="accusative singular masculine" data-lemma="αὐτός">αὐτὸν</span>' +
 
@@ -1212,21 +1145,15 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p>' +
-
 
 '<h2><span class="chapter-number">II</span></h2>' +
 
-
 '<p>' +
-
-
 
 ' <span class="line"><span data-line-number="2:1" class="line-number">01</span>' +
 
-' <span class="word" data-form="εἰ" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἰ">Εἴ</span>' +
+'&nbsp;<span class="word" data-form="εἰ" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἰ">Εἴ</span>' +
 
 ' <span class="word" data-form="τις" data-part-of-speech="interoggative/indefinite pronoun" data-parsing="nominative singular feminine" data-lemma="τις">τις</span>' +
 
@@ -1266,11 +1193,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:2" class="line-number">02</span>' +
 
-' <span class="word" data-form="πληρώσατε" data-part-of-speech="verb" data-parsing="aorist active imperative 2nd person plural" data-lemma="πληρόω">πληρώσατέ</span>' +
+'&nbsp;<span class="word" data-form="πληρώσατε" data-part-of-speech="verb" data-parsing="aorist active imperative 2nd person plural" data-lemma="πληρόω">πληρώσατέ</span>' +
 
 ' <span class="word" data-form="μου" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="ἐγώ">μου</span>' +
 
@@ -1304,11 +1229,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:3" class="line-number">03</span>' +
 
-' <span class="word" data-form="μηδέν" data-part-of-speech="adjective" data-parsing="accusative singular neuter" data-lemma="μηδείς">μηδὲν</span>' +
+'&nbsp;<span class="word" data-form="μηδέν" data-part-of-speech="adjective" data-parsing="accusative singular neuter" data-lemma="μηδείς">μηδὲν</span>' +
 
 ' <span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατὰ</span>' +
 
@@ -1334,11 +1257,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:4" class="line-number">04</span>' +
 
-' <span class="word" data-form="μή" data-part-of-speech="adverb" data-parsing="" data-lemma="μή">μὴ</span>' +
+'&nbsp;<span class="word" data-form="μή" data-part-of-speech="adverb" data-parsing="" data-lemma="μή">μὴ</span>' +
 
 ' <span class="word" data-form="τά" data-part-of-speech="article" data-parsing="accusative plural neuter" data-lemma="ὁ">τὰ</span>' +
 
@@ -1360,11 +1281,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:5" class="line-number">05</span>' +
 
-' <span class="word" data-form="τοῦτο" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular neuter" data-lemma="οὗτος">Τοῦτο</span>' +
+'&nbsp;<span class="word" data-form="τοῦτο" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular neuter" data-lemma="οὗτος">Τοῦτο</span>' +
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γὰρ</span>' +
 
@@ -1386,11 +1305,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:6" class="line-number">06</span>' +
 
-' <span class="word" data-form="ὅς" data-part-of-speech="relative pronoun" data-parsing="nominative singular masculine" data-lemma="ὅς">ὃς</span>' +
+'&nbsp;<span class="word" data-form="ὅς" data-part-of-speech="relative pronoun" data-parsing="nominative singular masculine" data-lemma="ὅς">ὃς</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -1416,11 +1333,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:7" class="line-number">07</span>' +
 
-' <span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">ἀλλ’</span>' +
+'&nbsp;<span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">ἀλλ’</span>' +
 
 ' <span class="word" data-form="ἑαυτόν" data-part-of-speech="reflexive pronoun" data-parsing="accusative singular masculine" data-lemma="ἑαυτοῦ">ἑαυτὸν</span>' +
 
@@ -1442,11 +1357,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:8" class="line-number">08</span>' +
 
-' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
+'&nbsp;<span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
 ' <span class="word" data-form="σχήματι" data-part-of-speech="noun" data-parsing="dative singular neuter" data-lemma="σχῆμα">σχήματι</span>' +
 
@@ -1476,11 +1389,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:9" class="line-number">09</span>' +
 
-' <span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διὸ</span>' +
+'&nbsp;<span class="word" data-form="διό" data-part-of-speech="conjunction" data-parsing="" data-lemma="διό">Διὸ</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="adverb" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -1510,11 +1421,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:10" class="line-number">10</span>' +
 
-' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
+'&nbsp;<span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -1542,11 +1451,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:11" class="line-number">11</span>' +
 
-' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
+'&nbsp;<span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
 ' <span class="word" data-form="πᾶσα" data-part-of-speech="adjective" data-parsing="nominative singular feminine" data-lemma="πᾶς">πᾶσα</span>' +
 
@@ -1572,15 +1479,11 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p><p>' +
-
-
 
 ' <span class="line"><span data-line-number="2:12" class="line-number">12</span>' +
 
-' <span class="word" data-form="ὥστε" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὥστε">Ὥστε</span>,' +
+'&nbsp;<span class="word" data-form="ὥστε" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὥστε">Ὥστε</span>,' +
 
 ' <span class="word" data-form="ἀγαπητοί" data-part-of-speech="adjective" data-parsing="vocative plural masculine" data-lemma="ἀγαπητός">ἀγαπητοί</span>' +
 
@@ -1640,11 +1543,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:13" class="line-number">13</span>' +
 
-' <span class="word" data-form="ὁ" data-part-of-speech="article" data-parsing="nominative singular masculine" data-lemma="ὁ">ὁ</span>' +
+'&nbsp;<span class="word" data-form="ὁ" data-part-of-speech="article" data-parsing="nominative singular masculine" data-lemma="ὁ">ὁ</span>' +
 
 ' <span class="word" data-form="θεός" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="θεός">θεὸς</span>' +
 
@@ -1680,11 +1581,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:14" class="line-number">14</span>' +
 
-' <span class="word" data-form="πάντα" data-part-of-speech="adjective" data-parsing="accusative plural neuter" data-lemma="πᾶς">Πάντα</span>' +
+'&nbsp;<span class="word" data-form="πάντα" data-part-of-speech="adjective" data-parsing="accusative plural neuter" data-lemma="πᾶς">Πάντα</span>' +
 
 ' <span class="word" data-form="ποιεῖτε" data-part-of-speech="verb" data-parsing="present active imperative 2nd person plural" data-lemma="ποιέω">ποιεῖτε</span>' +
 
@@ -1698,11 +1597,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:15" class="line-number">15</span>' +
 
-' <span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
+'&nbsp;<span class="word" data-form="ἵνα" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἵνα">ἵνα</span>' +
 
 ' <span class="word" data-form="γένησθε" data-part-of-speech="verb" data-parsing="aorist middle subjunctive 2nd person plural" data-lemma="γίνομαι">γένησθε</span>' +
 
@@ -1746,11 +1643,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:16" class="line-number">16</span>' +
 
-' <span class="word" data-form="λόγον" data-part-of-speech="noun" data-parsing="accusative singular masculine" data-lemma="λόγος">λόγον</span>' +
+'&nbsp;<span class="word" data-form="λόγον" data-part-of-speech="noun" data-parsing="accusative singular masculine" data-lemma="λόγος">λόγον</span>' +
 
 ' <span class="word" data-form="ζωῆς" data-part-of-speech="noun" data-parsing="genitive singular feminine" data-lemma="ζωή">ζωῆς</span>' +
 
@@ -1788,11 +1683,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:17" class="line-number">17</span>' +
 
-' <span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">Ἀλλ’</span>' +
+'&nbsp;<span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">Ἀλλ’</span>' +
 
 ' <span class="word" data-form="εἰ" data-part-of-speech="conjunction" data-parsing="" data-lemma="εἰ">εἰ</span>' +
 
@@ -1828,11 +1721,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:18" class="line-number">18</span>' +
 
-' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular neuter" data-lemma="ὁ">τὸ</span>' +
+'&nbsp;<span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular neuter" data-lemma="ὁ">τὸ</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δ’</span>' +
 
@@ -1852,15 +1743,11 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p><p>' +
-
-
 
 ' <span class="line"><span data-line-number="2:19" class="line-number">19</span>' +
 
-' <span class="word" data-form="ἐλπίζω" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="ἐλπίζω">Ἐλπίζω</span>' +
+'&nbsp;<span class="word" data-form="ἐλπίζω" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="ἐλπίζω">Ἐλπίζω</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -1894,11 +1781,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:20" class="line-number">20</span>' +
 
-' <span class="word" data-form="οὐδένα" data-part-of-speech="adjective" data-parsing="accusative singular masculine" data-lemma="οὐδείς">Οὐδένα</span>' +
+'&nbsp;<span class="word" data-form="οὐδένα" data-part-of-speech="adjective" data-parsing="accusative singular masculine" data-lemma="οὐδείς">Οὐδένα</span>' +
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γὰρ</span>' +
 
@@ -1920,11 +1805,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:21" class="line-number">21</span>' +
 
-' <span class="word" data-form="οἱ" data-part-of-speech="article" data-parsing="nominative plural masculine" data-lemma="ὁ">Οἱ</span>' +
+'&nbsp;<span class="word" data-form="οἱ" data-part-of-speech="article" data-parsing="nominative plural masculine" data-lemma="ὁ">Οἱ</span>' +
 
 ' <span class="word" data-form="πάντες" data-part-of-speech="adjective" data-parsing="nominative plural masculine" data-lemma="πᾶς">πάντες</span>' +
 
@@ -1946,11 +1829,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:22" class="line-number">22</span>' +
 
-' <span class="word" data-form="τήν" data-part-of-speech="article" data-parsing="accusative singular feminine" data-lemma="ὁ">Τὴν</span>' +
+'&nbsp;<span class="word" data-form="τήν" data-part-of-speech="article" data-parsing="accusative singular feminine" data-lemma="ὁ">Τὴν</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -1982,11 +1863,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:23" class="line-number">23</span>' +
 
-' <span class="word" data-form="τοῦτον" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular masculine" data-lemma="οὗτος">Τοῦτον</span>' +
+'&nbsp;<span class="word" data-form="τοῦτον" data-part-of-speech="demonstrative pronoun" data-parsing="accusative singular masculine" data-lemma="οὗτος">Τοῦτον</span>' +
 
 ' <span class="word" data-form="μέν" data-part-of-speech="conjunction" data-parsing="" data-lemma="μέν">μὲν</span>' +
 
@@ -2012,11 +1891,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:24" class="line-number">24</span>' +
 
-' <span class="word" data-form="πέποιθα" data-part-of-speech="verb" data-parsing="perfect active indicative 1st person singular" data-lemma="πείθω">πέποιθα</span>' +
+'&nbsp;<span class="word" data-form="πέποιθα" data-part-of-speech="verb" data-parsing="perfect active indicative 1st person singular" data-lemma="πείθω">πέποιθα</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -2036,11 +1913,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:25" class="line-number">25</span>' +
 
-' <span class="word" data-form="ἀναγκαῖον" data-part-of-speech="adjective" data-parsing="nominative singular neuter" data-lemma="ἀναγκαῖος">Ἀναγκαῖον</span>' +
+'&nbsp;<span class="word" data-form="ἀναγκαῖον" data-part-of-speech="adjective" data-parsing="nominative singular neuter" data-lemma="ἀναγκαῖος">Ἀναγκαῖον</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -2086,11 +1961,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:26" class="line-number">26</span>' +
 
-' <span class="word" data-form="ἐπειδή" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἐπειδή">ἐπειδὴ</span>' +
+'&nbsp;<span class="word" data-form="ἐπειδή" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἐπειδή">ἐπειδὴ</span>' +
 
 ' <span class="word" data-form="ἐπιποθῶν" data-part-of-speech="verb" data-parsing="present active participle nominative singular masculine" data-lemma="ἐπιποθέω">ἐπιποθῶν</span>' +
 
@@ -2114,11 +1987,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:27" class="line-number">27</span>' +
 
-' <span class="word" data-form="καί" data-part-of-speech="adverb" data-parsing="" data-lemma="καί">καὶ</span>' +
+'&nbsp;<span class="word" data-form="καί" data-part-of-speech="adverb" data-parsing="" data-lemma="καί">καὶ</span>' +
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γὰρ</span>' +
 
@@ -2166,11 +2037,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:28" class="line-number">28</span>' +
 
-' <span class="word" data-form="σπουδαιοτέρως" data-part-of-speech="adverb" data-parsing="comparative" data-lemma="σπουδαίως">Σπουδαιοτέρως</span>' +
+'&nbsp;<span class="word" data-form="σπουδαιοτέρως" data-part-of-speech="adverb" data-parsing="comparative" data-lemma="σπουδαίως">Σπουδαιοτέρως</span>' +
 
 ' <span class="word" data-form="οὖν" data-part-of-speech="conjunction" data-parsing="" data-lemma="οὖν">οὖν</span>' +
 
@@ -2196,11 +2065,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:29" class="line-number">29</span>' +
 
-' <span class="word" data-form="προσδέχεσθε" data-part-of-speech="verb" data-parsing="present middle imperative 2nd person plural" data-lemma="προσδέχομαι">Προσδέχεσθε</span>' +
+'&nbsp;<span class="word" data-form="προσδέχεσθε" data-part-of-speech="verb" data-parsing="present middle imperative 2nd person plural" data-lemma="προσδέχομαι">Προσδέχεσθε</span>' +
 
 ' <span class="word" data-form="οὖν" data-part-of-speech="conjunction" data-parsing="" data-lemma="οὖν">οὖν</span>' +
 
@@ -2228,11 +2095,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="2:30" class="line-number">30</span>' +
 
-' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
+'&nbsp;<span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
 ' <span class="word" data-form="διά" data-part-of-speech="preposition" data-parsing="" data-lemma="διά">διὰ</span>' +
 
@@ -2276,21 +2141,15 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p>' +
-
 
 '<h2><span class="chapter-number">III</span></h2>' +
 
-
 '<p>' +
-
-
 
 ' <span class="line"><span data-line-number="3:1" class="line-number">01</span>' +
 
-' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular neuter" data-lemma="ὁ">Τὸ</span>' +
+'&nbsp;<span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular neuter" data-lemma="ὁ">Τὸ</span>' +
 
 ' <span class="word" data-form="λοιπόν" data-part-of-speech="adjective" data-parsing="accusative singular neuter" data-lemma="λοιπός">λοιπόν</span>,' +
 
@@ -2328,11 +2187,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:2" class="line-number">02</span>' +
 
-' <span class="word" data-form="βλέπετε" data-part-of-speech="verb" data-parsing="present active imperative 2nd person plural" data-lemma="βλέπω">Βλέπετε</span>' +
+'&nbsp;<span class="word" data-form="βλέπετε" data-part-of-speech="verb" data-parsing="present active imperative 2nd person plural" data-lemma="βλέπω">Βλέπετε</span>' +
 
 ' <span class="word" data-form="τούς" data-part-of-speech="article" data-parsing="accusative plural masculine" data-lemma="ὁ">τοὺς</span>' +
 
@@ -2354,11 +2211,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:3" class="line-number">03</span>' +
 
-' <span class="word" data-form="ἡμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="ἐγώ">ἡμεῖς</span>' +
+'&nbsp;<span class="word" data-form="ἡμεῖς" data-part-of-speech="personal pronoun" data-parsing="nominative plural" data-lemma="ἐγώ">ἡμεῖς</span>' +
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γάρ</span>' +
 
@@ -2398,11 +2253,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:4" class="line-number">04</span>' +
 
-' <span class="word" data-form="καίπερ" data-part-of-speech="conjunction" data-parsing="" data-lemma="καίπερ">καίπερ</span>' +
+'&nbsp;<span class="word" data-form="καίπερ" data-part-of-speech="conjunction" data-parsing="" data-lemma="καίπερ">καίπερ</span>' +
 
 ' <span class="word" data-form="ἐγώ" data-part-of-speech="personal pronoun" data-parsing="nominative singular" data-lemma="ἐγώ">ἐγὼ</span>' +
 
@@ -2436,11 +2289,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:5" class="line-number">05</span>' +
 
-' <span class="word" data-form="περιτομή" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="περιτομή">περιτομὴ</span>' +
+'&nbsp;<span class="word" data-form="περιτομή" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="περιτομή">περιτομὴ</span>' +
 
 ' <span class="word" data-form="ὀκταήμερος" data-part-of-speech="adjective" data-parsing="nominative singular masculine" data-lemma="ὀκταήμερος">ὀκταήμερος</span>,' +
 
@@ -2468,11 +2319,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:6" class="line-number">06</span>' +
 
-' <span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατὰ</span>' +
+'&nbsp;<span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατὰ</span>' +
 
 ' <span class="word" data-form="ζῆλον" data-part-of-speech="noun" data-parsing="accusative singular masculine" data-lemma="ζῆλος">ζῆλον</span>' +
 
@@ -2498,11 +2347,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:7" class="line-number">07</span>' +
 
-' <span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">Ἀλλ’</span>' +
+'&nbsp;<span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">Ἀλλ’</span>' +
 
 ' <span class="word" data-form="ἅτινα" data-part-of-speech="relative pronoun" data-parsing="nominative plural neuter" data-lemma="ὅστις">ἅτινα</span>' +
 
@@ -2526,11 +2373,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:8" class="line-number">08</span>' +
 
-' <span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">Ἀλλὰ</span>' +
+'&nbsp;<span class="word" data-form="ἀλλά" data-part-of-speech="conjunction" data-parsing="" data-lemma="ἀλλά">Ἀλλὰ</span>' +
 
 ' <span class="word" data-form="μέν" data-part-of-speech="conjunction" data-parsing="" data-lemma="μέν">μὲν</span>' +
 
@@ -2592,11 +2437,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:9" class="line-number">09</span>' +
 
-' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
+'&nbsp;<span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
 ' <span class="word" data-form="εὑρεθῶ" data-part-of-speech="verb" data-parsing="aorist passive subjunctive 1st person singular" data-lemma="εὑρίσκω">εὑρεθῶ</span>' +
 
@@ -2644,11 +2487,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:10" class="line-number">10</span>' +
 
-' <span class="word" data-form="τοῦ" data-part-of-speech="article" data-parsing="genitive singular neuter" data-lemma="ὁ">τοῦ</span>' +
+'&nbsp;<span class="word" data-form="τοῦ" data-part-of-speech="article" data-parsing="genitive singular neuter" data-lemma="ὁ">τοῦ</span>' +
 
 ' <span class="word" data-form="γνῶναι" data-part-of-speech="verb" data-parsing="aorist active infinitive" data-lemma="γινώσκω">γνῶναι</span>' +
 
@@ -2688,11 +2529,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:11" class="line-number">11</span>' +
 
-' <span class="word" data-form="εἰ" data-part-of-speech="particle" data-parsing="" data-lemma="εἰ">εἴ</span>' +
+'&nbsp;<span class="word" data-form="εἰ" data-part-of-speech="particle" data-parsing="" data-lemma="εἰ">εἴ</span>' +
 
 ' <span class="word" data-form="πώς" data-part-of-speech="adverb" data-parsing="" data-lemma="πώς">πως</span>' +
 
@@ -2710,11 +2549,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:12" class="line-number">12</span>' +
 
-' <span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">Οὐχ</span>' +
+'&nbsp;<span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">Οὐχ</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
@@ -2756,11 +2593,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:13" class="line-number">13</span>' +
 
-' <span class="word" data-form="ἀδελφοί" data-part-of-speech="noun" data-parsing="vocative plural masculine" data-lemma="ἀδελφός">Ἀδελφοί</span>,' +
+'&nbsp;<span class="word" data-form="ἀδελφοί" data-part-of-speech="noun" data-parsing="vocative plural masculine" data-lemma="ἀδελφός">Ἀδελφοί</span>,' +
 
 ' <span class="word" data-form="ἐγώ" data-part-of-speech="personal pronoun" data-parsing="nominative singular" data-lemma="ἐγώ">ἐγὼ</span>' +
 
@@ -2794,11 +2629,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:14" class="line-number">14</span>' +
 
-' <span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατὰ</span>' +
+'&nbsp;<span class="word" data-form="κατά" data-part-of-speech="preposition" data-parsing="" data-lemma="κατά">κατὰ</span>' +
 
 ' <span class="word" data-form="σκοπόν" data-part-of-speech="noun" data-parsing="accusative singular masculine" data-lemma="σκοπός">σκοπὸν</span>' +
 
@@ -2828,11 +2661,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:15" class="line-number">15</span>' +
 
-' <span class="word" data-form="ὅσοι" data-part-of-speech="relative pronoun" data-parsing="nominative plural masculine" data-lemma="ὅσος">Ὅσοι</span>' +
+'&nbsp;<span class="word" data-form="ὅσοι" data-part-of-speech="relative pronoun" data-parsing="nominative plural masculine" data-lemma="ὅσος">Ὅσοι</span>' +
 
 ' <span class="word" data-form="οὖν" data-part-of-speech="conjunction" data-parsing="" data-lemma="οὖν">οὖν</span>' +
 
@@ -2866,11 +2697,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:16" class="line-number">16</span>' +
 
-' <span class="word" data-form="πλήν" data-part-of-speech="conjunction" data-parsing="" data-lemma="πλήν">πλὴν</span>' +
+'&nbsp;<span class="word" data-form="πλήν" data-part-of-speech="conjunction" data-parsing="" data-lemma="πλήν">πλὴν</span>' +
 
 ' <span class="word" data-form="εἰς" data-part-of-speech="preposition" data-parsing="" data-lemma="εἰς">εἰς</span>' +
 
@@ -2894,15 +2723,11 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p><p>' +
-
-
 
 ' <span class="line"><span data-line-number="3:17" class="line-number">17</span>' +
 
-' <span class="word" data-form="συμμιμηταί" data-part-of-speech="noun" data-parsing="nominative plural masculine" data-lemma="συμμιμητής">Συμμιμηταί</span>' +
+'&nbsp;<span class="word" data-form="συμμιμηταί" data-part-of-speech="noun" data-parsing="nominative plural masculine" data-lemma="συμμιμητής">Συμμιμηταί</span>' +
 
 ' <span class="word" data-form="μου" data-part-of-speech="personal pronoun" data-parsing="genitive singular" data-lemma="ἐγώ">μου</span>' +
 
@@ -2930,11 +2755,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:18" class="line-number">18</span>' +
 
-' <span class="word" data-form="πολλοί" data-part-of-speech="adjective" data-parsing="nominative plural masculine" data-lemma="πολύς">Πολλοὶ</span>' +
+'&nbsp;<span class="word" data-form="πολλοί" data-part-of-speech="adjective" data-parsing="nominative plural masculine" data-lemma="πολύς">Πολλοὶ</span>' +
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γὰρ</span>' +
 
@@ -2972,11 +2795,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:19" class="line-number">19</span>' +
 
-' <span class="word" data-form="ὧν" data-part-of-speech="relative pronoun" data-parsing="genitive plural masculine" data-lemma="ὅς">ὧν</span>' +
+'&nbsp;<span class="word" data-form="ὧν" data-part-of-speech="relative pronoun" data-parsing="genitive plural masculine" data-lemma="ὅς">ὧν</span>' +
 
 ' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="nominative singular neuter" data-lemma="ὁ">τὸ</span>' +
 
@@ -3018,11 +2839,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:20" class="line-number">20</span>' +
 
-' <span class="word" data-form="ἡμῶν" data-part-of-speech="personal pronoun" data-parsing="genitive plural" data-lemma="ἐγώ">Ἡμῶν</span>' +
+'&nbsp;<span class="word" data-form="ἡμῶν" data-part-of-speech="personal pronoun" data-parsing="genitive plural" data-lemma="ἐγώ">Ἡμῶν</span>' +
 
 ' <span class="word" data-form="γάρ" data-part-of-speech="conjunction" data-parsing="" data-lemma="γάρ">γὰρ</span>' +
 
@@ -3054,11 +2873,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="3:21" class="line-number">21</span>' +
 
-' <span class="word" data-form="ὅς" data-part-of-speech="relative pronoun" data-parsing="nominative singular masculine" data-lemma="ὅς">ὃς</span>' +
+'&nbsp;<span class="word" data-form="ὅς" data-part-of-speech="relative pronoun" data-parsing="nominative singular masculine" data-lemma="ὅς">ὃς</span>' +
 
 ' <span class="word" data-form="μετασχηματίσει" data-part-of-speech="verb" data-parsing="future active indicative 3rd person singular" data-lemma="μετασχηματίζω">μετασχηματίσει</span>' +
 
@@ -3116,21 +2933,15 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p>' +
-
 
 '<h2><span class="chapter-number">IV</span></h2>' +
 
-
 '<p>' +
-
-
 
 ' <span class="line"><span data-line-number="4:1" class="line-number">01</span>' +
 
-' <span class="word" data-form="ὥστε" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὥστε">Ὥστε</span>,' +
+'&nbsp;<span class="word" data-form="ὥστε" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὥστε">Ὥστε</span>,' +
 
 ' <span class="word" data-form="ἀδελφοί" data-part-of-speech="noun" data-parsing="vocative plural masculine" data-lemma="ἀδελφός">ἀδελφοί</span>' +
 
@@ -3162,15 +2973,11 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p><p>' +
-
-
 
 ' <span class="line"><span data-line-number="4:2" class="line-number">02</span>' +
 
-' <span class="word" data-form="Εὐοδίαν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="Εὐοδία">Εὐοδίαν</span>' +
+'&nbsp;<span class="word" data-form="Εὐοδίαν" data-part-of-speech="noun" data-parsing="accusative singular feminine" data-lemma="Εὐοδία">Εὐοδίαν</span>' +
 
 ' <span class="word" data-form="παρακαλῶ" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="παρακαλέω">παρακαλῶ</span>,' +
 
@@ -3192,11 +2999,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:3" class="line-number">03</span>' +
 
-' <span class="word" data-form="ναί" data-part-of-speech="particle" data-parsing="" data-lemma="ναί">Ναί</span>,' +
+'&nbsp;<span class="word" data-form="ναί" data-part-of-speech="particle" data-parsing="" data-lemma="ναί">Ναί</span>,' +
 
 ' <span class="word" data-form="ἐρωτῶ" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="ἐρωτάω">ἐρωτῶ</span>' +
 
@@ -3254,15 +3059,11 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p><p>' +
-
-
 
 ' <span class="line"><span data-line-number="4:4" class="line-number">04</span>' +
 
-' <span class="word" data-form="χαίρετε" data-part-of-speech="verb" data-parsing="present active imperative 2nd person plural" data-lemma="χαίρω">Χαίρετε</span>' +
+'&nbsp;<span class="word" data-form="χαίρετε" data-part-of-speech="verb" data-parsing="present active imperative 2nd person plural" data-lemma="χαίρω">Χαίρετε</span>' +
 
 ' <span class="word" data-form="ἐν" data-part-of-speech="preposition" data-parsing="" data-lemma="ἐν">ἐν</span>' +
 
@@ -3278,11 +3079,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:5" class="line-number">05</span>' +
 
-' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="nominative singular neuter" data-lemma="ὁ">Τὸ</span>' +
+'&nbsp;<span class="word" data-form="τό" data-part-of-speech="article" data-parsing="nominative singular neuter" data-lemma="ὁ">Τὸ</span>' +
 
 ' <span class="word" data-form="ἐπιεικές" data-part-of-speech="adjective" data-parsing="nominative singular neuter" data-lemma="ἐπιεικής">ἐπιεικὲς</span>' +
 
@@ -3302,11 +3101,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:6" class="line-number">06</span>' +
 
-' <span class="word" data-form="μηδέν" data-part-of-speech="adjective" data-parsing="accusative singular neuter" data-lemma="μηδείς">Μηδὲν</span>' +
+'&nbsp;<span class="word" data-form="μηδέν" data-part-of-speech="adjective" data-parsing="accusative singular neuter" data-lemma="μηδείς">Μηδὲν</span>' +
 
 ' <span class="word" data-form="μεριμνᾶτε" data-part-of-speech="verb" data-parsing="present active imperative 2nd person plural" data-lemma="μεριμνάω">μεριμνᾶτε</span>,' +
 
@@ -3346,11 +3143,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:7" class="line-number">07</span>' +
 
-' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
+'&nbsp;<span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">Καὶ</span>' +
 
 ' <span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">ἡ</span>' +
 
@@ -3392,15 +3187,11 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p><p>' +
-
-
 
 ' <span class="line"><span data-line-number="4:8" class="line-number">08</span>' +
 
-' <span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular neuter" data-lemma="ὁ">Τὸ</span>' +
+'&nbsp;<span class="word" data-form="τό" data-part-of-speech="article" data-parsing="accusative singular neuter" data-lemma="ὁ">Τὸ</span>' +
 
 ' <span class="word" data-form="λοιπόν" data-part-of-speech="adjective" data-parsing="accusative singular neuter" data-lemma="λοιπός">λοιπόν</span>,' +
 
@@ -3452,11 +3243,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:9" class="line-number">09</span>' +
 
-' <span class="word" data-form="ἅ" data-part-of-speech="relative pronoun" data-parsing="accusative plural neuter" data-lemma="ὅς">Ἃ</span>' +
+'&nbsp;<span class="word" data-form="ἅ" data-part-of-speech="relative pronoun" data-parsing="accusative plural neuter" data-lemma="ὅς">Ἃ</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -3500,15 +3289,11 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p><p>' +
-
-
 
 ' <span class="line"><span data-line-number="4:10" class="line-number">10</span>' +
 
-' <span class="word" data-form="ἐχάρην" data-part-of-speech="verb" data-parsing="aorist passive indicative 1st person singular" data-lemma="χαίρω">Ἐχάρην</span>' +
+'&nbsp;<span class="word" data-form="ἐχάρην" data-part-of-speech="verb" data-parsing="aorist passive indicative 1st person singular" data-lemma="χαίρω">Ἐχάρην</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -3548,11 +3333,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:11" class="line-number">11</span>' +
 
-' <span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">Οὐχ</span>' +
+'&nbsp;<span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">Οὐχ</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
@@ -3580,11 +3363,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:12" class="line-number">12</span>' +
 
-' <span class="word" data-form="οἶδα" data-part-of-speech="verb" data-parsing="perfect active indicative 1st person singular" data-lemma="οἶδα">Οἶδα</span>' +
+'&nbsp;<span class="word" data-form="οἶδα" data-part-of-speech="verb" data-parsing="perfect active indicative 1st person singular" data-lemma="οἶδα">Οἶδα</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="conjunction" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -3626,11 +3407,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:13" class="line-number">13</span>' +
 
-' <span class="word" data-form="πάντα" data-part-of-speech="adjective" data-parsing="accusative plural neuter" data-lemma="πᾶς">Πάντα</span>' +
+'&nbsp;<span class="word" data-form="πάντα" data-part-of-speech="adjective" data-parsing="accusative plural neuter" data-lemma="πᾶς">Πάντα</span>' +
 
 ' <span class="word" data-form="ἰσχύω" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="ἰσχύω">ἰσχύω</span>' +
 
@@ -3646,11 +3425,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:14" class="line-number">14</span>' +
 
-' <span class="word" data-form="πλήν" data-part-of-speech="conjunction" data-parsing="" data-lemma="πλήν">Πλὴν</span>' +
+'&nbsp;<span class="word" data-form="πλήν" data-part-of-speech="conjunction" data-parsing="" data-lemma="πλήν">Πλὴν</span>' +
 
 ' <span class="word" data-form="καλῶς" data-part-of-speech="adverb" data-parsing="" data-lemma="καλῶς">καλῶς</span>' +
 
@@ -3666,11 +3443,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:15" class="line-number">15</span>' +
 
-' <span class="word" data-form="οἴδατε" data-part-of-speech="verb" data-parsing="perfect active indicative 2nd person plural" data-lemma="οἶδα">Οἴδατε</span>' +
+'&nbsp;<span class="word" data-form="οἴδατε" data-part-of-speech="verb" data-parsing="perfect active indicative 2nd person plural" data-lemma="οἶδα">Οἴδατε</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -3726,11 +3501,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:16" class="line-number">16</span>' +
 
-' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
+'&nbsp;<span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
 ' <span class="word" data-form="καί" data-part-of-speech="adverb" data-parsing="" data-lemma="καί">καὶ</span>' +
 
@@ -3758,11 +3531,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:17" class="line-number">17</span>' +
 
-' <span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">Οὐχ</span>' +
+'&nbsp;<span class="word" data-form="οὐ" data-part-of-speech="adverb" data-parsing="" data-lemma="οὐ">Οὐχ</span>' +
 
 ' <span class="word" data-form="ὅτι" data-part-of-speech="conjunction" data-parsing="" data-lemma="ὅτι">ὅτι</span>' +
 
@@ -3792,11 +3563,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:18" class="line-number">18</span>' +
 
-' <span class="word" data-form="ἀπέχω" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="ἀπέχω">Ἀπέχω</span>' +
+'&nbsp;<span class="word" data-form="ἀπέχω" data-part-of-speech="verb" data-parsing="present active indicative 1st person singular" data-lemma="ἀπέχω">Ἀπέχω</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -3836,11 +3605,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:19" class="line-number">19</span>' +
 
-' <span class="word" data-form="ὁ" data-part-of-speech="article" data-parsing="nominative singular masculine" data-lemma="ὁ">Ὁ</span>' +
+'&nbsp;<span class="word" data-form="ὁ" data-part-of-speech="article" data-parsing="nominative singular masculine" data-lemma="ὁ">Ὁ</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -3876,11 +3643,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:20" class="line-number">20</span>' +
 
-' <span class="word" data-form="τῷ" data-part-of-speech="article" data-parsing="dative singular masculine" data-lemma="ὁ">Τῷ</span>' +
+'&nbsp;<span class="word" data-form="τῷ" data-part-of-speech="article" data-parsing="dative singular masculine" data-lemma="ὁ">Τῷ</span>' +
 
 ' <span class="word" data-form="δέ" data-part-of-speech="conjunction" data-parsing="" data-lemma="δέ">δὲ</span>' +
 
@@ -3910,15 +3675,11 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p><p>' +
-
-
 
 ' <span class="line"><span data-line-number="4:21" class="line-number">21</span>' +
 
-' <span class="word" data-form="ἀσπάσασθε" data-part-of-speech="verb" data-parsing="aorist middle imperative 2nd person plural" data-lemma="ἀσπάζομαι">Ἀσπάσασθε</span>' +
+'&nbsp;<span class="word" data-form="ἀσπάσασθε" data-part-of-speech="verb" data-parsing="aorist middle imperative 2nd person plural" data-lemma="ἀσπάζομαι">Ἀσπάσασθε</span>' +
 
 ' <span class="word" data-form="πάντα" data-part-of-speech="adjective" data-parsing="accusative singular masculine" data-lemma="πᾶς">πάντα</span>' +
 
@@ -3944,11 +3705,9 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 ' <span class="line"><span data-line-number="4:22" class="line-number">22</span>' +
 
-' <span class="word" data-form="ἀσπάζονται" data-part-of-speech="verb" data-parsing="present middle indicative 3rd person plural" data-lemma="ἀσπάζομαι">Ἀσπάζονται</span>' +
+'&nbsp;<span class="word" data-form="ἀσπάζονται" data-part-of-speech="verb" data-parsing="present middle indicative 3rd person plural" data-lemma="ἀσπάζομαι">Ἀσπάζονται</span>' +
 
 ' <span class="word" data-form="ὑμᾶς" data-part-of-speech="personal pronoun" data-parsing="accusative plural" data-lemma="σύ">ὑμᾶς</span>' +
 
@@ -3974,15 +3733,11 @@ nt_philippians_parsed_text =
 
 ' </span>' +
 
-
-
 '</p><p>' +
-
-
 
 ' <span class="line"><span data-line-number="4:23" class="line-number">23</span>' +
 
-' <span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">Ἡ</span>' +
+'&nbsp;<span class="word" data-form="ἡ" data-part-of-speech="article" data-parsing="nominative singular feminine" data-lemma="ὁ">Ἡ</span>' +
 
 ' <span class="word" data-form="χάρις" data-part-of-speech="noun" data-parsing="nominative singular feminine" data-lemma="χάρις">χάρις</span>' +
 
@@ -4006,13 +3761,6 @@ nt_philippians_parsed_text =
 
 '</p>' +
 
-
 // Insert more text above this line
-
-
-
-
-
-
 
 ""; 
