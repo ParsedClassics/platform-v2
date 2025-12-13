@@ -4999,6 +4999,48 @@ To:<br>
 <td class="w3-border">BBEdit</td>
 </tr>
 
+<tr>
+<td class="w3-border pc-whitespace-nowrap">class="line-number">\d+:</td>
+<td class="w3-border pc-whitespace-nowrap">class="line-number"></td>
+<td class="w3-border">Used to remove chapter numb and delimiting symbol from chapter num verse num pair. E.g. from:<br>
+' &lt;span class="line">&lt;span data-line-number="13:17" class="line-number">13:17&lt;/span>' +<br>
+To:<br>
+' &lt;span class="line">&lt;span data-line-number="13:17" class="line-number">17&lt;/span>' +
+</td>
+<td class="w3-border">VS Code</td>
+</tr>
+
+<tr>
+<td class="w3-border pc-whitespace-nowrap">(class="line-number">)(\d)(<)</td>
+<td class="w3-border pc-whitespace-nowrap">\10\2\3</td>
+<td class="w3-border">Used to zero-padding of single line numbers. E.g. from:<br>
+' &lt;span class="line">&lt;span data-line-number="1:1" class="line-number">1&lt;/span>' +
+To:<br>
+' &lt;span class="line">&lt;span data-line-number="1:1" class="line-number">01&lt;/span>' +
+</td>
+<td class="w3-border">Notepad++</td>
+</tr>
+
+<tr>
+<td class="w3-border pc-whitespace-nowrap">\n\s*\n\s*\n</td>
+<td class="w3-border pc-whitespace-nowrap">\n\n</td>
+<td class="w3-border">Used to reduce two or more empty lines into single emppty line.</td>
+<td class="w3-border">VS Code</td>
+</tr>
+
+<tr>
+<td class="w3-border pc-whitespace-nowrap">(class="line-number">)(\d+)&lt;/span>'(\s+\+\n+)' &lt;span class="word"</td>
+<td class="w3-border pc-whitespace-nowrap">\1\2&lt;/span>'\3'\&amp;nbsp;&lt;span class="word"</td>
+<td class="w3-border">Used to add &amp;nbsp; before span el containing verse num. E.g. from:<br>
+' &lt;span class="line">&lt;span data-line-number="1:5" class="line-number">05&lt;/span>' +<br>
+' &lt;span class="word" data-form="Σαλμών" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Σαλμών">Σαλμὼν&lt;/span>' +<br>
+To:<br>
+' &lt;span class="line">&lt;span data-line-number="1:5" class="line-number">05&lt;/span>' +<br>
+'&amp;nbsp;&lt;span class="word" data-form="Σαλμών" data-part-of-speech="noun" data-parsing="nominative singular masculine" data-lemma="Σαλμών">Σαλμὼν&lt;/span>' +
+</td>
+<td class="w3-border">BBEdit</td>
+</tr>
+
 </tbody>
 </table>
 
