@@ -186,12 +186,12 @@ const ParsedClassicsNavSelects = {
     if (typeof collContentsType === "undefined" || !collContentsType) { 
       // create selectbox option el "Lines or Pages"
       selectboxOptionsEls = ParsedClassicsNavSelects.emptySelectboxOptions();
-      titleAttrVal = "Select line or page";
+      titleAttrVal = "Select verse, paragraph or page";
     }
     else if (collContentsType === "line") {
       // create lines selectbox options els
       selectboxOptionsEls = ParsedClassicsNavSelects.linesSelectboxOptions(collectionShortname);
-      titleAttrVal = "Select line";
+      titleAttrVal = "Select verse";
     }
     else if (collContentsType === "paragraph") {
       // create lines selectbox options els
@@ -214,7 +214,7 @@ const ParsedClassicsNavSelects = {
   },
 
   linesSelectboxOptions: function(collectionShortname) {
-    let selectboxOptionsHtml = '<option disabled>Line</option>';
+    let selectboxOptionsHtml = '<option disabled>Verse</option>';
     // get collection's definition
     const collDef = ParsedClassicsCollDefs[collectionShortname];
     // get collection's contents
@@ -322,7 +322,7 @@ const ParsedClassicsNavSelects = {
   },
 
   emptySelectboxOptions: function() {
-    let selectboxOptionsHtml = '<option disabled selected>Line, paragraph or page</option>';
+    let selectboxOptionsHtml = '<option disabled selected>Verse, paragraph or page</option>';
     // create selectbox options els
     const selectboxOptionsEls = $(selectboxOptionsHtml);
     return selectboxOptionsEls;
