@@ -466,7 +466,7 @@ const ParsedClassicsNavSelects = {
     const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
     // get collection shortname
     const collectionShortname = collLinePair.split('|')[0];
-    // get resource shortname
+    // get line indicator
     const lineIndicator = collLinePair.split('|')[1];
     // get pointers of current collection
     const collectionPointers = pointersObj[collectionShortname];
@@ -489,8 +489,26 @@ const ParsedClassicsNavSelects = {
     ParsedClassicsLayout.update(hashJson);
   },
 
-  hashSelectParagraph: function(collLinePair) {
+  hashSelectParagraph: function(collParaPair) {
+    // get hash json
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    // get pointers obj
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
+    // get collection shortname
+    const collectionShortname = collParaPair.split('|')[0];
+    // get paragraph indicator
+    const paraIndicator = collParaPair.split('|')[1];
+    // get pointers of current collection
+    const collectionPointers = pointersObj[collectionShortname];
+    // change value of the key "paragraph" with the line indicator which was selected
+    collectionPointers[ParsedClassicsAppVars.paragraphMember] = paraIndicator;
 
+    // stringify hash json
+    const hashJsonString = JSON.stringify(hashJson);
+    // push state
+    history.pushState(null, "", `#${hashJsonString}`);
+    // update layout
+    ParsedClassicsLayout.update(hashJson);
   },
 
   hashSelectPage: function(selectboxValue, tabId, collectionShortname) {
@@ -750,11 +768,11 @@ const ParsedClassicsSelectedLine = {
       lineEl = lineEl.parent();
     }
 
-    // get prevoiusly selected line el
+    // get previously selected line el
     const lineElPrev = container.find(`.${ParsedClassicsAppVars.selectedLineClass}`);
     //get line number el of prevoiusly selected line
     const lineNumberElPrev = lineElPrev.find(`.${ParsedClassicsAppVars.lineNumberClass}`);
-    // get line indicator of prevoiusly selected line
+    // get line indicator of previously selected line
     const lineIndicatorPrevFromDom = lineNumberElPrev.attr(ParsedClassicsAppVars.lineNumberAttr);
 
     // get line number el
@@ -848,7 +866,6 @@ const ParsedClassicsSelectedLine = {
     // get word position from URL
     const wordPositionFromUrl = collectionPointers[ParsedClassicsAppVars.wordPositionMember] ?? null;
     
-    
     // find previous selected line
     const selectedLineEl = parsedTextContainerTopPart.find(`.${ParsedClassicsAppVars.selectedLineClass}`);
     
@@ -868,6 +885,81 @@ const ParsedClassicsSelectedLine = {
       wordEl = $(wordEl[wordPositionFromUrl]);
     }
     wordEl.first().addClass(ParsedClassicsAppVars.selectedWordClass);
+  },
+
+};
+
+const ParsedClassicsSelectedParagraph = {
+
+  hashSelectParagraph: function(event, collectionShortname, container) {
+    // get hash json
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    // get pointers obj
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
+    // get pointers of current collection
+    const collectionPointers = pointersObj[collectionShortname] ?? {};
+    // get paragraph indicator from URL
+    const paraIndicatorFromUrl = typeof collectionPointers[ParsedClassicsAppVars.paragraphMember] !== 'undefined' ? collectionPointers[ParsedClassicsAppVars.paragraphMember] : null;
+
+    // get clicked el
+    const clickedEl = $(event.target);
+
+    // get paragraph el
+    let paraEl = clickedEl;
+    while (paraEl.prop("tagName").toLowerCase() !== 'p' && paraEl[0] !== document.body) {
+      paraEl = paraEl.parent();
+    }
+
+    // get previously selected paragraph el
+    const paraElPrev = container.find(`.${ParsedClassicsAppVars.selectedParagraphClass}`);
+    //get paragraph number el of prevoiusly selected paragraph
+    const paraNumberElPrev = paraElPrev.find(`.${ParsedClassicsAppVars.paragraphNumberClass}`);
+    // get line indicator of previously selected line
+    const paraIndicatorPrevFromDom = paraNumberElPrev.attr(ParsedClassicsAppVars.paragraphNumberAttr);
+
+    // get paragraph number el
+    const paraNumberEl = paraEl.find(`.${ParsedClassicsAppVars.paragraphNumberClass}`);
+    // get paragraph indicator from DOM
+    const paraIndicatorFromDom = paraNumberEl.attr(ParsedClassicsAppVars.paragraphNumberAttr);
+
+    // do we need to change hash json? - wo do not if some el was clicked in the same paragraph
+    if (paraIndicatorPrevFromDom === paraIndicatorFromDom) {
+      return;
+    }
+
+    // update pointers obj - put new paragraph indicator into pointers obj
+    collectionPointers[ParsedClassicsAppVars.paragraphMember] = paraIndicatorFromDom;
+
+    // stringify hash json
+    const hashJsonString = JSON.stringify(hashJson);
+    // push state
+    history.pushState(null, "", `#${hashJsonString}`);
+    // update layout
+    ParsedClassicsLayout.update(hashJson);
+  },
+
+  // for resources of the type "Parsed text"
+  treatSelectedParagraph: function(parsedTextContainerTopPart, collectionShortname) {
+    // get hash json
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    // get pointers obj
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
+    // get pointers of current collection
+    const collectionPointers = pointersObj[collectionShortname];
+
+    // get paragraph indicator from URL
+    const paraIndicatorFromUrl = collectionPointers[ParsedClassicsAppVars.paragraphMember] ?? null;
+
+    // find previous selected paragraph
+    const selectedParaEl = parsedTextContainerTopPart.find(`.${ParsedClassicsAppVars.selectedParagraphClass}`);
+
+    // remove class "selected-para" from previously selected line
+    selectedParaEl.removeClass(ParsedClassicsAppVars.selectedParagraphClass);
+
+    // find currently selected paragraph
+    const paraEl = parsedTextContainerTopPart.find(`span[${ParsedClassicsAppVars.paragraphNumberAttr}="${paraIndicatorFromUrl}"]`).parent().filter('p');
+    // add class "selected-para" to currently selected line
+    paraEl.addClass(ParsedClassicsAppVars.selectedParagraphClass);
   },
 
 };
