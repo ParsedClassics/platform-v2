@@ -189,6 +189,7 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] p > .para-n
   margin-right: 0.7em;
   font-family: arial, sans-serif;
   font-size: 90%;
+  cursor: default;
 }
 
 div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .display_pagination {
