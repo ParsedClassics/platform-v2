@@ -128,7 +128,8 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .selected-l
   color: var(--black);
 }
 
-div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .selected-line {
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .selected-line,
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .selected-para {
   background-color: var(--grey300);
 }
 

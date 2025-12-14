@@ -20,7 +20,7 @@ arnold_cloelia_parsed_text_contents = {
 
   , "I:4": "I:4"
 
-  , "I.5": "I.5"
+  , "I:5": "I:5"
 
   , "levelend-1": ""
 
@@ -34,21 +34,21 @@ arnold_cloelia_parsed_text_contents = {
 
   , "II:4": "II:4"
 
-  , "II.5": "II.5"
+  , "II:5": "II:5"
 
   , "II:6": "II:6"
 
-  , "II.7": "II.7"
+  , "II:7": "II:7"
 
   , "II:8": "II:8"
 
   , "II:9": "II:9"
 
-  , "II.10": "II.10"
+  , "II:10": "II:10"
 
   , "II:11": "II:11"
 
-  , "II.12": "II.12"
+  , "II:12": "II:12"
 
   , "levelend-2": ""
 
@@ -62,11 +62,11 @@ arnold_cloelia_parsed_text_contents = {
 
   , "III:4": "III:4"
 
-  , "III.5": "III.5"
+  , "III:5": "III:5"
 
   , "III:6": "III:6"
 
-  , "III.7": "III.7"
+  , "III:7": "III:7"
 
   , "III:8": "III:8"
 
@@ -74,7 +74,7 @@ arnold_cloelia_parsed_text_contents = {
 
   , "III:10": "III:10"
 
-  , "III.11": "III.11"
+  , "III:11": "III:11"
 
   , "III:12": "III:12"
 
@@ -92,11 +92,11 @@ arnold_cloelia_parsed_text_contents = {
 
   , "IV:4": "IV:4"
 
-  , "IV.5": "IV.5"
+  , "IV:5": "IV:5"
 
   , "IV:6": "IV:6"
 
-  , "IV.7": "IV.7"
+  , "IV:7": "IV:7"
 
   , "IV:8": "IV:8"
 
@@ -104,7 +104,7 @@ arnold_cloelia_parsed_text_contents = {
 
   , "IV:10": "IV:10"
 
-  , "IV.11": "IV.11"
+  , "IV:11": "IV:11"
 
   , "IV:12": "IV:12"
 
@@ -114,7 +114,7 @@ arnold_cloelia_parsed_text_contents = {
 
   , "IV:15": "IV:15"
 
-  , "IV.16": "IV.16"
+  , "IV:16": "IV:16"
 
   , "IV:17": "IV:17"
 
@@ -132,11 +132,11 @@ arnold_cloelia_parsed_text_contents = {
 
   , "V:4": "V:4"
 
-  , "V.5": "V.5"
+  , "V:5": "V:5"
 
   , "V:6": "V:6"
 
-  , "V.7": "V.7"
+  , "V:7": "V:7"
 
   , "V:8": "V:8"
 
@@ -156,11 +156,11 @@ arnold_cloelia_parsed_text_contents = {
 
   , "VI:4": "VI:4"
 
-  , "VI.5": "VI.5"
+  , "VI:5": "VI:5"
 
   , "VI:6": "VI:6"
 
-  , "VI.7": "VI.7"
+  , "VI:7": "VI:7"
 
   , "VI:8": "VI:8"
 
@@ -178,7 +178,7 @@ arnold_cloelia_parsed_text_contents = {
 
   , "VII:4": "VII:4"
 
-  , "VII.5": "VII.5"
+  , "VII:5": "VII:5"
 
   , "VII:6": "VII:6"
 
@@ -194,7 +194,7 @@ arnold_cloelia_parsed_text_contents = {
 
   , "VIII:4": "VIII:4"
 
-  , "VIII.5": "VIII.5"
+  , "VIII:5": "VIII:5"
 
   , "levelend-8": ""
 
@@ -208,11 +208,11 @@ arnold_cloelia_parsed_text_contents = {
 
   , "IX:4": "IX:4"
 
-  , "IX.5": "IX.5"
+  , "IX:5": "IX:5"
 
   , "IX:6": "IX:6"
 
-  , "IX.7": "IX.7"
+  , "IX:7": "IX:7"
 
   , "IX:8": "IX:8"
 
@@ -230,11 +230,11 @@ arnold_cloelia_parsed_text_contents = {
 
   , "X:4": "X:4"
 
-  , "X.5": "X.5"
+  , "X:5": "X:5"
 
   , "X:6": "X:6"
 
-  , "X.7": "X.7"
+  , "X:7": "X:7"
 
   , "X:8": "X:8"
 
@@ -250,7 +250,7 @@ arnold_cloelia_parsed_text_contents = {
 
   , "XI:4": "XI:4"
 
-  , "XI.5": "XI.5"
+  , "XI:5": "XI:5"
 
   , "levelend-11": ""
 
@@ -264,7 +264,7 @@ arnold_cloelia_parsed_text_contents = {
 
   , "XII:4": "XII:4"
 
-  , "XII.5": "XII.5"
+  , "XII:5": "XII:5"
 
   , "levelend-12": ""
 
@@ -290,11 +290,11 @@ arnold_cloelia_parsed_text_contents = {
 
   , "XIV:4": "XIV:4"
 
-  , "XIV.5": "XIV.5"
+  , "XIV:5": "XIV:5"
 
   , "XIV:6": "XIV:6"
 
-  , "XIV.7": "XIV.7"
+  , "XIV:7": "XIV:7"
 
   , "XIV:8": "XIV:8"
 
@@ -314,11 +314,11 @@ arnold_cloelia_parsed_text_contents = {
 
   , "XV:4": "XV:4"
 
-  , "XV.5": "XV.5"
+  , "XV:5": "XV:5"
 
   , "XV:6": "XV:6"
 
-  , "XV.7": "XV.7"
+  , "XV:7": "XV:7"
 
   , "XV:8": "XV:8"
 
@@ -336,11 +336,11 @@ arnold_cloelia_parsed_text_contents = {
 
   , "XVI:4": "XVI:4"
 
-  , "XVI.5": "XVI.5"
+  , "XVI:5": "XVI:5"
 
   , "XVI:6": "XVI:6"
 
-  , "XVI.7": "XVI.7"
+  , "XVI:7": "XVI:7"
 
   , "XVI:8": "XVI:8"
 
@@ -348,7 +348,7 @@ arnold_cloelia_parsed_text_contents = {
 
   , "XVI:10": "XVI:10"
 
-  , "XVI.11": "XVI.11"
+  , "XVI:11": "XVI:11"
 
   , "XVI:12": "XVI:12"
 
@@ -366,11 +366,11 @@ arnold_cloelia_parsed_text_contents = {
 
   , "XVII:4": "XVII:4"
 
-  , "XVII.5": "XVII.5"
+  , "XVII:5": "XVII:5"
 
   , "XVII:6": "XVII:6"
 
-  , "XVII.7": "XVII.7"
+  , "XVII:7": "XVII:7"
 
   , "XVII:8": "XVII:8"
 
@@ -386,7 +386,7 @@ arnold_cloelia_parsed_text_contents = {
 
   , "XVIII:4": "XVIII:4"
 
-  , "XVIII.5": "XVIII.5"
+  , "XVIII:5": "XVIII:5"
 
   , "levelend-18": ""
 

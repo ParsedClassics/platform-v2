@@ -32,6 +32,8 @@ const ParsedClassicsContentContainers = {
     const resourceDef = resourceShortname ? resourceDefsAll[resourceShortname] : '';
     // is resource scanned or typed?
     const scannedOrTyped = resourceDef ? resourceDef['scanned_or_typed'] : '';
+    // is contents line, paragraph or page based?
+    const contentsType = collectionDef['contents_type'];
     
     // get type of the resource
     const resourceType = resourceDef ? resourceDef['resource_type'] : '';
@@ -60,7 +62,7 @@ const ParsedClassicsContentContainers = {
     // get paragraph indicator from url
     const paragraphIndicatorUrl = ParsedClassicsLayout.getParagraphIndicatorFromUrl(collectionShortname);
     // get paragraph indicator saved as dom attr
-    const paragraphIndicatorDom = tabContentContainer.attr(ParsedClassicsAppVars.paragraphAttr) ?? '';
+    const paragraphIndicatorDom = tabContentContainer.attr(ParsedClassicsAppVars.paragraphNumberAttr) ?? '';
 
     // get lemma from URL
     const wordUrl = ParsedClassicsLayout.getWordFromUrl(collectionShortname) ?? '';
@@ -83,7 +85,7 @@ const ParsedClassicsContentContainers = {
 
     if (!resourceShortname  &&  collResPairUrl !== collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed', pageUrl, formUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed', paragraphIndicatorUrl, pageUrl, formUrl);
       // create html of available resources
       const resourcesListHtml = ParsedClassicsContentContainers.createAvailableResourcesListHtml(collectionDef, resourceDefsAll);
       // update container's html
@@ -101,17 +103,27 @@ const ParsedClassicsContentContainers = {
     else if (scannedOrTyped === 'typed' &&  collResPairUrl === collResPairDom) {
 
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl, formUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl);
 
       switch(resourceType) {
         
         case 'parsed_text':
         const parsedTextContainerTopPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.parsedTextContainerTopPartClass}`);
-        // treat selected line and word
-        ParsedClassicsSelectedLine.treatSelectedLineAndWord(parsedTextContainerTopPart, collectionShortname);
-        // scroll to the selected line
-        if (lineIndicatorUrl !== lineIndicatorDom || refresh) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
-          ParsedClassicsContentContainers.scrollToLineResourceLoaded(parsedTextContainerTopPart, lineIndicatorUrl, activeTabId);
+        if (contentsType === 'line') {
+          // treat selected line and word
+          ParsedClassicsSelectedLine.treatSelectedLineAndWord(parsedTextContainerTopPart, collectionShortname);
+          // scroll to selected line
+          if (lineIndicatorUrl !== lineIndicatorDom || refresh) { // commented out because of the bug typed text scrolling to top after tab's move to other pane
+            ParsedClassicsContentContainers.scrollToLineResourceLoaded(parsedTextContainerTopPart, lineIndicatorUrl, activeTabId);
+          }
+        }
+        else if (contentsType === 'paragraph') {
+          // treat selected paragraph 
+            ParsedClassicsSelectedParagraph.treatSelectedParagraph(parsedTextContainerTopPart, collectionShortname);
+          // scroll to selected paragraph
+          if (paragraphIndicatorUrl !== paragraphIndicatorDom || refresh) {
+            ParsedClassicsContentContainers.scrollToParaResourceLoaded(parsedTextContainerTopPart, paragraphIndicatorUrl, activeTabId);
+          }
         }
         break;
 
@@ -184,7 +196,7 @@ const ParsedClassicsContentContainers = {
 
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl === collResPairDom) {
       // update container's attrs 
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl, formUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl);
       // selected line was changed?
       if (lineIndicatorUrl !== lineIndicatorDom) { 
         const iframeEl = tabContentContainerInner.find('.pc-bookreader');
@@ -223,7 +235,7 @@ const ParsedClassicsContentContainers = {
     else if (scannedOrTyped === 'typed' &&  collResPairUrl !== collResPairDom) {
 
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl, formUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl);
       
       switch(resourceType) {
 
@@ -239,18 +251,30 @@ const ParsedClassicsContentContainers = {
           var {parsedTextContainerTopPart, parsedTextContainerBottomPart} = ParsedClassicsContentContainers.splitParsedTextContainer(activeTabId, tabContentContainerInner, parsing_external);
           // generate html of parsed text resource and put it into top part of splitted container
           ParsedClassicsContentContainers.createParsedTextResourceHtml(parsedTextContainerTopPart, collectionDef, resourceDef, resourceData);
-          // delegate "mouseenter" and "mouseleave" events from els having class "word" to tab's inner content container
+          // undelegate "mouseenter", "mouseleave" and "click" events
           tabContentContainerInner.undelegate("mouseenter");
-          tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseenter", (event) => ParsedClassicsMorphology.selectedWordMouseEnter(event, parsedTextContainerBottomPart));
           tabContentContainerInner.undelegate("mouseleave");
-          tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseleave", () => ParsedClassicsMorphology.selectedWordMouseLeave(parsedTextContainerBottomPart));
-          // delegate "click" event from els having class "line" to tab's inner content container
           tabContentContainerInner.undelegate("click");
-          tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.lineClass}`, "click", (event) => ParsedClassicsSelectedLine.hashSelectLineAndWord(event, collectionShortname, parsedTextContainerTopPart));
-          // treat selected line and word
-          ParsedClassicsSelectedLine.treatSelectedLineAndWord(parsedTextContainerTopPart, collectionShortname);
-          // scroll to the selected line
-          ParsedClassicsContentContainers.scrollToLineResourceLoading(parsedTextContainerTopPart, lineIndicatorUrl, activeTabId);
+          if (contentsType === 'line') {
+            // delegate "mouseenter" and "mouseleave" events from els having class "word" to tab's inner content container
+            tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseenter", (event) => ParsedClassicsMorphology.selectedWordMouseEnter(event, parsedTextContainerBottomPart));
+            tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseleave", () => ParsedClassicsMorphology.selectedWordMouseLeave(parsedTextContainerBottomPart));
+            // delegate "click" event from els having class "line" to tab's inner content container
+            tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.lineClass}`, "click", (event) => ParsedClassicsSelectedLine.hashSelectLineAndWord(event, collectionShortname, parsedTextContainerTopPart));
+            // treat selected line and word
+            ParsedClassicsSelectedLine.treatSelectedLineAndWord(parsedTextContainerTopPart, collectionShortname);
+            // scroll to the selected line
+            ParsedClassicsContentContainers.scrollToLineResourceLoading(parsedTextContainerTopPart, lineIndicatorUrl, activeTabId);
+          }
+          else if (contentsType === 'paragraph') {
+            // delegate "click" event from <p> els to tab's inner content container
+            tabContentContainerInner.delegate(`p`, "click", (event) => ParsedClassicsSelectedParagraph.hashSelectParagraph(event, collectionShortname, parsedTextContainerTopPart));
+            // treat selected paragraph 
+            ParsedClassicsSelectedParagraph.treatSelectedParagraph(parsedTextContainerTopPart, collectionShortname);
+            // scroll to the selected paragraph 
+            ParsedClassicsContentContainers.scrollToParaResourceLoading(parsedTextContainerTopPart, paragraphIndicatorUrl, activeTabId);
+          }
+          
           break;
 
         case 'lexicon':
@@ -358,7 +382,7 @@ const ParsedClassicsContentContainers = {
     
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl !== collResPairDom) {
       // update container's attrs 
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, pageUrl, formUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl);
       // generate html of resource
       let iframeEl;
       if (resourceType !== 'lexicon') {
@@ -416,7 +440,7 @@ const ParsedClassicsContentContainers = {
     // save scanned or typed value as DOM attr in order to apply relevant styles 
     container.attr(ParsedClassicsAppVars.scannedOrTypedAttr, scannedOrTyped);
     // save paragraph num as DOM attr
-    container.attr(ParsedClassicsAppVars.paragraphAttr, paragraph);
+    container.attr(ParsedClassicsAppVars.paragraphNumberAttr, paragraph);
     // save page num as DOM attr
     container.attr(ParsedClassicsAppVars.pageAttr, page);
     // save word form as DOM attr
@@ -503,8 +527,19 @@ const ParsedClassicsContentContainers = {
   },
   
   createParsedTextResourceHtml: function(parsedTextContainerTopPart, collectionDef, resourceDef, resourceData) {
+    // is contents line, paragraph or page based?
+    const contentsType = collectionDef['contents_type'];
+    let classAttrVal, numberAttrVal;
+    if (contentsType === 'line') {
+      classAttrVal = ParsedClassicsAppVars.lineNumberClass;
+      numberAttrVal = ParsedClassicsAppVars.lineNumberAttr;
+    }
+    else if (contentsType === 'paragraph') {
+      classAttrVal = ParsedClassicsAppVars.paragraphNumberClass;
+      numberAttrVal = ParsedClassicsAppVars.paragraphNumberAttr;
+    }
     const html = `
-      <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
+      <div class="${classAttrVal} pc-padding-top-8" ${numberAttrVal}="title"></div>
       <h1>${collectionDef['author_orig']}</h1>
       <h1>${resourceDef['library_app_panel_title']}</h1>
       <p class="text-from">Text based on: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></p>
@@ -822,7 +857,7 @@ const ParsedClassicsContentContainers = {
         else if (renderedLength === 0 && count === maxCount - 1) {
           ParsedClassicsAlertDialogue.openDialogue(paneId, {
             heading: 'Not found',
-            message: `The line ${lineIndicatorFromUrl} was not found.`,
+            message: `The verse ${lineIndicatorFromUrl} was not found.`,
           });
         }
         count++;
@@ -842,7 +877,7 @@ const ParsedClassicsContentContainers = {
     const containerId = container.attr('id');
     // get line to be scrolled
     const lineToScroll = container.find(`.${ParsedClassicsAppVars.lineNumberClass}[${ParsedClassicsAppVars.lineNumberAttr}="${lineIndicatorFromUrl}"]`).first();
-    // find if ther is only one el in DOM
+    // find if there is only one el in DOM
     const renderedLength = lineToScroll.length;
     // find if line to be scrolled is already in viewport, i.e. is already seen
     const inViewportLength = lineToScroll.isInViewport({tolerance: 0, viewport: `#${containerId}`}).length;
@@ -853,7 +888,80 @@ const ParsedClassicsContentContainers = {
     else if (renderedLength === 0) {
       ParsedClassicsAlertDialogue.openDialogue(paneId, {
         heading: 'Not found',
-        message: `The line ${lineIndicatorFromUrl} was not found.`,
+        message: `The verse ${lineIndicatorFromUrl} was not found.`,
+      });
+    }
+  },
+
+  scrollToParaResourceLoading: function(container, paragraphIndicatorUrl, activeTabId) {
+    // clear previous interval if such found
+    if (ParsedClassicsContentContainers.scrollFuncIntervals[activeTabId]) {
+      clearInterval(ParsedClassicsContentContainers.scrollFuncIntervals[activeTabId]);
+    }
+
+    // get pane id
+    const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
+    // close alert dialogue that may be open
+    ParsedClassicsAlertDialogue.closeDialogueWithoutClick(paneId);
+    // close confirm dialogue that may be open 
+    ParsedClassicsConfirmDialogue.closeConfirmDialogueWithoutClick(paneId);
+    // get id of container to be scrolled 
+    const containerId = container.attr('id');
+
+    // initiate interval counter
+    let count = 0;
+    const maxCount = 20;
+    ParsedClassicsContentContainers.scrollFuncIntervals[activeTabId] = setInterval(function(){
+      if(count < maxCount){
+        // get line to be scrolled
+        const paraToScroll = container.find(`.${ParsedClassicsAppVars.paragraphNumberClass}[${ParsedClassicsAppVars.paragraphNumberAttr}="${paragraphIndicatorUrl}"]`).first();
+        // find if line to be scrolled is already in DOM
+        const renderedLength = paraToScroll.length;
+        // find if line to be scrolled is already in viewport, i.e. is already seen
+        const inViewportLength = paraToScroll.isInViewport({tolerance: 0, viewport: `#${containerId}`}).length;
+        // line to be scrolled is in DOM - let's scroll it into view
+        if (renderedLength === 1) {
+          container.scrollTo(paraToScroll, ParsedClassicsAppVars.animationSpeed);
+          // line to be scrolled is in DOM and in viewport? - let's clear interval
+          if (inViewportLength === 1) {
+            clearInterval(ParsedClassicsContentContainers.scrollFuncIntervals[activeTabId]);
+          }
+        }
+        // show alert that the line was not found 
+        else if (renderedLength === 0 && count === maxCount - 1) {
+          ParsedClassicsAlertDialogue.openDialogue(paneId, {
+            heading: 'Not found',
+            message: `The verse ${paragraphIndicatorUrl} was not found.`,
+          });
+        }
+        count++;
+      }
+    }, 50);
+  },
+
+  scrollToParaResourceLoaded: function(container, paragraphIndicatorUrl, activeTabId) {
+    // get pane id
+    const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
+    // close alert dialogue that may be open
+    ParsedClassicsAlertDialogue.closeDialogueWithoutClick(paneId);
+    // close confirm dialogue that may be open 
+    ParsedClassicsConfirmDialogue.closeConfirmDialogueWithoutClick(paneId);
+    // get id of container to be scrolled 
+    const containerId = container.attr('id');
+    // get paragraph to be scrolled
+    const paraToScroll = container.find(`.${ParsedClassicsAppVars.paragraphNumberClass}[${ParsedClassicsAppVars.paragraphNumberAttr}="${paragraphIndicatorUrl}"]`).first();
+    // find if there is only one el in DOM
+    const renderedLength = paraToScroll.length;
+    // find if paragraph to be scrolled is already in viewport, i.e. is already seen
+    const inViewportLength = paraToScroll.isInViewport({tolerance: 0, viewport: `#${containerId}`}).length;
+     // line to be scrolled is in DOM - let's scroll it into view
+    if (renderedLength === 1 && inViewportLength === 0) {
+      container.scrollTo(paraToScroll, ParsedClassicsAppVars.animationSpeed);
+    }
+    else if (renderedLength === 0) {
+      ParsedClassicsAlertDialogue.openDialogue(paneId, {
+        heading: 'Not found',
+        message: `The paragraph ${paragraphIndicatorUrl} was not found.`,
       });
     }
   },
