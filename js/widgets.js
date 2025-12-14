@@ -559,13 +559,21 @@ const ParsedClassicsNavSelects = {
     }
     
     let lineIndicator;
-    let pageIndicator;
     let collLinePair;
+    let paraIndicator;
+    let collParaPair;
+    let pageIndicator;
     if (collContentsType == 'line') {
       // get selected line's indicator from URL
       lineIndicator = ParsedClassicsLayout.getLineIndicatorFromUrl(collectionShortname);
-      // form collection and line indicator pipe delimted str
+      // form collection and line indicator pipe delimited str
       collLinePair = collectionShortname && lineIndicator ? `${collectionShortname}|${lineIndicator}` : '';
+    }
+    else if (collContentsType == 'paragraph') {
+      // get selected paragraph's indicator from URL
+      paraIndicator = ParsedClassicsLayout.getParagraphIndicatorFromUrl(collectionShortname);
+      // form collection and paragraph indicator pipe delimited str
+      collParaPair = collectionShortname && paraIndicator ? `${collectionShortname}|${paraIndicator}` : '';
     }
     else if (collContentsType == 'page') {
       // get selected page's indicator from URL
@@ -652,6 +660,9 @@ const ParsedClassicsNavSelects = {
     let selectboxValue;
     if (collContentsType == 'line') {
       selectboxValue = collLinePair;
+    }
+    else if (collContentsType == 'paragraph') {
+      selectboxValue = collParaPair;
     }
     else if (collContentsType == 'page' && resource_type == 'reader') {
       selectboxValue = pageIndicator;
