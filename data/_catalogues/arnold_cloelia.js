@@ -30,7 +30,7 @@ Order of resources by resource type
 
   // External service
 
-  // Reader
+  // Original text
 
   // Lexicon
 
@@ -61,7 +61,22 @@ ParsedClassicsCollDefs.arnold_cloelia["resource_defs"] = {
 
   // External service
 
-  // Reader
+  // Original text
+
+  arnold_cloelia_orig_text: {
+    collections_page_resource_author: "Eleanor Arnold",
+    collections_page_resource_desc: "Arnold E. Cloelia, puella Rōmāna (2016)", 
+    library_app_selectbox_title: "Arnold E. Cloelia, puella Rōmāna (2016)",
+    library_app_panel_title: "Cloelia, puella Rōmāna",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "Eleanor Arnold. Cloelia, puella Rōmāna. 2016",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "original_text",
+    scanned_source_shortname: "arnold_cloelia",
+    contents_shortname: "arnold_cloelia_orig_text_contents",
+    extra: {},
+  }, 
 
   // Lexicon
 

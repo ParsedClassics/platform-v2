@@ -198,11 +198,20 @@ const ParsedClassicsContentContainers = {
       // update container's attrs 
       ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl);
       // selected line was changed?
-      if (lineIndicatorUrl !== lineIndicatorDom) { 
-        const iframeEl = tabContentContainerInner.find('.pc-bookreader');
+      if (contentsType === 'line' && lineIndicatorUrl !== lineIndicatorDom) { 
         if (resourceType === 'original_text' || resourceType === 'translation' || resourceType === 'commentary') {
+          // get iframe el
+          const iframeEl = tabContentContainerInner.find('.pc-bookreader');
           // browse scanned resource in the iframe to selected line
           ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
+        }
+      }
+      else if (contentsType === 'paragraph' && paragraphIndicatorUrl !== paragraphIndicatorDom) {
+        if (resourceType === 'original_text') {
+          // get iframe el
+          const iframeEl = tabContentContainerInner.find('.pc-bookreader');
+          // browse scanned resource in the iframe to selected paragraph
+          ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, paragraphIndicatorUrl);
         }
       }
       // selected word was changed?
@@ -389,8 +398,14 @@ const ParsedClassicsContentContainers = {
         iframeEl = ParsedClassicsContentContainers.createScannedResourceHtml(tabContentContainerInner, resourceDef);
       }
       if (resourceType === 'original_text' || resourceType === 'translation' || resourceType === 'commentary') {
-        // browse scanned resource in the iframe to selected line
-        ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
+        if (contentsType === 'line') {
+          // browse scanned resource in the iframe to selected line
+          ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, lineIndicatorUrl);
+        }
+        else if (contentsType === 'paragraph') {
+          // browse scanned resource in the iframe to selected paragraph
+          ParsedClassicsContentContainers.browseToSelectedLine(activeTabId, iframeEl, collectionShortname, resourceShortname, resourceDef, paragraphIndicatorUrl);
+        }
       }
       if (resourceType === 'concordance') {
         // browse scanned resource in the iframe to selected word
