@@ -481,50 +481,6 @@ Take: capitor capiuntor
 --- 4-th conj. audio, ire, ivi, itum ---
 --- 3-rd conj. with stem in -i capio, ere, cepi, captum ---
 
---- INFINITIVE ---
-
---- Present Active ---
-Praise: laudare
-Remind: monere
-Lead: ducere
-Hear: audire
-Take: capere
-
---- Present Passive ---
-Praise: laudari
-Remind: moneri
-Lead: duci
-Hear: audiri
-Take: capi
-
---- Perfect Active ---
-Praise: laudavisse
-Remind: monuisse
-Lead: duxisse
-Hear: audivisse
-Take: cepisse
-
---- Perfect Passive ---
-Praise: laudatus esse
-Remind: monitus esse
-Lead: ductus esse
-Hear: auditus esse
-Take: captus esse
-
---- Future Active ---
-Praise: laudaturus esse
-Remind: moniturus esse
-Lead: ducturus esse
-Hear: auditurus esse
-Take: capturus esse
-
---- Future Passive ---
-Praise: laudatum iri
-Remind: monitum iri
-Lead: ductum iri
-Hear: auditum iri
-Take: captum iri
-
 --- PARTICIPLE ---
 
 --- Present Active ---
@@ -568,6 +524,50 @@ Remind: monitum monitu
 Lead: ductum ductu
 Hear: auditum auditu
 Take: captum captu
+
+--- INFINITIVE ---
+
+--- Present Active ---
+Praise: laudare
+Remind: monere
+Lead: ducere
+Hear: audire
+Take: capere
+
+--- Present Passive ---
+Praise: laudari
+Remind: moneri
+Lead: duci
+Hear: audiri
+Take: capi
+
+--- Perfect Active ---
+Praise: laudavisse
+Remind: monuisse
+Lead: duxisse
+Hear: audivisse
+Take: cepisse
+
+--- Perfect Passive ---
+Praise: laudatus esse
+Remind: monitus esse
+Lead: ductus esse
+Hear: auditus esse
+Take: captus esse
+
+--- Future Active ---
+Praise: laudaturus esse
+Remind: moniturus esse
+Lead: ducturus esse
+Hear: auditurus esse
+Take: capturus esse
+
+--- Future Passive ---
+Praise: laudatum iri
+Remind: monitum iri
+Lead: ductum iri
+Hear: auditum iri
+Take: captum iri
 
 
 
