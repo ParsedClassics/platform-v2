@@ -17,7 +17,7 @@
 
 nt_ephesians_parsed_text =
 
-'<h2><span class="chapter-number">I</span></h2>' +
+'<h2><span data-line-number="1:1" class="line-number"></span><span class="chapter-number">I</span></h2>' +
 
 '<p>' +
 
@@ -929,7 +929,7 @@ nt_ephesians_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">II</span></h2>' +
+'<h2><span data-line-number="2:1" class="line-number"></span><span class="chapter-number">II</span></h2>' +
 
 '<p>' +
 
@@ -1747,7 +1747,7 @@ nt_ephesians_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">III</span></h2>' +
+'<h2><span data-line-number="3:1" class="line-number"></span><span class="chapter-number">III</span></h2>' +
 
 '<p>' +
 
@@ -2509,7 +2509,7 @@ nt_ephesians_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">IV</span></h2>' +
+'<h2><span data-line-number="4:1" class="line-number"></span><span class="chapter-number">IV</span></h2>' +
 
 '<p>' +
 
@@ -3619,7 +3619,7 @@ nt_ephesians_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">V</span></h2>' +
+'<h2><span data-line-number="5:1" class="line-number"></span><span class="chapter-number">V</span></h2>' +
 
 '<p>' +
 
@@ -4703,7 +4703,7 @@ nt_ephesians_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">VI</span></h2>' +
+'<h2><span data-line-number="6:1" class="line-number"></span><span class="chapter-number">VI</span></h2>' +
 
 '<p>' +
 

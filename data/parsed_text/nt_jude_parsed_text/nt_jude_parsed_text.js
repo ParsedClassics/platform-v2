@@ -17,6 +17,8 @@
 
 nt_jude_parsed_text =
 
+//'<h2><span data-line-number="1:1" class="line-number"></span><span class="chapter-number">I</span></h2>' +
+
 '<p>' +
 
 ' <span class="line"><span data-line-number="1:1" class="line-number">01</span>' +
