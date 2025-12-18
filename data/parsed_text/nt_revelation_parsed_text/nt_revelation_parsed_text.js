@@ -17,7 +17,7 @@
 
 nt_revelation_parsed_text =
 
-'<h2><span class="chapter-number">I</span></h2>' +
+'<h2><span data-line-number="1:1" class="line-number"></span><span class="chapter-number">I</span></h2>' +
 
 '<p>' +
 
@@ -1059,7 +1059,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">II</span></h2>' +
+'<h2><span data-line-number="2:1" class="line-number"></span><span class="chapter-number">II</span></h2>' +
 
 '<p>' +
 
@@ -2485,7 +2485,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">III</span></h2>' +
+'<h2><span data-line-number="3:1" class="line-number"></span><span class="chapter-number">III</span></h2>' +
 
 '<p>' +
 
@@ -3663,7 +3663,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">IV</span></h2>' +
+'<h2><span data-line-number="4:1" class="line-number"></span><span class="chapter-number">IV</span></h2>' +
 
 '<p>' +
 
@@ -4293,7 +4293,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">V</span></h2>' +
+'<h2><span data-line-number="5:1" class="line-number"></span><span class="chapter-number">V</span></h2>' +
 
 '<p>' +
 
@@ -5049,7 +5049,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">VI</span></h2>' +
+'<h2><span data-line-number="6:1" class="line-number"></span><span class="chapter-number">VI</span></h2>' +
 
 '<p>' +
 
@@ -5961,7 +5961,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">VII</span></h2>' +
+'<h2><span data-line-number="7:1" class="line-number"></span><span class="chapter-number">VII</span></h2>' +
 
 '<p>' +
 
@@ -6841,7 +6841,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">VIII</span></h2>' +
+'<h2><span data-line-number="8:1" class="line-number"></span><span class="chapter-number">VIII</span></h2>' +
 
 '<p>' +
 
@@ -7547,7 +7547,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">IX</span></h2>' +
+'<h2><span data-line-number="9:1" class="line-number"></span><span class="chapter-number">IX</span></h2>' +
 
 '<p>' +
 
@@ -8635,7 +8635,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">X</span></h2>' +
+'<h2><span data-line-number="10:1" class="line-number"></span><span class="chapter-number">X</span></h2>' +
 
 '<p>' +
 
@@ -9267,7 +9267,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XI</span></h2>' +
+'<h2><span data-line-number="11:1" class="line-number"></span><span class="chapter-number">XI</span></h2>' +
 
 '<p>' +
 
@@ -10343,7 +10343,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XII</span></h2>' +
+'<h2><span data-line-number="12:1" class="line-number"></span><span class="chapter-number">XII</span></h2>' +
 
 '<p>' +
 
@@ -11273,7 +11273,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XIII</span></h2>' +
+'<h2><span data-line-number="13:1" class="line-number"></span><span class="chapter-number">XIII</span></h2>' +
 
 '<p>' +
 
@@ -12261,7 +12261,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XIV</span></h2>' +
+'<h2><span data-line-number="14:1" class="line-number"></span><span class="chapter-number">XIV</span></h2>' +
 
 '<p>' +
 
@@ -13461,7 +13461,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XII</span></h2>' +
+'<h2><span data-line-number="15:1" class="line-number"></span><span class="chapter-number">XII</span></h2>' +
 
 '<p>' +
 
@@ -13943,7 +13943,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XVI</span></h2>' +
+'<h2><span data-line-number="16:1" class="line-number"></span><span class="chapter-number">XVI</span></h2>' +
 
 '<p>' +
 
@@ -14997,7 +14997,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XVII</span></h2>' +
+'<h2><span data-line-number="17:1" class="line-number"></span><span class="chapter-number">XVII</span></h2>' +
 
 '<p>' +
 
@@ -15965,7 +15965,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XVIII</span></h2>' +
+'<h2><span data-line-number="18:1" class="line-number"></span><span class="chapter-number">XVIII</span></h2>' +
 
 '<p>' +
 
@@ -17307,7 +17307,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XIX</span></h2>' +
+'<h2><span data-line-number="19:1" class="line-number"></span><span class="chapter-number">XIX</span></h2>' +
 
 '<p>' +
 
@@ -18461,7 +18461,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XX</span></h2>' +
+'<h2><span data-line-number="20:1" class="line-number"></span><span class="chapter-number">XX</span></h2>' +
 
 '<p>' +
 
@@ -19365,7 +19365,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XXI</span></h2>' +
+'<h2><span data-line-number="21:1" class="line-number"></span><span class="chapter-number">XXI</span></h2>' +
 
 '<p>' +
 
@@ -20709,7 +20709,7 @@ nt_revelation_parsed_text =
 
 '</p>' +
 
-'<h2><span class="chapter-number">XXII</span></h2>' +
+'<h2><span data-line-number="22:1" class="line-number"></span><span class="chapter-number">XXII</span></h2>' +
 
 '<p>' +
 
