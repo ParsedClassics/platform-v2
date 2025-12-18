@@ -886,7 +886,7 @@ const ParsedClassicsSelectedLine = {
     const selectedWord = selectedLineEl.find(`.${ParsedClassicsAppVars.selectedWordClass}`);
     selectedWord.removeClass(ParsedClassicsAppVars.selectedWordClass);
     // find currently selected line
-    const lineEl = parsedTextContainerTopPart.find(`span[${ParsedClassicsAppVars.lineNumberAttr}="${lineIndicatorFromUrl}"]`).parent();
+    const lineEl = parsedTextContainerTopPart.find(`span.${ParsedClassicsAppVars.lineClass} span[${ParsedClassicsAppVars.lineNumberAttr}="${lineIndicatorFromUrl}"]`).parent();
     // add class "selected-line" to currently selected line
     lineEl.addClass(ParsedClassicsAppVars.selectedLineClass);
 
