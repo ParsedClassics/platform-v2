@@ -29,11 +29,11 @@ $(document).ready(function(){
 
     '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'docs/for_reader.html">Docs</a>' +
 
-    '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'lexicons.html">Lexicons</a>' +
+    //'<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'lexicons.html">Lexicons</a>' +
 
-    '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'readers.html">Readers</a>' +
+    //'<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'readers.html">Readers</a>' +
 
-    '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'classics.html">Classics</a>' +
+    //'<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'classics.html">Classics</a>' +
 
     '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'site/copyright.html">Copyright</a>' + 
 

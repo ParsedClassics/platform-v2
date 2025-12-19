@@ -20,10 +20,18 @@ const ParsedClassicsLayout = {
     const storageJson = ParsedClassicsLayout.getHashJson("localStorage");
     let hashJson;
     if (!storageJson) {
-      hashJson = ParsedClassicsLayout.getDefaultHashJson();
-      const hashJsonStr = JSON.stringify(hashJson);
-      history.replaceState(null, "", `#${hashJsonStr}`);
-      ParsedClassicsLayout.update(hashJson);
+      ParsedClassicsAlertDialogue.openDialogue('container', 
+        {
+          heading: 'Not found', 
+          message: 'Last saved layout was not found.',
+        },
+        () => {
+          hashJson = ParsedClassicsLayout.getDefaultHashJson();
+          const hashJsonStr = JSON.stringify(hashJson);
+          history.replaceState(null, "", `#${hashJsonStr}`);
+          ParsedClassicsLayout.update(hashJson);
+        }
+      );
     }
     else {
       const storageJsonValidation = ParsedClassicsLayout.layoutJsonValidate(storageJson);
