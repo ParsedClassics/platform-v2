@@ -27,7 +27,8 @@ ParsedClassicsCatalogue = {
       .then((values) => {
 
         let catalogueContent = "<h2>Classics</h2>";
-        catalogueContent += "<h3>Editions</h3>";
+        //catalogueContent += "<h3>Editions</h3>";
+        catalogueContent += "<p><a target='_blank' href='../classics.html'>Last saved layout</a></p>";
 
         // compile catalogue links
         for (var key in ParsedClassicsCollectionSets) {
@@ -225,6 +226,7 @@ ParsedClassicsReadersCatalogue = {
       .then((values) => {
         let catalogueContent = "<h2>Readers</h2>";
         //catalogueContent += "<h3>Editions</h3>";
+        catalogueContent += "<p><a target='_blank' href='../readers.html'>Last saved layout</a></p>";
 
         // compile catalogue links
         for (var key in ParsedClassicsCollectionSets) {
@@ -388,6 +390,7 @@ ParsedClassicsLexiconsCatalogue = {
       .then((values) => {
         let catalogueContent = "<h2>Lexicons</h2>";
         //catalogueContent += "<h3>Editions</h3>";
+        catalogueContent += "<p><a target='_blank' href='../lexicons.html'>Last saved layout</a></p>";
 
         // compile catalogue links
         for (const set_shortname in ParsedClassicsCollectionSets) {
