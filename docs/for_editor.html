@@ -412,7 +412,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
 <h3 class="pc-anchor" id="h-listing-collection-resources">Listing collection resources</h3>
 
-<p>The catalogue just created is empty because no resource is listed in it. Library app supports following types of resources: Parsed text, Critical edition, Concordance, Lexicon, Translation, Commentary, Commentary references, Grammar references, Diagram set, Audio recording.</p>
+<p>The catalogue just created is empty because no resource is listed in it. Library app supports following types of resources: Parsed text, Original text, Concordance, Lexicon, Translation, Commentary, Commentary references, Grammar references, Diagram set, Audio recording.</p>
 
 <h4 class="pc-anchor" id="h-parsed-text">Parsed text</h4>
 
@@ -2265,11 +2265,11 @@ particle
 
 <h3 class="pc-anchor" id="h-original-text-scanned">Original text (scanned)</h3>
 
-<p>In principle, resources belonging to type "Original text" can be either scanned or transcribed, but they surely will be all scanned because it is very difficult to reproduce complex formatting of the scholarly editions using very limitted means available in HTML. So, only creation of scanned resources of the type "Critical edition" will be described in Editor's documentation.</p>
+<p>In principle, resources belonging to type "Original text" can be either scanned or transcribed, but they surely will be all scanned because it is very difficult to reproduce complex formatting of the scholarly editions using very limitted means available in HTML. So, only creation of scanned resources of the type "Original text" will be described in Editor's documentation.</p>
 
 <h4 class="pc-anchor" id="h-critical-edition-scanned-creating-image-files">Creating image files</h4>
 
-<p>To create scanned resource of the type "Critical edition" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
+<p>To create scanned resource of the type "Original text" you first need a series of JPG images, each image picturing one page of the book. Scanned resource always includes all pages of the book, i.e. each page from the title page to the last, not including covers and promotional materials. About creating a series of JPG files for scanned resource, read in <a class="inner-link" data-anchor="h-common-tasks">Common tasks</a>.</p>
 
 <p>When you have a series of JPG files each image picturing one page of the book and named starting from page0001.jpg, submit them to the senior editor who will upload those files to the server. The files will be uploaded to the directory which was entered as value of the key "scanned_source_shortname" when original text resource was listed as part of collection. For example, in the <em>Epistle to Titus</em> collection the original text edited by V. Antoniadis <a class="inner-link" data-anchor="h-original-text">has been listed</a> and the value of the key "scanned_source_shortname" is "kaine_diatheke_ed_antoniadis". It means that the pictures of the pages must be uploaded to the directory /_scans/kaine_diatheke_ed_antoniadis/&nbsp;.</p>
 
