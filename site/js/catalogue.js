@@ -12,51 +12,103 @@ Displays catalogue of Classics editions, collections and resources
 
 ParsedClassicsCatalogue = {
 
+  classicsLinksList: function() {
+    let links_list = "";// = "<h2>Classics</h2>";
+    links_list += "<p><a target='_blank' href='../classics.html'>Last saved layout</a></p>";
+    links_list += "<p><a target='_blank' href='./editions-classics-greek.html'>Greek classics</a></p>";
+    $(links_list).insertAfter('#classics_heading');
+  },
+  
   editionsList: function() {
-      
-    // file containing definitions of editions
-    const fileName = '_sets_classics.js';
-    const baseUrl = window.location.href.split('site/')[0];
-    // url of the file containing definitions of editions
-    const url = baseUrl + ParsedClassicsAppVars.cataloguesDir + fileName;
 
-    // load definitions of editions
-    const editionsPromises = [ParsedClassicsSiteHelpers.loadJs(url)];
-    Promise.allSettled(editionsPromises)
-      // definitions of editions successfully
-      .then((values) => {
+    let catalogueContent = "";
 
-        let catalogueContent = "<h2>Classics</h2>";
-        //catalogueContent += "<h3>Editions</h3>";
-        catalogueContent += "<p><a target='_blank' href='../classics.html'>Last saved layout</a></p>";
+    // compile catalogue links
+    for (var key in ParsedClassicsCollectionSets) {
+      catalogueContent += "<p><a target='_blank' href='collections-classics.html#{\"" + ParsedClassicsAppVars.collectionSetMember + "\":\"" + key + "\"}'>" + ParsedClassicsCollectionSets[key].title_orig + ' / ' + ParsedClassicsCollectionSets[key].title_eng + '</a></p>';
+    }
 
-        // compile catalogue links
-        for (var key in ParsedClassicsCollectionSets) {
-          catalogueContent += "<p><a target='_blank' href='collections-classics.html#{\"" + ParsedClassicsAppVars.collectionSetMember + "\":\"" + key + "\"}'>" + ParsedClassicsCollectionSets[key].title_orig + ' / ' + ParsedClassicsCollectionSets[key].title_eng + '</a></p>';
-        }
-
-        $('#pc-site-content').append(catalogueContent);
-
-      })
-      // definitions of editions loaded unsuccessfully, so display error
-      .catch((error) => {
-        // This catch block will not be executed
-        console.error(error);
-      });
+    $('#pc-site-content').append(catalogueContent);
 
   },
 
-  collectionsList: function() {
-    const hashJsonString = window.location.hash.replace("#", "");
-    const hashJson = ParsedClassicsCatalogue.stringToJson(hashJsonString);
+  editionsTable: function() {
+    const id = ParsedClassicsSiteHelpers.generateUID;
 
-    //find shortname of collections set
-    const collSetShortname = (typeof hashJson[ParsedClassicsAppVars.collectionSetMember] != "undefined" && hashJson[ParsedClassicsAppVars.collectionSetMember] != "") ? hashJson[ParsedClassicsAppVars.collectionSetMember] : "";
+    const tableId = `editions-table-${id()}`;
+    let editionsTableHTML = `<table id="${tableId}" class="sortable-theme-light w3-table" style="table-layout: fixed;" data-sortable>`;
 
-    // if there is no shortname of collections set in URL or shortname of collections set is invalid
-    // then redirect to catalogue page
+    editionsTableHTML += '<thead>';
+    editionsTableHTML += '<tr>'; 
+    editionsTableHTML += '<th style="width: 15rem;">Author/Set</th>'; 
+    editionsTableHTML += '<th>Title</th>'; 
+    editionsTableHTML += '<th data-sorted="true" data-sorted-direction="ascending" style="width: 6rem;">Level</th>'; 
+    editionsTableHTML += '<th data-sortable="false" style="width: 6rem;">&nbsp;</th>'; 
+    editionsTableHTML += '</tr>'; 
+    editionsTableHTML += '</thead>'; 
+    editionsTableHTML += '<tbody>';
+
+    for (var key in ParsedClassicsCollectionSets) {
+      const editionShortname = key;
+      const editionDef = ParsedClassicsCollectionSets[key];
+      const rowPairId = `pair-${id()}`;
+      const author = editionDef['author_orig'];
+      const title = editionDef['title_orig'];
+      //const url = 'url';
+      //const link = `<a href='${url}' target='_blank'>${title}</a>`;
+      let difficultyLevel = typeof editionDef['extra'] != 'undefined' && typeof editionDef['extra']['difficulty_level'] != 'undefined' ? editionDef['extra']['difficulty_level'] : '';
+      difficultyLevel = !Number.isNaN(difficultyLevel) ? difficultyLevel : '';
+      const button = `<button class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsCatalogue.toggleSecondaryRow('${tableId}', '${rowPairId}', '${editionShortname}')">Details</button>`;
+
+      editionsTableHTML += `<tr class="primary_tr" data-row-pair="${rowPairId}">`;
+
+      editionsTableHTML += '<td>';
+      editionsTableHTML += author;
+      editionsTableHTML += '</td>';
+
+      editionsTableHTML += '<td>';
+      editionsTableHTML += title;
+      editionsTableHTML += '</td>';
+
+      editionsTableHTML += '<td>';
+      editionsTableHTML += difficultyLevel;
+      editionsTableHTML += '</td>';
+
+      editionsTableHTML += '<td>';
+      editionsTableHTML += button;
+      editionsTableHTML += '</td>';
+
+      editionsTableHTML += '</tr>';
+
+      editionsTableHTML += `<tr class="secondary_tr pc-hide" data-row-pair="${rowPairId}">`;
+      editionsTableHTML += '<td colspan="4" style="padding: 0 0 0 32px;">';
+      editionsTableHTML += '<p style="text-align: center;"><img src="./img/ajax-loader.gif"></p>';
+      //editionsTableHTML += difficultyLevel;
+      editionsTableHTML += '</td>';
+      editionsTableHTML += '</tr>';
+    }
+
+    editionsTableHTML += '</tbody>';
+    editionsTableHTML += '</table>';
+    $('#pc-site-content').append(editionsTableHTML);
+
+    // initialize sortable tables
+    sortableTable.init();
+  },
+
+  toggleSecondaryRow: async function(table_id, rowPairAttr, editionShortname) {
+    let secondaryRow = $(`#${table_id}`).find(`.secondary_tr[data-row-pair="${rowPairAttr}"]`);
+    secondaryRow.toggle(ParsedClassicsAppVars.animationSpeed);
+    const collListHtml = await ParsedClassicsCatalogue.collectionsList(editionShortname);
+    secondaryRow.find('td').html(collListHtml);
+  },
+
+  collectionsList: async function(collSetShortname) {
+
+    // if there is no shortname of collections set or shortname of collections set is invalid
+    // then there is nothing to do
     if (collSetShortname == "" || typeof ParsedClassicsCollectionSets[collSetShortname] == "undefined") {
-      window.location = "catalogue.html";
+      return;
     }
 
     // find original name and English name of the collections set
@@ -67,7 +119,9 @@ ParsedClassicsCatalogue = {
     const collectionShortnamesArray = ParsedClassicsCollectionSets[collSetShortname].collections;
 
     // create HTML table into which info about collections will be placed
-    ParsedClassicsCatalogue.createCollectionsTable(collectionShortnamesArray, collSetOrigTitle, collSetEngTitle);
+    const collListHtml = await ParsedClassicsCatalogue.createCollectionsTable(collectionShortnamesArray, collSetOrigTitle, collSetEngTitle);
+
+    return collListHtml;
   },
 
   stringToJson: function (jsonString) {
@@ -79,50 +133,53 @@ ParsedClassicsCatalogue = {
     return json;
   },
 
-  createCollectionsTable: function(collectionShortnamesArray, collSetOrigTitle, collSetEngTitle) {
+  createCollectionsTable: async function(collectionShortnamesArray, collSetOrigTitle, collSetEngTitle) {   
     // load needed data
     const collDataPromises = ParsedClassicsCatalogue.loadCollectionsDefs(collectionShortnamesArray);
-    Promise.allSettled(collDataPromises)
+    await Promise.allSettled(collDataPromises)
       // collections data loaded successfully
       .then((values) => {
-        
-        let titleHTML = '<h1>' + collSetOrigTitle + ' / ' + collSetEngTitle + '</h1>';
-        titleHTML += '<h2>Collections</h2>';
-        let collectionsTableHTML = '<table border="0" class="w3-table">';
-        const id = ParsedClassicsSiteHelpers.generateUID;
-        const baseUrl = window.location.href.split('site/')[0];
-
-        for (let i = 0; i < collectionShortnamesArray.length; i++) {
-          const collectionDef = ParsedClassicsCollDefs[collectionShortnamesArray[i]];
-          const resourceDefs = collectionDef['resource_defs'];
-          const parsedTextResShortname = Object.keys(resourceDefs)[0];
-          const url = baseUrl + `classics.html#{"L":{"a":[["${collectionShortnamesArray[i]}|${parsedTextResShortname}"]],"b":[["${collectionShortnamesArray[i]}"]]},"P":{"${collectionShortnamesArray[i]}":{"line":"title"}},"D":{"a":[["${id()}",50],["${id()}",100,["${id()}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
-          
-          collectionsTableHTML += '<tr>';
-
-          collectionsTableHTML += '<td id="' + collectionShortnamesArray[i] + '" class="pc-padding-left-0">';
-          collectionsTableHTML += `<a href='${url}' target='_blank'>` + collectionDef['collections_page_title_orig'] + ' / ' + collectionDef['collections_page_title_eng'] + '</a>';
-          collectionsTableHTML += '</td>';          
-          collectionsTableHTML += '<td style="width: 1%;"><button id="' + collectionShortnamesArray[i] + '_button" class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsCatalogue.toggleDetails(\'' + collectionShortnamesArray[i] +'_details\');">Details</button></td>';
-          
-          collectionsTableHTML += '</tr>';
-          collectionsTableHTML += '<tr>';
-
-          collectionsTableHTML += '<td id="' + collectionShortnamesArray[i] + '_details" colspan="2" style="display: none;" class="pc-padding-top-0">';  
-          collectionsTableHTML += ParsedClassicsCatalogue.createAvailableResourcesListHtml(collectionDef, resourceDefs);
-          collectionsTableHTML += '</td>';
-
-          collectionsTableHTML += '</tr>';
-        }
-
-        collectionsTableHTML += '</table>';
-        $('#pc-site-content').append(titleHTML + collectionsTableHTML);
       })
       // collections data loaded unsuccessfully, so display error
       .catch((error) => {
         // This catch block will not be executed
         console.error(error);
       });
+      let titleHTML = '';
+      //titleHTML += '<h1>' + collSetOrigTitle + ' / ' + collSetEngTitle + '</h1>';
+      //titleHTML += '<h2>Collections</h2>';
+      let collectionsTableHTML = '<table border="0" class="w3-table" style="table-layout: fixed;">';
+      const id = ParsedClassicsSiteHelpers.generateUID;
+      const baseUrl = window.location.href.split('site/')[0];
+
+      for (let i = 0; i < collectionShortnamesArray.length; i++) {
+        const collectionDef = ParsedClassicsCollDefs[collectionShortnamesArray[i]];
+        const resourceDefs = collectionDef['resource_defs'];
+        const parsedTextResShortname = Object.keys(resourceDefs)[0];
+        let collTitle = collectionDef['collections_page_title_orig'];
+        //collTitle += collectionDef['collections_page_title_eng'];
+        const url = baseUrl + `classics.html#{"L":{"a":[["${collectionShortnamesArray[i]}|${parsedTextResShortname}"]],"b":[["${collectionShortnamesArray[i]}"]]},"P":{"${collectionShortnamesArray[i]}":{"line":"title"}},"D":{"a":[["${id()}",50],["${id()}",100,["${id()}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
+        
+        collectionsTableHTML += '<tr>';
+
+        collectionsTableHTML += '<td id="' + collectionShortnamesArray[i] + '" class="pc-padding-left-0">';
+        collectionsTableHTML += `<a href='${url}' target='_blank'>` + collTitle + '</a>';
+        collectionsTableHTML += '</td>';          
+        collectionsTableHTML += '<td style="width: 6rem;"><button id="' + collectionShortnamesArray[i] + '_button" class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsCatalogue.toggleDetails(\'' + collectionShortnamesArray[i] +'_details\');">Details</button></td>';
+        
+        collectionsTableHTML += '</tr>';
+        collectionsTableHTML += '<tr>';
+
+        collectionsTableHTML += '<td id="' + collectionShortnamesArray[i] + '_details" colspan="2" style="display: none;" class="pc-padding-top-0">';  
+        collectionsTableHTML += ParsedClassicsCatalogue.createAvailableResourcesListHtml(collectionDef, resourceDefs);
+        collectionsTableHTML += '</td>';
+
+        collectionsTableHTML += '</tr>';
+      }
+
+      collectionsTableHTML += '</table>';
+
+      return titleHTML + collectionsTableHTML;
   },
 
   loadCollectionsDefs: function(collectionsToLoad) {
@@ -224,7 +281,8 @@ ParsedClassicsReadersCatalogue = {
     Promise.allSettled(editionsPromises)
       // definitions of editions successfully
       .then((values) => {
-        let catalogueContent = "<h2>Readers</h2>";
+        let catalogueContent = "";
+        //catalogueContent += "<h2>Readers</h2>";
         //catalogueContent += "<h3>Editions</h3>";
         catalogueContent += "<p><a target='_blank' href='../readers.html'>Last saved layout</a></p>";
 
@@ -232,11 +290,12 @@ ParsedClassicsReadersCatalogue = {
         for (var key in ParsedClassicsCollectionSets) {
           if (ParsedClassicsCollectionSets[key]['collections'].length > 0) {
             const title = ParsedClassicsCollectionSets[key].title_orig && ParsedClassicsCollectionSets[key].title_orig != ParsedClassicsCollectionSets[key].title_eng ? ParsedClassicsCollectionSets[key].title_orig + ' / ' + ParsedClassicsCollectionSets[key].title_eng : ParsedClassicsCollectionSets[key].title_orig;
-            catalogueContent += "<p><a target='_blank' href='collections-readers.html#{\"" + ParsedClassicsAppVars.collectionSetMember + "\":\"" + key + "\"}'>" + title + '</a></p>';
+            catalogueContent += "<p><a target='_blank' href='catalogue-readers.html#{\"" + ParsedClassicsAppVars.collectionSetMember + "\":\"" + key + "\"}'>" + title + '</a></p>';
           }
         }
 
-        $('#pc-site-content').append(catalogueContent);
+        //$('#pc-site-content').append(catalogueContent);
+        $(catalogueContent).insertAfter('#readers_heading');
 
       })
       // definitions of editions loaded unsuccessfully, so display error
@@ -277,14 +336,14 @@ ParsedClassicsReadersCatalogue = {
     const baseUrl = window.location.href.split('site/')[0];
 
     const tableId = `collections-table-${id()}`;
-    let collectionsTableHTML = `<table id="${tableId}" class="sortable-theme-light w3-table" data-sortable>`;
+    let collectionsTableHTML = `<table id="${tableId}" class="sortable-theme-light w3-table" style="table-layout: fixed;" data-sortable>`;
     
     collectionsTableHTML += '<thead>';
     collectionsTableHTML += '<tr>'; 
-    collectionsTableHTML += '<th>Author</th>'; 
+    collectionsTableHTML += '<th style="width: 15rem;">Author</th>'; 
     collectionsTableHTML += '<th>Title</th>'; 
-    collectionsTableHTML += '<th data-sorted="true" data-sorted-direction="ascending" style="width: 7rem;">Level</th>'; 
-    collectionsTableHTML += '<th data-sortable="false" style="width: 1%;">&nbsp;</th>'; 
+    collectionsTableHTML += '<th data-sorted="true" data-sorted-direction="ascending" style="width: 6rem;">Level</th>'; 
+    collectionsTableHTML += '<th data-sortable="false" style="width: 6rem;;">&nbsp;</th>'; 
     collectionsTableHTML += '</tr>'; 
     collectionsTableHTML += '</thead>'; 
     collectionsTableHTML += '<tbody>';
@@ -331,7 +390,7 @@ ParsedClassicsReadersCatalogue = {
 
       collectionsTableHTML += `<tr class="secondary_tr pc-hide" data-row-pair="${rowPairId}">`;
 
-      collectionsTableHTML += '<td colspan="4" style="padding-left: 32px;">';
+      collectionsTableHTML += '<td colspan="4" style="padding: 0 8px 8px 32px;">';
       collectionsTableHTML += '<p style="text-align: center;"><img src="./img/ajax-loader.gif"></p>';
       //collectionsTableHTML += difficultyLevel;
       collectionsTableHTML += '</td>';
@@ -388,7 +447,8 @@ ParsedClassicsLexiconsCatalogue = {
     Promise.allSettled(editionsPromises)
       // definitions of editions successfully
       .then((values) => {
-        let catalogueContent = "<h2>Lexicons</h2>";
+        let catalogueContent = "";
+        //catalogueContent += "<h2>Lexicons</h2>";
         //catalogueContent += "<h3>Editions</h3>";
         catalogueContent += "<p><a target='_blank' href='../lexicons.html'>Last saved layout</a></p>";
 
@@ -398,12 +458,12 @@ ParsedClassicsLexiconsCatalogue = {
             const coll_shortname = ParsedClassicsCollectionSets[set_shortname]['collections'][i]; 
             const collDef = ParsedClassicsCollDefs[coll_shortname];
             const title = collDef['collection_selectboxname'];
-            catalogueContent += "<p><a target='_blank' href='resources-lexicons.html#{\"" + ParsedClassicsAppVars.collectionMember + "\":\"" + coll_shortname + "\"}'>" + title + '</a></p>';
+            catalogueContent += "<p><a target='_blank' href='catalogue-lexicons.html#{\"" + ParsedClassicsAppVars.collectionMember + "\":\"" + coll_shortname + "\"}'>" + title + '</a></p>';
           }
         }
 
-        $('#pc-site-content').append(catalogueContent);
-
+        //$('#pc-site-content').append(catalogueContent);
+        $(catalogueContent).insertAfter('#lexicons_heading');
       })
       // definitions of editions loaded unsuccessfully, so display error
       .catch((error) => {
@@ -448,14 +508,14 @@ ParsedClassicsLexiconsCatalogue = {
         const resDefs = ParsedClassicsCollDefs[coll_shortname].resource_defs;
 
         const tableId = `collections-table-${id()}`;
-        let collectionsTableHTML = `<table id="${tableId}" class="sortable-theme-light w3-table" data-sortable>`;
+        let collectionsTableHTML = `<table id="${tableId}" class="sortable-theme-light w3-table" style="table-layout: fixed;" data-sortable>`;
         
         collectionsTableHTML += '<thead>';
         collectionsTableHTML += '<tr>'; 
-        collectionsTableHTML += '<th>Author</th>'; 
+        collectionsTableHTML += '<th style="width: 15rem;">Author</th>'; 
         collectionsTableHTML += '<th>Title</th>'; 
-        collectionsTableHTML += '<th data-sorted="true" data-sorted-direction="ascending" style="width: 7rem;">Level</th>'; 
-        collectionsTableHTML += '<th data-sortable="false" style="width: 1%;">&nbsp;</th>'; 
+        collectionsTableHTML += '<th data-sorted="true" data-sorted-direction="ascending" style="width: 6rem;">Level</th>'; 
+        collectionsTableHTML += '<th data-sortable="false" style="width: 6rem;">&nbsp;</th>'; 
         collectionsTableHTML += '</tr>'; 
         collectionsTableHTML += '</thead>'; 
         collectionsTableHTML += '<tbody>';
@@ -503,9 +563,8 @@ ParsedClassicsLexiconsCatalogue = {
 
           collectionsTableHTML += `<tr class="secondary_tr pc-hide" data-row-pair="${rowPairId}">`;
 
-          collectionsTableHTML += '<td colspan="4" style="padding-left: 32px;">';
-          collectionsTableHTML += '<p style="text-align: center;"><img src="./img/ajax-loader.gif"></p>';
-          //collectionsTableHTML += difficultyLevel;
+          collectionsTableHTML += '<td colspan="4" style="padding: 0 8px 8px 32px;">';
+          //collectionsTableHTML += '<p style="text-align: center;"><img src="./img/ajax-loader.gif"></p>';
           collectionsTableHTML += '</td>';
 
           collectionsTableHTML += '</tr>';
@@ -527,10 +586,10 @@ ParsedClassicsLexiconsCatalogue = {
 
   toggleSecondaryRow: function(tableId, rowPairAttr, coll_shortname, res_shortname) {
     let secondaryRow = $(`#${tableId}`).find(`.secondary_tr[data-row-pair="${rowPairAttr}"]`);
-    secondaryRow.toggle(ParsedClassicsAppVars.animationSpeed);
     const resDef = ParsedClassicsCollDefs[coll_shortname].resource_defs[res_shortname];
     const text_from = resDef['library_app_panel_text_from'];
     secondaryRow.find('td').html(text_from);
+    secondaryRow.toggle(ParsedClassicsAppVars.animationSpeed);
   },
 
 }
