@@ -9,21 +9,28 @@
 ParsedClassicsCollectionSets = {
 
 	nt_gospels: {
-		title_orig: 'Ἡ Καινὴ Διαθήκη. Τὰ Εὐαγγέλια',
+		author_orig: "Ἡ Καινὴ Διαθήκη",
+		author_eng: "The New Testament",
+		title_orig: 'Τὰ Εὐαγγέλια',
+		title_eng: 'The Gospels',
 		title_orig_short: 'Κ.Δ. Εὐαγγέλια',
-		title_eng: 'The New Testament. The Gospels',
 		collections: [
 			'nt_matthew', 
 			'nt_mark', 
 			'nt_luke', 
 			'nt_john'
 		],
+		extra: {
+			difficulty_level: 2,
+		},
 	},
 
 	nt_apostolics: {
-		title_orig: 'Ἡ Καινὴ Διαθήκη. Πράξεις, Ἐπιστολαί, Ἀποκάλυψις',
+		author_orig: "Ἡ Καινὴ Διαθήκη",
+		author_eng: "The New Testament",
+		title_orig: 'Πράξεις, Ἐπιστολαί, Ἀποκάλυψις',
+		title_eng: 'Acts, Epistles, Revelation',
 		title_orig_short: 'Κ.Δ. Πράξεις, Ἐπιστολαί, Ἀποκάλυψις',
-		title_eng: 'The New Testament. Acts, Epistles, Revelation',	
 		collections: [
 			'nt_acts', 
 			'nt_james', 
@@ -48,7 +55,10 @@ ParsedClassicsCollectionSets = {
 			'nt_titus',
 			'nt_philemon',
 			'nt_revelation',
-		],	
+		],
+		extra: {
+			difficulty_level: 3,
+		},	
 	},
 
 };
