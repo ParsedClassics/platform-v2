@@ -270,6 +270,10 @@ const ParsedClassicsContentContainers = {
             tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseleave", () => ParsedClassicsMorphology.selectedWordMouseLeave(parsedTextContainerBottomPart));
             // delegate "click" event from els having class "line" to tab's inner content container
             tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.lineClass}`, "click", (event) => ParsedClassicsSelectedLine.hashSelectLineAndWord(event, collectionShortname, parsedTextContainerTopPart));
+            if (parsing_external === 'yes') {
+              // add event to catch text selection
+              tabContentContainerInner.on('mouseup', (event) => ParsedClassicsSelectedText.hashSelectWordOrText(event, collectionShortname));
+            }
             // treat selected line and word
             ParsedClassicsSelectedLine.treatSelectedLineAndWord(parsedTextContainerTopPart, collectionShortname);
             // scroll to the selected line
@@ -278,6 +282,10 @@ const ParsedClassicsContentContainers = {
           else if (contentsType === 'paragraph') {
             // delegate "click" event from <p> els to tab's inner content container
             tabContentContainerInner.delegate(`p`, "click", (event) => ParsedClassicsSelectedParagraph.hashSelectParagraph(event, collectionShortname, parsedTextContainerTopPart));
+            if (parsing_external === 'yes') {
+              // add event to catch text selection
+              tabContentContainerInner.on('mouseup', (event) => ParsedClassicsSelectedText.hashSelectWordOrText(event, collectionShortname));
+            }
             // treat selected paragraph 
             ParsedClassicsSelectedParagraph.treatSelectedParagraph(parsedTextContainerTopPart, collectionShortname);
             // scroll to the selected paragraph 

@@ -122,6 +122,7 @@ const ParsedClassicsAppVars = {
   collectionMember: "coll",
   wordMember: "word",
   formMember: "form",
+  textMember: "text",
   lineMember: "line",
   paragraphMember: "paragraph",
   pageMember: "page",
