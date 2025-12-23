@@ -975,6 +975,86 @@ const ParsedClassicsSelectedParagraph = {
 
 };
 
+const ParsedClassicsSelectedText = {
+
+  hashSelectWordOrText: function(event, collectionShortname) {
+    // get selected text
+    let selection = ParsedClassicsSelectedText.getSelection(event);
+    if (selection) {
+      // get hash json
+      const hashJson = ParsedClassicsLayout.getHashJson("url");
+      // get pointers obj
+      const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
+      // get pointers of current collection
+      const collectionPointers = pointersObj[collectionShortname];
+
+      // find previous selected word from URL
+      const wordFormFromURL = collectionPointers[ParsedClassicsAppVars.formMember];
+      // find previous selected text from URL
+      const textFromUrl = collectionPointers[ParsedClassicsAppVars.textMember];
+
+      // regex to find non-letter characters
+      const pattern = /[^\p{L}]/gu;
+
+      // should selection treated as single word or text?
+      const isWord = selection.indexOf(' ') === -1 ? true : false;
+
+      if (isWord) {
+        // remove from selection all non-letter chars
+        let wordForm = selection.replace(pattern, ''); 
+        if (wordForm && wordForm !== wordFormFromURL) {
+          // update pointers obj - put new word form into pointers obj
+          collectionPointers[ParsedClassicsAppVars.formMember] = wordForm;
+          // stringify hash json
+          const hashJsonString = JSON.stringify(hashJson);
+          // push state
+          history.pushState(null, "", `#${hashJsonString}`);
+          // update layout
+          ParsedClassicsLayout.update(hashJson);
+        }
+      }
+      else {
+        // change simple double quotation mark (U+0022) into right double quotation mark (U+201D)
+        // because simple double quotation mark  is insafe in JSON in URL - pushState function reverts %22 to double quotes
+        selection = selection.replaceAll('"', '”');
+        // URL-encode selected text
+        let text = '';
+        let char, char_new;
+        let textArr = selection.split('');
+        let notLetter;
+        for (let i = 0; i < textArr.length; i++) {
+          char = textArr[i];
+          notLetter = /[^\p{L}]/u.test(char);
+          if (notLetter) {
+            char_new = encodeURI(char);
+          }
+          else {
+            char_new = char;
+          }
+          text += char_new;
+        } 
+        if (text && text !== textFromUrl) {
+          // update pointers obj - put new text into pointers obj
+          collectionPointers[ParsedClassicsAppVars.textMember] = text;
+          // stringify hash json
+          const hashJsonString = JSON.stringify(hashJson);
+          // push state
+          history.pushState(null, "", `#${hashJsonString}`);
+          // update layout
+          ParsedClassicsLayout.update(hashJson);
+        }
+      }
+    }
+  },
+
+  // from: https://stackoverflow.com/questions/3731328/on-text-highlight-event
+  getSelection: function(event) {
+    const selection = (document.all) ? document.selection.createRange().text.trim() : document.getSelection().toString().trim();
+    return selection;
+  },
+
+};
+
 const ParsedClassicsInnerLink = {
 
   innerLinkClick: function(event, tabContentContainerInner, tabId) {
