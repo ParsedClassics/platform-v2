@@ -6,22 +6,25 @@
 =====================================================
 */
 
-var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise "morpheus_greek_lemmatizer_contents" inside $.ajax() will be undefined
+var morpheus_latin_lemmatizer_contents = { // MUST have "var" keyword otherwise "morpheus_greek_lemmatizer_contents" inside $.ajax() will be undefined
 
   init_func: function(activeTabId) {
     // get tab content container inner el
     const tabContentContainerInner = $(`#tab-content-inner-${activeTabId}`);
     // attach func to lemmas
-    tabContentContainerInner.on('click', 'span.word[data-lemma]', morpheus_greek_lemmatizer_contents.hashSelectLemma);
+    tabContentContainerInner.on('click', 'span.word[data-lemma]', morpheus_latin_lemmatizer_contents.hashSelectLemma);
   },
 
   update_func: function(activeTabId) {
-    
+
     const {collectionShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(activeTabId);
     let wordForm = ParsedClassicsLayout.getFormFromUrl(collectionShortname);
 
     // remove parentheses symbols
     wordForm = wordForm.replace(/([()])/g, '');
+
+    // remove macrons 
+    wordForm = wordForm.normalize("NFD").replace(/\p{Diacritic}/gu, "");
 
     if (wordForm) {
       // get tab content container inner el
@@ -33,13 +36,13 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
       loaderImgContainer.show();
 
       $.ajax({
-        url: `https://services.perseids.org/bsp/morphologyservice/analysis/word?lang=grc&engine=morpheusgrc&word=${wordForm}`,
+        url: `https://services.perseids.org/bsp/morphologyservice/analysis/word?lang=lat&engine=morpheuslat&word=${wordForm}`,
         method: 'GET',
         timeout: 5000,
         success: function(response) {
 
           let body = response.RDF.Annotation.Body;
-          
+
           // parsing not found? - then display error message
           if (typeof body === 'undefined' || !body) {
             let message = 'Morphological parsing not available.'
@@ -68,7 +71,7 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
             else {
               pofs = body[i].rest.entry.infl.pofs.$;
             }
-            const inflectionFormatted = morpheus_greek_lemmatizer_contents.formatInflection(inflection, pofs);
+            const inflectionFormatted = morpheus_latin_lemmatizer_contents.formatInflection(inflection, pofs);
             const morphObj = {
               lemma: lemma,
               form: wordForm,
@@ -77,7 +80,8 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
             }
             analysis.push(morphObj);
           }
-          let html = morpheus_greek_lemmatizer_contents.generateHtml(analysis);
+
+          let html = morpheus_latin_lemmatizer_contents.generateHtml(analysis);
           resultContainer.html(html);
           loaderImgContainer.hide();
         },
@@ -85,9 +89,11 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
           console.log(error); 
         }
       });
-      
-    }
 
+
+
+
+    }
   },
 
   formatInflection: function(inflection, pofs) {
@@ -226,4 +232,4 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
 
   },
 
-};
+}

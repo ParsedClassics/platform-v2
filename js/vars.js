@@ -51,6 +51,7 @@ const ParsedClassicsAppVars = {
   lexiconAttr: "data-lexicon",
   lexiconEntryAttr: "data-lexicon-entry",
   formAttr: "data-form",
+  textAttr: "data-text",
   partOfSpeechAttr: "data-part-of-speech",
   parsingAttr: "data-parsing",
   resourceTypeAttr: "data-resource-type",

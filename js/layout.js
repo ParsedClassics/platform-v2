@@ -2013,6 +2013,14 @@ const ParsedClassicsLayout = {
     return form;
   },
 
+  getTextFromUrl: function(collectionShortname) {
+    const hashJson = ParsedClassicsLayout.getHashJson("url");
+    const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];
+    const collectionPointers = pointersObj[collectionShortname] ?? {};
+    const text = typeof collectionPointers[ParsedClassicsAppVars.textMember] !== 'undefined' && collectionPointers[ParsedClassicsAppVars.textMember] ? collectionPointers[ParsedClassicsAppVars.textMember] : '';
+    return text;
+  },
+
   getLexiconAndEntryFromUrl: function(collectionShortname) {
     const hashJson = ParsedClassicsLayout.getHashJson("url");
     const pointersObj = hashJson[ParsedClassicsAppVars.pointersMember];

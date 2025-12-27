@@ -57,6 +57,21 @@ const ParsedClassicsResProtos = {
     extra: {},
   },
 
+  morpheus_latin_lemmatizer: {
+    collections_page_resource_author: "",
+    collections_page_resource_desc: "Morpheus Latin lemmatizer", 
+    library_app_selectbox_title: "Morpheus Latin lemmatizer",
+    library_app_panel_title: "",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "external_service",
+    scanned_source_shortname: "",
+    contents_shortname: "morpheus_latin_lemmatizer_contents",
+    extra: {},
+  },
+
   // Original texts
 
   nt_text_ed_robinson_pierpont: {

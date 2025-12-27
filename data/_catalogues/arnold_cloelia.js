@@ -61,6 +61,10 @@ ParsedClassicsCollDefs.arnold_cloelia["resource_defs"] = {
 
   // External service
 
+  morpheus_latin_lemmatizer: {
+    ...ParsedClassicsResProtos.morpheus_latin_lemmatizer,
+  },
+
   // Original text
 
   arnold_cloelia_orig_text: {
