@@ -74,6 +74,11 @@ const ParsedClassicsContentContainers = {
     // get word form from DOM
     const formDom = tabContentContainer.attr(ParsedClassicsAppVars.formAttr) ?? '';
 
+    // get selected text from URL 
+    const textUrl = ParsedClassicsLayout.getTextFromUrl(collectionShortname) ?? '';
+    // get selected text from DOM
+    const textDom = tabContentContainer.attr(ParsedClassicsAppVars.textAttr) ?? '';
+
     // get lexicon info and lexicon entry info info from URL 
     const {lexicon: lexiconUrl, lexiconEntry: lexiconEntryUrl} = ParsedClassicsLayout.getLexiconAndEntryFromUrl(collectionShortname);
     // get lexicon info from DOM 
@@ -85,7 +90,7 @@ const ParsedClassicsContentContainers = {
 
     if (!resourceShortname  &&  collResPairUrl !== collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed', paragraphIndicatorUrl, pageUrl, formUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed', paragraphIndicatorUrl, pageUrl, formUrl, textUrl);
       // create html of available resources
       const resourcesListHtml = ParsedClassicsContentContainers.createAvailableResourcesListHtml(collectionDef, resourceDefsAll);
       // update container's html
@@ -101,9 +106,8 @@ const ParsedClassicsContentContainers = {
     // so we need to scroll to selected line or word
 
     else if (scannedOrTyped === 'typed' &&  collResPairUrl === collResPairDom) {
-
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl);
 
       switch(resourceType) {
         
@@ -177,7 +181,10 @@ const ParsedClassicsContentContainers = {
           break;
 
         case 'external_service':
-          if (formUrl && formUrl !== formDom || refresh) {
+        const lemmaChange = wordUrl && wordUrl !== wordDom;
+        const wordFormChange = formUrl && formUrl !== formDom;
+        const textChange = textUrl && textUrl !== textDom;  
+        if (lemmaChange || wordFormChange || textChange || refresh) {
             // get service's update function
             const updateFunction = resourceContents.update_func;
             // run update function
@@ -196,7 +203,7 @@ const ParsedClassicsContentContainers = {
 
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl === collResPairDom) {
       // update container's attrs 
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl);
       // selected line was changed?
       if (contentsType === 'line' && lineIndicatorUrl !== lineIndicatorDom) { 
         if (resourceType === 'original_text' || resourceType === 'translation' || resourceType === 'commentary') {
@@ -244,7 +251,7 @@ const ParsedClassicsContentContainers = {
     else if (scannedOrTyped === 'typed' &&  collResPairUrl !== collResPairDom) {
 
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl);
       
       switch(resourceType) {
 
@@ -384,7 +391,10 @@ const ParsedClassicsContentContainers = {
           // run service's init function
           const initFunction = resourceContents.init_func;
           initFunction(activeTabId);
-          if (formUrl) {
+          const lemmaChange = wordUrl && wordUrl !== wordDom;
+          const wordFormChange = formUrl && formUrl !== formDom;
+          const textChange = textUrl && textUrl !== textDom;
+          if (lemmaChange || wordFormChange || textChange) {
             // get service's update function
             const updateFunction = resourceContents.update_func;
             // run update function
@@ -399,7 +409,7 @@ const ParsedClassicsContentContainers = {
     
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl !== collResPairDom) {
       // update container's attrs 
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl);
       // generate html of resource
       let iframeEl;
       if (resourceType !== 'lexicon') {
@@ -447,7 +457,7 @@ const ParsedClassicsContentContainers = {
     
   },
 
-  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType, scannedOrTyped, paragraph, page, wordForm) {
+  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType, scannedOrTyped, paragraph, page, wordForm, text) {
     // save collectionShortname|resourceShortname pair as DOM attr
     container.attr(ParsedClassicsAppVars.collResPairAttr, collResPair);
     // save line indicator as DOM attr
@@ -468,6 +478,8 @@ const ParsedClassicsContentContainers = {
     container.attr(ParsedClassicsAppVars.pageAttr, page);
     // save word form as DOM attr
     container.attr(ParsedClassicsAppVars.formAttr, wordForm);
+    // save text form as DOM attr
+    container.attr(ParsedClassicsAppVars.textAttr, text);
   },
 
   createAvailableResourcesListHtml: function(collectionDef, resourceDefs) { 
