@@ -977,7 +977,7 @@ const ParsedClassicsSelectedParagraph = {
 
 const ParsedClassicsSelectedText = {
 
-  hashSelectWordOrText: function(event, collectionShortname) {
+  hashSelectWordOrText: function(event, collectionShortname, parsing_external) {
     // get selected text
     let selection = ParsedClassicsSelectedText.getSelection(event);
     if (selection) {
@@ -1000,23 +1000,29 @@ const ParsedClassicsSelectedText = {
       const isWord = selection.indexOf(' ') === -1 ? true : false;
 
       if (isWord) {
-        // remove from selection all non-letter chars
-        let wordForm = selection.replace(pattern, ''); 
-        if (wordForm && wordForm !== wordFormFromURL) {
-          // update pointers obj - put new word form into pointers obj
-          collectionPointers[ParsedClassicsAppVars.formMember] = wordForm;
-          // stringify hash json
-          const hashJsonString = JSON.stringify(hashJson);
-          // push state
-          history.pushState(null, "", `#${hashJsonString}`);
-          // update layout
-          ParsedClassicsLayout.update(hashJson);
+        if (parsing_external === 'yes') {
+          // remove from selection all non-letter chars
+          let wordForm = selection.replace(pattern, ''); 
+          if (wordForm && wordForm !== wordFormFromURL) {
+            // update pointers obj - put new word form into pointers obj
+            collectionPointers[ParsedClassicsAppVars.formMember] = wordForm;
+            // stringify hash json
+            const hashJsonString = JSON.stringify(hashJson);
+            // push state
+            history.pushState(null, "", `#${hashJsonString}`);
+            // update layout
+            ParsedClassicsLayout.update(hashJson);
+          }
         }
       }
       else {
         // change simple double quotation mark (U+0022) into right double quotation mark (U+201D)
         // because simple double quotation mark  is insafe in JSON in URL - pushState function reverts %22 to double quotes
         selection = selection.replaceAll('"', '”');
+        // change new line symbols with single space symbol
+        selection = selection.replaceAll(/[\r\n]+/g, " ");
+        // replace extra spaces and trim
+        selection = selection.replaceAll(/\s{2,}/g, ' ').trim();
         // URL-encode selected text
         let text = '';
         let char, char_new;
@@ -1048,9 +1054,72 @@ const ParsedClassicsSelectedText = {
   },
 
   // from: https://stackoverflow.com/questions/3731328/on-text-highlight-event
-  getSelection: function(event) {
-    const selection = (document.all) ? document.selection.createRange().text.trim() : document.getSelection().toString().trim();
-    return selection;
+  // getSelection: function(event) {
+  //   const selection = (document.all) ? document.selection.createRange().text.trim() : document.getSelection().toString().trim();
+  //   return selection;
+  // },
+
+  // ChatGPT question "javascript getSelection selects text which has css user-select: none. How to avoid it?" 
+  // 2-nd question: "your best practice function does not work"
+  // 3-rd question: "your robust implementation does not select text in case there is no element with css user-select: none"
+  getSelection: function() {
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0) return "";
+
+    let result = "";
+
+    for (let i = 0; i < sel.rangeCount; i++) {
+      const range = sel.getRangeAt(i);
+
+      // Ensure an ELEMENT root for TreeWalker
+      let root = range.commonAncestorContainer;
+      if (root.nodeType === Node.TEXT_NODE) {
+        root = root.parentElement;
+      }
+
+      const walker = document.createTreeWalker(
+        root,
+        NodeFilter.SHOW_TEXT,
+        {
+          acceptNode(node) {
+            // Ignore text not intersecting the range
+            if (!range.intersectsNode(node)) {
+              return NodeFilter.FILTER_REJECT;
+            }
+
+            // Ignore user-select:none ancestors
+            let el = node.parentElement;
+            while (el) {
+              if (getComputedStyle(el).userSelect === 'none') {
+                return NodeFilter.FILTER_REJECT;
+              }
+              el = el.parentElement;
+            }
+
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        }
+      );
+
+      while (walker.nextNode()) {
+        const textNode = walker.currentNode;
+
+        // Handle partial selection inside text nodes
+        let start = 0;
+        let end = textNode.nodeValue.length;
+
+        if (textNode === range.startContainer) {
+          start = range.startOffset;
+        }
+        if (textNode === range.endContainer) {
+          end = range.endOffset;
+        }
+
+        result += textNode.nodeValue.slice(start, end);
+      }
+    }
+
+    return result;
   },
 
 };
