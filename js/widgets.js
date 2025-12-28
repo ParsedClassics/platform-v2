@@ -827,9 +827,9 @@ const ParsedClassicsSelectedLine = {
       if (formFromDom) {
         collectionPointers[ParsedClassicsAppVars.formMember] = formFromDom;
       }
-      else {
-        delete collectionPointers[ParsedClassicsAppVars.formMember];
-      }
+      // else {
+      //   delete collectionPointers[ParsedClassicsAppVars.formMember];
+      // }
       // put new lexicon info into pinters obj
       if (lexiconInfoFromDom) {
         collectionPointers[ParsedClassicsAppVars.lexiconMember] = lexiconInfoFromDom;

@@ -179,8 +179,10 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
       let inflection = analysis[i]['inflection'];
       let inflStr = '';
       for (let j = 0; j < inflection.length; j++) {
-        let dialect = inflection[j]['dialect'] ? ` (${inflection[j]['dialect']})` : '';
-        inflStr += `<br>${inflection[j]['inflection']}${dialect}`;
+        if (inflection[j]) {
+          let dialect = typeof inflection[j]['dialect'] && inflection[j]['dialect'] ? ` (${inflection[j]['dialect']})` : '';
+          inflStr += `<br>${inflection[j]['inflection']}${dialect}`;
+        }
       }
       html += form || lemma || inflection ? `<p><strong>${form}</strong> <span class="word" data-lemma="${lemma}" title="Click to search in collection's dictionaries">${lemma}</span>${inflStr}</p>`: '<p>Morphological parsing not available</p>';
     }
