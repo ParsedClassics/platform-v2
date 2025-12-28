@@ -115,6 +115,7 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .line-numbe
   position: relative;
   vertical-align: baseline;
   top: -0.5em;
+  user-select: none;
 }
 
 div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .line-number:hover {
@@ -190,6 +191,7 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] p > .para-n
   font-family: arial, sans-serif;
   font-size: 90%;
   cursor: default;
+  user-select: none;
 }
 
 div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .display_pagination {
