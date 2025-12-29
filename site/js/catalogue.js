@@ -541,33 +541,36 @@ ParsedClassicsLexiconsCatalogue = {
 
           const button = `<button class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsLexiconsCatalogue.toggleSecondaryRow('${tableId}', '${rowPairId}', '${coll_shortname}', '${res_shortname}')">Details</button>`;
 
-          collectionsTableHTML += `<tr class="primary_tr" data-row-pair="${rowPairId}">`;
+          if (resource['resource_type'] === 'lexicon') {
+            collectionsTableHTML += `<tr class="primary_tr" data-row-pair="${rowPairId}">`;
 
-          collectionsTableHTML += '<td>';
-          collectionsTableHTML += author;
-          collectionsTableHTML += '</td>';
+            collectionsTableHTML += '<td>';
+            collectionsTableHTML += author;
+            collectionsTableHTML += '</td>';
 
-          collectionsTableHTML += '<td>';
-          collectionsTableHTML += link;
-          collectionsTableHTML += '</td>';
+            collectionsTableHTML += '<td>';
+            collectionsTableHTML += link;
+            collectionsTableHTML += '</td>';
 
-          collectionsTableHTML += '<td>';
-          collectionsTableHTML += difficultyLevel;
-          collectionsTableHTML += '</td>';
+            collectionsTableHTML += '<td>';
+            collectionsTableHTML += difficultyLevel;
+            collectionsTableHTML += '</td>';
 
-          collectionsTableHTML += '<td>';
-          collectionsTableHTML += button;
-          collectionsTableHTML += '</td>';
+            collectionsTableHTML += '<td>';
+            collectionsTableHTML += button;
+            collectionsTableHTML += '</td>';
 
-          collectionsTableHTML += '</tr>';
+            collectionsTableHTML += '</tr>';
 
-          collectionsTableHTML += `<tr class="secondary_tr pc-hide" data-row-pair="${rowPairId}">`;
+            collectionsTableHTML += `<tr class="secondary_tr pc-hide" data-row-pair="${rowPairId}">`;
 
-          collectionsTableHTML += '<td colspan="4" style="padding: 0 8px 8px 32px;">';
-          //collectionsTableHTML += '<p style="text-align: center;"><img src="./img/ajax-loader.gif"></p>';
-          collectionsTableHTML += '</td>';
+            collectionsTableHTML += '<td colspan="4" style="padding: 0 8px 8px 32px;">';
+            //collectionsTableHTML += '<p style="text-align: center;"><img src="./img/ajax-loader.gif"></p>';
+            collectionsTableHTML += '</td>';
 
-          collectionsTableHTML += '</tr>';
+            collectionsTableHTML += '</tr>';
+          }
+
         }
 
         collectionsTableHTML += '</tbody>';

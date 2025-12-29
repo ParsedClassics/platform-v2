@@ -25,12 +25,23 @@
 
 /* 
 Order of resources by resource type
+  
+  // Parsed text
+
+  // External service
 
   // Lexicon
 
 */
 
 ParsedClassicsCollDefs.greek_lexicons["resource_defs"] = {
+
+  // Parsed text
+  // paste_any_greek_text: {
+  //   ...ParsedClassicsResProtos.paste_any_greek_text,
+  // },
+
+  // External service
 
   // Lexicon
 
