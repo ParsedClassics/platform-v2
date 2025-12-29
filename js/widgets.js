@@ -1455,7 +1455,29 @@ ParsedClassicsRefLink = {
     }
   },
 
-}
+};
+
+ParsedClassicsLoadTextBtn = {
+
+  load: function(event) {
+    console.log('load');
+    const btn = $(event.target);
+
+    let container = btn;
+    while (!container.hasClass('parsed-text-split-top')) {
+      container = container.parent();
+    }
+    
+    const textarea = container.find('textarea');
+    const text_to_load = textarea.val().trim().replace(/(?:\r\n|\r|\n)/g, '<br>');
+
+    if (text_to_load) {
+      const pre_area = container.find('div.pre');
+      pre_area.html(text_to_load);
+    }
+  },
+
+};
 
 ParsedClassicsSelectedLemma = {
 

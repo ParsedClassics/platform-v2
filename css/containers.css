@@ -211,6 +211,43 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .pagination
     font-size: 90%;
 }
 
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .add-any-text-area {
+  width: 100%;
+  resize: vertical;
+  min-height: 100px;
+  vertical-align: top;
+}
+
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .pc-action-button {
+  user-select: none;
+  display: inline-block;
+  outline: 0;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--grey200);
+  background-color: inherit;
+  text-align: center;
+  white-space: nowrap;
+  cursor: default;
+  border: 1px solid var(--grey300);
+  padding: 4px 8px;
+  border-radius: 3px;
+  transition: opacity 0s;
+  margin-top: 4px;
+}
+
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .pc-action-button:active {
+  opacity:0.5;
+}
+
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .pc-action-button:hover {
+  border-color: var(--grey700);
+  color: var(--white);
+  background-color: var(--grey700);
+}
+
 div[data-resource-type="lexicon"][data-scanned-or-typed="typed"] > .tab__content-inner {
   overflow-y: auto;
   padding: 8px;

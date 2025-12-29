@@ -40,6 +40,38 @@ const ParsedClassicsResProtos = {
     extra: {}, 
 	},
 
+  paste_any_greek_text: {
+    collections_page_resource_author: "",
+    collections_page_resource_desc: "Paste any Ancient Greek text",
+		library_app_selectbox_title: "Paste any Ancient Greek text",
+    library_app_panel_title: "Paste any Ancient Greek text", 
+		library_app_panel_subtitle: "",
+    library_app_panel_text_from: "",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "parsed_text",
+		scanned_source_shortname: "",
+    extra: {
+      parsing_via_ext_services: "yes",
+    },
+  },
+
+  paste_any_latin_text: {
+    collections_page_resource_author: "",
+    collections_page_resource_desc: "Paste any Latin text",
+		library_app_selectbox_title: "Paste any Latin text",
+    library_app_panel_title: "Paste any Latin text", 
+		library_app_panel_subtitle: "",
+    library_app_panel_text_from: "",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "parsed_text",
+		scanned_source_shortname: "",
+    extra: {
+      parsing_via_ext_services: "yes",
+    },
+  },
+
   // External services
   
   morpheus_greek_lemmatizer: {

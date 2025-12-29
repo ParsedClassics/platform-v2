@@ -294,6 +294,10 @@ const ParsedClassicsContentContainers = {
             // scroll to the selected paragraph 
             ParsedClassicsContentContainers.scrollToParaResourceLoading(parsedTextContainerTopPart, paragraphIndicatorUrl, activeTabId);
           }
+          else if (contentsType === 'word') {
+            // add event to catch text selection
+            tabContentContainerInner.on('mouseup', (event) => ParsedClassicsSelectedText.hashSelectWordOrText(event, collectionShortname, parsing_external));
+          }
           
           break;
 
@@ -561,20 +565,33 @@ const ParsedClassicsContentContainers = {
     // is contents line, paragraph or page based?
     const contentsType = collectionDef['contents_type'];
     let classAttrVal, numberAttrVal;
+    let html = '';
     if (contentsType === 'line') {
       classAttrVal = ParsedClassicsAppVars.lineNumberClass;
       numberAttrVal = ParsedClassicsAppVars.lineNumberAttr;
+      html += `<div class="${classAttrVal} pc-padding-top-8" ${numberAttrVal}="title"></div>`; 
     }
     else if (contentsType === 'paragraph') {
       classAttrVal = ParsedClassicsAppVars.paragraphNumberClass;
       numberAttrVal = ParsedClassicsAppVars.paragraphNumberAttr;
+      html += `<div class="${classAttrVal} pc-padding-top-8" ${numberAttrVal}="title"></div>`;
     }
-    const html = `
-      <div class="${classAttrVal} pc-padding-top-8" ${numberAttrVal}="title"></div>
-      <h1>${collectionDef['author_orig']}</h1>
-      <h1>${resourceDef['library_app_panel_title']}</h1>
-      <p class="text-from">Text based on: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></p>
-    `;
+    else if (contentsType === 'word') {
+      html += `<div class="pc-padding-top-8"></div>`;
+    }
+    
+    if (collectionDef['author_orig']) {
+      html += `<h1>${collectionDef['author_orig']}</h1>`;
+    }
+
+    if (resourceDef['library_app_panel_title']) {
+      html += `<h1>${resourceDef['library_app_panel_title']}</h1>`;
+    }
+
+    if (resourceDef['scanned_source_shortname'] && resourceDef['library_app_panel_text_from']) {
+      html += `<p class="text-from">Text based on: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></p>`;
+    }
+
     const display_paragraph_numbering_class = typeof resourceDef['extra']['display_paragraph_numbering'] !== 'undefined' && resourceDef['extra']['display_paragraph_numbering'] === 'yes' ? 'display_paragraph_numbering' : '';
     const display_pagination_class = typeof resourceDef['extra']['display_pagination'] !== 'undefined' && resourceDef['extra']['display_pagination'] === 'yes' ? 'display_pagination' : '';
     

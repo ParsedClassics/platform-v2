@@ -26,11 +26,22 @@
 /* 
 Order of resources by resource type
 
+  // Parsed text
+
+  // External service
+
   // Lexicon
 
 */
 
 ParsedClassicsCollDefs.latin_lexicons["resource_defs"] = {
+  
+  // Parsed text
+  paste_any_latin_text: {
+    ...ParsedClassicsResProtos.paste_any_latin_text,
+  },
+
+  // External service
 
   // Lexicon
 
