@@ -187,8 +187,12 @@ const ParsedClassicsContentContainers = {
         if (lemmaChange || wordFormChange || textChange || refresh) {
             // get service's update function
             const updateFunction = resourceContents.update_func;
+            // form data obj
+            const dataObj = {
+              formDom: formDom,
+            }
             // run update function
-            updateFunction(activeTabId);
+            updateFunction(activeTabId, dataObj);
           }
           break;
       }
@@ -397,8 +401,12 @@ const ParsedClassicsContentContainers = {
           if (lemmaChange || wordFormChange || textChange) {
             // get service's update function
             const updateFunction = resourceContents.update_func;
+            // form data obj
+            const dataObj = {
+              formDom: formDom,
+            }
             // run update function
-            updateFunction(activeTabId);
+            updateFunction(activeTabId, dataObj);
           }
           break;
       }

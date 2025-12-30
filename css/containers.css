@@ -671,7 +671,7 @@ div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] .lexicon-spli
 div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] .lexicon-split-left-inner div.lemma-button.selected-lemma,
 div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] .lexicon-split-left-inner div.lemma-button.selected-lemma:hover {
   background-color: var(--grey300);
-  color: var(--red);
+  color: var(--dark-red);
 }
 
 div[data-resource-type="lexicon"][data-scanned-or-typed="scanned"] .pc-padding-top-8 {

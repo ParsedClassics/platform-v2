@@ -43,6 +43,10 @@ ParsedClassicsCollDefs.latin_lexicons["resource_defs"] = {
 
   // External service
 
+  morpheus_latin_lemmatizer: {
+    ...ParsedClassicsResProtos.morpheus_latin_lemmatizer,
+  },
+
   // Lexicon
 
   elementary_latin_dictionary_by_lewis: {
