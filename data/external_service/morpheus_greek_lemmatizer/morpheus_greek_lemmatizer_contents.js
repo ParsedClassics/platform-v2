@@ -15,15 +15,20 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
     tabContentContainerInner.on('click', 'span.word[data-lemma]', morpheus_greek_lemmatizer_contents.hashSelectLemma);
   },
 
-  update_func: function(activeTabId) {
+  update_func: function(activeTabId, dataObj) {
     
     const {collectionShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(activeTabId);
+    
+    // get word form from DOM
+    const wordDom = dataObj['formDom'];
+
+    // get word form from URL
     let wordForm = ParsedClassicsLayout.getFormFromUrl(collectionShortname);
 
-    // remove parentheses symbols
-    wordForm = wordForm.replace(/([()])/g, '');
-
-    if (wordForm) {
+    if (wordForm && wordForm !== wordDom) {
+      // remove parentheses symbols
+      wordForm = wordForm.replace(/([()])/g, '');
+      
       // get tab content container inner el
       const tabContentContainerInner = $(`#tab-content-inner-${activeTabId}`);
       // get loader img container and result container
