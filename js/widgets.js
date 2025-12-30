@@ -1039,6 +1039,7 @@ const ParsedClassicsSelectedText = {
           }
           text += char_new;
         } 
+
         if (text && text !== textFromUrl) {
           // update pointers obj - put new text into pointers obj
           collectionPointers[ParsedClassicsAppVars.textMember] = text;
@@ -1115,7 +1116,7 @@ const ParsedClassicsSelectedText = {
           end = range.endOffset;
         }
 
-        result += textNode.nodeValue.slice(start, end);
+        result += textNode.nodeValue.slice(start, end) + ' ';
       }
     }
 
@@ -1460,7 +1461,7 @@ ParsedClassicsRefLink = {
 ParsedClassicsLoadTextBtn = {
 
   load: function(event) {
-    console.log('load');
+
     const btn = $(event.target);
 
     let container = btn;
