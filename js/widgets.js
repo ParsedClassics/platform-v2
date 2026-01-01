@@ -1468,15 +1468,96 @@ ParsedClassicsLoadTextBtn = {
     while (!container.hasClass('parsed-text-split-top')) {
       container = container.parent();
     }
+
+    // get tabId
+    const tabId = container.attr('id').replace('parsed-text-split-top-', '');
+
+    // get paneId
+    const paneId = ParsedClassicsLayout.getPaneIdFromUrl(tabId);
+
+    // get resource shortname
+    const {resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabId);
     
+    // get textarea el
     const textarea = container.find('textarea');
-    const text_to_load = textarea.val().trim().replace(/(?:\r\n|\r|\n)/g, '<br>');
+
+    // get text to be loaded
+    let text_to_load = textarea.val().trim();
+
+    if (!text_to_load) {
+      // show error message
+      ParsedClassicsAlertDialogue.openDialogue(paneId, {
+        heading: 'Not found',
+        message: `No text was found in textarea.`,
+      });
+    }
+
+    // save text to be loaded in local storage
+    if (text_to_load && resourceShortname) {
+      localStorage.setItem(resourceShortname, text_to_load);
+    }
+
+    // replace new line symbols with '<br>' str
+    text_to_load = text_to_load.replace(/(?:\r\n|\r|\n)/g, '<br>');
 
     if (text_to_load) {
       const pre_area = container.find('div.pre');
       pre_area.html(text_to_load);
     }
   },
+
+  restore: function(event) {
+    const btn = $(event.target);
+
+    let container = btn;
+    while (!container.hasClass('parsed-text-split-top')) {
+      container = container.parent();
+    }
+
+    // get tabId
+    const tabId = container.attr('id').replace('parsed-text-split-top-', '');
+
+    // get paneId
+    const paneId = ParsedClassicsLayout.getPaneIdFromUrl(tabId);
+
+    // get resource shortname
+    const {resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabId);
+    
+    // get textarea el
+    const textarea = container.find('textarea');
+
+    // get text from local storage
+    let text_to_restore = '';
+    if (resourceShortname) {
+      text_to_restore = localStorage.getItem(resourceShortname);
+    }
+
+    if (!text_to_restore) {
+      // show error message
+      ParsedClassicsAlertDialogue.openDialogue(paneId, {
+        heading: 'Not found',
+        message: `No text was found in storage.`,
+      });
+    }
+
+    if (text_to_restore) {
+      // show dialogue
+      ParsedClassicsConfirmDialogue.openConfirmDialogue(
+        paneId,
+        {heading: 'Confirm', message: 'Do you really want to restore text from storage?'},
+        () => {
+          // restore text
+          textarea.val(text_to_restore);
+          // replace new line symbols with '<br>' str
+          text_to_restore = text_to_restore.replace(/(?:\r\n|\r|\n)/g, '<br>');
+          // restore text
+          const pre_area = container.find('div.pre');
+          pre_area.html(text_to_restore);
+          ParsedClassicsConfirmDialogue.closeConfirmDialogueWithoutClick(paneId);
+        }
+      );
+    }
+  }
 
 };
 
