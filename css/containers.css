@@ -235,7 +235,7 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .pc-action-
   padding: 4px 8px;
   border-radius: 3px;
   transition: opacity 0s;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .pc-action-button:active {
@@ -246,6 +246,10 @@ div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] .pc-action-
   border-color: var(--grey700);
   color: var(--white);
   background-color: var(--grey700);
+}
+
+div[data-resource-type="parsed_text"][data-scanned-or-typed="typed"] div.pre {
+  margin-top: 16px;
 }
 
 div[data-resource-type="lexicon"][data-scanned-or-typed="typed"] > .tab__content-inner {
