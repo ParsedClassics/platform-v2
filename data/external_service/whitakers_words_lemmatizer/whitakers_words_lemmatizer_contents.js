@@ -6,31 +6,27 @@
 =====================================================
 */
 
-var morpheus_latin_lemmatizer_contents = { // MUST have "var" keyword otherwise "morpheus_greek_lemmatizer_contents" inside $.ajax() will be undefined
+var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise "whitakers_words_lemmatizer_contents" inside $.ajax() will be undefined
 
   init_func: function(activeTabId) {
     // get tab content container inner el
     const tabContentContainerInner = $(`#tab-content-inner-${activeTabId}`);
     // attach func to lemmas
-    tabContentContainerInner.on('click', 'span.word[data-lemma]', morpheus_latin_lemmatizer_contents.hashSelectLemma);
+    tabContentContainerInner.on('click', 'span.word[data-lemma]', whitakers_words_lemmatizer_contents.hashSelectLemma);
   },
 
   update_func: function(activeTabId, dataObj) {
-
     const {collectionShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(activeTabId);
-
+    
     // get word form from DOM
     const wordDom = dataObj['formDom'];
-    
+
     // get word form from URL
     let wordForm = ParsedClassicsLayout.getFormFromUrl(collectionShortname);
 
     if (wordForm && wordForm !== wordDom) {
       // remove parentheses symbols
       wordForm = wordForm.replace(/([()])/g, '');
-
-      // remove macrons 
-      wordForm = wordForm.normalize("NFD").replace(/\p{Diacritic}/gu, "");
       
       // get tab content container inner el
       const tabContentContainerInner = $(`#tab-content-inner-${activeTabId}`);
@@ -41,7 +37,7 @@ var morpheus_latin_lemmatizer_contents = { // MUST have "var" keyword otherwise 
       loaderImgContainer.show();
 
       $.ajax({
-        url: `https://services.perseids.org/bsp/morphologyservice/analysis/word?lang=lat&engine=morpheuslat&word=${wordForm}`,
+        url: `https://morph.alpheios.net/api/v1/analysis/word?word=${wordForm}&engine=whitakerLat&lang=lat&clientId=parsedclassics`, 
         method: 'GET',
         timeout: 5000,
         success: function(response) {
@@ -57,6 +53,7 @@ var morpheus_latin_lemmatizer_contents = { // MUST have "var" keyword otherwise 
             loaderImgContainer.hide();
             return;
           }
+
           // is there only one block of parsing?
           if(!Array.isArray(body)) {
             body = [body];
@@ -66,43 +63,60 @@ var morpheus_latin_lemmatizer_contents = { // MUST have "var" keyword otherwise 
           const analysis = [];
           let parsing;
           let pofs;
+
           for (let i = 0; i < body.length; i++) {
             const inflection = body[i].rest.entry.infl;
-            const headword = body[i].rest.entry.dict.hdwd.$;
-            const lemma = headword.replace(/[1-9]/g, '');
+
+            let dict = typeof body[i].rest.entry.dict !== 'undefined' ? body[i].rest.entry.dict : '';
+            let lemmaArr = [];
+            if (dict) {
+              if (!Array.isArray(dict)) {
+                dict = [dict];
+              }
+              lemmaArr = [];
+              for (let j = 0; j < dict.length; j++) {
+                let hword = typeof dict[j].hdwd !== 'undefined' && dict[j].hdwd.$ ? dict[j].hdwd.$ : '';
+                hword = hword.replace(/[1-9]/g, '')
+                if (hword) {
+                  lemmaArr.push(hword);
+                }
+              }
+            }
+
+            const meaning = typeof body[i].rest.entry.mean !== 'undefined' && typeof body[i].rest.entry.mean.$ !== 'undefined' ? body[i].rest.entry.mean.$ : '';
             if(typeof body[i].rest.entry.infl[0] !== 'undefined') {
-              pofs = body[i].rest.entry.infl[0].pofs.$;
+              pofs = typeof body[i].rest.entry.infl[0].pofs !== 'undefined' ? body[i].rest.entry.infl[0].pofs.$ : '';
             }
             else {
-              pofs = body[i].rest.entry.infl.pofs.$;
+              pofs = typeof body[i].rest.entry.infl.pofs !== 'undefined' ? body[i].rest.entry.infl.pofs.$ : '';
             }
-            const inflectionFormatted = morpheus_latin_lemmatizer_contents.formatInflection(inflection, pofs);
+            if (!pofs) {
+              continue;
+            }
+            const inflectionFormatted = whitakers_words_lemmatizer_contents.formatInflection(inflection, pofs);
+
             const morphObj = {
-              lemma: lemma,
+              lemma: lemmaArr,
               form: wordForm,
               pofs: pofs,
               inflection: inflectionFormatted,
+              meaning: meaning,
             }
             analysis.push(morphObj);
           }
 
-          let html = morpheus_latin_lemmatizer_contents.generateHtml(analysis);
+          let html = whitakers_words_lemmatizer_contents.generateHtml(analysis);
           resultContainer.html(html);
           loaderImgContainer.hide();
         },
         error: function(xhr, status, error) {
           console.log(error); 
         }
-      });
-
-
-
-
+      }); 
     }
   },
 
   formatInflection: function(inflection, pofs) {
-    
     // is there only one parsing?
     if(!Array.isArray(inflection)) {
       inflection = [inflection];
@@ -111,72 +125,58 @@ var morpheus_latin_lemmatizer_contents = { // MUST have "var" keyword otherwise 
     const inflectionFormatted = [];
     for(let i = 0; i < inflection.length; i++) {
       let inflectionSingle;
-      let morph = typeof inflection[i].morph !== 'undefined' && typeof inflection[i].morph.$ !== 'undefined' ? inflection[i].morph.$ : '';
+      let mood = typeof inflection[i].mood !== 'undefined' && typeof inflection[i].mood.$ !== 'undefined' ? inflection[i].mood.$ : '';
       let tense = typeof inflection[i].tense !== 'undefined' && typeof inflection[i].tense.$ !== 'undefined' ? inflection[i].tense.$ : '';
       let voice = typeof inflection[i].voice !== 'undefined' && typeof inflection[i].voice.$ !== 'undefined' ? inflection[i].voice.$ : '';
-      let mood = typeof inflection[i].mood !== 'undefined' && typeof inflection[i].mood.$ !== 'undefined' ? inflection[i].mood.$ : '';
-      let dialect = typeof inflection[i].dial !== 'undefined' && typeof inflection[i].dial.$ !== 'undefined' ? inflection[i].dial.$ : '';
       let person = typeof inflection[i].pers !== 'undefined' && typeof inflection[i].pers.$ !== 'undefined' ? `${inflection[i].pers.$} person` : '';
       let number = typeof inflection[i].num !== 'undefined' && typeof inflection[i].num.$ !== 'undefined' ? inflection[i].num.$ : '';
       let gender = typeof inflection[i].gend !== 'undefined' && typeof inflection[i].gend.$ !== 'undefined' ? inflection[i].gend.$ : '';
       let la_case = typeof inflection[i].case !== 'undefined' && typeof inflection[i].case.$ !== 'undefined' ? inflection[i].case.$ : '';
       let degree = typeof inflection[i].comp !== 'undefined' && typeof inflection[i].comp.$ !== 'undefined' ?  inflection[i].comp.$ : '';
+
       if (pofs === 'verb') {
-        if (inflection[i].mood.$ === 'infinitive') {
+        if (mood === 'infinitive') {
           inflectionSingle = {
-            dialect: dialect,
             inflection: `${pofs} ${tense} ${voice} ${mood}`,
           };
         }
         else {
           inflectionSingle = {
-            dialect: dialect,
             inflection: `${pofs} ${tense} ${voice} ${mood} ${person} ${number}`,
           };
         }
       }
-      else if (pofs === 'verb participle') {
+      else if (mood === 'participle') {
         inflectionSingle = {
-          dialect: dialect,
-          inflection: `verb ${tense} ${voice} participle ${la_case} ${number} ${gender}`,
-        };
+            inflection: `verb ${tense} ${voice} participle ${la_case} ${number} ${gender}`,
+          };
       }
       else if (pofs === 'noun') {
         inflectionSingle = {
-          dialect: dialect,
           inflection: `${pofs} ${la_case} ${number} ${gender}`,
         };
       }
       else if (pofs === 'adjective') {
         inflectionSingle = {
-          dialect: dialect,
           inflection: `${pofs} ${la_case} ${number} ${gender} ${degree}`,
         };
       }
       else if (pofs === 'pronoun') {  
         inflectionSingle = {
-          dialect: dialect,
           inflection: `${pofs} ${person} ${la_case} ${number} ${gender}`,
-        };
-      }
-      else if (pofs === 'article') {
-        inflectionSingle = {
-          dialect: dialect,
-          inflection: `${pofs} ${la_case} ${number} ${gender}`,
         };
       }
       else if (pofs === 'irregular') {
         inflectionSingle = {
-          dialect: dialect,
           inflection: `${pofs} ${la_case} ${number} ${gender}`,
         };
       }
-      else if (morph.indexOf('indeclform') !== -1) {
+      else {
         inflectionSingle = {
-          dialect: dialect,
           inflection: `${pofs}`,
         };
       }
+
       inflectionFormatted.push(inflectionSingle);
     }
 
@@ -187,16 +187,29 @@ var morpheus_latin_lemmatizer_contents = { // MUST have "var" keyword otherwise 
     let html = '';
     for (let i = 0; i < analysis.length; i++) {
       let form = analysis[i]['form'];
-      let lemma = analysis[i]['lemma'];
+      let lemmaArr = analysis[i]['lemma'];
       let inflection = analysis[i]['inflection'];
+      let meaning = analysis[i]['meaning'];
+      let lemmaStr = '';
+      for (let k = 0; k < lemmaArr.length; k++) {
+        let lemma_orig = lemmaArr[k];
+        let lemma_for_search;
+        if (lemma_orig.indexOf(',') === -1) {
+          lemma_for_search = lemma_orig;
+        }
+        else {
+          lemma_for_search = lemma_orig.substr(0, lemma_orig.indexOf(','));
+        }
+        lemmaStr += `<br><span class="word" data-lemma="${lemma_for_search}" title="Click to search in collection's dictionaries">${lemma_orig}</span>`;
+      }
       let inflStr = '';
       for (let j = 0; j < inflection.length; j++) {
         if (inflection[j]) {
-          let dialect = typeof inflection[j]['dialect'] && inflection[j]['dialect'] ? ` (${inflection[j]['dialect']})` : '';
-          inflStr += `<br>${inflection[j]['inflection']}${dialect}`;
+          inflStr += `<br>${inflection[j]['inflection']}`;
         }
       }
-      html += form || lemma || inflection ? `<p><strong>${form}</strong> <span class="word" data-lemma="${lemma}" title="Click to search in collection's dictionaries">${lemma}</span>${inflStr}</p>`: '<p>Morphological parsing not available</p>';
+      inflStr += meaning ? `<br><span style="font-size: 85%;">${meaning}<span>` : '';
+      html += form || lemma || inflection ? `<p><strong>${form}</strong>${lemmaStr}${inflStr}</p>`: '<p>Morphological parsing not available</p>';
     }
     return html;
   },
@@ -240,4 +253,4 @@ var morpheus_latin_lemmatizer_contents = { // MUST have "var" keyword otherwise 
 
   },
 
-}
+};

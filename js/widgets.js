@@ -979,7 +979,7 @@ const ParsedClassicsSelectedText = {
 
   hashSelectWordOrText: function(event, collectionShortname, parsing_external) {
     // get selected text
-    let selection = ParsedClassicsSelectedText.getSelection(event);
+    let selection = ParsedClassicsSelectedText.getSelection(event).trim();
     if (selection) {
       // get hash json
       const hashJson = ParsedClassicsLayout.getHashJson("url");
