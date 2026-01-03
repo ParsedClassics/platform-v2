@@ -395,15 +395,12 @@ const ParsedClassicsContentContainers = {
           // run service's init function
           const initFunction = resourceContents.init_func;
           initFunction(activeTabId);
-          const lemmaChange = wordUrl && wordUrl !== wordDom;
-          const wordFormChange = formUrl && formUrl !== formDom;
-          const textChange = textUrl && textUrl !== textDom;
-          if (lemmaChange || wordFormChange || textChange) {
+          if (wordUrl || formUrl || textUrl) {
             // get service's update function
             const updateFunction = resourceContents.update_func;
             // form data obj
             const dataObj = {
-              formDom: formDom,
+              formDom: '',
             }
             // run update function
             updateFunction(activeTabId, dataObj);
