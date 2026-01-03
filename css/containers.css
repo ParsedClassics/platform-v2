@@ -757,7 +757,8 @@ div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morph
 }
 
 div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer,
-div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-latin-lemmatizer {
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-latin-lemmatizer,
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .whitakers-words-lemmatizer {
   overflow-y: auto;
   padding: 8px 16px;
   max-width: var(--text-max-width);
@@ -765,18 +766,21 @@ div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morph
 }
 
 div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer .loader-img-container,
-div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-latin-lemmatizer .loader-img-container {
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-latin-lemmatizer .loader-img-container,
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .whitakers-words-lemmatizer .loader-img-container {
   display: none;
   text-align: center;
 }
 
 div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer strong,
-div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-latin-lemmatizer strong {
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-latin-lemmatizer strong,
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .whitakers-words-lemmatizer strong{
   font-weight: 600;
 }
 
 div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer span[data-lemma]:hover, 
-div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-latin-lemmatizer span[data-lemma]:hover {
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-latin-lemmatizer span[data-lemma]:hover,
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .whitakers-words-lemmatizer span[data-lemma]:hover {
   background-color: var(--grey700);
   color: var(--white);
   cursor: default;

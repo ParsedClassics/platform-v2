@@ -47,6 +47,10 @@ ParsedClassicsCollDefs.latin_lexicons["resource_defs"] = {
     ...ParsedClassicsResProtos.morpheus_latin_lemmatizer,
   },
 
+  whitakers_words_lemmatizer: {
+    ...ParsedClassicsResProtos.whitakers_words_lemmatizer,
+  },
+
   // Lexicon
 
   elementary_latin_dictionary_by_lewis: {

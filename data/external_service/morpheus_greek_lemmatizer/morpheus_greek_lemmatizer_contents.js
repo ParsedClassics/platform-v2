@@ -114,6 +114,7 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
       let number = typeof inflection[i].num !== 'undefined' && typeof inflection[i].num.$ !== 'undefined' ? inflection[i].num.$ : '';
       let gender = typeof inflection[i].gend !== 'undefined' && typeof inflection[i].gend.$ !== 'undefined' ? inflection[i].gend.$ : '';
       let gr_case = typeof inflection[i].case !== 'undefined' && typeof inflection[i].case.$ !== 'undefined' ? inflection[i].case.$ : '';
+      let degree = typeof inflection[i].comp !== 'undefined' && typeof inflection[i].comp.$ !== 'undefined' ?  inflection[i].comp.$ : '';
       if (pofs === 'verb') {
         if (inflection[i].mood.$ === 'infinitive') {
           inflectionSingle = {
@@ -141,9 +142,12 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
         };
       }
       else if (pofs === 'adjective') {
+        // if (!degree && morph && morph.indexOf('superl') !== -1) {
+        //   degree = 'superlative';
+        // }
         inflectionSingle = {
           dialect: dialect,
-          inflection: `${pofs} ${gr_case} ${number} ${gender}`,
+          inflection: `${pofs} ${gr_case} ${number} ${gender} ${degree}`,
         };
       }
       else if (pofs === 'pronoun') {  

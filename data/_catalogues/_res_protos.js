@@ -104,6 +104,21 @@ const ParsedClassicsResProtos = {
     extra: {},
   },
 
+  whitakers_words_lemmatizer: {
+    collections_page_resource_author: "",
+    collections_page_resource_desc: "Whitaker's Words", 
+    library_app_selectbox_title: "Whitaker's Words",
+    library_app_panel_title: "",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "external_service",
+    scanned_source_shortname: "",
+    contents_shortname: "whitakers_words_lemmatizer_contents",
+    extra: {},
+  },
+
   // Original texts
 
   nt_text_ed_robinson_pierpont: {
