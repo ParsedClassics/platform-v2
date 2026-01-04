@@ -51,6 +51,10 @@ ParsedClassicsCollDefs.latin_lexicons["resource_defs"] = {
     ...ParsedClassicsResProtos.whitakers_words_lemmatizer,
   },
 
+  forcellini_latin_lexicon: {
+    ...ParsedClassicsResProtos.forcellini_latin_lexicon,
+  },
+
   // Lexicon
 
   elementary_latin_dictionary_by_lewis: {

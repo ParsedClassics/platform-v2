@@ -24,9 +24,18 @@ var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise
     // get word form from URL
     let wordForm = ParsedClassicsLayout.getFormFromUrl(collectionShortname);
 
-    if (wordForm && wordForm !== wordDom) {
+    // does there occured word form change?
+    const wordFormChange = wordForm && wordForm !== wordDom;
+
+    // is refresh needed?
+    const refresh = typeof dataObj['refresh'] !== 'undefined' ? dataObj['refresh'] : false;
+
+    if (wordFormChange || refresh) {
       // remove parentheses symbols
       wordForm = wordForm.replace(/([()])/g, '');
+
+      // remove macrons 
+      wordForm = wordForm.normalize("NFD").replace(/\p{Diacritic}/gu, "");
       
       // get tab content container inner el
       const tabContentContainerInner = $(`#tab-content-inner-${activeTabId}`);
