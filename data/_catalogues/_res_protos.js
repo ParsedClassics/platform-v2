@@ -119,6 +119,21 @@ const ParsedClassicsResProtos = {
     extra: {},
   },
 
+  forcellini_latin_lexicon: {
+    collections_page_resource_author: "",
+    collections_page_resource_desc: "E. Forcellini Lexicon totius Latinitatis", 
+    library_app_selectbox_title: "E. Forcellini Lexicon totius Latinitatis",
+    library_app_panel_title: "",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "external_service",
+    scanned_source_shortname: "",
+    contents_shortname: "forcellini_latin_lexicon_contents",
+    extra: {},
+  },
+
   // Original texts
 
   nt_text_ed_robinson_pierpont: {

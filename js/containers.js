@@ -181,15 +181,15 @@ const ParsedClassicsContentContainers = {
           break;
 
         case 'external_service':
-        const lemmaChange = wordUrl && wordUrl !== wordDom;
-        const wordFormChange = formUrl && formUrl !== formDom;
-        const textChange = textUrl && textUrl !== textDom;  
-        if (lemmaChange || wordFormChange || textChange || refresh) {
+          if (wordUrl || formUrl || textUrl || refresh) {
             // get service's update function
             const updateFunction = resourceContents.update_func;
             // form data obj
             const dataObj = {
+              wordDom: wordDom,
               formDom: formDom,
+              textDom: textDom,
+              refresh: refresh,
             }
             // run update function
             updateFunction(activeTabId, dataObj);
@@ -401,6 +401,8 @@ const ParsedClassicsContentContainers = {
             // form data obj
             const dataObj = {
               formDom: '',
+              formDom: '',
+              textDom: '',
             }
             // run update function
             updateFunction(activeTabId, dataObj);
