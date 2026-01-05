@@ -69,6 +69,10 @@ ParsedClassicsCollDefs.arnold_cloelia["resource_defs"] = {
     ...ParsedClassicsResProtos.whitakers_words_lemmatizer,
   },
 
+  forcellini_latin_lexicon: {
+    ...ParsedClassicsResProtos.forcellini_latin_lexicon,
+  },
+
   // Original text
 
   arnold_cloelia_orig_text: {

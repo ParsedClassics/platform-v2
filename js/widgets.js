@@ -996,7 +996,7 @@ const ParsedClassicsSelectedText = {
       // regex to find non-letter characters
       const pattern = /[^\p{L}]/gu;
 
-      // should selection treated as single word or text?
+      // should selection be treated as single word or text?
       const isWord = selection.indexOf(' ') === -1 ? true : false;
 
       if (isWord) {
@@ -1041,8 +1041,19 @@ const ParsedClassicsSelectedText = {
         } 
 
         if (text && text !== textFromUrl) {
-          // update pointers obj - put new text into pointers obj
-          collectionPointers[ParsedClassicsAppVars.textMember] = text;
+          
+          // START Commented out, but should not be erased
+          // May be needed in future in case there will be site 
+          // which (a) allows embedding to iframe (b) provides quality translation of Greek or Latin text
+          
+          // // update pointers obj - put new text into pointers obj
+          // collectionPointers[ParsedClassicsAppVars.textMember] = text;
+
+          // END Commented out, but should not be erased
+
+          // update pointers obj - put new word form into pointers obj
+          collectionPointers[ParsedClassicsAppVars.formMember] = text;
+
           // stringify hash json
           const hashJsonString = JSON.stringify(hashJson);
           // push state
@@ -1050,6 +1061,7 @@ const ParsedClassicsSelectedText = {
           // update layout
           ParsedClassicsLayout.update(hashJson);
         }
+        
       }
     }
   },
