@@ -35,52 +35,16 @@ var forcellini_latin_lexicon_contents = { // MUST have "var" keyword otherwise "
       // remove macrons 
       lemmaUrl = lemmaUrl.normalize("NFD").replace(/\p{Diacritic}/gu, "");
 
+      let url = `http://lexica.linguax.com/forc2.php?searchedLG=${lemmaUrl}`;
+
       // get tab content container inner el
       const tabContentContainerInner = $(`#tab-content-inner-${activeTabId}`);
-      // get loader img container and result container
-      const loaderImgContainer = tabContentContainerInner.find('.loader-img-container');
-      const resultContainer = tabContentContainerInner.find('.result-container');
-      // display loader imgs
-      loaderImgContainer.show();
-      lemmaUrl = 'stirps';
-      // $.ajax({
-      //   url: `http://lexica.linguax.com/forc2.php?searchedLG=${lemmaUrl}&group=4294967294`,
-      //   method: 'GET',
-      //   timeout: 5000,
-      //   success: function(response) {
-      //     console.log('response', response);
-      //   },
-      //   error: function(xhr, status, error) {
-      //     console.log(error); 
-      //   }
-      // });
+      // get iframe
+      const iframe = tabContentContainerInner.find('iframe');
 
-      let word = 'urbs';
-
-      var xhr = new XMLHttpRequest();
-
-      var url = "http://lexica.linguax.com/forc2.php?searchedLG=" + word;
-
-      var formData = new FormData();
-      formData.append("msgBtn2", "OK (omnia legi)"); 
-      xhr.open("POST", url, false);
-      xhr.send(formData);
-
-      xhr.open("GET", url, true);
-      xhr.onreadystatechange = parseResponse;
-      xhr.send();
-
-
+      // load article from Forcellini's Lexicon totius Latinitatis
+      iframe.attr('src', url);
 
     }
   },
 };
-
-function parseResponse() {
-  if (this.readyState != 4 || this.status != 200) {
-    return;
-  }
-  
-  var text = this.responseText;
-  console.log('text', text);
-}
