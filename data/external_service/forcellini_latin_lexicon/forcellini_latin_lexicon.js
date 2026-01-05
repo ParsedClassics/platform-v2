@@ -7,10 +7,6 @@
 */
 
 forcellini_latin_lexicon = `
-  <div class="forcellini-latin-lexicon">
-    <h1>E. Forcellini Lexicon totius Latinitatis</h1>
-    <div id="dictionary">
-      <headword style="display: none;">not found</headword>
-    </div>
-  </div>
+  <iframe class="" style="width: 100%; height: 100%;" src="http://lexica.linguax.com/forc2.php"> 
+  </iframe>
 `;
