@@ -20,7 +20,6 @@ var forcellini_latin_lexicon_contents = { // MUST have "var" keyword otherwise "
 
     // get lemma from URL
     let lemmaUrl = ParsedClassicsLayout.getWordFromUrl(collectionShortname);
-    console.log('lemmaUrl', lemmaUrl);
 
     // does there occured lemma change?
     const lemmaChange = lemmaUrl && lemmaUrl !== lemmaDom;
@@ -47,4 +46,5 @@ var forcellini_latin_lexicon_contents = { // MUST have "var" keyword otherwise "
 
     }
   },
+
 };

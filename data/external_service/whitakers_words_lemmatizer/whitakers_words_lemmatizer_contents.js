@@ -24,6 +24,22 @@ var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise
     // get word form from URL
     let wordForm = ParsedClassicsLayout.getFormFromUrl(collectionShortname);
 
+    // // should "word form" from URL be treated as single word or text?
+    // const isWord = wordForm.indexOf(' ') === -1 ? true : false;
+
+    // // close dialoge which might be open
+    // const paneId = ParsedClassicsLayout.getPaneIdFromUrl(activeTabId);
+    // ParsedClassicsAlertDialogue.closeDialogueWithoutClick(paneId);
+
+    // // if "word form" from URL is not word, let's show error message
+    // if (!isWord) {
+    //   ParsedClassicsAlertDialogue.openDialogue(paneId, {
+    //     heading: 'Error',
+    //     message: `String to be analized "${wordForm}" contains space(s).`,
+    //   });
+    //   return;
+    // }
+
     // does there occured word form change?
     const wordFormChange = wordForm && wordForm !== wordDom;
 
