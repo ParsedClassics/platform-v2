@@ -86,7 +86,23 @@ const ParsedClassicsResProtos = {
     resource_type: "external_service",
     scanned_source_shortname: "",
     contents_shortname: "morpheus_greek_lemmatizer_contents",
-    extra: {},
+    extra: {
+      options: {
+        lemmatizer_links: {
+          defaults: {
+            show_links: [ // [name, title, display_by_default, display_on_top]
+              ['eulexis', 'Eulexis', true, true], 
+              ['ai_EL_translate', 'AI translate', true, true], 
+              ['lsj_gr', 'LSJ.gr', true], 
+              ['logeion', 'Logeion', true], 
+              ['morpho', 'Morpho', true], 
+              ['lexigram', 'Lexigram', true], 
+              ['lsj_lith', 'LSJ-Lith', false]
+            ]
+          }
+        }
+      }
+    },
   },
 
   morpheus_latin_lemmatizer: {
@@ -101,7 +117,23 @@ const ParsedClassicsResProtos = {
     resource_type: "external_service",
     scanned_source_shortname: "",
     contents_shortname: "morpheus_latin_lemmatizer_contents",
-    extra: {},
+    extra: {
+      options: {
+        lemmatizer_links: {
+          defaults: {
+            show_links: [ // [name, title, display_by_default, display_on_top]
+              ['collatinus', 'Collatinus', true, true], 
+              ['ai_LA_translate', 'AI translate', true, true], 
+              ['lsj_gr', 'LSJ.gr', true], 
+              ['logeion', 'Logeion', true], 
+              ['morpho', 'Morpho', true], 
+              ['forcellini', 'Forcellini', true], 
+              ['kuzavinis', 'Kuzavinis', false]
+            ]
+          }
+        }
+      }
+    },
   },
 
   whitakers_words_lemmatizer: {
@@ -116,7 +148,23 @@ const ParsedClassicsResProtos = {
     resource_type: "external_service",
     scanned_source_shortname: "",
     contents_shortname: "whitakers_words_lemmatizer_contents",
-    extra: {},
+    extra: {
+      options: {
+        lemmatizer_links: {
+          defaults: {
+            show_links: [ // [name, title, display_by_default, display_on_top]
+              ['collatinus', 'Collatinus', true, true], 
+              ['ai_LA_translate', 'AI translate', true, true], 
+              ['lsj_gr', 'LSJ.gr', true], 
+              ['logeion', 'Logeion', true], 
+              ['morpho', 'Morpho', true], 
+              ['forcellini', 'Forcellini', true], 
+              ['kuzavinis', 'Kuzavinis', false]
+            ]
+          }
+        }
+      }
+    },
   },
 
   forcellini_latin_lexicon: {

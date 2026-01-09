@@ -756,6 +756,10 @@ div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morph
   text-align: left;
 }
 
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .word {
+  padding: 6px 0 6px 0;
+}
+
 div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer,
 div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-latin-lemmatizer,
 div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .whitakers-words-lemmatizer {
@@ -763,6 +767,19 @@ div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .whita
   padding: 8px 16px;
   max-width: var(--text-max-width);
   height: 100%;
+}
+
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer a,
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-latin-lemmatizer a,
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .whitakers-words-lemmatizer a {
+  color: #3176c4;
+  text-decoration: none;
+}
+
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer a:hover,
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-latin-lemmatizer a:hover,
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .whitakers-words-lemmatizer a:hover {
+  text-decoration: underline;
 }
 
 div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .morpheus-greek-lemmatizer .loader-img-container,

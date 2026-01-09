@@ -9,6 +9,7 @@
 morpheus_greek_lemmatizer = `
   <div class="morpheus-greek-lemmatizer">
   <h1>Morpheus Greek lemmatizer</h1>
+  <p class="top-links"></p>
   <div class="loader-img-container"><img src="./img/ajax-loader.gif" style="margin-left: -4px;"></div>
   <div class="result-container"></div>
   </div>

@@ -58,6 +58,7 @@ var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise
       // get loader img container and result container
       const loaderImgContainer = tabContentContainerInner.find('.loader-img-container');
       const resultContainer = tabContentContainerInner.find('.result-container');
+      const topLinksContainer = tabContentContainerInner.find('.top-links');
       // display loader imgs
       loaderImgContainer.show();
 
@@ -130,8 +131,9 @@ var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise
             analysis.push(morphObj);
           }
 
-          let html = whitakers_words_lemmatizer_contents.generateHtml(analysis);
+          let {html, linksStrTop} = whitakers_words_lemmatizer_contents.generateHtml(analysis, activeTabId);
           resultContainer.html(html);
+          topLinksContainer.html(linksStrTop);
           loaderImgContainer.hide();
         },
         error: function(xhr, status, error) {
@@ -208,10 +210,41 @@ var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise
     return inflectionFormatted;
   },
 
-  generateHtml: function(analysis) {
+  generateHtml: function(analysis, activeTabId) {
+    // get resource shortname
+    const {collectionShortname, resourceShortname} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(activeTabId);
+    // get arr of link shortnames from local storage
+    const local_storage_key = `${resourceShortname}__lemmatizer_links`;
+    const selected_by_user = localStorage.getItem(local_storage_key) ? localStorage.getItem(local_storage_key).split('|') : [];
+
+    // get collection's definition
+    const collectionDef = ParsedClassicsCollDefs[collectionShortname];
+    // get all resource definitions of collection
+    const resourceDefsAll = collectionDef['resource_defs'];
+    // get resource definition
+    const resourceDef = resourceShortname ? resourceDefsAll[resourceShortname] : '';
+    // get options's defaults
+    const optionsArr = resourceDef['extra']['options']['lemmatizer_links']['defaults']['show_links'];
+
+    // get arr of link shortnames selected by default
+    const selected_by_default = [];
+    for (let i = 0; i < optionsArr.length; i++) {
+      let is_selected = optionsArr[i][2];
+      let link_name = optionsArr[i][0];
+      if (is_selected) {
+        selected_by_default.push(link_name);
+      }
+    }
+
+    // get arr of links shortnames to be displayed
+    const selected_links_arr = selected_by_user.length > 0 ? selected_by_user : selected_by_default;
+    
+    let linksStrTop = ParsedClassicsLemmatizerLinks.top_links(selected_links_arr, optionsArr);
+    
     let html = '';
     for (let i = 0; i < analysis.length; i++) {
       let form = analysis[i]['form'];
+      let formStr = `<strong>${form}</strong>`;
       let lemmaArr = analysis[i]['lemma'];
       let inflection = analysis[i]['inflection'];
       let meaning = analysis[i]['meaning'];
@@ -226,7 +259,12 @@ var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise
           lemma_for_search = lemma_orig.substr(0, lemma_orig.indexOf(','));
         }
         lemmaStr += `<br><span class="word" data-lemma="${lemma_for_search}" title="Click to search in collection's dictionaries">${lemma_orig}</span>`;
+
+        let linksStrBottom = ParsedClassicsLemmatizerLinks.bottom_links(selected_links_arr, optionsArr, form, lemma_for_search);
+
+        lemmaStr += linksStrBottom;
       }
+      
       let inflStr = '';
       for (let j = 0; j < inflection.length; j++) {
         if (inflection[j]) {
@@ -234,9 +272,9 @@ var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise
         }
       }
       inflStr += meaning ? `<br><span style="font-size: 85%;">${meaning}<span>` : '';
-      html += form || lemma || inflection ? `<p><strong>${form}</strong>${lemmaStr}${inflStr}</p>`: '<p>Morphological parsing not available</p>';
+      html += form || lemma || inflection ? `<p>${formStr}${lemmaStr}${inflStr}</p>`: '<p>Morphological parsing not available</p>';
     }
-    return html;
+    return {html, linksStrTop};
   },
 
   hashSelectLemma: function(event) {

@@ -1667,7 +1667,101 @@ ParsedClassicsSelectedLemma = {
     }
   },
 
-}
+};
+
+ParsedClassicsLemmatizerLinks = {
+
+  top_links: function(selected_links_arr, optionsArr) {
+    let linksStrTop = '';
+    for (let l = 0; l < selected_links_arr.length; l++) {
+      // get link definition
+      const linkDef = optionsArr.filter((item) => item[0] === selected_links_arr[l])[0];
+      const is_top_link = typeof linkDef[3] != 'undefined' && linkDef[3] ? linkDef[3] : false;
+      const link_shortname = linkDef[0];
+      const link_title = linkDef[1];
+      if (is_top_link) {
+        if (link_shortname == 'eulexis') {
+          linksStrTop += `
+            <a href="https://outils.biblissima.fr/en/eulexis-web" target="_blank">Eulexis</a>&nbsp;
+          `;
+        }
+        if (link_shortname == 'ai_EL_translate') {
+          linksStrTop += `
+            <a href="https://chatgpt.com/g/g-6841c6cdf13c8191b13cd811485772e7-ancient-greek-translate">AI translator</a>&nbsp;
+          `;
+        }
+        if (link_shortname == 'collatinus') {
+          linksStrTop += `
+            <a href="https://outils.biblissima.fr/en/collatinus-web" target="_blank">${link_title}</a>&nbsp;
+          `;
+        }
+        if (link_shortname == 'ai_LA_translate') {
+          linksStrTop += `
+            <a href="https://chatgpt.com/g/g-68ebb70004988191852e7426e570b466-latin-translate" target="_blank">${link_title}</a>&nbsp;
+          `;
+        }
+      }
+    }
+    return linksStrTop;
+  },
+
+  bottom_links: function(selected_links_arr, optionsArr, form, lemma) {
+    let linksStrBottom;
+    if (selected_links_arr.length > 0) {
+      linksStrBottom = `<span style="font-size: 85%;"><br>`;
+
+      for (let k = 0; k < selected_links_arr.length; k++) {
+        // get link definition
+        const linkDef = optionsArr.filter((item) => item[0] === selected_links_arr[k])[0];
+        const is_top_link = typeof linkDef[3] != 'undefined' && linkDef[3] ? linkDef[3] : false;
+        const is_bottom_link = is_top_link ? false : true;
+        const link_shortname = linkDef[0];
+        const link_title = linkDef[1];
+
+        if (is_bottom_link) {
+          if (link_shortname == 'lsj_gr') {
+            linksStrBottom += `
+              <a href="https://lsj.gr/wiki/${lemma}" target="_blank">${link_title}</a>&nbsp;
+            `;
+          }
+          if (link_shortname == 'logeion') {
+            linksStrBottom += `
+              <a href="https://logeion.uchicago.edu/${lemma}" target="_blank">${link_title}</a>&nbsp;
+            `;
+          }
+          if (link_shortname == 'morpho') {
+            linksStrBottom += `
+              <a href="https://logeion.uchicago.edu/morpho/${form}" target="_blank">${link_title}</a>&nbsp;
+            `;
+          }
+          if (link_shortname == 'lexigram') {
+            linksStrBottom += `
+              <a href="https://www.lexigram.gr/lex/arch/${lemma}" target="_blank">Lexigram</a>&nbsp;
+            `;
+          }
+          if (link_shortname == 'forcellini') {
+            linksStrBottom += `
+              <a href="http://lexica.linguax.com/forc2.php?searchedLG=${lemma}" target="_blank">${link_title}</a>&nbsp;
+            `;
+          }
+          if (link_shortname == 'lsj_lith') {
+            linksStrBottom += `
+              <a href="https://ekalba.lt/graiku-lietuviu-kalbu-zodynas/${lemma}" target="_blank">LSJ-Lith</a>&nbsp;
+            `;
+          }
+          if (link_shortname == 'kuzavinis') {
+            linksStrBottom += `
+              <a href="https://ekalba.lt/lotynu-lietuviu-kalbu-zodynas/${lemma}" target="_blank">${link_title}</a>&nbsp;
+            `;
+          }
+        }
+      }
+      linksStrBottom += `</span>`;
+    }
+    return linksStrBottom;
+  },
+
+};
 
 
 ParsedClassicsResourceOptions = {
@@ -1771,6 +1865,58 @@ ParsedClassicsResourceOptions = {
       else {
         iframe.css('position', 'absolute').css('left', 0);
       }
+    },
+
+  },
+
+  lemmatizer_links: {
+
+    widgetHtml: function(resourceShortname, tabId, defaults) {
+      const local_storage_key = `${resourceShortname}__lemmatizer_links`;
+      const optionsArr = defaults['show_links'];
+
+      const selected_by_user = localStorage.getItem(local_storage_key) ? localStorage.getItem(local_storage_key).split('|') : [];
+
+      const selected_by_default = [];
+      for (let i = 0; i < optionsArr.length; i++) {
+        let is_selected = optionsArr[i][2];
+        let link_name = optionsArr[i][0];
+        if (is_selected) {
+          selected_by_default.push(link_name);
+        }
+      }
+
+      const selected_links_arr = selected_by_user.length > 0 ? selected_by_user : selected_by_default;   
+      
+      let widget = `
+        <select class="sm-menu-selectbox" title="Select links to be displayed" size="4" multiple>
+          <option disabled>Links</option>
+      `;
+
+      for (let i = 0; i < optionsArr.length; i++) {
+        let link_name = optionsArr[i][0]; 
+        let link_title = optionsArr[i][1];
+        let selected = selected_links_arr.includes(link_name) ? ' selected' : '';
+        widget += `
+          <option value="${link_name}"${selected}>${link_title}</option>
+        `;
+      }
+
+      widget += `
+        </select>
+      `; 
+      widget = $(widget);
+      widget.on('change', function() {
+        const widgetEl = this;
+        ParsedClassicsResourceOptions['lemmatizer_links'].onchange(resourceShortname, tabId, widgetEl);
+      });
+      return widget;
+    },
+
+    onchange: function(resourceShortname, tabId, widgetEl) {
+      const selected_val = $(widgetEl).val();
+      const local_storage_key = `${resourceShortname}__lemmatizer_links`;
+      localStorage.setItem(local_storage_key, selected_val.join('|'));
     },
 
   },
