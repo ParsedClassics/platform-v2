@@ -87,8 +87,6 @@ var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise
           console.log('body', body);
 
           const analysis = [];
-          let parsing;
-          let pofs;
 
           for (let i = 0; i < body.length; i++) {
             const inflection = body[i].rest.entry.infl;
@@ -110,21 +108,12 @@ var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise
             }
 
             const meaning = typeof body[i].rest.entry.mean !== 'undefined' && typeof body[i].rest.entry.mean.$ !== 'undefined' ? body[i].rest.entry.mean.$ : '';
-            if(typeof body[i].rest.entry.infl[0] !== 'undefined') {
-              pofs = typeof body[i].rest.entry.infl[0].pofs !== 'undefined' ? body[i].rest.entry.infl[0].pofs.$ : '';
-            }
-            else {
-              pofs = typeof body[i].rest.entry.infl.pofs !== 'undefined' ? body[i].rest.entry.infl.pofs.$ : '';
-            }
-            if (!pofs) {
-              continue;
-            }
-            const inflectionFormatted = whitakers_words_lemmatizer_contents.formatInflection(inflection, pofs);
+            
+            const inflectionFormatted = whitakers_words_lemmatizer_contents.formatInflection(inflection);
 
             const morphObj = {
               lemma: lemmaArr,
               form: wordForm,
-              pofs: pofs,
               inflection: inflectionFormatted,
               meaning: meaning,
             }
@@ -143,7 +132,7 @@ var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise
     }
   },
 
-  formatInflection: function(inflection, pofs) {
+  formatInflection: function(inflection) {
     // is there only one parsing?
     if(!Array.isArray(inflection)) {
       inflection = [inflection];
@@ -152,6 +141,7 @@ var whitakers_words_lemmatizer_contents = { // MUST have "var" keyword otherwise
     const inflectionFormatted = [];
     for(let i = 0; i < inflection.length; i++) {
       let inflectionSingle;
+      let pofs = typeof inflection[i].pofs !== 'undefined' && typeof inflection[i].pofs.$ !== 'undefined' ? inflection[i].pofs.$ : '';
       let mood = typeof inflection[i].mood !== 'undefined' && typeof inflection[i].mood.$ !== 'undefined' ? inflection[i].mood.$ : '';
       let tense = typeof inflection[i].tense !== 'undefined' && typeof inflection[i].tense.$ !== 'undefined' ? inflection[i].tense.$ : '';
       let voice = typeof inflection[i].voice !== 'undefined' && typeof inflection[i].voice.$ !== 'undefined' ? inflection[i].voice.$ : '';
