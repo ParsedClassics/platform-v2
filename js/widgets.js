@@ -1128,7 +1128,7 @@ const ParsedClassicsSelectedText = {
           end = range.endOffset;
         }
 
-        result += textNode.nodeValue.slice(start, end) + ' ';
+        result += textNode.nodeValue.slice(start, end); // + ' '
       }
     }
 
@@ -1510,7 +1510,14 @@ ParsedClassicsLoadTextBtn = {
     }
 
     // replace new line symbols with '<br>' str
-    text_to_load = text_to_load.replace(/(?:\r\n|\r|\n)/g, '<br>');
+    //text_to_load = text_to_load.replace(/(?:\r\n|\r|\n)/g, '<br>');
+
+    // reduce two or more empty lines into single empty line
+    text_to_load = text_to_load.replace(/\n\s*\n\s*\n/g, '\n\n');
+
+    //replace epty lines into paragraphs
+    text_to_load = text_to_load.replace(/\n\n/g, '</p>\n\n<p>');
+    text_to_load = '<p>' + text_to_load + '</p>';
 
     if (text_to_load) {
       const pre_area = container.find('div.pre');
@@ -1560,8 +1567,17 @@ ParsedClassicsLoadTextBtn = {
         () => {
           // restore text
           textarea.val(text_to_restore);
+
           // replace new line symbols with '<br>' str
-          text_to_restore = text_to_restore.replace(/(?:\r\n|\r|\n)/g, '<br>');
+          //text_to_restore = text_to_restore.replace(/(?:\r\n|\r|\n)/g, '<br>');
+
+          // reduce two or more empty lines into single empty line
+          text_to_restore = text_to_restore.replace(/\n\s*\n\s*\n/g, '\n\n');
+
+          //replace epty lines into paragraphs
+          text_to_restore = text_to_restore.replace(/\n\n/g, '</p>\n\n<p>');
+          text_to_restore = '<p>' + text_to_restore + '</p>';
+
           // restore text
           const pre_area = container.find('div.pre');
           pre_area.html(text_to_restore);
