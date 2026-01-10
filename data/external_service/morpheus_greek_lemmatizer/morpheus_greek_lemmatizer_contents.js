@@ -84,23 +84,16 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
           console.log('body', body);
 
           const analysis = [];
-          let parsing;
-          let pofs;
+
           for (let i = 0; i < body.length; i++) {
             const inflection = body[i].rest.entry.infl;
             const headword = body[i].rest.entry.dict.hdwd.$;
             const lemma = headword.replace(/[1-9]/g, '');
-            if(typeof body[i].rest.entry.infl[0] !== 'undefined') {
-              pofs = body[i].rest.entry.infl[0].pofs.$;
-            }
-            else {
-              pofs = body[i].rest.entry.infl.pofs.$;
-            }
-            const inflectionFormatted = morpheus_greek_lemmatizer_contents.formatInflection(inflection, pofs);
+            
+            const inflectionFormatted = morpheus_greek_lemmatizer_contents.formatInflection(inflection);
             const morphObj = {
               lemma: lemma,
               form: wordForm,
-              pofs: pofs,
               inflection: inflectionFormatted,
             }
             analysis.push(morphObj);
@@ -118,7 +111,7 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
     }
   },
 
-  formatInflection: function(inflection, pofs) {
+  formatInflection: function(inflection) {
     
     // is there only one parsing?
     if(!Array.isArray(inflection)) {
@@ -128,6 +121,7 @@ var morpheus_greek_lemmatizer_contents = { // MUST have "var" keyword otherwise 
     const inflectionFormatted = [];
     for(let i = 0; i < inflection.length; i++) {
       let inflectionSingle;
+      let pofs = typeof inflection[i].pofs !== 'undefined' && typeof inflection[i].pofs.$ !== 'undefined' ? inflection[i].pofs.$ : '';
       let morph = typeof inflection[i].morph !== 'undefined' && typeof inflection[i].morph.$ !== 'undefined' ? inflection[i].morph.$ : '';
       let tense = typeof inflection[i].tense !== 'undefined' && typeof inflection[i].tense.$ !== 'undefined' ? inflection[i].tense.$ : '';
       let voice = typeof inflection[i].voice !== 'undefined' && typeof inflection[i].voice.$ !== 'undefined' ? inflection[i].voice.$ : '';
