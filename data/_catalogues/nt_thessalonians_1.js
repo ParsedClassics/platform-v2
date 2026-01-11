@@ -67,6 +67,10 @@ ParsedClassicsCollDefs.nt_thessalonians_1["resource_defs"] = {
     ...ParsedClassicsResProtos.morpheus_greek_lemmatizer,
   },
 
+  greek_word_explainer: {
+    ...ParsedClassicsResProtos.greek_word_explainer,
+  },
+
   // Original texts
 
   nt_thessalonians_1_text_ed_robinson_pierpont: {

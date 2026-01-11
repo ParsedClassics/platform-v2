@@ -182,6 +182,21 @@ const ParsedClassicsResProtos = {
     extra: {},
   },
 
+  greek_word_explainer: {
+    collections_page_resource_author: "",
+    collections_page_resource_desc: "Greek Word Explainer", 
+    library_app_selectbox_title: "Greek Word Explainer",
+    library_app_panel_title: "",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "external_service",
+    scanned_source_shortname: "",
+    contents_shortname: "greek_word_explainer_contents",
+    extra: {},
+  },
+
   // Original texts
 
   nt_text_ed_robinson_pierpont: {

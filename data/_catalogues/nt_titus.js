@@ -69,6 +69,10 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
     ...ParsedClassicsResProtos.morpheus_greek_lemmatizer,
   },
 
+  greek_word_explainer: {
+    ...ParsedClassicsResProtos.greek_word_explainer,
+  },
+
   // Original texts
 
   nt_titus_text_ed_robinson_pierpont: {

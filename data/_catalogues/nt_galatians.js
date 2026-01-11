@@ -67,6 +67,10 @@ ParsedClassicsCollDefs.nt_galatians["resource_defs"] = {
     ...ParsedClassicsResProtos.morpheus_greek_lemmatizer,
   },
 
+  greek_word_explainer: {
+    ...ParsedClassicsResProtos.greek_word_explainer,
+  },
+
   // Original texts
 
   nt_galatians_text_ed_robinson_pierpont: {
