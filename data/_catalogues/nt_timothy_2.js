@@ -71,6 +71,10 @@ ParsedClassicsCollDefs.nt_timothy_2["resource_defs"] = {
     ...ParsedClassicsResProtos.greek_word_explainer,
   },
 
+  greek_word_study_tool: {
+    ...ParsedClassicsResProtos.greek_word_study_tool,
+  },
+
   // Original texts
 
   nt_timothy_2_text_ed_robinson_pierpont: {
