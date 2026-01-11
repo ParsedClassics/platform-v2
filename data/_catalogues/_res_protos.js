@@ -212,6 +212,21 @@ const ParsedClassicsResProtos = {
     extra: {},
   },
 
+  latin_word_study_tool: {
+    collections_page_resource_author: "",
+    collections_page_resource_desc: "Perseus Latin Word Study Tool", 
+    library_app_selectbox_title: "Perseus Latin Word Study Tool",
+    library_app_panel_title: "",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "external_service",
+    scanned_source_shortname: "",
+    contents_shortname: "latin_word_study_tool_contents",
+    extra: {},
+  },
+
   // Original texts
 
   nt_text_ed_robinson_pierpont: {

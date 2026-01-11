@@ -2047,7 +2047,7 @@ nt_matthew_parsed_text =
 
 '</p>' +
 
-'<h2><span data-line-number="3:1" class="line-number">01</span><span class="chapter-number">III</span></h2>' +
+'<h2><span data-line-number="3:1" class="line-number"></span><span class="chapter-number">III</span></h2>' +
 
 '<p>' +
 
