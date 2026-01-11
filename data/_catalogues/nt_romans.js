@@ -71,6 +71,10 @@ ParsedClassicsCollDefs.nt_romans["resource_defs"] = {
     ...ParsedClassicsResProtos.greek_word_explainer,
   },
 
+  greek_word_study_tool: {
+    ...ParsedClassicsResProtos.greek_word_study_tool,
+  },
+
   // Original texts
 
   nt_romans_text_ed_robinson_pierpont: {

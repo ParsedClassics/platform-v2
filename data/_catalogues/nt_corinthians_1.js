@@ -71,6 +71,10 @@ ParsedClassicsCollDefs.nt_corinthians_1["resource_defs"] = {
     ...ParsedClassicsResProtos.greek_word_explainer,
   },
 
+  greek_word_study_tool: {
+    ...ParsedClassicsResProtos.greek_word_study_tool,
+  },
+
   // Original texts
 
   nt_corinthians_1_text_ed_robinson_pierpont: {
