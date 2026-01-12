@@ -802,3 +802,8 @@ div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .whita
   color: var(--white);
   cursor: default;
 }
+
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .tab__content-inner:has(.latin_word_study_tool),
+div[data-resource-type="external_service"][data-scanned-or-typed="typed"] .tab__content-inner:has(.greek_word_study_tool) { /* This CSS rule was needed to solve the bug #711 */
+  display: flex; 
+}
