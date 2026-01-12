@@ -53,6 +53,10 @@ body {
   box-sizing: border-box;
 }
 
+.tab__content-inner { /* This CSS rule was needed to solve the bug #711 */
+  overflow: hidden; 
+}
+
 .pane-button--hide {
   display: none !important;
 }
