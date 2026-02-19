@@ -73,9 +73,9 @@ ParsedClassicsCollDefs.arnold_cloelia["resource_defs"] = {
     ...ParsedClassicsResProtos.latin_word_study_tool,
   },
 
-  forcellini_latin_lexicon: {
-    ...ParsedClassicsResProtos.forcellini_latin_lexicon,
-  },
+  // forcellini_latin_lexicon: {
+  //   ...ParsedClassicsResProtos.forcellini_latin_lexicon,
+  // },
 
   // Original text
 
