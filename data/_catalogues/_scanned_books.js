@@ -2490,4 +2490,172 @@ ParsedClassicsScannedBooks = {
 		
 	}
 
+	, homeri_opera_vol_1: {
+ 
+		bookTitle: "Homeri opera. Monro D. B. (ed.), Allen Th. W. (ed.)."
+	 
+		, bookUrlText: "Tomus I Iliadis libros I-XII continens. Editio tertia. 1920. Oxonii: E typographeo Clarendoniano."
+
+		, numLeafs: "298"
+
+		, leafWidth: 2170
+
+		, leafHeight: 3436
+
+		, thumbnail: "page0003.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Homeri opera. Monro D. B. (ed.), Allen Th. W. (ed.). Tomus I Iliadis libros I-XII continens. Editio tertia. 1920. Oxonii: E typographeo Clarendoniano."
+
+					}
+
+		] 
+		
+	}
+
+	, homeri_opera_vol_2: {
+ 
+		bookTitle: "Homeri opera. Monro D. B. (ed.), Allen Th. W. (ed.)."
+	 
+		, bookUrlText: "Tomus II Iliadis libros XIII-XXIV continens. Editio tertia. 1920. Oxonii: E typographeo Clarendoniano."
+
+		, numLeafs: "314"
+
+		, leafWidth: 2161
+
+		, leafHeight: 3467
+
+		, thumbnail: "page0003.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Homeri opera. Monro D. B. (ed.), Allen Th. W. (ed.). Tomus II Iliadis libros XIII-XXIV continens. Editio tertia. 1920. Oxonii: E typographeo Clarendoniano."
+
+					}
+
+		] 
+		
+	}
+
+	, homeri_opera_vol_3: {
+ 
+		bookTitle: "Homeri opera. Monro D. B. (ed.), Allen Th. W. (ed.)."
+	 
+		, bookUrlText: "Tomus III Odysseae libros I-XII continens. Editio altera. 1917. Oxonii: E typographeo Clarendoniano."
+
+		, numLeafs: "244"
+
+		, leafWidth: 2096
+
+		, leafHeight: 3424
+
+		, thumbnail: "page0003.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Homeri opera. Monro D. B. (ed.), Allen Th. W. (ed.). Tomus III Odysseae libros I-XII continens. Editio altera. 1917. Oxonii: E typographeo Clarendoniano."
+
+					}
+
+		] 
+		
+	}
+
+	, homeri_opera_vol_4: {
+ 
+		bookTitle: "Homeri opera. Monro D. B. (ed.), Allen Th. W. (ed.)."
+	 
+		, bookUrlText: "Tomus IV Odysseae libros XIII-XXIV continens. Editio altera. 1919. Oxonii: E typographeo Clarendoniano."
+
+		, numLeafs: "228"
+
+		, leafWidth: 2257
+
+		, leafHeight: 3566
+
+		, thumbnail: "page0003.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Homeri opera. Monro D. B. (ed.), Allen Th. W. (ed.). Tomus IV Odysseae libros XIII-XXIV continens. Editio altera. 1919. Oxonii: E typographeo Clarendoniano."
+
+					}
+
+		] 
+		
+	}
+
+	, homeri_opera_vol_5: {
+ 
+		bookTitle: "Homeri opera. Monro D. B. (ed.), Allen Th. W. (ed.)."
+	 
+		, bookUrlText: "Tomus V Hymnos, Cyclum fragmenta, Margiten, Batrachomyomachiam, Vitas continens. 1912. Oxonii: E typographeo Clarendoniano."
+
+		, numLeafs: "293"
+
+		, leafWidth: 2182
+
+		, leafHeight: 3446
+
+		, thumbnail: "page0003.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Homeri opera. Monro D. B. (ed.), Allen Th. W. (ed.). Tomus V Hymnos, Cyclum fragmenta, Margiten, Batrachomyomachiam, Vitas continens. 1912. Oxonii: E typographeo Clarendoniano."
+
+					}
+
+		] 
+		
+	}
+
+	, hesiod_hymns_homerica: {
+ 
+		bookTitle: "Hesiod, the homeric hymns and homerica."
+	 
+		, bookUrlText: "With an English translation by H. G. Evelyn-White. 1914. London: Heinemann. New York: Macmillan."
+
+		, numLeafs: "689"
+
+		, leafWidth: 1946
+
+		, leafHeight: 3066
+
+		, thumbnail: "page0005.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "Hesiod, the homeric hymns and homerica. With an English translation by H. G. Evelyn-White. 1914. London: Heinemann. New York: Macmillan."
+
+					}
+
+		] 
+		
+	}
+
 };
