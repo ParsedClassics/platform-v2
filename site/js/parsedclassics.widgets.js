@@ -2350,3 +2350,70 @@ ParsedClassicsSelectedContentsItem = {
   }
   
 }
+
+/*
+Last drill redirect
+*/
+
+ParsedClassicsLastDrillRedirect = {
+
+  saveLastDrillUrl: function() {
+    let path = window.location.pathname;
+    let segments = path.split('/');
+    let fileName = segments.pop();
+    if (path.indexOf('/attic-greek/') !== -1) {
+      localStorage.setItem("last-drill-attic-greek", fileName);
+    }
+    else if (path.indexOf('/demotic-greek/') !== -1) {
+      localStorage.setItem("last-drill-demotic-greek", fileName);
+    }
+    else if (path.indexOf('/latin/') !== -1) {
+      localStorage.setItem("last-drill-latin", fileName);
+    }
+  },
+
+  go: function() {
+    let hash_str = window.location.hash.substring(1);
+    let fileName, url, msg;
+    if (!['last-drill-attic-greek', 'last-drill-demotic-greek', 'last-drill-latin'].includes(hash_str)) {
+      return;
+    }
+
+    if (hash_str === 'last-drill-attic-greek') {
+      fileName = localStorage.getItem('last-drill-attic-greek');
+      url = fileName ? `./drills/attic-greek/${fileName}` : '';
+      msg = 'Last Attic Greek drill was not found.';
+    }
+    else if (hash_str === 'last-drill-demotic-greek') {
+      fileName = localStorage.getItem('last-drill-demotic-greek');
+      url = fileName ? `./drills/demotic-greek/${fileName}` : '';
+      msg = 'Last Demotic Greek drill was not found.';
+    }
+    else if (hash_str === 'last-drill-latin') {
+      fileName = localStorage.getItem('last-drill-latin');
+      url = fileName ? `./drills/latin/${fileName}` : '';
+      msg = 'Last Latin drill was not found.';
+    }
+    if (url) {
+      window.location.href = url;
+    }
+    else {
+      // remove hash from url
+      history.pushState("", document.title, window.location.pathname);
+      // show info message after page loads
+      $(document).ready(function(){
+        // find dialogue heading
+        let heading = $(`#${ParsedClassicsVars.siteErrorModalId}`).find('h2');
+        // set heading text
+        heading.text('Not found');
+        // find message el
+        let msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+        // put message text inside message el
+        msg_el.html(msg);
+        // display modal dialogue
+        ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.siteErrorModalId, "", "");
+      });
+    }
+  },
+
+};

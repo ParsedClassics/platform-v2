@@ -23,7 +23,7 @@ $(document).ready(function(){
 
     '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'site/about.html">About</a>' + 
 
-    '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'site/drills.html">Drills</a>' +
+    //'<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'site/drills.html">Drills</a>' +
 
     '<a class="w3-bar-item w3-hover-dark-grey w3-button w3-padding" href="' + upwards + 'site/catalogue.html">Catalogue</a>' +
 
