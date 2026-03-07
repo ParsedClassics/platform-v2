@@ -185,6 +185,7 @@ var ParsedClassicsVars = {
   , languageLatin: "latin"
   , errorMsgTextElId: "error-msg-text-el"
   , toolsErrorModalId: "pc-tools-error-dialogue"
+  , siteErrorModalId: "pc-site-error-dialogue"
   // tools data
   , locale: "el"
   , numberNames: ["singular", "dual", "plural"]
