@@ -2630,6 +2630,34 @@ ParsedClassicsScannedBooks = {
 		
 	}
 
+	, homeric_hymns: {
+ 
+		bookTitle: "The Homeric Hymns. Edited by T. W. Allen, W. R. Halliday, E. E. Sikes."
+	 
+		, bookUrlText: "Second edition. 1936. Oxford: Oxford University Press."
+
+		, numLeafs: "589"
+
+		, leafWidth: 1685
+
+		, leafHeight: 2625
+
+		, thumbnail: "page0005.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "The Homeric Hymns. Edited by T. W. Allen, W. R. Halliday, E. E. Sikes. Second edition. 1936. Oxford: Oxford University Press."
+
+					}
+
+		] 
+		
+	}
+
 	, hesiod_hymns_homerica: {
  
 		bookTitle: "Hesiod, the homeric hymns and homerica."
