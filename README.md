@@ -1,1 +1,1 @@
-The platform for publishing and studying Greek and Latin classical literature at ParsedClassics.com
+The platform for publishing and studying Greek and Latin classical literature at [ParsedClassics.com](https://parsedclassics.com)
