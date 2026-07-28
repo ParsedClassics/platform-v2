@@ -92,7 +92,8 @@ const ParsedClassicsResProtos = {
           defaults: {
             show_links: [ // [name, title, display_by_default, display_on_top]
               ['eulexis', 'Eulexis', true, true], 
-              ['ai_EL_translate', 'AI translate', true, true], 
+              ['ai_EL_translate', 'ChatGPT translate', true, true], 
+              ['ai_EL_translate2', 'Gemini translate', true, true],
               ['lsj_gr', 'LSJ.gr', true], 
               ['logeion', 'Logeion', true], 
               ['morpho', 'Morpho', true], 
@@ -123,7 +124,8 @@ const ParsedClassicsResProtos = {
           defaults: {
             show_links: [ // [name, title, display_by_default, display_on_top]
               ['collatinus', 'Collatinus', true, true], 
-              ['ai_LA_translate', 'AI translate', true, true], 
+              ['ai_LA_translate', 'ChatGPT translate', true, true], 
+              ['ai_LA_translate2', 'Gemini translate', true, true],
               ['lsj_gr', 'LSJ.gr', true], 
               ['logeion', 'Logeion', true], 
               ['morpho', 'Morpho', true], 
@@ -154,7 +156,8 @@ const ParsedClassicsResProtos = {
           defaults: {
             show_links: [ // [name, title, display_by_default, display_on_top]
               ['collatinus', 'Collatinus', true, true], 
-              ['ai_LA_translate', 'AI translate', true, true], 
+              ['ai_LA_translate', 'ChatGPT translate', true, true], 
+              ['ai_LA_translate2', 'Gemini translate', true, true],
               ['lsj_gr', 'LSJ.gr', true], 
               ['logeion', 'Logeion', true], 
               ['morpho', 'Morpho', true], 
@@ -167,20 +170,20 @@ const ParsedClassicsResProtos = {
     },
   },
 
-  forcellini_latin_lexicon: {
-    collections_page_resource_author: "",
-    collections_page_resource_desc: "E. Forcellini Lexicon totius Latinitatis", 
-    library_app_selectbox_title: "E. Forcellini Lexicon totius Latinitatis",
-    library_app_panel_title: "",
-    library_app_panel_subtitle: "",
-    library_app_panel_text_from: "",
-    library_app_panel_note: "",
-    scanned_or_typed: "typed",
-    resource_type: "external_service",
-    scanned_source_shortname: "",
-    contents_shortname: "forcellini_latin_lexicon_contents",
-    extra: {},
-  },
+  // forcellini_latin_lexicon: {
+  //   collections_page_resource_author: "",
+  //   collections_page_resource_desc: "E. Forcellini Lexicon totius Latinitatis", 
+  //   library_app_selectbox_title: "E. Forcellini Lexicon totius Latinitatis",
+  //   library_app_panel_title: "",
+  //   library_app_panel_subtitle: "",
+  //   library_app_panel_text_from: "",
+  //   library_app_panel_note: "",
+  //   scanned_or_typed: "typed",
+  //   resource_type: "external_service",
+  //   scanned_source_shortname: "",
+  //   contents_shortname: "forcellini_latin_lexicon_contents",
+  //   extra: {},
+  // },
 
   greek_word_explainer: {
     collections_page_resource_author: "",
