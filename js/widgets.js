@@ -1698,12 +1698,17 @@ ParsedClassicsLemmatizerLinks = {
       if (is_top_link) {
         if (link_shortname == 'eulexis') {
           linksStrTop += `
-            <a href="https://outils.biblissima.fr/en/eulexis-web" target="_blank">Eulexis</a>&nbsp;
+            <a href="https://outils.biblissima.fr/en/eulexis-web" target="_blank">${link_title}</a>&nbsp;
           `;
         }
         if (link_shortname == 'ai_EL_translate') {
           linksStrTop += `
-            <a href="https://chatgpt.com/g/g-6841c6cdf13c8191b13cd811485772e7-ancient-greek-translate">AI translator</a>&nbsp;
+            <a href="https://chatgpt.com/g/g-6841c6cdf13c8191b13cd811485772e7-ancient-greek-translate" target="_blank">${link_title}</a>&nbsp;
+          `;
+        }
+        if (link_shortname == 'ai_EL_translate2') {
+          linksStrTop += `
+            <a href="https://gemini.google.com/gem/e60f859b20a9" target="_blank">${link_title}</a>&nbsp;
           `;
         }
         if (link_shortname == 'collatinus') {
@@ -1714,6 +1719,11 @@ ParsedClassicsLemmatizerLinks = {
         if (link_shortname == 'ai_LA_translate') {
           linksStrTop += `
             <a href="https://chatgpt.com/g/g-68ebb70004988191852e7426e570b466-latin-translate" target="_blank">${link_title}</a>&nbsp;
+          `;
+        }
+        if (link_shortname == 'ai_LA_translate2') {
+          linksStrTop += `
+            <a href="https://gemini.google.com/gem/e60f859b20a9" target="_blank">${link_title}</a>&nbsp;
           `;
         }
       }
