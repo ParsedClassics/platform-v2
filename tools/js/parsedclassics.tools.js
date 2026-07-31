@@ -3204,6 +3204,50 @@ var ParsedClassicsPageNumCleaner = {
 
 /*
 
+Lexicon extra words cleaner script (for scanned Lexicons and Concordances)
+
+*/
+
+var ParsedClassicsLexExtraWordsCleaner = {
+
+	cleanExtraWords: function() {
+		var contents_obj_inputted, msg_el, contents_obj_outputted, output_textarea, regex;
+
+		// get inputted contents object string
+    contents_obj_inputted = $("#" + ParsedClassicsVars.inputTextareaId).val();
+
+		// get output textarea
+		output_textarea = $("#" + ParsedClassicsVars.outputTextareaId);
+
+		// no contents object? - then nothing to do, exept to display error msg
+		if (contents_obj_inputted == "") {
+      // find message el
+			msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+			// put message text inside message el
+			msg_el.html("No contents object found inside Contents object input!");
+			// display modal dialogue
+			ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+			return;
+    }
+
+		// clean lines in which the value for the key is empty string
+		regex = /^\s*,?.*:\s*""\s*,?\s*$/gm;
+		contents_obj_outputted = contents_obj_inputted.replace(regex, '');
+
+		// output contents object without page numbers
+    output_textarea.val(contents_obj_outputted);
+	}
+
+	, init: function() {
+    var clean_extra_words_button;
+    
+    clean_extra_words_button = $("#" + ParsedClassicsVars.generateButtonId);
+    clean_extra_words_button.bind("click", ParsedClassicsLexExtraWordsCleaner.cleanExtraWords); 
+  }
+};
+
+/*
+
 Lexicon contents importer script (for scanned Lexicons and Concordances)
 
 */
