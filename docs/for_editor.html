@@ -5078,6 +5078,26 @@ To:<br>
 <td class="w3-border">BBEdit</td>
 </tr>
 
+<tr>
+<td class="w3-border pc-whitespace-nowrap">^\s*,?.*:\s*""\s*,?\s*$</td>
+<td class="w3-border pc-whitespace-nowrap">empty</td>
+<td class="w3-border pc-whitespace-nowrap">
+Used to remove the lines in javascript object which have as values empty string; the lines can contain javascript comments. E.g. from:<br>
+elementary_latin_dictionary_by_lewis_contents = {<br>
+, /*ab*/ "w-97-98": "5"<br>
+, /*Aba*/ "w-65-98-97": ""<br>
+, /*abactus*/ "w-97-98-97-99-116-117-115": "6"<br>
+, /*abaculus*/ "w-97-98-97-99-117-108-117-115": ""<br>
+}<br>
+To:<br>
+elementary_latin_dictionary_by_lewis_contents = {<br>
+, /*ab*/ "w-97-98": "5"<br>
+, /*abactus*/ "w-97-98-97-99-116-117-115": "6"<br>
+}
+</td>
+<td class="w3-border">BBEdit</td>
+</tr>
+
 </tbody>
 </table>
 
