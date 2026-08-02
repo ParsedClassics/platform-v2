@@ -2380,10 +2380,10 @@ var ParsedClassicsLexContentsSupplementer = {
 								word_string = word_string.replace(")", "\\)");
 							
 								// find word inside initial contents object and mark as found
-								words_from_object_append_code_el.find("[" + ParsedClassicsVars.lemmaAttr + "=" + word_string + "]").addClass("w3-pale-green");
+								words_from_object_append_code_el.find("[" + ParsedClassicsVars.lemmaAttr + "=\"" + word_string + "\"]").addClass("w3-pale-green");
 							
 								// find word inside words to be added list and mark as found
-								words_to_add_append_code_el.find("[" + ParsedClassicsVars.lemmaAttr + "=" + word_string + "]").addClass("w3-pale-green");
+								words_to_add_append_code_el.find("[" + ParsedClassicsVars.lemmaAttr + "=\"" + word_string + "\"]").addClass("w3-pale-green");
 
 						}
 		}
@@ -3485,7 +3485,7 @@ var ParsedClassicsLexContentsImporter = {
 								original_word_esc = original_word_esc.replace("(", "\\(");
 								original_word_esc = original_word_esc.replace(")", "\\)");
         // is original word among words to be imported?
-        member_to_add = words_to_add_append_code_el.find("[" + ParsedClassicsVars.lemmaAttr + "=" + original_word_esc + "]");
+        member_to_add = words_to_add_append_code_el.find("[" + ParsedClassicsVars.lemmaAttr + "=\"" + original_word_esc + "\"]");
         if (member_to_add.length != 0) {
           // original word is among words to be imported, so add its string if it is not title item
           if (original_word != ParsedClassicsVars.wordClassSelectedByDefault) {
@@ -3495,7 +3495,7 @@ var ParsedClassicsLexContentsImporter = {
         // not being found among words to be imported, original word should be among words of initial contents object, 
         //so find its string there
         else {
-          member_to_add = words_from_object_append_code_el.find("[" + ParsedClassicsVars.lemmaAttr + "=" + original_word_esc + "]");
+          member_to_add = words_from_object_append_code_el.find("[" + ParsedClassicsVars.lemmaAttr + "=\"" + original_word_esc + "\"]");
           if (member_to_add.length != 0) {
   										// it is already included in contents, so add its string if it is not title item
   										if (original_word != ParsedClassicsVars.wordClassSelectedByDefault) {
@@ -3645,6 +3645,100 @@ var ParsedClassicsLexDuplicatesFinder = {
 
 		find_extra_words_button = $("#" + ParsedClassicsVars.generateButtonId);
 		find_extra_words_button.bind("click", ParsedClassicsLexDuplicatesFinder.find);
+	}
+};
+
+/*
+
+Lexicon word list extractor script (for scanned Lexicons and Concordances)
+
+*/
+
+var ParsedClassicsLexWordListExtractor = {
+
+	extract: function() {
+		var contents_object_input
+		, msg_el
+    , char_index
+		, contents_object_string
+		, contentWords
+		, member_strings_array
+		, original_word
+		, string_split_array
+		, original_word_array
+		, result_str;
+
+		// define var
+    original_word_array = [];
+
+		// find contents object input textarea
+    contents_object_input = $("#" + ParsedClassicsVars.inputTextareaId);
+
+		// get contents object
+		contents_object_string = contents_object_input.val();
+
+		// no contents object? - then nothing to do, exept to display error msg
+		if (contents_object_string == "") {
+			// find message el
+			msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+			// put message text inside message el
+			msg_el.html("No contents object found inside textarea field!");
+			// display modal dialogue
+			ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+			return;
+		}
+
+		// delete everything before opening brace, brace included
+		char_index = contents_object_string.indexOf("{");
+		if (char_index != -1) {
+			contents_object_string = contents_object_string.substring(char_index + 1);
+		}
+
+		// delete everything after closing brace, brace included
+		char_index = contents_object_string.indexOf("}");
+		if (char_index != -1) {
+			contents_object_string = contents_object_string.substring(0, char_index);
+		}
+
+		// trim whitespace
+    contents_object_string = $.trim(contents_object_string);
+
+		// remove line breaks
+		contents_object_string = contents_object_string.replace(/(\r\n\t|\n|\r\t)/gm,"");
+
+		// split contents object string into member strings array
+		member_strings_array = contents_object_string.split(",");
+
+		// loop through member strings array 
+		// and extract original words placed inside comment symbols "/*" and "*/"
+		for (var i = 0; i < member_strings_array.length; i++) {
+			original_word = "";
+			string_split_array = member_strings_array[i].split("/*");
+			if (string_split_array.length == 2) {
+				original_word = string_split_array[1];
+				string_split_array = original_word.split("*/");
+				if (string_split_array.length == 2) {
+					original_word = $.trim(string_split_array[0]);
+				}
+			}
+			if (original_word != "") {
+				original_word_array.push(original_word);
+			}
+		}
+
+		result_str = original_word_array.join('\n');
+
+		// find output textarea
+		output_textarea = $("#" + ParsedClassicsVars.outputTextareaId);
+
+		// display result
+		output_textarea.val(result_str);
+	}
+	, init: function() {
+		var extract_word_list_button;
+
+		extract_word_list_button = $("#" + ParsedClassicsVars.generateButtonId);
+		extract_word_list_button.bind("click", ParsedClassicsLexWordListExtractor.extract);
 	}
 };
 
