@@ -3542,6 +3542,114 @@ var ParsedClassicsLexContentsImporter = {
 
 /*
 
+Lexicon duplicate words finder script (for scanned Lexicons and Concordances)
+
+*/
+
+var ParsedClassicsLexDuplicatesFinder = {
+
+	find: function() {
+		var contents_object_input
+		, msg_el
+    , char_index
+		, contents_object_string
+		, contentWords
+		, member_strings_array
+		, original_word
+		, string_split_array
+		, original_word_array
+		, seen
+		, duplicates
+		, result_str;
+
+		// define var
+    original_word_array = [];
+
+		// find contents object input textarea
+    contents_object_input = $("#" + ParsedClassicsVars.inputTextareaId);
+
+		// get contents object
+		contents_object_string = contents_object_input.val();
+
+		// no contents object? - then nothing to do, exept to display error msg
+		if (contents_object_string == "") {
+			// find message el
+			msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+			// put message text inside message el
+			msg_el.html("No contents object found inside textarea field!");
+			// display modal dialogue
+			ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+			return;
+		}
+
+		// delete everything before opening brace, brace included
+		char_index = contents_object_string.indexOf("{");
+		if (char_index != -1) {
+			contents_object_string = contents_object_string.substring(char_index + 1);
+		}
+
+		// delete everything after closing brace, brace included
+		char_index = contents_object_string.indexOf("}");
+		if (char_index != -1) {
+			contents_object_string = contents_object_string.substring(0, char_index);
+		}
+
+		// trim whitespace
+    contents_object_string = $.trim(contents_object_string);
+
+		// remove line breaks
+		contents_object_string = contents_object_string.replace(/(\r\n\t|\n|\r\t)/gm,"");
+
+		// split contents object string into member strings array
+		member_strings_array = contents_object_string.split(",");
+
+		// loop through member strings array 
+		// and extract original words placed inside comment symbols "/*" and "*/"
+		for (var i = 0; i < member_strings_array.length; i++) {
+			original_word = "";
+			string_split_array = member_strings_array[i].split("/*");
+			if (string_split_array.length == 2) {
+				original_word = string_split_array[1];
+				string_split_array = original_word.split("*/");
+				if (string_split_array.length == 2) {
+					original_word = $.trim(string_split_array[0]);
+				}
+			}
+			if (original_word != "") {
+				original_word_array.push(original_word);
+			}
+		}
+
+		// finding duplicates in original_word_array array
+		seen = new Set();
+		duplicates = new Set();
+		for (const word of original_word_array) {
+			if (seen.has(word)) {
+					duplicates.add(word);
+			} else {
+					seen.add(word);
+			}
+		}
+
+		result_str = [...duplicates].join('\n\n');
+
+		// find output textarea
+		output_textarea = $("#" + ParsedClassicsVars.outputTextareaId);
+
+		// display result
+		output_textarea.val(result_str);
+	}
+
+	, init: function() {
+		var find_extra_words_button;
+
+		find_extra_words_button = $("#" + ParsedClassicsVars.generateButtonId);
+		find_extra_words_button.bind("click", ParsedClassicsLexDuplicatesFinder.find);
+	}
+};
+
+/*
+
 Unicode characters changer script (for scanned Parsed texts, Concordances and transcribed Lexicons)
 
 */
