@@ -264,7 +264,6 @@ var ParsedClassicsPrecompiledWordList = {
 	},
 
 	generatePipeDelimitedWordList: function() {
-		console.log('generatePipeDelimitedWordList');
 		// get precompiled word list input
 		const textareaEl = $("#" + ParsedClassicsVars.inputTextareaId);
 		// get precompiled words list
@@ -296,9 +295,12 @@ var ParsedClassicsPrecompiledWordList = {
 		}
 
 		// get all words in precompiled list
-		const words_all = wordsList.split('\n');
-		console.log('words_all.length', words_all.length);
-		console.log('words_all[10]', words_all[10]);
+		let words_all = wordsList.split('\n');
+
+		// ensure words are unique
+		const words_unique = new Set(words_all);
+		words_all = [...words_unique];
+
 
 		// sort words aphabetically
 		words_all.sort(function(a, b) {return a.localeCompare(b, ParsedClassicsVars.locale, {sensitivity: 'base'}) });
@@ -1793,7 +1795,6 @@ Contents for resouces of the type "Reader"
 var ParsedClassicsReaderContentsGenerator = {
 
 	generateReaderContents: function() {
-		console.log('generateReaderContents');
 
 		var reader_contents,
 		contents_name,
@@ -1822,15 +1823,12 @@ var ParsedClassicsReaderContentsGenerator = {
 
 		// trim contents name
 		contents_name = $.trim(contents_name);
-		console.log('contents_name', contents_name);
 		// trim prefixes string
 		range_roman = $.trim(range_roman);
 		range_roman = range_roman.replace(" ", "");
-		console.log('range_roman', range_roman);
 		// trim ranges string
 		range_arab = $.trim(range_arab);
 		range_arab = range_arab.replace(" ", "");
-		console.log('range_arab', range_arab);
 
 		// no contents name? - then nothing to do, exept to display error msg
 		if (contents_name == "") {
