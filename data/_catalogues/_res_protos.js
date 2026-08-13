@@ -549,6 +549,25 @@ const ParsedClassicsResProtos = {
 		},
   },
 
+  latin_dictionary_by_white: {
+    collections_page_resource_author: "White J. T.",
+    collections_page_resource_desc: "A Latin-English dictionary for the use of junior students", 
+    library_app_selectbox_title: "Latin-English dictionary by J. T. White (1915)",
+    library_app_panel_title: "Latin-English dictionary by J. T. White (1915)",
+    library_app_panel_text_from: "J. T. White. A Latin-English dictionary for the use of junior students. 24-th edition. 1915. Boston: Ginn and company.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "lexicon",
+    scanned_source_shortname: "white_latin_english_dictionary", 
+    contents_shortname: "latin_dictionary_by_white_contents",
+    extra: {
+			difficulty_level: 1,
+      options: {
+        show_hide_lemmas_list: {defaults: {show_lemmas_list: "yes"}},
+      },
+		},
+  },
+
   // Translations
 
   nt_tr_EL_vamvas: {

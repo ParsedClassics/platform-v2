@@ -2436,9 +2436,9 @@ ParsedClassicsScannedBooks = {
 
 	, white_latin_english_dictionary: {
  
-		bookTitle: "J. T. White. A Latin-English dictionary for the use of junior students"
+		bookTitle: "J. T. White. A Latin-English dictionary for the use of junior students."
 	 
-		, bookUrlText: "1915. Boston: Ginn and company."
+		, bookUrlText: "24-th edition. 1915. Boston: Ginn and company."
 
 		, numLeafs: "662"
 
@@ -2454,7 +2454,7 @@ ParsedClassicsScannedBooks = {
 
 					label: 'Title'
 
-						, value: "Ch. T. Lewis. An elementary Latin dictionary. 1918. New York etc.: American Book company."
+						, value: "J. T. White. A Latin-English dictionary for the use of junior students. 24-th edition. 1915. Boston: Ginn and company."
 
 					}
 

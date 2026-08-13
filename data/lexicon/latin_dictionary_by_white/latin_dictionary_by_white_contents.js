@@ -8391,7 +8391,7 @@ latin_dictionary_by_white_contents = {
 
 , /*assector*/ "w-97-115-115-101-99-116-111-114": "74"
 
-, /*assecue*/ "assecue": "74"
+, /*assecue*/ "w-97-115-115-101-99-117-101": "74"
 
 , /*assecula*/ "w-97-115-115-101-99-117-108-97": "74"
 
@@ -13481,7 +13481,7 @@ latin_dictionary_by_white_contents = {
 
 , /*camum*/ "w-99-97-109-117-109": ""
 
-, /*camurus*/ "camurus": "103"
+, /*camurus*/ "w-99-97-109-117-114-117-115": "103"
 
 , /*camus*/ "w-99-97-109-117-115": ""
 

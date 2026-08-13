@@ -65,6 +65,10 @@ ParsedClassicsCollDefs.latin_lexicons["resource_defs"] = {
     ...ParsedClassicsResProtos.elementary_latin_dictionary_by_lewis,
   },
 
+  latin_dictionary_by_white: {
+    ...ParsedClassicsResProtos.latin_dictionary_by_white
+  },
+
 	/*lexicon_graeco_latinum_by_zorell: {
     collections_page_resource_author: "Zorell F.",
     collections_page_resource_desc: "Greek-Latin lexicon of the NT", 
