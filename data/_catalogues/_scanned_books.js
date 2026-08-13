@@ -2634,7 +2634,7 @@ ParsedClassicsScannedBooks = {
  
 		bookTitle: "The Homeric Hymns. Edited by T. W. Allen, W. R. Halliday, E. E. Sikes."
 	 
-		, bookUrlText: "Second edition. 1936. Oxford: Oxford University Press."
+		, bookUrlText: "Second edition. 1934. Oxford: Oxford University Press."
 
 		, numLeafs: "589"
 

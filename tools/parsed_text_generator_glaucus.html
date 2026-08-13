@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+ This file is part of ParsedClassics app
+=====================================================
+ Copyright (c) Éleuthère Ioannidis
+=====================================================
+-->
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+
+<title>Parsed text generator | ParsedClassics</title>
+
+<link type="text/css" rel="stylesheet" href="./css/w3.css" />
+
+<link type="text/css" rel="stylesheet" href="./css/pc.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
+	
+<script type="text/javascript" src="./js/parsedclassics.vars.js"></script>
+	
+<script type="text/javascript" src="./js/parsedclassics.data.js"></script>
+	
+<script type="text/javascript" src="./js/parsedclassics.widgets.js"></script>
+	
+<script type="text/javascript" src="./js/parsedclassics.tools.js"></script>
+
+<script>
+$(document).ready(function(){
+	ParsedClassicsTextGenerator.init();
+  ParsedClassicsModalDialogues.initAllCloseDialogueButtons();
+});  
+</script>
+
+</head>	
+	
+<body id="tools_page">
+
+<script type="text/javascript" src="./js/_navigation.js"></script>
+
+<div id="pc-site-content" class="pc-center-pane-maxwidth w3-border-right w3-padding pc-padding-top-0">
+
+<h1>Parsed text generator</h1>
+
+<h2>Book number input:</h2>
+
+<input type="text" id="pc-textarea-input2" class="pc-width-100"></input>
+
+<h2>Code input:</h2>
+
+<textarea id="pc-textarea-input" class="pc-width-100"></textarea>
+
+<div class="pc-padding-8"><button id="pc-generate-button" class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Generate</button></div>
+
+<h2>Code output:</h2>
+
+<textarea id="pc-textarea-output" class="pc-width-100"></textarea>
+
+<!-- Modal dialogue code shoud be below all content -->
+<div id="pc-tools-error-dialogue" class="w3-modal">
+ <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+  <header class="w3-container w3-dark-grey"> 
+   <span class="pc-close-dialogue_button w3-button w3-dark-grey w3-xlarge w3-hover-white w3-display-topright">&times;</span>
+   <h2>Error</h2>
+  </header>
+  
+  <div id="error-msg-text-el" class="pc-modal-content-inner w3-container w3-padding-16">
+  </div> <!-- End of div element containing message -->
+
+ </div>  <!-- End of .w3-modal-content -->
+</div> <!-- End of #pc-tools-dialogue -->
+
+
+</div><!-- End of #pc-site-content -->
+
+<script>
+
+ParsedClassicsTextGenerator = {
+
+  loadCode: function() {
+    var code_input_textarea
+      , book_num_input
+      , book_num
+      , code
+      , msg_el
+      , json;
+    
+    // get code input el
+		code_input_textarea = $("#" + ParsedClassicsVars.inputTextareaId);
+
+    // get chapter number input
+    book_num_input = $("#" + ParsedClassicsVars.inputTextarea2Id);
+
+    // get chapter num
+    book_num = $.trim(book_num_input.val());
+
+    // get code
+		code = $.trim(code_input_textarea.val());
+
+    // no chapter num? - then nothing to do except to display error msg
+    if (book_num == "") {
+        // find message el
+        msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+        // put message text inside message el
+        msg_el.html("No book number found in relevant input!");
+        // display modal dialogue
+        ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+        return {book_num: '', json: []};	
+    }
+
+    // no code? - then nothing to do except to display error msg
+    if (code == "") {
+        // find message el
+        msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+        // put message text inside message el
+        msg_el.html("No JSON code found in code input textarea!");
+        // display modal dialogue
+        ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+        return {book_num: '', json: []};	
+    }
+
+    // parse json
+    try {
+      json = JSON.parse(code);
+    }
+    catch(e) {
+      // find message el
+      msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+      // put message text inside message el
+      msg_el.html(e);
+      // display modal dialogue
+      ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+      return {book_num: '', json: []};
+    }
+    
+
+    return {book_num, json};
+  },
+
+  generateCode: async function() {
+    var code_output_textarea
+    , line_num
+    , period_start
+    , period_start_mark
+    , words_all
+    , line
+    , word
+    , nbsp_str
+    , form
+    , pos
+    , lemma
+    , parsing
+    , punctuation1
+    , punctuation2
+    , word_html
+    , html
+    , morph_arr
+    , whitespace
+    , indented;
+
+    // get code output el
+		code_output_textarea = $("#" + ParsedClassicsVars.outputTextareaId);
+    
+    // get json and chapter number
+    const {book_num, json} = ParsedClassicsTextGenerator.loadCode();
+
+    // define var
+    html = '';
+
+    //json.length = 5
+
+    for (var i = 0; i < json.length; i++) {
+      line_num = json[i]['line_num'];
+      period_start = json[i]['period_start'];
+      words_all = json[i]['words'];
+
+      //period_start_mark = i > 0 && period_start ? '<span class="para"></span>' : '';
+      period_start_mark = '';
+
+      indented = i > 0 && period_start ? ' indented' : '';
+
+      html += `${period_start_mark}<span class="line${indented}"><span data-line-number="${book_num}:${line_num}" class="line-number">${line_num}</span>&nbsp;`;
+
+      for (var j = 0; j < words_all.length; j++) {
+        word = words_all[j]['word'];
+        nbsp_str = word.indexOf('&nbsp;') !== -1 ? true : false;
+        form = words_all[j]['form'];
+        lemma = words_all[j]['lemma'];
+        morph_arr = words_all[j]['morph'].replaceAll(', ', ',').split(',');
+        pos = morph_arr[0];
+        parsing = morph_arr.slice(1).join(' ');
+        punctuation1 = words_all[j]['punctuation1'];
+        punctuation2 = words_all[j]['punctuation2'];
+        whitespace = typeof words_all[j]['crasis'] != 'undefined' && words_all[j]['crasis'] === true ? '': ' ';
+        word_html = !nbsp_str ? `${punctuation1}<span class="word" data-form="${form}" data-part-of-speech="${pos}" data-parsing="${parsing}" data-lemma="${lemma}">${word}</span>${punctuation2}${whitespace}` : word;
+        // if word is the last in line, remove white space after it
+        if (j === words_all.length - 1) {
+          word_html = word_html.substring(0, word_html.length - 1);
+        }
+        html += word_html;
+      }
+      html += `</span>`;
+    }
+
+    code_output_textarea.val(html);
+  },
+
+  init: function() {
+    var generate_code_btn;
+
+    generate_code_btn = $("#" + ParsedClassicsVars.generateButtonId);
+		generate_code_btn.bind("click", ParsedClassicsTextGenerator.generateCode);
+  },
+
+};
+</script>
+
+</body>
+</html>
+

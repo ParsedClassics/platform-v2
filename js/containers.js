@@ -601,8 +601,9 @@ const ParsedClassicsContentContainers = {
 
     const display_paragraph_numbering_class = typeof resourceDef['extra']['display_paragraph_numbering'] !== 'undefined' && resourceDef['extra']['display_paragraph_numbering'] === 'yes' ? 'display_paragraph_numbering' : '';
     const display_pagination_class = typeof resourceDef['extra']['display_pagination'] !== 'undefined' && resourceDef['extra']['display_pagination'] === 'yes' ? 'display_pagination' : '';
+    const line_display_class = typeof collectionDef['extra']['line_display'] !== 'undefined' && collectionDef['extra']['line_display'] === 'block' ? 'line-display-block' : '';
     
-    parsedTextContainerTopPart.html(`<div class="${display_paragraph_numbering_class} ${display_pagination_class}">` + html + resourceData + '</div>');
+    parsedTextContainerTopPart.html(`<div class="${display_paragraph_numbering_class} ${display_pagination_class} ${line_display_class}">` + html + resourceData + '</div>');
   },
 
   createLexiconTypedResourceHtml: function(tabContentContainerInner, resourceDef, resourceData) {
