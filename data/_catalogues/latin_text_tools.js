@@ -34,7 +34,7 @@ Order of resources by resource type
 
 */
 
-ParsedClassicsCollDefs.latin_lexicons["resource_defs"] = {
+ParsedClassicsCollDefs.latin_text_tools["resource_defs"] = {
   
   // Parsed text
   paste_any_latin_text: {

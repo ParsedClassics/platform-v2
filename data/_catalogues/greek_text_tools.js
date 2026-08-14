@@ -34,14 +34,26 @@ Order of resources by resource type
 
 */
 
-ParsedClassicsCollDefs.greek_lexicons["resource_defs"] = {
+ParsedClassicsCollDefs.greek_text_tools["resource_defs"] = {
 
   // Parsed text
-  // paste_any_greek_text: {
-  //   ...ParsedClassicsResProtos.paste_any_greek_text,
-  // },
+  paste_any_greek_text: {
+    ...ParsedClassicsResProtos.paste_any_greek_text,
+  },
 
   // External service
+
+  morpheus_greek_lemmatizer: {
+    ...ParsedClassicsResProtos.morpheus_greek_lemmatizer,
+  },
+
+  greek_word_explainer: {
+    ...ParsedClassicsResProtos.greek_word_explainer,
+  },
+
+  greek_word_study_tool: {
+    ...ParsedClassicsResProtos.greek_word_study_tool,
+  },
 
   // Lexicon
 

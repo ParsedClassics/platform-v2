@@ -164,9 +164,12 @@ const ParsedClassicsAppVars = {
   // application root filename
   rootFileName: "classics.html",
 };
-if (window.location.pathname.indexOf('/lexicons.html') != -1) {
-  ParsedClassicsAppVars.rootFileName = 'lexicons.html';
-}
-else if (window.location.pathname.indexOf('/readers.html') != -1) {
+if (window.location.pathname.indexOf('/readers.html') != -1) {
   ParsedClassicsAppVars.rootFileName = 'readers.html';
+}
+else if (window.location.pathname.indexOf('/greek-tools.html') != -1) {
+  ParsedClassicsAppVars.rootFileName = 'greek-tools.html';
+}
+else if (window.location.pathname.indexOf('/latin-tools.html') != -1) {
+  ParsedClassicsAppVars.rootFileName = 'latin-tools.html';
 }
