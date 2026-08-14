@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+ This file is part of ParsedClassics app
+=====================================================
+ Copyright (c) Éleuthère Ioannidis
+=====================================================
+-->
+
+<html>
+
+<head>
+
+ <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+<title>Latin morphology drills | ParsedClassics</title>
+
+<link type="text/css" rel="stylesheet" href="./css/w3.css" />
+
+<link type="text/css" rel="stylesheet" href="./css/site.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
+
+<script type="text/javascript" src="./js/parsedclassics.vars.js"></script>
+
+<script type="text/javascript" src="./js/parsedclassics.widgets.js"></script>
+
+<script type="text/javascript">
+  /*
+  Last drill redirect
+  */
+
+  ParsedClassicsLastDrillRedirect.go();
+
+  /*
+  Initialization close buttons in dialogues
+  */
+
+  $(document).ready(function() {
+    ParsedClassicsModalDialogues.initAllCloseDialogueButtons();
+  });
+</script>
+
+</head>
+
+<body>
+
+<script type="text/javascript" src="./js/_navigation.js"></script>
+
+<div id="pc-site-content" class="pc-center-pane-maxwidth w3-border-right w3-padding pc-padding-top-0">
+
+<h1>Morphology drills</h1>
+
+<h2>Latin</h2>
+
+<p>As a remedy for poor mastering of morphology professor William C. Dowling <a href="./pdf/dowling_method.pdf" target="_blank">recommends</a>  to copy by hand certain morphology tables as many times as needed until the knowledge of paradigms develops into automatism. Here you will find  morphology tables in which you can type answers; the anwers will be marked as right or wrong by clicking the button “Check”. </p>
+
+<p>1 <a href="./drills/latin/nouns.html">Nouns</a></p>
+
+<p>2 <a href="./drills/latin/adjectives.html">Adjectives</a></p>
+
+<p>3 <a href="./drills/latin/pronouns.html">Pronouns</a></p>
+
+<p>4.1 <a href="./drills/latin/verbs-sum.html">Verb sum</a></p>
+
+<p>4.2 <a href="./drills/latin/verbs-indicative-active.html">Verbs, indicative active</a></p>
+
+<p>4.3 <a href="./drills/latin/verbs-indicative-passive.html">Verbs, indicative passive</a></p>
+
+<p>4.4 <a href="./drills/latin/verbs-subjunctive-active.html">Verbs, subjunctive active</a></p>
+
+<p>4.5 <a href="./drills/latin/verbs-subjunctive-passive.html">Verbs, subjunctive passive</a></p>
+
+<p>4.6 <a href="./drills/latin/verbs-imperative.html">Verbs, imperative</a></p>
+
+<p>4.7 <a href="./drills/latin/verbs-nonfinite.html">Verbs, nonfinite</a></p>
+
+</div>
+
+<!-- Modal dialogue code shoud be below all content -->
+<div id="pc-site-error-dialogue" class="w3-modal">
+ <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+  <header class="w3-container w3-dark-grey"> 
+   <span class="pc-close-dialogue_button w3-button w3-dark-grey w3-xlarge w3-hover-white w3-display-topright">&times;</span>
+   <h2>Error</h2>
+  </header>
+  
+  <div id="error-msg-text-el" class="pc-modal-content-inner w3-container w3-padding-16">
+  </div> <!-- End of div element containing message -->
+
+ </div>  <!-- End of .w3-modal-content -->
+</div> <!-- End of #pc-tools-dialogue -->
+
+</body>
+
+</html>
