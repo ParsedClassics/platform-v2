@@ -790,27 +790,27 @@ const ParsedClassicsCollDefs = {
 		},
 	},
 
-	greek_lexicons: {
+	greek_text_tools: {
 		author_orig: '',   
     author_eng: '',
 		author_orig_short: '',
 		author_eng_short: '',
-    collection_selectboxname: 'Greek lexicons',
-    collections_page_title_orig: 'Greek lexicons',
-    collections_page_title_eng: 'Greek lexicons',
+    collection_selectboxname: 'Greek text tools',
+    collections_page_title_orig: 'Greek text tools',
+    collections_page_title_eng: 'Greek text tools',
 		contents_type: 'word',
 		central_resource: '',
 		extra: {},
 	},
 
-	latin_lexicons: {
+	latin_text_tools: {
 		author_orig: '',   
     author_eng: '',
 		author_orig_short: '',
 		author_eng_short: '',
-    collection_selectboxname: 'Latin lexicons',
-    collections_page_title_orig: 'Latin lexicons',
-    collections_page_title_eng: 'Latin lexicons',
+    collection_selectboxname: 'Latin text tools',
+    collections_page_title_orig: 'Latin text tools',
+    collections_page_title_eng: 'Latin text tools',
 		contents_type: 'word',
 		central_resource: '',
 		extra: {},
