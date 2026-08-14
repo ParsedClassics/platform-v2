@@ -1515,8 +1515,11 @@ ParsedClassicsLoadTextBtn = {
     // reduce two or more empty lines into single empty line
     text_to_load = text_to_load.replace(/\n\s*\n\s*\n/g, '\n\n');
 
-    //replace epty lines into paragraphs
-    text_to_load = text_to_load.replace(/\n\n/g, '</p>\n\n<p>');
+    //replace empty lines into paragraphs
+    text_to_load = text_to_load.replace(/\n\n/g, '</p><p>');
+    // replace single new lines into breaks
+    text_to_load = text_to_load.replace(/\n/g, '<br>');
+    // add starting and finishing <p> tag
     text_to_load = '<p>' + text_to_load + '</p>';
 
     if (text_to_load) {
@@ -1574,8 +1577,11 @@ ParsedClassicsLoadTextBtn = {
           // reduce two or more empty lines into single empty line
           text_to_restore = text_to_restore.replace(/\n\s*\n\s*\n/g, '\n\n');
 
-          //replace epty lines into paragraphs
-          text_to_restore = text_to_restore.replace(/\n\n/g, '</p>\n\n<p>');
+          //replace empty lines into paragraphs
+          text_to_restore = text_to_restore.replace(/\n\n/g, '</p><p>');
+          // replace single new lines into breaks
+          text_to_restore = text_to_restore.replace(/\n/g, '<br>');
+          // add starting and finishing <p> tag
           text_to_restore = '<p>' + text_to_restore + '</p>';
 
           // restore text
