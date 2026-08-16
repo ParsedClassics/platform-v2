@@ -203,7 +203,7 @@ const ParsedClassicsNavSelects = {
       selectboxOptionsEls = ParsedClassicsNavSelects.pagesSelectboxOptions(collectionShortname, tabId, linesOrPagesSelectbox);
       titleAttrVal = "Select page";
     }
-    else if (collContentsType === "word") {
+    else if (collContentsType === "none") {
       // lines or options selectbox should be hidden
       selectboxOptionsEls = null;
       titleAttrVal = null;

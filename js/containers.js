@@ -298,7 +298,7 @@ const ParsedClassicsContentContainers = {
             // scroll to the selected paragraph 
             ParsedClassicsContentContainers.scrollToParaResourceLoading(parsedTextContainerTopPart, paragraphIndicatorUrl, activeTabId);
           }
-          else if (contentsType === 'word') {
+          else if (contentsType === 'none') {
             // add event to catch text selection
             tabContentContainerInner.on('mouseup', (event) => ParsedClassicsSelectedText.hashSelectWordOrText(event, collectionShortname, parsing_external));
           }
@@ -583,7 +583,7 @@ const ParsedClassicsContentContainers = {
       numberAttrVal = ParsedClassicsAppVars.paragraphNumberAttr;
       html += `<div class="${classAttrVal} pc-padding-top-8" ${numberAttrVal}="title"></div>`;
     }
-    else if (contentsType === 'word') {
+    else if (contentsType === 'none') {
       html += `<div class="pc-padding-top-8"></div>`;
     }
     
