@@ -13,6 +13,7 @@
 --- 4-th decl. fructus ---
 --- 4-th decl. cornu ---
 --- 5-th decl. dies ---
+--- 5-th decl. res ---
 
 --- First Declension ---
 Gate (feminine): porta portae portae portam porta
@@ -51,6 +52,8 @@ Horns (neuter): cornua cornuum cornibus cornua cornibus
 --- Fifth Declension ---
 Day (masculine): dies diei diei diem die
 Days (masculine): dies dierum diebus dies diebus
+Thing (feminine): res rei rei rem re
+Things (feminine): res rerum rebus res rebus
 
 
 
