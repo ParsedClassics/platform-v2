@@ -2686,4 +2686,32 @@ ParsedClassicsScannedBooks = {
 		
 	}
 
+	, beresford_douglas_firs_greek_reader: {
+ 
+		bookTitle: "R. A. A. Beresford, R. N. Douglas. A First Greek Reader."
+	 
+		, bookUrlText: "1903. London etc.: Blackie and son."
+
+		, numLeafs: "138"
+
+		, leafWidth: 2196
+
+		, leafHeight: 3238
+
+		, thumbnail: "page0001.jpg"
+
+		, metadata: [
+
+					{
+
+					label: 'Title'
+
+						, value: "R. A. A. Beresford, R. N. Douglas. A First Greek Reader. 1903. London etc.: Blackie and son."
+
+					}
+
+		] 
+		
+	}
+
 };
