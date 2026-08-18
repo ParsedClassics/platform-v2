@@ -2686,7 +2686,7 @@ ParsedClassicsScannedBooks = {
 		
 	}
 
-	, beresford_douglas_firs_greek_reader: {
+	, beresford_douglas_first_greek_reader: {
  
 		bookTitle: "R. A. A. Beresford, R. N. Douglas. A First Greek Reader."
 	 
