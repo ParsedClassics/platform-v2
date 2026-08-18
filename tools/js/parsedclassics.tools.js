@@ -1764,7 +1764,7 @@ var ParsedClassicsBookContentsGenerator = {
 				}
 			
 				// add title page
-				book_contents = '"v-title": ""\n\n' + book_contents;
+				book_contents = '"title": ""\n\n' + book_contents;
 			
 				// add braces
 				book_contents = "{\n\n" + book_contents + "};"
@@ -2827,7 +2827,7 @@ var ParsedClassicsAudioContentsGenerator = {
         
       }
       
-      // add the line for "v-title" line class
+      // add the line for "title" line class
       object_code = '"' + ParsedClassicsVars.lineClassSelectedByDefault + '": 0\n\n' + object_code;
       // add starting and ending braces
       object_code = '{\n\n' + object_code + '};';
