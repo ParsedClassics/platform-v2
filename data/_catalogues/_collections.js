@@ -790,6 +790,21 @@ const ParsedClassicsCollDefs = {
 		},
 	},
 
+	beresford_douglas_first_greek_reader: {
+		author_orig: 'R. A. A. Beresford and R. N. Douglas',   
+    author_eng: 'R. A. A. Beresford and R. N. Douglas',
+		author_orig_short: 'Beresford R. A. A., Douglas R. N.',
+		author_eng_short: 'Arnold E.',
+    collection_selectboxname: 'First Greek reader',
+    collections_page_title_orig: 'A First Greek reader',
+    collections_page_title_eng: 'A First Greek reader',
+		contents_type: 'paragraph',
+		central_resource: 'beresford_douglas_first_greek_reader_parsed_text',
+		extra: {
+			difficulty_level: 1,
+		},
+	},
+
 	greek_text_tools: {
 		author_orig: '',   
     author_eng: '',
