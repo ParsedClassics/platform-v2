@@ -65,7 +65,7 @@ var ParsedClassicsVars = {
   , tabClass: "pc-tab"
   , tabOpenedClass: "pc-silver"
   // selected line
-  , lineClassSelectedByDefault: "v-title"
+  , lineClassSelectedByDefault: "title"
   , selectedLineClass: "selected-verse"
   , verseNumberClass: "line-number"
   , verseClass: "line"

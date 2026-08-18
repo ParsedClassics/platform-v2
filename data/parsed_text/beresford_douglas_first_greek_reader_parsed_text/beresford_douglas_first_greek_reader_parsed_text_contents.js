@@ -832,7 +832,7 @@ beresford_douglas_first_greek_reader_parsed_text_contents = {
 
 , "levelend-51": ""
 
-, "levelstart-52": "XXXII. alamis"
+, "levelstart-52": "XXXII. Salamis"
 
 , "2-XXXII:1": "XXXII:1"
 
