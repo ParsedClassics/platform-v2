@@ -167,6 +167,12 @@ const ParsedClassicsAppVars = {
 if (window.location.pathname.indexOf('/readers.html') != -1) {
   ParsedClassicsAppVars.rootFileName = 'readers.html';
 }
+else if (window.location.pathname.indexOf('/latin-readers.html') != -1) {
+  ParsedClassicsAppVars.rootFileName = 'latin-readers.html';
+}
+else if (window.location.pathname.indexOf('/greek-readers.html') != -1) {
+  ParsedClassicsAppVars.rootFileName = 'greek-readers.html';
+}
 else if (window.location.pathname.indexOf('/greek-tools.html') != -1) {
   ParsedClassicsAppVars.rootFileName = 'greek-tools.html';
 }
