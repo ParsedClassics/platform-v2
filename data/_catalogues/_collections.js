@@ -794,7 +794,7 @@ const ParsedClassicsCollDefs = {
 		author_orig: 'R. A. A. Beresford and R. N. Douglas',   
     author_eng: 'R. A. A. Beresford and R. N. Douglas',
 		author_orig_short: 'Beresford R. A. A., Douglas R. N.',
-		author_eng_short: 'Arnold E.',
+		author_eng_short: 'Beresford R. A. A., Douglas R. N.',
     collection_selectboxname: 'First Greek reader',
     collections_page_title_orig: 'A First Greek reader',
     collections_page_title_eng: 'A First Greek reader',
