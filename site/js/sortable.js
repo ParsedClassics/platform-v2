@@ -189,7 +189,10 @@ sortableTable = { // Added by ParsedClassics
           return dataValue;
         }
         if (typeof node.innerText !== 'undefined') {
-          return node.innerText.replace(trimRegExp, '');
+          let cloned = node.cloneNode(true);    // Added by ParsedClassics
+          $(cloned).find('span.ignore').remove();  // Added by ParsedClassics
+          //return node.innerText.replace(trimRegExp, ''); // Commented out by ParsedClassics
+          return cloned.innerText.replace(trimRegExp, ''); // Added by ParsedClassics
         }
         return node.textContent.replace(trimRegExp, '');
       },
