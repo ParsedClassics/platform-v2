@@ -18,19 +18,6 @@ ParsedClassicsCatalogue = {
     links_list += "<p><a target='_blank' href='./editions-classics-greek.html'>Greek classics</a></p>";
     $(links_list).insertAfter('#classics_heading');
   },
-  
-  editionsList: function() {
-
-    let catalogueContent = "";
-
-    // compile catalogue links
-    for (var key in ParsedClassicsCollectionSets) {
-      catalogueContent += "<p><a target='_blank' href='collections-classics.html#{\"" + ParsedClassicsAppVars.collectionSetMember + "\":\"" + key + "\"}'>" + ParsedClassicsCollectionSets[key].title_orig + ' / ' + ParsedClassicsCollectionSets[key].title_eng + '</a></p>';
-    }
-
-    $('#pc-site-content').append(catalogueContent);
-
-  },
 
   editionsTable: function() {
     const id = ParsedClassicsSiteHelpers.generateUID;
@@ -266,57 +253,10 @@ Displays catalogue of Readers editions, collections and resources
 */
 
 ParsedClassicsReadersCatalogue = {
-
-  editionsList: function() {
-
-    // file containing definitions of editions
-    const fileName = '_sets_readers.js';
-
-    const baseUrl = window.location.href.split('site/')[0];
-    // url of the file containing definitions of editions
-    const url = baseUrl + ParsedClassicsAppVars.cataloguesDir + fileName;
-
-    // load definitions of editions
-    const editionsPromises = [ParsedClassicsSiteHelpers.loadJs(url)];
-    Promise.allSettled(editionsPromises)
-      // definitions of editions successfully
-      .then((values) => {
-        let catalogueContent = "";
-        //catalogueContent += "<h2>Readers</h2>";
-        //catalogueContent += "<h3>Editions</h3>";
-        catalogueContent += "<p><a target='_blank' href='../readers.html'>Last saved layout</a></p>";
-
-        // compile catalogue links
-        for (var key in ParsedClassicsCollectionSets) {
-          if (ParsedClassicsCollectionSets[key]['collections'].length > 0) {
-            const title = ParsedClassicsCollectionSets[key].title_orig && ParsedClassicsCollectionSets[key].title_orig != ParsedClassicsCollectionSets[key].title_eng ? ParsedClassicsCollectionSets[key].title_orig + ' / ' + ParsedClassicsCollectionSets[key].title_eng : ParsedClassicsCollectionSets[key].title_orig;
-            catalogueContent += "<p><a target='_blank' href='catalogue-readers.html#{\"" + ParsedClassicsAppVars.collectionSetMember + "\":\"" + key + "\"}'>" + title + '</a></p>';
-          }
-        }
-
-        //$('#pc-site-content').append(catalogueContent);
-        $(catalogueContent).insertAfter('#readers_heading');
-
-      })
-      // definitions of editions loaded unsuccessfully, so display error
-      .catch((error) => {
-        // This catch block will not be executed
-        console.error(error);
-      });
-  },
   
   collectionsList: function() {
-    const hashJsonString = window.location.hash.replace("#", "");
-    const hashJson = ParsedClassicsCatalogue.stringToJson(hashJsonString);
-
-    //find shortname of collections set
-    const collSetShortname = (typeof hashJson[ParsedClassicsAppVars.collectionSetMember] != "undefined" && hashJson[ParsedClassicsAppVars.collectionSetMember] != "") ? hashJson[ParsedClassicsAppVars.collectionSetMember] : "";
-
-    // if there is no shortname of collections set in URL or shortname of collections set is invalid
-    // then redirect to catalogue page
-    if (collSetShortname == "" || typeof ParsedClassicsCollectionSets[collSetShortname] == "undefined") {
-      window.location = "catalogue.html";
-    }
+    // get edition shortname
+    const collSetShortname = Object.keys(ParsedClassicsCollectionSets)[0];
 
     // find English name of the collections set
     const collSetEngTitle = collSetShortname ? ParsedClassicsCollectionSets[collSetShortname].title_eng: "";
@@ -325,10 +265,10 @@ ParsedClassicsReadersCatalogue = {
     const collectionShortnamesArray = ParsedClassicsCollectionSets[collSetShortname].collections;
 
     // create HTML table into which info about collections will be placed
-    ParsedClassicsReadersCatalogue.createCollectionsTable(collectionShortnamesArray, collSetEngTitle);
+    ParsedClassicsReadersCatalogue.createCollectionsTable(collectionShortnamesArray, collSetEngTitle, collSetShortname);
   },
 
-  createCollectionsTable: function(collectionShortnamesArray, collSetEngTitle) {
+  createCollectionsTable: function(collectionShortnamesArray, collSetEngTitle, collSetShortname) {
     let titleHTML = '<h1>' + collSetEngTitle + '</h1>';
     //titleHTML += '<h2>Collections</h2>';
 
@@ -358,8 +298,16 @@ ParsedClassicsReadersCatalogue = {
       const title = collectionDef['collections_page_title_orig'] && collectionDef['collections_page_title_orig'] != collectionDef['collections_page_title_eng'] ? collectionDef['collections_page_title_orig'] + ' / ' + collectionDef['collections_page_title_eng'] : collectionDef['collections_page_title_eng'];
 
       const tabId = id();
+
+      let fileName;
+      if (collSetShortname === 'greek_readers') {
+        fileName = 'greek-readers.html';
+      }
+      else if (collSetShortname === 'latin_readers') {
+        fileName = 'latin-readers.html';
+      }
    
-      const url = baseUrl + `readers.html#{"L":{"a":[["${collectionShortnamesArray[i]}|${collectionDef['central_resource']}"]],"b":[["${collectionShortnamesArray[i]}"]]},"P":{"${collectionShortnamesArray[i]}":{}},"D":{"a":[["${id()}",50],["${id()}",100,["${tabId}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
+      const url = baseUrl + `${fileName}#{"L":{"a":[["${collectionShortnamesArray[i]}|${collectionDef['central_resource']}"]],"b":[["${collectionShortnamesArray[i]}"]]},"P":{"${collectionShortnamesArray[i]}":{}},"D":{"a":[["${id()}",50],["${id()}",100,["${tabId}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
 
       const link = `<a href='${url}' target='_blank'>${title}</a>`;
 
