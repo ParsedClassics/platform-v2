@@ -29,7 +29,7 @@ ParsedClassicsCatalogue = {
     editionsTableHTML += '<tr>'; 
     editionsTableHTML += '<th style="width: 15rem;">Author/Set</th>'; 
     editionsTableHTML += '<th>Title</th>'; 
-    editionsTableHTML += '<th data-sorted="true" data-sorted-direction="ascending" style="width: 6rem;">Level</th>'; 
+    editionsTableHTML += '<th data-sorted-direction="ascending" style="width: 6rem;">Level</th>'; // data-sorted="true"
     editionsTableHTML += '<th data-sortable="false" style="width: 6rem;">&nbsp;</th>'; 
     editionsTableHTML += '</tr>'; 
     editionsTableHTML += '</thead>'; 
@@ -39,8 +39,18 @@ ParsedClassicsCatalogue = {
       const editionShortname = key;
       const editionDef = ParsedClassicsCollectionSets[key];
       const rowPairId = `pair-${id()}`;
-      const author = editionDef['author_orig'];
-      const title = editionDef['title_orig'];
+      
+      // find strings which should be ignored in sorting inside catalogue
+      const catalogue_ignore = typeof editionDef['catalogue_ignore'] !== 'undefined' ? editionDef['catalogue_ignore'] : {};
+      const author_ignore = typeof catalogue_ignore['author_orig'] !== 'undefined' ? catalogue_ignore['author_orig'] : false;
+      const title_ignore = typeof catalogue_ignore['title_orig'] !== 'undefined' ? catalogue_ignore['title_orig'] : false;
+
+      let author = editionDef['author_orig'];
+      author = ParsedClassicsCatalogue.formatCellValue(author, author_ignore);
+
+      let title = editionDef['title_orig'];
+      title = ParsedClassicsCatalogue.formatCellValue(title, title_ignore);
+
       //const url = 'url';
       //const link = `<a href='${url}' target='_blank'>${title}</a>`;
       let difficultyLevel = typeof editionDef['extra'] != 'undefined' && typeof editionDef['extra']['difficulty_level'] != 'undefined' ? editionDef['extra']['difficulty_level'] : '';
@@ -81,6 +91,42 @@ ParsedClassicsCatalogue = {
 
     // initialize sortable tables
     sortableTable.init();
+  },
+
+  formatCellValue: function(value, ignore_string) {
+    value = value.trim();
+    if (!value) {
+      return '';
+    }
+    ignore_string = ignore_string ? ignore_string.trim() : '';
+    if (ignore_string) {
+      // length of the string to be ignored
+      const ignore_str_len = ignore_string.length;
+      // get string left after removing part to be ignored
+      let value_without_ignore_str = value.substring(ignore_str_len);
+
+      // find position of the first non space character in string left after removing part to be ignored
+      const first_non_space_pos = value_without_ignore_str.match(/\S/)?.index ?? -1;
+
+      // get first non space char
+      const first_non_space_char = first_non_space_pos !== -1 ? value_without_ignore_str[first_non_space_pos] : false;
+
+      // make first non space char bold
+      value_without_ignore_str = value_without_ignore_str.substring(0, first_non_space_pos) + `<strong>${first_non_space_char}</strong>` + value_without_ignore_str.substring(first_non_space_pos+1);
+
+      // wrap with <span> elenent the string to be ignored
+      const ignore_html = `<span class="ignore">${ignore_string}</span>`;
+
+      // get result string
+      value = ignore_html + value_without_ignore_str;  
+    }
+    else {
+      // get first non space char
+      const first_non_space_char = value[0];
+      // make first non space char bold
+      value = `<strong>${first_non_space_char}</strong>` + value.substring(1);
+    }
+    return value;
   },
 
   toggleSecondaryRow: async function(table_id, rowPairAttr, editionShortname) {
@@ -293,9 +339,16 @@ ParsedClassicsReadersCatalogue = {
 
       const rowPairId = `pair-${id()}`;
 
-      const author = collectionDef['author_orig_short'] && collectionDef['author_orig_short'] != collectionDef['author_eng_short'] ? collectionDef['author_orig_short'] + ' / ' + collectionDef['author_eng_short'] : collectionDef['author_orig_short'];
+      // find strings which should be ignored in sorting inside catalogue
+      const catalogue_ignore = typeof collectionDef['catalogue_ignore'] !== 'undefined' ? collectionDef['catalogue_ignore'] : {};
+      const author_ignore = typeof catalogue_ignore['author_orig_short'] !== 'undefined' ? catalogue_ignore['author_orig_short'] : false;
+      const title_ignore = typeof catalogue_ignore['collections_page_title_orig'] !== 'undefined' ? catalogue_ignore['collections_page_title_orig'] : false;
 
-      const title = collectionDef['collections_page_title_orig'] && collectionDef['collections_page_title_orig'] != collectionDef['collections_page_title_eng'] ? collectionDef['collections_page_title_orig'] + ' / ' + collectionDef['collections_page_title_eng'] : collectionDef['collections_page_title_eng'];
+      let author = collectionDef['author_orig_short'] && collectionDef['author_orig_short'] != collectionDef['author_eng_short'] ? collectionDef['author_orig_short'] + ' / ' + collectionDef['author_eng_short'] : collectionDef['author_orig_short'];
+      author = ParsedClassicsCatalogue.formatCellValue(author, author_ignore);
+
+      let title = collectionDef['collections_page_title_orig'] && collectionDef['collections_page_title_orig'] != collectionDef['collections_page_title_eng'] ? collectionDef['collections_page_title_orig'] + ' / ' + collectionDef['collections_page_title_eng'] : collectionDef['collections_page_title_eng'];
+      title = ParsedClassicsCatalogue.formatCellValue(title, title_ignore);
 
       const tabId = id();
 

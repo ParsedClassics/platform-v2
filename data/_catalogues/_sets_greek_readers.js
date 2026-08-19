@@ -14,6 +14,7 @@ ParsedClassicsCollectionSets = {
     title_orig: 'Greek readers',
 		title_eng: 'Greek readers',
     title_orig_short: 'Greek readers',
+    catalogue_ignore: {},
 		collections: [
       'beresford_douglas_first_greek_reader',
     ],

@@ -19,6 +19,7 @@
 	contents_type: "", 
 	central_resource: "",
 	resource_defs: {}, // defined in separate files
+	catalogue_ignore: {},
 	extra: {},
 */
 
@@ -725,6 +726,7 @@ const ParsedClassicsCollDefs = {
     collections_page_title_eng: 'Appleton R. B. Initium',
 		contents_type: 'page',
 		central_resource: 'appleton_initium_reader',
+		catalogue_ignore: {},
 		extra: {
 			difficulty_level: 1,
 		},
@@ -740,6 +742,7 @@ const ParsedClassicsCollDefs = {
     collections_page_title_eng: 'A new Latin primer',
 		contents_type: 'page',
 		central_resource: 'maxey_fay_new_latin_primer_reader',
+		catalogue_ignore: {collections_page_title_orig: 'A'},
 		extra: {
 			difficulty_level: 1,
 		},
@@ -755,6 +758,7 @@ const ParsedClassicsCollDefs = {
     collections_page_title_eng: 'Ludi Persici',
 		contents_type: 'page',
 		central_resource: 'appleton_ludi_persici_reader',
+		catalogue_ignore: {},
 		extra: {
 			difficulty_level: 3,
 		},
@@ -770,6 +774,7 @@ const ParsedClassicsCollDefs = {
     collections_page_title_eng: 'The new gradatim',
 		contents_type: 'page',
 		central_resource: 'collar_new_gradatim_reader',
+		catalogue_ignore: {collections_page_title_orig: 'The'},
 		extra: {
 			difficulty_level: 2,
 		},
@@ -785,6 +790,7 @@ const ParsedClassicsCollDefs = {
     collections_page_title_eng: 'Cloelia, puella Rōmāna',
 		contents_type: 'paragraph',
 		central_resource: 'arnold_cloelia_parsed_text',
+		catalogue_ignore: {},
 		extra: {
 			difficulty_level: 2,
 		},
@@ -800,6 +806,7 @@ const ParsedClassicsCollDefs = {
     collections_page_title_eng: 'A First Greek reader',
 		contents_type: 'paragraph',
 		central_resource: 'beresford_douglas_first_greek_reader_parsed_text',
+		catalogue_ignore: {collections_page_title_orig: 'A'},
 		extra: {
 			difficulty_level: 1,
 		},
