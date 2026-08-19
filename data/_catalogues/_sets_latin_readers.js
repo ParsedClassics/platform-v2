@@ -14,6 +14,7 @@ ParsedClassicsCollectionSets = {
     title_orig: 'Latin readers',
 		title_eng: 'Latin readers',
     title_orig_short: 'Latin readers',
+    catalogue_ignore: {},
 		collections: [
       //'appleton_initium',
       'maxey_fay_new_latin_primer',

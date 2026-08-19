@@ -14,6 +14,7 @@
 	title_orig: "",
 	title_eng: "",
 	title_orig_short: "",
+	catalogue_ignore: {},
 	collections: [
 		"", 
 		"", 
@@ -31,6 +32,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ἰλιάδος Α, Β, Γ",
 		title_eng: "Iliad 1, 2, 3",
 		title_orig_short: "Ὁμήρου Ἰλιάδος Α, Β, Γ",
+		catalogue_ignore: {},
 		collections: [
 			"homer_iliad_1", 
 			"homer_iliad_2", 
@@ -47,6 +49,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ἰλιάδος Δ, Ε, Ζ",
 		title_eng: "Iliad 4, 5, 6",
 		title_orig_short: "Ὁμήρου Ἰλιάδος Δ, Ε, Ζ",
+		catalogue_ignore: {},
 		collections: [
 			"homer_iliad_4", 
 			"homer_iliad_5", 
@@ -63,6 +66,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ἰλιάδος Η, Θ, Ι",
 		title_eng: "Iliad 4, 5, 6",
 		title_orig_short: "Ὁμήρου Ἰλιάδος Η, Θ, Ι",
+		catalogue_ignore: {},
 		collections: [
 			"homer_iliad_7", 
 			"homer_iliad_8", 
@@ -79,6 +83,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ἰλιάδος Κ, Λ, Μ",
 		title_eng: "Iliad 10, 11, 12",
 		title_orig_short: "Ὁμήρου Ἰλιάδος Κ, Λ, Μ",
+		catalogue_ignore: {},
 		collections: [
 			"homer_iliad_10", 
 			"homer_iliad_11", 
@@ -95,6 +100,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ἰλιάδος Ν, Ξ, Ο",
 		title_eng: "Iliad 13, 14, 15",
 		title_orig_short: "Ὁμήρου Ἰλιάδος Ν, Ξ, Ο",
+		catalogue_ignore: {},
 		collections: [
 			"homer_iliad_13", 
 			"homer_iliad_14", 
@@ -111,6 +117,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ἰλιάδος Π, Ρ, Σ",
 		title_eng: "Iliad 16, 17, 18",
 		title_orig_short: "Ὁμήρου Ἰλιάδος Π, Ρ, Σ",
+		catalogue_ignore: {},
 		collections: [
 			"homer_iliad_16", 
 			"homer_iliad_17", 
@@ -127,6 +134,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ἰλιάδος Τ, Υ, Φ",
 		title_eng: "Iliad 19, 20, 21",
 		title_orig_short: "Ὁμήρου Ἰλιάδος Τ, Υ, Φ",
+		catalogue_ignore: {},
 		collections: [
 			"homer_iliad_19", 
 			"homer_iliad_20", 
@@ -143,6 +151,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ἰλιάδος Χ, Ψ, Ω",
 		title_eng: "Iliad 22, 23, 24",
 		title_orig_short: "Ὁμήρου Ἰλιάδος Χ, Ψ, Ω",
+		catalogue_ignore: {},
 		collections: [
 			"homer_iliad_22", 
 			"homer_iliad_23", 
@@ -159,6 +168,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ὀδυσσείας Α, Β, Γ",
 		title_eng: "Odyssey 1, 2, 3",
 		title_orig_short: "Ὁμήρου Ὀδυσσείας Α, Β, Γ",
+		catalogue_ignore: {},
 		collections: [
 			"homer_odyssey_1", 
 			"homer_odyssey_2", 
@@ -175,6 +185,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ὀδυσσείας Δ, Ε, Ζ",
 		title_eng: "Odyssey 4, 5, 6",
 		title_orig_short: "Ὁμήρου Ὀδυσσείας Δ, Ε, Ζ",
+		catalogue_ignore: {},
 		collections: [
 			"homer_odyssey_4", 
 			"homer_odyssey_5", 
@@ -191,6 +202,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ὀδυσσείας Η, Θ, Ι",
 		title_eng: "Odyssey 7, 8, 9",
 		title_orig_short: "Ὁμήρου Ὀδυσσείας Η, Θ, Ι",
+		catalogue_ignore: {},
 		collections: [
 			"homer_odyssey_7", 
 			"homer_odyssey_8", 
@@ -207,6 +219,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ὀδυσσείας Κ, Λ, Μ",
 		title_eng: "Odyssey 10, 11, 12",
 		title_orig_short: "Ὁμήρου Ὀδυσσείας Κ, Λ, Μ",
+		catalogue_ignore: {},
 		collections: [
 			"homer_odyssey_10", 
 			"homer_odyssey_11", 
@@ -223,6 +236,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ὀδυσσείας Ν, Ξ, Ο",
 		title_eng: "Odyssey 13, 14, 15",
 		title_orig_short: "Ὁμήρου Ὀδυσσείας Ν, Ξ, Ο",
+		catalogue_ignore: {},
 		collections: [
 			"homer_odyssey_13", 
 			"homer_odyssey_14", 
@@ -239,6 +253,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ὀδυσσείας Π, Ρ, Σ",
 		title_eng: "Odyssey 16, 17, 18",
 		title_orig_short: "Ὁμήρου Ὀδυσσείας Π, Ρ, Σ",
+		catalogue_ignore: {},
 		collections: [
 			"homer_odyssey_16", 
 			"homer_odyssey_17", 
@@ -255,6 +270,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ὀδυσσείας Τ, Υ, Φ",
 		title_eng: "Odyssey 19, 20, 21",
 		title_orig_short: "Ὁμήρου Ὀδυσσείας Τ, Υ, Φ",
+		catalogue_ignore: {},
 		collections: [
 			"homer_odyssey_19", 
 			"homer_odyssey_20", 
@@ -271,6 +287,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ὀδυσσείας Χ, Ψ, Ω",
 		title_eng: "Odyssey 22, 23, 24",
 		title_orig_short: "Ὁμήρου Ὀδυσσείας Χ, Ψ, Ω",
+		catalogue_ignore: {},
 		collections: [
 			"homer_odyssey_22", 
 			"homer_odyssey_23", 
@@ -287,6 +304,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Ὁμηρικοὶ ὕμνοι",
 		title_eng: "Homeric hymns",
 		title_orig_short: "Ὁμηρικοὶ ὕμνοι",
+		catalogue_ignore: {author_orig: "Τὰ"},
 		collections: [
 			"homeric_hymns", 
 		],
@@ -301,6 +319,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: "Θεογονία, Ἔργα καὶ Ἡμέραι, Ἀσπὶς Ἡρακλέους",
 		title_eng: "Theogonia, Works and Days, Shield of Heracles",
 		title_orig_short: "Ἡσιόδου Θεογονία, Ἔργα, Ἀσπίς",
+		catalogue_ignore: {},
 		collections: [
 			"hesiod_theogonia", 
 			"hesiod_erga_kai_hmerai",
@@ -317,6 +336,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: 'Τὰ Εὐαγγέλια',
 		title_eng: 'The Gospels',
 		title_orig_short: 'Κ.Δ. Εὐαγγέλια',
+		catalogue_ignore: {author_orig: "Ἡ", title_orig: 'Τὰ'},
 		collections: [
 			'nt_matthew', 
 			'nt_mark', 
@@ -334,6 +354,7 @@ ParsedClassicsCollectionSets = {
 		title_orig: 'Πράξεις, Ἐπιστολαί, Ἀποκάλυψις',
 		title_eng: 'Acts, Epistles, Revelation',
 		title_orig_short: 'Κ.Δ. Πράξεις, Ἐπιστολαί, Ἀποκάλυψις',
+		catalogue_ignore: {author_orig: "Ἡ"},
 		collections: [
 			'nt_acts', 
 			'nt_james', 

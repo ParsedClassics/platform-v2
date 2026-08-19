@@ -14,6 +14,7 @@ ParsedClassicsCollectionSets = {
     title_orig: 'Text tools',
 		title_eng: 'Text tools',
     title_orig_short: 'Text tools',
+    catalogue_ignore: {},
 		collections: [
       'greek_text_tools',
 		],

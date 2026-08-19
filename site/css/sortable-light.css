@@ -91,3 +91,7 @@ table[data-sortable].sortable-theme-light th[data-sorted="true"]:hover {
   background-color: var(--grey700); /* Added by ParsedClassics */
   color: #fff; /* Added by ParsedClassics */
 }
+
+table[data-sortable].sortable-theme-light tbody td strong {
+  font-weight: 600; /* Added by ParsedClassics */
+}
