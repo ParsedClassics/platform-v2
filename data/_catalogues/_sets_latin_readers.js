@@ -23,6 +23,21 @@ ParsedClassicsCollectionSets = {
       'appleton_ludi_persici',
 		],
     extra: {},
-  }
+  },
 
-}
+};
+
+ParsedClassicsCollectionLabels = {
+
+  "latin_reader": {
+    "title": "Latin readers",
+    "collections": [
+      //'appleton_initium',
+      'maxey_fay_new_latin_primer',
+      'arnold_cloelia',
+      'collar_new_gradatim',
+      'appleton_ludi_persici',
+    ],
+  },
+
+};

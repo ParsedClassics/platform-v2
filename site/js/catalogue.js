@@ -22,7 +22,7 @@ ParsedClassicsCatalogue = {
     editionsTableHTML += '<tr>'; 
     editionsTableHTML += '<th style="width: 15rem;">Author/Set</th>'; 
     editionsTableHTML += '<th>Title</th>'; 
-    editionsTableHTML += '<th data-sorted-direction="ascending" style="width: 6rem;">Level</th>'; // data-sorted="true"
+    editionsTableHTML += '<th style="width: 6rem;">Level</th>'; // data-sorted="true" data-sorted-direction="ascending"
     editionsTableHTML += '<th data-sortable="false" style="width: 6rem;">&nbsp;</th>'; 
     editionsTableHTML += '</tr>'; 
     editionsTableHTML += '</thead>'; 
@@ -328,22 +328,35 @@ Displays catalogue of Readers editions, collections and resources
 ParsedClassicsReadersCatalogue = {
   
   collectionsList: function() {
-    // get edition shortname
-    const collSetShortname = Object.keys(ParsedClassicsCollectionSets)[0];
+    const hashJsonString = window.location.hash.replace("#", "");
+    const hashJson = ParsedClassicsCatalogue.stringToJson(hashJsonString);
 
-    // find English name of the collections set
-    const collSetEngTitle = collSetShortname ? ParsedClassicsCollectionSets[collSetShortname].title_eng: "";
+    // have we any labels in URL?
+    if (typeof hashJson['labels'] === 'undefined') {
+      return;
+    }
 
-    //find all shortnames of the collections included in collections set
-    const collectionShortnamesArray = ParsedClassicsCollectionSets[collSetShortname].collections;
-
+    // let's use array of labels from URL to get array of collection shortnames
+    const labelsArrUrl = hashJson['labels'];
+    let collectionShortnamesArr = [];
+    let title;
+    for (var key in ParsedClassicsCollectionLabels) {
+      const labels_str = key;
+      const labelsArr = labels_str.split('--');
+      const sameMembers = ParsedClassicsSiteHelpers.arraysHaveSameMembers(labelsArrUrl, labelsArr);
+      if (sameMembers) {
+        collectionShortnamesArr = ParsedClassicsCollectionLabels[key]['collections'];
+        title = ParsedClassicsCollectionLabels[key]['title'];
+        break;
+      }
+    }
+    
     // create HTML table into which info about collections will be placed
-    ParsedClassicsReadersCatalogue.createCollectionsTable(collectionShortnamesArray, collSetEngTitle, collSetShortname);
+    ParsedClassicsReadersCatalogue.createCollectionsTable(collectionShortnamesArr, title);
   },
 
-  createCollectionsTable: function(collectionShortnamesArray, collSetEngTitle, collSetShortname) {
+  createCollectionsTable: function(collectionShortnamesArray, collSetEngTitle) {
     let titleHTML = '<h1>' + collSetEngTitle + '</h1>';
-    //titleHTML += '<h2>Collections</h2>';
 
     const id = ParsedClassicsSiteHelpers.generateUID;
     const baseUrl = window.location.href.split('site/')[0];
@@ -355,7 +368,7 @@ ParsedClassicsReadersCatalogue = {
     collectionsTableHTML += '<tr>'; 
     collectionsTableHTML += '<th style="width: 15rem;">Author</th>'; 
     collectionsTableHTML += '<th>Title</th>'; 
-    collectionsTableHTML += '<th data-sorted="true" data-sorted-direction="ascending" style="width: 6rem;">Level</th>'; 
+    collectionsTableHTML += '<th style="width: 6rem;">Level</th>'; // data-sorted="true" data-sorted-direction="ascending"
     collectionsTableHTML += '<th data-sortable="false" style="width: 6rem;;">&nbsp;</th>'; 
     collectionsTableHTML += '</tr>'; 
     collectionsTableHTML += '</thead>'; 

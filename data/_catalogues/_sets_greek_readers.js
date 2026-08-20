@@ -21,4 +21,16 @@ ParsedClassicsCollectionSets = {
     extra: {},
   },
 
-}
+};
+
+ParsedClassicsCollectionLabels = {
+
+  "greek_reader": {
+    "title": "Greek readers",
+    "collections": [
+      'beresford_douglas_first_greek_reader',
+    ],
+  },
+
+};
+
