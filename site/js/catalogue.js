@@ -12,13 +12,6 @@ Displays catalogue of Classics editions, collections and resources
 
 ParsedClassicsCatalogue = {
 
-  classicsLinksList: function() {
-    let links_list = "";// = "<h2>Classics</h2>";
-    links_list += "<p><a target='_blank' href='../classics.html'>Last saved layout</a></p>";
-    links_list += "<p><a target='_blank' href='./editions-classics-greek.html'>Greek classics</a></p>";
-    $(links_list).insertAfter('#classics_heading');
-  },
-
   editionsTable: function() {
     const id = ParsedClassicsSiteHelpers.generateUID;
 
@@ -35,7 +28,30 @@ ParsedClassicsCatalogue = {
     editionsTableHTML += '</thead>'; 
     editionsTableHTML += '<tbody>';
 
-    for (var key in ParsedClassicsCollectionSets) {
+    const hashJsonString = window.location.hash.replace("#", "");
+    const hashJson = ParsedClassicsCatalogue.stringToJson(hashJsonString);
+
+    // have we any labels in URL?
+    if (typeof hashJson['labels'] === 'undefined') {
+      return;
+    }
+
+    // let's use array of labels from URL to get array of edition shortnames
+    const labelsArrUrl = hashJson['labels'];
+    let editionShortnamesArr = [];
+    let title;
+    for (var key in ParsedClassicsCollSetLabels) {
+      const labels_str = key;
+      const labelsArr = labels_str.split('--');
+      const sameMembers = ParsedClassicsSiteHelpers.arraysHaveSameMembers(labelsArrUrl, labelsArr);
+      if (sameMembers) {
+        editionShortnamesArr = ParsedClassicsCollSetLabels[key]['coll_sets'];
+        title = ParsedClassicsCollSetLabels[key]['title'];
+        break;
+      }
+    }
+
+    for (var key of editionShortnamesArr) {
       const editionShortname = key;
       const editionDef = ParsedClassicsCollectionSets[key];
       const rowPairId = `pair-${id()}`;
@@ -87,7 +103,10 @@ ParsedClassicsCatalogue = {
 
     editionsTableHTML += '</tbody>';
     editionsTableHTML += '</table>';
-    $('#pc-site-content').append(editionsTableHTML);
+
+    const titleHtml = `<h1>${title}</h1>`;
+
+    $('#pc-site-content').append(titleHtml + editionsTableHTML);
 
     // initialize sortable tables
     sortableTable.init();
@@ -185,13 +204,21 @@ ParsedClassicsCatalogue = {
       const id = ParsedClassicsSiteHelpers.generateUID;
       const baseUrl = window.location.href.split('site/')[0];
 
+      let fileName;
+      if (window.location.pathname.indexOf('/catalogue-greek-classics.html') != -1) {
+        fileName = 'greek-classics.html';
+      }
+      else if (window.location.pathname.indexOf('/catalogue-latin-classics') != -1) {
+        fileName = 'latin-classics.html';
+      }
+
       for (let i = 0; i < collectionShortnamesArray.length; i++) {
         const collectionDef = ParsedClassicsCollDefs[collectionShortnamesArray[i]];
         const resourceDefs = collectionDef['resource_defs'];
         const parsedTextResShortname = Object.keys(resourceDefs)[0];
         let collTitle = collectionDef['collections_page_title_orig'];
         //collTitle += collectionDef['collections_page_title_eng'];
-        const url = baseUrl + `classics.html#{"L":{"a":[["${collectionShortnamesArray[i]}|${parsedTextResShortname}"]],"b":[["${collectionShortnamesArray[i]}"]]},"P":{"${collectionShortnamesArray[i]}":{"line":"title"}},"D":{"a":[["${id()}",50],["${id()}",100,["${id()}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
+        const url = baseUrl + `${fileName}#{"L":{"a":[["${collectionShortnamesArray[i]}|${parsedTextResShortname}"]],"b":[["${collectionShortnamesArray[i]}"]]},"P":{"${collectionShortnamesArray[i]}":{"line":"title"}},"D":{"a":[["${id()}",50],["${id()}",100,["${id()}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
         
         collectionsTableHTML += '<tr>';
 
@@ -353,10 +380,10 @@ ParsedClassicsReadersCatalogue = {
       const tabId = id();
 
       let fileName;
-      if (collSetShortname === 'greek_readers') {
+      if (window.location.pathname.indexOf('/catalogue-greek-readers.html') != -1) {
         fileName = 'greek-readers.html';
       }
-      else if (collSetShortname === 'latin_readers') {
+      else if (window.location.pathname.indexOf('/catalogue-latin-readers.html') != -1) {
         fileName = 'latin-readers.html';
       }
    

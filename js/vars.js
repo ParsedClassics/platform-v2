@@ -161,10 +161,15 @@ const ParsedClassicsAppVars = {
   },
   // animation
   animationSpeed: 400,
-  // application root filename
-  rootFileName: "classics.html",
 };
-if (window.location.pathname.indexOf('/latin-readers.html') != -1) {
+// application root filename
+if (window.location.pathname.indexOf('/greek-classics.html') != -1) {
+  ParsedClassicsAppVars.rootFileName = 'greek-classics.html';
+}
+else if (window.location.pathname.indexOf('/latin-classics.html') != -1) {
+  ParsedClassicsAppVars.rootFileName = 'latin-classics.html';
+}
+else if (window.location.pathname.indexOf('/latin-readers.html') != -1) {
   ParsedClassicsAppVars.rootFileName = 'latin-readers.html';
 }
 else if (window.location.pathname.indexOf('/greek-readers.html') != -1) {
