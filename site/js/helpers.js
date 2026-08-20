@@ -54,4 +54,11 @@ const ParsedClassicsSiteHelpers = {
     return firstPart + secondPart;
   },
 
+  arraysHaveSameMembers: function(a, b) {
+    if (a.length !== b.length) return false;
+    const setA = new Set(a);
+    const setB = new Set(b);
+    return [...setA].every(item => setB.has(item));
+  },
+
 };

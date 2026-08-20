@@ -386,3 +386,39 @@ ParsedClassicsCollectionSets = {
 	},
 
 };
+
+ParsedClassicsCollSetLabels = {
+
+	"ancient--epic_poetry": {
+		"title": "Ἡ ἐπική ποίησις",
+		"coll_sets": [
+			"homer_iliad_1_2_3",
+			"homer_iliad_4_5_6",
+			"homer_iliad_7_8_9",
+			"homer_iliad_10_11_12",
+			"homer_iliad_13_14_15",
+			"homer_iliad_16_17_18",
+			"homer_iliad_19_20_21",
+			"homer_iliad_22_23_24",
+			"homer_odyssey_1_2_3",
+			"homer_odyssey_4_5_6",
+			"homer_odyssey_7_8_9",
+			"homer_odyssey_10_11_12",
+			"homer_odyssey_13_14_15",
+			"homer_odyssey_16_17_18",
+			"homer_odyssey_19_20_21",
+			"homer_odyssey_22_23_24",
+			"homerica",
+			"hesiod_theogonia_erga",
+		],
+	},
+
+	"christian_medieval_modern--holy_scripture": {
+		"title": "Ἡ Ἁγία Γραφή",
+		"coll_sets": [
+			"nt_gospels",
+			"nt_apostolics",
+		],
+	},
+
+};
