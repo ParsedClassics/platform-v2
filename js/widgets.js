@@ -1677,7 +1677,7 @@ ParsedClassicsSelectedLemma = {
     for (let i = 0; i < lemma.length; i++) {
       const str_to_search = i == 0 ? lemma : lemma.slice(0, i*-1);
       // get first lemma button whose 'data-lemma' attr value matches string entered in search box
-      const lemmaButton = $(`div[${ParsedClassicsAppVars.lemmaLowercaseAttr}^="${lemma}"]`).first();
+      const lemmaButton = lexiconSplitLeftInner.find(`div[${ParsedClassicsAppVars.lemmaLowercaseAttr}^="${lemma}"]`).first();
       if (lemmaButton.length === 1) {
         lexiconSplitLeftInner.scrollTo(lemmaButton, 50);
         break;
