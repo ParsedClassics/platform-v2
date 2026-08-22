@@ -329,6 +329,21 @@ ParsedClassicsCollectionSets = {
 			difficulty_level: 4,
 		},
 	},
+
+	plato_tetralogia_1: {
+		author_orig: "Πλάτωνος",
+		author_eng: "Plato",
+		title_orig: 'Εὐθύφρων, Ἀπολογία Σωκράτους, Κρίτων, Φαίδων',
+		title_eng: 'Euthyphro, Apologia Socratis, Crito, Phaedo',
+		title_orig_short: 'Πλάτωνος Εὐθύφρων, Ἀπολογία, Κρίτων, Φαίδων',
+		catalogue_ignore: {},
+		collections: [
+			'plato_apology', 
+		],
+		extra: {
+			difficulty_level: 3,
+		},
+	},
 	
 	nt_gospels: {
 		author_orig: "Ἡ Καινὴ Διαθήκη",
@@ -410,6 +425,13 @@ ParsedClassicsCollSetLabels = {
 			"homer_odyssey_22_23_24",
 			"homerica",
 			"hesiod_theogonia_erga",
+		],
+	},
+
+	"ancient--philosophy": {
+		"title": "Ἡ φιλοσοφία",
+		"coll_sets": [
+			"plato_tetralogia_1",
 		],
 	},
 
