@@ -499,6 +499,22 @@ const ParsedClassicsCollDefs = {
 		collections_page_title_eng: 'Hesiod Shield of Heracles',
 		central_resource: 'hesiod_aspis_parsed_text',
 	},
+
+	plato_apology: {
+		author_orig: 'Πλάτωνος',   
+    author_eng: 'Plato',
+		author_orig_short: 'Πλάτωνος',
+		author_eng_short: 'Plato',
+    collection_selectboxname: 'Πλάτωνος Ἀπολογία Σωκράτους',
+    collections_page_title_orig: 'Ἀπολογία Σωκράτους',
+    collections_page_title_eng: 'Apology of Socrates',
+		contents_type: 'paragraph',
+		central_resource: 'plato_apology_parsed_text',
+		catalogue_ignore: {},
+		extra: {
+			difficulty_level: 3,
+		},
+	},
 	
 	nt_matthew: {
 		...ParsedClassicsCollProtos.nt_book,
