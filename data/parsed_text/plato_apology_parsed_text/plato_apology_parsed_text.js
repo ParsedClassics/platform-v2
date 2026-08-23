@@ -256,7 +256,7 @@ plato_apology_parsed_text = `
 <span class="line"><span data-line-number="I:7:20" class="line-number">20</span>&nbsp;ἐντεῦθεν ἐπ’ ἄλλον ᾖα τῶν ἐκείνου δοκούντων σοφωτέρων εἶναι καί <span class='pagination'>21e</span> μοι ταὐτὰ ταῦτα ἔδοξε, καὶ ἐνταῦθα κἀκείνῳ καὶ ἄλλοις πολλοῖς ἀπηχθόμην.</span></p>
 
 
-<p><span data-para-number="I:8" class="para-number">08</span><span class="line"><span data-line-number="I:8:1" class="line-number">01</span>&nbsp;μετὰ ταῦτ’ οὖν ἤδη ἐφεξῆς ᾖα, αἰσθανόμενος μὲν <del>καὶ</del> λυπούμενος καὶ δεδιὼς ὅτι ἀπηχθανόμην, ὅμως δὲ ἀναγκαῖον ἐδόκει εἶναι τὸ τοῦ θεοῦ περὶ πλείστου ποιεῖσθαι —</span>
+<p><span data-para-number="I:8" class="para-number">08</span><span class="line"><span data-line-number="I:8:1" class="line-number">01</span>&nbsp;μετὰ ταῦτ’ οὖν ἤδη ἐφεξῆς ᾖα, αἰσθανόμενος μὲν [καὶ] λυπούμενος καὶ δεδιὼς ὅτι ἀπηχθανόμην, ὅμως δὲ ἀναγκαῖον ἐδόκει εἶναι τὸ τοῦ θεοῦ περὶ πλείστου ποιεῖσθαι —</span>
 
 <span class="line"><span data-line-number="I:8:2" class="line-number">02</span>&nbsp;ἰτέον οὖν, σκοποῦντι τὸν χρησμὸν τί λέγει, ἐπὶ ἅπαντας τούς τι <span class='pagination'>22a</span> δοκοῦντας εἰδέναι.</span>
 
@@ -504,7 +504,7 @@ plato_apology_parsed_text = `
 
 <span class="line"><span data-line-number="I:38:4" class="line-number">04</span>&nbsp;ἀλλ’ ἢ οὐ διαφθείρω, ἢ εἰ διαφθείρω, <span class='pagination'>26a</span> ἄκων, ὥστε σύ γε κατ’ ἀμφότερα ψεύδῃ.</span>
 
-<span class="line"><span data-line-number="I:38:5" class="line-number">05</span>&nbsp;εἰ δὲ ἄκων διαφθείρω, τῶν τοιούτων <del>καὶ ἀκουσίων</del> ἁμαρτημάτων οὐ δεῦρο νόμος εἰσάγειν ἐστίν, ἀλλὰ ἰδίᾳ λαβόντα διδάσκειν καὶ νουθετεῖν·</span>
+<span class="line"><span data-line-number="I:38:5" class="line-number">05</span>&nbsp;εἰ δὲ ἄκων διαφθείρω, τῶν τοιούτων [καὶ ἀκουσίων] ἁμαρτημάτων οὐ δεῦρο νόμος εἰσάγειν ἐστίν, ἀλλὰ ἰδίᾳ λαβόντα διδάσκειν καὶ νουθετεῖν·</span>
 
 <span class="line"><span data-line-number="I:38:6" class="line-number">06</span>&nbsp;δῆλον γὰρ ὅτι ἐὰν μάθω, παύσομαι ὅ γε ἄκων ποιῶ.</span>
 
@@ -678,7 +678,7 @@ plato_apology_parsed_text = `
 
 <span class="line"><span data-line-number="I:56:11" class="line-number">11</span>&nbsp;πρὸ οὖν τῶν κακῶν ὧν οἶδα ὅτι κακά ἐστιν, ἃ μὴ οἶδα εἰ καὶ ἀγαθὰ ὄντα τυγχάνει οὐδέποτε φοβήσομαι οὐδὲ φεύξομαι·</span>
 
-<span class="line"><span data-line-number="I:56:12" class="line-number">12</span>&nbsp;ὥστε οὐδ’ εἴ <span class='pagination'>29c</span> με νῦν ὑμεῖς ἀφίετε Ἀνύτῳ ἀπιστήσαντες, ὃς ἔφη ἢ τὴν ἀρχὴν οὐ δεῖν ἐμὲ δεῦρο εἰσελθεῖν ἤ, ἐπειδὴ εἰσῆλθον, οὐχ οἷόν τ’ εἶναι τὸ μὴ ἀποκτεῖναί με, λέγων πρὸς ὑμᾶς ὡς εἰ διαφευξοίμην ἤδη <del>ἂν</del> ὑμῶν οἱ ὑεῖς ἐπιτηδεύοντες ἃ Σωκράτης διδάσκει πάντες παντάπασι διαφθαρήσονται, —</span>
+<span class="line"><span data-line-number="I:56:12" class="line-number">12</span>&nbsp;ὥστε οὐδ’ εἴ <span class='pagination'>29c</span> με νῦν ὑμεῖς ἀφίετε Ἀνύτῳ ἀπιστήσαντες, ὃς ἔφη ἢ τὴν ἀρχὴν οὐ δεῖν ἐμὲ δεῦρο εἰσελθεῖν ἤ, ἐπειδὴ εἰσῆλθον, οὐχ οἷόν τ’ εἶναι τὸ μὴ ἀποκτεῖναί με, λέγων πρὸς ὑμᾶς ὡς εἰ διαφευξοίμην ἤδη [ἂν] ὑμῶν οἱ ὑεῖς ἐπιτηδεύοντες ἃ Σωκράτης διδάσκει πάντες παντάπασι διαφθαρήσονται, —</span>
 
 <span class="line"><span data-line-number="I:56:13" class="line-number">13</span>&nbsp;εἴ μοι πρὸς ταῦτα εἴποιτε·</span>
 
@@ -748,7 +748,7 @@ plato_apology_parsed_text = `
 
 <p><span data-para-number="I:58" class="para-number">58</span><span class="line"><span data-line-number="I:58:1" class="line-number">01</span>&nbsp;ἴσως ἂν οὖν δόξειεν ἄτοπον εἶναι, ὅτι δὴ ἐγὼ ἰδίᾳ μὲν ταῦτα συμβουλεύω περιιὼν καὶ πολυπραγμονῶ, δημοσίᾳ δὲ οὐ τολμῶ ἀναβαίνων εἰς τὸ πλῆθος τὸ ὑμέτερον συμβουλεύειν τῇ πόλει.</span>
 
-<span class="line"><span data-line-number="I:58:2" class="line-number">02</span>&nbsp;τούτου δὲ αἴτιόν ἐστιν ὃ ὑμεῖς ἐμοῦ πολλάκις ἀκηκόατε πολλαχοῦ λέγοντος, ὅτι μοι θεῖόν τι καὶ <span class='pagination'>31d</span> δαιμόνιον γίγνεται <del>φωνή</del> , ὃ δὴ καὶ ἐν τῇ γραφῇ ἐπικωμῳδῶν Μέλητος ἐγράψατο.</span>
+<span class="line"><span data-line-number="I:58:2" class="line-number">02</span>&nbsp;τούτου δὲ αἴτιόν ἐστιν ὃ ὑμεῖς ἐμοῦ πολλάκις ἀκηκόατε πολλαχοῦ λέγοντος, ὅτι μοι θεῖόν τι καὶ <span class='pagination'>31d</span> δαιμόνιον γίγνεται [φωνή] , ὃ δὴ καὶ ἐν τῇ γραφῇ ἐπικωμῳδῶν Μέλητος ἐγράψατο.</span>
 
 <span class="line"><span data-line-number="I:58:3" class="line-number">03</span>&nbsp;ἐμοὶ δὲ τοῦτ’ ἔστιν ἐκ παιδὸς ἀρξάμενον, φωνή τις γιγνομένη, ἣ ὅταν γένηται, ἀεὶ ἀποτρέπει με τοῦτο ὃ ἂν μέλλω πράττειν, προτρέπει δὲ οὔποτε.</span>
 
