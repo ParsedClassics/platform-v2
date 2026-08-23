@@ -46,7 +46,7 @@ ParsedClassicsCollDefs.plato_apology["resource_defs"] = {
 		library_app_selectbox_title: "Πλάτωνος Ἀπολογία Σωκράτους", 
 		library_app_panel_title: "Ἀπολογία Σωκράτους",
     library_app_panel_subtitle: "",
-    library_app_panel_text_from: "Platonis opera. Recognovit brevique adnotatione critica instruxit Joannes Burnet. Tomus 1. 1900. Oxonii: E typographeo Clarendoniano.",
+    library_app_panel_text_from: "Platonis opera. Recognovit brevique adnotatione critica instruxit Joannes Burnet. Tomus 1. 1905. Oxonii: E typographeo Clarendoniano.",
     library_app_panel_note: "",
     scanned_or_typed: "typed",
     resource_type: "parsed_text",
