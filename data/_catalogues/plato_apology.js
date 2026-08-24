@@ -75,6 +75,21 @@ ParsedClassicsCollDefs.plato_apology["resource_defs"] = {
 
   // Original text
 
+  plato_apology_text_ed_burnet: {
+    collections_page_resource_author: "",
+    collections_page_resource_desc: "ed. by J. Burnet (1905)", 
+    library_app_selectbox_title: "Edition by J. Burnet (1905)",
+    library_app_panel_title: "Text ed. by J. Burnet (1905)",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "Platonis opera. Recognovit brevique adnotatione critica instruxit Joannes Burnet. Tomus 1. 1905. Oxonii: E typographeo Clarendoniano.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "original_text",
+    scanned_source_shortname: "platonis_opera_ed_burnet_vol_1",
+    contents_shortname: "plato_apology_text_ed_burnet_contents",
+    extra: {},
+  }, 
+
   // Lexicon
 
 };
