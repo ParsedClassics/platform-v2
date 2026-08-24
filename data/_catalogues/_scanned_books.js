@@ -2714,4 +2714,19 @@ ParsedClassicsScannedBooks = {
 		
 	}
 
+	, platonis_opera_ed_burnet_vol_1: {
+		bookTitle: "Platonis opera. Recognovit brevique adnotatione critica instruxit Joannes Burnet. Tomus 1."
+		, bookUrlText: "1905. Oxonii: E typographeo Clarendoniano."
+		, numLeafs: "539"
+		, leafWidth: 1494
+		, leafHeight: 2502
+		, thumbnail: "page0003.jpg"
+		, metadata: [
+			{
+			label: 'Title'
+				, value: "Platonis opera. Recognovit brevique adnotatione critica instruxit Joannes Burnet. Tomus 1. 1905. Oxonii: E typographeo Clarendoniano."
+			}
+		] 
+	}
+
 };
