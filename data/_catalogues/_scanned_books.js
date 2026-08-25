@@ -2729,4 +2729,19 @@ ParsedClassicsScannedBooks = {
 		] 
 	}
 
+	, sallustius_catilina_iugurtha: {
+		bookTitle: "C. Sallusti Crispi. Catilina; Iugurtha; Orationes et epistulae excerptae de historiis."
+		, bookUrlText: "Recognovit Axel W. Ahlberg. Editio maior. 1919. Lipsiae: In aedibus B. G. Teubneri."
+		, numLeafs: "178"
+		, leafWidth: 1593
+		, leafHeight: 2496
+		, thumbnail: "page0001.jpg"
+		, metadata: [
+			{
+			label: 'Title'
+				, value: "C. Sallusti Crispi. Catilina; Iugurtha; Orationes et epistulae excerptae de historiis. Recognovit Axel W. Ahlberg. Editio maior. 1919. Lipsiae: In aedibus B. G. Teubneri."
+			}
+		] 
+	}
+
 };
