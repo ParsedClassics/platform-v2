@@ -12,6 +12,7 @@
 	--grey800: #424242;
 	--grey900: #212121;
 	--red: red;
+	--dark-red: #C00;
 	--pale-tourquoise: PaleTurquoise;
 	--cyan: #00ffff;
 	--font-main: "Eczar", serif;
@@ -25,8 +26,8 @@
   
 	font-weight: 400;
   
-	src: url("../fonts/Eczar-Regular.woff") format("woff"),
-	  url("../fonts/Eczar-Regular.woff2") format("woff2");
+	src: url("../../fonts/Eczar-Regular.woff") format("woff"),
+	  url("../../fonts/Eczar-Regular.woff2") format("woff2");
   }
   
   @font-face {
@@ -36,8 +37,8 @@
   
 	font-weight: 700;
   
-	src: url("../fonts/Eczar-Bold.woff") format("woff"),
-	  url("../fonts/Eczar-Bold.woff2") format("woff2");
+	src: url("../../fonts/Eczar-Bold.woff") format("woff"),
+	  url("../../fonts/Eczar-Bold.woff2") format("woff2");
   }
   
   @font-face {
@@ -47,8 +48,8 @@
   
 	font-weight: 500;
   
-	src: url("../fonts/Eczar-Medium.woff") format("woff"),
-	  url("../fonts/Eczar-Medium.woff2") format("woff2");
+	src: url("../../fonts/Eczar-Medium.woff") format("woff"),
+	  url("../../fonts/Eczar-Medium.woff2") format("woff2");
   }
   
   @font-face {
@@ -58,8 +59,8 @@
   
 	font-weight: 600;
   
-	src: url("../fonts/Eczar-SemiBold.woff") format("woff"),
-	  url("../fonts/Eczar-SemiBold.woff2") format("woff2");
+	src: url("../../fonts/Eczar-SemiBold.woff") format("woff"),
+	  url("../../fonts/Eczar-SemiBold.woff2") format("woff2");
   }
   
   @font-face {
@@ -69,6 +70,6 @@
   
 	font-weight: 800;
   
-	src: url("../fonts/Eczar-ExtraBold.woff") format("woff"),
-	  url("../fonts/Eczar-ExtraBold.woff2") format("woff2");
+	src: url("../../fonts/Eczar-ExtraBold.woff") format("woff"),
+	  url("../../fonts/Eczar-ExtraBold.woff2") format("woff2");
   }
