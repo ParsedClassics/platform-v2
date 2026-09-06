@@ -292,6 +292,10 @@ h3 {
   font-weight: normal;
 }
 
+.chapter-number {
+  color: var(--dark-red);
+}
+
 #pc-site-content p:last-child {
     margin-bottom: 0;
 }
