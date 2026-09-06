@@ -828,6 +828,22 @@ const ParsedClassicsCollDefs = {
 		},
 	},
 
+	sallust_catilina: {
+		author_orig: 'C. Sallusti Crispi',   
+    author_eng: 'C. Sallusti Crispi',
+		author_orig_short: 'C. Sallusti Crispi',
+		author_eng_short: 'C. Sallusti Crispi',
+    collection_selectboxname: 'C. Sallusti Crispi Catilinae coniuratio',
+    collections_page_title_orig: 'Catilinae coniuratio',
+    collections_page_title_eng: 'Catilinae coniuratio',
+		contents_type: 'line',
+		central_resource: 'plato_apology_parsed_text',
+		catalogue_ignore: {author_orig: "C.",},
+		extra: {
+			difficulty_level: 3,
+		},
+	},
+
 	greek_text_tools: {
 		author_orig: '',   
     author_eng: '',
