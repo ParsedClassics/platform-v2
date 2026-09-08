@@ -118,6 +118,21 @@ const ParsedClassicsResProtos = {
     extra: {},
   },
 
+  sallust_parsed_text: {
+    collections_page_resource_author: "C. Sallusti Crispi",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "C. Sallusti Crispi Catilina; Iugurtha; Orationes et epistulae excerptae de historiis. Recognovit Axel W. Ahlberg. Editio maior. 1919. Lipsiae: In aedibus B. G. Teubneri.",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "parsed_text",
+		scanned_source_shortname: "sallustius_catilina_iugurtha",
+    extra: {
+      parsing_via_ext_services: "yes",
+      display_paragraph_numbering: 'no',
+      display_pagination: 'no',
+    },
+  },
+
   paste_any_greek_text: {
     collections_page_resource_author: "",
     collections_page_resource_desc: "Paste any Ancient Greek text",
@@ -379,6 +394,17 @@ const ParsedClassicsResProtos = {
     scanned_source_shortname: "novum_testamentum_graece_ed_nestle_nestle",
     extra: {},
 	},
+
+  sallust_text_ed_ahlberg: {
+    collections_page_resource_author: "C. Sallusti Crispi",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "C. Sallusti Crispi Catilina; Iugurtha; Orationes et epistulae excerptae de historiis. Recognovit Axel W. Ahlberg. Editio maior. 1919. Lipsiae: In aedibus B. G. Teubneri.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "original_text",
+    scanned_source_shortname: "sallustius_catilina_iugurtha",
+    extra: {},
+  },
 
   // Concordances
 

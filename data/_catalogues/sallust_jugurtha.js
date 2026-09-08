@@ -36,16 +36,16 @@ Order of resources by resource type
 
 */
 
-ParsedClassicsCollDefs.sallust_catilina["resource_defs"] = {
+ParsedClassicsCollDefs.sallust_jugurtha["resource_defs"] = {
 
   // Parsed text
 
-  sallust_catilina_parsed_text: {
+  sallust_jugurtha_parsed_text: {
     ...ParsedClassicsResProtos.sallust_parsed_text,
-    collections_page_resource_desc: "C. Sallusti Crispi Catilinae coniuratio",
-		library_app_selectbox_title: "C. Sallusti Crispi Catilinae coniuratio", 
-		library_app_panel_title: "Catilinae coniuratio",
-    contents_shortname: "sallust_catilina_parsed_text_contents",
+    collections_page_resource_desc: "C. Sallusti Crispi Bellum Iugurthinum",
+		library_app_selectbox_title: "C. Sallusti Crispi Bellum Iugurthinum", 
+		library_app_panel_title: "Bellum Iugurthinum",
+    contents_shortname: "sallust_jugurtha_parsed_text_contents",
   },
 
   // External service
@@ -63,14 +63,6 @@ ParsedClassicsCollDefs.sallust_catilina["resource_defs"] = {
   },
 
   // Original text
-
-  sallust_catilina_text_ed_ahlberg: {
-    ...ParsedClassicsResProtos.sallust_text_ed_ahlberg,
-    collections_page_resource_desc: "C. Sallusti Crispi Catilinae coniuratio", 
-    library_app_selectbox_title: "C. Sallusti Crispi Catilinae coniuratio",
-    library_app_panel_title: "Catilinae coniuratio",
-    contents_shortname: "sallust_catilina_text_ed_ahlberg_contents",
-  }, 
 
   // Lexicon
 

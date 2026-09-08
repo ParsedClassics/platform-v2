@@ -35,6 +35,7 @@ ParsedClassicsCollectionSets = {
 		catalogue_ignore: {author_orig: "C.",},
 		collections: [
 			'sallust_catilina', 
+			'sallust_jugurtha',
 		],
 		extra: {
 			difficulty_level: 3,
