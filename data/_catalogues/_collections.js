@@ -25,15 +25,6 @@
 
 const ParsedClassicsCollProtos = {
 
-  nt_book: {
-    author_orig: 'Ἡ Καινὴ Διαθήκη',   
-    author_eng: 'The New Testament',
-		author_orig_short: 'Κ. Δ.',
-		author_eng_short: 'N. T.',
-		contents_type: "line",
-		extra: {},
-  },
-
 	homer_book: {
     author_orig: 'Ὁμήρου',   
     author_eng: 'Homer',
@@ -66,6 +57,27 @@ const ParsedClassicsCollProtos = {
 			line_display: 'block',
 		},
   },
+
+	nt_book: {
+    author_orig: 'Ἡ Καινὴ Διαθήκη',   
+    author_eng: 'The New Testament',
+		author_orig_short: 'Κ. Δ.',
+		author_eng_short: 'N. T.',
+		contents_type: "line",
+		extra: {},
+  },
+
+	sallust_book: {
+		author_orig: 'C. Sallusti Crispi',   
+    author_eng: 'C. Sallusti Crispi',
+		author_orig_short: 'C. Sallusti Crispi',
+		author_eng_short: 'C. Sallusti Crispi',
+		contents_type: 'line',
+		catalogue_ignore: {author_orig: "C.",},
+		extra: {
+			difficulty_level: 3,
+		},
+	},
 
 };
 
@@ -829,19 +841,19 @@ const ParsedClassicsCollDefs = {
 	},
 
 	sallust_catilina: {
-		author_orig: 'C. Sallusti Crispi',   
-    author_eng: 'C. Sallusti Crispi',
-		author_orig_short: 'C. Sallusti Crispi',
-		author_eng_short: 'C. Sallusti Crispi',
+		...ParsedClassicsCollProtos.sallust_book,
     collection_selectboxname: 'C. Sallusti Crispi Catilinae coniuratio',
     collections_page_title_orig: 'Catilinae coniuratio',
     collections_page_title_eng: 'Catilinae coniuratio',
-		contents_type: 'line',
-		central_resource: 'plato_apology_parsed_text',
-		catalogue_ignore: {author_orig: "C.",},
-		extra: {
-			difficulty_level: 3,
-		},
+		central_resource: 'sallust_catilina_parsed_text',
+	},
+
+	sallust_jugurtha: {
+		...ParsedClassicsCollProtos.sallust_book,
+    collection_selectboxname: 'C. Sallusti Crispi Bellum Iugurthinum',
+    collections_page_title_orig: 'Bellum Iugurthinum',
+    collections_page_title_eng: 'Bellum Iugurthinum',
+		central_resource: 'sallust_jugurtha_parsed_text',
 	},
 
 	greek_text_tools: {
