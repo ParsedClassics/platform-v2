@@ -43,7 +43,6 @@ ParsedClassicsCollDefs.sallust_catilina["resource_defs"] = {
   sallust_catilina_parsed_text: {
     ...ParsedClassicsResProtos.sallust_parsed_text,
     collections_page_resource_desc: "C. Sallusti Crispi Catilinae coniuratio",
-		library_app_selectbox_title: "C. Sallusti Crispi Catilinae coniuratio", 
 		library_app_panel_title: "Catilinae coniuratio",
     contents_shortname: "sallust_catilina_parsed_text_contents",
   },
@@ -66,8 +65,6 @@ ParsedClassicsCollDefs.sallust_catilina["resource_defs"] = {
 
   sallust_catilina_text_ed_ahlberg: {
     ...ParsedClassicsResProtos.sallust_text_ed_ahlberg,
-    collections_page_resource_desc: "C. Sallusti Crispi Catilinae coniuratio", 
-    library_app_selectbox_title: "C. Sallusti Crispi Catilinae coniuratio",
     library_app_panel_title: "Catilinae coniuratio",
     contents_shortname: "sallust_catilina_text_ed_ahlberg_contents",
   }, 
