@@ -43,7 +43,6 @@ ParsedClassicsCollDefs.sallust_jugurtha["resource_defs"] = {
   sallust_jugurtha_parsed_text: {
     ...ParsedClassicsResProtos.sallust_parsed_text,
     collections_page_resource_desc: "C. Sallusti Crispi Bellum Iugurthinum",
-		library_app_selectbox_title: "C. Sallusti Crispi Bellum Iugurthinum", 
 		library_app_panel_title: "Bellum Iugurthinum",
     contents_shortname: "sallust_jugurtha_parsed_text_contents",
   },
@@ -63,6 +62,12 @@ ParsedClassicsCollDefs.sallust_jugurtha["resource_defs"] = {
   },
 
   // Original text
+
+  sallust_jugurtha_text_ed_ahlberg: {
+    ...ParsedClassicsResProtos.sallust_text_ed_ahlberg,
+    library_app_panel_title: "Bellum Iugurthinum",
+    contents_shortname: "sallust_jugurtha_text_ed_ahlberg_contents",
+  }, 
 
   // Lexicon
 

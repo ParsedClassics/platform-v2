@@ -120,6 +120,7 @@ const ParsedClassicsResProtos = {
 
   sallust_parsed_text: {
     collections_page_resource_author: "C. Sallusti Crispi",
+    library_app_selectbox_title: "Text based on edition by A. W. Ahlberg", 
     library_app_panel_subtitle: "",
     library_app_panel_text_from: "C. Sallusti Crispi Catilina; Iugurtha; Orationes et epistulae excerptae de historiis. Recognovit Axel W. Ahlberg. Editio maior. 1919. Lipsiae: In aedibus B. G. Teubneri.",
     library_app_panel_note: "",
@@ -397,6 +398,8 @@ const ParsedClassicsResProtos = {
 
   sallust_text_ed_ahlberg: {
     collections_page_resource_author: "C. Sallusti Crispi",
+    collections_page_resource_desc: "ed. by A. W. Ahlberg (1919)", 
+    library_app_selectbox_title: "Edition by A. W. Ahlberg (1919)",
     library_app_panel_subtitle: "",
     library_app_panel_text_from: "C. Sallusti Crispi Catilina; Iugurtha; Orationes et epistulae excerptae de historiis. Recognovit Axel W. Ahlberg. Editio maior. 1919. Lipsiae: In aedibus B. G. Teubneri.",
     library_app_panel_note: "",
