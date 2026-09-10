@@ -36,6 +36,7 @@ ParsedClassicsCollectionSets = {
 		collections: [
 			'sallust_catilina', 
 			'sallust_jugurtha',
+			'sallust_orationes_et_epistulae',
 		],
 		extra: {
 			difficulty_level: 3,
