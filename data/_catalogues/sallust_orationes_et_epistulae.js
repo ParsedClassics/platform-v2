@@ -63,6 +63,12 @@ ParsedClassicsCollDefs.sallust_orationes_et_epistulae["resource_defs"] = {
 
   // Original text
 
+  sallust_orationes_et_epistulae_text_ed_ahlberg: {
+    ...ParsedClassicsResProtos.sallust_text_ed_ahlberg,
+    library_app_panel_title: "Orationes et epistulae excerptae de Historiis",
+    contents_shortname: "sallust_orationes_et_epistulae_text_ed_ahlberg_contents",
+  },
+
   // Lexicon
 
   elementary_latin_dictionary_by_lewis: {
