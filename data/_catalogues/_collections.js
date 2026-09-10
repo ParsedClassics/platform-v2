@@ -856,6 +856,14 @@ const ParsedClassicsCollDefs = {
 		central_resource: 'sallust_jugurtha_parsed_text',
 	},
 
+	sallust_orationes_et_epistulae: {
+		...ParsedClassicsCollProtos.sallust_book,
+    collection_selectboxname: 'C. Sallusti Crispi Orationes et epistulae',
+    collections_page_title_orig: 'Orationes et epistulae excerptae de Historiis',
+    collections_page_title_eng: 'Orationes et epistulae excerptae de Historiis',
+		central_resource: 'sallust_orationes_et_epistulae_parsed_text',
+	},
+
 	greek_text_tools: {
 		author_orig: '',   
     author_eng: '',
