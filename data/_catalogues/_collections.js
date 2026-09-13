@@ -79,6 +79,18 @@ const ParsedClassicsCollProtos = {
 		},
 	},
 
+	th_a_kempis_book: {
+		author_orig: 'Thomae à Kempis',   
+    author_eng: 'Thomas à Kempis',
+		author_orig_short: 'Th. à Kempis',
+		author_eng_short: 'Th. à Kempis',
+		contents_type: 'paragraph',
+		catalogue_ignore: {author_orig: "Thomae à"},
+		extra: {
+			difficulty_level: 3,
+		},
+	},
+
 };
 
 const ParsedClassicsCollDefs = {
@@ -889,5 +901,37 @@ const ParsedClassicsCollDefs = {
 		central_resource: '',
 		extra: {},
 	},
+
+	th_a_kempis_imitatio_christi_1: {
+		...ParsedClassicsCollProtos.th_a_kempis_book,
+    collection_selectboxname: 'Th. à Kempis De imitatione Christi liber I',
+    collections_page_title_orig: 'De imitatione Christi liber I',
+    collections_page_title_eng: 'De imitatione Christi liber I',
+		central_resource: 'th_a_kempis_imitatio_christi_1_parsed_text',
+	},
+
+	// th_a_kempis_imitatio_christi_2: {
+	// 	...ParsedClassicsCollProtos.th_a_kempis_book,
+  //   collection_selectboxname: 'Th. à Kempis De imitatione Christi liber II',
+  //   collections_page_title_orig: 'De imitatione Christi liber II',
+  //   collections_page_title_eng: 'De imitatione Christi liber II',
+	// 	central_resource: 'th_a_kempis_imitatio_christi_2_parsed_text',
+	// },
+
+	// th_a_kempis_imitatio_christi_3: {
+	// 	...ParsedClassicsCollProtos.th_a_kempis_book,
+  //   collection_selectboxname: 'Th. à Kempis De imitatione Christi liber III',
+  //   collections_page_title_orig: 'De imitatione Christi liber III',
+  //   collections_page_title_eng: 'De imitatione Christi liber III',
+	// 	central_resource: 'th_a_kempis_imitatio_christi_3_parsed_text',
+	// },
+
+	// th_a_kempis_imitatio_christi_4: {
+	// 	...ParsedClassicsCollProtos.th_a_kempis_book,
+  //   collection_selectboxname: 'Th. à Kempis De imitatione Christi liber IV',
+  //   collections_page_title_orig: 'De imitatione Christi liber IV',
+  //   collections_page_title_eng: 'De imitatione Christi liber IV',
+	// 	central_resource: 'th_a_kempis_imitatio_christi_4_parsed_text',
+	// },
 
 };

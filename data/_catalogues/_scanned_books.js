@@ -2746,7 +2746,7 @@ ParsedClassicsScannedBooks = {
 
 	, th_kempis_imitatio_christi_ed_desbillons: {
 		bookTitle: "Thomae a Kempis De imitatione Christi libri IV."
-		, bookUrlText: "Ad optimarum editionum fidem accurate editi. Editio stereotypa. Lipsiae: Sumptibus et typis Car. Tauchnitii."
+		, bookUrlText: "Ad optimarum editionum fidem accurate editi. Editio stereotypa. 1840. Lipsiae: Sumtibus et typis Car. Tauchnitii."
 		, numLeafs: "255"
 		, leafWidth: 1530
 		, leafHeight: 2517
@@ -2754,7 +2754,7 @@ ParsedClassicsScannedBooks = {
 		, metadata: [
 			{
 			label: 'Title'
-				, value: "Thomae a Kempis De imitatione Christi libri IV. Ad optimarum editionum fidem accurate editi. Editio stereotypa. Lipsiae: Sumptibus et typis Car. Tauchnitii."
+				, value: "Thomae a Kempis De imitatione Christi libri IV. Ad optimarum editionum fidem accurate editi. Editio stereotypa. 1840. Lipsiae: Sumtibus et typis Car. Tauchnitii."
 			}
 		] 
 	}

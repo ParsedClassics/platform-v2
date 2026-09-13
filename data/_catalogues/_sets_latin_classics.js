@@ -43,6 +43,24 @@ ParsedClassicsCollectionSets = {
 		},
 	},
 
+	thomae_a_kempis_imitatio_christi: {
+		author_orig: "Thomae à Kempis",
+		author_eng: "Thomas à Kempis",
+		title_orig: 'De imitatione Christi libri IV',
+		title_eng: 'De imitatione Christi libri IV',
+		title_orig_short: 'Thomae à Kempis De imitatione Christi',
+		catalogue_ignore: {author_orig: "Thomae à", title_orig: "De"},
+		collections: [
+			'th_a_kempis_imitatio_christi_1', 
+			//'th_a_kempis_imitatio_christi_2',
+			//'th_a_kempis_imitatio_christi_3',
+			//'th_a_kempis_imitatio_christi_4',
+		],
+		extra: {
+			difficulty_level: 3,
+		},
+	},
+
 };
 
 ParsedClassicsCollSetLabels = {
@@ -51,6 +69,13 @@ ParsedClassicsCollSetLabels = {
 		"title": "Historia",
 		"coll_sets": [
 			"sallustius_catilina_jugurtha_orationes",
+		],
+	},
+
+	"christian_medieval_modern--spiritual_litterature": {
+		"title": "Litteratura spiritualis",
+		"coll_sets": [
+			"thomae_a_kempis_imitatio_christi",
 		],
 	},
   
