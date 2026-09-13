@@ -595,6 +595,10 @@ const ParsedClassicsContentContainers = {
       html += `<h1>${resourceDef['library_app_panel_title']}</h1>`;
     }
 
+    if (resourceDef['library_app_panel_subtitle']) {
+      html += `<h2>${resourceDef['library_app_panel_subtitle']}</h2>`;
+    }
+
     if (resourceDef['scanned_source_shortname'] && resourceDef['library_app_panel_text_from']) {
       html += `<p class="text-from">Text based on: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></p>`;
     }
