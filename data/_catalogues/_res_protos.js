@@ -134,6 +134,22 @@ const ParsedClassicsResProtos = {
     },
   },
 
+  th_a_kempis_imitatio_christi_parsed_text: {
+    collections_page_resource_author: "Thomae à Kempis",
+    library_app_selectbox_title: "Text based on edition by F.-J. Desbillons", 
+    library_app_panel_title: "De imitatione Christi libri IV",
+    library_app_panel_text_from: "Thomae a Kempis De imitatione Christi libri IV. Ad optimarum editionum fidem accurate editi. Editio stereotypa. 1840. Lipsiae: Sumtibus et typis Car. Tauchnitii.",
+    library_app_panel_note: "",
+    scanned_or_typed: "typed",
+    resource_type: "parsed_text",
+    scanned_source_shortname: "th_kempis_imitatio_christi_ed_desbillons",
+    extra: {
+      parsing_via_ext_services: "yes",
+      display_paragraph_numbering: 'yes',
+      display_pagination: 'no',
+    },
+  },
+
   paste_any_greek_text: {
     collections_page_resource_author: "",
     collections_page_resource_desc: "Paste any Ancient Greek text",

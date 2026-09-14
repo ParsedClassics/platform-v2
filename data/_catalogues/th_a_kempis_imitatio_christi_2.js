@@ -36,15 +36,15 @@ Order of resources by resource type
 
 */
 
-ParsedClassicsCollDefs.th_a_kempis_imitatio_christi_1["resource_defs"] = {
+ParsedClassicsCollDefs.th_a_kempis_imitatio_christi_2["resource_defs"] = {
 
   // Parsed text
 
-  th_a_kempis_imitatio_christi_1_parsed_text: {
+  th_a_kempis_imitatio_christi_2_parsed_text: {
 		...ParsedClassicsResProtos.th_a_kempis_imitatio_christi_parsed_text,
-    collections_page_resource_desc: "De imitatione Christi liber I",
-    library_app_panel_subtitle: "Liber I. Admonitiones ad Vitam spiritualem utiles.",
-    contents_shortname: "th_a_kempis_imitatio_christi_1_parsed_text_contents",
+    collections_page_resource_desc: "De imitatione Christi liber II",
+    library_app_panel_subtitle: "Liber II. Admonitiones ad interna trahentes.",
+    contents_shortname: "th_a_kempis_imitatio_christi_2_parsed_text_contents",
 	},
 
   // External service

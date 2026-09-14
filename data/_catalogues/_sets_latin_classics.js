@@ -52,7 +52,7 @@ ParsedClassicsCollectionSets = {
 		catalogue_ignore: {author_orig: "Thomae à", title_orig: "De"},
 		collections: [
 			'th_a_kempis_imitatio_christi_1', 
-			//'th_a_kempis_imitatio_christi_2',
+			'th_a_kempis_imitatio_christi_2',
 			//'th_a_kempis_imitatio_christi_3',
 			//'th_a_kempis_imitatio_christi_4',
 		],
