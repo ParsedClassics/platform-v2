@@ -926,12 +926,12 @@ const ParsedClassicsCollDefs = {
 		central_resource: 'th_a_kempis_imitatio_christi_3_parsed_text',
 	},
 
-	// th_a_kempis_imitatio_christi_4: {
-	// 	...ParsedClassicsCollProtos.th_a_kempis_book,
-  //   collection_selectboxname: 'Th. à Kempis De imitatione Christi liber IV',
-  //   collections_page_title_orig: 'De imitatione Christi liber IV',
-  //   collections_page_title_eng: 'De imitatione Christi liber IV',
-	// 	central_resource: 'th_a_kempis_imitatio_christi_4_parsed_text',
-	// },
+	th_a_kempis_imitatio_christi_4: {
+		...ParsedClassicsCollProtos.th_a_kempis_book,
+    collection_selectboxname: 'Th. à Kempis De imitatione Christi liber IV',
+    collections_page_title_orig: 'De imitatione Christi liber IV',
+    collections_page_title_eng: 'De imitatione Christi liber IV',
+		central_resource: 'th_a_kempis_imitatio_christi_4_parsed_text',
+	},
 
 };
