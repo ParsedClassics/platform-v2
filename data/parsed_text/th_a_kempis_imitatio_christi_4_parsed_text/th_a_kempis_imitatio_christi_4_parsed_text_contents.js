@@ -44,8 +44,6 @@ th_a_kempis_imitatio_christi_4_parsed_text_contents = {
 
 , "I:13": "I:13"
 
-, "I:14": "I:14"
-
 , "levelend-1": ""
 
 , "levelstart-2": "II. Quod magna charitas et bonitas Dei in Sacramento exhibetur homini."

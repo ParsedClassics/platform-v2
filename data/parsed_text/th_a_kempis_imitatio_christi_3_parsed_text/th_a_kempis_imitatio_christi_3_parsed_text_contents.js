@@ -56,6 +56,14 @@ th_a_kempis_imitatio_christi_3_parsed_text_contents = {
 
 , "IV:4": "IV:4"
 
+, "IV:5": "IV:5"
+
+, "IV:6": "IV:6"
+
+, "IV:7": "IV:7"
+
+, "IV:8": "IV:8"
+
 , "levelend-4": ""
 
 , "levelstart-5": "V. De mirabili affectu divini amoris."
@@ -149,6 +157,10 @@ th_a_kempis_imitatio_christi_3_parsed_text_contents = {
 , "XI:2": "XI:2"
 
 , "XI:3": "XI:3"
+
+, "XI:4": "XI:4"
+
+, "XI:5": "XI:5"
 
 , "levelend-11": ""
 
@@ -329,6 +341,10 @@ th_a_kempis_imitatio_christi_3_parsed_text_contents = {
 , "XXV:2": "XXV:2"
 
 , "XXV:3": "XXV:3"
+
+, "XXV:4": "XXV:4"
+
+, "XXV:5": "XXV:5"
 
 , "levelend-25": ""
 
@@ -702,8 +718,6 @@ th_a_kempis_imitatio_christi_3_parsed_text_contents = {
 
 , "LIV:17": "LIV:17"
 
-, "LIV:18": "LIV:18"
-
 , "levelend-54": ""
 
 , "levelstart-55": "LV. De corruptione naturae, et efficacia gratiae divinae."
@@ -733,6 +747,8 @@ th_a_kempis_imitatio_christi_3_parsed_text_contents = {
 , "LVI:4": "LVI:4"
 
 , "LVI:5": "LVI:5"
+
+, "LVI:6": "LVI:6"
 
 , "levelend-56": ""
 
