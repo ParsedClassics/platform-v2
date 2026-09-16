@@ -58,8 +58,6 @@ th_a_kempis_imitatio_christi_1_parsed_text_contents = {
 
 , "IV:2": "IV:2"
 
-, "IV:3": "IV:3"
-
 , "levelend-4": ""
 
 , "levelstart-5": "V. De lectione scripturarum."
@@ -196,6 +194,8 @@ th_a_kempis_imitatio_christi_1_parsed_text_contents = {
 
 , "XVII:2": "XVII:2"
 
+, "XVII:3": "XVII:3"
+
 , "levelend-17": ""
 
 , "levelstart-18": "XVIII. De exemplo Sanctorum Patrum."
@@ -263,6 +263,8 @@ th_a_kempis_imitatio_christi_1_parsed_text_contents = {
 , "XXI:4": "XXI:4"
 
 , "XXI:5": "XXI:5"
+
+, "XXI:6": "XXI:6"
 
 , "levelend-21": ""
 

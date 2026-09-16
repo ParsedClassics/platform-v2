@@ -54,9 +54,7 @@ th_a_kempis_imitatio_christi_1_parsed_text = `
 
 <p><span data-para-number="IV:1" class="para-number">1</span>Non est credendum omni verbo nec instinctui sed caute et longanimiter, res est fecundum Deum ponderanda. Proh dolor saepe malum facilius quam bonum de alio creditur et dicitur ita infirmi sumus. Sed perfecti viri non facile credunt omni enarrant, quia sciunt humanam fragilitatem imo infirmitatem ad malum proclivem et in verbis fatis labilem.</p>
 
-<p><span data-para-number="IV:2" class="para-number">2</span>Magna sapientia est non esse praecipitem in agendis, nec pertinaciter in sensibus stare. Ad hanc etiam non pertinet quibuslibet hominum verbis credere nec audita vel credita mox ad aliorum aures effundere.</p>
-
-<p><span data-para-number="IV:3" class="para-number">3</span>Cum sapiente et sententioso viro consilium habe, et quaere potius a melioribus instrui, quam tuas adinventiones sequi. Bona vita facit hominem sapientem secundum Deum, et expertum in multis. Quanto quis in se humilior fuerit, et Deo subjectior, tanto in omnibus erit sapientior et pacatior.</p>
+<p><span data-para-number="IV:2" class="para-number">2</span>Magna sapientia est non esse praecipitem in agendis, nec pertinaciter in sensibus stare. Ad hanc etiam non pertinet quibuslibet hominum verbis credere nec audita vel credita mox ad aliorum aures effundere. Cum sapiente et sententioso viro consilium habe, et quaere potius a melioribus instrui, quam tuas adinventiones sequi. Bona vita facit hominem sapientem secundum Deum, et expertum in multis. Quanto quis in se humilior fuerit, et Deo subjectior, tanto in omnibus erit sapientior et pacatior.</p>
 
 <h2><span data-para-number="V:1" class="para-number"></span><span class="chapter-number">V.</span> De lectione scripturarum.</h2>
 
@@ -166,7 +164,9 @@ th_a_kempis_imitatio_christi_1_parsed_text = `
 
 <p><span data-para-number="XVII:1" class="para-number">1</span>Oportet ut discas te ipsum in multis frangere, si vis pacem et concordiam cum aliis tenere. Non est parvum in monasteriis, vel in congregatione habitare, et in illis sine querela conversari, et usque ad mortem fidelis perseverare. Beatus qui ibidem bene visit, et feliciter consummavit. Si vis debite stare et proficere, teneas te tanquam exulem et peregrinum super terram. Oportet te stultum fieri propter Christum, si vis religiosam ducere vitam.</p>
 
-<p><span data-para-number="XVII:2" class="para-number">2</span>Habitus et tonsura modicum faciunt, sed mutatio morum et integra mortificatio passionem verum faciunt religiosum. Qui aliud quaerit, quam pure Deum, et animae suae salutem, non inveniet nisi tribulationem et dolorem. Non potest etiam diu stare pacificus, qui non nititur esse minimus, et omnibus subjectus. Ad serviendum venisti, non ad regendum, ad paciendum et laborandum scias te vocatum, non ad otiandum, vel fabulandum. Hic ergo probantur homines sicut aurum in fornace. Hic nemo potest stare nisi ex toto corde si voluerit propter Deum humiliare.</p>
+<p><span data-para-number="XVII:2" class="para-number">2</span>Habitus et tonsura modicum faciunt, sed mutatio morum et integra mortificatio passionem verum faciunt religiosum. Qui aliud quaerit, quam pure Deum, et animae suae salutem, non inveniet nisi tribulationem et dolorem. Non potest etiam diu stare pacificus, qui non nititur esse minimus, et omnibus subjectus.</p>
+
+<p><span data-para-number="XVII:3" class="para-number">3</span>Ad serviendum venisti, non ad regendum, ad paciendum et laborandum scias te vocatum, non ad otiandum, vel fabulandum. Hic ergo probantur homines sicut aurum in fornace. Hic nemo potest stare nisi ex toto corde si voluerit propter Deum humiliare.</p>
 
 <h2><span data-para-number="XVIII:1" class="para-number"></span><span class="chapter-number">XVIII.</span> De exemplo Sanctorum Patrum.</h2>
 
@@ -226,7 +226,9 @@ th_a_kempis_imitatio_christi_1_parsed_text = `
 
 <p><span data-para-number="XXI:4" class="para-number">4</span>Cognosce te indignum divina consolatione, sed magis dignum multa tribulatione. Quando homo perfecte est compunctus, tunc gravis et amarus est ei totus mundus. Bonus homo sufficientem invenit materiam dolendi et flendi: sive enim considerat se, sive de proximo pensat; scit quia nemo sine tribulatione hic vivit; et quanto strictius sese considerat, tanto amplius dolet. Materiae justi doloris, et internae compunctionis sunt peccata, et vitia nostra, quibus ita involuti jacemus, ut raro caelistia contemplari valeamus.</p>
 
-<p><span data-para-number="XXI:5" class="para-number">5</span>Si frequentius de morte tua, quam de longitudine vitae tua cogitares, non dubium, quin ferventius te emendares. Si etiam futuras Inferni, sivi Pergatorii, poenas cordialiter perpenderes, credo quod libenter dolorem et laborem sustineres, et nihil rigoris formidares. Sed quia ista ad cor non transeunt, et blandimenta adhuc amamus, ideo frigidi et valde pigri remanemus. Saepe est inopia spiritus unde tam leviter conqueritur corpus miserum. Ora igitur humiliter ad Dominum ut det tibi compunctionis spiritum; et dic cum Propheta, <i>Ciba me Domine pane lacrymarum et potum da mihi in lacrymis in mensura.</i></p>
+<p><span data-para-number="XXI:5" class="para-number">5</span>Si frequentius de morte tua, quam de longitudine vitae tua cogitares, non dubium, quin ferventius te emendares. Si etiam futuras Inferni, sivi Pergatorii, poenas cordialiter perpenderes, credo quod libenter dolorem et laborem sustineres, et nihil rigoris formidares. Sed quia ista ad cor non transeunt, et blandimenta adhuc amamus, ideo frigidi et valde pigri remanemus.</p>
+
+<p><span data-para-number="XXI:6" class="para-number">6</span>Saepe est inopia spiritus unde tam leviter conqueritur corpus miserum. Ora igitur humiliter ad Dominum ut det tibi compunctionis spiritum; et dic cum Propheta, <i>Ciba me Domine pane lacrymarum et potum da mihi in lacrymis in mensura.</i></p>
 
 <h2><span data-para-number="XXII:1" class="para-number"></span><span class="chapter-number">XXII.</span> De conditione humanae miseriae.</h2>
 

@@ -138,7 +138,7 @@ const ParsedClassicsResProtos = {
     collections_page_resource_author: "Thomae à Kempis",
     library_app_selectbox_title: "Text based on edition by F.-J. Desbillons", 
     library_app_panel_title: "De imitatione Christi libri IV",
-    library_app_panel_text_from: "Thomae a Kempis De imitatione Christi libri IV. Ad optimarum editionum fidem accurate editi. Editio stereotypa. 1840. Lipsiae: Sumtibus et typis Car. Tauchnitii.",
+    library_app_panel_text_from: "Thomae à Kempis De imitatione Christi libri IV. Ad optimarum editionum fidem accurate editi. Editio stereotypa. 1840. Lipsiae: Sumtibus et typis Car. Tauchnitii.",
     library_app_panel_note: "",
     scanned_or_typed: "typed",
     resource_type: "parsed_text",
@@ -422,6 +422,19 @@ const ParsedClassicsResProtos = {
     scanned_or_typed: "scanned",
     resource_type: "original_text",
     scanned_source_shortname: "sallustius_catilina_iugurtha",
+    extra: {},
+  },
+
+  th_a_kempis_imitatio_christi_text_ed_desbillons: {
+    collections_page_resource_author: "Thomae à Kempis",
+    collections_page_resource_desc: "ed. by F.-J. Desbillons (1840)", 
+    library_app_selectbox_title: "Edition by F.-J. Desbillons (1840)",
+    library_app_panel_subtitle: "",
+    library_app_panel_text_from: "Thomae à Kempis De imitatione Christi libri IV. Ad optimarum editionum fidem accurate editi. Editio stereotypa. 1840. Lipsiae: Sumtibus et typis Car. Tauchnitii.",
+    library_app_panel_note: "",
+    scanned_or_typed: "scanned",
+    resource_type: "original_text",
+    scanned_source_shortname: "th_kempis_imitatio_christi_ed_desbillons",
     extra: {},
   },
 
