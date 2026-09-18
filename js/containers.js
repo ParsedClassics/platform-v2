@@ -267,6 +267,8 @@ const ParsedClassicsContentContainers = {
         case 'parsed_text':
           // is parsing done via external services?
           const parsing_external = typeof resourceDef['extra']['parsing_via_ext_services'] !== 'undefined' ? resourceDef['extra']['parsing_via_ext_services'] : '';
+          // get footnote_indicator 
+          const footnote_indicator = typeof resourceDef['extra']['footnote_indicator'] !== 'undefined' ? resourceDef['extra']['footnote_indicator'] : '';
           // split container if needed into top part for text and bottom part for morphology  
           var {parsedTextContainerTopPart, parsedTextContainerBottomPart} = ParsedClassicsContentContainers.splitParsedTextContainer(activeTabId, tabContentContainerInner, parsing_external);
           // generate html of parsed text resource and put it into top part of splitted container
@@ -276,6 +278,8 @@ const ParsedClassicsContentContainers = {
           tabContentContainerInner.undelegate("mouseleave");
           tabContentContainerInner.undelegate("click");
           if (contentsType === 'line') {
+            // init footnotes
+            ParsedClassicsFootnote.init(tabContentContainerInner, footnote_indicator);
             // delegate "mouseenter" and "mouseleave" events from els having class "word" to tab's inner content container
             tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseenter", (event) => ParsedClassicsMorphology.selectedWordMouseEnter(event, parsedTextContainerBottomPart));
             tabContentContainerInner.delegate(`.${ParsedClassicsAppVars.wordClass}`, "mouseleave", () => ParsedClassicsMorphology.selectedWordMouseLeave(parsedTextContainerBottomPart));
@@ -289,6 +293,8 @@ const ParsedClassicsContentContainers = {
             ParsedClassicsContentContainers.scrollToLineResourceLoading(parsedTextContainerTopPart, lineIndicatorUrl, activeTabId);
           }
           else if (contentsType === 'paragraph') {
+            // init footnotes
+            ParsedClassicsFootnote.init(tabContentContainerInner, footnote_indicator);
             // delegate "click" event from <p> els to tab's inner content container
             tabContentContainerInner.delegate(`p`, "click", (event) => ParsedClassicsSelectedParagraph.hashSelectParagraph(event, collectionShortname, parsedTextContainerTopPart));
             // add event to catch text selection

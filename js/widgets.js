@@ -1174,6 +1174,42 @@ const ParsedClassicsInnerLink = {
 
 };
 
+const ParsedClassicsFootnote = {
+
+  init: function(container, indicator) {
+    if (!indicator) {
+      indicator = '+';
+    }
+
+    const footnotes = container.find('span.easy-footnote a');
+    for (let i = 0; i < footnotes.length; i++) {
+      indicator_str = indicator === 'number' ? i+1 : indicator;
+      $(footnotes[i]).append(`<sup>&#8239;${indicator_str}</sup>`);
+    }
+    
+    footnotes.qtip({
+      prerender: true,
+      position: {
+            my: 'top center',  // Position my top left...
+            at: 'bottom center', // at the bottom right of...
+            viewport: $(window)
+        },
+        style: {
+          classes: 'qtip-bootstrap'
+        },
+        hide: {
+              fixed: true,
+              delay: 400,
+              event: 'unfocus blur mouseleave'
+      },
+      show: {
+        event: 'focus mouseenter'
+      }
+    });
+  },
+
+};
+
 const ParsedClassicsAlertDialogue = {
 
   createDialogue: function(paneId) {
