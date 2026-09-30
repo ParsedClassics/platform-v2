@@ -15,6 +15,12 @@ const ParsedClassicsContentContainers = {
   scrollFuncIntervals: {},
 
   treatActiveTabContentContainer: function (pane, activeTabId, refresh) {
+    // do we need to show list of shelfs in the new tab? 
+    const needToShowShelfList = ParsedClassicsLayout.getNeedToShowShelfList();
+    // get shelf categories
+    const shelfCategories = ParsedClassicsLayout.getShelfCategories();
+    // create shelf categories string from Url to represent the shelf
+    const shelfStrUrl = Array.isArray(shelfCategories) && shelfCategories.length > 0 ? shelfCategories.sort().join('--') : '';
     // get pane's bottom part el
     const paneBottomPart = pane.find(`.${ParsedClassicsAppVars.paneBottomPartClass}`);
     // get TAB's content container 
@@ -90,7 +96,7 @@ const ParsedClassicsContentContainers = {
 
     if (!resourceShortname  &&  collResPairUrl !== collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed', paragraphIndicatorUrl, pageUrl, formUrl, textUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, 'resources_list', 'typed', paragraphIndicatorUrl, pageUrl, formUrl, textUrl, shelfStrUrl);
       // create html of available resources
       const resourcesListHtml = ParsedClassicsContentContainers.createAvailableResourcesListHtml(collectionDef, resourceDefsAll);
       // update container's html
@@ -107,10 +113,16 @@ const ParsedClassicsContentContainers = {
 
     else if (scannedOrTyped === 'typed' &&  collResPairUrl === collResPairDom) {
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl, shelfStrUrl);
 
       switch(resourceType) {
         
+        case 'info_text': 
+          // put html into container 
+          const dataToShow = needToShowShelfList ? ParsedClassicsContentContainers.compileShelfsList() : resourceData;
+          tabContentContainerInner.html(dataToShow);
+          break;
+
         case 'parsed_text':
         const parsedTextContainerTopPart = tabContentContainerInner.find(`.${ParsedClassicsAppVars.parsedTextContainerTopPartClass}`);
         if (contentsType === 'line') {
@@ -207,7 +219,7 @@ const ParsedClassicsContentContainers = {
 
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl === collResPairDom) {
       // update container's attrs 
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl, shelfStrUrl);
       // selected line was changed?
       if (contentsType === 'line' && lineIndicatorUrl !== lineIndicatorDom) { 
         if (resourceType === 'original_text' || resourceType === 'translation' || resourceType === 'commentary') {
@@ -255,13 +267,14 @@ const ParsedClassicsContentContainers = {
     else if (scannedOrTyped === 'typed' &&  collResPairUrl !== collResPairDom) {
 
       // update container's attrs
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl, shelfStrUrl);
       
       switch(resourceType) {
 
         case 'info_text': 
           // put html into container 
-          tabContentContainerInner.html(resourceData);
+          const dataToShow = needToShowShelfList ? ParsedClassicsContentContainers.compileShelfsList() : resourceData;
+          tabContentContainerInner.html(dataToShow);
           break;
 
         case 'parsed_text':
@@ -422,7 +435,7 @@ const ParsedClassicsContentContainers = {
     
     else if (scannedOrTyped === 'scanned' &&  collResPairUrl !== collResPairDom) {
       // update container's attrs 
-      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl);
+      ParsedClassicsContentContainers.updateContainerAttrs(tabContentContainer, collResPairUrl, lineIndicatorUrl, wordUrl, lexiconUrl, lexiconEntryUrl, resourceType, scannedOrTyped, paragraphIndicatorUrl, pageUrl, formUrl, textUrl, shelfStrUrl);
       // generate html of resource
       let iframeEl;
       if (resourceType !== 'lexicon') {
@@ -470,7 +483,7 @@ const ParsedClassicsContentContainers = {
     
   },
 
-  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType, scannedOrTyped, paragraph, page, wordForm, text) {
+  updateContainerAttrs: function(container, collResPair, lineIndicator, lemma, lexicon, lexiconEntry, resourceType, scannedOrTyped, paragraph, page, wordForm, text, shelfStr) {
     // save collectionShortname|resourceShortname pair as DOM attr
     container.attr(ParsedClassicsAppVars.collResPairAttr, collResPair);
     // save line indicator as DOM attr
@@ -493,6 +506,8 @@ const ParsedClassicsContentContainers = {
     container.attr(ParsedClassicsAppVars.formAttr, wordForm);
     // save text form as DOM attr
     container.attr(ParsedClassicsAppVars.textAttr, text);
+    // save shelf categories sre as DOM attr
+    container.attr(ParsedClassicsAppVars.shelfAttr, shelfStr);
   },
 
   createAvailableResourcesListHtml: function(collectionDef, resourceDefs) { 
@@ -1361,6 +1376,27 @@ const ParsedClassicsContentContainers = {
         iframeEl.attr("data-src", iframeSrcNew);
       }
     }
+  },
+
+  compileShelfsList: function() {
+    const urlJson = ParsedClassicsLayout.getHashJson("url");
+    let html = '<h1>Choose:</h1>';
+    for (const shelf_key in ParsedClassicsShelfs) {
+      const shelfDef = ParsedClassicsShelfs[shelf_key];
+      const categoryKeyArr = shelf_key.split('--');
+      const categoryArr = [];
+      categoryKeyArr.forEach((category_key) => categoryArr.push(ParsedClassicsShelfCategories[category_key]));
+      //const shelf_categories_str = '"'+ shelf_key.replaceAll('--', '","') + '"'; {"S":[${shelf_categories_str}]}
+      urlJson['S'] = categoryKeyArr;
+      const hashJsonString = JSON.stringify(urlJson);
+      const empty = shelfDef['coll_sets'].length === 0 ? true : false;
+      if (!empty) {
+        const shelfHeading = `<p><a href='./library.html#${hashJsonString}'>Shelf: ${categoryArr.join(' | ')}</a></p>\n\n`;
+        html += shelfHeading;
+      }
+    }
+
+    return html;
   },
 
 };

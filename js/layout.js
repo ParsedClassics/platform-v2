@@ -16,57 +16,34 @@ const ParsedClassicsLayout = {
 
   //default first load
   firstLoad: function () {
-    // get hash json from local storage
-    const storageJson = ParsedClassicsLayout.getHashJson("localStorage");
-    let hashJson;
-    if (!storageJson) {
-      ParsedClassicsAlertDialogue.openDialogue('container', 
-        {
-          heading: 'Not found', 
-          message: 'Last saved layout was not found.',
-        },
-        () => {
-          hashJson = ParsedClassicsLayout.getDefaultHashJson();
-          const hashJsonStr = JSON.stringify(hashJson);
-          history.replaceState(null, "", `#${hashJsonStr}`);
-          ParsedClassicsLayout.update(hashJson);
-        }
-      );
-    }
-    else {
-      const storageJsonValidation = ParsedClassicsLayout.layoutJsonValidate(storageJson);
-      if (storageJsonValidation) {
-        hashJson = storageJson;
-        ParsedClassicsConfirmDialogue.openConfirmDialogue('container', {heading: 'Confirm', message: 'To open last saved layout click OK, otherwise default layout will be opened.'},
-          () => {
-            history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
-            ParsedClassicsLayout.update(hashJson);
-            ParsedClassicsConfirmDialogue.closeConfirmDialogueWithoutClick('container');
-          }, 
-          () => {
-            hashJson = ParsedClassicsLayout.getDefaultHashJson();
-            history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
-            ParsedClassicsLayout.update(hashJson);
-          } 
-        );
+    // show alert
+    ParsedClassicsAlertDialogue.openDialogue('container', 
+      {
+        heading: 'Not found', 
+        message: 'Last saved layout was not found. Default layout will be opened.',
+      },
+      () => {
+        const hashJson = ParsedClassicsLayout.getDefaultHashJson();
+        const hashJsonStr = JSON.stringify(hashJson);
+        history.replaceState(null, "", `#${hashJsonStr}`);
+        ParsedClassicsLayout.update(hashJson);
       }
-      else {
-        hashJson = ParsedClassicsLayout.getDefaultHashJson();
-        ParsedClassicsAlertDialogue.openDialogue('container', {heading: 'Error!', message: 'Invalid hash string in local storage.\nSince no valid saved layout was faund, default layout will be opened.'},
-          () => {
-            hashJson = ParsedClassicsLayout.getDefaultHashJson();
-            history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
-            ParsedClassicsLayout.update(hashJson);
-          } 
-        );
-      }
-    }
+    );
   },
 
   // page load after popstate event
   popStateLoad: function () {
     const urlJson = ParsedClassicsLayout.getHashJson("url");
     const urlJsonValidation = ParsedClassicsLayout.layoutJsonValidate(urlJson);
+    const layoutObj =
+      urlJson && typeof urlJson[ParsedClassicsAppVars.layoutMember] === "object"
+        ? urlJson[ParsedClassicsAppVars.layoutMember]
+        : null;
+    const dimensionsObj =
+      urlJson && typeof urlJson[ParsedClassicsAppVars.dimensionsMember] === "object"
+        ? urlJson[ParsedClassicsAppVars.dimensionsMember]
+        : null;
+    const shelfCategories = ParsedClassicsLayout.getShelfCategories();
     // hash string in URL is valid
     if (urlJsonValidation) {
       ParsedClassicsLayout.update(urlJson);
@@ -74,28 +51,32 @@ const ParsedClassicsLayout = {
     // hash string in URL is invalid
     else {
       const storageJson = ParsedClassicsLayout.getHashJson("localStorage");
-      let hashJson;
-      // hash json found in storage
-      if (storageJson && Object.keys(storageJson).length) {
-        ParsedClassicsConfirmDialogue.openConfirmDialogue('container', {heading: 'Confirm', message: 'Invalid hash string in URL!\nTo open last saved layout click OK, otherwise default layout will be opened.'},
+      const storageJsonValidation = ParsedClassicsLayout.layoutJsonValidate(storageJson);
+      
+      // hash json found in storage and is valid
+      if (storageJson && storageJsonValidation) {
+        const message_str = shelfCategories ? "To open last saved layout click OK, otherwise default layout will be opened." : "Invalid hash string in URL!\nTo open last saved layout click OK, otherwise default layout will be opened.";
+        ParsedClassicsConfirmDialogue.openConfirmDialogue('container', {heading: 'Confirm', message: message_str},
           () => {
-            hashJson = ParsedClassicsLayout.getHashJson("localStorage");
+            const hashJson = storageJson;
             history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
             ParsedClassicsLayout.update(hashJson);
             ParsedClassicsConfirmDialogue.closeConfirmDialogueWithoutClick('container');
           }, 
           () => {
-            hashJson = ParsedClassicsLayout.getDefaultHashJson();
+            const hashJson = ParsedClassicsLayout.getDefaultHashJson();
             history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
             ParsedClassicsLayout.update(hashJson);
           } 
         );
       }
-      // hash json not found in storage
+      // hash json not found in storage or is invalid
       else {
-        ParsedClassicsAlertDialogue.openDialogue('container', {heading: 'Error!', message: 'Invalid hash string in URL.\nSince no valid saved layout was faund, default layout will be opened.'},
+        const message_str = shelfCategories ? "Last saved layout was not found. Default layout will be opened." : "Invalid hash string in URL.\nSince no valid saved layout was faund, default layout will be opened.";
+        const heading_str = shelfCategories ? 'Not found' : 'Error!';
+        ParsedClassicsAlertDialogue.openDialogue('container', {heading: heading_str, message: message_str},
           () => {
-            hashJson = ParsedClassicsLayout.getDefaultHashJson();
+            const hashJson = ParsedClassicsLayout.getDefaultHashJson();
             history.replaceState(null, "", `#${JSON.stringify(hashJson)}`);
             ParsedClassicsLayout.update(hashJson);
           } 
@@ -755,14 +736,27 @@ const ParsedClassicsLayout = {
       }
     }
 
-    // VII. treat active tab's selecboxes container and options container
+    // VII refresh active tab's selecboxes container  in case of change of the value of "S" segment in urlJson ++++++++++++++++++++++++++++
     const activeTabId = activeTabIndex > 0 || activeTabIndex === 0 ? tabIdsArr[activeTabIndex] : null;
+    if (activeTabId) {
+      // get shelf string based on "S" segment in url to represent current shelf
+      const shelfCategories = ParsedClassicsLayout.getShelfCategories();
+      const shelfStrUrl = Array.isArray(shelfCategories) && shelfCategories.length > 0 ? shelfCategories.sort().join('--') : '';
+      // get shelf string saved as Dom attr
+      const tabContentContainer = $(`#tab-content-${activeTabId}`);
+      const shelfStrDom = tabContentContainer.attr(ParsedClassicsAppVars.shelfAttr) ?? '';
+      if (shelfStrUrl !== shelfStrDom) {
+        ParsedClassicsNavSelects.refreshActiveTabSelectboxesContainer(activeTabId)
+      }
+    }
+
+    // VIII. treat active tab's selecboxes container 
     if (activeTabId) {
       ParsedClassicsNavSelects.treatActiveTabSelectboxesContainer(pane, activeTabId);
     }
     
 
-    // VIII. treat active tab's contents container
+    // IX. treat active tab's contents container and options container
     if (activeTabId) {
       const tabContentInnerEl = $(`#tab-content-inner-${activeTabId}`);
       const reloaded = tabContentInnerEl.attr('data-reloaded');
@@ -773,7 +767,7 @@ const ParsedClassicsLayout = {
       ParsedClassicsOptionsSelects.treatActiveTabOptionsContainer(activeTabId);
     }
 
-    // IX. add or remove color tags
+    // X. add or remove color tags
     for (let i = 0; i < tabIdsArrUrl.length; i++) {
       const {tag} = ParsedClassicsLayout.getCollAndResShortnameFromTabId(tabIdsArrUrl[i]);
       const tabEl = $(`#tab-${tabIdsArrUrl[i]}`);
@@ -1895,6 +1889,13 @@ const ParsedClassicsLayout = {
     }
     return true;
   },
+
+  arraysHaveSameMembers: function(a, b) {
+    if (a.length !== b.length) return false;
+    const setA = new Set(a);
+    const setB = new Set(b);
+    return [...setA].every(item => setB.has(item));
+  },
   
   // finds in url id of the pane the tab belongs to
   getPaneIdFromUrl: function(tabId) {
@@ -2123,6 +2124,7 @@ const ParsedClassicsLayout = {
   getDefaultHashJson: function () {
     const id = ParsedClassicsLayout.generateUID;
     const tabIdsArr = [id(), id(), id(), id(), id(), id(), id(), id()];
+    const shelfMember = ParsedClassicsLayout.getShelfCategories() ?? ['shelfs_list'];
     return {
       // L: { 
       //   a: [["nt_matthew|nt_matthew_parsed_text", "nt_matthew|nt_matthew_text_ed_robinson_pierpont", "nt_matthew|concordance_by_moulton_geden"]], 
@@ -2170,8 +2172,8 @@ const ParsedClassicsLayout = {
 
       "L": {
         "a":[["new_tab|new_tab_info"]]
-
-        },
+      },
+      "S": shelfMember,
       "P": {},
       "D":{
         "a":[
@@ -2216,10 +2218,12 @@ const ParsedClassicsLayout = {
   getHashJson: function (from) {
     // get hash json from local storage
     if (from === "localStorage") {
-      const path = window.location.pathname;
-      const fileName = path.substring(path.lastIndexOf('/') + 1);
-      const storageJsonString = localStorage.getItem(ParsedClassicsAppVars.urlHashStorageName + '__' + fileName);
-      return ParsedClassicsLayout.stringToJson(storageJsonString);
+      const shelfCategories = ParsedClassicsLayout.getShelfCategories();
+      if (shelfCategories) {
+        const shelfCategoriesStr = shelfCategories.sort().join('--');
+        const storageJsonString = localStorage.getItem(ParsedClassicsAppVars.urlHashStorageName + '__' + shelfCategoriesStr);
+        return ParsedClassicsLayout.stringToJson(storageJsonString);
+      }
     }
     // get hash json from URL
     else if (from === "url") {
@@ -2257,9 +2261,22 @@ const ParsedClassicsLayout = {
       json && typeof json[ParsedClassicsAppVars.dimensionsMember] === "object"
         ? json[ParsedClassicsAppVars.dimensionsMember]
         : null;
-    if (!layoutObj || !dimensionsObj) {
+
+    const shelfCategories = ParsedClassicsLayout.getShelfCategories();
+    const needToShowShelfList = ParsedClassicsLayout.getNeedToShowShelfList();
+
+    if ((!shelfCategories && !needToShowShelfList) || !layoutObj || !dimensionsObj) {
       return false;
     }
+
+    if (shelfCategories && (!layoutObj || !dimensionsObj)) {
+      return false;
+    }
+
+    if (needToShowShelfList && (!layoutObj || !dimensionsObj)) {
+      return false;
+    }
+
     for (let sectionCode in layoutObj) {
       const contentArr =
         layoutObj[sectionCode] instanceof Array ? layoutObj[sectionCode] : null;
@@ -2309,14 +2326,34 @@ const ParsedClassicsLayout = {
     return true;
   },
 
+  getShelfCategories: function() {
+    const urlJson = ParsedClassicsLayout.getHashJson("url");
+    const shelfCategoriesUrl = typeof urlJson[ParsedClassicsAppVars.shelfMember] !== 'undefined' && Array.isArray(urlJson[ParsedClassicsAppVars.shelfMember]) ? urlJson[ParsedClassicsAppVars.shelfMember] : [];
+    for (const categories_str in ParsedClassicsShelfs) {
+      const categoriesArr = categories_str.split('--');
+      const sameMembers = ParsedClassicsLayout.arraysHaveSameMembers(shelfCategoriesUrl, categoriesArr);
+      if (sameMembers) {
+        return shelfCategoriesUrl;
+      }
+    }
+    return null;
+  },
+
+  getNeedToShowShelfList: function() {
+    const urlJson = ParsedClassicsLayout.getHashJson("url");
+    const shelfListToBeShown = typeof urlJson[ParsedClassicsAppVars.shelfMember] !== 'undefined' && Array.isArray(urlJson[ParsedClassicsAppVars.shelfMember]) && ParsedClassicsLayout.arraysHaveSameMembers(urlJson[ParsedClassicsAppVars.shelfMember], ['shelfs_list']) ? true : false;
+    return shelfListToBeShown;
+  },
+
   layoutJsonSaveInStorage: function() {
     const urlJson = ParsedClassicsLayout.getHashJson("url");
     const urlJsonValidation = ParsedClassicsLayout.layoutJsonValidate(urlJson);
     if (urlJsonValidation) {
-      const hashJsonStr = JSON.stringify(urlJson);
-      const path = window.location.pathname;
-      const fileName = path.substring(path.lastIndexOf('/') + 1);
-      localStorage.setItem(ParsedClassicsAppVars.urlHashStorageName + '__' + fileName, window.location.hash.replace("#", ""));
+      const shelfCategories = ParsedClassicsLayout.getShelfCategories();
+      if (shelfCategories) {
+        const shelfCategoriesStr = shelfCategories.sort().join('--'); 
+        localStorage.setItem(ParsedClassicsAppVars.urlHashStorageName + '__' + shelfCategoriesStr, window.location.hash.replace("#", ""));
+      }
     }
   }
 };

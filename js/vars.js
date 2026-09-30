@@ -52,6 +52,7 @@ const ParsedClassicsAppVars = {
   lexiconEntryAttr: "data-lexicon-entry",
   formAttr: "data-form",
   textAttr: "data-text",
+  shelfAttr: "data-shelf",
   partOfSpeechAttr: "data-part-of-speech",
   parsingAttr: "data-parsing",
   resourceTypeAttr: "data-resource-type",
@@ -119,6 +120,7 @@ const ParsedClassicsAppVars = {
   layoutMember: "L",
   dimensionsMember: "D",
   pointersMember: "P",
+  shelfMember: "S",
   collectionSetMember: "edition",
   collectionMember: "coll",
   wordMember: "word",
@@ -163,21 +165,4 @@ const ParsedClassicsAppVars = {
   animationSpeed: 400,
 };
 // application root filename
-if (window.location.pathname.indexOf('/greek-classics.html') != -1) {
-  ParsedClassicsAppVars.rootFileName = 'greek-classics.html';
-}
-else if (window.location.pathname.indexOf('/latin-classics.html') != -1) {
-  ParsedClassicsAppVars.rootFileName = 'latin-classics.html';
-}
-else if (window.location.pathname.indexOf('/latin-readers.html') != -1) {
-  ParsedClassicsAppVars.rootFileName = 'latin-readers.html';
-}
-else if (window.location.pathname.indexOf('/greek-readers.html') != -1) {
-  ParsedClassicsAppVars.rootFileName = 'greek-readers.html';
-}
-else if (window.location.pathname.indexOf('/greek-tools.html') != -1) {
-  ParsedClassicsAppVars.rootFileName = 'greek-tools.html';
-}
-else if (window.location.pathname.indexOf('/latin-tools.html') != -1) {
-  ParsedClassicsAppVars.rootFileName = 'latin-tools.html';
-}
+ParsedClassicsAppVars.rootFileName = 'library.html';

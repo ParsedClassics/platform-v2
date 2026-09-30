@@ -26,7 +26,85 @@
 
 ParsedClassicsCollectionSets = {
 
-	homer_iliad_1_2_3: {
+  text_tools_greek: {
+    author_orig: '',
+		author_eng: '',
+    title_orig: 'Text tools',
+		title_eng: 'Text tools',
+    title_orig_short: 'Text tools',
+    catalogue_ignore: {},
+		collections: [
+      'greek_text_tools',
+		],
+    extra: {},
+  },
+
+  text_tools_latin: {
+    author_orig: '',
+		author_eng: '',
+    title_orig: 'Text tools',
+		title_eng: 'Text tools',
+    title_orig_short: 'Text tools',
+    catalogue_ignore: {},
+		collections: [
+      'latin_text_tools',
+		],
+    extra: {},
+  },
+
+  greek_readers: {
+    author_orig: '',
+	  author_eng: '',
+    title_orig: 'Greek readers',
+		title_eng: 'Greek readers',
+    title_orig_short: 'Greek readers',
+    catalogue_ignore: {},
+		collections: [
+      'beresford_douglas_first_greek_reader',
+    ],
+    labels: { 
+      "any_reader": { 
+        "title": "Greek readers",
+        "parent": null,
+        "collections": [
+          'beresford_douglas_first_greek_reader',
+        ],
+      },
+    },
+    extra: {},
+  },
+
+  latin_readers: {
+    author_orig: '',
+	  author_eng: '',
+    title_orig: 'Latin readers',
+		title_eng: 'Latin readers',
+    title_orig_short: 'Latin readers',
+    catalogue_ignore: {},
+		collections: [
+      //'appleton_initium',
+      'maxey_fay_new_latin_primer',
+      'arnold_cloelia',
+      'collar_new_gradatim',
+      'appleton_ludi_persici',
+		],
+    labels: { 
+      "any_reader": { 
+        "title": "Latin readers",
+        "parent": null,
+        "collections": [
+          //'appleton_initium',
+          'maxey_fay_new_latin_primer',
+          'arnold_cloelia',
+          'collar_new_gradatim',
+          'appleton_ludi_persici',
+        ],
+      },
+    },
+    extra: {},
+  },
+
+  homer_iliad_1_2_3: {
 		author_orig: "Ὁμήρου",
 		author_eng: "Homer",
 		title_orig: "Ἰλιάδος Α, Β, Γ",
@@ -400,47 +478,39 @@ ParsedClassicsCollectionSets = {
 		},	
 	},
 
-};
-
-ParsedClassicsCollSetLabels = {
-
-	"ancient--epic_poetry": {
-		"title": "Ἡ ἐπική ποίησις",
-		"coll_sets": [
-			"homer_iliad_1_2_3",
-			"homer_iliad_4_5_6",
-			"homer_iliad_7_8_9",
-			"homer_iliad_10_11_12",
-			"homer_iliad_13_14_15",
-			"homer_iliad_16_17_18",
-			"homer_iliad_19_20_21",
-			"homer_iliad_22_23_24",
-			"homer_odyssey_1_2_3",
-			"homer_odyssey_4_5_6",
-			"homer_odyssey_7_8_9",
-			"homer_odyssey_10_11_12",
-			"homer_odyssey_13_14_15",
-			"homer_odyssey_16_17_18",
-			"homer_odyssey_19_20_21",
-			"homer_odyssey_22_23_24",
-			"homerica",
-			"hesiod_theogonia_erga",
+  sallustius_catilina_jugurtha_orationes: {
+		author_orig: "C. Sallusti Crispi",
+		author_eng: "Sallust",
+		title_orig: 'Catilina; Iugurtha; Orationes et epistulae excerptae de historiis',
+		title_eng: 'Catilina; Iugurtha; Orations and epistles from histories',
+		title_orig_short: 'C. Sallusti Crispi Catilina; Iugurtha; Orationes et epistulae',
+		catalogue_ignore: {author_orig: "C.",},
+		collections: [
+			'sallust_catilina', 
+			'sallust_jugurtha',
+			'sallust_orationes_et_epistulae',
 		],
+		extra: {
+			difficulty_level: 3,
+		},
 	},
 
-	"ancient--philosophy": {
-		"title": "Ἡ φιλοσοφία",
-		"coll_sets": [
-			"plato_tetralogia_1",
+	thomae_a_kempis_imitatio_christi: {
+		author_orig: "Thomae à Kempis",
+		author_eng: "Thomas à Kempis",
+		title_orig: 'De imitatione Christi libri IV',
+		title_eng: 'De imitatione Christi libri IV',
+		title_orig_short: 'Thomae à Kempis De imitatione Christi',
+		catalogue_ignore: {author_orig: "Thomae à", title_orig: "De"},
+		collections: [
+			'th_a_kempis_imitatio_christi_1', 
+			'th_a_kempis_imitatio_christi_2',
+			'th_a_kempis_imitatio_christi_3',
+			'th_a_kempis_imitatio_christi_4',
 		],
-	},
-
-	"christian_medieval_modern--holy_scripture": {
-		"title": "Ἡ Ἁγία Γραφή",
-		"coll_sets": [
-			"nt_gospels",
-			"nt_apostolics",
-		],
+		extra: {
+			difficulty_level: 3,
+		},
 	},
 
 };

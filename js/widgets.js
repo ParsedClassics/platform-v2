@@ -83,8 +83,10 @@ const ParsedClassicsNavSelects = {
 
   collectionsSelectboxOptions: function(collectionShortname) {
     let selectboxOptionsHtml = '';
+    // get list of coll sets based on shelf
+    const collSettsArr = ParsedClassicsNavSelects.getCollSetsArr();
     // loop through collection sets
-    for (const setShortname in ParsedClassicsCollectionSets) {
+    for (let setShortname of collSettsArr) {
       // get set definition
       const setDef = ParsedClassicsCollectionSets[setShortname];
       // get set title
@@ -111,6 +113,24 @@ const ParsedClassicsNavSelects = {
     // create selectbox options els
     const selectboxOptionsEls = $(selectboxOptionsHtml);
     return selectboxOptionsEls;
+  },
+
+  getCollSetsArr: function() {
+    let collSetsArr = [];
+    const urlJson = ParsedClassicsLayout.getHashJson("url");
+    const shelfCategoriesArrUrl = typeof urlJson['S'] !== 'undefined' ? urlJson['S'] : [];
+
+    for (var key in ParsedClassicsShelfs) {
+      const shelf_categories_str = key;
+      const shelfCategoriesArr = shelf_categories_str.split('--');
+      const sameMembers = ParsedClassicsLayout.arraysHaveSameMembers(shelfCategoriesArrUrl, shelfCategoriesArr);
+      if (sameMembers) {
+        collSetsArr = ParsedClassicsShelfs[key]['coll_sets'];
+        break;
+      }
+    }
+
+    return collSetsArr;
   },
 
   resourcesSelectboxOptions: function(collectionShortname, resourceShortname) {
@@ -683,6 +703,15 @@ const ParsedClassicsNavSelects = {
     else {
       linesOrPagesSelectbox[0].selectedIndex = 0;
     }
+  },
+
+  refreshActiveTabSelectboxesContainer: function(activeTabId) {
+    // get old tab selects container
+    const tabSelectsContainerOld = $(`#tab-selects-container-${activeTabId}`);
+    // create tab selects container
+    const tabSelectsContainerNew = ParsedClassicsNavSelects.createTabSelectsContainer(activeTabId);
+    // change old tab selects container with new one
+    tabSelectsContainerOld.replaceWith(tabSelectsContainerNew);
   },
   
 };
