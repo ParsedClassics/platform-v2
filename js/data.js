@@ -32,7 +32,7 @@ ParsedClassicsData = {
             scriptEle.addEventListener("error", (ev) => {
                 reject({
                     status: false,
-                    message: `Failed to load the script ＄{FILE_URL}`
+                    message: `Failed to load the script ${FILE_URL}`
                 });
             });
 

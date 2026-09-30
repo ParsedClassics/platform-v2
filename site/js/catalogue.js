@@ -7,12 +7,276 @@
 */
 
 /*
-Displays catalogue of Classics editions, collections and resources
+Displays list of shelfs and relevant links in main page of the Catalogue
 */
 
-ParsedClassicsCatalogue = {
+ParsedClassicsCatalogueMain = {
 
-  editionsTable: function() {
+  shelfs_already_numbered: 2,
+
+  generate: function() {
+
+    let html = '';
+    let shelf_num = ParsedClassicsCatalogueMain.shelfs_already_numbered;
+    for (const shelf_key in ParsedClassicsShelfs) {
+      const shelfDef = ParsedClassicsShelfs[shelf_key];
+      const categoryKeyArr = shelf_key.split('--');
+      const categoryArr = [];
+      categoryKeyArr.forEach((category_key) => categoryArr.push(ParsedClassicsShelfCategories[category_key]));
+      const empty = shelfDef['coll_sets'].length === 0 ? ' (empty)' : '';
+      if (!empty) {
+        shelf_num = shelf_num + 1;
+        let shelf_num_roman = ParsedClassicsSiteHelpers.numberToRoman(shelf_num);
+        const shelfHeading = `<h2><span class="chapter-number">${shelf_num_roman}</span>. Shelf${empty}: ${categoryArr.join(' | ')}</h2>\n\n`;
+        const links = !empty ? ParsedClassicsCatalogueMain.compile_links(shelf_key) : '';
+        html += shelfHeading + links;
+      }
+    }
+
+    $('#pc-site-content').append(html);
+  },
+
+  compile_links: function(shelf_key) {
+    const shelfDef = ParsedClassicsShelfs[shelf_key];
+    const collSets = shelfDef['coll_sets'];
+    const shelfLabels = shelfDef['labels'];
+    const extra = shelfDef['extra'];
+    const use_coll_set_labels = typeof extra['use_coll_set_labels'] !== 'undefined' ? extra['use_coll_set_labels'] : 'no';
+    const shelf_categories_str = '"'+ shelf_key.replaceAll('--', '","') + '"';
+    let links = `<p>○ <a href='../library.html#{"S":[${shelf_categories_str}]}'>Last saved layout</a></p>`;
+    const linksObj = {};
+    // Case I. We use shelf labels to construct links
+    for (const label_key in shelfLabels) {
+      const labelDef = shelfLabels[label_key];
+      const title = typeof labelDef['title'] !== 'undefined' ? labelDef['title'] : '';
+      const url = typeof labelDef['url'] !== 'undefined' ? labelDef['url'] : '';
+      const parent = typeof labelDef['parent'] !== 'undefined' ? labelDef['parent'] : '';
+      // (a) Url is defined for the link
+      if (url && title) {
+        linksObj[label_key] = {title, url, parent};
+      }
+      // (b) Url is not defined
+      else {
+        const url = `catalogue-details.html#{"shelf":[${shelf_categories_str}],"label":"${label_key}"}`;
+        linksObj[label_key] = {title, url, parent};
+      }
+    }
+    
+    // Case II. We use collection set's labels to construct links
+    if (use_coll_set_labels === 'yes') {
+      for (const coll_set_key of collSets) {
+        const collSetDef = ParsedClassicsCollectionSets[coll_set_key];
+        const collSetLabels = collSetDef['labels'];
+        for (const label_key in collSetLabels) {
+          const labelDef = collSetLabels[label_key];
+          const title = typeof labelDef['title'] !== 'undefined' ? labelDef['title'] : '';
+          const url = `catalogue-details.html#{"shelf":[${shelf_categories_str}],"edition":"${coll_set_key}","label":"${label_key}"}`;
+          const parent = typeof labelDef['parent'] !== 'undefined' ? labelDef['parent'] : '';
+          linksObj[label_key] = {title, url, parent};
+        }
+      }
+    }
+
+    // create hierarchy of links 
+    links += ParsedClassicsCatalogueMain.renderFlatHierarchy(linksObj);
+
+    return links;
+  },
+
+  renderFlatHierarchy: function(data, indentSizePx = 24) {
+    const tree = {};
+    const roots = [];
+
+    const isRoot = (parentKey) => !parentKey;
+
+    // 1. Create node map
+    Object.keys(data).forEach(key => {
+      tree[key] = { ...data[key], key, children: [] };
+    });
+
+    // 2. Build child relationships
+    Object.keys(tree).forEach(key => {
+      const node = tree[key];
+      const parentKey = typeof node.parent !== 'undefined' ? node.parent : null;
+
+      if (isRoot(parentKey) || !tree[parentKey]) {
+        roots.push(node);
+      } else {
+        tree[parentKey].children.push(node);
+      }
+    });
+
+    // 3. Flatten hierarchy and calculate depth level for each item
+    function flattenNodes(nodes, depth = 0) {
+      let result = [];
+      nodes.forEach(node => {
+        result.push({ ...node, depth });
+        if (node.children.length > 0) {
+          result = result.concat(flattenNodes(node.children, depth + 1));
+        }
+      });
+      return result;
+    }
+
+    const flatList = flattenNodes(roots);
+
+    // 4. Render flat HTML elements with dynamic padding/margin based on depth
+    const html = flatList.map(item => {
+      const indentPx = item.depth * indentSizePx;
+      return `<p style='padding-left: ${indentPx}px;'>- <a href='${item.url}'>${item.title}</a></p>\n\n`;
+    }).join('');
+
+    return html;
+  },
+
+};
+
+/*
+Displays catalogue of editions, collections and resources
+or catalogue of collections and resources depending on url
+*/
+
+ParsedClassicsCatalogueDetails = {
+
+  generate: function() {
+
+    const hashJsonString = window.location.hash.replace("#", "");
+    const hashJson = ParsedClassicsCatalogueDetails.stringToJson(hashJsonString);
+
+    // do we have reference to collection set in url?
+    const coll_set = typeof hashJson['edition'] !== 'undefined' ? hashJson['edition'] : null;
+
+    // do we have reference to label in url?
+    const label = typeof hashJson['label'] !== 'undefined' ? hashJson['label'] : null;
+
+    // do we have reference to shelf in url?
+    const shelfCategoriesUrl = typeof hashJson['shelf'] !== 'undefined' && hashJson['shelf'].length > 0 ? hashJson['shelf'] : null;
+
+    if (coll_set && label) {
+      ParsedClassicsCatalogueDetails.collectionsTable(shelfCategoriesUrl, coll_set, label);
+    }
+    else if (shelfCategoriesUrl && label) {
+      ParsedClassicsCatalogueDetails.editionsTable(shelfCategoriesUrl, label);
+    }
+    else {
+      return;
+    }
+
+  },
+
+  collectionsTable(shelfCategoriesUrl, coll_set, label) {
+    // let's use coll set shortname and label to get label title and array of collection shortnames
+    const collectionShortnamesArray = ParsedClassicsCollectionSets[coll_set]['labels'][label]['collections'];
+    const title = ParsedClassicsCollectionSets[coll_set]['labels'][label]['title'];
+
+    let titleHTML = '<h1>' + title + '</h1>';
+
+    const id = ParsedClassicsSiteHelpers.generateUID;
+    const baseUrl = window.location.href.split('site/')[0];
+
+    const tableId = `collections-table-${id()}`;
+    let collectionsTableHTML = `<table id="${tableId}" class="sortable-theme-light w3-table" style="table-layout: fixed;" data-sortable>`;
+
+    collectionsTableHTML += '<thead>';
+    collectionsTableHTML += '<tr>'; 
+    collectionsTableHTML += '<th style="width: 15rem;">Author</th>'; 
+    collectionsTableHTML += '<th>Title</th>'; 
+    collectionsTableHTML += '<th style="width: 6rem;">Level</th>'; // data-sorted="true" data-sorted-direction="ascending"
+    collectionsTableHTML += '<th data-sortable="false" style="width: 6rem;;">&nbsp;</th>'; 
+    collectionsTableHTML += '</tr>'; 
+    collectionsTableHTML += '</thead>'; 
+    collectionsTableHTML += '<tbody>';
+
+    for (let i = 0; i < collectionShortnamesArray.length; i++) {
+      const collectionDef = ParsedClassicsCollDefs[collectionShortnamesArray[i]];
+
+      const rowPairId = `pair-${id()}`;
+
+      // find strings which should be ignored in sorting inside catalogue
+      const catalogue_ignore = typeof collectionDef['catalogue_ignore'] !== 'undefined' ? collectionDef['catalogue_ignore'] : {};
+      const author_ignore = typeof catalogue_ignore['author_orig_short'] !== 'undefined' ? catalogue_ignore['author_orig_short'] : false;
+      const title_ignore = typeof catalogue_ignore['collections_page_title_orig'] !== 'undefined' ? catalogue_ignore['collections_page_title_orig'] : false;
+
+      let author = collectionDef['author_orig_short'] && collectionDef['author_orig_short'] != collectionDef['author_eng_short'] ? collectionDef['author_orig_short'] + ' / ' + collectionDef['author_eng_short'] : collectionDef['author_orig_short'];
+      author = ParsedClassicsCatalogueDetails.formatCellValue(author, author_ignore);
+
+      let title = collectionDef['collections_page_title_orig'] && collectionDef['collections_page_title_orig'] != collectionDef['collections_page_title_eng'] ? collectionDef['collections_page_title_orig'] + ' / ' + collectionDef['collections_page_title_eng'] : collectionDef['collections_page_title_eng'];
+      title = ParsedClassicsCatalogueDetails.formatCellValue(title, title_ignore);
+
+      const tabId = id();
+      const shelf_categories_str = '"'+ shelfCategoriesUrl.join('","') + '"';
+   
+      const url = baseUrl + `library.html#{"L":{"a":[["${collectionShortnamesArray[i]}|${collectionDef['central_resource']}"]],"b":[["${collectionShortnamesArray[i]}"]]},"S":[${shelf_categories_str}],"P":{"${collectionShortnamesArray[i]}":{}},"D":{"a":[["${id()}",50],["${id()}",100,["${tabId}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
+
+      const link = `<a href='${url}' target='_blank'>${title}</a>`;
+
+      let difficultyLevel = typeof collectionDef['extra'] != 'undefined' && typeof collectionDef['extra']['difficulty_level'] != 'undefined' ? collectionDef['extra']['difficulty_level'] : '';
+      difficultyLevel = !Number.isNaN(difficultyLevel) ? difficultyLevel : '';
+
+      const button = `<button class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsCatalogueDetails.toggleLowerLevelRow('${tableId}', '${rowPairId}', '${collectionShortnamesArray[i]}')">Details</button>`;
+
+      collectionsTableHTML += `<tr class="primary_tr" data-row-pair="${rowPairId}">`;
+
+      collectionsTableHTML += '<td>';
+      collectionsTableHTML += author;
+      collectionsTableHTML += '</td>';
+
+      collectionsTableHTML += '<td>';
+      collectionsTableHTML += link;
+      collectionsTableHTML += '</td>';
+
+      collectionsTableHTML += '<td>';
+      collectionsTableHTML += difficultyLevel;
+      collectionsTableHTML += '</td>';
+
+      collectionsTableHTML += '<td>';
+      collectionsTableHTML += button;
+      collectionsTableHTML += '</td>';
+
+      collectionsTableHTML += '</tr>';
+
+      collectionsTableHTML += `<tr class="secondary_tr pc-hide" data-row-pair="${rowPairId}">`;
+
+      collectionsTableHTML += '<td colspan="4" style="padding: 0 8px 8px 32px;">';
+      collectionsTableHTML += '<p style="text-align: center;"><img src="./img/ajax-loader.gif"></p>';
+      //collectionsTableHTML += difficultyLevel;
+      collectionsTableHTML += '</td>';
+
+      collectionsTableHTML += '</tr>';
+    }
+
+    collectionsTableHTML += '</tbody>';
+    collectionsTableHTML += '</table>';
+    $('#pc-site-content').append(titleHTML + collectionsTableHTML);
+
+    // initialize sortable tables
+    sortableTable.init();
+  },
+
+  toggleLowerLevelRow: function(table_id, rowPairAttr, collectionShortname) {
+    let secondaryRow = $(`#${table_id}`).find(`.secondary_tr[data-row-pair="${rowPairAttr}"]`);
+    secondaryRow.toggle(ParsedClassicsAppVars.animationSpeed);
+    if (typeof ParsedClassicsCollDefs[collectionShortname]['resource_defs'] == 'undefined') {
+      const collectionShortnamesArray = [collectionShortname];
+      // load needed data
+      const collDataPromises = ParsedClassicsCatalogueDetails.loadCollectionsDefs(collectionShortnamesArray);
+      Promise.allSettled(collDataPromises)
+      // collections data loaded successfully
+        .then((values) => {
+          const collectionDef = ParsedClassicsCollDefs[collectionShortname];
+          const resourceDefs = collectionDef['resource_defs'];
+          const resourcesListHtml = ParsedClassicsCatalogueDetails.createAvailableResourcesListHtml(collectionDef, resourceDefs);
+          secondaryRow.find('td').html(resourcesListHtml);
+        })
+        // collections data loaded unsuccessfully, so display error
+        .catch((error) => {
+          // This catch block will not be executed
+          console.error(error);
+        });
+    }
+  },
+
+  editionsTable: function(shelfCategoriesUrl, label) {
     const id = ParsedClassicsSiteHelpers.generateUID;
 
     const tableId = `editions-table-${id()}`;
@@ -28,25 +292,16 @@ ParsedClassicsCatalogue = {
     editionsTableHTML += '</thead>'; 
     editionsTableHTML += '<tbody>';
 
-    const hashJsonString = window.location.hash.replace("#", "");
-    const hashJson = ParsedClassicsCatalogue.stringToJson(hashJsonString);
-
-    // have we any labels in URL?
-    if (typeof hashJson['labels'] === 'undefined') {
-      return;
-    }
-
-    // let's use array of labels from URL to get array of edition shortnames
-    const labelsArrUrl = hashJson['labels'];
+    // let's use array of shelf categories from URL to get array of edition shortnames
     let editionShortnamesArr = [];
     let title;
-    for (var key in ParsedClassicsCollSetLabels) {
-      const labels_str = key;
-      const labelsArr = labels_str.split('--');
-      const sameMembers = ParsedClassicsSiteHelpers.arraysHaveSameMembers(labelsArrUrl, labelsArr);
+    for (var key in ParsedClassicsShelfs) {
+      const categories_str = key;
+      const categoriesArr = categories_str.split('--');
+      const sameMembers = ParsedClassicsSiteHelpers.arraysHaveSameMembers(shelfCategoriesUrl, categoriesArr);
       if (sameMembers) {
-        editionShortnamesArr = ParsedClassicsCollSetLabels[key]['coll_sets'];
-        title = ParsedClassicsCollSetLabels[key]['title'];
+        editionShortnamesArr = ParsedClassicsShelfs[key]['labels'][label]['coll_sets'];
+        title = ParsedClassicsShelfs[key]['labels'][label]['title'];
         break;
       }
     }
@@ -55,23 +310,24 @@ ParsedClassicsCatalogue = {
       const editionShortname = key;
       const editionDef = ParsedClassicsCollectionSets[key];
       const rowPairId = `pair-${id()}`;
-      
+
       // find strings which should be ignored in sorting inside catalogue
       const catalogue_ignore = typeof editionDef['catalogue_ignore'] !== 'undefined' ? editionDef['catalogue_ignore'] : {};
       const author_ignore = typeof catalogue_ignore['author_orig'] !== 'undefined' ? catalogue_ignore['author_orig'] : false;
       const title_ignore = typeof catalogue_ignore['title_orig'] !== 'undefined' ? catalogue_ignore['title_orig'] : false;
 
       let author = editionDef['author_orig'];
-      author = ParsedClassicsCatalogue.formatCellValue(author, author_ignore);
+      author = ParsedClassicsCatalogueDetails.formatCellValue(author, author_ignore);
 
       let title = editionDef['title_orig'];
-      title = ParsedClassicsCatalogue.formatCellValue(title, title_ignore);
+      title = ParsedClassicsCatalogueDetails.formatCellValue(title, title_ignore);
 
       //const url = 'url';
       //const link = `<a href='${url}' target='_blank'>${title}</a>`;
       let difficultyLevel = typeof editionDef['extra'] != 'undefined' && typeof editionDef['extra']['difficulty_level'] != 'undefined' ? editionDef['extra']['difficulty_level'] : '';
       difficultyLevel = !Number.isNaN(difficultyLevel) ? difficultyLevel : '';
-      const button = `<button class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsCatalogue.toggleSecondaryRow('${tableId}', '${rowPairId}', '${editionShortname}')">Details</button>`;
+      const shelf_categories_str = "'" + shelfCategoriesUrl.join("','") + "'";
+      const button = `<button class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsCatalogueDetails.toggleSecondaryRow('${tableId}', '${rowPairId}', [${shelf_categories_str}], '${editionShortname}')">Details</button>`;
 
       editionsTableHTML += `<tr class="primary_tr" data-row-pair="${rowPairId}">`;
 
@@ -148,14 +404,14 @@ ParsedClassicsCatalogue = {
     return value;
   },
 
-  toggleSecondaryRow: async function(table_id, rowPairAttr, editionShortname) {
+  toggleSecondaryRow: async function(table_id, rowPairAttr,shelfCategoriesUrl, editionShortname) {
     let secondaryRow = $(`#${table_id}`).find(`.secondary_tr[data-row-pair="${rowPairAttr}"]`);
     secondaryRow.toggle(ParsedClassicsAppVars.animationSpeed);
-    const collListHtml = await ParsedClassicsCatalogue.collectionsList(editionShortname);
+    const collListHtml = await ParsedClassicsCatalogueDetails.collectionsList(shelfCategoriesUrl, editionShortname);
     secondaryRow.find('td').html(collListHtml);
   },
 
-  collectionsList: async function(collSetShortname) {
+  collectionsList: async function(shelfCategoriesUrl, collSetShortname) {
 
     // if there is no shortname of collections set or shortname of collections set is invalid
     // then there is nothing to do
@@ -171,7 +427,7 @@ ParsedClassicsCatalogue = {
     const collectionShortnamesArray = ParsedClassicsCollectionSets[collSetShortname].collections;
 
     // create HTML table into which info about collections will be placed
-    const collListHtml = await ParsedClassicsCatalogue.createCollectionsTable(collectionShortnamesArray, collSetOrigTitle, collSetEngTitle);
+    const collListHtml = await ParsedClassicsCatalogueDetails.createCollectionsTable(shelfCategoriesUrl, collectionShortnamesArray, collSetOrigTitle, collSetEngTitle);
 
     return collListHtml;
   },
@@ -185,9 +441,9 @@ ParsedClassicsCatalogue = {
     return json;
   },
 
-  createCollectionsTable: async function(collectionShortnamesArray, collSetOrigTitle, collSetEngTitle) {   
+  createCollectionsTable: async function(shelfCategoriesUrl, collectionShortnamesArray, collSetOrigTitle, collSetEngTitle) {   
     // load needed data
-    const collDataPromises = ParsedClassicsCatalogue.loadCollectionsDefs(collectionShortnamesArray);
+    const collDataPromises = ParsedClassicsCatalogueDetails.loadCollectionsDefs(collectionShortnamesArray);
     await Promise.allSettled(collDataPromises)
       // collections data loaded successfully
       .then((values) => {
@@ -204,14 +460,6 @@ ParsedClassicsCatalogue = {
       const id = ParsedClassicsSiteHelpers.generateUID;
       const baseUrl = window.location.href.split('site/')[0];
 
-      let fileName;
-      if (window.location.pathname.indexOf('/catalogue-greek-classics.html') != -1) {
-        fileName = 'greek-classics.html';
-      }
-      else if (window.location.pathname.indexOf('/catalogue-latin-classics') != -1) {
-        fileName = 'latin-classics.html';
-      }
-
       for (let i = 0; i < collectionShortnamesArray.length; i++) {
         const collectionDef = ParsedClassicsCollDefs[collectionShortnamesArray[i]];
         const resourceDefs = collectionDef['resource_defs'];
@@ -219,20 +467,21 @@ ParsedClassicsCatalogue = {
         const contents_type = collectionDef['contents_type'];
         let collTitle = collectionDef['collections_page_title_orig'];
         //collTitle += collectionDef['collections_page_title_eng'];
-        const url = baseUrl + `${fileName}#{"L":{"a":[["${collectionShortnamesArray[i]}|${parsedTextResShortname}"]],"b":[["${collectionShortnamesArray[i]}"]]},"P":{"${collectionShortnamesArray[i]}":{"${contents_type}":"title"}},"D":{"a":[["${id()}",50],["${id()}",100,["${id()}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
+        const shelf_categories_str = '"'+ shelfCategoriesUrl.join('","') + '"';
+        const url = baseUrl + `library.html#{"L":{"a":[["${collectionShortnamesArray[i]}|${parsedTextResShortname}"]],"b":[["${collectionShortnamesArray[i]}"]]},"S":[${shelf_categories_str}],"P":{"${collectionShortnamesArray[i]}":{"${contents_type}":"title"}},"D":{"a":[["${id()}",50],["${id()}",100,["${id()}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
         
         collectionsTableHTML += '<tr>';
 
         collectionsTableHTML += '<td id="' + collectionShortnamesArray[i] + '" class="pc-padding-left-0">';
         collectionsTableHTML += `<a href='${url}' target='_blank'>` + collTitle + '</a>';
         collectionsTableHTML += '</td>';          
-        collectionsTableHTML += '<td style="width: 6rem;"><button id="' + collectionShortnamesArray[i] + '_button" class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsCatalogue.toggleDetails(\'' + collectionShortnamesArray[i] +'_details\');">Details</button></td>';
+        collectionsTableHTML += '<td style="width: 6rem;"><button id="' + collectionShortnamesArray[i] + '_button" class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsCatalogueDetails.toggleDetails(\'' + collectionShortnamesArray[i] +'_details\');">Details</button></td>';
         
         collectionsTableHTML += '</tr>';
         collectionsTableHTML += '<tr>';
 
         collectionsTableHTML += '<td id="' + collectionShortnamesArray[i] + '_details" colspan="2" style="display: none;" class="pc-padding-top-0">';  
-        collectionsTableHTML += ParsedClassicsCatalogue.createAvailableResourcesListHtml(collectionDef, resourceDefs);
+        collectionsTableHTML += ParsedClassicsCatalogueDetails.createAvailableResourcesListHtml(collectionDef, resourceDefs);
         collectionsTableHTML += '</td>';
 
         collectionsTableHTML += '</tr>';
@@ -320,155 +569,4 @@ ParsedClassicsCatalogue = {
     $("#" + button_id).toggle(ParsedClassicsAppVars.animationSpeed);
   }
 
-}
-
-/*
-Displays catalogue of Readers editions, collections and resources
-*/
-
-ParsedClassicsReadersCatalogue = {
-  
-  collectionsList: function() {
-    const hashJsonString = window.location.hash.replace("#", "");
-    const hashJson = ParsedClassicsCatalogue.stringToJson(hashJsonString);
-
-    // have we any labels in URL?
-    if (typeof hashJson['labels'] === 'undefined') {
-      return;
-    }
-
-    // let's use array of labels from URL to get array of collection shortnames
-    const labelsArrUrl = hashJson['labels'];
-    let collectionShortnamesArr = [];
-    let title;
-    for (var key in ParsedClassicsCollectionLabels) {
-      const labels_str = key;
-      const labelsArr = labels_str.split('--');
-      const sameMembers = ParsedClassicsSiteHelpers.arraysHaveSameMembers(labelsArrUrl, labelsArr);
-      if (sameMembers) {
-        collectionShortnamesArr = ParsedClassicsCollectionLabels[key]['collections'];
-        title = ParsedClassicsCollectionLabels[key]['title'];
-        break;
-      }
-    }
-    
-    // create HTML table into which info about collections will be placed
-    ParsedClassicsReadersCatalogue.createCollectionsTable(collectionShortnamesArr, title);
-  },
-
-  createCollectionsTable: function(collectionShortnamesArray, collSetEngTitle) {
-    let titleHTML = '<h1>' + collSetEngTitle + '</h1>';
-
-    const id = ParsedClassicsSiteHelpers.generateUID;
-    const baseUrl = window.location.href.split('site/')[0];
-
-    const tableId = `collections-table-${id()}`;
-    let collectionsTableHTML = `<table id="${tableId}" class="sortable-theme-light w3-table" style="table-layout: fixed;" data-sortable>`;
-    
-    collectionsTableHTML += '<thead>';
-    collectionsTableHTML += '<tr>'; 
-    collectionsTableHTML += '<th style="width: 15rem;">Author</th>'; 
-    collectionsTableHTML += '<th>Title</th>'; 
-    collectionsTableHTML += '<th style="width: 6rem;">Level</th>'; // data-sorted="true" data-sorted-direction="ascending"
-    collectionsTableHTML += '<th data-sortable="false" style="width: 6rem;;">&nbsp;</th>'; 
-    collectionsTableHTML += '</tr>'; 
-    collectionsTableHTML += '</thead>'; 
-    collectionsTableHTML += '<tbody>';
-    
-    for (let i = 0; i < collectionShortnamesArray.length; i++) {
-      const collectionDef = ParsedClassicsCollDefs[collectionShortnamesArray[i]];
-
-      const rowPairId = `pair-${id()}`;
-
-      // find strings which should be ignored in sorting inside catalogue
-      const catalogue_ignore = typeof collectionDef['catalogue_ignore'] !== 'undefined' ? collectionDef['catalogue_ignore'] : {};
-      const author_ignore = typeof catalogue_ignore['author_orig_short'] !== 'undefined' ? catalogue_ignore['author_orig_short'] : false;
-      const title_ignore = typeof catalogue_ignore['collections_page_title_orig'] !== 'undefined' ? catalogue_ignore['collections_page_title_orig'] : false;
-
-      let author = collectionDef['author_orig_short'] && collectionDef['author_orig_short'] != collectionDef['author_eng_short'] ? collectionDef['author_orig_short'] + ' / ' + collectionDef['author_eng_short'] : collectionDef['author_orig_short'];
-      author = ParsedClassicsCatalogue.formatCellValue(author, author_ignore);
-
-      let title = collectionDef['collections_page_title_orig'] && collectionDef['collections_page_title_orig'] != collectionDef['collections_page_title_eng'] ? collectionDef['collections_page_title_orig'] + ' / ' + collectionDef['collections_page_title_eng'] : collectionDef['collections_page_title_eng'];
-      title = ParsedClassicsCatalogue.formatCellValue(title, title_ignore);
-
-      const tabId = id();
-
-      let fileName;
-      if (window.location.pathname.indexOf('/catalogue-greek-readers.html') != -1) {
-        fileName = 'greek-readers.html';
-      }
-      else if (window.location.pathname.indexOf('/catalogue-latin-readers.html') != -1) {
-        fileName = 'latin-readers.html';
-      }
-   
-      const url = baseUrl + `${fileName}#{"L":{"a":[["${collectionShortnamesArray[i]}|${collectionDef['central_resource']}"]],"b":[["${collectionShortnamesArray[i]}"]]},"P":{"${collectionShortnamesArray[i]}":{}},"D":{"a":[["${id()}",50],["${id()}",100,["${tabId}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
-
-      const link = `<a href='${url}' target='_blank'>${title}</a>`;
-
-      let difficultyLevel = typeof collectionDef['extra'] != 'undefined' && typeof collectionDef['extra']['difficulty_level'] != 'undefined' ? collectionDef['extra']['difficulty_level'] : '';
-      difficultyLevel = !Number.isNaN(difficultyLevel) ? difficultyLevel : '';
-
-      const button = `<button class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey" onclick="ParsedClassicsReadersCatalogue.toggleSecondaryRow('${tableId}', '${rowPairId}', '${collectionShortnamesArray[i]}')">Details</button>`;
-
-      collectionsTableHTML += `<tr class="primary_tr" data-row-pair="${rowPairId}">`;
-
-      collectionsTableHTML += '<td>';
-      collectionsTableHTML += author;
-      collectionsTableHTML += '</td>';
-
-      collectionsTableHTML += '<td>';
-      collectionsTableHTML += link;
-      collectionsTableHTML += '</td>';
-
-      collectionsTableHTML += '<td>';
-      collectionsTableHTML += difficultyLevel;
-      collectionsTableHTML += '</td>';
-
-      collectionsTableHTML += '<td>';
-      collectionsTableHTML += button;
-      collectionsTableHTML += '</td>';
-
-      collectionsTableHTML += '</tr>';
-
-      collectionsTableHTML += `<tr class="secondary_tr pc-hide" data-row-pair="${rowPairId}">`;
-
-      collectionsTableHTML += '<td colspan="4" style="padding: 0 8px 8px 32px;">';
-      collectionsTableHTML += '<p style="text-align: center;"><img src="./img/ajax-loader.gif"></p>';
-      //collectionsTableHTML += difficultyLevel;
-      collectionsTableHTML += '</td>';
-
-      collectionsTableHTML += '</tr>';
-    }
-
-    collectionsTableHTML += '</tbody>';
-    collectionsTableHTML += '</table>';
-    $('#pc-site-content').append(titleHTML + collectionsTableHTML);
-
-    // initialize sortable tables
-    sortableTable.init();
-  },
-
-  toggleSecondaryRow: function(table_id, rowPairAttr, collectionShortname) {
-    let secondaryRow = $(`#${table_id}`).find(`.secondary_tr[data-row-pair="${rowPairAttr}"]`);
-    secondaryRow.toggle(ParsedClassicsAppVars.animationSpeed);
-    if (typeof ParsedClassicsCollDefs[collectionShortname]['resource_defs'] == 'undefined') {
-      const collectionShortnamesArray = [collectionShortname];
-      // load needed data
-      const collDataPromises = ParsedClassicsCatalogue.loadCollectionsDefs(collectionShortnamesArray);
-      Promise.allSettled(collDataPromises)
-      // collections data loaded successfully
-        .then((values) => {
-          const collectionDef = ParsedClassicsCollDefs[collectionShortname];
-          const resourceDefs = collectionDef['resource_defs'];
-          const resourcesListHtml = ParsedClassicsCatalogue.createAvailableResourcesListHtml(collectionDef, resourceDefs);
-          secondaryRow.find('td').html(resourcesListHtml);
-        })
-        // collections data loaded unsuccessfully, so display error
-        .catch((error) => {
-          // This catch block will not be executed
-          console.error(error);
-        });
-    }
-  }
-
-}
+};

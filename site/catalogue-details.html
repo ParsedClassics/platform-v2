@@ -16,7 +16,7 @@
 
 <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 
-<title>Classics | Catalogue | ParsedClassics</title>
+<title>Details | Catalogue | ParsedClassics</title>
 
 <link type="text/css" rel="stylesheet" href="./css/vars.css" />
 
@@ -26,7 +26,9 @@
 
 <link type="text/css" rel="stylesheet" href="./css/sortable-light.css" />
 
-<script type="text/javascript" src="../data/_catalogues/_sets_greek_classics.js"></script>
+<script type="text/javascript" src="../data/_catalogues/_shelfs.js"></script>
+
+<script type="text/javascript" src="../data/_catalogues/_coll_sets.js"></script>
 
 <script type="text/javascript" src="../data/_catalogues/_collections.js"></script>
 
@@ -43,7 +45,7 @@
 <script type="text/javascript" src="./js/catalogue.js"></script>
 
 <script>
-  $(document).ready(ParsedClassicsCatalogue.editionsTable);
+  $(document).ready(ParsedClassicsCatalogueDetails.generate);
 </script>
 
 </head>

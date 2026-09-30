@@ -63,6 +63,15 @@ div[data-resource-type="info_text"][data-scanned-or-typed="typed"] > .tab__conte
   max-width: var(--text-max-width);
 }
 
+div[data-resource-type="info_text"][data-scanned-or-typed="typed"] > .tab__content-inner a {
+  color: #3176c4;
+  text-decoration: none;
+}
+
+div[data-resource-type="info_text"][data-scanned-or-typed="typed"] > .tab__content-inner a:hover {
+  text-decoration: underline;
+}
+
 div[data-resource-type="info_text"][data-scanned-or-typed="typed"] .button-example-wrap {
   display: inline-block;
 }
