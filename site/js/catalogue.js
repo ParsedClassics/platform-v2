@@ -159,6 +159,9 @@ ParsedClassicsCatalogueDetails = {
       ParsedClassicsCatalogueDetails.editionsTable(shelfCategoriesUrl, label);
     }
     else {
+      const titleHTML = '<h1>Nothing found</h1>\n\n';
+      const content = '<p>Probably URL address is incorrect.</p>'
+      $('#pc-site-content').append(titleHTML + content);
       return;
     }
 
@@ -166,8 +169,26 @@ ParsedClassicsCatalogueDetails = {
 
   collectionsTable(shelfCategoriesUrl, coll_set, label) {
     // let's use coll set shortname and label to get label title and array of collection shortnames
-    const collectionShortnamesArray = ParsedClassicsCollectionSets[coll_set]['labels'][label]['collections'];
-    const title = ParsedClassicsCollectionSets[coll_set]['labels'][label]['title'];
+    const collectionShortnamesArray = 
+    typeof ParsedClassicsCollectionSets[coll_set] !== 'undefined' &&
+    typeof ParsedClassicsCollectionSets[coll_set]['labels'] !== 'undefined' &&
+    typeof ParsedClassicsCollectionSets[coll_set]['labels'][label] !== 'undefined' &&
+    typeof ParsedClassicsCollectionSets[coll_set]['labels'][label]['collections'] !== 'undefined' ?
+    ParsedClassicsCollectionSets[coll_set]['labels'][label]['collections'] : [];
+
+    const title = 
+    typeof ParsedClassicsCollectionSets[coll_set] !== 'undefined' &&
+    typeof ParsedClassicsCollectionSets[coll_set]['labels'] !== 'undefined' &&
+    typeof ParsedClassicsCollectionSets[coll_set]['labels'][label] !== 'undefined' &&
+    typeof ParsedClassicsCollectionSets[coll_set]['labels'][label]['title'] !== 'undefined' ?
+    ParsedClassicsCollectionSets[coll_set]['labels'][label]['title'] : '';
+
+    if (collectionShortnamesArray.length === 0) {
+      const titleHTML = '<h1>Nothing found</h1>\n\n';
+      const content = '<p>Probably URL address is incorrect.</p>'
+      $('#pc-site-content').append(titleHTML + content);
+      return;
+    }
 
     let titleHTML = '<h1>' + title + '</h1>';
 
@@ -300,10 +321,27 @@ ParsedClassicsCatalogueDetails = {
       const categoriesArr = categories_str.split('--');
       const sameMembers = ParsedClassicsSiteHelpers.arraysHaveSameMembers(shelfCategoriesUrl, categoriesArr);
       if (sameMembers) {
-        editionShortnamesArr = ParsedClassicsShelfs[key]['labels'][label]['coll_sets'];
-        title = ParsedClassicsShelfs[key]['labels'][label]['title'];
+        editionShortnamesArr = 
+        typeof ParsedClassicsShelfs[key] !== 'undefined' &&
+        typeof ParsedClassicsShelfs[key]['labels'] !== 'undefined' &&
+        typeof ParsedClassicsShelfs[key]['labels'][label] !== 'undefined' &&
+        typeof ParsedClassicsShelfs[key]['labels'][label]['coll_sets'] !== 'undefined' ?
+        ParsedClassicsShelfs[key]['labels'][label]['coll_sets'] : [];
+        title = 
+        typeof ParsedClassicsShelfs[key] !== 'undefined' &&
+        typeof ParsedClassicsShelfs[key]['labels'] !== 'undefined' &&
+        typeof ParsedClassicsShelfs[key]['labels'][label] !== 'undefined' &&
+        typeof ParsedClassicsShelfs[key]['labels'][label]['title'] !== 'undefined' ?
+        ParsedClassicsShelfs[key]['labels'][label]['title'] : '';
         break;
       }
+    }
+
+    if (editionShortnamesArr.length === 0) {
+      const titleHTML = '<h1>Nothing found</h1>\n\n';
+      const content = '<p>Probably URL address is incorrect.</p>'
+      $('#pc-site-content').append(titleHTML + content);
+      return;
     }
 
     for (var key of editionShortnamesArr) {
