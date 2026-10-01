@@ -43,7 +43,7 @@ const ParsedClassicsResProtos = {
   homer_iliad_1_12: {
     collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by ParsedClassics (2026)",
-		library_app_selectbox_title: "AI assisted parsing", 
+		library_app_selectbox_title: "AI-assisted parsing", 
 		library_app_panel_subtitle: "",
     library_app_panel_text_from: "Homeri Opera. Volume 1. 3rd edition. Monro, D. B., ed.; Allen, Th. W., ed. 1920. Oxford: Clarendon Press.",
     library_app_panel_note: "",
@@ -56,7 +56,7 @@ const ParsedClassicsResProtos = {
   homer_iliad_13_24: {
     collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by ParsedClassics (2026)",
-		library_app_selectbox_title: "AI assisted parsing", 
+		library_app_selectbox_title: "AI-assisted parsing", 
 		library_app_panel_subtitle: "",
     library_app_panel_text_from: "Homeri Opera. Volume 2. 3rd edition. Monro, D. B., ed.; Allen, Th. W., ed. 1920. Oxford: Clarendon Press.",
     library_app_panel_note: "",
@@ -69,7 +69,7 @@ const ParsedClassicsResProtos = {
   homer_odyssey_1_12: {
     collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by ParsedClassics (2026)",
-		library_app_selectbox_title: "AI assisted parsing", 
+		library_app_selectbox_title: "AI-assisted parsing", 
 		library_app_panel_subtitle: "",
     library_app_panel_text_from: "Homeri Opera. Volume 3. 2nd edition. Monro, D. B., ed.; Allen, Th. W., ed. 1917. Oxford: Clarendon Press.",
     library_app_panel_note: "",
@@ -82,7 +82,7 @@ const ParsedClassicsResProtos = {
   homer_odyssey_13_24: {
     collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by ParsedClassics (2026)",
-		library_app_selectbox_title: "AI assisted parsing", 
+		library_app_selectbox_title: "AI-assisted parsing", 
 		library_app_panel_subtitle: "",
     library_app_panel_text_from: "Homeri Opera. Volume 4. 2nd edition. Monro, D. B., ed.; Allen, Th. W., ed. 1919. Oxford: Clarendon Press.",
     library_app_panel_note: "",
@@ -95,7 +95,7 @@ const ParsedClassicsResProtos = {
   homeric_hymns_parsed_text: {
     collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by ParsedClassics (2026)",
-		library_app_selectbox_title: "AI assisted parsing", 
+		library_app_selectbox_title: "AI-assisted parsing", 
 		library_app_panel_subtitle: "",
     library_app_panel_text_from: "The Homeric Hymns. Edited by T. W. Allen, W. R. Halliday, E. E. Sikes. Second edition. 1934. Oxford: Oxford University Press.",
     library_app_panel_note: "",
@@ -108,7 +108,7 @@ const ParsedClassicsResProtos = {
   hesiod_parsed_text: {
     collections_page_resource_author: "",
     collections_page_resource_desc: "ed. by ParsedClassics (2026)",
-		library_app_selectbox_title: "AI assisted parsing", 
+		library_app_selectbox_title: "AI-assisted parsing", 
 		library_app_panel_subtitle: "",
     library_app_panel_text_from: "Hesiod, the homeric hymns and homerica. With an English translation by H. G. Evelyn-White. 1914. London: Heinemann. New York: Macmillan.",
     library_app_panel_note: "",
