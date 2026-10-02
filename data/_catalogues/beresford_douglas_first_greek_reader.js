@@ -9,8 +9,7 @@
 /* 
 	Template of resource description:
 
-  collections_page_resource_author: "",
-	collections_page_resource_desc: "", 
+  library_app_panel_author: "", 
 	library_app_selectbox_title: "",
 	library_app_panel_title: "",
 	library_app_panel_subtitle: "",
@@ -41,8 +40,7 @@ ParsedClassicsCollDefs.beresford_douglas_first_greek_reader["resource_defs"] = {
   // Parsed text
 
   beresford_douglas_first_greek_reader_parsed_text: {
-		collections_page_resource_author: "R. A. A. Beresford, R. N. Douglas",
-    collections_page_resource_desc: "R. A. A. Beresford, R. N. Douglas. A First Greek Reader (1903)",
+		library_app_panel_author: "R. A. A. Beresford, R. N. Douglas",
 		library_app_selectbox_title: "R. A. A. Beresford, R. N. Douglas. A First Greek Reader (1903)", 
 		library_app_panel_title: "A First Greek Reader",
     library_app_panel_subtitle: "",
@@ -76,8 +74,7 @@ ParsedClassicsCollDefs.beresford_douglas_first_greek_reader["resource_defs"] = {
   // Original text
 
   beresford_douglas_first_greek_reader_orig_text: {
-    collections_page_resource_author: "R. A. A. Beresford, R. N. Douglas",
-    collections_page_resource_desc: "R. A. A. Beresford, R. N. Douglas. A First Greek Reader (1903)", 
+    library_app_panel_author: "R. A. A. Beresford, R. N. Douglas", 
     library_app_selectbox_title: "R. A. A. Beresford, R. N. Douglas. A First Greek Reader (1903)",
     library_app_panel_title: "A First Greek Reader",
     library_app_panel_subtitle: "",

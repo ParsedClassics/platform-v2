@@ -9,8 +9,7 @@
 /* 
 	Template of resource description:
 
-  collections_page_resource_author: "",
-	collections_page_resource_desc: "", 
+  library_app_panel_author: "", 
 	library_app_selectbox_title: "",
 	library_app_panel_title: "",
 	library_app_panel_subtitle: "",
@@ -41,8 +40,7 @@ ParsedClassicsCollDefs.arnold_cloelia["resource_defs"] = {
   // Parsed text
 
   arnold_cloelia_parsed_text: {
-		collections_page_resource_author: "Eleanor Arnold",
-    collections_page_resource_desc: "Arnold E. Cloelia, puella Rōmāna (2016)",
+		library_app_panel_author: "Eleanor Arnold",
 		library_app_selectbox_title: "Arnold E. Cloelia, puella Rōmāna (2016)", 
 		library_app_panel_title: "Cloelia, puella Rōmāna",
     library_app_panel_subtitle: "",
@@ -80,8 +78,7 @@ ParsedClassicsCollDefs.arnold_cloelia["resource_defs"] = {
   // Original text
 
   arnold_cloelia_orig_text: {
-    collections_page_resource_author: "Eleanor Arnold",
-    collections_page_resource_desc: "Arnold E. Cloelia, puella Rōmāna (2016)", 
+    library_app_panel_author: "Eleanor Arnold", 
     library_app_selectbox_title: "Arnold E. Cloelia, puella Rōmāna (2016)",
     library_app_panel_title: "Cloelia, puella Rōmāna",
     library_app_panel_subtitle: "",

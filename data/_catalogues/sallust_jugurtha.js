@@ -9,8 +9,7 @@
 /* 
 	Template of resource description:
 
-  collections_page_resource_author: "",
-	collections_page_resource_desc: "", 
+  library_app_panel_author: "", 
 	library_app_selectbox_title: "",
 	library_app_panel_title: "",
 	library_app_panel_subtitle: "",
@@ -42,7 +41,6 @@ ParsedClassicsCollDefs.sallust_jugurtha["resource_defs"] = {
 
   sallust_jugurtha_parsed_text: {
     ...ParsedClassicsResProtos.sallust_parsed_text,
-    collections_page_resource_desc: "C. Sallusti Crispi Bellum Iugurthinum",
 		library_app_panel_title: "Bellum Iugurthinum",
     contents_shortname: "sallust_jugurtha_parsed_text_contents",
   },

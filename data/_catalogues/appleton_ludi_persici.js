@@ -9,8 +9,7 @@
 /* 
 	Template of resource description:
 
-  collections_page_resource_author: "",
-	collections_page_resource_desc: "", 
+  library_app_panel_author: "", 
 	library_app_selectbox_title: "",
 	library_app_panel_title: "",
 	library_app_panel_subtitle: "",
@@ -37,8 +36,7 @@ ParsedClassicsCollDefs.appleton_ludi_persici["resource_defs"] = {
   // Reader
 
   appleton_ludi_persici_reader: {
-    collections_page_resource_author: "",
-    collections_page_resource_desc: "Appleton R. B. Ludi Persici (1921)", 
+    library_app_panel_author: "", 
     library_app_selectbox_title: "Appleton R. B. Ludi Persici (1921)",
     library_app_panel_title: "Appleton R. B. Ludi Persici",
     library_app_panel_subtitle: "",

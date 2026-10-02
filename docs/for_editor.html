@@ -427,7 +427,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
     // The contents of the first resource of the type "Parsed text" serves as contents of the whole collection
 
     nt_titus_parsed_text: {
-      collections_page_resource_desc: "ed. by ParsedClassics (2018)",
       library_app_selectbox_title: "Byzantine textform", 
       library_app_panel_subtitle: "",
       library_app_panel_text_from: "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing.",
@@ -444,8 +443,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 </pre>
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections-classics.html#{"edition":"nt_apostolics"}' target="_blank">Collections page</a>.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value the title of the resource in original language.</p>
 
@@ -472,7 +469,6 @@ const ParsedClassicsResProtos = {
   // Parsed texts
 
   nt_parsed_text_byzantine: {
-    collections_page_resource_desc: "ed. by ParsedClassics (2018)",
     library_app_selectbox_title: "Byzantine textform", 
     library_app_panel_subtitle: "",
     library_app_panel_text_from: "The New Testament in the original Greek. Byzantine textform. Compiled and arranged by M. A. Robinson and W. G. Pierpont. 2005. Southborough, MA: Chilton book publishing.",
@@ -516,8 +512,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
   // Original texts
 
-  nt_titus_text_ed_antoniadis: {
-    collections_page_resource_desc: "ed. by V. Antoniadis (1904)", 
+  nt_titus_text_ed_antoniadis: { 
     library_app_selectbox_title: "Edition by V. Antoniadis (1904)",
     library_app_panel_title: "Text ed. by V. Antoniadis (1904)",
     library_app_panel_subtitle: "",
@@ -534,8 +529,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 </pre>
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections-classics.html#{"edition":"nt_apostolics"}' target="_blank">Collections page</a>.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus editor‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value short title of the resource in English.</p>
 
@@ -561,8 +554,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 const ParsedClassicsResProtos = {
   // Original texts
 
-  nt_text_ed_antoniadis: {
-    collections_page_resource_desc: "ed. by V. Antoniadis (1904)", 
+  nt_text_ed_antoniadis: { 
     library_app_selectbox_title: "Edition by V. Antoniadis (1904)",
     library_app_panel_title: "Text ed. by V. Antoniadis (1904)",
     library_app_panel_subtitle: "",
@@ -606,8 +598,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
   // Concordances
 
-  concordance_by_moulton_geden: {
-    collections_page_resource_desc: "ed. by W. F. Moulton and A. S. Geden (1899)", 
+  concordance_by_moulton_geden: { 
     library_app_selectbox_title: "Concordance ed. by W. F. Moulton and A. S. Geden (1899)",
     library_app_panel_title: "A concordance to the Greek Testament ed. by W. F. Moulton and A. S. Geden (1899)",
     library_app_panel_text_from: "A concordance to the Greek Testament according to the texts of Westcott and Hort, Tischendorf and the English Revisers. Edited by W. F. Moulton and A. S. Geden. 2-nd ed. 1899. Edinburgh: T. & T. Clark.",
@@ -618,8 +609,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
     contents_shortname: "concordance_to_greek_testament_by_moulton_geden_contents",
   },
 
-  nt_conc_by_parsedclassics: {
-    collections_page_resource_desc: "compiled by ParsedClassics (2018)", 
+  nt_conc_by_parsedclassics: { 
     library_app_selectbox_title: "Concordance compiled by ParsedClassics (2018)",
     library_app_panel_title: "New Testament concordance",
     library_app_panel_text_from: "",
@@ -636,8 +626,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 </pre>
 
 <p>After you add these lines, you should see these resources listed in Resources selectbox and in <a target="_blank" href='../site/collections-classics.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
-
-<p>For scanned concordance resource the key "collections_page_resource_desc" should have as its value a string "ed. by" plus compilator‘s name and the year in brackets. For transcribed concordance resource the key "collections_page_resource_desc" should have as its value a string "compiled by" plus compilator‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value short title of the resource in English.</p>
 
@@ -671,8 +659,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
   // Lexicons
 
-  greek_lexicon_of_nt_by_robinson: {
-    collections_page_resource_desc: "Greek-English lexicon of the NT by E. Robinson (1850)", 
+  greek_lexicon_of_nt_by_robinson: { 
     library_app_selectbox_title: "Greek-English lexicon of the NT by E. Robinson (1850)",
     library_app_panel_title: "A Greek and English lexicon of the New Testament by E. Robinson (1850)",
     library_app_panel_text_from: "A Greek and English lexicon of the New Testament. By Edward Robinson. Second edition. 1850. New York: Harper and Brothers.",
@@ -683,8 +670,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
     contents_shortname: "greek_and_english_lexicon_of_nt_by_robinson_contents",
   },
 
-  greek_lexicon_to_nt_by_green: {
-    collections_page_resource_desc: "Greek-English lexicon of the NT by Th. S. Green (1896)", 
+  greek_lexicon_to_nt_by_green: { 
     library_app_selectbox_title: "Greek-English lexicon of the NT by Th. S. Green (1896)",
     library_app_panel_title: "A Greek-English lexicon to the New Testament by Th. S. Green (1896)",
     library_app_panel_text_from: "A Greek-English lexicon to the New Testament. Revised and enlarged by Thomas Sheldon Green. 1896. Boston: H. L. Hastings.",
@@ -701,8 +687,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 </pre>
 
 <p>After you add these lines, you should see these resources listed in Resources selectbox and in <a target="_blank" href='../site/collections-classics.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value short title plus the string "by" plus author‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value short title plus the string "by" plus author‘s name and the year in brackets.</p>
 
@@ -736,8 +720,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
   // Translations
 
-  nt_titus_tr_EN_young: {
-    collections_page_resource_desc: "to English by R. Young (1898)", 
+  nt_titus_tr_EN_young: { 
     library_app_selectbox_title: "Translation to English by  R. Young (1898)",
     library_app_panel_title: "English translation by R. Young (1898)",
     library_app_panel_subtitle: "",
@@ -749,8 +732,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
     contents_shortname: "nt_titus_tr_EN_young_contents",
   },
 
-  nt_titus_tr_EN_green: {
-    collections_page_resource_desc: "to English by Th. Sh. Green (1864)", 
+  nt_titus_tr_EN_green: { 
     library_app_selectbox_title: "Translation to English by Th. Sh. Green (1864)",
     library_app_panel_title: "English translation by Th. Sh. Green (1864)",
     library_app_panel_subtitle: "",
@@ -767,8 +749,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 </pre>
 
 <p>After you add these lines, you should see these resources listed in Resources selectbox and in <a target="_blank" href='../site/collections-classics.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value a string "to" plus language plus "by" plus translator‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value the language plus "translation by" plus translator‘s name and the year in brackets.</p>
 
@@ -796,8 +776,7 @@ const ParsedClassicsResProtos = {
 
   // some lines have been omitted
 
-  nt_tr_EN_young: {
-    collections_page_resource_desc: "to English by R. Young (1898)", 
+  nt_tr_EN_young: { 
     library_app_selectbox_title: "Translation to English by  R. Young (1898)",
     library_app_panel_title: "English translation by R. Young (1898)",
     library_app_panel_subtitle: "",
@@ -808,8 +787,7 @@ const ParsedClassicsResProtos = {
     scanned_source_shortname: "holy_bible_tr_young",
   },
 
-  nt_tr_EN_green: {
-    collections_page_resource_desc: "to English by Th. Sh. Green (1864)", 
+  nt_tr_EN_green: { 
     library_app_selectbox_title: "Translation to English by Th. Sh. Green (1864)",
     library_app_panel_title: "English translation by Th. Sh. Green (1864)",
     library_app_panel_subtitle: "",
@@ -856,7 +834,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
   // some lines have been omitted
 
   nt_titus_commentary_by_nicoll: {
-    collections_page_resource_desc: "ed. by W. R. Nicoll (1897)", 
     library_app_selectbox_title: "Commentary ed. by W. R. Nicoll (1897)",
     library_app_panel_title: "Commentary ed. by W. R. Nicoll (1897)",
     library_app_panel_subtitle: "",
@@ -869,7 +846,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
   },
 
   nt_titus_commentary_by_bengel: { 
-    collections_page_resource_desc: "ed. by J. A. Bengel (1877)", 
     library_app_selectbox_title: "Commentary ed. by J. A. Bengel (1877)",
     library_app_panel_title: "Commentary ed. by J. A. Bengel (1877)",
     library_app_panel_text_from: "Gnomon of the New Testament. By J. A. Bengel. Volume 4. 1877. Edinburgh: T. & A. Clark.",
@@ -884,8 +860,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 </pre>
 
 <p>After you add these lines, you should see these resources listed in Resources selectbox and in <a target="_blank" href='../site/collections-classics.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value a string "ed. by" plus author‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value the string "Commentary ed. by" or "Commentary by" plus author‘s name and the year in brackets.</p>
 
@@ -913,8 +887,7 @@ const ParsedClassicsResProtos = {
 
   // some lines have been omitted
 
-  nt_commentary_by_nicoll_vol_4: {
-    collections_page_resource_desc: "ed. by W. R. Nicoll (1897)", 
+  nt_commentary_by_nicoll_vol_4: { 
     library_app_selectbox_title: "Commentary ed. by W. R. Nicoll (1897)",
     library_app_panel_title: "Commentary ed. by W. R. Nicoll (1897)",
     library_app_panel_subtitle: "",
@@ -925,8 +898,7 @@ const ParsedClassicsResProtos = {
     scanned_source_shortname: "expositors_greek_testament_ed_nicoll_vol_4",
   },
 
-  nt_commentary_by_bengel_vol_4: { 
-    collections_page_resource_desc: "ed. by J. A. Bengel (1877)", 
+  nt_commentary_by_bengel_vol_4: {  
     library_app_selectbox_title: "Commentary ed. by J. A. Bengel (1877)",
     library_app_panel_title: "Commentary ed. by J. A. Bengel (1877)",
     library_app_panel_text_from: "Gnomon of the New Testament. By J. A. Bengel. Volume 4. 1877. Edinburgh: T. & A. Clark.",
@@ -974,7 +946,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
   // Commentary refs
 
   nt_titus_commentary_refs_by_parsedclassics: {
-    collections_page_resource_desc: "compiled by ParsedClassics (2023)",
     library_app_selectbox_title: "Commentary references by ParsedClassics (2023)",
     library_app_panel_title: "Commentary references",
     library_app_panel_subtitle: "",
@@ -991,8 +962,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 </pre>
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections-classics.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value a string "compiled by" plus author‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value "Commentary references".</p>
 
@@ -1021,7 +990,6 @@ const ParsedClassicsResProtos = {
   // some lines have been omitted
 
   nt_commentary_refs_by_parsedclassics: {
-    collections_page_resource_desc: "compiled by ParsedClassics (2023)",
     library_app_selectbox_title: "Commentary references by ParsedClassics (2023)",
     library_app_panel_title: "Commentary references",
     library_app_panel_subtitle: "",
@@ -1068,7 +1036,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
   // Grammar references
 
   nt_titus_grammar_refs_by_parsedclassics: {
-    collections_page_resource_desc: "compiled by ParsedClassics (2022)",
     library_app_selectbox_title: "Grammar references by ParsedClassics (2022)",
     library_app_panel_title: "Grammar references",
     library_app_panel_subtitle: "",
@@ -1085,8 +1052,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 </pre>
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections-classics.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value a string "compiled by" plus author‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value "Grammar references".</p>
 
@@ -1115,7 +1080,6 @@ const ParsedClassicsResProtos = {
   // some lines have been omitted
 
   nt_grammar_refs_by_parsedclassics: {
-    collections_page_resource_desc: "compiled by ParsedClassics (2022)",
     library_app_selectbox_title: "Grammar references by ParsedClassics (2022)",
     library_app_panel_title: "Grammar references",
     library_app_panel_subtitle: "",
@@ -1161,8 +1125,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
   // Diagram sets
 
-  nt_ephesians_diagrams_by_parsedclassics: {
-    collections_page_resource_desc: "by ParsedClassics (2018)", 
+  nt_ephesians_diagrams_by_parsedclassics: { 
     library_app_selectbox_title: "Diagrams by ParsedClassics (2018)",
     library_app_panel_title: "Modernized Reed-Kellogg syntax diagrams by ParsedClassics",
     library_app_panel_subtitle: "",
@@ -1179,8 +1142,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 </pre>
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections-classics.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value a string "by" plus author‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value the language plus "Modernized Reed-Kellogg syntax diagrams by" plus author‘s name and the year in brackets.</p>
 
@@ -1208,8 +1169,7 @@ const ParsedClassicsResProtos = {
 
   // Diagram set
 
-  nt_diagrams_by_parsedclassics: {
-    collections_page_resource_desc: "by ParsedClassics (2018)", 
+  nt_diagrams_by_parsedclassics: { 
     library_app_selectbox_title: "Diagrams by ParsedClassics (2018)",
     library_app_panel_title: "Modernized Reed-Kellogg syntax diagrams by ParsedClassics",
     library_app_panel_subtitle: "",
@@ -1255,8 +1215,7 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 
   // Audio recording
 
-  nt_titus_audio_by_karvounakis: {
-    collections_page_resource_desc: "by Th. Karvounakis (2012)", 
+  nt_titus_audio_by_karvounakis: { 
     library_app_selectbox_title: "Audio recording by Th. Karvounakis (2012)",
     library_app_panel_title: "Audio recording by Th. Karvounakis",
     library_app_panel_subtitle: "",
@@ -1273,8 +1232,6 @@ ParsedClassicsCollDefs.nt_titus["resource_defs"] = {
 </pre>
 
 <p>After you add these lines, you should see this resource listed in Resources selectbox and in <a target="_blank" href='../site/collections-classics.html#{"edition":"nt_apostolics"}'>Collections page</a>.</p>
-
-<p>The key "collections_page_resource_desc" should have as its value a string "by" plus author‘s name and the year in brackets.</p>
 
 <p>The key "library_app_panel_title" should have as its value "Audio recording by" plus author‘s name and the year in brackets.</p>
 
@@ -1302,8 +1259,7 @@ const ParsedClassicsResProtos = {
 
   // Audio recording
 
-  nt_audio_by_karvounakis: {
-    collections_page_resource_desc: "by Th. Karvounakis (2012)", 
+  nt_audio_by_karvounakis: { 
     library_app_selectbox_title: "Audio recording by Th. Karvounakis (2012)",
     library_app_panel_title: "Audio recording by Th. Karvounakis",
     library_app_panel_subtitle: "",

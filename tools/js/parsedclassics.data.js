@@ -1414,7 +1414,7 @@ var ParsedClassicsData = {
 
     if (typeof collectionObject.parsed_text != "undefined" && collectionObject.parsed_text) {
 
-      resources_data += "<span class='pc-resource-list-heading'>Parsing:</span><br>" + collectionObject.parsed_text.collections_page_resource_desc + " [" + (collectionObject.parsed_text.scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
+      resources_data += "<span class='pc-resource-list-heading'>Parsing:</span><br>" + collectionObject.parsed_text.library_app_selectbox_title + " [" + (collectionObject.parsed_text.scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
 
     }
 
@@ -1426,7 +1426,7 @@ var ParsedClassicsData = {
 
     if (typeof collectionObject.original_texts != "undefined" && collectionObject.original_texts.length == 1) {
 
-      resources_data += "<span class='pc-resource-list-heading'>Critical edition:</span><br>" + collectionObject.original_texts[0].collections_page_resource_desc + " [" + (collectionObject.original_texts[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
+      resources_data += "<span class='pc-resource-list-heading'>Critical edition:</span><br>" + collectionObject.original_texts[0].library_app_selectbox_title + " [" + (collectionObject.original_texts[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
 
     }
 
@@ -1440,7 +1440,7 @@ var ParsedClassicsData = {
 
         num = i + 1;
 
-        resources_data += " (" + num + ") " + collectionObject.original_texts[i].collections_page_resource_desc + " [" + (collectionObject.original_texts[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
+        resources_data += " (" + num + ") " + collectionObject.original_texts[i].library_app_selectbox_title + " [" + (collectionObject.original_texts[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
 
         if (num != collectionObject.original_texts.length) {
 
@@ -1466,7 +1466,7 @@ var ParsedClassicsData = {
 
     if (typeof collectionObject.concordance != "undefined" && collectionObject.concordance.length == 1) {
 
-      resources_data += "<span class='pc-resource-list-heading'>Concordance:</span><br>" + collectionObject.concordance[0].collections_page_resource_desc + " [" + (collectionObject.concordance[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
+      resources_data += "<span class='pc-resource-list-heading'>Concordance:</span><br>" + collectionObject.concordance[0].library_app_selectbox_title + " [" + (collectionObject.concordance[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
 
     }
 
@@ -1480,7 +1480,7 @@ var ParsedClassicsData = {
 
         num = i + 1;
 
-        resources_data += " (" + num + ") " + collectionObject.concordance[i].collections_page_resource_desc + " [" + (collectionObject.concordance[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
+        resources_data += " (" + num + ") " + collectionObject.concordance[i].library_app_selectbox_title + " [" + (collectionObject.concordance[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
 
         if (num != collectionObject.concordance.length) {
 
@@ -1506,7 +1506,7 @@ var ParsedClassicsData = {
 
     if (typeof collectionObject.lexicons != "undefined" && collectionObject.lexicons.length == 1) {
 
-      resources_data += "<span class='pc-resource-list-heading'>Lexicon:</span><br>" + collectionObject.lexicons[0].collections_page_resource_desc + " [" + (collectionObject.lexicons[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
+      resources_data += "<span class='pc-resource-list-heading'>Lexicon:</span><br>" + collectionObject.lexicons[0].library_app_selectbox_title + " [" + (collectionObject.lexicons[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
 
     }
 
@@ -1520,7 +1520,7 @@ var ParsedClassicsData = {
 
         num = i + 1;
 
-        resources_data += " (" + num + ") " + collectionObject.lexicons[i].collections_page_resource_desc + " [" + (collectionObject.lexicons[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
+        resources_data += " (" + num + ") " + collectionObject.lexicons[i].library_app_selectbox_title + " [" + (collectionObject.lexicons[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
 
         if (num != collectionObject.lexicons.length) {
 
@@ -1548,7 +1548,7 @@ var ParsedClassicsData = {
 
       if (collectionObject.translations.length == 1) {
 
-        resources_data += "<span class='pc-resource-list-heading'>Translation:</span><br>" + collectionObject.translations[0].collections_page_resource_desc + " [" + (collectionObject.translations[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
+        resources_data += "<span class='pc-resource-list-heading'>Translation:</span><br>" + collectionObject.translations[0].library_app_selectbox_title + " [" + (collectionObject.translations[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
 
       }
 
@@ -1562,7 +1562,7 @@ var ParsedClassicsData = {
 
           num = i + 1;
 
-          resources_data += " (" + num + ") " + collectionObject.translations[i].collections_page_resource_desc + " [" + (collectionObject.translations[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
+          resources_data += " (" + num + ") " + collectionObject.translations[i].library_app_selectbox_title + " [" + (collectionObject.translations[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
 
           if (num != collectionObject.translations.length) {
 
@@ -1592,7 +1592,7 @@ var ParsedClassicsData = {
 
       if (collectionObject.commentaries.length == 1) {
 
-        resources_data += "<span class='pc-resource-list-heading'>Commentary:</span><br>" + collectionObject.commentaries[0].collections_page_resource_desc + " [" + (collectionObject.commentaries[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
+        resources_data += "<span class='pc-resource-list-heading'>Commentary:</span><br>" + collectionObject.commentaries[0].library_app_selectbox_title + " [" + (collectionObject.commentaries[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
 
       }
 
@@ -1606,7 +1606,7 @@ var ParsedClassicsData = {
 
           num = i + 1;
 
-          resources_data += " (" + num + ") " + collectionObject.commentaries[i].collections_page_resource_desc + " [" + (collectionObject.commentaries[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
+          resources_data += " (" + num + ") " + collectionObject.commentaries[i].library_app_selectbox_title + " [" + (collectionObject.commentaries[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
 
           if (num != collectionObject.commentaries.length) {
 
@@ -1636,7 +1636,7 @@ var ParsedClassicsData = {
 
       if (collectionObject.grammar_refs.length == 1) {
 
-        resources_data += "<span class='pc-resource-list-heading'>Grammar references:</span><br>" + collectionObject.grammar_refs[0].collections_page_resource_desc + " [" + (collectionObject.grammar_refs[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
+        resources_data += "<span class='pc-resource-list-heading'>Grammar references:</span><br>" + collectionObject.grammar_refs[0].library_app_selectbox_title + " [" + (collectionObject.grammar_refs[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
 
       }
 
@@ -1650,7 +1650,7 @@ var ParsedClassicsData = {
 
           num = i + 1;
 
-          resources_data += " (" + num + ") " + collectionObject.grammar_refs[i].collections_page_resource_desc + " [" + (collectionObject.grammar_refs[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
+          resources_data += " (" + num + ") " + collectionObject.grammar_refs[i].library_app_selectbox_title + " [" + (collectionObject.grammar_refs[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
 
           if (num != collectionObject.grammar_refs.length) {
 
@@ -1680,7 +1680,7 @@ var ParsedClassicsData = {
 
       if (collectionObject.diagrams.length == 1) {
 
-        resources_data += "<span class='pc-resource-list-heading'>Syntax diagrams:</span><br>" + collectionObject.diagrams[0].collections_page_resource_desc + " [" + (collectionObject.diagrams[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
+        resources_data += "<span class='pc-resource-list-heading'>Syntax diagrams:</span><br>" + collectionObject.diagrams[0].library_app_selectbox_title + " [" + (collectionObject.diagrams[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
 
       }
 
@@ -1694,7 +1694,7 @@ var ParsedClassicsData = {
 
           num = i + 1;
 
-          resources_data += " (" + num + ") " + collectionObject.diagrams[i].collections_page_resource_desc + " [" + (collectionObject.diagrams[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
+          resources_data += " (" + num + ") " + collectionObject.diagrams[i].library_app_selectbox_title + " [" + (collectionObject.diagrams[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
 
           if (num != collectionObject.diagrams.length) {
 
@@ -1724,7 +1724,7 @@ var ParsedClassicsData = {
 
       if (collectionObject.audio.length == 1) {
 
-        resources_data += "<span class='pc-resource-list-heading'>Audio recording:</span><br>" + collectionObject.audio[0].collections_page_resource_desc + " [" + (collectionObject.audio[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
+        resources_data += "<span class='pc-resource-list-heading'>Audio recording:</span><br>" + collectionObject.audio[0].library_app_selectbox_title + " [" + (collectionObject.audio[0].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]" + ".<br>";
 
       }
 
@@ -1738,7 +1738,7 @@ var ParsedClassicsData = {
 
           num = i + 1;
 
-          resources_data += " (" + num + ") " + collectionObject.audio[i].collections_page_resource_desc + " [" + (collectionObject.audio[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
+          resources_data += " (" + num + ") " + collectionObject.audio[i].library_app_selectbox_title + " [" + (collectionObject.audio[i].scanned_or_typed == ParsedClassicsVars.resourceTypeScanned ? ParsedClassicsVars.resourceTypeScanned : "transcribed") + "]";
 
           if (num != collectionObject.audio.length) {
 
