@@ -216,12 +216,12 @@ ParsedClassicsCatalogueDetails = {
       // find strings which should be ignored in sorting inside catalogue
       const catalogue_ignore = typeof collectionDef['catalogue_ignore'] !== 'undefined' ? collectionDef['catalogue_ignore'] : {};
       const author_ignore = typeof catalogue_ignore['author_orig_short'] !== 'undefined' ? catalogue_ignore['author_orig_short'] : false;
-      const title_ignore = typeof catalogue_ignore['collections_page_title_orig'] !== 'undefined' ? catalogue_ignore['collections_page_title_orig'] : false;
+      const title_ignore = typeof catalogue_ignore['title_orig'] !== 'undefined' ? catalogue_ignore['title_orig'] : false;
 
       let author = collectionDef['author_orig_short'] && collectionDef['author_orig_short'] != collectionDef['author_eng_short'] ? collectionDef['author_orig_short'] + ' / ' + collectionDef['author_eng_short'] : collectionDef['author_orig_short'];
       author = ParsedClassicsCatalogueDetails.formatCellValue(author, author_ignore);
 
-      let title = collectionDef['collections_page_title_orig'] && collectionDef['collections_page_title_orig'] != collectionDef['collections_page_title_eng'] ? collectionDef['collections_page_title_orig'] + ' / ' + collectionDef['collections_page_title_eng'] : collectionDef['collections_page_title_eng'];
+      let title = collectionDef['title_orig'] && collectionDef['title_orig'] != collectionDef['title_eng'] ? collectionDef['title_orig'] + ' / ' + collectionDef['title_eng'] : collectionDef['title_eng'];
       title = ParsedClassicsCatalogueDetails.formatCellValue(title, title_ignore);
 
       const tabId = id();
@@ -503,8 +503,8 @@ ParsedClassicsCatalogueDetails = {
         const resourceDefs = collectionDef['resource_defs'];
         const parsedTextResShortname = Object.keys(resourceDefs)[0];
         const contents_type = collectionDef['contents_type'];
-        let collTitle = collectionDef['collections_page_title_orig'];
-        //collTitle += collectionDef['collections_page_title_eng'];
+        let collTitle = collectionDef['title_orig'];
+        //collTitle += collectionDef['title_eng'];
         const shelf_categories_str = '"'+ shelfCategoriesUrl.join('","') + '"';
         const url = baseUrl + `library.html#{"L":{"a":[["${collectionShortnamesArray[i]}|${parsedTextResShortname}"]],"b":[["${collectionShortnamesArray[i]}"]]},"S":[${shelf_categories_str}],"P":{"${collectionShortnamesArray[i]}":{"${contents_type}":"title"}},"D":{"a":[["${id()}",50],["${id()}",100,["${id()}"],0]],"b":[["${id()}",50],["${id()}",100,["${id()}"],0]]}}`;
         

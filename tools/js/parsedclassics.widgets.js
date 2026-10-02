@@ -1200,7 +1200,7 @@ var ParsedClassicsConcordanceLink = {
 
     // get author and title of current text
     author = titlesObj[ParsedClassicsConcordanceLink.resource_shortname].author_orig;
-    title = titlesObj[ParsedClassicsConcordanceLink.resource_shortname].collections_page_title_orig;
+    title = titlesObj[ParsedClassicsConcordanceLink.resource_shortname].title_orig;
 
     // get textfrom text and link
     textfrom_text = titlesObj[ParsedClassicsConcordanceLink.resource_shortname].library_app_panel_text_from;
