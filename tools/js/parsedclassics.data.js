@@ -1402,7 +1402,7 @@ var ParsedClassicsData = {
 
     // "Collection" link
 
-    td_el.html('<a href=\'' + '../library/index.html#catalogue/{"coll":"' + collectionObject.collection_shortname + '"}' + '\' target=\'_blank\'>' + collectionObject.collections_page_title_orig + ' / ' + collectionObject.collections_page_title_eng + "</a>");
+    td_el.html('<a href=\'' + '../library/index.html#catalogue/{"coll":"' + collectionObject.collection_shortname + '"}' + '\' target=\'_blank\'>' + collectionObject.title_orig + ' / ' + collectionObject.title_eng + "</a>");
 
     // "Resources" list
 

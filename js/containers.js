@@ -513,7 +513,7 @@ const ParsedClassicsContentContainers = {
   createAvailableResourcesListHtml: function(collectionDef, resourceDefs) { 
     let html = `
       <h1>${collectionDef['author_orig']}</h1>
-      <h1>${collectionDef['collections_page_title_orig']}</h1>
+      <h1>${collectionDef['title_orig']}</h1>
       <h2>Resources</h2>
     `;
     
@@ -691,7 +691,7 @@ const ParsedClassicsContentContainers = {
     const html = `
       <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
       <h1>${collectionDef['author_orig']}</h1>
-      <h1>${collectionDef['collections_page_title_orig']}<h1>
+      <h1>${collectionDef['title_orig']}<h1>
       <h1>${resourceDef['library_app_panel_title']}</h1>
       <span class="text-from">Text based on: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></span>
     `;
@@ -709,7 +709,7 @@ const ParsedClassicsContentContainers = {
         <div class="audio-resource-header">
           <div class="${ParsedClassicsAppVars.lineNumberClass} pc-padding-top-8" ${ParsedClassicsAppVars.lineNumberAttr}="title"></div>
           <h1>${collectionDef['author_orig']}</h1>
-          <h1>${collectionDef['collections_page_title_orig']}<h1>
+          <h1>${collectionDef['title_orig']}<h1>
           <h1>${resourceDef['library_app_panel_title']}</h1>
           <span class="text-from">Text based on: <a href="./reader/index.html?${resourceDef['scanned_source_shortname']}" target="_blank">${resourceDef['library_app_panel_text_from']}</a></span>
           <span class="text-from">${resourceDef['library_app_panel_note']}</span>
