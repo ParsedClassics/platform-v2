@@ -7,7 +7,7 @@
 */
 
 /* 
-	Template of set description:
+	Template of collections set definition:
 
 	author_orig: "",
 	author_eng: "",
@@ -19,6 +19,16 @@
 		"", 
 		"", 
 	],
+	labels: { 
+      "label_shortname": { 
+        "title": "",
+        "parent": "",
+        "collections": [
+          "",
+					"",
+        ],
+      },
+    },
 	extra: {
 		difficulty_level: number,
 	},
