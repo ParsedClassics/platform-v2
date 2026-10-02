@@ -6,33 +6,12 @@
 =====================================================
 */
 
-/* 
-	Template of resource description:
+/*
+Template of resource definition:
+see file _res_protos.js
 
-  library_app_panel_author: "", 
-	library_app_selectbox_title: "",
-	library_app_panel_title: "",
-	library_app_panel_subtitle: "",
-	library_app_panel_text_from: "",
-	library_app_panel_note: "",
-	scanned_or_typed: "",
-  resource_type: "",
-	scanned_source_shortname: "",
-	contents_shortname: "",
-  extra: {},
-*/
-
-/* 
-Order of resources by resource type
-  
-  // Parsed text
-
-  // External service
-
-  // Original text
-
-  // Lexicon
-
+Order of resources by resource type:
+see file _res_protos.js
 */
 
 ParsedClassicsCollDefs.th_a_kempis_imitatio_christi_4["resource_defs"] = {

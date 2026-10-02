@@ -6,46 +6,12 @@
 =====================================================
 */
 
-/* 
-	Template of resource description:
+/*
+Template of resource definition:
+see file _res_protos.js
 
-  library_app_panel_author: "", 
-	library_app_selectbox_title: "",
-	library_app_panel_title: "",
-	library_app_panel_subtitle: "",
-	library_app_panel_text_from: "",
-	library_app_panel_note: "",
-	scanned_or_typed: "",
-  resource_type: "",
-	scanned_source_shortname: "",
-	contents_shortname: "",
-  extra: {},
-*/
-
-/* 
-Order of resources by resource type
-
-  // Parsed text
-  // IMPORTANT!
-  // The contents of the first resource of the type "Parsed text" serves as contents of the whole collection
-
-  // External services
-  
-  // Original texts
-
-  // Concordances
-
-  // Lexicons
-
-  // Translations
-
-  // Commentaries
-
-  // Grammar references
-
-  // Diagram sets
-
-  // Audio
+Order of resources by resource type:
+see file _res_protos.js
 */
 
 ParsedClassicsCollDefs.homer_iliad_9["resource_defs"] = {

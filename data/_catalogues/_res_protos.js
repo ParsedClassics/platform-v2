@@ -7,7 +7,7 @@
 */
 
 /* 
-	Template of resource description:
+	Template of resource definition:
 
   library_app_panel_author: "", 
 	library_app_selectbox_title: "",
@@ -19,7 +19,46 @@
   resource_type: "",
 	scanned_source_shortname: "",
 	contents_shortname: "",
-  extra: {},
+  extra: {
+    parsing_via_ext_services: "",
+    display_paragraph_numbering: "",
+    display_pagination: "",
+    footnote_indicator: "",
+    options: {},
+    language: "",
+  },
+
+*/
+
+/* 
+Order of resources by resource type:
+
+  // Parsed texts
+  // IMPORTANT!
+  // The contents of the first resource of the type "Parsed text" serves as contents of the whole collection
+
+  // Readers
+
+  // Prosody
+
+  // External services
+  
+  // Original texts
+
+  // Concordances
+
+  // Lexicons
+
+  // Translations
+
+  // Commentaries
+
+  // Grammar references
+
+  // Diagram sets
+
+  // Audio
+
 */
 
 const ParsedClassicsResProtos = {

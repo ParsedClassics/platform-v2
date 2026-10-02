@@ -7,7 +7,7 @@
 */
 
 /* 
-	Template of collection description:
+	Template of collection definition:
 
   author_orig: "",   
   author_eng: "",
@@ -18,9 +18,12 @@
   collections_page_title_eng: "",
 	contents_type: "", 
 	central_resource: "",
-	resource_defs: {}, // defined in separate files
+	// resource_defs: {}, // defined in separate files
 	catalogue_ignore: {},
-	extra: {},
+	extra: {
+		line_display: "",
+		difficulty_level: number,
+	},
 */
 
 const ParsedClassicsCollProtos = {
@@ -757,8 +760,8 @@ const ParsedClassicsCollDefs = {
 	},
 
 	appleton_initium: {
-		author_orig: 'Reginald. B. Appleton',   
-    author_eng: 'Reginald. B. Appleton',
+		author_orig: 'Reginald B. Appleton',   
+    author_eng: 'Reginald B. Appleton',
 		author_orig_short: 'Appleton R. B.',
 		author_eng_short: 'Appleton R. B.',
     collection_selectboxname: 'Appleton R. B. Initium',
