@@ -9,8 +9,7 @@
 /* 
 	Template of resource description:
 
-  collections_page_resource_author: "",
-	collections_page_resource_desc: "", 
+  library_app_panel_author: "", 
 	library_app_selectbox_title: "",
 	library_app_panel_title: "",
 	library_app_panel_subtitle: "",
@@ -58,9 +57,8 @@ ParsedClassicsCollDefs.greek_text_tools["resource_defs"] = {
   // Lexicon
 
   // lexicon_graeco_latinum_by_zorell: {
-  //   collections_page_resource_author: "Zorell F.",
-  //   collections_page_resource_desc: "Greek-Latin lexicon of the NT", 
-  //   library_app_selectbox_title: "2* Greek-Latin lexicon of the NT by F. Zorell (1931)",
+  //   library_app_panel_author: "Zorell F.", 
+  //   library_app_selectbox_title: "Greek-Latin lexicon of the NT by F. Zorell (1931)",
   //   library_app_panel_title: "Lexicon Graecum Novi Testamenti by F. Zorell (1931)",
   //   library_app_panel_text_from: "Lexicon Graecum Novi Testamenti auctore Francisco Zorell, S.I. Editio altera novis curis retractata.  1931. Parisiis: P. Lethielleux.",
   //   library_app_panel_note: "",

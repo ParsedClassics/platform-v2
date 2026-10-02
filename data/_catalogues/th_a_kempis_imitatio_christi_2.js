@@ -9,8 +9,7 @@
 /* 
 	Template of resource description:
 
-  collections_page_resource_author: "",
-	collections_page_resource_desc: "", 
+  library_app_panel_author: "",
 	library_app_selectbox_title: "",
 	library_app_panel_title: "",
 	library_app_panel_subtitle: "",
@@ -42,7 +41,6 @@ ParsedClassicsCollDefs.th_a_kempis_imitatio_christi_2["resource_defs"] = {
 
   th_a_kempis_imitatio_christi_2_parsed_text: {
 		...ParsedClassicsResProtos.th_a_kempis_imitatio_christi_parsed_text,
-    collections_page_resource_desc: "De imitatione Christi liber II",
     library_app_panel_subtitle: "Liber II. Admonitiones ad interna trahentes.",
     contents_shortname: "th_a_kempis_imitatio_christi_2_parsed_text_contents",
 	},

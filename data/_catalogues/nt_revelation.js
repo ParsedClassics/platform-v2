@@ -9,8 +9,7 @@
 /* 
 	Template of resource description:
 
-  collections_page_resource_author: "",
-	collections_page_resource_desc: "", 
+  library_app_panel_author: "",
 	library_app_selectbox_title: "",
 	library_app_panel_title: "",
 	library_app_panel_subtitle: "",
@@ -202,8 +201,7 @@ ParsedClassicsCollDefs.nt_revelation["resource_defs"] = {
   // Commentaries
 
   nt_revelation_commentary_by_andreas_of_caesarea: {
-    collections_page_resource_author: "",
-    collections_page_resource_desc: "by Andreas of Caesarea (ca. 600)", 
+    library_app_panel_author: "", 
     library_app_selectbox_title: "Commentary by Andreas of Caesarea (ca. 600)",
     library_app_panel_title: "Commentary by Andreas of Caesarea (ca. 600)",
     library_app_panel_subtitle: "",
@@ -217,8 +215,7 @@ ParsedClassicsCollDefs.nt_revelation["resource_defs"] = {
   },
 
   nt_revelation_commentary_by_arethas_of_caesarea: {
-    collections_page_resource_author: "",
-    collections_page_resource_desc: "by Arethas of Caesarea (ca. 900)", 
+    library_app_panel_author: "", 
     library_app_selectbox_title: "Commentary by Arethas of Caesarea (ca. 900)",
     library_app_panel_title: "Commentary by Arethas of Caesarea (ca. 900)",
     library_app_panel_subtitle: "",

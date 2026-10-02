@@ -9,8 +9,7 @@
 /* 
 	Template of resource description:
 
-  collections_page_resource_author: "",
-	collections_page_resource_desc: "", 
+  library_app_panel_author: "", 
 	library_app_selectbox_title: "",
 	library_app_panel_title: "",
 	library_app_panel_subtitle: "",
@@ -41,8 +40,7 @@ ParsedClassicsCollDefs.plato_apology["resource_defs"] = {
   // Parsed text
 
   plato_apology_parsed_text: {
-		collections_page_resource_author: "Πλάτωνος",
-    collections_page_resource_desc: "Ἀπολογία Σωκράτους",
+		library_app_panel_author: "Πλάτωνος",
 		library_app_selectbox_title: "Πλάτωνος Ἀπολογία Σωκράτους", 
 		library_app_panel_title: "Ἀπολογία Σωκράτους",
     library_app_panel_subtitle: "",
@@ -76,8 +74,7 @@ ParsedClassicsCollDefs.plato_apology["resource_defs"] = {
   // Original text
 
   plato_apology_text_ed_burnet: {
-    collections_page_resource_author: "",
-    collections_page_resource_desc: "ed. by J. Burnet (1905)", 
+    library_app_panel_author: "", 
     library_app_selectbox_title: "Edition by J. Burnet (1905)",
     library_app_panel_title: "Text ed. by J. Burnet (1905)",
     library_app_panel_subtitle: "",

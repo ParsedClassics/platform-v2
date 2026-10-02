@@ -607,8 +607,10 @@ const ParsedClassicsContentContainers = {
     else if (contentsType === 'none') {
       html += `<div class="pc-padding-top-8"></div>`;
     }
-    
-    if (collectionDef['author_orig']) {
+    if (typeof resourceDef['library_app_panel_author'] !== 'undefined' && resourceDef['library_app_panel_author']) {
+      html += `<h1>${resourceDef['library_app_panel_author']}</h1>`;
+    }
+    else if (collectionDef['author_orig']) {
       html += `<h1>${collectionDef['author_orig']}</h1>`;
     }
 
