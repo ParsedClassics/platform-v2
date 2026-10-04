@@ -123,7 +123,7 @@ const ParsedClassicsNavSelects = {
     for (var key in ParsedClassicsShelfs) {
       const shelf_categories_str = key;
       const shelfCategoriesArr = shelf_categories_str.split('--');
-      const sameMembers = ParsedClassicsLayout.arraysHaveSameMembers(shelfCategoriesArrUrl, shelfCategoriesArr);
+      const sameMembers = ParsedClassicsLayout.arraysEqual(shelfCategoriesArrUrl, shelfCategoriesArr);
       if (sameMembers) {
         collSetsArr = ParsedClassicsShelfs[key]['coll_sets'];
         break;
