@@ -54,11 +54,25 @@ const ParsedClassicsSiteHelpers = {
     return firstPart + secondPart;
   },
 
-  arraysHaveSameMembers: function(a, b) {
+  // compares arrays consisting of primitive values, to find if arrays have the same elements in any order
+  // or to find if arrays have the same elements in the same order
+  arraysEqual: function(arr1, arr2, sameOrder) {
+    a = [...arr1];
+    b = [...arr2];
     if (a.length !== b.length) return false;
-    const setA = new Set(a);
-    const setB = new Set(b);
-    return [...setA].every(item => setB.has(item));
+    else {
+      if (!sameOrder) {
+        a.sort();
+        b.sort();
+      }
+      // Comparing each element of your array
+      for (var i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) {
+          return false;
+        }
+      }
+      return true;
+    }
   },
 
   // from https://codingartistweb.com/2025/01/building-a-roman-numeral-converter-with-javascript

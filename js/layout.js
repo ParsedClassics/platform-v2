@@ -1889,13 +1889,6 @@ const ParsedClassicsLayout = {
     }
     return true;
   },
-
-  arraysHaveSameMembers: function(a, b) {
-    if (a.length !== b.length) return false;
-    const setA = new Set(a);
-    const setB = new Set(b);
-    return [...setA].every(item => setB.has(item));
-  },
   
   // finds in url id of the pane the tab belongs to
   getPaneIdFromUrl: function(tabId) {
@@ -2331,7 +2324,7 @@ const ParsedClassicsLayout = {
     const shelfCategoriesUrl = typeof urlJson[ParsedClassicsAppVars.shelfMember] !== 'undefined' && Array.isArray(urlJson[ParsedClassicsAppVars.shelfMember]) ? urlJson[ParsedClassicsAppVars.shelfMember] : [];
     for (const categories_str in ParsedClassicsShelfs) {
       const categoriesArr = categories_str.split('--');
-      const sameMembers = ParsedClassicsLayout.arraysHaveSameMembers(shelfCategoriesUrl, categoriesArr);
+      const sameMembers = ParsedClassicsLayout.arraysEqual(shelfCategoriesUrl, categoriesArr);
       if (sameMembers) {
         return shelfCategoriesUrl;
       }
@@ -2341,7 +2334,7 @@ const ParsedClassicsLayout = {
 
   getNeedToShowShelfList: function() {
     const urlJson = ParsedClassicsLayout.getHashJson("url");
-    const shelfListToBeShown = typeof urlJson[ParsedClassicsAppVars.shelfMember] !== 'undefined' && Array.isArray(urlJson[ParsedClassicsAppVars.shelfMember]) && ParsedClassicsLayout.arraysHaveSameMembers(urlJson[ParsedClassicsAppVars.shelfMember], ['shelfs_list']) ? true : false;
+    const shelfListToBeShown = typeof urlJson[ParsedClassicsAppVars.shelfMember] !== 'undefined' && Array.isArray(urlJson[ParsedClassicsAppVars.shelfMember]) && ParsedClassicsLayout.arraysEqual(urlJson[ParsedClassicsAppVars.shelfMember], ['shelfs_list']) ? true : false;
     return shelfListToBeShown;
   },
 

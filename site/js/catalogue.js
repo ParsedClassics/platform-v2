@@ -319,7 +319,7 @@ ParsedClassicsCatalogueDetails = {
     for (var key in ParsedClassicsShelfs) {
       const categories_str = key;
       const categoriesArr = categories_str.split('--');
-      const sameMembers = ParsedClassicsSiteHelpers.arraysHaveSameMembers(shelfCategoriesUrl, categoriesArr);
+      const sameMembers = ParsedClassicsSiteHelpers.arraysEqual(shelfCategoriesUrl, categoriesArr);
       if (sameMembers) {
         editionShortnamesArr = 
         typeof ParsedClassicsShelfs[key] !== 'undefined' &&
