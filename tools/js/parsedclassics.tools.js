@@ -4984,3 +4984,92 @@ var ParsedClassicsDiagrammingPlayground = {
 	}
 
 };
+
+/*
+	* Multiple find/replace by regexes script
+	*/
+
+	var ParsedClassicsMultipleRegexes = {
+
+		proceed: function() {
+			const regex_input = $('#regex_input');
+			const replace_by_input = $('#replace_by_input');
+			const text_code_input = $('#text_code_input');
+			const text_code_output = $('#text_code_output');
+
+			const regex_str = regex_input.val();
+			const replace_by_str = replace_by_input.val();
+			const text_code = text_code_input.val();
+
+			// no regex? - then nothing to do, exept to display error msg
+			if (regex_str == "") {
+					// find message el
+					msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+					// put message text inside message el
+					msg_el.html("No regex found inside Regex input!");
+					// display modal dialogue
+					ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+					return;
+			}
+
+			// no replace by? - then nothing to do, exept to display error msg
+			if (replace_by_str == "" && regex_str.split('|').length > 1) {
+				// find message el
+				msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+				// put message text inside message el
+				msg_el.html("No string/regex found inside Replace by input!");
+				// display modal dialogue
+				ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+				return;
+			}
+
+			// no text/code? - then nothing to do, exept to display error msg
+			if (text_code == "") {
+				// find message el
+				msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+				// put message text inside message el
+				msg_el.html("No text/code found inside Text/code input!");
+				// display modal dialogue
+				ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+				return;
+			}
+
+			// get regexes array
+			const regex_arr = regex_str.split('|');
+			// get replace by array
+			const replace_by_arr = replace_by_str.split('|');
+
+			// does number of regexes match the number of replace by? - if not, then nothing to do, exept to display error msg 
+			if (regex_arr.length !== replace_by_arr.length) {
+				// find message el
+				msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+				// put message text inside message el
+				msg_el.html("The number of defined find regexes does not match the number of defined replace by strings/regexes!");
+				// display modal dialogue
+				ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+				return;
+			}
+
+			// compile array of find/replace pairs
+			const find_replace_arr = [];
+			for (let i = 0; i < regex_arr.length; i++) {
+				find_replace_arr[i] = {
+					find: new RegExp(regex_arr[i], 'gu'),
+					replace: replace_by_arr[i],
+				};
+			}
+			console.log('find_replace_arr', find_replace_arr);
+
+			let result = text_code;
+
+			for (const item of find_replace_arr) {
+				result = result.replaceAll(item.find, item.replace);
+			}
+
+			text_code_output.val(result);
+		},
+
+		init: function() {
+			$('#find_replace_button').on('click', ParsedClassicsMultipleRegexes.proceed);
+		},
+	};
