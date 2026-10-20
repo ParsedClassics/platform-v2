@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+ This file is part of ParsedClassics app
+=====================================================
+ Copyright (c) Éleuthère Ioannidis
+=====================================================
+-->
+
+<html>
+
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+
+<title>JSON mapping | ParsedClassics</title>
+
+<link type="text/css" rel="stylesheet" href="./css/w3.css" />
+
+<link type="text/css" rel="stylesheet" href="./css/nojquery.prettify.css" />
+
+<link type="text/css" rel="stylesheet" href="./css/pc.css" />
+
+<style>
+code {
+  color: #b05720;
+  padding: 3px 6px;
+  background-color: rgba(142, 150, 170, .14);
+  border-radius: 4px;
+  font-size: 20px; 
+}
+
+p strong {
+  font-weight: 500;
+}
+</style>
+	
+<script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
+	
+<script type="text/javascript" src="./js/parsedclassics.vars.js"></script>
+
+<script type="text/javascript" src="./js/nojquery.prettify.js"></script>
+
+<script type="text/javascript" src="./js/jquery.scrollTo-2.1.2.js"></script>
+	
+<script type="text/javascript" src="./js/parsedclassics.widgets.js"></script>
+	
+<script type="text/javascript" src="./js/parsedclassics.tools.js"></script>
+
+<script type="text/javascript" src="./js/parsedclassics.helpers.js"></script>
+
+<script type="text/javascript" src="./js/nojquery.json5.js"></script>
+
+<script type="text/javascript" src="./js/nojquery.handlebars.js"></script>
+
+<script>
+//Initialization of Plain Code Buttons
+$(document).ready(function(){
+  ParsedClassicsPlainCodeButton.init(); 
+});
+$(document).ready(
+  ParsedClassicsJsonMapping.init
+);
+$(document).ready(function(){
+	ParsedClassicsModalDialogues.initAllCloseDialogueButtons();
+}); 
+$(document).ready(function(){
+  $(document).delegate(".inner-link", "click", ParsedClassicsInnerLink.innerLinkClick);
+});
+</script>
+
+</head>
+
+<body id="tools_page" class="pc-content-panel-inner">
+
+<script type="text/javascript" src="./js/_navigation.js"></script>
+	
+<div id="pc-site-content" class="pc-center-pane-maxwidth w3-border-right w3-padding pc-padding-top-0 pc-overflow-visible">
+
+<div class="pc-overflow-auto"> <!-- needed in order to avoid h1 element's margin pushing its parent element down -->
+	
+<h1>JSON mapping</h1>
+	
+<h2>JSON input:</h2>
+
+</div>
+
+<textarea id="json_input_textarea" class="pc-width-100"></textarea>
+
+<h2>Helper functions input:</h2>
+
+<textarea id="functions_input_textarea" class="pc-width-100"></textarea>
+
+<h2>Template input:</h2>
+
+<textarea id="template_input_textarea" class="pc-width-100"></textarea>
+
+<div class="pc-padding-8"><button id="generate_button" class="w3-button w3-hover-white w3-border w3-padding-small w3-ripple w3-round-small w3-hover-border-dark-grey">Run</button></div>
+
+<h2>Resulting code output:</h2>
+
+<textarea id="output_textarea" class="pc-width-100"></textarea>
+
+<h1>Overview</h1>
+
+<h2>Introduction</h2>
+
+<p><strong>What is Handlebars?</strong></p>
+
+<p>Handlebars is a simple <em>templating language</em>.</p>
+
+<p>It uses a template and an input object to generate HTML or other text formats. Handlebars templates look like regular text with embedded Handlebars expressions.</p>
+
+<pre id="handlebars_simplest_example" class="prettyprint code_showarea">
+&lt;p>{{firstname}} {{lastname}}&lt;/p>
+</pre>
+
+<p>A handlebars expression is a <code>{{</code>, some contents, followed by a <code>}}</code>. When the template is executed, these expressions are replaced with values from an input object.</p>
+
+<p><a class="inner-link" data-anchor="expressions">Learn More: Expressions</a></p>
+
+<p><strong>Installation</strong></p>
+
+<p>The fastest way to test Handlebars is to load it from a CDN and embed it in an HTML file.</p>
+
+<pre id="handlebars_simple_full_example" class="prettyprint code_showarea">
+&lt;!-- Include Handlebars from a CDN -->
+&lt;script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js">&lt;/script>
+&lt;script>
+  // compile the template
+  var template = Handlebars.compile("Handlebars &lt;b>{{doesWhat}}&lt;/b>");
+  // execute the compiled template and print the output to the console
+  console.log(template({ doesWhat: "rocks!" }));
+&lt;/script>
+</pre>
+
+<h2>Language features</h2>
+
+<p><strong>Simple expressions</strong></p>
+
+<p>As shown before, the following template defines two Handlebars expressions</p>
+
+<pre id="handlebars_simplest_example2" class="prettyprint code_showarea">
+&lt;p>{{firstname}} {{lastname}}&lt;/p>
+</pre>
+
+<p>If applied to the input object</p>
+
+<pre id="handlebars_input_simplest_example" class="prettyprint code_showarea">
+{
+  firstname: "Yehuda",
+  lastname: "Katz",
+}
+</pre>
+
+<p>the expressions will be replaced by the corresponding properties. The result is then</p>
+
+<pre id="handlebars_output_simplest_example" class="prettyprint code_showarea">
+&lt;p>Yehuda Katz&lt;/p>
+</pre>
+
+<p><strong>Nested input objects</strong></p>
+
+<p>Sometimes, the input objects contains other objects or arrays. For example:</p>
+
+<pre id="handlebars_input_nested_example" class="prettyprint code_showarea">
+{
+  person: {
+    firstname: "Yehuda",
+    lastname: "Katz",
+  },
+}
+</pre>
+
+<p>In such a case, you can use a dot-notation to gain access to the nested properties</p>
+
+<pre id="handlebars_dot_notation_example" class="prettyprint code_showarea">
+{{person.firstname}} {{person.lastname}}
+</pre>
+
+<p><a class="inner-link" data-anchor="expressions">Learn more: Expressions</a></p>
+
+<p>Some built-in helpers allow you to change the current context to a nested object. You can then access this object as if it were the root object.</p>
+
+<p><strong>Evaluation context</strong></p>
+
+<p>The built-in block-helpers <code>each</code> and <code>with</code> allow you to change the current evaluation context.</p>
+
+<p>The <code>with</code>-helper dives into an object-property, giving you access to its properties</p>
+
+<pre id="handlebars_with_helper_template" class="prettyprint code_showarea">
+{{#with person}}
+{{firstname}} {{lastname}}
+{{/with}}
+</pre>
+
+<pre id="handlebars_with_helper_json" class="prettyprint code_showarea">
+{
+  person: {
+    firstname: "Yehuda",
+    lastname: "Katz",
+  },
+}
+</pre>
+
+<p>The <code>each</code>-helper iterates an array, allowing you to access the properties of each object via simple handlebars expressions.</p>
+
+<pre id="handlebars_each_helper_template" class="prettyprint code_showarea">
+&lt;ul class="people_list">
+  {{#each people}}
+    &lt;li>{{this}}&lt;/li>
+  {{/each}}
+&lt;/ul>
+</pre>
+
+<pre id="handlebars_each_helper_json" class="prettyprint code_showarea">
+{
+  people: [
+    "Yehuda Katz",
+    "Alan Johnson",
+    "Charles Jolley",
+  ],
+}
+</pre>
+
+<p><a class="inner-link" data-anchor="built_in_helpers">Learn more: Built-in helpers</a></p>
+
+<p><strong>Template comments</strong></p>
+
+<p>You can use comments in your handlebars code just as you would in your code. Since there is generally some level of logic, this is a good practice.</p>
+
+<p>The comments will not be in the resulting output. If you'd like the comments to show up just use HTML comments, and they will be output.</p>
+
+<p>Any comments that must contain <code>}}</code> or other handlebars tokens should use the <code>{{!-- --}}</code> syntax.</p>
+
+<pre id="handlebars_comment_example" class="prettyprint code_showarea">
+{{! This comment will not show up in the output}}
+&lt;!-- This comment will show up as HTML-comment -->
+{{!-- This comment may contain mustaches like }} --}}
+</pre>
+
+<p><strong>Custom Helpers</strong></p>
+
+<p>Handlebars helpers can be accessed from any context in a template. You can register a helper with the Handlebars.registerHelper method.</p>
+
+<pre id="handlebars_custom_helper_template" class="prettyprint code_showarea">
+{{firstname}} {{loud lastname}}
+</pre>
+
+<pre id="handlebars_custom_helper_func" class="prettyprint code_showarea">
+Handlebars.registerHelper('loud', function (aString) {
+  return aString.toUpperCase()
+})
+</pre>
+
+<p>Helpers receive the current context as the <strong>this</strong>-context of the function.</p>
+
+<pre id="handlebars_custom_helper_template2" class="prettyprint code_showarea">
+{{#each people}}
+   {{print_person}}
+{{/each}}
+</pre>
+
+<pre id="handlebars_custom_helper_func2" class="prettyprint code_showarea">
+Handlebars.registerHelper('print_person', function () {
+  return this.firstname + ' ' + this.lastname
+})
+</pre>
+
+<p><strong>Block Helpers</strong></p>
+
+<p>Block expressions allow you to define helpers that will invoke a section of your template with a different context than the current. These block helpers are identified by a <code>#</code> preceding the helper name and require a matching closing mustache, <code>/</code>, of the same name. Let's consider a helper that will generate an HTML list:</p>
+
+<pre id="handlebars_block_helper_func" class="prettyprint code_showarea">
+Handlebars.registerHelper("list", function(items, options) {
+  const itemsAsHtml = items.map(item => "&lt;li>" + options.fn(item) + "&lt;/li>");
+  return "&lt;ul>\n" + itemsAsHtml.join("\n") + "\n&lt;/ul>";
+});
+</pre>
+
+<p>The example creates a helper named <code>list</code> to generate our HTML list.</p>
+
+<pre id="handlebars_block_helper_template" class="prettyprint code_showarea">
+{{#list people}}{{firstname}} {{lastname}}{{/list}}
+</pre>
+
+<p>The helper receives the <code>people</code> as its first parameter, and an <code>options</code> hash as its second parameter. The options hash contains a property named <code>fn</code>, which you can invoke with a context just as you would invoke a normal Handlebars template.</p>
+
+<p>When executed, the template will render:</p>
+
+<pre id="handlebars_block_helper_output" class="prettyprint code_showarea">
+&lt;ul>
+&lt;li>Yehuda Katz&lt;/li>
+&lt;li>Carl Lerche&lt;/li>
+&lt;li>Alan Johnson&lt;/li>
+&lt;/ul>
+</pre>
+
+<p>Block helpers have more features, such as the ability to create an <code>else</code> section (used, for instance, by the built-in <code>if</code> helper).</p>
+
+<p>Since the contents of a block helper are escaped when you call <code>options.fn(context)</code>, Handlebars does not escape the results of a block helper. If it did, inner content would be double-escaped!</p>
+
+<p><a class="inner-link" data-anchor="block_helpers">Learn More: Block Helpers</a></p>
+
+<p><strong>HTML Escaping</strong></p>
+
+<p>Because it was originally designed to generate HTML, Handlebars escapes values returned by a <code>{{expression}}</code>. If you don't want Handlebars to escape a value, use the "triple-stash", <code>{{{</code>.</p>
+
+<pre id="handlebars_html_escaping" class="prettyprint code_showarea">
+raw: {{{specialChars}}}
+html-escaped: {{specialChars}}
+</pre>
+
+<p>The special characters in the second line will be escaped:</p>
+
+<pre id="handlebars_html_escape_chars" class="prettyprint code_showarea">
+raw: & &lt; > " ' ` =
+html-escaped: &amp;amp; &amp;lt; &amp;gt; &amp;quot; &amp;#x27; &amp;#x60; &amp;#x3D;
+</pre>
+
+<p>Handlebars will not escape a <code>Handlebars.SafeString</code>. If you write a helper that generates its own HTML, you will usually want to return a <code>new Handlebars.SafeString(result)</code>. In such a circumstance, you will want to manually escape parameters.</p>
+
+<pre id="handlebars_safe_str" class="prettyprint code_showarea">
+Handlebars.registerHelper("bold", function(text) {
+  var result = "&lt;b>" + Handlebars.escapeExpression(text) + "&lt;/b>";
+  return new Handlebars.SafeString(result);
+});
+</pre>
+
+<p>This will escape the passed in parameters, but mark the response as safe, so Handlebars will not try to escape it even if the "triple-stash" is not used.</p>
+
+<p><strong>WARNING</strong></p>
+
+<p>Handlebars does not escape JavaScript strings. Using Handlebars to generate JavaScript, such as inline event handlers, could potentially lead to cross-site scripting vulnerabilities.</p>
+
+<h2 id="expressions">Expressions</h2>
+
+<p>Handlebars expressions are the basic unit of a Handlebars template. You can use them alone in a <code>{{mustache}}</code>, pass them to a Handlebars helper, or use them as values in hash arguments.</p>
+
+<p><strong>Basic Usage</strong></p>
+
+<p>Handlebars expressions are some contents enclosed by double curly braces . In the below template, <code>firstname</code> is a variable that is enclosed by double curly braces, which is said to be an expression.</p>
+
+<pre id="handlebars_basic_template" class="prettyprint code_showarea">
+&lt;p>{{firstname}} {{lastname}}&lt;/p>
+</pre>
+
+<p>If the below input object is applied to the template</p>
+
+<pre id="handlebars_basic_input" class="prettyprint code_showarea">
+{
+  firstname: "Yehuda",
+  lastname: "Katz",
+}
+</pre>
+
+<p>Expressions are compiled to produce the output as follows:</p>
+
+<pre id="handlebars_basic_output" class="prettyprint code_showarea">
+&lt;p>Yehuda Katz&lt;/p>
+</pre>
+
+<p><strong>Path expressions</strong></p>
+
+<p>Handlebars expressions can also be dot-separated paths.</p>
+
+<pre id="handlebars_path_expr_template" class="prettyprint code_showarea">
+{{person.firstname}} {{person.lastname}}
+</pre>
+
+<p>This expression looks up the <code>person</code> property in the input object and in turn looks up the <code>firstname</code> and <code>lastname</code> property within the <code>person</code> object.</p>
+
+<p>Pass the below input object to the template</p>
+
+<pre id="handlebars_path_expr_input" class="prettyprint code_showarea">
+{
+  person: {
+    firstname: "Yehuda",
+    lastname: "Katz",
+  },
+}
+</pre>
+
+<p>Output will be generated as below</p>
+
+<pre id="handlebars_path_expr_output" class="prettyprint code_showarea">
+Yehuda Katz
+</pre>
+
+<p>Handlebars also supports a deprecated <code>/</code> syntax, so you could write the above template as:</p>
+
+<pre id="handlebars_path_expr_deprecated" class="prettyprint code_showarea">
+{{person/firstname}} {{person/lastname}}
+</pre>
+
+<p><strong>Changing the context</strong></p>
+
+<p>Some helpers like <code>#with</code> and <code>#each</code> allow you to dive into nested objects. When you include <code>../</code> segments in your path, Handlebars will change back into the parent context.</p>
+
+<pre id="handlebars_changing_context" class="prettyprint code_showarea">
+{{#each people}}
+  {{../prefix}} {{firstname}} 
+{{/each}}
+</pre>
+
+<p>Even though the name is printed while in the context of a comment, it can still go back to the main context (the root-object) to retrieve the prefix.</p>
+
+<p><strong>WARNING</strong></p>
+
+<p>The exact value that <code>../</code> will resolve to varies based on the helper that is calling the block. Using <code>../</code> is only necessary when context changes. Children of helpers such as <code>{{#each}}</code> would require the use of <code>../</code> while children of helpers such as <code>{{#if}}</code> do not.</p>
+
+<pre id="handlebars_changing_context_warning_example" class="prettyprint code_showarea">
+{{permalink}}
+{{#each comments}}
+  {{../permalink}}
+
+  {{#if title}}
+    {{../permalink}}
+  {{/if}}
+{{/each}}
+</pre>
+
+<p>In this example all of the above reference the same prefix value even though they are located within different blocks. This behavior is new as of Handlebars 4; the release notes discuss the prior behavior as well as the migration plan. Handlebars also allows for name conflict resolution between helpers and data fields via a <code>this</code> reference.</p>
+
+<p id="segment_literal"><strong>Literal segments</strong></p>
+
+<p>Identifiers may be any unicode character except for the following:</p>
+
+<p><em>Whitespace</em> <code>! " # % & ' ( ) * + , . / ; < = > @ [ \ ] ^ ` { | } ~</code></p>
+
+<p>In addition, the words <code>true</code>, <code>false</code>, <code>null</code> and <code>undefined</code> are only allowed in the first part of a path expression.</p>
+
+<p>To reference a property that is not a valid identifier, you can use segment-literal notation, <code>[</code>. You may not include a closing <code>]</code> in a path-literal, but all other characters are allowed.</p>
+
+<p>JavaScript-style strings, <code>"</code> and <code>'</code>, may also be used instead of <code>[</code> pairs.</p>
+
+<pre id="handlebars_litteral_segments" class="prettyprint code_showarea">
+{{!-- wrong: {{array.0.item}} --}}
+correct: array.[0].item: {{array.[0].item}}
+
+{{!-- wrong: {{array.[0].item-class}} --}}
+correct: array.[0].[item-class]: {{array.[0].[item-class]}}
+
+{{!-- wrong: {{./true}}--}}
+correct: ./[true]: {{./[true]}}
+</pre>
+
+<p><strong>HTML-escaping</strong></p>
+
+<p>In Handlebars, the values returned by the <code>{{expression}}</code> are HTML-escaped. Say, if the expression contains <code>&</code>, then the returned HTML-escaped output is generated as <code>&amp;amp;</code>. If you don't want Handlebars to escape a value, use the "triple-stash", <code>{{{</code>:</p>
+
+<p>In the below template, you can learn how to produce the HTML escaped and raw output.</p>
+
+<pre id="handlebars_raw_and_escaped" class="prettyprint code_showarea">
+raw: {{{specialChars}}}
+html-escaped: {{specialChars}}
+</pre>
+
+<p>Pass the special characters to the template</p>
+
+<pre id="handlebars_specialchars" class="prettyprint code_showarea">
+{ specialChars: "& < > \" ' ` = " }
+</pre>
+
+<p>Expressions enclosed by "triple-stash" (<code>{{{</code>) produce the raw output. Otherwise, HTML-escaped output is generated as below.</p>
+
+<pre id="handlebars_specialchars2" class="prettyprint code_showarea">
+raw: & < > " ' ` =
+html-escaped: &amp;amp; &amp;lt; &amp;gt; &amp;quot; &amp;#x27; &amp;#x60; &amp;#x3D;
+</pre>
+
+<p><strong>Helpers</strong></p>
+
+<p>Helpers can be used to implement functionality that is not part of the Handlebars language itself.</p>
+
+<p>A helper can be registered at runtime via <code>Handlebars.registerHelper</code>, for example in order to uppercase all characters of a string.</p>
+
+<pre id="handlebars_helpers_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper('loud', function (aString) {
+  return aString.toUpperCase()
+})
+</pre>
+
+<p>A Handlebars helper call is a simple identifier, followed by zero or more parameters (separated by a space). Each parameter is a Handlebars expression that is evaluated exactly the same way as described above in "Basic Usage":</p>
+
+<pre id="handlebars_helpers_template_example" class="prettyprint code_showarea">
+{{firstname}} {{loud lastname}}
+</pre>
+
+<p>In this case, <code>loud</code> is the name of a helper, and <code>lastname</code> is a parameter to the helper. The template will uppercase the <code>lastname</code> property of the input:</p>
+
+<pre id="handlebars_helpers_json_example" class="prettyprint code_showarea">
+{
+  firstname: "Yehuda",
+  lastname: "Katz",
+}
+</pre>
+
+<pre id="handlebars_helpers_output_example" class="prettyprint code_showarea">
+Yehuda KATZ
+</pre>
+
+<p><strong>Prevent HTML-escaping of helper return values</strong></p>
+
+<p>When your helper returns an instance of <code>Handlebars.Safestring</code> the return-value is not escaped, even if the helper is called with <code>{{</code> instead of <code>{{{</code>. You have to take care that all parameters are escaped properly using <code>Handlebars.escapeExpression</code>.</p>
+
+<pre id="handlebars_html_escaping_example" class="prettyprint code_showarea">
+Handlebars.registerHelper("bold", function(text) {
+  var result = "<b>" + Handlebars.escapeExpression(text) + "</b>";
+  return new Handlebars.SafeString(result);
+});
+</pre>
+
+<p><strong>Helpers with Multiple Parameters</strong></p>
+
+<p>Let us see another example of helpers with two parameters</p>
+
+<pre id="handlebars_multiple_params_template_example" class="prettyprint code_showarea">
+{{link "See Website" url}}
+</pre>
+
+<p>In this case, Handlebars will pass the link helper two parameters: the String <code>See Website</code> and the value of <code>people.url</code> from the below provided input <code>people</code> object.</p>
+
+<pre id="handlebars_multiple_params_json_example" class="prettyprint code_showarea">
+{ url: "https://yehudakatz.com/" }
+</pre>
+
+<p>The helper function <code>link</code> is used to generate a hyperlink as described in the script.</p>
+
+<pre id="handlebars_multiple_params_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper("link", function(text, url) {
+  var url = Handlebars.escapeExpression(url),
+    text = Handlebars.escapeExpression(text)
+  
+  return new Handlebars.SafeString("&lt;a href='" + url + "'>" + text +"&lt;/a>");
+});
+</pre>
+
+<p>We will obtain the output using the input parameters</p>
+
+<pre id="handlebars_multiple_params_output_example" class="prettyprint code_showarea">
+&lt;a href='https://yehudakatz.com/'>See Website&lt;/a>
+</pre>
+
+<p>In the above example, You could use the exact same helper with dynamic text based on the value of <code>people.text</code>:</p>
+
+<pre id="handlebars_multiple_params_template_example2" class="prettyprint code_showarea">
+{{link people.text people.url}}
+</pre>
+
+<pre id="handlebars_multiple_params_json_example2" class="prettyprint code_showarea">
+{
+  people: {
+    firstname: "Yehuda",
+    lastname: "Katz",
+    url: "https://yehudakatz.com/",
+    text: "See Website",
+  },
+}
+</pre>
+
+<p><strong>Literal arguments</strong></p>
+
+<p>Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported literals include numbers, strings, <code>true</code>, <code>false</code>, <code>null</code> and <code>undefined</code>:</p>
+
+<pre id="handlebars_litteral_args_template_example" class="prettyprint code_showarea">
+{{progress "Search" 10 false}}
+{{progress "Upload" 90 true}}
+{{progress "Finish" 100 false}}
+</pre>
+
+<p><strong>Helpers with Hash arguments</strong></p>
+
+<p>Handlebars provides additional metadata, such as Hash arguments, to helpers as a final parameter.</p>
+
+<pre id="handlebars_hash_args_template_example" class="prettyprint code_showarea">
+{{link "See Website" href=person.url class="person"}}
+</pre>
+
+<p>In that template,the final parameter <code>href=people.url class="people"</code> are hash arguments sent to the helper.</p>
+
+<p>The keys in hash arguments must each be simple identifiers, and the values are Handlebars expressions. This means that values can be simple identifiers, paths, or Strings.</p>
+
+<p>If we pass the below input to the template, the value of <code>person.url</code> can be obtained from the <code>person</code> object.</p>
+
+<pre id="handlebars_hash_args_json_example" class="prettyprint code_showarea">
+{
+  person: {
+    firstname: "Yehuda",
+    lastname: "Katz",
+    url: "https://yehudakatz.com/",
+  },
+}
+</pre>
+
+<p>As described in the helper script below, the hash arguments can be obtained from the last parameter <code>options</code> for further processing within the helper.</p>
+
+<pre id="handlebars_hash_args_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper("link", function(text, options) {
+  var attributes = [];
+
+  Object.keys(options.hash).forEach(key => {
+    var escapedKey = Handlebars.escapeExpression(key);
+    var escapedValue = Handlebars.escapeExpression(options.hash[key]);
+    attributes.push(escapedKey + '="' + escapedValue + '"');
+  })
+  var escapedText = Handlebars.escapeExpression(text);
+
+  var escapedOutput ="&lt;a " + attributes.join(" ") + ">" + escapedText + "&lt;/a>";
+  return new Handlebars.SafeString(escapedOutput);
+});
+</pre>
+
+<p>The output of above helper is generated as below</p>
+
+<pre id="handlebars_hash_args_output_example" class="prettyprint code_showarea">
+&lt;a class="person" href="https://yehudakatz.com/">See Website&lt;/a>
+</pre>
+
+<p>Handlebars also offers a mechanism for invoking a helper with a block of the template. Block helpers can then invoke that block zero or more times with any context it chooses.</p>
+
+<p><a class="inner-link" data-anchor="block_helpers">Learn More: Block Helpers</a></p>
+
+<p><strong>Disambiguating helpers calls and property lookup</strong></p>
+
+<p>If a helper is registered by the same name as a property of an input object, the helper has priority over the input property. If you want to resolve the input property instead, you can prefix its name with <code>./</code> or <code>this.</code> (or the deprecated <code>this/</code>)</p>
+
+<pre id="handlebars_disambiguating_helpers_template_example" class="prettyprint code_showarea">
+helper: {{name}}
+data: {{./name}} or {{this/name}} or {{this.name}}
+</pre>
+
+<pre id="handlebars_disambiguating_helpers_json_example" class="prettyprint code_showarea">
+{ name: "Yehuda" }
+</pre>
+
+<pre id="handlebars_disambiguating_helpers_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper('name', function () {
+  return "Nils"
+})
+</pre>
+
+<p><strong>Subexpressions</strong></p>
+
+<p>Handlebars offers support for subexpressions, which allows you to invoke multiple helpers within a single mustache, and pass in the results of inner helper invocations as arguments to outer helpers. Subexpressions are delimited by parentheses.</p>
+
+<pre id="handlebars_subexpressions_template_example" class="prettyprint code_showarea">
+{{outer-helper (inner-helper "abc") "def"}}
+</pre>
+
+<p>In this case, <code>inner-helper</code> will get invoked with the string argument <code>'abc'</code>, and whatever the <code>inner-helper</code> function returns will get passed in as the first argument to <code>outer-helper</code> (and <code>'def'</code> will get passed in as the second argument to <code>outer-helper</code>).</p>
+
+<p><strong>Whitespace Control</strong></p>
+
+<p>Template whitespace may be omitted from either side of any mustache statement by adding a <code>~</code> character by the braces. When applied all whitespace on that side will be removed up to the first handlebars expression or non-whitespace character on that side.</p>
+
+<pre id="handlebars_whitespace_control_template_example" class="prettyprint code_showarea">
+{{#each nav~}}
+  <a href="{{url}}">
+    {{~#if test}}
+      {{~title}}
+    {{~else~}}
+      Empty
+    {{~/if~}}
+  </a>
+{{~/each}}
+</pre>
+
+<p>with this context:</p>
+
+<pre id="handlebars_whitespace_control_json_example" class="prettyprint code_showarea">
+{
+  nav: [{ url: "foo", test: true, title: "bar" }, { url: "bar" }];
+}
+</pre>
+
+<p>results in output sans newlines and formatting whitespace:</p>
+
+<pre id="handlebars_whitespace_control_output_example" class="prettyprint code_showarea">
+&lt;a href="foo">bar&lt;/a>&lt;a href="bar">Empty&lt;/a>
+</pre>
+
+<p>This expands the default behavior of stripping lines that are "standalone" helpers (only a block helper, comment, or partial and whitespace).</p>
+
+<pre id="handlebars_whitespace_control_template_example2" class="prettyprint code_showarea">
+{{#each nav}}
+  <a href="{{url}}">
+    {{#if test}}
+      {{title}}
+    {{else}}
+      Empty
+    {{/if}}
+  </a>
+{{~/each}}
+</pre>
+
+<p>will render</p>
+
+<pre id="handlebars_whitespace_control_output_example2" class="prettyprint code_showarea">
+&lt;a href="foo"> bar &lt;/a> &lt;a href="bar"> Empty &lt;/a>
+</pre>
+
+<p><strong>Escaping Handlebars expressions</strong></p>
+
+<p>Handlebars content may be escaped in one of two ways, inline escapes or raw block helpers. Inline escapes created by prefixing a mustache block with <code>\</code> . Raw blocks are created using <code>{{{{</code> mustache braces.</p>
+
+<pre id="handlebars_escaping_expressions_template_example" class="prettyprint code_showarea">
+\{{escaped}}
+{{#raw}}
+  \{{escaped}}
+{{/raw}}
+</pre>
+
+<p>Raw blocks operate in the same manner as other <a class="inner-link" data-anchor="block_helpers">block helpers</a> with the distinction of the child content is treated as a literal string.</p>
+
+<h2 id="block_helpers">Block Helpers</h2>
+
+<p>Block helpers make it possible to define custom iterators and other functionality that can invoke the passed block with a new context.</p>
+
+<p><strong>Basic Blocks</strong></p>
+
+<p>For demonstration purposes, let's define a block helper that invokes the block as though no helper existed.</p>
+
+<pre id="handlebars_basic_blocks_template_example" class="prettyprint code_showarea">
+&lt;div class="entry">
+  &lt;h1>{{title}}&lt;/h1>
+  &lt;div class="body">
+    {{#noop}}{{body}}{{/noop}}
+  &lt;/div>
+&lt;/div>
+</pre>
+
+<p>The <code>noop</code> helper (short for "no operation") will receive an options hash. This options hash contains a function (<code>options.fn</code>) that behaves like a normal compiled Handlebars template. Specifically, the function will take a context and return a String.</p>
+
+<pre id="handlebars_basic_blocks_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper("noop", function (options) {
+  return options.fn(this);
+});
+</pre>
+
+<p>Handlebars always invokes helpers with the current context as <code>this</code> , so you can invoke the block with <code>this</code> to evaluate the block in the current context.</p>
+
+<p>Any helpers defined in this manner will take precedence over fields defined in the context. To access a field that is masked by a helper, a path reference may be used. In the example above a field named <code>noop</code> on the context object would be referenced using:</p>
+
+<pre id="handlebars_basic_blocks_template_example2" class="prettyprint code_showarea">
+{{./noop}}
+</pre>
+
+<p><strong>Basic Block Variation</strong></p>
+
+<p>To better illustrate the syntax, let's define another block helper that adds some markup to the wrapped text.</p>
+
+<pre id="handlebars_blocks_variation_template_example" class="prettyprint code_showarea">
+&lt;div class="entry">
+  &lt;h1>{{title}}&lt;/h1>
+  &lt;div class="body">
+    {{#bold}}{{body}}{{/bold}}
+  &lt;/div>
+&lt;/div>
+</pre>
+
+<p>The bold helper will add markup to make its text bold. As before, the function will take a context as input and return a String.</p>
+
+<pre id="handlebars_blocks_variation_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper("bold", function (options) {
+  return new Handlebars.SafeString('&lt;div class="mybold">' + options.fn(this) + "&lt;/div>");
+});
+</pre>
+
+<p><strong>The <code>with</code> helper</strong></p>
+
+<p>The <code>with</code> helper demonstrates how to pass a parameter to your helper. When a helper is called with a parameter, it is invoked with whatever context the template passed in.</p>
+
+<pre id="handlebars_with_helper_template_example" class="prettyprint code_showarea">
+&lt;div class="entry">
+  &lt;h1>{{title}}&lt;/h1>
+  {{#with story}}
+    &lt;div class="intro">{{{intro}}}&lt;/div>
+    &lt;div class="body">{{{body}}}&lt;/div>
+  {{/with}}
+&lt;/div>
+</pre>
+
+<p>You might find a helper like this useful if a section of your JSON object contains deeply nested properties, and you want to avoid repeating the parent name. The above template could be useful with a JSON like:</p>
+
+<pre id="handlebars_with_helper_json_example" class="prettyprint code_showarea">
+{
+  title: "First Post",
+  story: {
+    intro: "Before the jump",
+    body: "After the jump"
+  }
+}
+</pre>
+
+<p>Implementing a helper like this is a lot like implementing the <code>noop</code> helper. Helpers can take parameters, and parameters are evaluated just like expressions used directly inside <code>{{mustache}}</code> blocks.</p>
+
+<pre id="handlebars_with_helper_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper("with", function (context, options) {
+  return options.fn(context);
+});
+</pre>
+
+<p>Parameters are passed to helpers in the order that they are passed, followed by the options hash.</p>
+
+<p><strong>Simple Iterators</strong></p>
+
+<p>A common use-case for block helpers is using them to define custom iterators. In fact, all Handlebars built-in helpers are defined as regular Handlebars block helpers. Let's take a look at how the built-in <code>each</code> helper works.</p>
+
+<pre id="handlebars_simple_iterators_template_example" class="prettyprint code_showarea">
+&lt;div class="entry">
+  &lt;h1>{{title}}&lt;/h1>
+  {{#with story}}
+    &lt;div class="intro">{{{intro}}}&lt;/div>
+    &lt;div class="body">{{{body}}}&lt;/div>
+  {{/with}}
+&lt;/div>
+&lt;div class="comments">
+  {{#each comments}}
+    &lt;div class="comment">
+      &lt;h2>{{subject}}&lt;/h2>
+      {{{body}}}
+    &lt;/div>
+  {{/each}}
+&lt;/div>
+</pre>
+
+<p>In this case, we want to invoke the block passed to each once for <code>each</code> element in the comments Array.</p>
+
+<pre id="handlebars_simple_iterators_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper("each", function (context, options) {
+  var ret = "";
+
+  for (var i = 0, j = context.length; i < j; i++) {
+    ret = ret + options.fn(context[i]);
+  }
+
+  return ret;
+});
+</pre>
+
+<p>In this case, we iterate over the items in the passed parameter, invoking the block once with each item. As we iterate, we build up a String result, and then return it.</p>
+
+<p>This pattern can be used to implement more advanced iterators. For instance, let's create an iterator that creates a <code>&lt;ul></code> wrapper, and wraps each resulting element in an <code>&lt;li></code>.</p>
+
+<pre id="handlebars_simple_iterators_template_example2" class="prettyprint code_showarea">
+{{#list nav}}
+  &lt;a href="{{url}}">{{title}}&lt;/a>
+{{/list}}
+</pre>
+
+<p>You would evaluate this template using something like this as the context:</p>
+
+<pre id="handlebars_simple_iterators_json_example2" class="prettyprint code_showarea">
+{
+  nav: [
+    { url: "http://www.yehudakatz.com", title: "Katz Got Your Tongue" },
+    { url: "http://www.sproutcore.com/block", title: "SproutCore Blog" },
+  ];
+}
+</pre>
+
+<p>The helper is similar to the original <code>each</code> helper.</p>
+
+<pre id="handlebars_simple_iterators_func_example2" class="prettyprint code_showarea">
+Handlebars.registerHelper("list", function (context, options) {
+  var ret = "&lt;ul>";
+
+  for (var i = 0, j = context.length; i < j; i++) {
+    ret = ret + "&lt;li>" + options.fn(context[i]) + "&lt;/li>";
+  }
+
+  return ret + "&lt;/ul>";
+});
+</pre>
+
+<p>Using a library like underscore.js or SproutCore's runtime library could make this a bit prettier. For example, here's what it might look like using SproutCore's runtime library:</p>
+
+
+<pre id="handlebars_simple_iterators_func_example3" class="prettyprint code_showarea">
+Handlebars.registerHelper("list", function (context, options) {
+  return (
+    "&lt;ul>" +
+    context
+      .map(function (item) {
+        return "&lt;li>" + options.fn(item) + "&lt;/li>";
+      })
+      .join("\n") +
+    "&lt;/ul>"
+  );
+});
+</pre>
+
+<p><strong>Conditionals</strong></p>
+
+<p>Another common use-case for block helpers is to evaluate conditional statements. As with the iterators, Handlebars' built-in <code>if</code> and <code>unless</code> control structures are implemented as regular Handlebars helpers.</p>
+
+<pre id="handlebars_conditionals_template_example" class="prettyprint code_showarea">
+{{#if isActive}}
+  &lt;img src="star.gif" alt="Active" />
+{{/if}}
+</pre>
+
+<p>Control structures typically do not change the current context, instead they decide whether or not to invoke the block based upon some variable.</p>
+
+<pre id="handlebars_conditionals_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper("if", function (conditional, options) {
+  if (conditional) {
+    return options.fn(this);
+  }
+});
+</pre>
+
+<p>When writing a conditional, you will often want to make it possible for templates to provide a block of HTML that your helper should insert if the conditional evaluates to false. Handlebars handles this problem by providing generic <code>else</code> functionality to block helpers.</p>
+
+<pre id="handlebars_conditionals_template_example2" class="prettyprint code_showarea">
+{{#if isActive}}
+  &lt;img src="star.gif" alt="Active" />
+{{else}}
+  &lt;img src="cry.gif" alt="Inactive" />
+{{/if}}
+</pre>
+
+<p>Handlebars provides the block for the <code>else</code> fragment as <code>options.inverse</code> . You do not need to check for the existence of the else fragment: Handlebars will detect it automatically and register a "noop" function.</p>
+
+<pre id="handlebars_conditionals_func_example2" class="prettyprint code_showarea">
+Handlebars.registerHelper("if", function (conditional, options) {
+  if (conditional) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
+</pre>
+
+<p>Handlebars provides additional metadata to block helpers by attaching them as properties of the options hash. Keep reading for more examples.</p>
+
+<p>Conditionals may also be chained by including the subsequent helper call within the else mustache.</p>
+
+<pre id="handlebars_conditionals_template_example3" class="prettyprint code_showarea">
+{{#if isActive}}
+  &lt;img src="star.gif" alt="Active" />
+{{else if isInactive}}
+  &lt;img src="cry.gif" alt="Inactive" />
+{{/if}}
+</pre>
+
+<p>It is not necessary to use the same helper in subsequent calls, the unless helper could be used in the else portion as with any other helper. When the helper values are different, the closing mustache should match the opening helper name.</p>
+
+<p><strong>Hash Arguments</strong></p>
+
+<p>Like regular helpers, block helpers can accept an optional Hash as its final argument. Let's revisit the <code>list</code> helper and make it possible for us to add any number of optional attributes to the <code>&lt;ul></code> element we will create.</p>
+
+<pre id="handlebars_hash_arguments_template_example" class="prettyprint code_showarea">
+{{#list nav id="nav-bar" class="top"}}
+  &lt;a href="{{url}}">{{title}}&lt;/a>
+{{/list}}
+</pre>
+
+<p>Handlebars provides the final hash as <code>options.hash</code>. This makes it easier to accept a variable number of parameters, while also accepting an optional Hash. If the template provides no hash arguments, Handlebars will automatically pass an empty object (<code>{}</code>), so you don't need to check for the existence of hash arguments.</p>
+
+<pre id="handlebars_hash_arguments_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper("list", function (context, options) {
+  var attrs = Object.keys(options.hash)
+    .map(function (key) {
+      return key + '="' + options.hash[key] + '"';
+    })
+    .join(" ");
+
+  return (
+    "&lt;ul " +
+    attrs +
+    ">" +
+    context
+      .map(function (item) {
+        return "&lt;li>" + options.fn(item) + "&lt;/li>";
+      })
+      .join("\n") +
+    "&lt;/ul>"
+  );
+});
+</pre>
+
+<p>Hash arguments provide a powerful way to offer a number of optional parameters to a block helper without the complexity caused by positional arguments.</p>
+
+<p>Block helpers can also inject private variables into their child templates. This can be useful to add extra information that is not in the original context data.</p>
+
+<p>For example, when iterating over a list, you may provide the current index as a private variable.</p>
+
+<pre id="handlebars_hash_arguments_template_example2" class="prettyprint code_showarea">
+{{#list array}}
+  {{@index}}.
+  {{title}}
+{{/list}}
+</pre>
+
+<pre id="handlebars_hash_arguments_func_example2" class="prettyprint code_showarea">
+Handlebars.registerHelper("list", function (context, options) {
+  var out = "&lt;ul>",
+    data;
+
+  if (options.data) {
+    data = Handlebars.createFrame(options.data);
+  }
+
+  for (var i = 0; i &lt; context.length; i++) {
+    if (data) {
+      data.index = i;
+    }
+
+    out += "&lt;li>" + options.fn(context[i], { data: data }) + "&lt;/li>";
+  }
+
+  out += "&lt;/ul>";
+  return out;
+});
+</pre>
+
+<p>Private variables provided via the <code>data</code> option are available in all descendent scopes.</p>
+
+<p>Private variables defined in parent scopes may be accessed via pathed queries. To access the <code>index</code> field of the parent iterator, <code>@../index</code> may be used.</p>
+
+<p>Make sure you create a new data frame in each helper that assigns its own data. Otherwise, downstream helpers might unexpectedly mutate upstream variables.</p>
+
+<p>Also ensure that the <code>data</code> field is defined prior to attempting to interact with an existing data object. The private variable behavior is conditionally compiled and some templates might not create this field.</p>
+
+<p><strong>Block Parameters</strong></p>
+
+<p>New in Handlebars 3.0, it's possible to receive named parameters from supporting helpers.</p>
+
+<pre id="handlebars_block_params_template_example" class="prettyprint code_showarea">
+{{#each users as |user userId|}}
+  Id:
+  {{userId}}
+  Name:
+  {{user.name}}
+{{/each}}
+</pre>
+
+<p>In this particular example, <code>user</code> will have the same value as the current context and <code>userId</code> will have the index value for the iteration.</p>
+
+<p>This allows for nested helpers to avoid name conflicts that can occur with private variables.</p>
+
+<pre id="handlebars_block_params_template_example2" class="prettyprint code_showarea">
+{{#each users as |user userId|}}
+  {{#each user.book as |book bookId|}}
+    User Id:
+    {{userId}}
+    Book Id:
+    {{bookId}}
+  {{/each}}
+{{/each}}
+</pre>
+
+<p>A number of <a class="inner-link" data-anchor="built_in_helpers">built-in helpers</a> support block parameters and any custom helper may provide them through the <code>blockParams</code> options field.</p>
+
+<p>Helpers can determine the number of block parameters referenced by the template via the <code>options.fn.blockParams</code> field, which is an integer count. This value represents the number of block parameters that could be referenced by the child template. Parameters beyond this count will never be referenced and can safely be omitted by the helper if desired. This is optional and any additional parameters passed to the template will be silently ignored.</p>
+
+<p><strong>Raw Blocks</strong></p>
+
+<p>Raw blocks are available for templates needing to handle unprocessed mustache blocks.</p>
+
+<pre id="handlebars_raw_blocks_template_example" class="prettyprint code_showarea">
+{{{{raw-loud}}}}
+  {{bar}}
+{{{{/raw-loud}}}}
+</pre>
+
+<pre id="handlebars_raw_blocks_template_example2" class="prettyprint code_showarea">
+{{#raw-helper}}
+  \{{bar}}
+{{/raw-helper}}
+</pre>
+
+<p>will execute the helper raw-helper without interpreting the content.</p>
+
+<pre id="handlebars_raw_blocks_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper("raw-helper", function (options) {
+  return options.fn();
+});
+</pre>
+
+<p>will render</p>
+
+<pre id="handlebars_raw_blocks_template_example2" class="prettyprint code_showarea">
+{{bar}}
+</pre>
+
+<h2 id="built_in_helpers">Built-in Helpers</h2>
+
+<p><strong><code>#if</code></strong></p>
+
+<p>You can use the <code>if</code> helper to conditionally render a block. If its argument returns <code>false</code>, <code>undefined</code>, <code>null</code>, <code>""</code>, <code>0</code>, or <code>[]</code>, Handlebars will not render the block.</p>
+
+<pre id="handlebars_builtin_helpers_template_example" class="prettyprint code_showarea">
+&lt;div class="entry">
+{{#if author}}
+&lt;h1>{{firstName}} {{lastName}}&lt;/h1>
+{{/if}}
+&lt;/div>
+</pre>
+
+<p>When you pass the following input to the above template</p>
+
+<pre id="handlebars_builtin_helpers_json_example" class="prettyprint code_showarea">
+{
+  author: true,
+  firstName: "Yehuda",
+  lastName: "Katz",
+}
+</pre>
+
+<p>This will produce the result as below:</p>
+
+<pre id="handlebars_builtin_helpers_output_example" class="prettyprint code_showarea">
+&lt;div class="entry">
+&lt;h1>Yehuda Katz&lt;/h1>
+&lt;/div>
+</pre>
+
+<p>If the input is an empty JSONObject <code>{}</code>, then <code>author</code> will become <code>undefined</code> and <code>if</code> condition fails, resulting in the output as follow:</p>
+
+<pre id="handlebars_builtin_helpers_output_example2" class="prettyprint code_showarea">
+&lt;div class="entry">&lt;/div>
+</pre>
+
+<p>When using a block expression, you can specify a template section to run if the expression returns a falsy value. The section, marked by <code>else</code> is called an "else section".</p>
+
+<pre id="handlebars_builtin_helpers_template_example2" class="prettyprint code_showarea">
+&lt;div class="entry">
+{{#if author}}
+&lt;h1>{{firstName}} {{lastName}}&lt;/h1>
+{{else}}
+&lt;h1>Unknown Author&lt;/h1>
+{{/if}}
+&lt;/div>
+</pre>
+
+<p><strong><code>includeZero</code></strong></p>
+
+<p>The <code>includeZero=true</code> option may be set to treat the conditional as not empty. This effectively determines if <code>0</code> is handled by the positive or negative path.</p>
+
+<pre id="handlebars_includezero_template_example" class="prettyprint code_showarea">
+{{#if 0 includeZero=true}}
+  &lt;h1>Does render&lt;/h1>
+{{/if}}
+</pre>
+
+<p><strong>Sub-Expressions</strong></p>
+
+<p>Helpers are the proposed way to add custom logic to templates. You can write any helper and use it in a sub-expression.</p>
+
+<p>For example, in checking for initialization of a variable the built-in <code>#if</code> check might not be appropriate as it returns false for empty collections.</p>
+
+<p>You could write a helper that checks for "undefined" such as:</p>
+
+<pre id="handlebars_subexpressions_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper('isdefined', function (value) {
+  return value !== undefined;
+});
+</pre>
+
+<p>Then use your helper as a sub-expression:</p>
+
+<pre id="handlebars_subexpressions_template_example" class="prettyprint code_showarea">
+{{#if (isdefined value1)}}true{{else}}false{{/if}}
+{{#if (isdefined value2)}}true{{else}}false{{/if}}
+</pre>
+
+<p><strong><code>#unless</code></strong></p>
+
+<p>You can use the <code>unless</code> helper as the inverse of the <code>if</code> helper. Its block will be rendered if the expression returns a falsy value.</p>
+
+<pre id="handlebars_unless_template_example" class="prettyprint code_showarea">
+&lt;div class="entry">
+{{#unless license}}
+&lt;h3 class="warning">WARNING: This entry does not have a license!&lt;/h3>
+{{/unless}}
+&lt;/div>
+</pre>
+
+<p>If looking up <code>license</code> under the current context returns a falsy value, Handlebars will render the warning. Otherwise, it will render nothing.</p>
+
+<p><strong><code>#each</code></strong></p>
+
+<p>You can iterate over a list using the built-in <code>each</code> helper. Inside the block, you can use <code>this</code> to reference the element being iterated over.</p>
+
+<pre id="handlebars_each_template_example" class="prettyprint code_showarea">
+&lt;ul class="people_list">
+  {{#each people}}
+    &lt;li>{{this}}&lt;/li>
+  {{/each}}
+&lt;/ul>
+</pre>
+
+<p>when used with this context:</p>
+
+<pre id="handlebars_each_json_example" class="prettyprint code_showarea">
+{
+  people: [
+    "Yehuda Katz",
+    "Alan Johnson",
+    "Charles Jolley",
+  ],
+}
+</pre>
+
+<p>will result in:</p>
+
+<pre id="handlebars_each_result_example" class="prettyprint code_showarea">
+&lt;ul class="people_list">
+    &lt;li>Yehuda Katz&lt;/li>
+    &lt;li>Alan Johnson&lt;/li>
+    &lt;li>Charles Jolley&lt;/li>
+&lt;/ul>
+</pre>
+
+<p>You can use the <code>this</code> expression in any context to reference the current context.</p>
+
+<p>You can optionally provide an <code>else</code> section which will display only when the list is empty.</p>
+
+<pre id="handlebars_each_template_example2" class="prettyprint code_showarea">
+{{#each paragraphs}}
+&lt;p>{{this}}&lt;/p>
+{{else}}
+&lt;p class="empty">No content&lt;/p>
+{{/each}}
+</pre>
+
+<p>When looping through items in <code>each</code> , you can optionally reference the current loop index via <code>{{@index}}</code>.</p>
+
+<pre id="handlebars_each_template_example3" class="prettyprint code_showarea">
+{{#each array}} {{@index}}: {{this}} {{/each}}
+</pre>
+
+<p>Additionally for object iteration, <code>{{@key}}</code> references the current key name:</p>
+
+<pre id="handlebars_each_template_example4" class="prettyprint code_showarea">
+{{#each object}} {{@key}}: {{this}} {{/each}}
+</pre>
+
+<p>The first and last steps of iteration are noted via the <code>@first</code> and <code>@last</code> variables when iterating over an array.</p>
+
+<p>Nested <code>each</code> blocks may access the iteration variables via depth based paths. To access the parent index, for example, <code>{{@../index}}</code> can be used.</p>
+
+<p>When the current item is itself an array, use <a class="inner-link" data-anchor="segment_literal">segment-literal notation</a> to read a fixed index. Plain <code>this[0]</code> is not valid Handlebars syntax; write <code>this.[0]</code> instead:</p>
+
+<pre id="handlebars_each_template_example5" class="prettyprint code_showarea">
+&lt;ul class="tuples">
+  {{#each tuple}}
+    &lt;li>{{this.[0]}} {{this.[1]}}&lt;/li>
+  {{/each}}
+&lt;/ul>
+</pre>
+
+<p><strong><code>#with</code></strong></p>
+
+<p>The <code>with</code>-helper allows you to change the evaluation context of template-part.</p>
+
+<pre id="handlebars_with_template_example" class="prettyprint code_showarea">
+{{#with person}}
+{{firstname}} {{lastname}}
+{{/with}}
+</pre>
+
+<p>when used with this context:</p>
+
+<pre id="handlebars_with_json_example" class="prettyprint code_showarea">
+{
+  person: {
+    firstname: "Yehuda",
+    lastname: "Katz",
+  },
+}
+</pre>
+
+<p>will result in:</p>
+
+<pre id="handlebars_with_output_example" class="prettyprint code_showarea">
+Yehuda Katz
+</pre>
+
+<p><code>with</code> can also be used with block parameters to define known references in the current block. The example above can be converted to</p>
+
+<pre id="handlebars_with_template_example2" class="prettyprint code_showarea">
+{{#with city as | city |}}
+  {{#with city.location as | loc |}}
+    {{city.name}}: {{loc.north}} {{loc.east}}
+  {{/with}}
+{{/with}}
+</pre>
+
+<p>Which allows for complex templates to potentially provide clearer code than <code>../</code> depthed references allow for.</p>
+
+<p>You can optionally provide an <code>{{else}}</code> section which will display only when the passed value is empty.</p>
+
+<pre id="handlebars_with_template_example3" class="prettyprint code_showarea">
+{{#with city}}
+{{city.name}} (not shown because there is no city)
+{{else}}
+No city found
+{{/with}}
+</pre>
+
+<pre id="handlebars_with_json_example2" class="prettyprint code_showarea">
+{
+  person: {
+    firstname: "Yehuda",
+    lastname: "Katz",
+  },
+}
+</pre>
+
+<p><strong><code>lookup</code></strong></p>
+
+<p>The <code>lookup</code> helper allows for dynamic parameter resolution using Handlebars variables.</p>
+
+<p>This is useful for resolving values for array indexes.</p>
+
+<pre id="handlebars_lookup_template_example" class="prettyprint code_showarea">
+{{#each people}}
+  {{.}} lives in {{lookup ../cities @index}}
+{{/each}}
+</pre>
+
+<p>It can also be used to lookup properties of object based on data from the input. The following is a more complex example that uses <code>lookup</code> in a sub-expression to change the evaluation context to another object based on a property-value.</p>
+
+<pre id="handlebars_lookup_template_example2" class="prettyprint code_showarea">
+{{#each persons as | person |}}
+  {{name}} lives in {{#with (lookup ../cities [resident-in])~}}
+    {{name}} ({{country}})
+  {{/with}}
+{{/each}}
+</pre>
+
+<p><strong><code>log</code></strong></p>
+
+<p>The <code>log</code> helper allows for logging of context state while executing a template.</p>
+
+<pre id="handlebars_log_template_example" class="prettyprint code_showarea">
+{{log 'this is a simple log output'}}
+</pre>
+
+<p>It delegates to <code>Handlebars.logger.log</code> which may be overridden to perform custom logging.</p>
+
+<p>Any number of arguments may be passed to this method and all will be forwarded to the logger.</p>
+
+<pre id="handlebars_log_template_example2" class="prettyprint code_showarea">
+{{log 'firstname' firstname 'lastname' lastname}}
+</pre>
+
+<p>The log level may be set using the level hash parameter. Supported values are debug, info, warn, and error. When omitted, info is the default value,</p>
+
+<p>Logging is conditional based on the level and to value set in <code>Handlebars.logger.level</code> , which defaults to <code>info</code> . All log statements at or above the current level will be output.</p>
+
+<pre id="handlebars_log_template_example3" class="prettyprint code_showarea">
+{{log "debug logging" level="debug"}}
+{{log "info logging" level="info"}}
+{{log "info logging is the default"}}
+{{log "logging a warning" level="warn"}}
+{{log "logging an error" level="error"}}
+</pre>
+
+<h2>Hooks</h2>
+
+<p>There are several places where you can hook into Handlebars function calls.</p>
+
+<p><strong><code>helperMissing</code></strong></p>
+
+<p>This hook is called when a mustache or a block-statement<br>
+- a simple mustache-expression is not a registered helper AND<br>
+- is not a property of the current evaluation context.</p>
+
+<p>You can add custom handling for those situations by registering the helper <code>helperMissing</code>:</p>
+
+<pre id="handlebars_helpermissing_template_example" class="prettyprint code_showarea">
+{{foo}}
+{{foo true}}
+{{foo 2 true}}
+{{#foo true}}{{/foo}}
+{{#foo}}{{/foo}}
+</pre>
+
+<pre id="handlebars_helpermissing_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper('helperMissing', function( /* dynamic arguments */) {
+  var options = arguments[arguments.length-1];
+  var args = Array.prototype.slice.call(arguments, 0,arguments.length-1)
+  return new Handlebars.SafeString("Missing: "+options.name+"("+args+")")
+})
+</pre>
+
+<pre id="handlebars_helpermissing_output_example" class="prettyprint code_showarea">
+Missing: foo()
+Missing: foo(true)
+Missing: foo(2,true)
+Missing: foo(true)
+</pre>
+
+<p>The helper receives the same arguments and options (<code>hash</code>, <code>name</code> etc.) as any custom helper or block-helper. The <code>options.name</code> is the name of the helper being called.</p>
+
+<p><strong>Default behavior</strong></p>
+
+<p>If no parameters are passed to the mustache, the default behavior is to do nothing and ignore the whole mustache expression or the whole block:</p>
+
+<pre id="handlebars_default_behavior_template_example" class="prettyprint code_showarea">
+some_{{foo}}mustache
+some_{{#foo}}abc{{/foo}}block
+</pre>
+
+<pre id="handlebars_default_behavior_output_example" class="prettyprint code_showarea">
+some_mustache
+some_block
+</pre>
+
+<p>If parameter is passed to the mustache, Handlebars will throw an exception:</p>
+
+<pre id="handlebars_default_behavior_template_example2" class="prettyprint code_showarea">
+{{foo bar}}
+{{#foo bar}}abc{{/foo}}
+</pre>
+
+<pre id="handlebars_default_behavior_output_example2" class="prettyprint code_showarea">
+Missing helper: "foo" 
+</pre>
+
+<p><strong><code>blockHelperMissing</code></strong></p>
+
+<p>This hook is called, when a<br>
+- block-expression calls a helper that is not registered,<br>
+- but the name matches a property in the current evaluation context.</p>
+
+<p>You can handle this situation by registering a helper named <code>blockHelperMissing</code> .</p>
+
+<pre id="handlebars_blockHelperMissing_template_example" class="prettyprint code_showarea">
+{{#person}}
+  {{firstname}} {{lastname}}
+{{/person}}
+</pre>
+
+<pre id="handlebars_blockHelperMissing_func_example" class="prettyprint code_showarea">
+Handlebars.registerHelper('blockHelperMissing', function(context, options) {
+  return "Helper '"+options.name+"' not found. Printing block: " + options.fn(context); 
+});
+</pre>
+
+<pre id="handlebars_blockHelperMissing_output_example" class="prettyprint code_showarea">
+Helper 'person' not found. Printing block:   Yehuda Katz  
+</pre>
+
+<p><strong>Default behavior</strong></p>
+
+<p>The hook will be called with the resolved property value on the current context and the <code>options.name</code> field set to the name of the property.</p>
+
+<p>If the hook is not overridden, then the default implementation will mimic the behavior of Mustache and just call the block.</p>
+
+<pre id="handlebars_defaultbehavior_template_example" class="prettyprint code_showarea">
+{{#person}}
+  {{firstname}} {{lastname}}
+{{/person}}
+</pre>
+
+<pre id="handlebars_defaultbehavior_output_example" class="prettyprint code_showarea">
+Yehuda Katz
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal dialogue code shoud be below all content -->
+<div id="pc-tools-error-dialogue" class="w3-modal">
+ <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+  <header class="w3-container w3-dark-grey"> 
+   <span class="pc-close-dialogue_button w3-button w3-dark-grey w3-xlarge w3-hover-white w3-display-topright">&times;</span>
+   <h2>Error</h2>
+  </header>
+  
+  <div id="error-msg-text-el" class="pc-modal-content-inner w3-container w3-padding-16">
+  </div> <!-- End of div element containing message -->
+
+ </div>  <!-- End of .w3-modal-content -->
+</div> <!-- End of #pc-tools-dialogue -->
+
+
+</div> <!-- End of #pc-site-content -->
+
+</body>
+
+</html> 
