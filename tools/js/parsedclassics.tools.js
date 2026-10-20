@@ -5073,3 +5073,68 @@ var ParsedClassicsDiagrammingPlayground = {
 			$('#find_replace_button').on('click', ParsedClassicsMultipleRegexes.proceed);
 		},
 	};
+
+/*
+* JSON to JSON or HTML tansforming by Handlebars template
+*/
+
+const ParsedClassicsJsonMapping = {
+	generate: function() {
+		const json_input_textarea = $('#json_input_textarea');
+		const functions_input_textarea = $('#functions_input_textarea');
+		const template_input_textarea = $('#template_input_textarea');
+		const output_textarea = $('#output_textarea');
+
+		const input_json_str = json_input_textarea.val().trim();
+		const functions_str = functions_input_textarea.val().trim();
+		const template_str = template_input_textarea.val().trim();
+
+		// no json? - then nothing to do, exept to display error msg
+		if (!input_json_str) {
+			// find message el
+			msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+			// put message text inside message el
+			msg_el.html("No JSON inside JSON input textarea!");
+			// display modal dialogue
+			ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+			return;
+		}
+
+		// no template? - then nothing to do, exept to display error msg
+		if (!template_str) {
+			// find message el
+			msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+			// put message text inside message el
+			msg_el.html("No template inside template input textarea!");
+			// display modal dialogue
+			ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+			return;
+		}
+
+		// eval functions submitted as string
+		if (functions_str) {
+			try {
+				eval(functions_str);
+			} catch (error) {
+				// find message el
+				msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+				// put message text inside message el
+				msg_el.html(error);
+				// display modal dialogue
+				ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+				return;
+			}
+		}
+		
+		const input_json = JSON5.parse(input_json_str);
+
+		const template = Handlebars.compile(template_str);
+		const output = template(input_json);
+
+		output_textarea.val(output);
+
+	},
+	init: function() {
+		$('#generate_button').on('click', ParsedClassicsJsonMapping.generate);
+	},
+};
