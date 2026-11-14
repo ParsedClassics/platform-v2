@@ -2980,6 +2980,9 @@ var ParsedClassicsCollContentsGenerator = {
   generateCollContents: function() {
     var coll_contents
     , contents_name
+		, title_for_title_page
+		, chapter_title_template
+		, chapter_title
     , lineclass_prefixes_all
     , linenum_prefixes_all
     , ranges_all
@@ -2997,6 +3000,10 @@ var ParsedClassicsCollContentsGenerator = {
     
     // get contents name 
 				contents_name = $("#" + ParsedClassicsVars.inputTextarea3Id).val();
+		// get title for title page
+		title_for_title_page = $('#title_for_title_page').val();
+		// get chapter title template
+		chapter_title_template = $('#chapter_title_template').val();
     // get line class prefixes string
     lineclass_prefixes_all = $("#" + ParsedClassicsVars.inputTextarea2Id).val();
     // get line number prefixes string
@@ -3009,6 +3016,10 @@ var ParsedClassicsCollContentsGenerator = {
     
     // trim contents name
 				contents_name = $.trim(contents_name);
+		// trim title for title page
+		title_for_title_page = $.trim(title_for_title_page);
+		// trim chapter title template
+		chapter_title_template = $.trim(chapter_title_template);
     // trim line class prefixes string
     lineclass_prefixes_all = $.trim(lineclass_prefixes_all);
     // trim line number prefixes string
@@ -3026,6 +3037,17 @@ var ParsedClassicsCollContentsGenerator = {
 						ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
 						return;
 				}
+		
+		// no title for title page? - then nothing to do, exept to display error msg
+		if (title_for_title_page == "") {
+			// find message el
+			msg_el = $("#" + ParsedClassicsVars.errorMsgTextElId);
+			// put message text inside message el
+			msg_el.html("No title defined inside Title for title page input!");
+			// display modal dialogue
+			ParsedClassicsModalDialogues.openDialogue(ParsedClassicsVars.toolsErrorModalId, "", "");
+			return;
+		}
     
     // no line class prefixes string? - then nothing to do, exept to display error msg
     if (lineclass_prefixes_all == "") {
@@ -3104,9 +3126,17 @@ var ParsedClassicsCollContentsGenerator = {
       
       // calculate range index
       range_index = i + 1;
+
+			// generate chapter title from template
+			chapter_title = '';
+			if (chapter_title_template) {
+				chapter_title = chapter_title_template.replace('{number}', range_index);
+				chapter_title = chapter_title_template.replace('{number_roman}', ParsedClassicsSiteHelpers.numberToRoman(range_index));
+			}
+			console.log('');
       
       // create key/val pair indicating levelstart
-      coll_contents += ', "levelstart-' + range_index + '": ""\n\n';
+      coll_contents += ', "levelstart-' + range_index + `": "${chapter_title}"\n\n`;
       
       // get start number of the range
 						start_num = Number(single_range[0]);
@@ -3131,7 +3161,7 @@ var ParsedClassicsCollContentsGenerator = {
     }
     
     // add title page
-				coll_contents = '"title": ""\n\n' + coll_contents;
+				coll_contents = `"title": "${title_for_title_page}"\n\n` + coll_contents;
     
     // add braces
 				coll_contents = "{\n\n" + coll_contents + "};"
